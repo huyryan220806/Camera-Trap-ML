@@ -1,0 +1,90 @@
+--- Cell 2 ---
+Tổng số ảnh: 120321
+Tổng số loài: 121
+Tổng số nhãn (bounding boxes): 133837
+
+--- Cell 4 ---
+1. Số ảnh đánh dấu hỏng (corrupt=True): 0
+2. Số bản ghi không có trường 'bbox' (chỉ có nhãn cấp ảnh): 32178
+3. Số Bounding Box thực sự bị lỗi hình học (âm/tràn viền): 205
+4. Số ảnh có từ 2 loài trở lên: 0
+
+--- Cell 6 ---
+--- Đang hiển thị ảnh tại vị trí 0 (ID: ...74c7de) ---
+
+--- Cell 6 ---
+--- Đang hiển thị ảnh tại vị trí 3 (ID: ...74c7de) ---
+
+--- Cell 6 ---
+--- Đang hiển thị ảnh tại vị trí 20 (ID: ...74c7de) ---
+
+--- Cell 7 ---
+Vị trí 0 (ID: ...74c7de): 1 nhãn annotation, 1 bounding box thực tế
+Vị trí 3 (ID: ...74c7de): 1 nhãn annotation, 0 bounding box thực tế
+Vị trí 20 (ID: ...74c7de): 2 nhãn annotation, 2 bounding box thực tế
+
+--- Cell 9 ---
+=== TOP CÁC LOÀI CÓ NHIỀU BOUNDING BOX NHẤT ===
+- eurasian_wild_pig: 17801 boxes
+- unidentified_murid: 9818 boxes
+- large_antlered_muntjac: 8238 boxes
+- stump_tailed_macaque: 8130 boxes
+- unidentified_bird: 5218 boxes
+- ferret_badger: 4957 boxes
+- roosevelts_muntjac_group: 4594 boxes
+- sambar: 4564 boxes
+- pig_tailed_macaque: 4301 boxes
+- red_cheeked_squirrel: 4214 boxes
+- crab_eating_mongoose: 2265 boxes
+- silver_pheasant: 2211 boxes
+- yellow_throated_marten: 1972 boxes
+- common_palm_civet: 1779 boxes
+- unidentified_small_mammal: 1776 boxes
+- assam_or_rhesus_macaque: 1663 boxes
+- masked_palm_civet: 1568 boxes
+- asiatic_brush_tailed_porcupine: 1443 boxes
+- unidentified_partridge: 1203 boxes
+- grey_peacock_pheasant: 1120 boxes
+
+--- Cell 12 ---
+Collecting ImageHash
+  Downloading ImageHash-4.3.2-py2.py3-none-any.whl.metadata (8.4 kB)
+Requirement already satisfied: PyWavelets in /usr/local/lib/python3.13/dist-packages (from ImageHash) (1.9.0)
+Requirement already satisfied: numpy in /usr/local/lib/python3.13/dist-packages (from ImageHash) (2.1.3)
+Requirement already satisfied: pillow in /usr/local/lib/python3.13/dist-packages (from ImageHash) (11.3.0)
+Requirement already satisfied: scipy in /usr/local/lib/python3.13/dist-packages (from ImageHash) (1.16.3)
+Downloading ImageHash-4.3.2-py2.py3-none-any.whl (296 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/296.7 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m296.7/296.7 kB[0m [31m11.7 MB/s[0m eta [36m0:00:00[0m
+[?25hInstalling collected packages: ImageHash
+Successfully installed ImageHash-4.3.2
+
+--- Cell 13 ---
+[LOÀI: LARGE_ANTLERED_MUNTJAC] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: ANNAMITE_STRIPED_RABBIT] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: SAMBAR] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: CHINESE_SEROW] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: COMMON_PALM_CIVET] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: MASKED_PALM_CIVET] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: SILVER_PHEASANT] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+[LOÀI: EURASIAN_WILD_PIG] - Đã lấy 10 mẫu từ các địa điểm độc lập.
+
+--- Cell 13 ---
+=== TỔNG KẾT BIÊN BẢN LỖI (W1-03) ===
+- Số ảnh lỗi tải / HTTP: 0
+- Số box sai kích thước/tràn viền trong các mẫu: 0
+- Số ảnh trùng lặp SHA-256 phát hiện được: 0
+Đã lưu chi tiết vào file 'bien_ban_loi_w1.json'
