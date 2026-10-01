@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "mock-006",
+  "image": {"image_id": null, "file_name": "example_model_failure.jpg", "width": 1920, "height": 1080},
+  "pipeline": {"mode": "mock", "detector_id": "mock-detector", "classifier_id": "mock-classifier", "class_map_version": "swg-v1", "detector_threshold": 0.5, "review_threshold": 0.7},
+  "status": "error",
+  "needs_review": true,
+  "detections": [],
+  "error": {"stage": "classify", "code": "CLASSIFIER_FAILED", "message": "Classifier could not process the detected regions."},
+  "elapsed_ms": 0
+}

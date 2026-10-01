@@ -13,3 +13,6 @@ data/processed/repro_check/
 .env
 .env.*
 !.env.example
+outputs/
+runs/
+.ipynb_checkpoints/

@@ -1,0 +1,10 @@
+{
+  "timezone": "Asia/Ho_Chi_Minh",
+  "resources": [
+    {"resource_id": "local-01", "type": "local", "owner": null, "gpu_model": null, "vram_gb": null, "confirmed": false},
+    {"resource_id": "colab-tv2", "type": "colab", "owner": "TV2", "gpu_model": null, "vram_gb": null, "confirmed": false},
+    {"resource_id": "colab-tv3", "type": "colab", "owner": "TV3", "gpu_model": null, "vram_gb": null, "confirmed": false},
+    {"resource_id": "colab-tv4", "type": "colab", "owner": "TV4", "gpu_model": null, "vram_gb": null, "confirmed": false}
+  ],
+  "reservations": []
+}

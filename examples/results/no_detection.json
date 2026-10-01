@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "mock-004",
+  "image": {"image_id": null, "file_name": "example_no_detection.jpg", "width": 1920, "height": 1080},
+  "pipeline": {"mode": "mock", "detector_id": "mock-detector", "classifier_id": "mock-classifier", "class_map_version": "swg-v1", "detector_threshold": 0.5, "review_threshold": 0.7},
+  "status": "no_detection",
+  "needs_review": true,
+  "detections": [],
+  "error": null,
+  "elapsed_ms": 0
+}

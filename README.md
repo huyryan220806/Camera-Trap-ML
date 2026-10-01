@@ -1,6 +1,25 @@
 # CameraTrapML
 
-Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Thư mục `plan_outputs` giữ kế hoạch nhóm đã tạo trước đó.
+Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
+
+## Bàn giao tuần 1 của thành viên 4
+
+- [Môi trường và kiểm tra cài đặt](docs/environment.md)
+- [Cấu trúc dự án và sơ đồ luồng](docs/architecture.md)
+- [Quy ước Git và kiểm tra chéo](CONTRIBUTING.md)
+- [Hợp đồng JSON và cách xử lý kết quả](docs/result_contract.md)
+- [Lịch dùng GPU chung](docs/gpu_schedule.md)
+- [Checklist nghiệm thu cho TV2](docs/handoff_tv4_w1.md)
+
+Các JSON trong `examples/results` là **dữ liệu giả lập**, không phải kết quả của mô hình đã huấn luyện. Tuần 1 chốt giao diện dữ liệu; chưa có ứng dụng web hoặc mô hình suy luận chạy thật.
+
+Sau khi cài `requirements.txt`, kiểm tra bộ bàn giao mà không cần tải dữ liệu gốc hoặc GPU:
+
+```powershell
+.venv/Scripts/python.exe scripts/check_environment.py
+.venv/Scripts/python.exe scripts/validate_results.py
+.venv/Scripts/python.exe -m unittest discover -s tests -v
+```
 
 ## Bàn giao tuần 1 của thành viên 1
 

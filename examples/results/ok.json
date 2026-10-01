@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "mock-001",
+  "image": {"image_id": null, "file_name": "example_muntjac.jpg", "width": 1920, "height": 1080},
+  "pipeline": {"mode": "mock", "detector_id": "mock-detector", "classifier_id": "mock-classifier", "class_map_version": "swg-v1", "detector_threshold": 0.5, "review_threshold": 0.7},
+  "status": "ok",
+  "needs_review": false,
+  "detections": [
+    {"detection_id": "d1", "bbox_xywh": [320, 210, 800, 650], "detector_score": 0.95,
+     "top_k": [{"class_id": 0, "label": "large_antlered_muntjac", "score": 0.88}, {"class_id": 2, "label": "sambar", "score": 0.07}, {"class_id": 3, "label": "chinese_serow", "score": 0.03}]}
+  ],
+  "error": null,
+  "elapsed_ms": 0
+}
