@@ -1,0 +1,194 @@
+[
+  {
+    "label": "large_antlered_muntjac",
+    "split": "train",
+    "images": 5568,
+    "sequences": 2327,
+    "locations": 203,
+    "boxes": 5735
+  },
+  {
+    "label": "large_antlered_muntjac",
+    "split": "val",
+    "images": 1375,
+    "sequences": 567,
+    "locations": 45,
+    "boxes": 1422
+  },
+  {
+    "label": "large_antlered_muntjac",
+    "split": "test",
+    "images": 978,
+    "sequences": 433,
+    "locations": 46,
+    "boxes": 1008
+  },
+  {
+    "label": "annamite_striped_rabbit",
+    "split": "train",
+    "images": 397,
+    "sequences": 215,
+    "locations": 61,
+    "boxes": 398
+  },
+  {
+    "label": "annamite_striped_rabbit",
+    "split": "val",
+    "images": 122,
+    "sequences": 66,
+    "locations": 15,
+    "boxes": 124
+  },
+  {
+    "label": "annamite_striped_rabbit",
+    "split": "test",
+    "images": 83,
+    "sequences": 51,
+    "locations": 12,
+    "boxes": 83
+  },
+  {
+    "label": "sambar",
+    "split": "train",
+    "images": 2732,
+    "sequences": 1119,
+    "locations": 169,
+    "boxes": 3211
+  },
+  {
+    "label": "sambar",
+    "split": "val",
+    "images": 576,
+    "sequences": 269,
+    "locations": 35,
+    "boxes": 684
+  },
+  {
+    "label": "sambar",
+    "split": "test",
+    "images": 523,
+    "sequences": 237,
+    "locations": 39,
+    "boxes": 606
+  },
+  {
+    "label": "chinese_serow",
+    "split": "train",
+    "images": 1226,
+    "sequences": 493,
+    "locations": 149,
+    "boxes": 1264
+  },
+  {
+    "label": "chinese_serow",
+    "split": "val",
+    "images": 320,
+    "sequences": 139,
+    "locations": 34,
+    "boxes": 328
+  },
+  {
+    "label": "chinese_serow",
+    "split": "test",
+    "images": 268,
+    "sequences": 109,
+    "locations": 33,
+    "boxes": 281
+  },
+  {
+    "label": "common_palm_civet",
+    "split": "train",
+    "images": 1210,
+    "sequences": 548,
+    "locations": 176,
+    "boxes": 1218
+  },
+  {
+    "label": "common_palm_civet",
+    "split": "val",
+    "images": 299,
+    "sequences": 126,
+    "locations": 45,
+    "boxes": 304
+  },
+  {
+    "label": "common_palm_civet",
+    "split": "test",
+    "images": 244,
+    "sequences": 116,
+    "locations": 36,
+    "boxes": 245
+  },
+  {
+    "label": "masked_palm_civet",
+    "split": "train",
+    "images": 1070,
+    "sequences": 472,
+    "locations": 222,
+    "boxes": 1093
+  },
+  {
+    "label": "masked_palm_civet",
+    "split": "val",
+    "images": 251,
+    "sequences": 102,
+    "locations": 51,
+    "boxes": 259
+  },
+  {
+    "label": "masked_palm_civet",
+    "split": "test",
+    "images": 207,
+    "sequences": 89,
+    "locations": 49,
+    "boxes": 207
+  },
+  {
+    "label": "silver_pheasant",
+    "split": "train",
+    "images": 1156,
+    "sequences": 517,
+    "locations": 179,
+    "boxes": 1510
+  },
+  {
+    "label": "silver_pheasant",
+    "split": "val",
+    "images": 290,
+    "sequences": 119,
+    "locations": 39,
+    "boxes": 374
+  },
+  {
+    "label": "silver_pheasant",
+    "split": "test",
+    "images": 239,
+    "sequences": 103,
+    "locations": 28,
+    "boxes": 317
+  },
+  {
+    "label": "eurasian_wild_pig",
+    "split": "train",
+    "images": 8714,
+    "sequences": 3594,
+    "locations": 380,
+    "boxes": 12077
+  },
+  {
+    "label": "eurasian_wild_pig",
+    "split": "val",
+    "images": 1602,
+    "sequences": 624,
+    "locations": 87,
+    "boxes": 2317
+  },
+  {
+    "label": "eurasian_wild_pig",
+    "split": "test",
+    "images": 2139,
+    "sequences": 823,
+    "locations": 75,
+    "boxes": 3257
+  }
+]

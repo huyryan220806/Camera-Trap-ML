@@ -1,0 +1,73 @@
+{
+  "config": {
+    "seed": 42,
+    "attempts": 2000,
+    "min_sequences": 10,
+    "min_locations": 2,
+    "pilot_images_per_class": 500,
+    "classes": [
+      "large_antlered_muntjac",
+      "annamite_striped_rabbit",
+      "sambar",
+      "chinese_serow",
+      "common_palm_civet",
+      "masked_palm_civet",
+      "silver_pheasant",
+      "eurasian_wild_pig"
+    ],
+    "selection_note": "Research subset proposed from eligible box support and spatial coverage. Conservation status is not inferred from sample counts and requires a separate authoritative taxonomy/conservation review.",
+    "policy": "public, non-corrupt metadata; one normalized candidate image label; at least one valid box; all boxes valid and agree with the image label; nonempty sequence and location; group by location",
+    "scope": "SWG Vietnam and Lao, matching the transboundary Annamites study scope"
+  },
+  "split_search": {
+    "objective": 0.000873998058658321,
+    "chosen_attempt_zero_based": 53,
+    "attempts": 2000,
+    "seed": 42,
+    "algorithm": "seeded PCG64 permutation search over locations; minimize squared per-class image and sequence ratio deviation",
+    "target_ratios": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "min_sequences_per_class_per_split": 10,
+    "min_locations_per_class_per_split": 2
+  },
+  "sources": [
+    {
+      "filename": "swg_camera_traps.zip",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/swg_camera_traps.zip",
+      "retrieved_utc": "2026-10-01T11:35:42.062364+00:00",
+      "etag": "\"e827c32f3e535ffe18a6d66336c23ecd\"",
+      "last_modified": "Sun, 26 Jul 2026 14:58:47 GMT",
+      "sha256": "b3e3daed77dd8c4ab971477cde2044a97ed74380180ca020f73ad4049914e34f",
+      "bytes": 61639652,
+      "members": [
+        {
+          "name": "swg_camera_traps.1.1.json",
+          "bytes": 1060404177
+        }
+      ]
+    },
+    {
+      "filename": "swg_camera_traps.bounding_boxes.with_species.zip",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/swg_camera_traps.bounding_boxes.with_species.zip",
+      "retrieved_utc": "2026-10-01T11:35:43.943705+00:00",
+      "etag": "\"936f5252397d2d434af46398a28014a7\"",
+      "last_modified": "Sat, 08 Oct 2022 22:27:45 GMT",
+      "sha256": "2aa241381f6949e39e9a86108ad1772555a69402c684ceb703ec659b259db1f4",
+      "bytes": 6578101,
+      "members": [
+        {
+          "name": "swg_camera_traps.bounding_boxes.with_species.json",
+          "bytes": 75988493
+        }
+      ]
+    }
+  ],
+  "manifest_sha256": "8639e2920567cec6d8aaf7ddaed9a3deb8f0c774e7a6ca87dbe591ba3562d48a",
+  "pilot_sha256": "e014967e8ecdda18ea7468fba2a7312973b4eec468e61a3faabfd84169a75f8f",
+  "script_sha256": "fcc691a7d8e6093c4cec058686c42a82c254938683d6fd79e89a21ff9fba3542",
+  "numpy_version": "2.5.3",
+  "scope": "public images with exactly one candidate image label and all valid boxes agreeing with that label; no image bytes inspected"
+}
