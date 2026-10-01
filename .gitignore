@@ -13,3 +13,8 @@ data/processed/repro_check/
 .env
 .env.*
 !.env.example
+
+# Large dataset files
+*.json
+*.zip
+bien_ban_loi_w1.json
