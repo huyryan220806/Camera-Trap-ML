@@ -1,0 +1,39 @@
+# ==============================================================================
+# CameraTrapML - Requirements
+# Ứng dụng học máy nhận dạng động vật ưu tiên bảo tồn tại Trường Sơn
+# ==============================================================================
+# Cài đặt: pip install -r requirements.txt
+#
+# Lưu ý  : Nếu chạy trên máy ảo/máy cá nhân CÓ GPU, bạn phải cài PyTorch 
+#          với CUDA hỗ trợ. Chạy một trong các lệnh sau TƯỚNG ỨNG với CUDA:
+#
+#          [Windows / Linux] - CUDA 12.1 (khuyên dùng cho RTX 30/40 series):
+#          pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+#          [Windows / Linux] - CUDA 11.8:
+#          pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+#          Lưu ý: Thư viện PyYAML đã có sẵn ở dưới, chỉ cần cài `requirements.txt` là đủ.
+# ==============================================================================
+
+# --- Core Deep Learning ---
+torch>=2.1.0
+torchvision>=0.16.0
+
+# --- Data & Scientific Computing ---
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# --- Visualization ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# --- Utilities ---
+tqdm>=4.65.0
+Pillow>=9.5.0
+PyYAML>=6.0
+
+# --- Logging & Experiment Tracking (tuỳ chọn mở rộng) ---
+# tensorboard>=2.14.0
+# wandb>=0.15.0

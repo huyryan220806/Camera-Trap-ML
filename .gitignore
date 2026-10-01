@@ -1,0 +1,31 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files & MS Office locks
+~$*
+temp_repo/
+*.tmp
+
+# Large data & model weights
+data/
+datasets/
+checkpoints/
+*.pth
+*.pt
+*.onnx
+*.weights
