@@ -14,12 +14,12 @@
 
 Dưới đây là danh sách toàn bộ các tệp tin đã hoàn thành và bàn giao trong Tuần 1. Bạn có thể bấm vào đường dẫn để xem trực tiếp code:
 
-1.  [`requirements.txt`](../requirements.txt): Danh sách thư viện chuẩn của dự án (bao gồm PyTorch, Torchvision, Scikit-learn, PyYAML, Matplotlib, v.v.) và hướng dẫn cài đặt CUDA.
-2.  [`check_environment.py`](../check_environment.py): Script Python tự động kiểm tra phần cứng, phiên bản CUDA/PyTorch, tính khả dụng của GPU VRAM và chạy thử smoke-test nhân ma trận.
-3.  [`gpu_env_report.txt`](../gpu_env_report.txt): Báo cáo log sinh ra tự động ghi nhận trạng thái môi trường và GPU thực tế.
-4.  [`src/evaluation/metrics.py`](../src/evaluation/metrics.py): Module lõi tính toán các chỉ số thống nhất. Hỗ trợ đầu vào linh hoạt (PyTorch/NumPy) và xuất ra Macro-F1, Precision, Recall, Accuracy, cùng từ điển Confusion Matrix.
-5.  [`demo_confusion_matrix.png`](../demo_confusion_matrix.png): Hình ảnh minh họa ma trận nhầm lẫn dạng heatmap (được sinh ra tự động khi chạy self-test file `metrics.py`).
-6.  [`docs/experiment_protocol.md`](experiment_protocol.md): Bản đề cương thí nghiệm cốt lõi quy định chi tiết 4 mô hình (B0, B1, B2, B3), tiêu chí checkpoint, augmentation và chiến lược dữ liệu.
+1.  [`requirements.txt`](requirements.txt): Danh sách thư viện chuẩn của dự án (bao gồm PyTorch, Torchvision, Scikit-learn, PyYAML, Matplotlib, v.v.) và hướng dẫn cài đặt CUDA.
+2.  [`check_environment.py`](check_environment.py): Script Python tự động kiểm tra phần cứng, phiên bản CUDA/PyTorch, tính khả dụng của GPU VRAM và chạy thử smoke-test nhân ma trận.
+3.  [`gpu_env_report.txt`](gpu_env_report.txt): Báo cáo log sinh ra tự động ghi nhận trạng thái môi trường và GPU thực tế.
+4.  [`src/evaluation/metrics.py`](src/evaluation/metrics.py): Module lõi tính toán các chỉ số thống nhất. Hỗ trợ đầu vào linh hoạt (PyTorch/NumPy) và xuất ra Macro-F1, Precision, Recall, Accuracy, cùng từ điển Confusion Matrix.
+5.  [`demo_confusion_matrix.png`](demo_confusion_matrix.png): Hình ảnh minh họa ma trận nhầm lẫn dạng heatmap (được sinh ra tự động khi chạy self-test file `metrics.py`).
+6.  [`docs/experiment_protocol.md`](docs/experiment_protocol.md): Bản đề cương thí nghiệm cốt lõi quy định chi tiết 4 mô hình (B0, B1, B2, B3), tiêu chí checkpoint, augmentation và chiến lược dữ liệu.
 
 ---
 
