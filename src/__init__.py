@@ -1,1 +1,0 @@
-# CameraTrapML – src package
