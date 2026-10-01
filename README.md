@@ -31,7 +31,7 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
 | `silver_pheasant` | Gà lôi trắng |
 | `eurasian_wild_pig` | Lợn rừng |
 
-## 📦 Dataset
+## Dataset
 
 - **Tên**: SWG Camera Traps (Southeast Asia Wildlife Group)
 - **Nguồn**: [LILA BC](https://lila.science/datasets/swg-camera-traps)
@@ -41,7 +41,7 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
   - Tổng số loài: 121
   - Tổng số nhãn (bounding boxes): 133,837
 
-## 🗂️ Cấu trúc thư mục
+## Cấu trúc thư mục
 
 ```
 Project ML/
@@ -51,7 +51,7 @@ Project ML/
 └── README.md                                          # Tài liệu dự án
 ```
 
-## 🚀 Cách chạy
+## Cách chạy
 
 ### 1. Cài đặt thư viện
 
@@ -71,9 +71,9 @@ swg_camera_traps.bounding_boxes.with_species.json
 
 Mở `crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google Colab rồi chạy tuần tự các cell.
 
-> ⚠️ **Lưu ý**: Notebook tải ảnh trực tiếp từ Google Cloud Storage, cần kết nối Internet. Sử dụng GPU (T4) trên Google Colab để xử lý nhanh hơn.
+> **Lưu ý**: Notebook tải ảnh trực tiếp từ Google Cloud Storage, cần kết nối Internet. Sử dụng GPU (T4) trên Google Colab để xử lý nhanh hơn.
 
-## 📊 Kết quả kiểm tra chất lượng dữ liệu
+## Kết quả kiểm tra chất lượng dữ liệu
 
 | Loại lỗi | Số lượng |
 |---|---|
@@ -82,7 +82,7 @@ Mở `crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google Colab rồ
 | Bounding box lỗi hình học | 205 |
 | Ảnh có từ 2 loài trở lên | 0 |
 
-## 🔧 Công nghệ sử dụng
+## Công nghệ sử dụng
 
 - Python 3.x
 - Google Colab (GPU T4)
@@ -92,7 +92,7 @@ Mở `crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google Colab rồ
 - ImageHash
 - Requests
 
-## 👤 Tác giả
+## Tác giả
 
 - **Nhóm thực hiện**: TV3 (Tuần 1)
 - **Môn học**: Học máy và ứng dụng
