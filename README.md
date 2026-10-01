@@ -44,12 +44,14 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
 ## Cấu trúc thư mục
 
 ```
-Project ML/
-├── crop_classifier_eda.ipynb                         # Notebook phân tích & tiền xử lý
-├── swg_camera_traps.bounding_boxes.with_species.json # Metadata bounding box (không được commit)
-├── requirements.txt                                   # Thư viện Python cần thiết
-└── README.md                                          # Tài liệu dự án
+Camera-Trap-ML/
+├── notebooks/
+│   └── crop_classifier_eda.ipynb    # Notebook phân tích & tiền xử lý
+├── requirements.txt                  # Thư viện Python cần thiết
+└── README.md                         # Tài liệu dự án
 ```
+
+> **Lưu ý**: File dataset `swg_camera_traps.bounding_boxes.with_species.json` (~72.5 MB) không được commit vào repo. Tải về từ [LILA BC](https://lila.science/datasets/swg-camera-traps) và đặt cùng thư mục với notebook trước khi chạy.
 
 ## Cách chạy
 
