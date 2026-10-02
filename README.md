@@ -1,8 +1,8 @@
-# 🦌 Camera Trap Wildlife Crop Classifier
+#  Camera Trap Wildlife Crop Classifier
 
 Dự án phân tích và phân loại động vật hoang dã từ ảnh bẫy camera (camera trap) sử dụng dataset **SWG Camera Traps** (Southeast Asia Wildlife Group) từ LILA BC.
 
-## 📋 Mô tả
+##  Mô tả
 
 Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho bài toán phân loại động vật từ ảnh bẫy camera, bao gồm:
 
@@ -18,7 +18,7 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
 
 4. **Lấy mẫu đa dạng theo địa điểm** — Chọn 10 ảnh hợp lệ / loài cho 8 loài mục tiêu, lấy xoay vòng từ các `location` độc lập để tối đa hoá sự đa dạng. Kiểm tra trùng lặp bằng SHA-256.
 
-## 🎯 8 Loài mục tiêu
+##  8 Loài mục tiêu
 
 | Loài (tiếng Anh) | Loài (tiếng Việt) |
 |---|---|
