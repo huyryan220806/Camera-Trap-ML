@@ -34,6 +34,10 @@ tqdm>=4.65.0
 Pillow>=9.5.0
 PyYAML>=6.0
 
+# --- Notebook tuần 1 ---
+nbconvert>=7.16.0
+ipykernel>=6.30.0
+
 # --- Logging & Experiment Tracking (tuỳ chọn mở rộng) ---
 # tensorboard>=2.14.0
 # wandb>=0.15.0

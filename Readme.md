@@ -15,11 +15,10 @@
 Dưới đây là danh sách toàn bộ các tệp tin đã hoàn thành và bàn giao trong Tuần 1. Bạn có thể bấm vào đường dẫn để xem trực tiếp code:
 
 1.  [`requirements.txt`](requirements.txt): Danh sách thư viện chuẩn của dự án (bao gồm PyTorch, Torchvision, Scikit-learn, PyYAML, Matplotlib, v.v.) và hướng dẫn cài đặt CUDA.
-2.  [`check_environment.py`](check_environment.py): Script Python tự động kiểm tra phần cứng, phiên bản CUDA/PyTorch, tính khả dụng của GPU VRAM và chạy thử smoke-test nhân ma trận.
-3.  [`gpu_env_report.txt`](gpu_env_report.txt): Báo cáo log sinh ra tự động ghi nhận trạng thái môi trường và GPU thực tế.
-4.  [`src/evaluation/metrics.py`](src/evaluation/metrics.py): Module lõi tính toán các chỉ số thống nhất. Hỗ trợ đầu vào linh hoạt (PyTorch/NumPy) và xuất ra Macro-F1, Precision, Recall, Accuracy, cùng từ điển Confusion Matrix.
-5.  [`demo_confusion_matrix.png`](demo_confusion_matrix.png): Hình ảnh minh họa ma trận nhầm lẫn dạng heatmap (được sinh ra tự động khi chạy self-test file `metrics.py`).
-6.  [`docs/experiment_protocol.md`](docs/experiment_protocol.md): Bản đề cương thí nghiệm cốt lõi quy định chi tiết 4 mô hình (B0, B1, B2, B3), tiêu chí checkpoint, augmentation và chiến lược dữ liệu.
+2.  [`notebooks/TV2_baseline_evaluation.ipynb`](notebooks/TV2_baseline_evaluation.ipynb): Kiểm tra PyTorch/CPU/GPU, định nghĩa metric và chạy demo dữ liệu giả cho 8 lớp.
+3.  [`reports/gpu_env_report.txt`](reports/gpu_env_report.txt): Log phiên bản thư viện và thiết bị được notebook kiểm tra thực tế.
+4.  [`reports/demo_confusion_matrix.png`](reports/demo_confusion_matrix.png): Ma trận nhầm lẫn của dữ liệu giả, không phải kết quả mô hình đã huấn luyện.
+5.  [`docs/experiment_protocol.md`](docs/experiment_protocol.md): Bản đề cương thí nghiệm cốt lõi quy định chi tiết 4 mô hình (B0, B1, B2, B3), tiêu chí checkpoint, augmentation và chiến lược dữ liệu.
 
 ---
 
@@ -40,21 +39,18 @@ Dưới đây là danh sách toàn bộ các tệp tin đã hoàn thành và bà
 
 **Bước 1: Cài đặt môi trường**
 *(Lưu ý: Nếu máy tính có GPU hỗ trợ CUDA, hãy chạy lệnh cài PyTorch bằng URL chuyên biệt được ghi trong file `requirements.txt` trước).*
-```bash
-pip install -r requirements.txt
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements.txt
 ```
 
-**Bước 2: Chạy kiểm tra nhận diện GPU**
-```bash
-python check_environment.py
+**Bước 2: Chạy notebook từ kernel mới**
+```powershell
+.venv/Scripts/python.exe -m jupyter nbconvert --to notebook --execute --inplace notebooks/TV2_baseline_evaluation.ipynb --ExecutePreprocessor.timeout=120
 ```
-*Kết quả kỳ vọng:* In ra console chi tiết hệ thống, GPU VRAM, báo cáo thời gian test nhân ma trận và sinh ra file `gpu_env_report.txt`.
+*Kết quả kỳ vọng:* Toàn bộ cell chạy không lỗi; `reports/gpu_env_report.txt` ghi đúng CPU/GPU của lần chạy và `reports/demo_confusion_matrix.png` là hình minh họa 8 × 8 từ dữ liệu giả. GPU chỉ được xác nhận nếu phép tính trên CUDA chạy thành công.
 
-**Bước 3: Chạy Self-test module đánh giá**
-```bash
-python -m src.evaluation.metrics
-```
-*Kết quả kỳ vọng:* Chạy luồng dữ liệu giả định 5 lớp, in ra console bảng `EVALUATION METRICS SUMMARY` (gồm Macro-F1, Precision, Recall...) và sinh ra file ảnh ma trận nhầm lẫn `demo_confusion_matrix.png` trong cùng thư mục.
+Nhánh `feat/baseline` hiện chưa có `data/processed/v1/class_map.json`. Notebook dùng danh sách 8 lớp mẫu **chỉ cho demo và kiểm thử** khi thiếu file đó; khi đánh giá dữ liệu thật, các hàm metric bắt buộc đọc class map chung từ `main`.
 
 ---
 
@@ -64,8 +60,8 @@ Vui lòng rà soát các hạng mục dưới đây và ký xác nhận khi hoà
 
 | Tiêu chí | Trạng thái cam kết (TV2) | Phản hồi (TV3 - Reviewer) |
 | :--- | :---: | :--- |
-| 1. Code script kiểm tra môi trường chạy tốt, xuất log đầy đủ. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
-| 2. Module `metrics.py` xuất đủ 4 chỉ số (Macro-F1, Pre, Rec, Acc) và Confusion Matrix. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
+| 1. Cell kiểm tra môi trường chạy tốt, xuất log đúng thiết bị thực tế. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
+| 2. Cell metric xuất Macro-F1, Precision, Recall, Accuracy và Confusion Matrix 8 × 8. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
 | 3. Xây dựng tài liệu Đề cương thí nghiệm chi tiết B0, B1, B2. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
 | 4. Chốt rõ quy tắc giữ kín tập Test và metric chọn Checkpoint. | [x] Hoàn thành | [ ] Đạt / [ ] Cần sửa |
 

@@ -181,7 +181,7 @@ model:
   backbone: "resnet18"
   pretrained: true
   freeze_backbone: true  # B0: true, B1/B2: false
-  num_classes: 5          # Số loài
+  num_classes: 8          # Theo data/processed/v1/class_map.json của nhóm
 
 data:
   input_type: "full_image"  # full_image | cropped_bbox
@@ -353,7 +353,7 @@ val_test_transform = T.Compose([
 
 ### 7.1. Bộ metric chuẩn
 
-Sử dụng module `src/evaluation/metrics.py` (đã xây dựng trong W1-02) xuyên suốt mọi thí nghiệm:
+Khung metric Tuần 1 nằm trong `notebooks/TV2_baseline_evaluation.ipynb`. Trước khi đánh giá dữ liệu thật, đọc `data/processed/v1/class_map.json` của nhóm; notebook chỉ dùng danh sách lớp mẫu để chạy demo khi file này chưa có trên nhánh TV2.
 
 | Metric | Công thức | Vai trò |
 |---|---|---|
@@ -363,6 +363,8 @@ Sử dụng module `src/evaluation/metrics.py` (đã xây dựng trong W1-02) xu
 | Accuracy | $\frac{\text{Số dự đoán đúng}}{N}$ | Tham khảo (nhạy cảm với class imbalance) |
 | Per-class F1 | $F1_c = \frac{2 \cdot P_c \cdot R_c}{P_c + R_c}$ | Đánh giá chi tiết từng loài |
 | Confusion Matrix | Ma trận $C \times C$ | Trực quan hóa lỗi phân loại |
+
+Với class map v1, $C = 8$. Macro-Precision, Macro-Recall và Macro-F1 dùng đủ 8 ID lớp theo thứ tự số, kể cả lớp không có mẫu trong tập đang đánh giá. Lớp vắng mặt nhận điểm 0 theo `zero_division=0`; ví dụ chỉ dự đoán đúng lớp 0 thì Accuracy bằng 1 nhưng Macro-F1 bằng $1/8$. Confusion matrix luôn có kích thước $8 \times 8$.
 
 ### 7.2. Xử lý zero-division
 
@@ -383,7 +385,7 @@ Mỗi thí nghiệm phải báo cáo đầy đủ:
 
 | Tuần | Công việc | Sản phẩm |
 |---|---|---|
-| **Tuần 1** | Xây khung đánh giá, cấu hình môi trường | `metrics.py`, `check_environment.py`, tài liệu này |
+| **Tuần 1** | Xây khung đánh giá, cấu hình môi trường | `notebooks/TV2_baseline_evaluation.ipynb`, report trong `reports/`, tài liệu này |
 | **Tuần 2** | Huấn luyện B0 (frozen backbone) | `best_model_B0.pth`, `train_log_B0.csv`, báo cáo Val metrics |
 | **Tuần 3** | Huấn luyện B1 (full-image FT) & B2 (cropped FT) | Weights + logs + so sánh Val metrics B0/B1/B2 |
 | **Tuần 3–4** | *(Tùy chọn)* B3 (class weights) | Weights + logs |
@@ -396,48 +398,41 @@ Mỗi thí nghiệm phải báo cáo đầy đủ:
 
 ```
 Do_an/
-├── check_environment.py
 ├── requirements.txt
-├── src/
-│   ├── evaluation/
-│   │   ├── __init__.py
-│   │   └── metrics.py
-│   ├── data/           # (Tuần 2: DataLoader, transforms)
-│   ├── models/          # (Tuần 2: model definitions)
-│   └── training/        # (Tuần 2: train loop, utils)
+├── notebooks/
+│   └── TV2_baseline_evaluation.ipynb
+├── reports/
+│   ├── gpu_env_report.txt
+│   └── demo_confusion_matrix.png
 ├── docs/
 │   └── experiment_protocol.md   ← Tài liệu này
-├── experiments/
-│   ├── B0_run01/
-│   │   ├── config.yaml
-│   │   ├── checkpoints/
-│   │   │   └── best_model.pth
-│   │   ├── logs/
-│   │   │   └── train_log.csv
-│   │   └── results/
-│   │       ├── val_metrics.json
-│   │       ├── test_metrics.json       # Tuần 4
-│   │       └── confusion_matrix.png
-│   ├── B1_run01/
-│   ├── B2_run01/
-│   └── B3_run01/        # (Tùy chọn)
-└── data/
-    ├── raw/              # Ảnh gốc
-    ├── processed/        # Ảnh đã xử lý
-    └── splits/           # File CSV chia train/val/test
+└── experiments/         # Dự kiến từ Tuần 2, chưa tạo trong W1
+    ├── B0_run01/
+    │   ├── config.yaml
+    │   ├── checkpoints/
+    │   │   └── best_model.pth
+    │   ├── logs/
+    │   │   └── train_log.csv
+    │   └── results/
+    │       ├── val_metrics.json
+    │       ├── test_metrics.json       # Tuần 4
+    │       └── confusion_matrix.png
+    ├── B1_run01/
+    ├── B2_run01/
+    └── B3_run01/        # (Tùy chọn)
 ```
 
 ---
 
 ## Phụ lục A: Checklist trước khi chạy thí nghiệm
 
-- [ ] Môi trường đã kiểm tra bằng `check_environment.py` → GPU hoạt động
+- [ ] Cell môi trường trong notebook đã chạy; ghi đúng trạng thái CPU/GPU thực tế
 - [ ] Random seed đã được cố định (`set_seed(42)`)
 - [ ] `config.yaml` đã được tạo và ghi nhận git commit hash
 - [ ] Data splits đã được tạo (stratified) và lưu file CSV
 - [ ] Augmentation chỉ áp dụng trên Train
 - [ ] Tập Test **chưa** được nạp/xem xét
-- [ ] Module `metrics.py` đã được import và test thử
+- [ ] Cell metric trong notebook đã chạy test cho lớp vắng mặt và đầu vào sai
 - [ ] Đường dẫn lưu checkpoint + log đã tồn tại
 
 ---
