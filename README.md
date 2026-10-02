@@ -84,7 +84,7 @@ python -m venv .venv
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 ```
 
-### 3. Chạy notebook phát triển (TV3)
+### 3. Chạy notebook phát triển
 
 Mở `notebooks/crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google Colab rồi chạy tuần tự các cell.
 
