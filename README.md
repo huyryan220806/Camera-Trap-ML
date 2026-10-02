@@ -31,7 +31,7 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
 | `silver_pheasant` | Gà lôi trắng |
 | `eurasian_wild_pig` | Lợn rừng |
 
-## 📦 Dataset
+##  Dataset
 
 - **Tên**: SWG Camera Traps (Southeast Asia Wildlife Group)
 - **Nguồn**: [LILA BC](https://lila.science/datasets/swg-camera-traps)
@@ -41,7 +41,7 @@ Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho 
   - Tổng số loài: 121
   - Tổng số nhãn (bounding boxes): 133,837
 
-## 🗂️ Cấu trúc thư mục
+##  Cấu trúc thư mục
 
 ```
 Camera-Trap-ML/
@@ -57,7 +57,7 @@ Camera-Trap-ML/
 
 > **Lưu ý**: File dataset `swg_camera_traps.bounding_boxes.with_species.json` (~72.5 MB) không được commit vào repo. Tải về từ [LILA BC](https://lila.science/datasets/swg-camera-traps) và đặt cùng thư mục với notebook trước khi chạy.
 
-## 🚀 Cách chạy
+##  Cách chạy
 
 ### 1. Cài đặt thư viện
 
@@ -90,7 +90,7 @@ Mở `notebooks/crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google 
 
 > **Lưu ý**: Notebook tải ảnh trực tiếp từ Google Cloud Storage, cần kết nối Internet. Sử dụng GPU (T4) trên Google Colab để xử lý nhanh hơn.
 
-## 📊 Kết quả kiểm tra chất lượng dữ liệu ban đầu
+##  Kết quả kiểm tra chất lượng dữ liệu ban đầu
 
 | Loại lỗi | Số lượng |
 |---|---|
@@ -109,7 +109,7 @@ Mở `notebooks/crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google 
 - ImageHash
 - Requests
 
-## 👤 Nhóm tác giả & Bàn giao (W1)
+##  Nhóm tác giả & Bàn giao (W1)
 
 **Môn học**: Học máy và ứng dụng - Trường Đại học Văn Lang (VLU)
 
