@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "attempts": 2000,
+  "min_sequences": 10,
+  "min_locations": 2,
+  "pilot_images_per_class": 500,
+  "classes": [
+    "large_antlered_muntjac",
+    "annamite_striped_rabbit",
+    "sambar",
+    "chinese_serow",
+    "common_palm_civet",
+    "masked_palm_civet",
+    "silver_pheasant",
+    "eurasian_wild_pig"
+  ],
+  "selection_note": "Research subset proposed from eligible box support and spatial coverage. Conservation status is not inferred from sample counts and requires a separate authoritative taxonomy/conservation review.",
+  "policy": "public, non-corrupt metadata; one normalized candidate image label; at least one valid box; all boxes valid and agree with the image label; nonempty sequence and location; group by location",
+  "scope": "SWG Vietnam and Lao, matching the transboundary Annamites study scope"
+}

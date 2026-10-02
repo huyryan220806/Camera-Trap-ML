@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CameraTrapML per-image inference result v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "image", "pipeline", "status", "needs_review", "detections", "error", "elapsed_ms"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "image": {
+      "type": "object", "additionalProperties": false,
+      "required": ["image_id", "file_name", "width", "height"],
+      "properties": {
+        "image_id": {"type": ["string", "null"]},
+        "file_name": {"type": "string", "minLength": 1},
+        "width": {"type": ["integer", "null"], "minimum": 1},
+        "height": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "pipeline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "detector_id", "classifier_id", "class_map_version", "detector_threshold", "review_threshold"],
+      "properties": {
+        "mode": {"enum": ["mock", "inference"]},
+        "detector_id": {"type": "string", "minLength": 1},
+        "classifier_id": {"type": "string", "minLength": 1},
+        "class_map_version": {"const": "swg-v1"},
+        "detector_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "review_threshold": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "status": {"enum": ["ok", "needs_review", "no_detection", "error"]},
+    "needs_review": {"type": "boolean"},
+    "detections": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["detection_id", "bbox_xywh", "detector_score", "top_k"],
+        "properties": {
+          "detection_id": {"type": "string", "minLength": 1},
+          "bbox_xywh": {
+            "type": "array", "minItems": 4, "maxItems": 4,
+            "prefixItems": [
+              {"type": "number", "minimum": 0},
+              {"type": "number", "minimum": 0},
+              {"type": "number", "exclusiveMinimum": 0},
+              {"type": "number", "exclusiveMinimum": 0}
+            ], "items": false
+          },
+          "detector_score": {"type": "number", "minimum": 0, "maximum": 1},
+          "top_k": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["class_id", "label", "score"],
+              "properties": {
+                "class_id": {"type": "integer", "minimum": 0},
+                "label": {"type": "string", "minLength": 1},
+                "score": {"type": "number", "minimum": 0, "maximum": 1}
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": false,
+         "required": ["stage", "code", "message"],
+         "properties": {
+           "stage": {"enum": ["read", "detect", "classify"]},
+           "code": {"enum": ["FILE_NOT_FOUND", "IMAGE_DECODE_ERROR", "UNSUPPORTED_FORMAT", "DETECTOR_FAILED", "CLASSIFIER_FAILED"]},
+           "message": {"type": "string", "minLength": 1}
+         }}
+      ]
+    },
+    "elapsed_ms": {"type": "number", "minimum": 0}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "error"}}},
+      "then": {"properties": {"error": {"type": "object"}, "detections": {"maxItems": 0}, "needs_review": {"const": true}}},
+      "else": {"properties": {"error": {"type": "null"}, "image": {"properties": {"width": {"type": "integer"}, "height": {"type": "integer"}}}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "no_detection"}}},
+      "then": {"properties": {"detections": {"maxItems": 0}, "needs_review": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["ok", "needs_review"]}}},
+      "then": {"properties": {"detections": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "ok"}}},
+      "then": {"properties": {"needs_review": {"const": false}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "needs_review"}}},
+      "then": {"properties": {"needs_review": {"const": true}}}
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "mock-005",
+  "image": {"image_id": null, "file_name": "example_broken.jpg", "width": null, "height": null},
+  "pipeline": {"mode": "mock", "detector_id": "mock-detector", "classifier_id": "mock-classifier", "class_map_version": "swg-v1", "detector_threshold": 0.5, "review_threshold": 0.7},
+  "status": "error",
+  "needs_review": true,
+  "detections": [],
+  "error": {"stage": "read", "code": "IMAGE_DECODE_ERROR", "message": "Cannot decode the image."},
+  "elapsed_ms": 0
+}

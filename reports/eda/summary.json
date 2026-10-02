@@ -1,0 +1,96 @@
+{
+  "images_metadata": 2039657,
+  "sequences_metadata": 436617,
+  "locations_metadata": 982,
+  "categories_raw": 120,
+  "categories_normalized": 119,
+  "annotations": 2056006,
+  "public_images": 1858303,
+  "private_images": 181354,
+  "corrupt_images": 1749,
+  "public_usable_candidate_images": 760764,
+  "public_usable_boxed_candidate_images": 55610,
+  "box_annotations": 133837,
+  "valid_boxes": 101384,
+  "valid_box_images": 87921,
+  "duplicate_file_paths": 0,
+  "sequences_spanning_locations": 0,
+  "annotations_missing_image": 0,
+  "annotations_unknown_category": 0,
+  "images_without_label": 0,
+  "multi_label_images": 12390,
+  "sequence_level_annotations": 2056006,
+  "box_source_images": 120321,
+  "box_validation": {
+    "valid": 101384,
+    "no_bbox": 32178,
+    "outside_or_nonpositive_bbox": 275
+  },
+  "box_image_metadata_mismatches": 0,
+  "box_images_missing_main": 0,
+  "ingest_complete": true,
+  "country_counts": [
+    {
+      "country": "lao",
+      "is_public": 0,
+      "images": 157635,
+      "locations": 802
+    },
+    {
+      "country": "lao",
+      "is_public": 1,
+      "images": 1388412,
+      "locations": 756
+    },
+    {
+      "country": "vietnam",
+      "is_public": 0,
+      "images": 23719,
+      "locations": 172
+    },
+    {
+      "country": "vietnam",
+      "is_public": 1,
+      "images": 469891,
+      "locations": 179
+    }
+  ],
+  "year_counts": [
+    {
+      "year": "2011",
+      "images": 235
+    },
+    {
+      "year": "2012",
+      "images": 310
+    },
+    {
+      "year": "2015",
+      "images": 5585
+    },
+    {
+      "year": "2016",
+      "images": 3645
+    },
+    {
+      "year": "2017",
+      "images": 76216
+    },
+    {
+      "year": "2018",
+      "images": 782456
+    },
+    {
+      "year": "2019",
+      "images": 605646
+    },
+    {
+      "year": "2020",
+      "images": 565562
+    },
+    {
+      "year": "None",
+      "images": 2
+    }
+  ]
+}

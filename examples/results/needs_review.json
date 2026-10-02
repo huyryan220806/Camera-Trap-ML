@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "mock-002",
+  "image": {"image_id": null, "file_name": "example_uncertain.jpg", "width": 1920, "height": 1080},
+  "pipeline": {"mode": "mock", "detector_id": "mock-detector", "classifier_id": "mock-classifier", "class_map_version": "swg-v1", "detector_threshold": 0.5, "review_threshold": 0.7},
+  "status": "needs_review",
+  "needs_review": true,
+  "detections": [
+    {"detection_id": "d1", "bbox_xywh": [100, 300, 550, 400], "detector_score": 0.82,
+     "top_k": [{"class_id": 4, "label": "common_palm_civet", "score": 0.46}, {"class_id": 5, "label": "masked_palm_civet", "score": 0.41}, {"class_id": 1, "label": "annamite_striped_rabbit", "score": 0.08}]}
+  ],
+  "error": null,
+  "elapsed_ms": 0
+}
