@@ -21,6 +21,21 @@ Sau khi cài `requirements.txt`, kiểm tra bộ bàn giao mà không cần tả
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 ```
 
+## Bàn giao tuần 1 của thành viên 2
+
+- [Notebook kiểm tra môi trường và evaluation](notebooks/TV2_baseline_evaluation.ipynb)
+- [Module metric dùng class map đầy đủ](src/evaluation/metrics.py)
+- [Giao thức thí nghiệm](docs/experiment_protocol.md)
+- [Hướng dẫn bàn giao TV2](docs/handoff_tv2_w1.md)
+- [Báo cáo môi trường](reports/tv2/environment_report.txt)
+- [Confusion matrix demo synthetic](reports/tv2/demo_confusion_matrix.png)
+
+Notebook TV2 tự kiểm tra CPU/GPU bằng PyTorch và chỉ dùng dữ liệu synthetic cố định để xác minh pipeline. Các file trong `reports/tv2` không phải kết quả huấn luyện mô hình thật. Chạy notebook từ kernel mới bằng:
+
+```powershell
+.venv/Scripts/python.exe -m jupyter nbconvert --to notebook --execute --inplace notebooks/TV2_baseline_evaluation.ipynb --ExecutePreprocessor.timeout=120
+```
+
 ## Bàn giao tuần 1 của thành viên 1
 
 - **Báo cáo EDA:** [reports/eda/EDA_member1.md](reports/eda/EDA_member1.md)
