@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-10-03T12:00:01+00:00",
+  "metadata_scan": {
+    "scope": "all box annotations in the raw box metadata file",
+    "images": 120321,
+    "corrupt_images": 0,
+    "annotations": 133837,
+    "valid_boxes": 101384,
+    "missing_bbox_records": 32178,
+    "geometry_errors": 275,
+    "status_counts": {
+      "no_bbox": 32178,
+      "outside_or_nonpositive_bbox": 275,
+      "valid": 101384
+    }
+  },
+  "sample_download": {
+    "per_species": {
+      "large_antlered_muntjac": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "annamite_striped_rabbit": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "sambar": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "chinese_serow": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "common_palm_civet": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "masked_palm_civet": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "silver_pheasant": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      },
+      "eurasian_wild_pig": {
+        "selected": 10,
+        "saved": 10,
+        "failed": 0
+      }
+    },
+    "selected": 80,
+    "saved": 80,
+    "download_failed": 0,
+    "decode_failed": 0,
+    "duplicate_bytes_in_sample": 0,
+    "errors": []
+  },
+  "limitations": [
+    "SHA-256 chỉ so trùng byte giữa các ảnh mẫu đã tải trong lần chạy này; không kết luận toàn dataset hay các split sạch trùng nội dung.",
+    "Thống kê metadata_scan bao phủ toàn bộ file box gốc; phần mẫu ảnh chỉ thuộc train manifest của 8 lớp."
+  ]
+}

@@ -1,79 +1,50 @@
-#  Camera Trap Wildlife Crop Classifier
+# CameraTrapML
 
-Dự án phân tích và phân loại động vật hoang dã từ ảnh bẫy camera (camera trap) sử dụng dataset **SWG Camera Traps** (Southeast Asia Wildlife Group) từ LILA BC.
+Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
-##  Mô tả
+## Bàn giao tuần 1 của thành viên 4
 
-Notebook này thực hiện pipeline tiền xử lý dữ liệu ban đầu cho bài toán phân loại động vật từ ảnh bẫy camera, bao gồm:
+- [Môi trường và kiểm tra cài đặt](docs/environment.md)
+- [Cấu trúc dự án và sơ đồ luồng](docs/architecture.md)
+- [Quy ước Git và kiểm tra chéo](CONTRIBUTING.md)
+- [Hợp đồng JSON và cách xử lý kết quả](docs/result_contract.md)
+- [Lịch dùng GPU chung](docs/gpu_schedule.md)
+- [Checklist nghiệm thu cho TV2](docs/handoff_tv4_w1.md)
 
-1. **Đọc & phân tích dữ liệu JSON** — Nạp metadata bounding box với nhãn loài, xây dựng các dictionary tra cứu nhanh theo `image_id`, `category_id`.
+Các JSON trong `examples/results` là **dữ liệu giả lập**, không phải kết quả của mô hình đã huấn luyện. Tuần 1 chốt giao diện dữ liệu; chưa có ứng dụng web hoặc mô hình suy luận chạy thật.
 
-2. **Kiểm tra chất lượng dữ liệu** — Phát hiện và phân loại các lỗi:
-   - Ảnh bị đánh dấu `corrupt`
-   - Bản ghi thiếu trường `bbox` (chỉ có nhãn cấp ảnh)
-   - Bounding box lỗi hình học (kích thước ≤ 0, tọa độ tràn mép ảnh)
-   - Ảnh chứa nhiều loài khác nhau
+Sau khi cài `requirements.txt`, kiểm tra bộ bàn giao mà không cần tải dữ liệu gốc hoặc GPU:
 
-3. **Trực quan hoá mẫu** — Tải ảnh từ Google Cloud Storage và vẽ bounding box kiểm tra tính đúng đắn của nhãn.
-
-4. **Lấy mẫu đa dạng theo địa điểm** — Chọn 10 ảnh hợp lệ / loài cho 8 loài mục tiêu, lấy xoay vòng từ các `location` độc lập để tối đa hoá sự đa dạng. Kiểm tra trùng lặp bằng SHA-256.
-
-##  8 Loài mục tiêu
-
-| Loài (tiếng Anh) | Loài (tiếng Việt) |
-|---|---|
-| `large_antlered_muntjac` | Mang lớn |
-| `annamite_striped_rabbit` | Thỏ vằn Trường Sơn |
-| `sambar` | Nai |
-| `chinese_serow` | Sơn dương |
-| `common_palm_civet` | Cầy vòi hương |
-| `masked_palm_civet` | Cầy vòi mốc |
-| `silver_pheasant` | Gà lôi trắng |
-| `eurasian_wild_pig` | Lợn rừng |
-
-##  Dataset
-
-- **Tên**: SWG Camera Traps (Southeast Asia Wildlife Group)
-- **Nguồn**: [LILA BC](https://lila.science/datasets/swg-camera-traps)
-- **File metadata**: `swg_camera_traps.bounding_boxes.with_species.json`
-- **Quy mô**:
-  - Tổng số ảnh: 120,321
-  - Tổng số loài: 121
-  - Tổng số nhãn (bounding boxes): 133,837
-
-##  Cấu trúc thư mục
-
-```
-Camera-Trap-ML/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-│   └── crop_classifier_eda.ipynb    # Notebook phân tích & tiền xử lý
-├── scripts/                         # Các file xử lý và thống kê (chuẩn bị dữ liệu)
-├── requirements.txt                 # Thư viện Python cần thiết
-└── README.md                        # Tài liệu dự án
+```powershell
+.venv/Scripts/python.exe scripts/check_environment.py
+.venv/Scripts/python.exe scripts/validate_results.py
+.venv/Scripts/python.exe -m unittest discover -s tests -v
 ```
 
-> **Lưu ý**: File dataset `swg_camera_traps.bounding_boxes.with_species.json` (~72.5 MB) không được commit vào repo. Tải về từ [LILA BC](https://lila.science/datasets/swg-camera-traps) và đặt cùng thư mục với notebook trước khi chạy.
+## Bàn giao tuần 1 của thành viên 1
 
-##  Cách chạy
+- **Báo cáo EDA:** [reports/eda/EDA_member1.md](reports/eda/EDA_member1.md)
+- **Notebook:** [notebooks/01_metadata_eda.ipynb](notebooks/01_metadata_eda.ipynb)
+- **Danh sách 8 lớp đề xuất:** [data/processed/v1/selected_classes.json](data/processed/v1/selected_classes.json)
+- **Manifest chính:** `data/processed/v1/manifest_v1.jsonl` gồm 31.589 ảnh đủ điều kiện so sánh toàn ảnh/vùng cắt.
+- **Manifest thử:** `data/processed/v1/pilot_v1.jsonl` gồm 4.000 ảnh, giữ nguyên split của manifest chính.
+- **Seed và kiểm tra rò rỉ:** `configs/split_v1.json`, `data/processed/v1/provenance.json`, `data/processed/v1/audit.json`.
 
-### 1. Cài đặt thư viện
+Đây là kết quả xử lý **metadata**. Chưa tải ảnh, xác minh URL, kiểm tra ảnh lỗi thực tế, kiểm tra hash nội dung hay xác nhận chất lượng box bằng mắt. Danh sách lớp là đề xuất nghiên cứu; chưa xác nhận tình trạng bảo tồn của từng loài.
 
-```bash
-pip install -r requirements.txt
-```
+## Cách giải thích phần việc của TV1
 
-### 2. Chuẩn bị dữ liệu
+1. **Ảnh:** một file ảnh. **Chuỗi:** nhiều ảnh của một lần kích hoạt camera. **Địa điểm:** vị trí đặt camera. **Box:** một vùng đối tượng trong ảnh; một ảnh có thể có nhiều box.
+2. Đọc và đếm metadata trước. Không lấy số ảnh làm số cá thể, không coi mọi annotation là một box.
+3. Giữ dấu vết nhãn gốc, đánh dấu nhãn không dùng được và chuẩn hóa cách viết cùng nhãn.
+4. Chọn lớp theo số ảnh, số chuỗi và số địa điểm; kiểm tra riêng lượng ảnh có box vì nhóm cần so sánh B1/B2.
+5. Chia theo địa điểm để ảnh cùng bối cảnh không xuất hiện cả trong train lẫn test. Seed làm kết quả có thể lặp lại, nhưng seed không tự ngăn rò rỉ.
+6. Bàn giao manifest cố định cho TV2 và TV3. Không để mỗi người tự chia ngẫu nhiên ảnh.
 
-Tải file metadata từ LILA BC và đặt vào cùng thư mục với notebook:
+## Chạy lại trên Windows
 
-```
-swg_camera_traps.bounding_boxes.with_species.json
-```
+Yêu cầu Python 3.12 và kết nối mạng ở bước tải metadata. Không cần GPU cho phần tuần 1. Metadata nén khoảng 68 MB; cơ sở dữ liệu và báo cáo cần thêm dung lượng đĩa. Dữ liệu JSON được đọc tuần tự để tránh nạp toàn bộ vào RAM.
 
-Các bước xử lý môi trường dự án bằng các scripts chuẩn hóa:
 ```powershell
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements.txt
@@ -84,49 +55,53 @@ python -m venv .venv
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 ```
 
-### 3. Chạy notebook phát triển
+Lần chạy hiện tại đã hoàn tất. Nếu cơ sở dữ liệu đã tồn tại, dùng `scripts/prepare_swg.py --stats` để đọc lại và xuất thống kê. Không chạy ingest đè lên dữ liệu đang có. Nếu ingest bị gián đoạn, đổi tên cơ sở dữ liệu chưa hoàn chỉnh trước khi chạy lại.
 
-Mở `notebooks/crop_classifier_eda.ipynb` trong Jupyter Notebook hoặc Google Colab rồi chạy tuần tự các cell.
+Manifest v1 không bị ghi đè. Để kiểm tra tái lập hoặc tạo phiên bản mới:
 
-> **Lưu ý**: Notebook tải ảnh trực tiếp từ Google Cloud Storage, cần kết nối Internet. Sử dụng GPU (T4) trên Google Colab để xử lý nhanh hơn.
+```powershell
+.venv/Scripts/python.exe scripts/split_swg.py --output data/processed/repro_check
+```
 
-##  Kết quả kiểm tra chất lượng dữ liệu ban đầu
+Nếu đổi quy tắc chọn lớp, cấu hình hoặc seed, tạo thư mục v2 và lưu cấu hình tương ứng; không tự thay split sau khi đã đánh giá mô hình. Muốn mở notebook tương tác có thể chọn môi trường `.venv` trong VS Code/Jupyter; các script và báo cáo không phụ thuộc Jupyter.
 
-| Loại lỗi | Số lượng |
+## Quy ước manifest
+
+Mỗi dòng JSONL là **một ảnh**, gồm:
+
+| Trường | Ý nghĩa |
 |---|---|
-| Ảnh đánh dấu hỏng (`corrupt=True`) | 0 |
-| Bản ghi không có trường `bbox` | 32,178 |
-| Bounding box lỗi hình học | 205 |
-| Ảnh có từ 2 loài trở lên | 0 |
+| `image_id`, `file_name`, `url` | ID nguồn, đường dẫn và URL dự kiến để tải |
+| `seq_id`, `sequence_id` | Cùng một mã chuỗi nguồn; hai tên để tiện tích hợp |
+| `location`, `country`, `datetime` | Địa điểm, quốc gia theo đường dẫn và thời điểm trong metadata |
+| `label`, `class_id` | Nhãn chuẩn hóa và ID từ `class_map.json` |
+| `split` | `train`, `val` hoặc `test` |
+| `width`, `height` | Kích thước ảnh trong metadata |
+| `image_annotation_sequence_level` | Nhãn ảnh gốc có được gán ở cấp chuỗi hay không |
+| `boxes` | Danh sách box cấp ảnh, gồm annotation ID, nhãn và tọa độ pixel `[x,y,w,h]` |
 
-## 🔧 Công nghệ sử dụng
+Các file `train.jsonl`, `val.jsonl`, `test.jsonl` là tập con của manifest chính. Mọi crop của một ảnh phải kế thừa split ảnh gốc. Pilot chỉ dùng để thử pipeline; không dùng kết quả trên pilot test để chọn mô hình hay ngưỡng.
 
-- Python 3.x
-- Google Colab (GPU T4)
-- Pandas, NumPy
-- Pillow (PIL)
-- Matplotlib
-- ImageHash
-- Requests
+## Nguyên tắc chọn lớp và đánh giá
 
-##  Nhóm tác giả & Bàn giao (W1)
+Manifest chính dùng ảnh public, không bị đánh dấu corrupt, đủ thông tin, đúng một nhãn loài đã chọn và tất cả box hợp lệ đồng ý với nhãn đó. Vì tập ảnh có box được gán nhãn chọn lọc, cần ghi rõ kết quả trên tập này không đại diện ngẫu nhiên cho toàn bộ SWG.
 
-**Môn học**: Học máy và ứng dụng - Trường Đại học Văn Lang (VLU)
+Mục tiêu chia 70/15/15 theo địa điểm; dùng seed 42 và 2.000 hoán vị để giảm lệch tỷ lệ ảnh/chuỗi từng lớp. Không dùng độ chính xác mô hình để tìm split thuận lợi. Mỗi lớp có ít nhất 10 chuỗi và 2 địa điểm mỗi tập; đây là ngưỡng khả thi, không bảo đảm kết quả lớp ít mẫu có độ bất định thấp.
 
-### Bàn giao của TV1
-- **Báo cáo EDA:** `reports/eda/EDA_member1.md`
-- **Notebook:** `notebooks/01_metadata_eda.ipynb`
-- **Danh sách 8 lớp đề xuất:** `data/processed/v1/selected_classes.json`
-- **Manifest chính:** `data/processed/v1/manifest_v1.jsonl`
-- **Seed và kiểm tra rò rỉ:** `configs/split_v1.json`, `data/processed/v1/provenance.json`, `data/processed/v1/audit.json`.
+**Điểm cần nhớ:** toàn bộ annotation nhãn ảnh trong bản metadata tải về được đánh dấu ở cấp chuỗi. Box cấp ảnh là nguồn bổ sung quan trọng; vẫn phải kiểm tra trực quan mẫu ảnh trước khi nhóm huấn luyện chính thức.
 
-### Bàn giao của TV3
-- Notebook phát triển Crop Classifier EDA (`notebooks/crop_classifier_eda.ipynb`)
-- Tích hợp pipeline tiền xử lý chung của nhóm vào EDA.
+## Việc tiếp theo của TV1 và TV3
 
-## Nguồn tham khảo
+- Kiểm tra mẫu ảnh từ nhiều chuỗi và địa điểm của mỗi lớp, ưu tiên train/validation để khảo sát và phát triển.
+- Ghi ảnh thiếu, file lỗi, box sai vào biên bản; không sửa nhãn chỉ để tăng điểm mô hình.
+- Khi tải ảnh, kiểm tra SHA-256 và trùng nội dung gần giống. Nếu phát hiện rò rỉ thật, sửa ở phiên bản dữ liệu mới và ghi rõ nguyên nhân.
+- Đối chiếu tên khoa học và tình trạng bảo tồn bằng nguồn chuyên môn trước khi gọi các lớp là loài quý hiếm.
+
+## Nguồn
 
 SWG (2021): Northern and Central Annamites Camera Traps 2.0. IUCN SSC Asian Wild Cattle Specialist Group's Saola Working Group. Dataset.
 
 - [Trang SWG trên LILA](https://lila.science/datasets/swg-camera-traps)
 - [Quy ước COCO Camera Traps](https://github.com/agentmorris/MegaDetector/blob/main/megadetector/data_management/README.md#coco-camera-traps-format)
+
+Nguồn tải, thời điểm tải, ETag và SHA-256 nằm trong `data/raw/sources.json` và bản sao tại `data/processed/v1/provenance.json`.

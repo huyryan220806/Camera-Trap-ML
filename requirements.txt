@@ -1,17 +1,6 @@
-# Team standard requirements (Main)
 ijson==3.5.1
 numpy==2.5.3
 matplotlib==3.11.2
 jsonschema==4.26.0
-
-# TV3 specific requirements
-requests>=2.28.0
-Pillow>=9.0.0
-scipy>=1.9.0
-PyWavelets>=1.4.0
-ImageHash>=4.3.2
-
-# Optional: for running locally
-jupyter>=1.0.0
-notebook>=6.5.0
-ipykernel>=6.0.0
+requests==2.34.2
+Pillow==12.2.0

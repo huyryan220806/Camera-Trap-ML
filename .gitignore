@@ -13,13 +13,12 @@ data/processed/repro_check/
 .env
 .env.*
 !.env.example
-
-# Files from main
 outputs/
 runs/
 .ipynb_checkpoints/
 
-# Large dataset files (TV3)
-*.json
-*.zip
-bien_ban_loi_w1.json
+# TV3: source metadata archives copied outside data/raw/ (keep data out of Git)
+swg_camera_traps.*.zip
+swg_camera_traps.*.json
+# TV3: downloaded original images are data, not report artefacts
+reports/tv3/**/*_raw.jpg
