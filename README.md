@@ -32,6 +32,14 @@ Sau khi cài `requirements.txt`, kiểm tra bộ bàn giao mà không cần tả
 
 Đây là kết quả xử lý **metadata**. Chưa tải ảnh, xác minh URL, kiểm tra ảnh lỗi thực tế, kiểm tra hash nội dung hay xác nhận chất lượng box bằng mắt. Danh sách lớp là đề xuất nghiên cứu; chưa xác nhận tình trạng bảo tồn của từng loài.
 
+## Bàn giao tuần 1 của thành viên 3
+
+- **Hướng dẫn chạy và kết quả:** [docs/handoff_tv3_w1.md](docs/handoff_tv3_w1.md)
+- **Notebook:** [notebooks/crop_classifier_eda.ipynb](notebooks/crop_classifier_eda.ipynb), logic ở [scripts/tv3_crop_eda.py](scripts/tv3_crop_eda.py), test ở [tests/test_tv3_crop_eda.py](tests/test_tv3_crop_eda.py)
+- **Audit mẫu và biên bản lỗi:** [reports/tv3/sampled_audit.json](reports/tv3/sampled_audit.json), [reports/tv3/bien_ban_loi_w1.json](reports/tv3/bien_ban_loi_w1.json)
+
+Toàn bộ 133.837 annotation trong file box metadata gốc, kiểm tra bằng `valid_bbox` của TV1: **101.384 box hợp lệ, 32.178 thiếu bbox, 275 lỗi hình học**. 80 ảnh mẫu (10/lớp) chỉ lấy từ train manifest, seed 42; ảnh gốc tải về không đưa vào Git.
+
 ## Cách giải thích phần việc của TV1
 
 1. **Ảnh:** một file ảnh. **Chuỗi:** nhiều ảnh của một lần kích hoạt camera. **Địa điểm:** vị trí đặt camera. **Box:** một vùng đối tượng trong ảnh; một ảnh có thể có nhiều box.
