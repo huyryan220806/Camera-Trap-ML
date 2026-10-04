@@ -1,33 +1,56 @@
-# Bàn giao Tuần 1 - TV2 Baseline & Evaluation
+# Bàn giao tuần 1 – TV2 Baseline & Evaluation
 
-TV2 cung cấp evaluation pipeline dùng class map và manifest v1 của TV1. Phần bàn giao này không huấn luyện model Tuần 2 và không đọc tập Test.
+**Công việc:** W1-02, xây khung đánh giá và kiểm tra môi trường học máy.
 
-## Thành phần
+**Người kiểm tra:** TV3.
 
-- `notebooks/TV2_baseline_evaluation.ipynb`: kiểm tra PyTorch/CPU/GPU và demo evaluation bằng dữ liệu synthetic.
-- `src/evaluation/metrics.py`: metric, input validation và confusion matrix dùng đầy đủ class map.
-- `tests/test_evaluation.py`: test cho 8 class, missing class và input không hợp lệ.
-- `requirements-tv2.txt`: dependency bổ sung dành riêng cho notebook và metric TV2.
-- `docs/experiment_protocol.md`: giao thức thí nghiệm B0-B3 và quy tắc bảo vệ Test.
-- `reports/tv2/environment_report.txt`: kết quả phần cứng của lần chạy notebook gần nhất.
-- `reports/tv2/demo_confusion_matrix.png`: confusion matrix của demo synthetic, không phải kết quả model thật.
+**Nhánh tích hợp:** `feat/baseline` (tạo từ `main`).
 
-## Chạy kiểm tra
+Phần bàn giao tuần 1 gồm mã đánh giá, tài liệu và demo trên dữ liệu giả. Chưa huấn luyện mô hình B0–B3 và chưa đánh giá trên tập Test.
 
-Từ thư mục gốc repository:
+## Sản phẩm bàn giao
+
+| Tệp | Nội dung |
+|---|---|
+| [requirements-tv2.txt](../requirements-tv2.txt) | Thư viện bổ sung cho TV2; cài kèm `requirements.txt` chung qua dòng `-r`. |
+| [notebooks/TV2_baseline_evaluation.ipynb](../notebooks/TV2_baseline_evaluation.ipynb) | Kiểm tra thiết bị, đọc class map chung và chạy demo metric. |
+| [src/evaluation/metrics.py](../src/evaluation/metrics.py) | Hàm tính metric, xác thực đầu vào và vẽ confusion matrix. |
+| [tests/test_evaluation.py](../tests/test_evaluation.py) | Kiểm thử metric với đủ lớp, lớp vắng mặt và đầu vào sai. |
+| [docs/experiment_protocol.md](experiment_protocol.md) | Thiết kế B0–B3, chọn checkpoint, chia dữ liệu và bảo vệ tập Test. |
+| [reports/tv2/environment_report.txt](../reports/tv2/environment_report.txt) | Log Python, PyTorch và thiết bị của lần chạy notebook gần nhất. |
+| [reports/tv2/demo_confusion_matrix.png](../reports/tv2/demo_confusion_matrix.png) | Ma trận nhầm lẫn từ dữ liệu giả, không phải điểm số mô hình thật. |
+
+## Cách chạy lại để TV3 kiểm tra
+
+Chạy các lệnh sau tại thư mục gốc dự án. Với máy mới, tạo môi trường Python 3.12 trước; nếu đã có `.venv`, dùng lại môi trường đó.
 
 ```powershell
+python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements-tv2.txt
-.venv/Scripts/python.exe -m unittest discover -s tests -v
 .venv/Scripts/python.exe -m jupyter nbconvert --to notebook --execute --inplace notebooks/TV2_baseline_evaluation.ipynb --ExecutePreprocessor.timeout=120
+.venv/Scripts/python.exe -m unittest discover -s tests -v
+.venv/Scripts/python.exe scripts/check_environment.py
+.venv/Scripts/python.exe scripts/validate_results.py
+.venv/Scripts/python.exe scripts/validate_gpu_schedule.py
+git diff --check
 ```
 
-Notebook tự tìm root repository, đọc `data/processed/v1/class_map.json` và ghi report vào `reports/tv2/`. Kết luận CPU/GPU được tạo từ `torch.cuda.is_available()` trong chính lần chạy, không được viết sẵn.
+`requirements-tv2.txt` cài `requirements.txt` chung trước rồi thêm PyTorch, scikit-learn, seaborn và Jupyter. Nếu cần CUDA, chọn bản PyTorch tương thích với máy theo hướng dẫn chính thức trước khi chạy; chỉ kết luận GPU hoạt động khi notebook thực hiện phép tính CUDA thành công.
+
+Notebook tự tìm thư mục gốc, đọc [class map v1](../data/processed/v1/class_map.json) và ghi hai file trong `reports/tv2/`. Nếu thiếu class map, notebook phải báo lỗi; không dùng danh sách lớp demo thay thế. Lệnh `nbconvert --inplace` cập nhật output của notebook, vì vậy cần xem diff trước khi commit. Chạy `unittest` không thay thế việc chạy các assertion trong notebook.
 
 ## Quy ước đánh giá
 
-- Dùng Validation Macro-F1 để chọn checkpoint và early stopping.
-- Accuracy chỉ là metric tham khảo và được tính bằng `accuracy_score(y_true, y_pred)`.
-- Macro Precision, Macro Recall, Macro-F1, classification report và confusion matrix dùng cùng danh sách class ID đầy đủ từ class map.
-- B1 và B2 dùng chung danh sách ảnh đủ điều kiện và cùng manifest chia train/val/test theo location của TV1.
-- Không nạp, thống kê, trực quan hóa hoặc tune trên Test; chỉ đánh giá một lần sau khi khóa model ở Tuần 4.
+- Chọn checkpoint và early stopping bằng **Macro-F1 trên Validation**; Accuracy là metric tham khảo.
+- Macro-Precision, Macro-Recall, Macro-F1, báo cáo từng lớp và confusion matrix dùng đủ ID từ class map, kể cả lớp vắng mặt. Lớp vắng mặt nhận `0` theo `zero_division=0`; với map v1, confusion matrix có kích thước 8 × 8.
+- B1 (toàn ảnh) và B2 (vùng cắt) dùng cùng danh sách ảnh đủ điều kiện và cùng manifest chia theo địa điểm của TV1.
+- Cố định seed `42` cho các lần huấn luyện ở tuần sau và ghi cấu hình, commit, checkpoint cùng log của từng thí nghiệm.
+- Không nạp, thống kê, trực quan hóa hoặc dùng Test để điều chỉnh mô hình. Chỉ đánh giá Test một lần sau khi khóa mô hình ở tuần 4.
+
+## Checklist gửi lại TV3
+
+- [ ] Notebook chạy hết trên kernel mới với class map chung; mọi assertion đạt.
+- [ ] Log CPU/GPU được sinh từ lần chạy thực tế; hình vẫn ghi rõ dữ liệu giả.
+- [ ] Unit test và các script kiểm tra chung đạt; `git diff --check` sạch.
+- [ ] `README.md` chung liên kết tới tài liệu này và không mất phần TV1/TV4.
+- [ ] Gửi commit, link nhánh/PR, các lệnh đã chạy và kết quả cho TV3.
