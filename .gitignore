@@ -16,3 +16,9 @@ data/processed/repro_check/
 outputs/
 runs/
 .ipynb_checkpoints/
+
+# TV3: source metadata archives copied outside data/raw/ (keep data out of Git)
+swg_camera_traps.*.zip
+swg_camera_traps.*.json
+# TV3: downloaded original images are data, not report artefacts
+reports/tv3/**/*_raw.jpg

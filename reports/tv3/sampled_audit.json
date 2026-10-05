@@ -1,0 +1,1213 @@
+{
+  "generated_at": "2026-10-03T12:00:01+00:00",
+  "seed": 42,
+  "manifest": {
+    "path": "data/processed/v1/train.jsonl",
+    "sha256": "c2473cd111ad5c0287d134137a04ee1fa6d0bb5722c8905e38e4629aa69032d8",
+    "git_commit": "9d5eb1a77967817b3c38be31a720c4b6dedf6426",
+    "records": 22073
+  },
+  "method": "Train-only; round-robin over shuffled locations per species; random.Random(f\"{seed}:{species}\")",
+  "samples": [
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "c86053f5-8c29-11eb-b7e3-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0036",
+      "sequence_id": "ee73d6e1-8c29-11eb-a674-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0036/2017/12/image_00045.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/01_c86053f5_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/01_c86053f5_bbox.jpg"
+      },
+      "sha256": "784c02133fa6bebe9a4c31db5ceff0ab3c634b20a8f54a790b14c9208d0f10f4"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "d1035d88-8c29-11eb-930c-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0241",
+      "sequence_id": "133a9def-8c2a-11eb-962e-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0241/2018/11/image_00126.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/02_d1035d88_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/02_d1035d88_bbox.jpg"
+      },
+      "sha256": "5b22bcf0ce3f99e6cadaa983e501a4cc4b1cc3b4f2a50731e22de19a2ea61c10"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "d09f37ad-8c29-11eb-8339-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0210",
+      "sequence_id": "1025c12f-8c2a-11eb-aaf3-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0210/2018/12/image_00033.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/03_d09f37ad_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/03_d09f37ad_bbox.jpg"
+      },
+      "sha256": "f6d6a0f666768df451f251a2ae666febf33a8fa23e9f8aee911eeb56ebc47219"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "cb444e97-8c29-11eb-a737-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0455",
+      "sequence_id": "0c59908a-8c2a-11eb-b6e5-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0455/2020/05/image_00040.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/04_cb444e97_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/04_cb444e97_bbox.jpg"
+      },
+      "sha256": "3d800369ad775f00f65a19948ac875dc8304c98b72950cf4145f9e8da97fad26"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "cf1109db-8c29-11eb-8f0a-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0289",
+      "sequence_id": "1563c1d3-8c2a-11eb-b643-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0289/2019/08/image_00098.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/05_cf1109db_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/05_cf1109db_bbox.jpg"
+      },
+      "sha256": "0bea8cdbcd4e16677c83feaa85308555a349b53abd3d53390f50d215db59d05a"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "ca49f776-8c29-11eb-9c15-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0380",
+      "sequence_id": "031a0e32-8c2a-11eb-b69d-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0380/2020/06/image_00112.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/06_ca49f776_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/06_ca49f776_bbox.jpg"
+      },
+      "sha256": "9968c8da417740f65bc62849d444a0eae17cdb9f81fbd481591649a92d9a63af"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "ce41a61a-8c29-11eb-8017-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0195",
+      "sequence_id": "04ce5ac2-8c2a-11eb-981b-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0195/2018/10/image_00055.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/07_ce41a61a_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/07_ce41a61a_bbox.jpg"
+      },
+      "sha256": "083f3df186eb25580e689506dd9e5b49ba7c4f1c4efd0f949027eda0a7a988e6"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "d1bfb217-8c29-11eb-b1fe-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0269",
+      "sequence_id": "2378ad3d-8c2a-11eb-b0c0-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0269/2018/11/image_00057.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/08_d1bfb217_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/08_d1bfb217_bbox.jpg"
+      },
+      "sha256": "cd0dbc14ca7b9712da7db718ce02ede97256dd9e6b1815ef918943f58adf9574"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "c872ca71-8c29-11eb-8819-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0043",
+      "sequence_id": "13206962-8c2a-11eb-8bca-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0043/2018/02/image_00061.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/09_c872ca71_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/09_c872ca71_bbox.jpg"
+      },
+      "sha256": "d9410f66b471549e4688d6e885831cc3220bb27395d3332eaa8506e3482418aa"
+    },
+    {
+      "species": "large_antlered_muntjac",
+      "image_id": "c8f76623-8c29-11eb-ac02-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0089",
+      "sequence_id": "3cd8e94c-8c2a-11eb-b492-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0089/2018/03/image_00041.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/large_antlered_muntjac/10_c8f76623_raw.jpg",
+        "bbox": "reports/tv3/large_antlered_muntjac/10_c8f76623_bbox.jpg"
+      },
+      "sha256": "8bd2f6200e227efcd7e0651891c5893cf22e9f58dcfa904ea429a54f4f11c707"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "cc0ef60f-8c29-11eb-b336-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0507",
+      "sequence_id": "185c51ab-8c2a-11eb-9ee9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0507/2020/07/image_00023.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/01_cc0ef60f_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/01_cc0ef60f_bbox.jpg"
+      },
+      "sha256": "93ea4f7b476af75eaa64f6ce6edf889702ad07d9e1c14a7fbde481ff957f1d14"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "cf0d6076-8c29-11eb-8a2c-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0288",
+      "sequence_id": "f2324aab-8c29-11eb-b33e-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0288/2019/08/image_00006.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/02_cf0d6076_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/02_cf0d6076_bbox.jpg"
+      },
+      "sha256": "c1cb6b41ae6dcf3f4c138174cce788f26a661c01345ad7d6102398f7b3504580"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "d03fcd43-8c29-11eb-be16-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0175",
+      "sequence_id": "e01a126d-8c29-11eb-8d84-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0175/2018/10/image_00280.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/03_d03fcd43_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/03_d03fcd43_bbox.jpg"
+      },
+      "sha256": "caadd222b6570655a22ac33ab147ca2647cc8d4875eb91d99df3b558da78483b"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "d0554b11-8c29-11eb-bcee-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0183",
+      "sequence_id": "223954ca-8c2a-11eb-8999-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0183/2018/11/image_00043.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/04_d0554b11_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/04_d0554b11_bbox.jpg"
+      },
+      "sha256": "eb41f738320c364e14278261283d5fd4abca961559b050f52c5cb71ee7881f71"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "c86f4809-8c29-11eb-ab2b-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0041",
+      "sequence_id": "2e3a6ee4-8c2a-11eb-a48b-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0041/2018/01/image_00027.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/05_c86f4809_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/05_c86f4809_bbox.jpg"
+      },
+      "sha256": "f1c3c136139d7c2e456d021f9f6cb1d2bccfa52a35d3444014c6ecafcdc9699f"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "d0be3976-8c29-11eb-872e-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0224",
+      "sequence_id": "fc247d3e-8c29-11eb-b888-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0224/2019/02/image_00007.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/06_d0be3976_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/06_d0be3976_bbox.jpg"
+      },
+      "sha256": "6fd24b1d9cd13fe58c9d1732abb2a100a58500a3a3093f48976ea0f5f447c6c9"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "d1bfb1e0-8c29-11eb-8539-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0269",
+      "sequence_id": "2378ad64-8c2a-11eb-b4fb-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0269/2019/01/image_00005.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/07_d1bfb1e0_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/07_d1bfb1e0_bbox.jpg"
+      },
+      "sha256": "e566782eebe533e1ee3c10c64a238df6986b381dfb82fd5e86b5b4536b8cc6b6"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "ccfd6177-8c29-11eb-a835-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0554",
+      "sequence_id": "23f70ca0-8c2a-11eb-999e-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0554/2020/08/image_00002.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/08_ccfd6177_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/08_ccfd6177_bbox.jpg"
+      },
+      "sha256": "22b12b1f31a8e180b6052b6a08efbe2460c8c8b33b6235da97af44b08127ef92"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "cd1537d4-8c29-11eb-84d6-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0564",
+      "sequence_id": "2b41de20-8c2a-11eb-acb5-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0564/2020/04/image_00048.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/09_cd1537d4_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/09_cd1537d4_bbox.jpg"
+      },
+      "sha256": "68428cdc5990fd3ee830d0ddbad73e5afb011170675e3f86ccb6b72686bfba87"
+    },
+    {
+      "species": "annamite_striped_rabbit",
+      "image_id": "cb0d7798-8c29-11eb-842b-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0438",
+      "sequence_id": "209a783b-8c2a-11eb-91ed-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0438/2020/03/image_00006.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/annamite_striped_rabbit/10_cb0d7798_raw.jpg",
+        "bbox": "reports/tv3/annamite_striped_rabbit/10_cb0d7798_bbox.jpg"
+      },
+      "sha256": "575a9fabe0e20c108007abb00994791bc28220b5540e4601c4a391064219bc9b"
+    },
+    {
+      "species": "sambar",
+      "image_id": "ca4eb914-8c29-11eb-a315-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0382",
+      "sequence_id": "339ecf28-8c2a-11eb-8271-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0382/2020/03/image_00072.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/01_ca4eb914_raw.jpg",
+        "bbox": "reports/tv3/sambar/01_ca4eb914_bbox.jpg"
+      },
+      "sha256": "36794c58f33be4a4a8ee10dbbf68dbb205c504c4651d840b2aa38ca8f337e0aa"
+    },
+    {
+      "species": "sambar",
+      "image_id": "ce99dafc-8c29-11eb-b3bc-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0242",
+      "sequence_id": "0435c9fb-8c2a-11eb-ab49-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0242/2019/09/image_00201.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/02_ce99dafc_raw.jpg",
+        "bbox": "reports/tv3/sambar/02_ce99dafc_bbox.jpg"
+      },
+      "sha256": "9ba821bd9850b9d172d832861012b981c699eeefd5824955df8904e683789304"
+    },
+    {
+      "species": "sambar",
+      "image_id": "d1bd4e43-8c29-11eb-8ed1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0267",
+      "sequence_id": "f3b22473-8c29-11eb-b780-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0267/2018/11/image_00198.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/03_d1bd4e43_raw.jpg",
+        "bbox": "reports/tv3/sambar/03_d1bd4e43_bbox.jpg"
+      },
+      "sha256": "c8767270043bb84fd4213fc90fc0de864f54f2c321094098c790f9c424d51450"
+    },
+    {
+      "species": "sambar",
+      "image_id": "ceb67644-8c29-11eb-b7e6-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0262",
+      "sequence_id": "fcf65f3f-8c29-11eb-aaab-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0262/2019/08/image_00123.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/04_ceb67644_raw.jpg",
+        "bbox": "reports/tv3/sambar/04_ceb67644_bbox.jpg"
+      },
+      "sha256": "e0174c44e0db4fa09f15eab0a0d3631eb0909487ee18e6f4c5aae8d4933f18d4"
+    },
+    {
+      "species": "sambar",
+      "image_id": "d0a198ab-8c29-11eb-b9a6-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0210",
+      "sequence_id": "1025c12b-8c2a-11eb-b9d6-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0210/2018/12/image_00157.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/05_d0a198ab_raw.jpg",
+        "bbox": "reports/tv3/sambar/05_d0a198ab_bbox.jpg"
+      },
+      "sha256": "607643ceabe92cbac1ebe4fff81d1cd7ce95f0ea5ad609421f9668572f715024"
+    },
+    {
+      "species": "sambar",
+      "image_id": "d0fe98f0-8c29-11eb-9730-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0240",
+      "sequence_id": "2bf713a5-8c2a-11eb-95b1-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0240/2018/12/image_00393.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/06_d0fe98f0_raw.jpg",
+        "bbox": "reports/tv3/sambar/06_d0fe98f0_bbox.jpg"
+      },
+      "sha256": "43603196739ec49b1e6e34ec49c9f2c3cb444ec4faa1387db706a63208758c74"
+    },
+    {
+      "species": "sambar",
+      "image_id": "d0df96a2-8c29-11eb-9fa7-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0232",
+      "sequence_id": "28bbc2a9-8c2a-11eb-9ddc-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0232/2019/03/image_00398.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/07_d0df96a2_raw.jpg",
+        "bbox": "reports/tv3/sambar/07_d0df96a2_bbox.jpg"
+      },
+      "sha256": "e11f63b9211ad5cacae545f217f7b52e8e2b64a6274e2d4b73260ce9334f94bd"
+    },
+    {
+      "species": "sambar",
+      "image_id": "d020dd62-8c29-11eb-b5b1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0160",
+      "sequence_id": "e70b6482-8c29-11eb-abd9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0160/2019/01/image_01088.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/08_d020dd62_raw.jpg",
+        "bbox": "reports/tv3/sambar/08_d020dd62_bbox.jpg"
+      },
+      "sha256": "41fe12cb41cf98910fd090735ec8c3f247e69b643cc82499e39cd0ef4f043e1d"
+    },
+    {
+      "species": "sambar",
+      "image_id": "ca833dce-8c29-11eb-bd84-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0399",
+      "sequence_id": "33eb1ccd-8c2a-11eb-a0c8-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0399/2020/05/image_00144.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/09_ca833dce_raw.jpg",
+        "bbox": "reports/tv3/sambar/09_ca833dce_bbox.jpg"
+      },
+      "sha256": "4e2e9c8e1261fa23fad3995c58560c7a6dc322c034fbdaae0f432ff75172c5af"
+    },
+    {
+      "species": "sambar",
+      "image_id": "c7e5376c-8c29-11eb-9580-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0004",
+      "sequence_id": "f4c91834-8c29-11eb-abaf-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0004/2017/09/image_00005.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/sambar/10_c7e5376c_raw.jpg",
+        "bbox": "reports/tv3/sambar/10_c7e5376c_bbox.jpg"
+      },
+      "sha256": "c62bfbffa7ce0e9966732e70749a36984f33627cb25c07ab1210b0cfe2154dd1"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "cbf4c05f-8c29-11eb-aeae-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0497",
+      "sequence_id": "e033fbc9-8c29-11eb-8ae2-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0497/2020/07/image_00067.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/01_cbf4c05f_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/01_cbf4c05f_bbox.jpg"
+      },
+      "sha256": "ad09d97a52c2b9a34b2952734ca0587d8940a48913e5d93099366ad58a2c9cde"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d563e9f3-8c29-11eb-9925-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0665",
+      "sequence_id": "27cfb97c-8c2a-11eb-b67f-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0665/2019/03/image_00143.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/02_d563e9f3_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/02_d563e9f3_bbox.jpg"
+      },
+      "sha256": "39952ca4238279782e21c27ab48bfc795b31bf1e80bbf643328e161f5f7b2fa2"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "dc0579fb-8c29-11eb-84f1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0949",
+      "sequence_id": "e82685bd-8c29-11eb-89f6-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0949/2018/12/image_00037.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/03_dc0579fb_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/03_dc0579fb_bbox.jpg"
+      },
+      "sha256": "0813d1ba1261cca7f2e9d3647f709a90abcd56dd74d362eae02cd389f9ed1147"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "c918cd44-8c29-11eb-9853-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0308",
+      "sequence_id": "24f626af-8c2a-11eb-8db3-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0308/2020/06/image_00046.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/04_c918cd44_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/04_c918cd44_bbox.jpg"
+      },
+      "sha256": "bc88b73cd825933b116206282daa062a2db239d9e73bb343b943d8901c7d682a"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d5723c31-8c29-11eb-b0a2-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0695",
+      "sequence_id": "0e20fd30-8c2a-11eb-973a-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0695/2019/02/image_00001.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/05_d5723c31_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/05_d5723c31_bbox.jpg"
+      },
+      "sha256": "26f9a6696264ac06ff3240481ecaba3612ffdbf56ea1bec0a356ef07f3ddcac5"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d934b236-8c29-11eb-9eec-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0911",
+      "sequence_id": "15c7e34a-8c2a-11eb-8f0f-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0911/2018/03/image_00142.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/06_d934b236_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/06_d934b236_bbox.jpg"
+      },
+      "sha256": "65eba1e1ec74d08b8b51803974d4ceb833debdb2426a7c018b48a06c2fdc95bf"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "da42eac8-8c29-11eb-9276-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0927",
+      "sequence_id": "30ca16d5-8c2a-11eb-af5a-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0927/2018/02/image_00014.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/07_da42eac8_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/07_da42eac8_bbox.jpg"
+      },
+      "sha256": "11dee9bb4998e9bc9ff6c6056676cc8bfe4430ffe309af16cdf72346d5e8aef8"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d3b928c7-8c29-11eb-8cce-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0583",
+      "sequence_id": "2f706424-8c2a-11eb-9b19-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0583/2019/11/image_00074.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/08_d3b928c7_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/08_d3b928c7_bbox.jpg"
+      },
+      "sha256": "359641333586bc14489ab6033fc23d050a0cc4e9de43a4f9ebc39048dff5dd75"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d5b29f2f-8c29-11eb-8e98-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0773",
+      "sequence_id": "0e54d57f-8c2a-11eb-a1d7-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0773/2019/03/image_00001.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/09_d5b29f2f_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/09_d5b29f2f_bbox.jpg"
+      },
+      "sha256": "a3107220f1f2391c6c1cf7ea8d895e221f5111d6dc2c468ac9a8fc8c566330c0"
+    },
+    {
+      "species": "chinese_serow",
+      "image_id": "d105c156-8c29-11eb-be2f-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0242",
+      "sequence_id": "0435c918-8c2a-11eb-8942-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0242/2019/03/image_00039.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/chinese_serow/10_d105c156_raw.jpg",
+        "bbox": "reports/tv3/chinese_serow/10_d105c156_bbox.jpg"
+      },
+      "sha256": "6338fde7d439172b1834ebae5d6a4c334ca5adfcc6bf534ee844d254cc388b84"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "ce466912-8c29-11eb-99c9-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0198",
+      "sequence_id": "06f055cb-8c2a-11eb-8875-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0198/2018/08/image_00038.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/01_ce466912_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/01_ce466912_bbox.jpg"
+      },
+      "sha256": "11ca4ab6fe5ef94c56c936e553ad0d9da24bd44d145868e35a66b9e9d11a358d"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "d6af56dd-8c29-11eb-92f9-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0716",
+      "sequence_id": "2dd1857b-8c2a-11eb-a90a-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0716/2018/08/image_00017.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/02_d6af56dd_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/02_d6af56dd_bbox.jpg"
+      },
+      "sha256": "7a5aa6d2f81e9c158c52c1e6517353228d541d2907a371af10f527723311bbd0"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "cbd8249f-8c29-11eb-b7c6-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0488",
+      "sequence_id": "ecf190f5-8c29-11eb-85ae-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0488/2020/08/image_00006.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/03_cbd8249f_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/03_cbd8249f_bbox.jpg"
+      },
+      "sha256": "cf902a7ff389c404b1381a2bc3dda2c39362cabba1facc4d80585a1de752acae"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "cbbb8a13-8c29-11eb-9ce8-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0475",
+      "sequence_id": "eea847f9-8c29-11eb-9b80-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0475/2020/03/image_00005.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/04_cbbb8a13_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/04_cbbb8a13_bbox.jpg"
+      },
+      "sha256": "198cedcc5d2b980b96aece05f835ab32d1bacd04139a8847d1602d766b008df5"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "d0f50c8d-8c29-11eb-a4a4-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0239",
+      "sequence_id": "1b41cdaf-8c2a-11eb-94bc-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0239/2019/03/image_00058.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/05_d0f50c8d_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/05_d0f50c8d_bbox.jpg"
+      },
+      "sha256": "d13f9394b6b094089faf364cf974531f9aef24826a962decf33a4ccc2581a1d2"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "da728b1d-8c29-11eb-b0d1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0957",
+      "sequence_id": "24de4e51-8c2a-11eb-a065-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0957/2018/02/image_00010.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/06_da728b1d_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/06_da728b1d_bbox.jpg"
+      },
+      "sha256": "a7db050f90e5decb8539f4fa3beaf1cf1b2ad0dad2eb81a0b7a6f3d792e9db07"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "ccde64d1-8c29-11eb-9fa3-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0543",
+      "sequence_id": "1eaa6c56-8c2a-11eb-9097-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0543/2020/07/image_00004.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/07_ccde64d1_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/07_ccde64d1_bbox.jpg"
+      },
+      "sha256": "828ed540c53894d68d2326889a2717b8d7119ff0ce88296c1b060687da3eee3c"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "da28a84d-8c29-11eb-aee4-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0915",
+      "sequence_id": "e1a2db41-8c29-11eb-83e9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0915/2018/03/image_00000.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/08_da28a84d_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/08_da28a84d_bbox.jpg"
+      },
+      "sha256": "f47a51efa6aa7983d7db1019de9b14bdc5f30edc099cdfbc03bd57085f5884d6"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "d204d5a3-8c29-11eb-a41a-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0291",
+      "sequence_id": "063d851a-8c2a-11eb-a32b-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0291/2019/02/image_00000.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/09_d204d5a3_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/09_d204d5a3_bbox.jpg"
+      },
+      "sha256": "e4e0b642c3351bf934a867e275f2d8ea3ed7d41b58dc644594755091d68d79dc"
+    },
+    {
+      "species": "common_palm_civet",
+      "image_id": "dbdf53ba-8c29-11eb-a1ab-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0955",
+      "sequence_id": "ebed2921-8c29-11eb-a0c2-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0955/2018/10/image_00035.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/common_palm_civet/10_dbdf53ba_raw.jpg",
+        "bbox": "reports/tv3/common_palm_civet/10_dbdf53ba_bbox.jpg"
+      },
+      "sha256": "0f47c22806fa59151fc049284f02bc9c0c91c3e948cfc7cf6473c5226bb77c9c"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "cda1e34f-8c29-11eb-b601-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0148",
+      "sequence_id": "f05efb44-8c29-11eb-9075-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0148/2018/06/image_00204.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/01_cda1e34f_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/01_cda1e34f_bbox.jpg"
+      },
+      "sha256": "0923790f1acc01c4e31e838ac2240f7593537d5108fe8a1d641334a6e302037b"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "ce22a54d-8c29-11eb-8457-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0179",
+      "sequence_id": "fb8983b6-8c29-11eb-9082-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0179/2018/07/image_00112.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/02_ce22a54d_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/02_ce22a54d_bbox.jpg"
+      },
+      "sha256": "a5a6cfbbd1d6faaadae755958044e8cc0f020f4f976ed719d59bfe966bf0d44c"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "ca537e1b-8c29-11eb-85e0-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0383",
+      "sequence_id": "1c1860f4-8c2a-11eb-a324-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0383/2020/06/image_00255.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/03_ca537e1b_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/03_ca537e1b_bbox.jpg"
+      },
+      "sha256": "79954641a665ec478191584e6db5b3e2966fe8fc008a279812040a28d7228446"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "c9bd4fd6-8c29-11eb-8d70-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0351",
+      "sequence_id": "e6f03b76-8c29-11eb-92e3-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0351/2020/04/image_00165.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/04_c9bd4fd6_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/04_c9bd4fd6_bbox.jpg"
+      },
+      "sha256": "422888a4fd9c780655ec1fd3c201263765af3171251f1d8e80db48830a0a7e29"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "ca406dec-8c29-11eb-aec3-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0376",
+      "sequence_id": "0dee1bd4-8c2a-11eb-b3e4-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0376/2020/06/image_00224.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/05_ca406dec_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/05_ca406dec_bbox.jpg"
+      },
+      "sha256": "5c639dc7b883198168c223346b4b8420e1f8aed58ad50d3203b83a3f93e2dca1"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "ce11f595-8c29-11eb-a96f-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0169",
+      "sequence_id": "10f01c9f-8c2a-11eb-992f-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0169/2018/06/image_00070.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/06_ce11f595_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/06_ce11f595_bbox.jpg"
+      },
+      "sha256": "f495fa9c2525340496ef8e66f0c96561b911325117104fa892833544e6eccb41"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "cafa6686-8c29-11eb-ab13-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0432",
+      "sequence_id": "19de8f0d-8c2a-11eb-af10-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0432/2020/06/image_00012.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/07_cafa6686_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/07_cafa6686_bbox.jpg"
+      },
+      "sha256": "76cf465d0bbd20a69ef6e4ec4c69fb5f10bf98e67f0eaafa0b4def6c593594b9"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "dc352de3-8c29-11eb-9dd8-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0974",
+      "sequence_id": "0ab5f0e8-8c2a-11eb-900c-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0974/2019/05/image_00021.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/08_dc352de3_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/08_dc352de3_bbox.jpg"
+      },
+      "sha256": "0ccd6a8b49c02badffd8aec1b30e087940c220116e7f072d196bc75a1b5a8fce"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "d67fa8aa-8c29-11eb-a6e1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0675",
+      "sequence_id": "2544d586-8c2a-11eb-99b9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0675/2018/09/image_00012.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/09_d67fa8aa_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/09_d67fa8aa_bbox.jpg"
+      },
+      "sha256": "15e06980cdaedbb0b9b1658a7a002b7523c15bd3e9f4e7c837ed70d34e69e5c0"
+    },
+    {
+      "species": "masked_palm_civet",
+      "image_id": "d30fe001-8c29-11eb-80ac-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0606",
+      "sequence_id": "31166294-8c2a-11eb-959e-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0606/2019/07/image_00060.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/masked_palm_civet/10_d30fe001_raw.jpg",
+        "bbox": "reports/tv3/masked_palm_civet/10_d30fe001_bbox.jpg"
+      },
+      "sha256": "ffa5cf49f15c9d4e4e9411477807361711ce87e2605b09d4c9e063fae6fd3e84"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "d9d53149-8c29-11eb-8bbd-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0891",
+      "sequence_id": "feb18e4a-8c29-11eb-92d5-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0891/2019/03/image_00097.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/01_d9d53149_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/01_d9d53149_bbox.jpg"
+      },
+      "sha256": "02120d8ef01e8d7a71a12e6547d84f068ddb2a6ecd3b2d8d0b67ebdb78a38470"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "ca773ea2-8c29-11eb-99c4-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0394",
+      "sequence_id": "3a00311e-8c2a-11eb-b0ed-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0394/2020/05/image_00080.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/02_ca773ea2_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/02_ca773ea2_bbox.jpg"
+      },
+      "sha256": "60b9a24273fbc10adb14f5852493d7c5cafd6d32f9b68ef1546fefc5a5f4de6a"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "d268fb6e-8c29-11eb-b8bf-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0576",
+      "sequence_id": "ec080c70-8c29-11eb-a80e-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0576/2019/10/image_00780.jpg",
+      "n_boxes": 3,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/03_d268fb6e_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/03_d268fb6e_bbox.jpg"
+      },
+      "sha256": "bd424c8942033526da7f57b8bb2b5b0c31c43cfc73f699eae35812c9f0170148"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "c93c95e8-8c29-11eb-9d54-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0325",
+      "sequence_id": "34a00681-8c2a-11eb-b993-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0325/2020/04/image_00143.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/04_c93c95e8_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/04_c93c95e8_bbox.jpg"
+      },
+      "sha256": "8f391cbb5e26027d67a4aedd1ce20b7005e84a9a6c57d0935f22bb14c562fa8e"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "cf4f0d50-8c29-11eb-adb7-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0100",
+      "sequence_id": "f5961ffc-8c29-11eb-8ea1-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0100/2018/10/image_00065.jpg",
+      "n_boxes": 2,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/05_cf4f0d50_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/05_cf4f0d50_bbox.jpg"
+      },
+      "sha256": "4826ba7e5b15c26e0967c50a7e8035120e1b7bee19eb4c8a06072be2b245435e"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "d25d102c-8c29-11eb-b72d-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0574",
+      "sequence_id": "0898bbd6-8c2a-11eb-89db-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0574/2019/09/image_01087.jpg",
+      "n_boxes": 3,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/06_d25d102c_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/06_d25d102c_bbox.jpg"
+      },
+      "sha256": "27d41cd87c1b036795cc12a59fe5d8f77d8261f9b1fa3425b84a1d8dd36a790d"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "c7ff7493-8c29-11eb-90b7-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0013",
+      "sequence_id": "07e1239c-8c2a-11eb-a1dd-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0013/2017/09/image_00280.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/07_c7ff7493_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/07_c7ff7493_bbox.jpg"
+      },
+      "sha256": "79998e52ea72c4086d5419ff02d49a8f580ca14f1280fde8d8839ff630bb1097"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "ca073689-8c29-11eb-b2d7-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0363",
+      "sequence_id": "0b855d7a-8c2a-11eb-ac77-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0363/2020/07/image_00052.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/08_ca073689_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/08_ca073689_bbox.jpg"
+      },
+      "sha256": "471cfb1ea12365d7e3f0e871649a3388c1b23a288d357dfb77372b7cb9cdd2f7"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "cae75646-8c29-11eb-81da-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0424",
+      "sequence_id": "31e38041-8c2a-11eb-bba9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0424/2020/07/image_00153.jpg",
+      "n_boxes": 3,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/09_cae75646_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/09_cae75646_bbox.jpg"
+      },
+      "sha256": "19bc2d7d0c82fa76f0fcee35436f763b09b52d55602163718a801d07ef401d2f"
+    },
+    {
+      "species": "silver_pheasant",
+      "image_id": "d3a15d9d-8c29-11eb-89c1-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0580",
+      "sequence_id": "e120053c-8c29-11eb-b9a9-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0580/2020/02/image_00410.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/silver_pheasant/10_d3a15d9d_raw.jpg",
+        "bbox": "reports/tv3/silver_pheasant/10_d3a15d9d_bbox.jpg"
+      },
+      "sha256": "daeaf43fb8b4ce99c667928f7a89176ce4da3e4f035c276267a0f31d7a2649ea"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "c889c1c3-8c29-11eb-92aa-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0051",
+      "sequence_id": "e09f4109-8c29-11eb-a9ee-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0051/2018/03/image_01313.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/01_c889c1c3_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/01_c889c1c3_bbox.jpg"
+      },
+      "sha256": "696918e3b15fefa3d8b2da3ee9bdda4cb828605fa2203196db64f8cf4a062d91"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "cf1353f6-8c29-11eb-929e-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0289",
+      "sequence_id": "1563c223-8c2a-11eb-8aaa-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0289/2019/09/image_00167.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/02_cf1353f6_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/02_cf1353f6_bbox.jpg"
+      },
+      "sha256": "194a225f3c1b806592406140db80adc4ccaacb660c2219bded56cf4982af7d8c"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "d0639ae3-8c29-11eb-9a32-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0187",
+      "sequence_id": "f71d5442-8c29-11eb-893b-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0187/2019/01/image_00825.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/03_d0639ae3_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/03_d0639ae3_bbox.jpg"
+      },
+      "sha256": "a6325bc0d9048f272f259a3dcd303d7108a82b96f0c3904e3213fd7c4c4cfb48"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "d8044396-8c29-11eb-89ce-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0826",
+      "sequence_id": "33b909f6-8c2a-11eb-9da2-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0826/2019/11/image_00596.jpg",
+      "n_boxes": 2,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/04_d8044396_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/04_d8044396_bbox.jpg"
+      },
+      "sha256": "8dc6e2971ef80db7e607c7b70b79eb9328a216153c6750090de462b1cfbff226"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "d97f5c2c-8c29-11eb-945e-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0883",
+      "sequence_id": "2101008f-8c2a-11eb-bb10-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0883/2018/10/image_00066.jpg",
+      "n_boxes": 2,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/05_d97f5c2c_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/05_d97f5c2c_bbox.jpg"
+      },
+      "sha256": "ba54414d4ab1316ccff556cd8c071adfef6c2e5c4fa872d4ec199233c7d44271"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "c895ace8-8c29-11eb-bd82-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0061",
+      "sequence_id": "e9fd1ee5-8c29-11eb-91c3-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0061/2017/11/image_00027.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/06_c895ace8_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/06_c895ace8_bbox.jpg"
+      },
+      "sha256": "f171b789b02a4e46f6ec085f1e3b2f3fe65cfdae212f39cd5bf402c5d0f2e270"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "cd7e213e-8c29-11eb-a315-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0122",
+      "sequence_id": "1e75f85c-8c2a-11eb-ad52-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0122/2018/07/image_00109.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/07_cd7e213e_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/07_cd7e213e_bbox.jpg"
+      },
+      "sha256": "14d1676551b3620c05141546e14649ae591f2b00b6e6ad8df0ba2eccbe4aae89"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "cba60faa-8c29-11eb-8fd6-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0467",
+      "sequence_id": "fee39d0b-8c29-11eb-8903-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0467/2020/07/image_00112.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/08_cba60faa_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/08_cba60faa_bbox.jpg"
+      },
+      "sha256": "2767aaae5030569142df63bb6af447b03f7903729a16c677fb75aa2f1c4a5e29"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "c7d94b0b-8c29-11eb-a050-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0002",
+      "sequence_id": "e2270c27-8c29-11eb-83a3-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0002/2017/07/image_00124.jpg",
+      "n_boxes": 1,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/09_c7d94b0b_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/09_c7d94b0b_bbox.jpg"
+      },
+      "sha256": "c6a36d13306dfacceb2359bf1b0467ab10f575f3a6f5b51f99fa2f85e0238fcd"
+    },
+    {
+      "species": "eurasian_wild_pig",
+      "image_id": "d810302c-8c29-11eb-8013-000d3a74c7de",
+      "split": "train",
+      "location": "loc_0830",
+      "sequence_id": "1e903451-8c2a-11eb-88cb-000d3a74c7de",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0830/2020/05/image_00154.jpg",
+      "n_boxes": 5,
+      "status": "saved",
+      "files": {
+        "raw": "reports/tv3/eurasian_wild_pig/10_d810302c_raw.jpg",
+        "bbox": "reports/tv3/eurasian_wild_pig/10_d810302c_bbox.jpg"
+      },
+      "sha256": "9400c041bd9d75559cf5368d2aff191fc0a9ebeddc0230b47a51f1ab80dc8529"
+    }
+  ]
+}
