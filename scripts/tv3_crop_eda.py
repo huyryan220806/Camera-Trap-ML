@@ -146,7 +146,7 @@ def process_species(species, records, out_dir, fetch=fetch_image, seen_hashes=No
     out_dir.mkdir(parents=True, exist_ok=True)
     sample = sample_species(records, species, n=n, seed=seed)
     audit, errors = [], []
-    counts = Counter(selected=len(sample))
+    counts = Counter(selected=len(sample), saved=0, failed=0)
     fig, axes = plt.subplots(2, 5, figsize=(22, 8))
     axes = axes.flatten()
     for ax in axes:

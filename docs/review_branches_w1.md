@@ -1,5 +1,7 @@
 # Kiểm tra các nhánh tuần 1
 
+> Báo cáo lịch sử ngày 01/10. Các lỗi chặn dưới đây đã được kiểm tra lại và xử lý trong [kết quả tích hợp ngày 05/10](review_branches_w1_round3.md).
+
 Ngày kiểm tra: 2026-10-01. Người dùng yêu cầu kiểm tra tất cả nhánh thành viên
 và gộp các nhánh đủ điều kiện vào `main`. Đây là kiểm tra kỹ thuật bằng công cụ,
 không thay cho chữ ký nghiệm thu của TV2/TV3 trong các checklist phân công.

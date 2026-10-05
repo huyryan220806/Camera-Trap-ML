@@ -99,6 +99,28 @@ class DownloadFailureTests(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.tmp, ignore_errors=True)
 
+    def test_all_downloads_fail_returns_zero_saved(self):
+        def fail_fetch(url):
+            raise ConnectionError('simulated outage')
+
+        audit, errors, counts = eda.process_species(
+            'sambar', [record(i) for i in range(3)], self.tmp, fetch=fail_fetch
+        )
+        self.assertEqual(counts, {'selected': 3, 'saved': 0, 'failed': 3})
+        self.assertEqual(len(errors), 3)
+        self.assertTrue(all(r['status'] == 'download_failed' for r in audit))
+        self.assertEqual(list(self.tmp.glob('*_raw.jpg')), [])
+
+    def test_empty_selection_returns_all_zero_counts(self):
+        def unexpected_fetch(url):
+            self.fail('An empty selection must not download images')
+
+        audit, errors, counts = eda.process_species(
+            'sambar', [], self.tmp, fetch=unexpected_fetch
+        )
+        self.assertEqual((audit, errors), ([], []))
+        self.assertEqual(counts, {'selected': 0, 'saved': 0, 'failed': 0})
+
     def test_failed_downloads_are_logged_and_not_counted(self):
         from PIL import Image
         buf = io.BytesIO()

@@ -8,7 +8,7 @@ Nhánh: `feat/crop-classifier`. Phạm vi: kiểm tra metadata box và xem trự
 |---|---|
 | `notebooks/crop_classifier_eda.ipynb` | Notebook chạy toàn bộ phần EDA của TV3 (không lưu output trong notebook) |
 | `scripts/tv3_crop_eda.py` | Logic quét metadata, lấy mẫu, tải và vẽ ảnh; dùng `valid_bbox` từ `scripts/prepare_swg.py` (không giữ bản sao) |
-| `tests/test_tv3_crop_eda.py` | 11 test dùng dữ liệu tổng hợp, không tải ảnh, không dùng ảnh test |
+| `tests/test_tv3_crop_eda.py` | 13 test dùng dữ liệu tổng hợp, gồm tải thất bại toàn bộ và không có mẫu; không tải ảnh, không dùng ảnh test |
 | `reports/tv3/sampled_audit.json` | 80 ảnh mẫu: image ID, loài, split, location, sequence, URL, SHA-256, trạng thái; seed 42; SHA-256 và commit của train manifest |
 | `reports/tv3/bien_ban_loi_w1.json` | Thống kê box metadata, kết quả tải mẫu theo loài, danh sách lỗi và giới hạn |
 | `reports/tv3/<loài>/NN_<id>_bbox.jpg`, `grid_<loài>.png` | Hình minh họa box cho 8 lớp (10 ảnh/lớp + 1 lưới) |

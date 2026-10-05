@@ -21,7 +21,7 @@ Phần TV2 dùng `data/processed/v1/class_map.json` và manifest v1 của TV1. C
 
 Các JSON trong `examples/results` là **dữ liệu giả lập**, không phải kết quả của mô hình đã huấn luyện. Tuần 1 chốt giao diện dữ liệu; chưa có ứng dụng web hoặc mô hình suy luận chạy thật.
 
-Sau khi cài `requirements.txt`, kiểm tra bộ bàn giao mà không cần tải dữ liệu gốc hoặc GPU:
+Sau khi cài `requirements-tv2.txt` (bao gồm cả `requirements.txt` chung), kiểm tra toàn bộ phần bàn giao mà không cần tải dữ liệu gốc hoặc GPU:
 
 ```powershell
 .venv/Scripts/python.exe scripts/check_environment.py
@@ -63,7 +63,7 @@ Yêu cầu Python 3.12 và kết nối mạng ở bước tải metadata. Không
 
 ```powershell
 python -m venv .venv
-.venv/Scripts/python.exe -m pip install -r requirements.txt
+.venv/Scripts/python.exe -m pip install -r requirements-tv2.txt
 .venv/Scripts/python.exe scripts/download_metadata.py
 .venv/Scripts/python.exe scripts/prepare_swg.py
 .venv/Scripts/python.exe scripts/split_swg.py
