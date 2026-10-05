@@ -2,6 +2,14 @@
 
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
+## Bàn giao tuần 1 của thành viên 2
+
+- [Hướng dẫn bàn giao Baseline & Evaluation](docs/handoff_tv2_w1.md)
+- [Đề cương thí nghiệm B0–B3](docs/experiment_protocol.md)
+- [Notebook kiểm tra môi trường và metric](notebooks/TV2_baseline_evaluation.ipynb)
+
+Phần TV2 dùng `data/processed/v1/class_map.json` và manifest v1 của TV1. Cài các thư viện bổ sung bằng `requirements-tv2.txt`; notebook và hình confusion matrix hiện chỉ kiểm tra trên dữ liệu giả, chưa phải kết quả của mô hình đã huấn luyện.
+
 ## Bàn giao tuần 1 của thành viên 4
 
 - [Môi trường và kiểm tra cài đặt](docs/environment.md)

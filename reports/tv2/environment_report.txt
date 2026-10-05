@@ -1,0 +1,7 @@
+Python: 3.12.14
+Platform: Windows-11-10.0.26200-SP0
+PyTorch: 2.8.0+cpu
+CUDA available: False
+Compute device: CPU
+Device name: Intel64 Family 6 Model 186 Stepping 2, GenuineIntel
+256x256 matmul smoke test: PASS (1.707 ms)
