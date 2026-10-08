@@ -22,3 +22,9 @@ swg_camera_traps.*.zip
 swg_camera_traps.*.json
 # TV3: downloaded original images are data, not report artefacts
 reports/tv3/**/*_raw.jpg
+
+# TV3 W2: crop images are derived data (can be re-generated from manifest)
+# Only the manifest *.jsonl and error log *.json are tracked in Git
+data/crops/**/*.jpg
+data/crops/**/*.jpeg
+data/crops/**/*.png
