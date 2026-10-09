@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.data.b0_dataset import image_path, inspect_images  # noqa: E402
 from src.evaluation.metrics import load_class_map  # noqa: E402
+from src.training.run_artifacts import atomic_write_files, atomic_write_text, protect_run_directory  # noqa: E402
 
 
 def select_rows(manifest: Path, class_names: list[str], seed: int, per_class: dict[str, int]) -> dict[str, list[dict]]:
@@ -83,14 +84,14 @@ def main() -> None:
     parser.add_argument("--select-only", action="store_true")
     args = parser.parse_args()
     config = json.loads((ROOT / args.config).read_text(encoding="utf-8"))
+    run_dir = ROOT / "experiments" / config["experiment"]["id"]
+    protect_run_directory(run_dir, preparing=True)
     labels, class_names = load_class_map(ROOT / config["data"]["class_map"])
     if labels != list(range(len(labels))):
         raise ValueError("Class IDs must be contiguous from zero")
     selected = select_rows(ROOT / config["data"]["source_manifest"], class_names, config["experiment"]["seed"], {"train": config["data"]["train_per_class"], "val": config["data"]["val_per_class"]})
-    run_dir = ROOT / "experiments" / config["experiment"]["id"]
-    run_dir.mkdir(parents=True, exist_ok=True)
-    for split, rows in selected.items():
-        (run_dir / f"selected_{split}.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8")
+    run_dir.mkdir(parents=True, exist_ok=False)
+    atomic_write_files({run_dir / f"selected_{split}.jsonl": "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows).encode("utf-8") for split, rows in selected.items()})
     print(f"Selected {len(selected['train'])} train, {len(selected['val'])} validation images from TV1 pilot; no test images")
     if args.select_only:
         return
@@ -105,7 +106,7 @@ def main() -> None:
     outcomes.sort(key=lambda item: item["image_id"])
     status = dict(Counter(item["status"] for item in outcomes))
     report = {"source_manifest": config["data"]["source_manifest"], "seed": config["experiment"]["seed"], "selected_counts": {key: len(rows) for key, rows in selected.items()}, "status_counts": status, "images": outcomes}
-    (run_dir / "download_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    atomic_write_text(run_dir / "download_report.json", json.dumps(report, indent=2, ensure_ascii=False))
     print(f"Download status: {status}")
     if status.get("failed", 0):
         raise SystemExit(f"{status['failed']} selected images failed; see download_report.json")

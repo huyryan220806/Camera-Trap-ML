@@ -1,0 +1,237 @@
+{
+  "reviewed_commit": "8a48b86c7dfde00beba0fe21aea8394260cf9e56",
+  "branch": "feat/baseline",
+  "date": "2026-10-09",
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "device": "cpu"
+  },
+  "full_suite": {
+    "old_tests": 29,
+    "new_tests": 23,
+    "total": 52,
+    "passed": 52,
+    "failed": 0,
+    "status": "PASS",
+    "passed_test_names": [
+      "test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes.test_a_smoke_preserves_completed_run_bytes_and_hashes",
+      "test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run.test_b_smoke_with_missing_validation_image_preserves_run",
+      "test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation.test_c_existing_run_rejected_before_preparation",
+      "test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files.test_d_atomic_publication_rolls_back_all_files",
+      "test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing.test_d_prepare_failure_after_train_inspection_publishes_nothing",
+      "test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected.test_e_changed_image_id_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected.test_f_changed_class_map_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected.test_g_added_deleted_modified_validation_rows_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected.test_h_changed_source_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected.test_i_changed_decodable_image_bytes_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked.test_inverse_checkpoint_mapping_checked",
+      "test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping.test_missing_class_hash_requires_exact_mapping",
+      "test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected.test_missing_frozen_validation_hash_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once.test_new_fixture_run_can_train_save_and_verify_once",
+      "test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run.test_prepare_cli_rejects_completed_run",
+      "test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker.test_reservation_rejects_each_existing_run_marker",
+      "test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second.test_selected_inputs_allow_first_reservation_but_not_second",
+      "test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run.test_smoke_exception_preserves_run",
+      "test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash.test_source_membership_checked_even_with_matching_manifest_hash",
+      "test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected.test_source_row_path_mismatch_rejected",
+      "test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance.test_successful_validator_runs_inference_after_provenance",
+      "test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation.test_v1_without_image_hash_reports_limitation",
+      "test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified.test_v2_local_path_and_sha_verified",
+      "test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot.test_cancelled_slot_does_not_block_requested_slot",
+      "test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed.test_conflicting_slots_rejected_and_adjacent_slots_allowed",
+      "test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations.test_empty_shared_register_is_valid_without_claiming_reservations",
+      "test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected.test_unconfirmed_resource_and_missing_timezone_rejected",
+      "test_contracts.ResultContractTests.test_all_six_examples_match_contract.test_all_six_examples_match_contract",
+      "test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success.test_error_cannot_masquerade_as_partial_success",
+      "test_contracts.ResultContractTests.test_mixed_detections_require_review.test_mixed_detections_require_review",
+      "test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected.test_nan_and_repeated_json_keys_are_rejected",
+      "test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error.test_no_detection_cannot_be_ok_or_contain_error",
+      "test_contracts.ResultContractTests.test_reject_class_map_mismatch.test_reject_class_map_mismatch",
+      "test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box",
+      "test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k.test_reject_unsorted_or_duplicate_top_k",
+      "test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality.test_status_tracks_review_threshold_including_equality",
+      "test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly.test_all_eight_classes_predicted_correctly",
+      "test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected.test_empty_input_is_rejected",
+      "test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected.test_length_mismatch_is_rejected",
+      "test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported.test_name_to_id_class_map_is_supported",
+      "test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure.test_plot_includes_missing_classes_and_saves_figure",
+      "test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order.test_project_class_map_has_eight_classes_in_numeric_order",
+      "test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes.test_single_present_class_still_averages_over_all_classes",
+      "test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected.test_unknown_class_id_is_rejected",
+      "test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1.test_unpredicted_ground_truth_class_has_zero_recall_and_f1",
+      "test_metadata.MetadataTests.test_absolute_and_relative_box.test_absolute_and_relative_box",
+      "test_metadata.MetadataTests.test_audit_detects_sequence_and_location_leakage.test_audit_detects_sequence_and_location_leakage",
+      "test_metadata.MetadataTests.test_infeasible_split_is_rejected.test_infeasible_split_is_rejected",
+      "test_metadata.MetadataTests.test_label_normalization_does_not_merge_distinct_species.test_label_normalization_does_not_merge_distinct_species",
+      "test_metadata.MetadataTests.test_quality_and_ambiguous_labels_not_species.test_quality_and_ambiguous_labels_not_species",
+      "test_metadata.MetadataTests.test_reject_invalid_and_ambiguous_boxes.test_reject_invalid_and_ambiguous_boxes",
+      "test_metadata.MetadataTests.test_split_is_reproducible_and_location_disjoint.test_split_is_reproducible_and_location_disjoint"
+    ]
+  },
+  "real_smoke": "PASS",
+  "real_checkpoint_validation": {
+    "provenance": {
+      "status": "PASS",
+      "source_manifest_hash": "PASS",
+      "validation_manifest_hash": "PASS",
+      "class_map": "PASS",
+      "class_map_hash": "PASS",
+      "source_membership": "PASS",
+      "image_sha256_verified": 0,
+      "images_without_frozen_sha256": 64
+    },
+    "reload": "PASS",
+    "epoch": 4,
+    "samples": 64,
+    "metrics": {
+      "macro_f1": 0.3616866793337382,
+      "macro_precision": 0.46773504273504274,
+      "macro_recall": 0.375,
+      "accuracy": 0.375
+    },
+    "val_loss": 1.7887232899665833,
+    "metric_absolute_differences": {
+      "macro_f1": 0.0,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "accuracy": 0.0
+    }
+  },
+  "immutability": {
+    "status": "UNCHANGED",
+    "file_count": 15,
+    "ledger_format": "UTF-8 sorted path TAB byte_size TAB sha256 LF",
+    "before_ledger_sha256": "2a87714ef5c185ec320c877482c85decd5ffad90f4a67de58d6c52d41cfb3c17",
+    "after_ledger_sha256": "2a87714ef5c185ec320c877482c85decd5ffad90f4a67de58d6c52d41cfb3c17",
+    "before": {
+      "experiments/B0_run01/download_report.json": {
+        "bytes": 29608,
+        "sha256": "b0c88db7110218b3765be1fd05c4400daa34af564cc95ae01c0f0a416588b039"
+      },
+      "experiments/B0_run01/config.yaml": {
+        "bytes": 2466,
+        "sha256": "3918a4c6398d11bab3e1e00c6e6ac0abc56be9b988260de1044df5801e2e4370"
+      },
+      "experiments/B0_run01/checkpoints/best_model.pth": {
+        "bytes": 44837567,
+        "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680"
+      },
+      "experiments/B0_run01/used_val.jsonl": {
+        "bytes": 47099,
+        "sha256": "aecebe2571d5a5b6c11eab5f1472c5a36cfc22ce2d824478ec97179cfa49897f"
+      },
+      "experiments/B0_run01/results/learning_curves.png": {
+        "bytes": 60472,
+        "sha256": "84f3b1558d231df158d027a4b5ee54b444f22b74933558742c9ce02f60677315"
+      },
+      "experiments/B0_run01/selected_val.jsonl": {
+        "bytes": 47099,
+        "sha256": "aecebe2571d5a5b6c11eab5f1472c5a36cfc22ce2d824478ec97179cfa49897f"
+      },
+      "experiments/B0_run01/image_errors.json": {
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "experiments/B0_run01/used_train.jsonl": {
+        "bytes": 94748,
+        "sha256": "3775f4e3fa636f56cf45150b6ccb2f5536823250a416d3fdb29ee8b7a8a42f9b"
+      },
+      "experiments/B0_run01/results/val_metrics.json": {
+        "bytes": 2588,
+        "sha256": "5d0b9a731d1baa67fa708e3923a3be09a3b0cfd199ec2f9224765cbaaa36912f"
+      },
+      "experiments/B0_run01/results/confusion_matrix.png": {
+        "bytes": 138582,
+        "sha256": "b6370775cb8f73a19245c3761b14fd75109932577d2a9aedfd81281ce2cd0cf1"
+      },
+      "experiments/B0_run01/smoke_result.json": {
+        "bytes": 457,
+        "sha256": "41c650c2a8408aaa27f4bd3d9e34f63124609d1c7935e8a08cca6284fc113eb0"
+      },
+      "experiments/B0_run01/results/val_metrics.csv": {
+        "bytes": 116,
+        "sha256": "b79b2e9238620014bac388414f5133b2df5d1db499fac1bafee69a5ed923f5ff"
+      },
+      "experiments/B0_run01/logs/train_log.csv": {
+        "bytes": 1008,
+        "sha256": "e5c8dcd8ccb4b525f15d18baaacf99ff6f8ec5c55522f51f9dfd234496870106"
+      },
+      "experiments/B0_run01/selected_train.jsonl": {
+        "bytes": 94748,
+        "sha256": "3775f4e3fa636f56cf45150b6ccb2f5536823250a416d3fdb29ee8b7a8a42f9b"
+      },
+      "experiments/B0_run01/results/reload_validation.json": {
+        "bytes": 698,
+        "sha256": "c687736230f37a1f2876db7054622eeddda2c3686f93ecd3584ab3d81a950d51"
+      }
+    },
+    "after": {
+      "experiments/B0_run01/selected_val.jsonl": {
+        "sha256": "aecebe2571d5a5b6c11eab5f1472c5a36cfc22ce2d824478ec97179cfa49897f",
+        "bytes": 47099
+      },
+      "experiments/B0_run01/results/confusion_matrix.png": {
+        "sha256": "b6370775cb8f73a19245c3761b14fd75109932577d2a9aedfd81281ce2cd0cf1",
+        "bytes": 138582
+      },
+      "experiments/B0_run01/results/val_metrics.csv": {
+        "sha256": "b79b2e9238620014bac388414f5133b2df5d1db499fac1bafee69a5ed923f5ff",
+        "bytes": 116
+      },
+      "experiments/B0_run01/used_train.jsonl": {
+        "sha256": "3775f4e3fa636f56cf45150b6ccb2f5536823250a416d3fdb29ee8b7a8a42f9b",
+        "bytes": 94748
+      },
+      "experiments/B0_run01/smoke_result.json": {
+        "sha256": "41c650c2a8408aaa27f4bd3d9e34f63124609d1c7935e8a08cca6284fc113eb0",
+        "bytes": 457
+      },
+      "experiments/B0_run01/checkpoints/best_model.pth": {
+        "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+        "bytes": 44837567
+      },
+      "experiments/B0_run01/config.yaml": {
+        "sha256": "3918a4c6398d11bab3e1e00c6e6ac0abc56be9b988260de1044df5801e2e4370",
+        "bytes": 2466
+      },
+      "experiments/B0_run01/results/learning_curves.png": {
+        "sha256": "84f3b1558d231df158d027a4b5ee54b444f22b74933558742c9ce02f60677315",
+        "bytes": 60472
+      },
+      "experiments/B0_run01/logs/train_log.csv": {
+        "sha256": "e5c8dcd8ccb4b525f15d18baaacf99ff6f8ec5c55522f51f9dfd234496870106",
+        "bytes": 1008
+      },
+      "experiments/B0_run01/image_errors.json": {
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "bytes": 2
+      },
+      "experiments/B0_run01/selected_train.jsonl": {
+        "sha256": "3775f4e3fa636f56cf45150b6ccb2f5536823250a416d3fdb29ee8b7a8a42f9b",
+        "bytes": 94748
+      },
+      "experiments/B0_run01/results/reload_validation.json": {
+        "sha256": "c687736230f37a1f2876db7054622eeddda2c3686f93ecd3584ab3d81a950d51",
+        "bytes": 698
+      },
+      "experiments/B0_run01/download_report.json": {
+        "sha256": "b0c88db7110218b3765be1fd05c4400daa34af564cc95ae01c0f0a416588b039",
+        "bytes": 29608
+      },
+      "experiments/B0_run01/used_val.jsonl": {
+        "sha256": "aecebe2571d5a5b6c11eab5f1472c5a36cfc22ce2d824478ec97179cfa49897f",
+        "bytes": 47099
+      },
+      "experiments/B0_run01/results/val_metrics.json": {
+        "sha256": "5d0b9a731d1baa67fa708e3923a3be09a3b0cfd199ec2f9224765cbaaa36912f",
+        "bytes": 2588
+      }
+    }
+  },
+  "checkpoint_expected_sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+  "checkpoint_hash_match": true,
+  "checkpoint_download": "PENDING USER UPLOAD",
+  "tv4_cross_review": "PENDING: checklist read; independent execution not performed"
+}

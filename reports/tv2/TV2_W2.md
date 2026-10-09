@@ -49,6 +49,8 @@ Train chạy 9 epoch rồi early stopping. Log từng epoch: `experiments/B0_run
 
 ## Chạy lại
 
+**Cập nhật sau review 09/10/2026:** B0_run01 được giữ bất biến. Các lệnh prepare/train bên dưới chỉ dùng cho một run mới sau khi sao chép config và đổi `experiment.id`, `train_manifest`, `validation_manifest`; truyền `--config <config-mới>` cho cả hai script. Gọi train/prepare với B0_run01 sẽ bị từ chối. Smoke hiện dùng thư mục tạm và không ghi vào run thật. Resume chưa hỗ trợ. Validation checkpoint hiện có vẫn chạy trực tiếp và chỉ đọc dữ liệu.
+
 Tại thư mục gốc repo, với Python và dependencies phù hợp:
 
 ```powershell
@@ -69,3 +71,10 @@ Notebook trình bày kết quả: `notebooks/TV2_W2_B0_Demo.ipynb`. Notebook đ�
 - TV4 `origin/feat/demo`: cấu trúc dự án, cách lưu ảnh và quy tắc không commit weights. TV3 `origin/feat/crop-classifier` chỉ được đọc để xác nhận ranh giới B0 toàn ảnh; không dùng crop hoặc ảnh bbox của TV3. `origin/main` đã được fetch và đọc trước implementation.
 - Lượt này chỉ **192 ảnh trong 3.400 ảnh train+validation của pilot**, không phải đánh giá trên toàn pilot hay manifest v1 31.589 ảnh. Validation 8 ảnh/lớp có độ bất định lớn; không diễn giải số liệu này là hiệu năng triển khai hoặc so sánh trực tiếp với B1/B2 tương lai. Khi có tài nguyên, tạo run ID mới để train trên tập lớn hơn, giữ nguyên split TV1 và vẫn chỉ chọn checkpoint bằng validation.
 - Không có GPU/CUDA trên môi trường chạy. Không làm B1/B2 và không dùng test để điều chỉnh bất kỳ quyết định mô hình nào.
+
+## Bàn giao và sửa review W2
+
+- [Checkpoint handoff](TV2_W2_CHECKPOINT.md): giữ weights ngoài Git, SHA-256 `d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`, 44.837.567 bytes. Link tải chung đang **PENDING USER UPLOAD**.
+- Validator kiểm tra source/class map/validation hash, mapping hai chiều và exact source membership trước loader/model. Với metadata v2, dùng `quality.local_path` và `quality.sha256`; v1 không có frozen image hash nên giới hạn này được báo rõ, không tạo metadata lịch sử giả.
+- Danh sách ảnh đánh giá W3 phải được TV1/TV2/TV3 thống nhất và freeze trước khi so sánh B0/B1/B2; giữ nguyên B0_run01.
+- Kết quả sửa review và bằng chứng chạy nằm trong [TV2_W2_REVIEW_FIX.md](TV2_W2_REVIEW_FIX.md). Checklist demo TV4 đã đọc; xác nhận chạy chéo độc lập còn pending trong [TV2_REVIEW_TV4_W2.md](TV2_REVIEW_TV4_W2.md).

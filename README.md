@@ -35,6 +35,12 @@ Tệp chính:
 
 Các file `.py` là pipeline train/validation chính thức; file `.ipynb` dùng để trình bày và phân tích kết quả đã sinh. Config đã giải quyết, danh sách ảnh chọn/dùng, lỗi ảnh, log từng epoch và báo cáo validation nằm ở `experiments/B0_run01/`. Best checkpoint nằm ở `experiments/B0_run01/checkpoints/best_model.pth` (bị `.gitignore` bỏ qua nhưng phải được giữ cục bộ hoặc sao lưu riêng). Không chạy lại `prepare_b0_pilot.py` với config khác sau khi đã chọn checkpoint mà không tạo run ID mới.
 
+**Sau review W2:** `B0_run01` là run lịch sử bất biến. Lệnh prepare/train mặc định ở trên sẽ từ chối ghi vào run này; smoke dùng `TemporaryDirectory` và chỉ cập nhật artifact tạm. Muốn chạy thí nghiệm mới, sao chép config, đổi `experiment.id` và hai đường dẫn selected manifest sang run mới, rồi truyền `--config <config-mới>` cho prepare/train. Resume chưa được hỗ trợ; run đã bắt đầu hoặc bị gián đoạn cũng cần ID mới.
+
+Validator kiểm tra SHA-256 source/validation/class map, mapping hai chiều, từng dòng validation thuộc source và SHA ảnh khi manifest có metadata đó **trước inference**. Pilot v1 chưa lưu hash ảnh; B0_run01 không được chuyển ngầm sang v2. W3 phải chốt chung danh sách ảnh đánh giá với TV1/TV3 trước khi so sánh B0/B1/B2.
+
+Bàn giao checkpoint ngoài Git: [TV2_W2_CHECKPOINT.md](reports/tv2/TV2_W2_CHECKPOINT.md). Size **44.837.567 bytes**, SHA-256 **`d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`**. Shared download URL: **PENDING USER UPLOAD**. Có checkpoint và ảnh validation thì chạy `py scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth`; không cần train lại.
+
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
 ## Bàn giao tuần 1 của thành viên 2
