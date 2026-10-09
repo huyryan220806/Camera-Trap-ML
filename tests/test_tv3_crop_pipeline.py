@@ -103,11 +103,12 @@ class ProcessRecordTests(unittest.TestCase):
     # ── happy path ──────────────────────────────────────────────────
 
     def test_normal_record_produces_one_crop_row(self):
-        errors = []
-        rows = self.process(make_record(), self.tmp, "train", errors)
+        class_map = {"sambar": 0, "eurasian_wild_pig": 1}
+        rows, errors = self.process(make_record(), self.tmp, "train", class_map)
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["label"], "sambar")
         self.assertEqual(rows[0]["split"], "train")
+        self.assertEqual(rows[0]["class_id"], 0)
         self.assertIn("image_id", rows[0])
         self.assertIn("annotation_id", rows[0])
         self.assertIn("file_path", rows[0])
@@ -116,8 +117,8 @@ class ProcessRecordTests(unittest.TestCase):
         self.assertEqual(errors, [])
 
     def test_split_is_inherited_from_manifest_not_box(self):
-        errors = []
-        rows = self.process(make_record(split="val"), self.tmp, "val", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(split="val"), self.tmp, "val", class_map)
         self.assertEqual(rows[0]["split"], "val")
 
     def test_multi_animal_image_uses_box_label_not_image_label(self):
@@ -127,8 +128,8 @@ class ProcessRecordTests(unittest.TestCase):
             {"annotation_id": "a2", "label": "eurasian_wild_pig", "bbox_xywh": [60, 5, 40, 30]},
         ]
         record = make_record(label="sambar", boxes=boxes)  # label ảnh = sambar
-        errors = []
-        rows = self.process(record, self.tmp, "train", errors)
+        class_map = {"sambar": 0, "eurasian_wild_pig": 1}
+        rows, errors = self.process(record, self.tmp, "train", class_map)
         labels = {r["label"] for r in rows}
         self.assertEqual(len(rows), 2)
         self.assertIn("sambar", labels)
@@ -138,29 +139,29 @@ class ProcessRecordTests(unittest.TestCase):
 
     def test_download_failure_logged_not_raised(self):
         self._fetch_fail()
-        errors = []
-        rows = self.process(make_record(), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(), self.tmp, "train", class_map)
         self.assertEqual(rows, [])
         self.assertEqual(errors[0]["reason"], "download_failed")
 
     def test_record_without_boxes_is_skipped(self):
-        errors = []
-        rows = self.process(make_record(boxes=[]), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(boxes=[]), self.tmp, "train", class_map)
         self.assertEqual(rows, [])
         self.assertEqual(errors[0]["reason"], "no_boxes")
 
     def test_box_without_label_is_skipped(self):
         boxes = [{"annotation_id": "a1", "label": "", "bbox_xywh": [10, 5, 50, 40]}]
-        errors = []
-        rows = self.process(make_record(boxes=boxes), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(boxes=boxes), self.tmp, "train", class_map)
         self.assertEqual(rows, [])
         self.assertEqual(errors[0]["reason"], "missing_box_label")
 
     def test_invalid_geometry_box_is_skipped(self):
         # tọa độ nằm hoàn toàn ngoài ảnh 120×80
         boxes = [{"annotation_id": "a1", "label": "sambar", "bbox_xywh": [200, 200, 10, 10]}]
-        errors = []
-        rows = self.process(make_record(boxes=boxes), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(boxes=boxes), self.tmp, "train", class_map)
         self.assertEqual(rows, [])
         self.assertEqual(errors[0]["reason"], "invalid_box_geometry")
 
@@ -169,8 +170,8 @@ class ProcessRecordTests(unittest.TestCase):
             {"annotation_id": "a_bad",  "label": "sambar", "bbox_xywh": [300, 300, 10, 10]},
             {"annotation_id": "a_good", "label": "sambar", "bbox_xywh": [5, 5, 40, 30]},
         ]
-        errors = []
-        rows = self.process(make_record(boxes=boxes), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(boxes=boxes), self.tmp, "train", class_map)
         self.assertEqual(len(rows), 1)
         self.assertEqual(len(errors), 1)
         self.assertEqual(errors[0]["annotation_id"], "a_bad")
@@ -181,8 +182,8 @@ class ProcessRecordTests(unittest.TestCase):
         mock_resp.content = b"not an image"
         mock_resp.raise_for_status = mock.Mock()
         self.mock_get.return_value = mock_resp
-        errors = []
-        rows = self.process(make_record(), self.tmp, "train", errors)
+        class_map = {"sambar": 0}
+        rows, errors = self.process(make_record(), self.tmp, "train", class_map)
         self.assertEqual(rows, [])
         self.assertEqual(errors[0]["reason"], "decode_failed")
 
