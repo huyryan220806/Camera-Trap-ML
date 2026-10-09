@@ -4,6 +4,7 @@
 
 ## Demo tuần 2 của thành viên 4
 
+- [Bàn giao chung và review TV2/TV3 ngày 09/10/2026](docs/handoff_team_w2.md).
 - [Hướng dẫn demo và adapter MegaDetector](docs/handoff_tv4_w2.md), [kết quả chạy thật](reports/tv4_w2/REPORT.md), [progress sau quota](docs/progress_tv4_w2.md).
 - Chạy `.venv/Scripts/python.exe scripts/run_demo.py --port 8765`, mở `http://127.0.0.1:8765`.
 - Detector thật: cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_demo.py --smoke` một lần; các lần sau tái sử dụng weights đã xác minh.

@@ -1,0 +1,38 @@
+{
+  "existing_run_manifest_overwritten": true,
+  "original_val_count": 16,
+  "val_count_after_missing_image": 15,
+  "counts": {
+    "train": {
+      "selected": 8,
+      "usable": 8,
+      "excluded": 0
+    },
+    "val": {
+      "selected": 16,
+      "usable": 15,
+      "excluded": 1
+    }
+  },
+  "note": "prepare_data is called before the smoke branch and before full training; no training was run here.",
+  "validation_hash_mismatch": true,
+  "validator_result_on_changed_image_id": {
+    "reload": "PASS",
+    "epoch": 1,
+    "samples": 15,
+    "metrics": {
+      "macro_f1": 0.015625,
+      "macro_precision": 0.008333333333333333,
+      "macro_recall": 0.125,
+      "accuracy": 0.06666666666666667
+    },
+    "val_loss": 2.0794413089752197,
+    "metric_absolute_differences": {
+      "macro_f1": 0.0,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "accuracy": 0.0
+    }
+  },
+  "scope": "Synthetic fixtures and untrained ResNet18 only; this does not reload or verify TV2's actual checkpoint."
+}

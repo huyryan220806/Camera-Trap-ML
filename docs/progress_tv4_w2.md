@@ -29,6 +29,8 @@ chưa yêu cầu merge vào main.
 - Handoff: `docs/handoff_tv4_w2.md`; báo cáo: `reports/tv4_w2/REPORT.md`.
 - Nhánh bàn giao: `codex/tv4-week2-demo-detector`, phụ thuộc bản TV1 tuần 2
   `b9a92b9`. Còn kiểm tra chéo của TV2; không tự merge `main`.
+- Đã push code TV4: `c69283a659c27498d1e9ec43781777af4dc37282`, xác minh bằng
+  `git ls-remote`. Bàn giao chung và review: `docs/handoff_team_w2.md`.
 
 ## Xác nhận sau lần gián đoạn quota
 
@@ -43,7 +45,8 @@ Tiếp nhận lại ngày 2026-10-09, kiểm tra lúc `2026-10-09T08:54:45+00:00
 ## Các bước tiếp theo của nhóm
 
 1. TV2 kiểm tra chéo theo checklist handoff. Không cần dựng lại demo hoặc tải model lại.
-2. Đã có yêu cầu push; chọn file TV4 riêng, không `git add .` hoặc merge main.
+2. Code đã push; gửi `docs/handoff_team_w2.md` cho nhóm. Không merge main khi
+   TV2/TV3 còn các mục sửa trong báo cáo review ngày 09/10/2026.
 3. Tích hợp classifier loài khi có checkpoint của TV2/TV3 ở bước sau; không bịa top-3.
 
 ## Lệnh chạy/tiếp tục

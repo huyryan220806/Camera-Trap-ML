@@ -1,0 +1,126 @@
+{
+  "review_date": "2026-10-09",
+  "tv2_commit": "8a48b86c7dfde00beba0fe21aea8394260cf9e56",
+  "tv3_commit": "a63d9b35a17a40bf3dd65e28c11a27eae1929c34",
+  "tv2": {
+    "train": {
+      "selected": 128,
+      "used": 128,
+      "selected_equals_used": true,
+      "exact_pilot_rows": 128,
+      "also_in_v2": 128,
+      "class_counts": {
+        "masked_palm_civet": 16,
+        "common_palm_civet": 16,
+        "silver_pheasant": 16,
+        "chinese_serow": 16,
+        "eurasian_wild_pig": 16,
+        "annamite_striped_rabbit": 16,
+        "sambar": 16,
+        "large_antlered_muntjac": 16
+      },
+      "manifest_hash_matches_config": true
+    },
+    "val": {
+      "selected": 64,
+      "used": 64,
+      "selected_equals_used": true,
+      "exact_pilot_rows": 64,
+      "also_in_v2": 64,
+      "class_counts": {
+        "large_antlered_muntjac": 8,
+        "chinese_serow": 8,
+        "sambar": 8,
+        "masked_palm_civet": 8,
+        "silver_pheasant": 8,
+        "eurasian_wild_pig": 8,
+        "annamite_striped_rabbit": 8,
+        "common_palm_civet": 8
+      },
+      "manifest_hash_matches_config": true
+    },
+    "split_id_overlap": 0,
+    "source_hash_matches": true,
+    "checkpoint_available_in_checkout": false,
+    "metrics_recomputed_from_committed_confusion_matrix": {
+      "macro_precision": 0.46773504273504274,
+      "macro_recall": 0.375,
+      "macro_f1": 0.36168667933373816,
+      "accuracy": 0.375
+    },
+    "metrics_match_matrix": true,
+    "support": 64
+  },
+  "tv3": {
+    "train": {
+      "crop_rows": 4479,
+      "unique_parent_images": 3999,
+      "duplicate_crop_ids": 0,
+      "annotation_or_mapping_mismatches": [],
+      "parent_images_in_v2": 595,
+      "parent_images_outside_v2": 3404,
+      "v2_split_images": 2800,
+      "v2_split_images_without_crop": 2205,
+      "crop_class_counts": {
+        "common_palm_civet": 357,
+        "eurasian_wild_pig": 1791,
+        "large_antlered_muntjac": 1121,
+        "silver_pheasant": 385,
+        "sambar": 398,
+        "masked_palm_civet": 208,
+        "annamite_striped_rabbit": 167,
+        "chinese_serow": 52
+      },
+      "parent_class_counts": {
+        "eurasian_wild_pig": 1468,
+        "common_palm_civet": 354,
+        "large_antlered_muntjac": 1077,
+        "annamite_striped_rabbit": 166,
+        "sambar": 361,
+        "masked_palm_civet": 207,
+        "silver_pheasant": 314,
+        "chinese_serow": 52
+      },
+      "crop_files_present_in_fresh_checkout": 0,
+      "error_reasons": {
+        "download_failed": 1
+      }
+    },
+    "val": {
+      "crop_rows": 2416,
+      "unique_parent_images": 1997,
+      "duplicate_crop_ids": 0,
+      "annotation_or_mapping_mismatches": [],
+      "parent_images_in_v2": 261,
+      "parent_images_outside_v2": 1736,
+      "v2_split_images": 600,
+      "v2_split_images_without_crop": 339,
+      "crop_class_counts": {
+        "eurasian_wild_pig": 816,
+        "masked_palm_civet": 98,
+        "common_palm_civet": 180,
+        "large_antlered_muntjac": 737,
+        "silver_pheasant": 159,
+        "sambar": 293,
+        "chinese_serow": 51,
+        "annamite_striped_rabbit": 82
+      },
+      "parent_class_counts": {
+        "large_antlered_muntjac": 713,
+        "sambar": 222,
+        "silver_pheasant": 134,
+        "common_palm_civet": 180,
+        "chinese_serow": 49,
+        "annamite_striped_rabbit": 80,
+        "eurasian_wild_pig": 526,
+        "masked_palm_civet": 93
+      },
+      "crop_files_present_in_fresh_checkout": 0,
+      "error_reasons": {
+        "invalid_box_geometry": 1,
+        "download_failed": 3
+      }
+    },
+    "train_val_parent_overlap": 0
+  }
+}

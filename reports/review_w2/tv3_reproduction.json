@@ -1,0 +1,29 @@
+{
+  "download_failure_marked_processed": true,
+  "missing_crop_marked_processed": true,
+  "same_limit_command": {
+    "first_run_ids": [
+      "a",
+      "b"
+    ],
+    "second_run_ids": [
+      "c",
+      "d"
+    ],
+    "rows_after_two_runs": 4
+  },
+  "dataset_accepts_invalid_contract": {
+    "requested_split": "train",
+    "accepted_split": "val",
+    "label": "chinese_serow",
+    "expected_class_id": 1,
+    "returned_class_id": 0,
+    "bad_hash_accepted": true,
+    "tensor_shape": [
+      3,
+      224,
+      224
+    ]
+  },
+  "scope": "Synthetic probes; no source artifacts changed and no network access. True values describe defects, not acceptance tests."
+}
