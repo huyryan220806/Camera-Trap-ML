@@ -1,5 +1,40 @@
 # CameraTrapML
 
+## TV2 – Week 2 – Baseline B0
+
+- Task: **W2-02**.
+- Model: ResNet18 pretrained ImageNet, phân loại toàn ảnh.
+- Backbone được đóng băng; chỉ classifier cuối (`fc`) được huấn luyện.
+- Số lớp: **8**.
+- Lượt chạy thử: **128 train, 64 validation**.
+- Best epoch: **4**.
+- Validation Macro-F1: **0.3616866793337382**.
+- Validation Macro-Precision: **0.46773504273504274**.
+- Validation Macro-Recall: **0.375**.
+- Validation accuracy: **0.375**.
+- Checkpoint reload: **PASS**, sai khác 0 ở các metric chính.
+- Test set used for model selection: **NO**.
+
+Đây là baseline B0 trên tập thử nhỏ, không phải hiệu năng cuối của hệ thống. `configs/b0.yaml` là JSON hợp lệ theo YAML 1.2; lượt chạy chọn cố định 16 ảnh train và 8 ảnh validation mỗi lớp từ `pilot_v1.jsonl` bằng seed 42, giữ nguyên split của TV1 và không đọc ảnh test.
+
+Tại thư mục gốc repo, dùng Python 3.12 và cài `requirements-tv2.txt`. Việc tải ảnh cần Internet. Trọng số ImageNet được torchvision tự tải vào cache khi khởi tạo B0; nếu cần cache trong workspace, đặt `TORCH_HOME` hoặc lưu file ResNet18 chính thức tại `data/images/torch/hub/checkpoints/resnet18-f37072fd.pth` như code huấn luyện.
+
+```powershell
+.venv/Scripts/python.exe scripts/prepare_b0_pilot.py
+.venv/Scripts/python.exe scripts/train_b0.py --smoke
+.venv/Scripts/python.exe scripts/train_b0.py
+.venv/Scripts/python.exe scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth
+```
+
+Tệp chính:
+
+- Training: [`scripts/train_b0.py`](scripts/train_b0.py)
+- Validation: [`scripts/validate_b0.py`](scripts/validate_b0.py)
+- Notebook: [`notebooks/TV2_W2_B0_Demo.ipynb`](notebooks/TV2_W2_B0_Demo.ipynb)
+- Report: [`reports/tv2/TV2_W2.md`](reports/tv2/TV2_W2.md)
+
+Các file `.py` là pipeline train/validation chính thức; file `.ipynb` dùng để trình bày và phân tích kết quả đã sinh. Config đã giải quyết, danh sách ảnh chọn/dùng, lỗi ảnh, log từng epoch và báo cáo validation nằm ở `experiments/B0_run01/`. Best checkpoint nằm ở `experiments/B0_run01/checkpoints/best_model.pth` (bị `.gitignore` bỏ qua nhưng phải được giữ cục bộ hoặc sao lưu riêng). Không chạy lại `prepare_b0_pilot.py` với config khác sau khi đã chọn checkpoint mà không tạo run ID mới.
+
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
 ## Bàn giao tuần 1 của thành viên 2

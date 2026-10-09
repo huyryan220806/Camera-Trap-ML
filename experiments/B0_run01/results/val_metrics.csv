@@ -1,0 +1,5 @@
+metric,value
+macro_f1,0.3616866793337382
+macro_precision,0.46773504273504274
+macro_recall,0.375
+accuracy,0.375

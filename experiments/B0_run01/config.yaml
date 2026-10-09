@@ -1,0 +1,88 @@
+{
+  "experiment": {
+    "name": "B0_frozen_resnet18",
+    "id": "B0_run01",
+    "seed": 42,
+    "git_commit": "fb51b41574d7df8c812a2aa26b8a4664be791b7a"
+  },
+  "model": {
+    "backbone": "resnet18",
+    "weights": "ResNet18_Weights.DEFAULT",
+    "pretrained": "ImageNet-1K",
+    "freeze_backbone": true,
+    "num_classes": 8,
+    "parameter_counts": {
+      "total": 11180616,
+      "trainable": 4104,
+      "frozen": 11176512
+    }
+  },
+  "data": {
+    "input_type": "full_image",
+    "source_manifest": "data/processed/v1/pilot_v1.jsonl",
+    "train_manifest": "experiments/B0_run01/selected_train.jsonl",
+    "validation_manifest": "experiments/B0_run01/selected_val.jsonl",
+    "class_map": "data/processed/v1/class_map.json",
+    "image_root": "data/images",
+    "train_per_class": 16,
+    "val_per_class": 8,
+    "image_size": 224,
+    "resize_size": 256,
+    "batch_size": 32,
+    "num_workers": 0,
+    "test_used_for_selection": false
+  },
+  "training": {
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 30,
+    "early_stopping_patience": 5,
+    "checkpoint_metric": "macro_f1",
+    "checkpoint_mode": "max"
+  },
+  "loss": {
+    "type": "cross_entropy",
+    "class_weights": null
+  },
+  "preprocessing": {
+    "train": "Resize(256), RandomCrop(224), RandomHorizontalFlip(0.5), ColorJitter(0.2,0.2,0.1,0.05), ToTensor, ImageNet Normalize",
+    "validation": "Resize(256), CenterCrop(224), ToTensor, ImageNet Normalize",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "cuda_version": null,
+    "gpu_name": null,
+    "device": "cpu"
+  },
+  "dataset": {
+    "samples": {
+      "train": {
+        "selected": 128,
+        "usable": 128,
+        "excluded": 0
+      },
+      "val": {
+        "selected": 64,
+        "usable": 64,
+        "excluded": 0
+      }
+    },
+    "source_manifest_sha256": "e014967e8ecdda18ea7468fba2a7312973b4eec468e61a3faabfd84169a75f8f",
+    "train_manifest_sha256": "3775f4e3fa636f56cf45150b6ccb2f5536823250a416d3fdb29ee8b7a8a42f9b",
+    "validation_manifest_sha256": "aecebe2571d5a5b6c11eab5f1472c5a36cfc22ce2d824478ec97179cfa49897f",
+    "class_map_sha256": "e43e3cec029b4af1ac3c8183e35eed11d60cddc1a21be878e29ad40c1d79f0c3"
+  }
+}
