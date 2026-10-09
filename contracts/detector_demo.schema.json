@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TV4 detector-only demo; not inference_result v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "request_id", "image", "pipeline", "status", "needs_review", "detections", "ignored_non_animals", "error", "elapsed_ms", "training_overlap_swg", "limitation", "training_source"],
+  "properties": {
+    "schema_version": {"const": "detector-demo-1.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "image": {
+      "type": "object", "additionalProperties": false, "required": ["file_name", "width", "height"],
+      "properties": {"file_name": {"type": "string", "minLength": 1}, "width": {"type": ["integer", "null"], "minimum": 1}, "height": {"type": ["integer", "null"], "minimum": 1}}
+    },
+    "pipeline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "detector_id", "package_version", "weights_sha256", "detector_threshold", "classifier_id", "device", "image_size", "coordinate_space"],
+      "properties": {
+        "mode": {"enum": ["mock", "megadetector"]}, "detector_id": {"enum": ["mock-geometry-v1", "MDv5a.0.1"]},
+        "package_version": {"type": ["string", "null"]},
+        "weights_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "detector_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "classifier_id": {"const": null}, "device": {"const": "cpu"}, "image_size": {"const": 1280},
+        "coordinate_space": {"const": "original_raster_pixels_no_exif_rotation"}
+      }
+    },
+    "status": {"enum": ["detected", "no_detection", "error"]}, "needs_review": {"const": true},
+    "detections": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detection_id", "category", "bbox_xywh", "score", "species"],
+      "properties": {
+        "detection_id": {"type": "string", "minLength": 1}, "category": {"const": "animal"},
+        "bbox_xywh": {"type": "array", "minItems": 4, "maxItems": 4, "prefixItems": [{"type": "number", "minimum": 0}, {"type": "number", "minimum": 0}, {"type": "number", "exclusiveMinimum": 0}, {"type": "number", "exclusiveMinimum": 0}], "items": false},
+        "score": {"type": "number", "minimum": 0, "maximum": 1}, "species": {"const": null}
+      }
+    }},
+    "ignored_non_animals": {"type": "integer", "minimum": 0},
+    "error": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["stage", "code", "message"], "properties": {"stage": {"enum": ["read", "detect"]}, "code": {"enum": ["IMAGE_DECODE_ERROR", "DETECTOR_FAILED"]}, "message": {"type": "string", "minLength": 1}}}]},
+    "elapsed_ms": {"type": "number", "minimum": 0}, "training_overlap_swg": {"const": true},
+    "limitation": {"type": "string", "minLength": 1}, "training_source": {"const": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data"}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "error"}}}, "then": {"properties": {"detections": {"maxItems": 0}, "error": {"type": "object"}}}, "else": {"properties": {"error": {"type": "null"}, "image": {"properties": {"width": {"type": "integer"}, "height": {"type": "integer"}}}}}},
+    {"if": {"properties": {"status": {"const": "detected"}}}, "then": {"properties": {"detections": {"minItems": 1}}}},
+    {"if": {"properties": {"status": {"const": "no_detection"}}}, "then": {"properties": {"detections": {"maxItems": 0}}}}
+  ]
+}

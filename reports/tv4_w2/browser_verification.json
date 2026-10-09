@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-09T04:17:13.080Z",
+  "url": "http://127.0.0.1:8765",
+  "desktop": "1440x1100",
+  "mobile": "390x844",
+  "browser_errors": [],
+  "verified": [
+    "sample preview",
+    "mock/real separation",
+    "box geometry",
+    "upload",
+    "empty/error",
+    "toggle",
+    "JSON export",
+    "mobile no overflow",
+    "real detector"
+  ],
+  "real_status": "detected",
+  "real_detection_count": 1
+}

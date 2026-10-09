@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CameraTrapML | Trạm kiểm tra ảnh</title><link rel="stylesheet" href="/style.css"><script src="/vendor/lucide.js" defer></script><script src="/app.js" defer></script></head>
+<body>
+<header><div class="brand"><i data-lucide="scan-line"></i><strong>CameraTrapML</strong><span>Trường Sơn</span></div><span class="local"><span class="dot"></span>Cục bộ · TV4 / Tuần 02</span></header>
+<main>
+<div class="heading"><div><p class="eyebrow">BẪY CAMERA / KIỂM TRA ẢNH</p><h1>Trạm phát hiện động vật</h1></div><button id="export" class="secondary" disabled><i data-lucide="download"></i>Xuất JSON</button></div>
+<div class="notice"><i data-lucide="triangle-alert"></i><p><strong>Giới hạn dữ liệu huấn luyện</strong> MegaDetector MDv5a đã dùng SWG. Kết quả trên SWG không phải đánh giá độc lập. <a href="https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data" target="_blank" rel="noreferrer">Nguồn chính thức <span aria-hidden="true">↗</span></a></p></div>
+<div class="workspace">
+<aside class="controls">
+<h2>Đầu vào</h2><button id="upload" class="upload"><i data-lucide="image-plus"></i>Nạp ảnh</button><input id="file" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+<div id="file-name" class="file-name">Chưa chọn ảnh</div>
+<label for="sample">Ảnh mẫu · train v2</label><select id="sample"><option value="">Chọn ảnh mẫu</option></select>
+<hr><h2>Detector</h2>
+<div class="segmented" role="group" aria-label="Chế độ detector"><button data-mode="mock" class="selected" aria-pressed="true">Giả lập</button><button data-mode="megadetector" aria-pressed="false">MegaDetector</button></div>
+<div id="mock-settings"><label for="scenario">Kết quả mẫu</label><select id="scenario"><option value="animal">Có động vật</option><option value="empty">Không phát hiện</option><option value="error">Lỗi detector</option></select></div>
+<div class="range-label"><label for="threshold">Ngưỡng phát hiện</label><output id="threshold-value">0.20</output></div><input id="threshold" type="range" min="0" max="1" step="0.01" value="0.2">
+<label class="checkbox"><input id="show-boxes" type="checkbox" checked>Hiện bounding box</label>
+<button id="run" class="primary" disabled><i data-lucide="play"></i><span>Chạy phát hiện</span></button>
+<dl class="model-info"><dt>Model</dt><dd>MDv5a.0.1</dd><dt>Runtime</dt><dd id="runtime">Đang kiểm tra</dd><dt>Thiết bị</dt><dd>CPU · 1280 px</dd><dt>Classifier loài</dt><dd>Chưa tích hợp</dd></dl>
+</aside>
+<section class="viewer" aria-label="Ảnh và kết quả">
+<div class="viewer-toolbar"><span id="mode-badge" class="badge mock">GIẢ LẬP · KHÔNG PHẢI SUY LUẬN</span><span id="dimensions">—</span><button id="reset" class="icon" title="Xóa ảnh và kết quả" aria-label="Xóa ảnh và kết quả"><i data-lucide="trash-2"></i></button></div>
+<div id="stage" class="stage"><div id="empty"><i data-lucide="image"></i><p>Chưa có ảnh</p></div><div id="image-frame" hidden><img id="preview" alt="Ảnh bẫy camera đang kiểm tra"><div id="boxes"></div></div><div id="busy" hidden><span class="spinner"></span><p>Đang xử lý ảnh…</p></div></div>
+<div class="result-heading"><h2>Kết quả</h2><span id="timing">Chưa chạy</span></div><div id="status" role="status" aria-live="polite">Chưa có kết quả.</div>
+<div class="table-scroll"><table><thead><tr><th>Vùng</th><th>Phát hiện</th><th>Điểm detector</th><th>Loài</th></tr></thead><tbody id="results"><tr><td colspan="4" class="muted">—</td></tr></tbody></table></div>
+<details><summary>JSON kết quả</summary><pre id="json">{}</pre></details>
+</section></div>
+<footer><span>SWG · Pilot v2 · Chỉ dùng mẫu train</span><span id="server-state">Đang kết nối máy chủ</span></footer>
+</main></body></html>

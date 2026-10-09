@@ -2,6 +2,13 @@
 
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
+## Demo tuần 2 của thành viên 4
+
+- [Hướng dẫn demo và adapter MegaDetector](docs/handoff_tv4_w2.md), [kết quả chạy thật](reports/tv4_w2/REPORT.md), [progress sau quota](docs/progress_tv4_w2.md).
+- Chạy `.venv/Scripts/python.exe scripts/run_demo.py --port 8765`, mở `http://127.0.0.1:8765`.
+- Detector thật: cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_demo.py --smoke` một lần; các lần sau tái sử dụng weights đã xác minh.
+- Có upload, box, giả lập, detector thật và xuất JSON. Chưa có classifier loài; MDv5a đã dùng SWG khi huấn luyện, không xem smoke test là đánh giá độc lập.
+
 ## Bàn giao tuần 2 của thành viên 1
 
 - [Tải pilot 4.000 ảnh, kiểm tra chất lượng và giữ nguyên split](docs/handoff_tv1_w2.md).

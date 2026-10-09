@@ -1,0 +1,53 @@
+{
+  "checked_utc": "2026-10-09T04:15:33+00:00",
+  "split": "train",
+  "image_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+  "fingerprint": {
+    "image_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+    "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+    "adapter_sha256": "dd291dcaa576f54459e8a80a12a1335dc37b95d294f723d02e80cc12d3e875bc",
+    "package_version": "10.0.25"
+  },
+  "result": {
+    "schema_version": "detector-demo-1.0",
+    "request_id": "70c49d93-8673-45e3-b540-92d274647338",
+    "image": {
+      "file_name": "image_00001.jpg",
+      "width": 3264,
+      "height": 2448
+    },
+    "pipeline": {
+      "mode": "megadetector",
+      "detector_id": "MDv5a.0.1",
+      "package_version": "10.0.25",
+      "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+      "detector_threshold": 0.2,
+      "classifier_id": null,
+      "device": "cpu",
+      "image_size": 1280,
+      "coordinate_space": "original_raster_pixels_no_exif_rotation"
+    },
+    "status": "detected",
+    "needs_review": true,
+    "detections": [
+      {
+        "detection_id": "animal-1",
+        "category": "animal",
+        "bbox_xywh": [
+          250.6752,
+          1162.8,
+          310.7327999999999,
+          361.8144000000002
+        ],
+        "score": 0.733,
+        "species": null
+      }
+    ],
+    "ignored_non_animals": 0,
+    "error": null,
+    "elapsed_ms": 16412.11,
+    "training_overlap_swg": true,
+    "limitation": "MegaDetector MDv5a da dung SWG khi huan luyen; thu tren SWG khong phai danh gia doc lap. Chua co classifier loai.",
+    "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data"
+  }
+}
