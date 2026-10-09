@@ -1,23 +1,12 @@
 """TV3 - Tuần 2: CropDataset – PyTorch Dataset và DataLoader cho ảnh crop.
 
-Sử dụng sau khi đã chạy scripts/crop_dataset.py để tạo crop manifest.
-
-Ví dụ nhanh:
-    from src.data.crop_dataset import make_loaders, DEFAULT_TRANSFORMS
-
-    loaders = make_loaders(
-        crop_dir="data/crops",
-        class_map_path="data/processed/v1/class_map.json",
-        batch_size=32,
-        num_workers=4,
-        seed=42,
-    )
-    for images, labels in loaders["train"]:
-        ...  # images: (B, 3, H, W) float32 tensor, labels: (B,) int64 tensor
+Fail-fast:
+- Trả về lỗi ValueError nếu nhãn không khớp, id không tồn tại, hoặc sai split.
 """
 
 import json
 import random
+import hashlib
 from pathlib import Path
 from typing import Callable
 
@@ -30,47 +19,33 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CROP_DIR = ROOT / "data" / "crops"
 DEFAULT_CLASS_MAP = ROOT / "data" / "processed" / "v1" / "class_map.json"
 
-# ───────────────────────── transforms ────────────────────────────────
-
-# Kích thước đầu vào chuẩn của ResNet/EfficientNet
 IMAGE_SIZE = 224
 
 DEFAULT_TRANSFORMS: dict[str, transforms.Compose] = {
     "train": transforms.Compose([
         transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
         transforms.RandomHorizontalFlip(p=0.5),
-        transforms.ColorJitter(brightness=0.3, contrast=0.3,
-                               saturation=0.3, hue=0.05),
+        transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05),
         transforms.RandomGrayscale(p=0.05),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225]),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ]),
     "val": transforms.Compose([
         transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225]),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ]),
     "test": transforms.Compose([
         transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                             std=[0.229, 0.224, 0.225]),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ]),
 }
 
-
-# ───────────────────────── Dataset ────────────────────────────────────
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
 
 class CropDataset(Dataset):
-    """Dataset đọc ảnh crop từ crop manifest do scripts/crop_dataset.py tạo ra.
-
-    Mỗi phần tử trả về (image_tensor, class_id).
-    Bỏ qua các dòng có class_id là None (nhãn chưa được ánh xạ).
-    Bỏ qua các file ảnh không tồn tại và log cảnh báo.
-    """
-
     def __init__(
         self,
         split: str,
@@ -78,54 +53,76 @@ class CropDataset(Dataset):
         class_map_path: str | Path = DEFAULT_CLASS_MAP,
         transform: Callable | None = None,
         root: str | Path = ROOT,
+        preflight_hash_check: bool = False
     ) -> None:
         self.split = split
         self.crop_dir = Path(crop_dir)
         self.root = Path(root)
         self.transform = transform or DEFAULT_TRANSFORMS.get(split, DEFAULT_TRANSFORMS["val"])
 
-        # ── class_map ──────────────────────────────────────────────────
+        if not Path(class_map_path).exists():
+            # Thử tự động sang v2 nếu dùng mặc định
+            v2_path = self.root / "data" / "processed" / "v2" / "class_map.json"
+            if Path(class_map_path) == DEFAULT_CLASS_MAP and v2_path.exists():
+                class_map_path = v2_path
+
         raw: dict[str, str] = json.loads(Path(class_map_path).read_text(encoding="utf-8"))
-        # class_map.json: {"0": "large_antlered_muntjac", ...}
         self.label_to_id: dict[str, int] = {v: int(k) for k, v in raw.items()}
-        self.id_to_label: dict[int, str] = {int(k): v for k, v in raw.items()}
         self.num_classes: int = len(raw)
 
-        # ── đọc manifest ───────────────────────────────────────────────
         manifest_path = self.crop_dir / f"crop_manifest_{split}.jsonl"
         if not manifest_path.exists():
-            raise FileNotFoundError(
-                f"Không tìm thấy crop manifest: {manifest_path}\n"
-                f"Hãy chạy trước: python scripts/crop_dataset.py --split {split}"
-            )
+            raise FileNotFoundError(f"Không tìm thấy crop manifest: {manifest_path}")
 
         self.samples: list[dict] = []
-        skipped = 0
+        seen_ids = set()
+
         with open(manifest_path, encoding="utf-8") as f:
-            for line in f:
+            for line_no, line in enumerate(f, 1):
                 row = json.loads(line)
-                if row.get("class_id") is None:
-                    skipped += 1
-                    continue
+                
+                # Validation cực kỳ nghiêm ngặt theo yêu cầu của Reviewer
+                crop_id = row.get("crop_id")
+                if not crop_id:
+                    raise ValueError(f"Dòng {line_no}: Thiếu crop_id.")
+                if crop_id in seen_ids:
+                    raise ValueError(f"Dòng {line_no}: Trùng lặp crop_id '{crop_id}'.")
+                seen_ids.add(crop_id)
+
+                row_split = row.get("split")
+                if row_split != self.split:
+                    raise ValueError(f"Dòng {line_no}: Yêu cầu split '{self.split}' nhưng dòng này lại ghi split '{row_split}'.")
+
+                row_label = row.get("label")
+                row_class_id = row.get("class_id")
+                
+                if row_label not in self.label_to_id:
+                    raise ValueError(f"Dòng {line_no}: Nhãn '{row_label}' không tồn tại trong class_map.")
+                
+                expected_id = self.label_to_id[row_label]
+                if row_class_id != expected_id:
+                    raise ValueError(f"Dòng {line_no}: Nhãn '{row_label}' yêu cầu class_id {expected_id}, nhưng dữ liệu lại ghi {row_class_id}.")
+
                 file_path = self.root / row["file_path"]
                 if not file_path.exists():
-                    skipped += 1
-                    continue
+                    raise FileNotFoundError(f"Dòng {line_no}: Không tìm thấy file ảnh crop: {file_path}")
+
+                if preflight_hash_check:
+                    actual_hash = sha256_bytes(file_path.read_bytes())
+                    if actual_hash != row.get("sha256"):
+                        raise ValueError(f"Dòng {line_no}: Mã hash không khớp cho file {file_path}.")
+
                 self.samples.append({
                     "file_path": file_path,
-                    "class_id": int(row["class_id"]),
-                    "label": row["label"],
-                    "crop_id": row.get("crop_id", ""),
+                    "class_id": expected_id,
+                    "label": row_label,
+                    "crop_id": crop_id,
                     "image_id": row.get("image_id", ""),
-                    "split": row.get("split", split),
+                    "split": row_split,
                 })
 
-        if skipped:
-            import warnings
-            warnings.warn(
-                f"[CropDataset/{split}] Bỏ qua {skipped} dòng (thiếu class_id hoặc file không tồn tại).",
-                stacklevel=2,
-            )
+        if not self.samples:
+            raise ValueError(f"Dataset {split} trống.")
 
     def __len__(self) -> int:
         return len(self.samples)
@@ -137,18 +134,12 @@ class CropDataset(Dataset):
         return tensor, sample["class_id"]
 
     def class_counts(self) -> dict[str, int]:
-        """Số lượng crop mỗi lớp (dùng để tính class weight nếu cần)."""
         from collections import Counter
         return dict(Counter(s["label"] for s in self.samples))
 
-
-# ───────────────────────── DataLoader factory ─────────────────────────
-
 def seed_worker(worker_id: int) -> None:
-    """Đảm bảo tính tái lập của DataLoader worker."""
     worker_seed = torch.initial_seed() % 2**32
     random.seed(worker_seed)
-
 
 def make_loaders(
     crop_dir: str | Path = DEFAULT_CROP_DIR,
@@ -159,22 +150,8 @@ def make_loaders(
     transforms_dict: dict[str, Callable] | None = None,
     splits: list[str] | None = None,
     root: str | Path = ROOT,
+    preflight_hash_check: bool = False
 ) -> dict[str, DataLoader]:
-    """Tạo DataLoader cho từng split.
-
-    Args:
-        crop_dir: Thư mục chứa crop manifest và ảnh crop.
-        class_map_path: Đường dẫn đến class_map.json của TV1.
-        batch_size: Số ảnh mỗi batch.
-        num_workers: Số worker song song (0 = chạy trên main process).
-        seed: Seed để tái lập (dùng chung với TV2).
-        transforms_dict: Override transform cho từng split (tuỳ chọn).
-        splits: Danh sách split cần tạo (mặc định: ["train", "val"]).
-        root: Thư mục gốc repo.
-
-    Returns:
-        Dict {"train": DataLoader, "val": DataLoader, ...}
-    """
     if splits is None:
         splits = ["train", "val"]
 
@@ -190,6 +167,7 @@ def make_loaders(
             class_map_path=class_map_path,
             transform=tf.get(split, DEFAULT_TRANSFORMS["val"]),
             root=root,
+            preflight_hash_check=preflight_hash_check
         )
         shuffle = (split == "train")
         loaders[split] = DataLoader(
@@ -200,11 +178,7 @@ def make_loaders(
             worker_init_fn=seed_worker if num_workers > 0 else None,
             generator=g if shuffle else None,
             pin_memory=torch.cuda.is_available(),
-            drop_last=(split == "train"),   # bỏ batch cuối nếu không đủ số
-        )
-        print(
-            f"[{split}] {len(dataset)} crop, {len(loaders[split])} batch "
-            f"(batch_size={batch_size}), classes={dataset.num_classes}"
+            drop_last=(split == "train"),
         )
 
     return loaders

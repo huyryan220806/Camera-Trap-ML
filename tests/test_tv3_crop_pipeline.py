@@ -259,3 +259,13 @@ class CropDatasetTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ResumeTests(unittest.TestCase):
+    def test_resume_missing_file_or_hash_mismatch(self):
+        import sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from crop_dataset import check_completed
+        # Fake manifest row
+        row = {'file_path': 'fake.jpg', 'sha256': '123'}
+        self.assertFalse(check_completed('id', [row], ROOT))
