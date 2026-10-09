@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0",
+  "generated_utc": "2026-10-09T03:51:43+00:00",
+  "source_path": "data/processed/v1/pilot_v1.jsonl",
+  "source_sha256": "e014967e8ecdda18ea7468fba2a7312973b4eec468e61a3faabfd84169a75f8f",
+  "parent_manifest_sha256": "8639e2920567cec6d8aaf7ddaed9a3deb8f0c774e7a6ca87dbe591ba3562d48a",
+  "source_seed": 42,
+  "selection": "All rows in the supplied frozen v1 subset; no new sampling, balancing or split assignment",
+  "exclusion_policy": "Unavailable/corrupt/dimension-mismatched/changed files excluded; exclude ALL exact RGB duplicates across splits or conflicting labels; retain same-label within-split duplicates and report them",
+  "test_policy": "Only automated integrity checks on test pixels; no visual/model-based selection or tuning",
+  "script_sha256": {
+    "download_subset.py": "e7b89fd5da458b893efb783ff135f77d221b17e4906a06515b6ed6d73cf63d60",
+    "build_manifest_v2.py": "1c2823b0e0028f18d688a7cf1be7fa1919c2217d8ecd03abe645dc12afe76eb2",
+    "task_lock.py": "7c9d1bb6b2bc6d4549c2a47a29e7ddd3c5a69ffca4c66680dfe0eb7d419d1571"
+  },
+  "files_sha256": {
+    "audit.json": "e4e5662e125633f14ddb650f8e1da86ac8e45089f30fcaa2ef134fe2713f39b1",
+    "class_map.json": "e43e3cec029b4af1ac3c8183e35eed11d60cddc1a21be878e29ad40c1d79f0c3",
+    "download_events.jsonl": "34303989ace14b4e86eace3507796941372fefe3aee15f52c66a4ab82ce5f192",
+    "download_statuses.jsonl": "fe397fe2fca7965c57911af2646914916e5fe32fbc48d634e8053b08e6bed906",
+    "duplicates.json": "3c44023f0b49daed1f9ca5ceb939ed9dd532610485b0eed6a748e18c1712bd64",
+    "excluded_v2.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "manifest_v2.jsonl": "5f957ea6004d9a8d468bd111bae2a7a2ffb29ffef295cde33c0df1a8ff3454cc",
+    "summary.json": "90fb1e1c6b406fc7ffcfd8d0baddbd02a2a3fe53952a20f7b9a2827e531a3545",
+    "test.jsonl": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2",
+    "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34"
+  }
+}

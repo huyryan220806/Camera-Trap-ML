@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-09T03:54:30+00:00",
+  "source_sha256": "e014967e8ecdda18ea7468fba2a7312973b4eec468e61a3faabfd84169a75f8f",
+  "provenance_sha256": "a7248cc1ba1c5f243456844e1d74d32aa1b70ecf46fc94a4270ed2d6ef1fa41f",
+  "requested": 4000,
+  "accepted": 4000,
+  "excluded": 0,
+  "split_changes": 0,
+  "accepted_per_split": {
+    "train": 2800,
+    "test": 600,
+    "val": 600
+  },
+  "v1_fields_preserved": true,
+  "checksums_verified": true,
+  "local_images_redecoded": true,
+  "exact_cross_split_duplicates_in_accepted": 0,
+  "perceptual_duplicates_checked": false
+}

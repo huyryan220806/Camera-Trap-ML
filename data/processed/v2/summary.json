@@ -1,0 +1,232 @@
+{
+  "generated_utc": "2026-10-09T03:51:42+00:00",
+  "requested": 4000,
+  "accepted": 4000,
+  "excluded": 0,
+  "split_changes": 0,
+  "valid_download_bytes": 6280158773,
+  "duplicate_groups": 1,
+  "by_split": [
+    {
+      "split": "train",
+      "label": null,
+      "requested": 2800,
+      "accepted": 2800,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": null,
+      "requested": 600,
+      "accepted": 600,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": null,
+      "requested": 600,
+      "accepted": 600,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    }
+  ],
+  "by_class_split": [
+    {
+      "split": "train",
+      "label": "annamite_striped_rabbit",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "annamite_striped_rabbit",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "annamite_striped_rabbit",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "chinese_serow",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "chinese_serow",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "chinese_serow",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "common_palm_civet",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "common_palm_civet",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "common_palm_civet",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "eurasian_wild_pig",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "eurasian_wild_pig",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "eurasian_wild_pig",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "large_antlered_muntjac",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "large_antlered_muntjac",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "large_antlered_muntjac",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "masked_palm_civet",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "masked_palm_civet",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "masked_palm_civet",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "sambar",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "sambar",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "sambar",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "train",
+      "label": "silver_pheasant",
+      "requested": 350,
+      "accepted": 350,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "val",
+      "label": "silver_pheasant",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    },
+    {
+      "split": "test",
+      "label": "silver_pheasant",
+      "requested": 75,
+      "accepted": 75,
+      "excluded": 0,
+      "exclusion_reasons": {}
+    }
+  ],
+  "download_status_counts": {
+    "valid": 4000
+  }
+}

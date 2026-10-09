@@ -1,0 +1,14 @@
+{
+  "rows": 4000,
+  "duplicate_image_ids": 0,
+  "duplicate_file_paths": 0,
+  "cross_split_overlap": {
+    "image_id": 0,
+    "file_name": 0,
+    "seq_id": 0,
+    "location": 0
+  },
+  "metadata_leakage_check_passed": true,
+  "image_content_duplicates_checked": true,
+  "image_content_note": "SHA-256 of bytes and decoded RGB pixels checked only for this downloaded subset; perceptual duplicates NOT checked."
+}

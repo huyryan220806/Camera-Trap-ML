@@ -2,6 +2,16 @@
 
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 
+## Bàn giao tuần 2 của thành viên 1
+
+- [Tải pilot 4.000 ảnh, kiểm tra chất lượng và giữ nguyên split](docs/handoff_tv1_w2.md).
+- [Báo cáo kết quả thực tế TV1 tuần 2](reports/tv1_w2/REPORT.md).
+- [Điểm tiếp tục sau gián đoạn/quota](docs/progress_tv1_w2.md).
+- Chạy/tiếp tục: `.venv/Scripts/python.exe scripts/resume_tv1_w2.py`.
+- Các bước riêng: `scripts/download_subset.py`, `scripts/build_manifest_v2.py`, `scripts/validate_manifest_v2.py`.
+- Ảnh cục bộ: `data/images/swg_pilot_v2/` (không đưa lên Git). Manifest và đối chiếu số mẫu: `data/processed/v2/`.
+- Log tải và kết quả xác minh: `reports/tv1_w2/`. Pilot chỉ dùng kiểm tra pipeline; không tune mô hình trên pilot test.
+
 ## Bàn giao tuần 1 của thành viên 2
 
 - [Hướng dẫn bàn giao Baseline & Evaluation](docs/handoff_tv2_w1.md)
@@ -38,7 +48,7 @@ Sau khi cài `requirements-tv2.txt` (bao gồm cả `requirements.txt` chung), k
 - **Manifest thử:** `data/processed/v1/pilot_v1.jsonl` gồm 4.000 ảnh, giữ nguyên split của manifest chính.
 - **Seed và kiểm tra rò rỉ:** `configs/split_v1.json`, `data/processed/v1/provenance.json`, `data/processed/v1/audit.json`.
 
-Đây là kết quả xử lý **metadata**. Chưa tải ảnh, xác minh URL, kiểm tra ảnh lỗi thực tế, kiểm tra hash nội dung hay xác nhận chất lượng box bằng mắt. Danh sách lớp là đề xuất nghiên cứu; chưa xác nhận tình trạng bảo tồn của từng loài.
+Ở tuần 1, đây là kết quả xử lý **metadata**, chưa tải ảnh hay kiểm tra hash nội dung. Phần tải và kiểm tra kỹ thuật pilot thuộc bàn giao tuần 2 ở trên; chưa xác nhận chất lượng box bằng chuyên gia. Danh sách lớp là đề xuất nghiên cứu; chưa xác nhận tình trạng bảo tồn của từng loài.
 
 ## Bàn giao tuần 1 của thành viên 3
 
@@ -79,7 +89,7 @@ Manifest v1 không bị ghi đè. Để kiểm tra tái lập hoặc tạo phiê
 .venv/Scripts/python.exe scripts/split_swg.py --output data/processed/repro_check
 ```
 
-Nếu đổi quy tắc chọn lớp, cấu hình hoặc seed, tạo thư mục v2 và lưu cấu hình tương ứng; không tự thay split sau khi đã đánh giá mô hình. Muốn mở notebook tương tác có thể chọn môi trường `.venv` trong VS Code/Jupyter; các script và báo cáo không phụ thuộc Jupyter.
+Nếu đổi quy tắc chọn lớp, cấu hình hoặc seed, tạo một thư mục phiên bản mới chưa tồn tại và lưu cấu hình tương ứng; không ghi đè v2 tuần 2 hoặc tự thay split sau khi đã đánh giá mô hình. Muốn mở notebook tương tác có thể chọn môi trường `.venv` trong VS Code/Jupyter; các script và báo cáo không phụ thuộc Jupyter.
 
 ## Quy ước manifest
 

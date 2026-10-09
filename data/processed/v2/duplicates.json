@@ -1,0 +1,17 @@
+[
+  {
+    "pixel_sha256": "8b082297786bcd173f18c51cc8ec5504835987dea1a892407f6a86bdddace6e8",
+    "image_ids": [
+      "d86f91b0-8c29-11eb-8c2e-000d3a74c7de",
+      "d86f91b6-8c29-11eb-94af-000d3a74c7de"
+    ],
+    "splits": [
+      "test"
+    ],
+    "labels": [
+      "common_palm_civet"
+    ],
+    "action": "retain_within_split",
+    "reason": null
+  }
+]
