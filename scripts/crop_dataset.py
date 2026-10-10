@@ -135,7 +135,9 @@ def build_fingerprint(manifest_path: Path, class_map_path: Path,
 
 def load_or_create_run_meta(out_dir: Path, fingerprint: dict) -> None:
     """Đảm bảo run meta nhất quán. Raise nếu fingerprint khác (đổi nguồn/split)."""
-    meta_path = out_dir / "run_meta.json"
+    # Mỗi split có file meta riêng để train và val có thể dùng chung --out
+    split = fingerprint.get("split", "unknown")
+    meta_path = out_dir / f"run_meta_{split}.json"
     if meta_path.exists():
         saved = json.loads(meta_path.read_text(encoding="utf-8"))
         for key in ("manifest_version", "split", "limit", "manifest_sha256", "class_map_sha256"):
