@@ -1,0 +1,4 @@
+{"image_id": "c8a19207-8c29-11eb-a09c-000d3a74c7de", "annotation_id": "308cb9ca-6670-11ec-b841-c82158b0a9cc", "split": "val", "reason": "invalid_box_geometry", "bbox_xywh": [892.16, 809.28, 15.6288, 6.2496], "image_size": [2560, 1920]}
+{"image_id": "cb634be1-8c29-11eb-b981-000d3a74c7de", "split": "val", "reason": "download_failed", "detail": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"}
+{"image_id": "cc0a2fbe-8c29-11eb-91f3-000d3a74c7de", "split": "val", "reason": "download_failed", "detail": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"}
+{"image_id": "cc293ec2-8c29-11eb-add2-000d3a74c7de", "split": "val", "reason": "download_failed", "detail": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"}

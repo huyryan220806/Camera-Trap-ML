@@ -1,0 +1,7 @@
+{
+  "manifest_version": "v1",
+  "split": "val",
+  "limit": 1000,
+  "manifest_sha256": "ef4ac845f8aa7a1e5cecee062bc0b51ec0e2483eec311cf28cd92e8d6d3a6332",
+  "class_map_sha256": "e43e3cec029b4af1ac3c8183e35eed11d60cddc1a21be878e29ad40c1d79f0c3"
+}
