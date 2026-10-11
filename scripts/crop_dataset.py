@@ -5,11 +5,11 @@
 Tính năng:
 - Đa luồng (Multi-threading)
 - Resumable chặt chẽ: Kiểm tra từng box (annotation_id), không skip khi box chưa đủ.
-- Writer an toàn: Rewrite atomic, không tạo dòng trùng khi chạy lại sau lỗi.
-- JSONL recovery: Phát hiện và bỏ qua dòng bị cắt cuối file khi gián đoạn.
-- Chốt run: Lưu fingerprint (hash nguồn + config) vào run_meta.json, từ chối nếu chuyển nguồn
-  mà không dùng thư mục output mới.
-- Kiểm tra hash ảnh nguồn khi có quality.sha256.
+- Writer an toàn: Upsert sau mỗi ảnh, không gom vào RAM chờ cuối đợt.
+- JSONL recovery: Phục hồi file bị cắt ngay khi load, kể cả khi pending=0.
+- Chốt run: Lưu fingerprint vào run_meta_<split>.json, fail-closed nếu có artifact
+  mà thiếu metadata.
+- Kiểm tra SHA-256 ảnh nguồn cho cả local lẫn HTTP.
 
 Chạy lần đầu (tập train, giới hạn 4000 ảnh đầu manifest):
     python scripts/crop_dataset.py --split train --out data/crops/v1_run01 --manifest-version v1 --limit 4000
@@ -28,7 +28,6 @@ import logging
 import shutil
 import sys
 import threading
-import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from io import BytesIO
 from pathlib import Path
@@ -83,13 +82,45 @@ def clamp_box(x: float, y: float, w: float, h: float,
     return x1, y1, x2, y2
 
 
-# ──────────────────────── JSONL writer an toàn ──────────────────────
+# ──────────────────────── JSONL đọc/ghi an toàn ─────────────────────
 
 def load_jsonl_safe(path: Path) -> list[dict]:
-    """Đọc JSONL, bỏ qua và log dòng cuối bị cắt (partial write khi bị ngắt điện)."""
+    """Đọc JSONL, phục hồi dòng cuối bị cắt. Lỗi ở giữa file → raise."""
     rows = []
     if not path.exists():
         return rows
+    with path.open("r", encoding="utf-8") as f:
+        raw_lines = f.readlines()
+    truncated = False
+    for i, line in enumerate(raw_lines):
+        stripped = line.strip()
+        if not stripped:
+            continue
+        try:
+            rows.append(json.loads(stripped))
+        except json.JSONDecodeError:
+            if i < len(raw_lines) - 1:
+                # Lỗi ở giữa file → không chấp nhận, dừng ngay
+                raise ValueError(
+                    f"Dòng JSON lỗi ở giữa file {path} dòng {i + 1}. "
+                    "File có thể bị hỏng, cần kiểm tra thủ công."
+                )
+            else:
+                log.warning("Dòng cuối bị cắt trong %s, bỏ qua (do gián đoạn trước đó).", path)
+                truncated = True
+    return rows
+
+
+def repair_jsonl_if_needed(path: Path) -> list[dict]:
+    """Đọc JSONL, nếu phát hiện dòng bị cắt thì GHI LẠI file sạch ngay lập tức.
+
+    Mục 4 fix: Đảm bảo file trên đĩa luôn hợp lệ cho CropDataset, kể cả khi
+    pending=0 và runner return sớm.
+    """
+    if not path.exists():
+        return []
+    rows = []
+    need_repair = False
     with path.open("r", encoding="utf-8") as f:
         raw_lines = f.readlines()
     for i, line in enumerate(raw_lines):
@@ -99,11 +130,17 @@ def load_jsonl_safe(path: Path) -> list[dict]:
         try:
             rows.append(json.loads(stripped))
         except json.JSONDecodeError:
-            # Dòng bị cắt - chỉ chấp nhận ở cuối file, không chấp nhận ở giữa
             if i < len(raw_lines) - 1:
-                log.warning("Dòng JSON lỗi ở giữa file %s dòng %d, bỏ qua.", path, i + 1)
+                raise ValueError(
+                    f"Dòng JSON lỗi ở giữa file {path} dòng {i + 1}. "
+                    "File có thể bị hỏng, cần kiểm tra thủ công."
+                )
             else:
-                log.warning("Dòng cuối bị cắt trong %s, bỏ qua (do gián đoạn trước đó).", path)
+                log.warning("Dòng cuối bị cắt trong %s, sửa và ghi lại file ngay.", path)
+                need_repair = True
+    if need_repair:
+        atomic_rewrite_jsonl(path, rows)
+        log.info("Đã phục hồi %s: %d dòng hợp lệ.", path.name, len(rows))
     return rows
 
 
@@ -133,9 +170,12 @@ def build_fingerprint(manifest_path: Path, class_map_path: Path,
     }
 
 
-def load_or_create_run_meta(out_dir: Path, fingerprint: dict) -> None:
-    """Đảm bảo run meta nhất quán. Raise nếu fingerprint khác (đổi nguồn/split)."""
-    # Mỗi split có file meta riêng để train và val có thể dùng chung --out
+def load_or_create_run_meta(out_dir: Path, fingerprint: dict,
+                             manifest_path: Path, error_path: Path) -> None:
+    """Đảm bảo run meta nhất quán.
+
+    Mục 2 fix: Nếu output có artifact nhưng thiếu metadata → fail-closed.
+    """
     split = fingerprint.get("split", "unknown")
     meta_path = out_dir / f"run_meta_{split}.json"
     if meta_path.exists():
@@ -149,35 +189,60 @@ def load_or_create_run_meta(out_dir: Path, fingerprint: dict) -> None:
                 )
         log.info("Fingerprint khớp, tiếp tục run cũ.")
     else:
-        meta_path.write_text(json.dumps(fingerprint, indent=2, ensure_ascii=False), encoding="utf-8")
+        # Fail-closed: nếu đã có manifest/error nhưng thiếu meta → chặn
+        has_existing = manifest_path.exists() or error_path.exists()
+        if has_existing:
+            raise ValueError(
+                f"Thư mục {out_dir} đã có artifact cho split '{split}' "
+                f"({manifest_path.name} hoặc {error_path.name}) "
+                f"nhưng thiếu file {meta_path.name}.\n"
+                f"Không thể xác minh nguồn dữ liệu. Dùng --out mới hoặc "
+                f"tạo {meta_path.name} thủ công nếu chắc chắn nguồn đúng."
+            )
+        meta_path.write_text(json.dumps(fingerprint, indent=2, ensure_ascii=False),
+                             encoding="utf-8")
         log.info("Tạo run mới, đã lưu fingerprint.")
 
 
 # ──────────────────────── process_record ────────────────────────────
 
 def load_source_image(record: dict) -> tuple[Optional[bytes], str]:
-    """Tải ảnh từ local_path (TV1) hoặc URL. Trả về (bytes, nguồn)."""
+    """Tải ảnh từ local_path (TV1) hoặc URL. Trả về (bytes, nguồn).
+
+    Mục 3 fix: Kiểm tra SHA-256 cho CẢ local lẫn HTTP.
+    """
     quality = record.get("quality", {})
+    expected_sha = quality.get("sha256")
     local_path = quality.get("local_path")
+
+    raw = None
+    source = ""
+
+    # Thử đọc local trước
     if local_path:
         p = ROOT / local_path
         if p.is_file():
             raw = p.read_bytes()
-            # Mục 4: Kiểm tra hash ảnh nguồn
-            expected_sha = quality.get("sha256")
-            if expected_sha and sha256_bytes(raw) != expected_sha:
-                return None, "source_hash_mismatch"
-            return raw, "local"
+            source = "local"
 
-    url = record.get("url", "")
-    if not url:
-        return None, "no_url"
-    try:
-        resp = requests.get(url, timeout=TIMEOUT)
-        resp.raise_for_status()
-        return resp.content, "network"
-    except Exception as exc:
-        return None, f"download_failed:{exc}"
+    # Fallback sang HTTP
+    if raw is None:
+        url = record.get("url", "")
+        if not url:
+            return None, "no_url"
+        try:
+            resp = requests.get(url, timeout=TIMEOUT)
+            resp.raise_for_status()
+            raw = resp.content
+            source = "network"
+        except Exception as exc:
+            return None, f"download_failed:{exc}"
+
+    # Kiểm tra SHA-256 thống nhất cho cả 2 nhánh
+    if expected_sha and sha256_bytes(raw) != expected_sha:
+        return None, "source_hash_mismatch"
+
+    return raw, source
 
 
 def process_record(record: dict, out_dir: Path, split: str,
@@ -283,7 +348,7 @@ def check_completed_per_box(record: dict,
                              fatal_box_ids: set[str],
                              root: Path) -> bool:
     """
-    Mục 2 fix: kiểm tra hoàn tất theo từng box (annotation_id), không phải theo ảnh.
+    Kiểm tra hoàn tất theo từng box (annotation_id), không phải theo ảnh.
     - Mỗi box phải hoặc có crop hợp lệ (file tồn tại + hash khớp), hoặc có lỗi vĩnh viễn.
     - Nếu còn box chưa giải quyết → chưa xong.
     """
@@ -314,10 +379,7 @@ def check_completed_per_box(record: dict,
 # ──────────────────────── writer: upsert không trùng ────────────────
 
 def upsert_rows(existing_rows: list[dict], new_rows: list[dict]) -> list[dict]:
-    """
-    Mục 1 fix: Thay thế dòng cũ theo crop_id thay vì append blindly.
-    Trả về danh sách mới đã dedup.
-    """
+    """Thay thế dòng cũ theo crop_id thay vì append blindly. Trả về danh sách dedup."""
     by_id: dict[str, dict] = {r["crop_id"]: r for r in existing_rows}
     for r in new_rows:
         by_id[r["crop_id"]] = r  # ghi đè nếu đã có
@@ -342,7 +404,7 @@ def crop_split_multithread(split: str, out_dir: Path, limit: int,
     manifest_path = out_dir / f"crop_manifest_{split}.jsonl"
     error_path = out_dir / f"crop_errors_{split}.jsonl"
 
-    # Mục 3: Chọn manifest source theo --manifest-version (KHÔNG auto-fallback)
+    # Chọn manifest source theo --manifest-version (KHÔNG auto-fallback)
     if manifest_version == "v2":
         source_dir = MANIFEST_V2_DIR
         if not (source_dir / f"{split}.jsonl").exists():
@@ -364,13 +426,15 @@ def crop_split_multithread(split: str, out_dir: Path, limit: int,
     # CHỐT TẬP ĐÍCH trước khi lọc cache
     target_records = all_records[:limit] if limit > 0 else all_records
 
-    # Mục 3: Kiểm tra fingerprint, từ chối nếu đổi nguồn mà không đổi --out
+    # Kiểm tra fingerprint, từ chối nếu đổi nguồn mà không đổi --out
+    # Mục 2 fix: truyền manifest_path/error_path để fail-closed khi thiếu meta
     fp = build_fingerprint(src_manifest, cmap_path, limit, split, manifest_version)
-    load_or_create_run_meta(out_dir, fp)
+    load_or_create_run_meta(out_dir, fp, manifest_path, error_path)
 
-    # Mục 5: Đọc JSONL an toàn (bỏ qua dòng bị cắt)
-    existing_rows = load_jsonl_safe(manifest_path)
-    existing_errors = load_jsonl_safe(error_path)
+    # Mục 4 fix: Phục hồi JSONL bị cắt NGAY LÚC NÀY (trước khi check pending),
+    # đảm bảo file trên đĩa luôn sạch cho CropDataset dù có return sớm hay không.
+    existing_rows = repair_jsonl_if_needed(manifest_path)
+    existing_errors = repair_jsonl_if_needed(error_path)
 
     # Index các kết quả cũ
     done_crops: dict[str, dict] = {r["crop_id"]: r for r in existing_rows}
@@ -381,7 +445,7 @@ def crop_split_multithread(split: str, out_dir: Path, limit: int,
         if e.get("reason") in BOX_FATAL_REASONS and e.get("crop_id")
     }
 
-    # Lọc ảnh cần xử lý (Mục 2: check per-box)
+    # Lọc ảnh cần xử lý (check per-box)
     pending_records = [
         r for r in target_records
         if not check_completed_per_box(r, done_crops, fatal_box_ids, ROOT)
@@ -395,37 +459,47 @@ def crop_split_multithread(split: str, out_dir: Path, limit: int,
         log.info("[%s] Không còn gì cần làm.", split)
         return
 
+    # Mục 1 fix: Persist sau MỖI ẢNH thay vì gom hết vào RAM chờ cuối đợt.
+    # Dùng lock bảo vệ đọc-upsert-ghi để tránh race condition giữa các thread.
     lock = threading.Lock()
-    # Các batch kết quả mới (gom lại, atomic rewrite sau khi tất cả xong)
-    new_rows_all: list[dict] = []
-    new_errors_all: list[dict] = []
     done = 0
+    total_new_crops = 0
+    total_new_errors = 0
 
-    def process_and_collect(record: dict):
+    def process_and_persist(record: dict):
+        """Xử lý 1 ảnh rồi upsert + atomic rewrite NGAY LẬP TỨC."""
         rows, errors = process_record(record, out_dir, split, label_to_id)
-        return rows, errors
+        if rows or errors:
+            with lock:
+                # Đọc lại file hiện tại, upsert, ghi lại
+                cur_rows = load_jsonl_safe(manifest_path)
+                cur_errors = load_jsonl_safe(error_path)
+                if rows:
+                    merged_rows = upsert_rows(cur_rows, rows)
+                    atomic_rewrite_jsonl(manifest_path, merged_rows)
+                if errors:
+                    merged_errors = upsert_errors(cur_errors, errors)
+                    atomic_rewrite_jsonl(error_path, merged_errors)
+        return len(rows), len(errors)
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {executor.submit(process_and_collect, r): r for r in pending_records}
+        futures = {executor.submit(process_and_persist, r): r for r in pending_records}
         for future in as_completed(futures):
-            rows, errors = future.result()
+            c_rows, c_errs = future.result()
             with lock:
-                new_rows_all.extend(rows)
-                new_errors_all.extend(errors)
                 done += 1
-                if done % 100 == 0 or done == len(pending_records):
+                total_new_crops += c_rows
+                total_new_errors += c_errs
+                if done % 50 == 0 or done == len(pending_records):
                     log.info("[%s] %d/%d ảnh, +%d crops, +%d lỗi",
                              split, done, len(pending_records),
-                             len(new_rows_all), len(new_errors_all))
+                             total_new_crops, total_new_errors)
 
-    # Mục 1: Upsert (không append mù) rồi atomic rewrite
-    merged_rows = upsert_rows(existing_rows, new_rows_all)
-    merged_errors = upsert_errors(existing_errors, new_errors_all)
-    atomic_rewrite_jsonl(manifest_path, merged_rows)
-    atomic_rewrite_jsonl(error_path, merged_errors)
-
+    # Đọc lại manifest cuối cùng để báo cáo chính xác
+    final_rows = load_jsonl_safe(manifest_path)
+    final_errors = load_jsonl_safe(error_path)
     log.info("[%s] Hoàn tất: %d crops tổng, %d lỗi tổng.",
-             split, len(merged_rows), len(merged_errors))
+             split, len(final_rows), len(final_errors))
 
 
 # ──────────────────────── CLI ────────────────────────────────────────

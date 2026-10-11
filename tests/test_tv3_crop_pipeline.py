@@ -431,36 +431,123 @@ class ResumeAndJsonlTests(unittest.TestCase):
         self.assertEqual(len(merged), 1)
         self.assertEqual(merged[0]["sha256"], "new")
 
-    def test_load_jsonl_safe_handles_truncated_last_line(self):
-        """Mục 5 fix: Dòng cuối bị cắt được bỏ qua, các dòng trên vẫn đọc được."""
+    def test_load_jsonl_safe_raises_on_mid_file_error(self):
+        """Vòng 3 mục 4: Lỗi JSON ở giữa file phải raise, không bỏ qua."""
         import sys
         sys.path.insert(0, str(ROOT / "scripts"))
         from crop_dataset import load_jsonl_safe
         p = self.tmp / "test.jsonl"
+        good1 = json.dumps({"crop_id": "a"})
+        bad_mid = '{"crop_id": broken'  # giữa file
+        good2 = json.dumps({"crop_id": "b"})
+        p.write_text(good1 + "\n" + bad_mid + "\n" + good2 + "\n", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            load_jsonl_safe(p)
+
+    def test_repair_jsonl_fixes_file_on_disk(self):
+        """Vòng 3 mục 4: repair_jsonl_if_needed ghi lại file sạch trên đĩa."""
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from crop_dataset import repair_jsonl_if_needed
+        p = self.tmp / "manifest.jsonl"
         good = json.dumps({"crop_id": "a"})
         partial = '{"crop_id": "b"'  # dòng cuối bị cắt
         p.write_text(good + "\n" + partial, encoding="utf-8")
-        rows = load_jsonl_safe(p)
+        rows = repair_jsonl_if_needed(p)
         self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["crop_id"], "a")
+        # Sau repair, file trên đĩa phải parse được hoàn toàn bằng json.loads bình thường
+        with p.open("r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    json.loads(line)  # KHÔNG được raise
 
-    def test_atomic_rewrite_no_duplicate_on_resume(self):
-        """Mục 1 fix: Sau khi xóa crop và chạy lại, manifest chỉ có 1 dòng mỗi crop_id."""
+    def test_repair_jsonl_no_pending_still_clean(self):
+        """Vòng 3 mục 4: Dù pending=0, file vẫn được sửa sạch."""
         import sys
         sys.path.insert(0, str(ROOT / "scripts"))
-        from crop_dataset import upsert_rows, atomic_rewrite_jsonl, load_jsonl_safe
-        manifest = self.tmp / "crop_manifest_train.jsonl"
-        row = {"crop_id": "x1", "sha256": "v1"}
-        atomic_rewrite_jsonl(manifest, [row])
-        # Giả lập chạy lại: row cũ + row mới cùng crop_id
-        existing = load_jsonl_safe(manifest)
-        new_row = {"crop_id": "x1", "sha256": "v2"}
-        merged = upsert_rows(existing, [new_row])
-        atomic_rewrite_jsonl(manifest, merged)
-        final = load_jsonl_safe(manifest)
-        self.assertEqual(len(final), 1)
-        self.assertEqual(final[0]["sha256"], "v2")
+        from crop_dataset import repair_jsonl_if_needed
+        p = self.tmp / "manifest.jsonl"
+        good = json.dumps({"crop_id": "done1"})
+        partial = '{"crop_id":'  # dòng cuối bị cắt
+        p.write_text(good + "\n" + partial, encoding="utf-8")
+        repair_jsonl_if_needed(p)
+        # Đọc file thô: phải chỉ còn 1 dòng hợp lệ
+        lines = [l for l in p.read_text(encoding="utf-8").strip().split("\n") if l.strip()]
+        self.assertEqual(len(lines), 1)
+        json.loads(lines[0])  # KHÔNG được raise
+
+    def test_fail_closed_missing_metadata_with_existing_artifact(self):
+        """Vòng 3 mục 2: Có manifest nhưng thiếu run_meta → phải raise."""
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from crop_dataset import load_or_create_run_meta
+        out = self.tmp / "run_out"
+        out.mkdir()
+        manifest = out / "crop_manifest_train.jsonl"
+        manifest.write_text('{"crop_id": "x"}\n', encoding="utf-8")
+        error = out / "crop_errors_train.jsonl"
+        fp = {"manifest_version": "v1", "split": "train", "limit": 100,
+              "manifest_sha256": "abc", "class_map_sha256": "def"}
+        with self.assertRaises(ValueError):
+            load_or_create_run_meta(out, fp, manifest, error)
+
+    def test_create_metadata_on_fresh_output(self):
+        """Vòng 3 mục 2: Output mới tinh (chưa có artifact) → tạo meta OK."""
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from crop_dataset import load_or_create_run_meta
+        out = self.tmp / "fresh_out"
+        out.mkdir()
+        manifest = out / "crop_manifest_train.jsonl"
+        error = out / "crop_errors_train.jsonl"
+        fp = {"manifest_version": "v1", "split": "train", "limit": 100,
+              "manifest_sha256": "abc", "class_map_sha256": "def"}
+        load_or_create_run_meta(out, fp, manifest, error)  # KHÔNG raise
+        meta = out / "run_meta_train.json"
+        self.assertTrue(meta.exists())
+
+    def test_http_hash_mismatch_rejected(self):
+        """Vòng 3 mục 3: Ảnh tải qua HTTP nhưng hash sai quality.sha256 phải bị từ chối."""
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import unittest.mock as mock
+        from crop_dataset import load_source_image, sha256_bytes
+        fake_jpeg = make_fake_jpeg()
+        mock_resp = mock.Mock()
+        mock_resp.content = fake_jpeg
+        mock_resp.raise_for_status = mock.Mock()
+        with mock.patch("scripts.crop_dataset.requests.get", return_value=mock_resp):
+            record = {
+                "url": "http://example.com/img.jpg",
+                "quality": {
+                    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+                }
+            }
+            raw, source = load_source_image(record)
+            self.assertIsNone(raw)
+            self.assertEqual(source, "source_hash_mismatch")
+
+    def test_http_hash_match_accepted(self):
+        """Vòng 3 mục 3: Ảnh tải qua HTTP và hash đúng → trả bytes OK."""
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import unittest.mock as mock
+        from crop_dataset import load_source_image, sha256_bytes
+        fake_jpeg = make_fake_jpeg()
+        correct_hash = sha256_bytes(fake_jpeg)
+        mock_resp = mock.Mock()
+        mock_resp.content = fake_jpeg
+        mock_resp.raise_for_status = mock.Mock()
+        with mock.patch("scripts.crop_dataset.requests.get", return_value=mock_resp):
+            record = {
+                "url": "http://example.com/img.jpg",
+                "quality": {"sha256": correct_hash}
+            }
+            raw, source = load_source_image(record)
+            self.assertIsNotNone(raw)
+            self.assertEqual(source, "network")
 
 
 if __name__ == "__main__":
     unittest.main()
+
