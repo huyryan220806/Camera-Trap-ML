@@ -39,7 +39,9 @@ Các file `.py` là pipeline train/validation chính thức; file `.ipynb` dùng
 
 Validator kiểm tra SHA-256 source/validation/class map, mapping hai chiều, từng dòng validation thuộc source và SHA ảnh khi manifest có metadata đó **trước inference**. Pilot v1 chưa lưu hash ảnh; B0_run01 không được chuyển ngầm sang v2. W3 phải chốt chung danh sách ảnh đánh giá với TV1/TV3 trước khi so sánh B0/B1/B2.
 
-Bàn giao checkpoint ngoài Git: [TV2_W2_CHECKPOINT.md](reports/tv2/TV2_W2_CHECKPOINT.md). Size **44.837.567 bytes**, SHA-256 **`d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`**. Shared download URL: **PENDING USER UPLOAD**. Có checkpoint và ảnh validation thì chạy `py scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth`; không cần train lại.
+Bàn giao checkpoint ngoài Git: **READY**, [TV2_W2_CHECKPOINT.md](reports/tv2/TV2_W2_CHECKPOINT.md). File `best_model.pth`, size **44.837.567 bytes**, SHA-256 **`d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`**. [Tải checkpoint từ Google Drive](https://drive.google.com/file/d/18ESoOAV8KqvSV2StS808BvKkcWaNSpUr/view?usp=drive_link). Ngày 11/10/2026 đã tải độc lập không đăng nhập, đối chiếu đúng size/hash và chạy lại validation local PASS, sai khác metric bằng 0. Có checkpoint và ảnh validation thì chạy `py scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth`; không cần train lại.
+
+Kiểm tra chéo TV4: [TV2_REVIEW_TV4_W2.md](reports/tv2/TV2_REVIEW_TV4_W2.md). Báo cáo ghi rõ commit TV4 được kiểm tra, môi trường và bằng chứng runtime/UI độc lập.
 
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
 

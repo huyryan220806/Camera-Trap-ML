@@ -61,7 +61,7 @@ Tại thư mục gốc repo, với Python và dependencies phù hợp:
 .venv/Scripts/python.exe scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth
 ```
 
-Lệnh `prepare_b0_pilot.py` cần Internet để tải ảnh public trong manifest. Khi chạy lại trên cùng máy, ảnh đã có sẽ được kiểm tra và dùng lại. `--smoke` đã PASS: load dataset, một batch train, forward/backward, batch validation và save/load checkpoint tạm. Toàn bộ **29 unittest trên nhánh TV2** đạt khi có `ijson` và thư mục TEMP có quyền ghi. Lệnh provenance bổ sung đã xác nhận các dòng train/validation giống pilot gốc, không trùng ID, đủ 8 lớp và 0 ảnh lỗi.
+Lệnh `prepare_b0_pilot.py` cần Internet để tải ảnh public trong manifest. Khi chạy lại trên cùng máy, ảnh đã có sẽ được kiểm tra và dùng lại. `--smoke` đã PASS: load dataset, một batch train, forward/backward, batch validation và save/load checkpoint tạm. Ngày 11/10/2026, toàn bộ **52/52 unittest trên nhánh TV2** đạt trong 2,442 giây. Lệnh provenance bổ sung đã xác nhận các dòng train/validation giống pilot gốc, không trùng ID, đủ 8 lớp và 0 ảnh lỗi.
 
 Notebook trình bày kết quả: `notebooks/TV2_W2_B0_Demo.ipynb`. Notebook đọc artifact đã có, trực quan hóa dữ liệu/metric và kiểm tra lại checkpoint trên 64 ảnh validation; không train lại B0 và không đọc test. Run All đã **PASS** với 22/22 code cells, 0 lỗi. Các script `.py` ở trên vẫn là pipeline train/validation chính thức; notebook dùng để trình bày và phân tích.
 
@@ -74,7 +74,7 @@ Notebook trình bày kết quả: `notebooks/TV2_W2_B0_Demo.ipynb`. Notebook đ�
 
 ## Bàn giao và sửa review W2
 
-- [Checkpoint handoff](TV2_W2_CHECKPOINT.md): giữ weights ngoài Git, SHA-256 `d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`, 44.837.567 bytes. Link tải chung đang **PENDING USER UPLOAD**.
+- [Checkpoint handoff](TV2_W2_CHECKPOINT.md): **READY**, giữ weights ngoài Git, SHA-256 `d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`, 44.837.567 bytes. [Google Drive chính thức](https://drive.google.com/file/d/18ESoOAV8KqvSV2StS808BvKkcWaNSpUr/view?usp=drive_link). Ngày 11/10/2026: checkpoint local đúng size/hash, bản tải độc lập không đăng nhập từ Drive có cùng size/hash, validation local PASS trên 64 ảnh với epoch 4 và toàn bộ metric giữ nguyên, sai khác 0. Không train lại hoặc thay artifact B0_run01.
 - Validator kiểm tra source/class map/validation hash, mapping hai chiều và exact source membership trước loader/model. Với metadata v2, dùng `quality.local_path` và `quality.sha256`; v1 không có frozen image hash nên giới hạn này được báo rõ, không tạo metadata lịch sử giả.
 - Danh sách ảnh đánh giá W3 phải được TV1/TV2/TV3 thống nhất và freeze trước khi so sánh B0/B1/B2; giữ nguyên B0_run01.
-- Kết quả sửa review và bằng chứng chạy nằm trong [TV2_W2_REVIEW_FIX.md](TV2_W2_REVIEW_FIX.md). Checklist demo TV4 đã đọc; xác nhận chạy chéo độc lập còn pending trong [TV2_REVIEW_TV4_W2.md](TV2_REVIEW_TV4_W2.md).
+- Kết quả sửa review và bằng chứng chạy nằm trong [TV2_W2_REVIEW_FIX.md](TV2_W2_REVIEW_FIX.md). Kiểm tra chéo độc lập TV4 tại commit `f61ca6d3180971c4d7725c7d3cab1046be44134a` đã **PASS**: 91/91 test, `pip check`, smoke MegaDetector thật và 6/6 mục runtime/UI đều đạt; xem [TV2_REVIEW_TV4_W2.md](TV2_REVIEW_TV4_W2.md). Không sửa branch TV4.

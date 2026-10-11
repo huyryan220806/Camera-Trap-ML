@@ -1,0 +1,11 @@
+{
+  "verified_date": "2026-10-11",
+  "url": "https://drive.google.com/file/d/18ESoOAV8KqvSV2StS808BvKkcWaNSpUr/view?usp=drive_link",
+  "browser_signed_in": false,
+  "download_completed": true,
+  "filename_presented": "best_model.pth",
+  "bytes": 44837567,
+  "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+  "matches_local_checkpoint": true,
+  "external_permission_independently_verified": true
+}

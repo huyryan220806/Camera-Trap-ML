@@ -1,0 +1,45 @@
+{
+  "verified_date": "2026-10-11",
+  "runtime_url": "http://127.0.0.1:8766",
+  "input_split": "train",
+  "checks": {
+    "upload_and_preview": "PASS",
+    "mock_explicitly_labelled": "PASS",
+    "real_megadetector_inference": "PASS",
+    "real_box_rendered": "PASS",
+    "json_export": "PASS",
+    "real_no_detection_at_threshold_1": "PASS",
+    "corrupt_jpeg_read_error": "PASS",
+    "mock_detector_error_explicitly_labelled": "PASS",
+    "mode_change_clears_stale_result": "PASS",
+    "image_change_clears_stale_result": "PASS",
+    "threshold_change_clears_stale_result": "PASS",
+    "bounding_box_toggle": "PASS",
+    "small_screen_layout": "PASS"
+  },
+  "real_result": {
+    "model": "MDv5a.0.1",
+    "package_version": "10.0.25",
+    "threshold": 0.2,
+    "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+    "detections": 1,
+    "score": 0.891,
+    "classifier_id": null,
+    "species": null,
+    "training_overlap_swg": true
+  },
+  "responsive_geometry": {
+    "requested_viewport": [390, 844],
+    "document_client_width": 375,
+    "document_scroll_width": 375,
+    "image_left": 18.0,
+    "image_right": 357.20001220703125,
+    "box_left": 139.8625030517578,
+    "box_right": 262.6750030517578,
+    "horizontal_overflow": false,
+    "box_inside_image": true
+  },
+  "fail": 0,
+  "not_tested": 0,
+  "blocked": 0
+}

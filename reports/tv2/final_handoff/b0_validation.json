@@ -1,0 +1,28 @@
+{
+  "provenance": {
+    "status": "PASS",
+    "source_manifest_hash": "PASS",
+    "validation_manifest_hash": "PASS",
+    "class_map": "PASS",
+    "class_map_hash": "PASS",
+    "source_membership": "PASS",
+    "image_sha256_verified": 0,
+    "images_without_frozen_sha256": 64
+  },
+  "reload": "PASS",
+  "epoch": 4,
+  "samples": 64,
+  "metrics": {
+    "macro_f1": 0.3616866793337382,
+    "macro_precision": 0.46773504273504274,
+    "macro_recall": 0.375,
+    "accuracy": 0.375
+  },
+  "val_loss": 1.7887232899665833,
+  "metric_absolute_differences": {
+    "macro_f1": 0.0,
+    "macro_precision": 0.0,
+    "macro_recall": 0.0,
+    "accuracy": 0.0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "verified_date": "2026-10-11",
+  "branch": "feat/baseline",
+  "review_base": "d0242aac1977ead56be40801971f723ae7430ead",
+  "checkpoint": {
+    "path": "experiments/B0_run01/checkpoints/best_model.pth",
+    "exists": true,
+    "bytes": 44837567,
+    "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+    "drive_url": "https://drive.google.com/file/d/18ESoOAV8KqvSV2StS808BvKkcWaNSpUr/view?usp=drive_link",
+    "external_download_independently_verified": true,
+    "git_ignored": true
+  },
+  "validation": {
+    "reload": "PASS",
+    "epoch": 4,
+    "samples": 64,
+    "macro_f1": 0.3616866793337382,
+    "macro_precision": 0.46773504273504274,
+    "macro_recall": 0.375,
+    "accuracy": 0.375,
+    "main_metric_max_absolute_difference": 0.0
+  },
+  "tv2_tests": {
+    "total": 52,
+    "passed": 52,
+    "failed": 0
+  },
+  "tv4_cross_review": {
+    "branch": "origin/codex/tv4-week2-demo-detector",
+    "commit": "f61ca6d3180971c4d7725c7d3cab1046be44134a",
+    "unit_tests_total": 91,
+    "unit_tests_passed": 91,
+    "pip_check": "PASS",
+    "real_detector_smoke": "PASS",
+    "checklist_pass": 6,
+    "checklist_fail": 0,
+    "checklist_not_tested": 0,
+    "checklist_blocked": 0,
+    "final_status": "PASS"
+  },
+  "b0_run01_integrity": {
+    "files_checked": 15,
+    "mismatches": 0,
+    "modified": false
+  },
+  "test_set_used_for_model_selection": false,
+  "other_member_branches_modified": false
+}
