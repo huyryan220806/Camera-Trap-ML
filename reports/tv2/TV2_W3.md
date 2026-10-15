@@ -1,0 +1,212 @@
+# TV2 W3 IMPLEMENTATION REPORT
+
+Ngày 15/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
+Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 chính thức.
+
+## A. Repository audit
+
+Đã thực hiện READ MAIN → READ TV2/TV1/TV3/TV4 trước sửa code.
+
+| Vai trò | Ref đọc | Commit thực tế |
+|---|---|---|
+| Main | origin/main | 4e7ad47f75b2e1dd1e7e42c624347627fb2f3d5c |
+| TV2 W2 | origin/feat/baseline | 8988d2812ab2ab22715f6fc686bf47cad74942a4 |
+| TV1 | origin/codex/tv1-week2-download-quality | b9a92b95edcc377aafcbe1efc4161bb7520f2090 |
+| TV3 | origin/feat/crop-classifier | 2c3c9928edb8f913f24df657464f47d480e3ae95 |
+| TV4 | origin/codex/tv4-week2-demo-detector | f61ca6d3180971c4d7725c7d3cab1046be44134a |
+
+Main mới tích hợp W1: metadata/class map v1, JSON contract, metrics, notebook
+EDA và kiểm thử. Chưa có B0/B1/B2 trên main. Nguồn đọc: README.md,
+CONTRIBUTING.md, docs/architecture.md, docs/experiment_protocol.md,
+docs/environment.md, docs/gpu_schedule.md, docs/result_contract.md,
+requirements*.txt, src/evaluation/metrics.py, data/processed/v1/class_map.json,
+audit.json, provenance.json và inventory configs/scripts/tests/contracts.
+Không đọc test manifest hoặc ảnh test. Đọc audit tổng hợp không phải đánh giá test.
+
+TV2 giữ kiến trúc hiện có: tái sử dụng dataset/transform, seed, evaluate, plotting,
+atomic artifact publication và run reservation từ W2; thêm module B1 riêng,
+không sửa source B0. Phạm vi TV2: model/training/validation B1, config,
+test, báo cáo/review, phần README TV2. Các interface giữ nguyên: class IDs,
+manifest split, metric semantics, inference schema và preprocessing metadata
+đi kèm checkpoint. TV4 W2 vẫn detector-only, chưa có B1 classifier integration.
+
+TV1/TV3/TV4 chỉ đọc bằng git show/ls-tree; không checkout, merge hay chạy code
+của họ. Chênh lệch sẵn có giữa TV2 và main không phải thay đổi của lượt W3.
+Không có AGENTS.md trong inventory repository. Ba tệp local chưa tracked có
+sẵn được xem là tài liệu người dùng, giữ nguyên và không stage.
+
+## B. W3-01 — Data gate
+
+**BLOCKED – W3-01 MANIFEST NOT FROZEN / PENDING TV1 HANDOFF.**
+Chưa có manifest/version/SHA-256/freeze evidence chính thức W3; train/val/classes
+của W3: chưa chốt. Có artifact W2-01 thật, nhưng handoff TV1 gọi đây là pilot.
+
+| Bằng chứng W2 v2 (không phải W3 frozen) | Giá trị |
+|---|---|
+| Train | 2.800 ảnh, 2.277 chuỗi, 458 location |
+| Validation | 600 ảnh, 508 chuỗi, 102 location |
+| Classes | 8; 350 train +75 val mỗi lớp |
+| Train SHA-256 | 537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11 |
+| Val SHA-256 | 4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34 |
+| Class map SHA-256 | e43e3cec029b4af1ac3c8183e35eed11d60cddc1a21be878e29ad40c1d79f0c3 |
+| Train/val overlap ID/path/location/sequence/byte hash/pixel hash | 0, theo metadata Git đã đối chiếu |
+
+Mapping: 0 large_antlered_muntjac; 1 annamite_striped_rabbit; 2 sambar;
+3 chinese_serow; 4 common_palm_civet; 5 masked_palm_civet; 6 silver_pheasant;
+7 eurasian_wild_pig. Không thay mapping hay split.
+
+Chưa kiểm định ảnh W3 thật, chưa nhận ledger W3 kept/excluded, box QA hay
+attestation leakage toàn bộ split. Không mở test để tự làm W3-01 thay TV1.
+Gate kiểm SHA-256/committed receipt, mapping, source membership, train/val
+leakage, duplicate, số lớp, crop coverage, exclusion accounting, full decode,
+dimensions và byte/pixel hash; lỗi dừng, không âm thầm lọc ảnh. Chi tiết:
+[review TV1](TV2_REVIEW_TV1_W3.md), [audit máy đọc](w3_evidence/repository_audit.json).
+
+## C. B1 configuration
+
+Config [b1.yaml](../../configs/b1.yaml) là **PROPOSED**, chưa được TV3 đồng thuận.
+
+- Architecture ResNet18, 8 outputs; pretrained IMAGENET1K_V1 trực tiếp từ
+  torchvision, nguồn `https://download.pytorch.org/models/resnet18-f37072fd.pth`.
+- B0 chỉ học FC (4.104 parameters), giữ backbone/BatchNorm frozen. B1 mở toàn bộ
+  **11.180.616 trainable, 0 frozen** với 8 lớp; optimizer chỉ nhận requires_grad.
+  BatchNorm train/eval theo phase. Không khởi tạo từ B0.
+- Seed42; SGD lr0.001, momentum0.9, weight_decay0.0001; StepLR10/gamma0.1.
+- Batch32, tối đa50 epoch, early stopping7, image224/resize256, workers0.
+- Train: random crop, horizontal flip0.5, jitter(0.2,0.2,0.1,0.05); validation:
+  center crop xác định. ImageNet normalization, unweighted CE.
+- Checkpoint selection: validation macro-F1 trên đủ lớp; hòa điểm giữ best cũ.
+
+Module mới: src/models/b1.py, src/training/b1.py, src/training/b1_gate.py;
+scripts/train_b1.py và scripts/validate_b1.py. Giao diện receipt/protocol, command
+và giới hạn có trong [protocol PROPOSED](TV2_W3_PROTOCOL.md).
+
+## D. B1 training
+
+**Training executed: NO (official)**. Epochs completed: 0; best epoch, runtime,
+peak GPU memory chính thức: N/A. Training status: BLOCKED.
+
+Môi trường thực kiểm thử: Python3.14.3, torch2.13.0+cpu, torchvision0.28.0+cpu,
+CUDA available=False, CUDA version=None, GPU=None. Không thay PyTorch/CUDA,
+không tự giảm budget sang CPU. Cần môi trường CUDA/budget đã được nhóm xác nhận.
+
+Synthetic smoke riêng chạy 2 epoch trên ảnh RGB sinh tạm, ResNet18 thật,
+weights=None, 2 lớp, batch2, input32; trainable11.177.538. Test gồm forward,
+loss hữu hạn, toàn bộ gradients, optimizer step, validation, checkpoint save/load
+và fresh-model reload. Không phải dữ liệu SWG, không phải training history B1.
+Thời gian đo và chứng cứ đầy đủ: [smoke.txt](w3_evidence/smoke.txt).
+
+Official pipeline đã chuẩn bị epoch CSV (loss, 4 metrics, LR, thời gian,
+sample count, batch thực tế, peak allocated VRAM), best checkpoint, config,
+data gate, trạng thái lỗi/interruption. Không có resume; run đã có phải dùng ID
+mới. Không tạo experiments/B1_run01 trong lượt này.
+
+## E. B1 validation
+
+Macro-F1, macro-precision, macro-recall, accuracy, validation loss, per-class
+metrics/support, confusion matrix, learning curves, validation samples và best
+epoch **đều N/A cho B1 official**. Không tạo bảng số liệu giả, không lấy W2 B0
+hoặc fixture làm B1. Pipeline đã được kiểm tra tạo các artifact tương ứng trên
+fixture tạm rồi xóa. Không tạo notebook giả khi chưa có kết quả thật.
+
+## F. Checkpoint
+
+Official file chưa tồn tại; size/hash/download URL N/A. Reload official:
+NOT TESTED; metric differences official: N/A. **PENDING ARTIFACT UPLOAD** sau
+khi có model thật. Synthetic checkpoint reload PASS, bốn metric và logits delta0,
+nhưng đã xóa và không dùng bàn giao TV4. [Checkpoint handoff](TV2_W3_CHECKPOINT.md).
+
+## G. TV2 tests
+
+**77/77 PASS, 0 FAIL, 0 SKIPPED**, gồm toàn bộ **52 test W2 +25 test B1**.
+Chạy `python -X utf8 -m unittest discover -s tests -v`.
+Log: [tests.txt](w3_evidence/tests.txt). Synthetic CLI smoke PASS; official CLI
+bị chặn đúng trước train; [official_gate.txt](w3_evidence/official_gate.txt).
+
+Lượt đầu bị lỗi TEMP sandbox và thiếu ijson, chưa được coi PASS. Đã đặt TEMP/TMP
+vào outputs/tv2_w3/tmp, cài riêng đúng ijson3.5.1 vào outputs/tv2_w3/deps và thêm
+PYTHONPATH cho tiến trình test; không sửa/bỏ test cũ hoặc đổi environment hệ thống.
+
+`pip check`: PASS (No broken requirements found). Contract validator: 6/6 PASS.
+`scripts/check_environment.py`: **FAIL** vì Python3.14.3 khác3.12, NumPy2.4.4
+khác2.5.3, matplotlib3.10.9 khác3.11.2. Đây là environment chuẩn W1 chưa tái lập,
+không sửa checker để báo PASS. Torch/torchvision hiện cũng khác bộ ghim2.8/0.23.
+Chưa xác nhận chạy trên bộ pinned Python3.12 hay CUDA; cần kiểm định trước official.
+Logs ở [environment_check.txt](w3_evidence/environment_check.txt),
+[pip_check.txt](w3_evidence/pip_check.txt), [contracts.txt](w3_evidence/contracts.txt).
+
+Lệnh tái lập kiểm thử tại máy này (chọn interpreter có sẵn, không phụ thuộc
+WindowsApps python alias):
+
+```powershell
+New-Item -ItemType Directory -Force outputs/tv2_w3/tmp | Out-Null
+$env:TEMP = Join-Path (Get-Location) 'outputs/tv2_w3/tmp'
+$env:TMP = $env:TEMP
+$env:PYTHONPATH = Join-Path (Get-Location) 'outputs/tv2_w3/deps'
+# Chỉ khi thiếu ijson trong interpreter hiện có:
+python -m pip install --target outputs/tv2_w3/deps --no-deps ijson==3.5.1
+python -X utf8 -m unittest discover -s tests -v
+python -X utf8 scripts/train_b1.py --smoke
+```
+
+## H. Cross-review
+
+W3-01 TV1: **BLOCKED / PENDING TV1 HANDOFF**, có W2 pilot nhưng chưa freeze W3,
+chưa chung crop source với TV3. [Checklist/evidence](TV2_REVIEW_TV1_W3.md).
+
+W3-03 TV3: **PENDING TV3 W3-03 HANDOFF**, mới có crop W2, chưa B2 config,
+training/validation/reload. [Checklist/evidence](TV2_REVIEW_TV3_W3.md).
+Không tự xác nhận nghiệm thu thay reviewer TV3 đối với W3-02.
+
+## I. B1/B2 comparison
+
+Same eligible images, same split, same protocol: chưa xác nhận cho W3.
+Crop W2 TV3 có4.000 train/1.000 val source images, giao pilot v2 chỉ595/147.
+Transform, drop_last và nhiều box/ảnh cũng khác đề xuất. B1/B2 macro-F1 và
+difference N/A. **COMPARISON PENDING**, không chọn model thắng.
+[Comparison report](TV2_W3_COMPARISON.md). W4 chỉ đề xuất xem lỗi validation
+sau khi so sánh hợp lệ; không triển khai B3 hoặc đánh giá test.
+
+## J. W2 integrity
+
+Source B0, tất cả artifacts B0_run01 kể cả checkpoint, metrics W2, reports W2
+và test cũ giữ nguyên. Hash trước/sau được so byte trên toàn bộ tracked files
+có trước lượt này, ngoại trừ README được phép thêm phần TV2 W3; ba tài liệu
+untracked của người dùng cũng được bảo vệ. W2 tests:52/52 PASS.
+[Verification](w3_evidence/verification.json) lưu số file kiểm, danh sách sai khác
+(phải rỗng), trạng thái B0 checkpoint và SHA-256 thực tế. Không reset/restore W2.
+
+## K. Git safety
+
+Chỉ sửa/commit/push `feat/baseline`. Main, TV1, TV3, TV4 không sửa; không push
+branch khác, không merge/rebase/reset/force push. Không stage trọng số, ảnh,
+cache, environment, credential, artifacts tạm hoặc tài liệu local có sẵn.
+Stage từng đường dẫn TV2 sau kiểm tra diff; chỉ README thêm một mục TV2 W3.
+
+## L. Commit and remote
+
+Commit dự kiến: `feat(tv2): prepare W3-02 B1 pipeline pending frozen manifest`.
+SHA/push không được tự ghi trước khi Git hoàn tất. Commit chứa báo cáo này là
+implementation commit; lấy bằng `git log -1 --format="%H %s" -- reports/tv2/TV2_W3.md`.
+Sau commit, fetch → kiểm không divergence → push đúng feat/baseline → fetch
+và đối chiếu HEAD với origin/feat/baseline. Kết quả SHA và push cuối cùng được
+ghi trong phản hồi bàn giao và `outputs/tv2_w3/remote_verification.json` (local,
+không tự tham chiếu hash của commit trong chính nội dung commit đó).
+
+## M. Remaining work
+
+- Hoàn thành trong phạm vi hợp lệ: audit, B1 pipeline, fail-closed gate,
+  PROPOSED protocol, tests/smoke, cross-review checklists, báo cáo và README.
+- Chờ TV1: frozen W3 dataset/QA/exclusions/provenance và handoff thật.
+- Chờ TV3: thống nhất source IDs, box selection/padding/aggregation, transforms,
+  hyperparameters/budget và B2 W3 training artifacts để review.
+- Chờ CUDA và môi trường được kiểm định/budget được duyệt. CPU smoke không
+  thay thế GPU smoke/preflight với dữ liệu đã khóa.
+- Chưa làm: official B1 train/validation/reload, upload checkpoint, metric
+  comparison và nghiệm thu TV3. Không làm W3-01/W3-03/W3-04 thay thành viên khác.
+- Không cần thêm xác nhận để chuẩn bị/commit/push phần TV2 đã được yêu cầu.
+  Đồng thuận khoa học TV1/TV3 và budget là phụ thuộc thực trước official run.
+
+## N. Final status
+
+**W3-02 CODE READY – TRAINING BLOCKED**.

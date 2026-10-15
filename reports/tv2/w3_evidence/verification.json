@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-15",
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "b1_eight_class_parameter_counts": {
+    "total": 11180616,
+    "trainable": 11180616,
+    "frozen": 0
+  },
+  "w2_protected_files_checked": 107,
+  "w2_or_user_files_changed": [],
+  "non_tv2_refs_changed": [],
+  "B1_run01_exists": false,
+  "tests": {
+    "total": 77,
+    "pass": 77,
+    "fail": 0,
+    "skipped": 0,
+    "w2": 52,
+    "b1": 25
+  },
+  "pip_check": {
+    "exit_code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  "official_gate": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "BLOCKED - W3-01 MANIFEST NOT FROZEN\n"
+  },
+  "b0_checkpoint": {
+    "exists": true,
+    "bytes": 44837567,
+    "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680"
+  }
+}

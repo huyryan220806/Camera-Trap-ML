@@ -1,5 +1,31 @@
 # CameraTrapML
 
+## TV2 Week 3 – B1 Fine-tuning
+
+**PREPARED / BLOCKED — W3-02 CODE READY – TRAINING BLOCKED. COMPARISON PENDING.**
+
+- Dataset version/manifest W3: chưa được TV1 freeze. Pilot v2 W2 đã tồn tại trên
+  nhánh TV1 nhưng không tự coi là dữ liệu so sánh W3; không có metric B1 official.
+- B1 đề xuất: ResNet18 ImageNet-1K trực tiếp, fine-tune toàn mạng; SGD/StepLR,
+  seed42, batch32, tối đa50 epoch, chọn checkpoint theo validation macro-F1.
+- [Config](configs/b1.yaml), [protocol PROPOSED và gate evidence](reports/tv2/TV2_W3_PROTOCOL.md),
+  [báo cáo TV2 W3](reports/tv2/TV2_W3.md), [checkpoint handoff đang chờ](reports/tv2/TV2_W3_CHECKPOINT.md).
+- Kiểm thử: 77/77 PASS (52 W2 +25 B1); synthetic CPU smoke/reload PASS.
+  Chưa kiểm định CUDA/bộ phiên bản ghim Python3.12; máy hiện không có CUDA.
+- Review [W3-01 TV1](reports/tv2/TV2_REVIEW_TV1_W3.md): PENDING TV1 HANDOFF;
+  [W3-03 TV3](reports/tv2/TV2_REVIEW_TV3_W3.md): PENDING TV3 W3-03 HANDOFF.
+  [So sánh](reports/tv2/TV2_W3_COMPARISON.md): chưa đủ dữ liệu, chưa chọn model thắng.
+
+```powershell
+python -X utf8 scripts/train_b1.py --smoke
+# Hiện dừng ở gate; chỉ train sau frozen data + agreed protocol + CUDA/budget:
+python -X utf8 scripts/train_b1.py --config configs/b1.yaml
+python -X utf8 scripts/validate_b1.py --checkpoint <B1-checkpoint.pth> --sha256 <actual-sha256>
+```
+
+Smoke dùng ảnh giả và thư mục tạm, không tạo B1_run01 hoặc sửa B0_run01.
+Không dùng tập test trong W3; checkpoint official chưa tồn tại, chưa có URL tải.
+
 ## TV2 – Week 2 – Baseline B0
 
 - Task: **W2-02**.

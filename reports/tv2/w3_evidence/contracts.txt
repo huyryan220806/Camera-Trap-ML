@@ -1,0 +1,6 @@
+OK: image_error.json
+OK: model_error.json
+OK: multiple_animals.json
+OK: needs_review.json
+OK: no_detection.json
+OK: ok.json
