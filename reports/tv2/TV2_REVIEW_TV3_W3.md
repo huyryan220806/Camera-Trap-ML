@@ -1,5 +1,14 @@
 # TV2 review W3-03 — BLOCKED; CODE REVIEW FAIL
 
+Continuation 01 ngày 16/10/2026: đã fetch, TV3 vẫn `d08eba7`; chưa có commit sửa
+mới. **PENDING TV3 FIX / REVIEW**. 9/9 là kết quả snapshot ở lần review trước,
+không được coi là bộ test mới của lượt này hoặc acceptance. Không chạy lại bộ
+TV3 không đổi; đã đọc lại config/model/training/evaluator để cập nhật
+[bảng protocol](TV2_W3_PROTOCOL.md). Thêm điểm cần chốt: batch crop với trọng
+số1/N và drop_last chưa bảo đảm cùng số update/ảnh với B1; epoch train loss B2
+đang cộng batch-weighted mean theo số crop thay vì tổng trọng số. Giữ các lỗi
+blocking bên dưới và chờ TV3 sửa; không can thiệp nhánh TV3.
+
 Ngày 16/10/2026. Nhánh đọc `origin/feat/crop-classifier`, commit
 `d08eba7fffbfb6ecc813de8522fb4d58cd8ed904`. TV2 không sửa hoặc chạy trực tiếp
 trong nhánh TV3; một snapshot tạm được dùng để kiểm thử độc lập.

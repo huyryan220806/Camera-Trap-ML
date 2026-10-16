@@ -1,6 +1,12 @@
 # TV2 W3 B1 checkpoint — NOT CREATED
 
-W3-02 chưa train chính thức vì W3-01 và protocol chưa khóa, máy không có CUDA.
+**B1 CHECKPOINT: NOT AVAILABLE – TRAINING BLOCKED**.
+
+Continuation 01 ngày 16/10/2026 xác nhận chưa train chính thức: W3-01 và protocol
+chưa khóa, runtime torch CPU chưa dùng được CUDA. Phần cứng có RTX4060 Laptop
+8188MiB; đây không phải bằng chứng môi trường/budget đã đạt. Synthetic reload
+mới PASS trong [smoke log](w3_evidence/continuation_01/smoke.txt); checkpoint
+fixture đã xóa và không dùng bàn giao. Xem [README tạm](README_W3_HANDOFF_TEMP.md).
 
 | Trường | Trạng thái |
 |---|---|

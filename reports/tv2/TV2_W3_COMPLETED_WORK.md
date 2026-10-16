@@ -8,6 +8,13 @@
 
 **Trạng thái:** **W3-02 CODE READY — OFFICIAL TRAINING BLOCKED**
 
+**Cập nhật continuation 01:** đã kiểm chứng lại 78/78 test và smoke/reload;
+P1 **VERIFIED LOCALLY**, chưa được reviewer nghiệm thu trên bundle thật.
+Máy có RTX4060 Laptop 8188MiB nhưng runtime PyTorch hiện CPU-only. README bàn
+giao mới: [README_W3_HANDOFF_TEMP.md](README_W3_HANDOFF_TEMP.md). Snapshot mới
+`LOCAL_REVIEW_RESULTS/W3/CONTINUATION_01/` giữ riêng bản sao và hash; số 19 file
+bên dưới là gói trước continuation, không bị ghi đè. TV1/TV3 remote không đổi.
+
 ## 1. Pipeline B1 đã hoàn thành
 
 - Xây dựng mô hình B1 bằng ResNet18 pretrained ImageNet-1K.

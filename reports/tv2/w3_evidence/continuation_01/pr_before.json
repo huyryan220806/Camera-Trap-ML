@@ -1,0 +1,13 @@
+{
+  "url": "https://github.com/huyryan220806/Camera-Trap-ML/pull/4",
+  "number": 4,
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "mergeable": false,
+  "base": "main",
+  "base_sha": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+  "head": "feat/baseline",
+  "head_sha": "881d143510d23e3862e3748ed2b7cb707aab7dc5",
+  "updated_at": "2026-10-16T11:11:30Z"
+}

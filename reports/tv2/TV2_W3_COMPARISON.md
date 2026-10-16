@@ -1,5 +1,9 @@
 # TV2 W3 B1/B2 comparison — COMPARISON PENDING
 
+Continuation 01, 16/10/2026: fetch lại xác nhận TV1/TV3 chưa có handoff mới;
+B1 full suite mới 78/78 PASS, official training chưa chạy. **B1/B2 COMPARISON
+PENDING**. Nguồn trạng thái và owner: [README tạm](README_W3_HANDOFF_TEMP.md).
+
 | Điều kiện / metric | B1 full image | B2 crop |
 |---|---|---|
 | Code | Sẵn sàng trên `feat/baseline` | Có tại TV3 commit `d08eba7`; review FAIL |

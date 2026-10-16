@@ -1,0 +1,9 @@
+usage: train_b1.py [-h] [--config CONFIG] [--smoke]
+
+Official B1 entrypoint; --smoke uses generated images in a temporary
+directory.
+
+options:
+  -h, --help       show this help message and exit
+  --config CONFIG
+  --smoke

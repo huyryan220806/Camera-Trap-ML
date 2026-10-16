@@ -1,5 +1,11 @@
 # TV2 review W3-01 — BLOCKED / HANDOFF NOT PRESENT ON REMOTE
 
+Continuation 01 đã fetch lại ngày 16/10/2026: trạng thái không đổi; xem
+[remote.json](w3_evidence/continuation_01/remote.json). **BLOCKED – TV1 W3-01
+OFFICIAL HANDOFF MISSING**. P1 fixture regression mới PASS; **REAL COMPARISON_V1
+VERIFICATION PENDING**. [README tạm](README_W3_HANDOFF_TEMP.md) ghi bundle/path,
+commit/hash cần bàn giao và preflight API thực tế, không tạo freeze receipt thay TV1.
+
 Ngày 16/10/2026. TV2 đã `git fetch --prune origin` và đối chiếu trực tiếp
 remote heads bằng `git ls-remote --heads origin`. Không sửa nhánh TV1.
 

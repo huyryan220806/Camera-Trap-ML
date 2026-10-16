@@ -1,5 +1,49 @@
 # TV2 W3 B1/B2 protocol — PROPOSED
 
+## Current B1 / B2 — continuation 01 (16/10/2026)
+
+Đã fetch lại: B1 tại `881d143510d23e3862e3748ed2b7cb707aab7dc5` (P1 tại
+`bf9aae4`); B2 vẫn tại `d08eba7fffbfb6ecc813de8522fb4d58cd8ed904`.
+Không tìm thấy bằng chứng approval TV3. Mọi hàng đề xuất dưới đây có trạng thái
+**PROPOSED – AWAITING TV3 APPROVAL**, kể cả khi giá trị hiện tại trùng nhau.
+Không sửa config hoặc tự tạo receipt AGREED trong lượt này.
+
+| Thuộc tính | Current B1 | Current B2 | Proposed Agreement | Evidence | Status |
+|---|---|---|---|---|---|
+| Architecture | ResNet18, FC 8 lớp, không dropout | ResNet18, dropout 0.2 + FC 8 lớp | ResNet18, cùng head không dropout để cô lập ảnh/crop | src/models/b1.py; TV3 src/models/b2_classifier.py | PROPOSED – AWAITING TV3 APPROVAL |
+| Pretrained | IMAGENET1K_V1, trực tiếp ImageNet | ResNet18_Weights.DEFAULT | Ghim IMAGENET1K_V1, URL/hash weights; không tiếp tục B0 | Hai module model | PROPOSED – AWAITING TV3 APPROVAL |
+| Fine-tune / BN | Toàn bộ layer, BN train/eval | Toàn bộ layer, model.train()/eval() | Giữ cùng chiến lược | src/training/b1.py; TV3 scripts/train_b2.py | PROPOSED – AWAITING TV3 APPROVAL |
+| Resolution | Resize cạnh ngắn 256, crop 224 | Resize vuông 224 | Cùng Resize256/crop224; kiểm ảnh hưởng lên crop trước khi chốt | src/data/b0_dataset.py; TV3 src/data/b2_dataset.py | PROPOSED – AWAITING TV3 APPROVAL |
+| Train augmentation | RandomCrop, flip .5, jitter (.2,.2,.1,.05) | Resize, flip .5, jitter (.2,.2,.2,.05) | Cùng augmentation B1 hiện tại | Hai module dataset | PROPOSED – AWAITING TV3 APPROVAL |
+| Validation preprocessing | Resize256 + CenterCrop224 | Resize(224,224) | Cùng phép biến đổi xác định; normalize ImageNet | Hai module dataset | PROPOSED – AWAITING TV3 APPROVAL |
+| Seed | 42, worker/generator, deterministic cuDNN | 42; generator, chưa deterministic cuDNN/worker đầy đủ | 42 và cùng chính sách seed | B1 set_seed/make_loaders; TV3 set_seed/make_b2_loaders | PROPOSED – AWAITING TV3 APPROVAL |
+| Optimizer / LR | SGD .001, momentum .9 | AdamW .0001 | SGD .001/.9 là đề xuất, cần TV3 đánh giá trước chạy | configs/b1.yaml; TV3 configs/b2_crop_classifier.json | PROPOSED – AWAITING TV3 APPROVAL |
+| Weight decay | .0001 | .0001 | .0001 | Hai config | PROPOSED – AWAITING TV3 APPROVAL |
+| Scheduler | StepLR10, gamma .1, sau validation | Cosine T_max=epochs, trước validation | StepLR10/.1, cùng thời điểm step | Hai training loop | PROPOSED – AWAITING TV3 APPROVAL |
+| Batch / drop_last | 32 ảnh, False | 32 crop, True | 32 ảnh nguồn/update hoặc thiết kế tương đương cần TV3 triển khai; giữ batch cuối | Hai loader | PROPOSED – AWAITING TV3 APPROVAL |
+| Epoch / compute budget | Tối đa 50 epoch | 15 epoch | Chốt đồng thời epoch, số update, ảnh/crop processed và giới hạn giờ; 50 chỉ là đề xuất | Hai config; chưa có budget reference | PROPOSED – AWAITING TV3 APPROVAL |
+| Early stopping | Patience7 đã thực thi | Config5, loop chưa thực thi | Patience7, cùng metric và tie rule | Hai training loop | PROPOSED – AWAITING TV3 APPROVAL |
+| Loss B1 | Mean CE, mỗi ảnh trọng số1 | Không áp dụng | Mean CE cấp ảnh | src/training/b1.py | PROPOSED – AWAITING TV3 APPROVAL |
+| Loss B2 | Gate kiểm trọng số1/N | Sum(CE/N)/sum(1/N) từng batch crop | Mean theo ảnh của mean CE các crop; cần group ảnh hoặc estimator đã thống nhất | TV3 train_one_epoch; B1 verify_data | PROPOSED – AWAITING TV3 APPROVAL |
+| Loss logging | Sum loss ảnh / số ảnh | Mean batch weighted loss rồi nhân số crop | Ghi sum(weight*CE)/sum(weight) toàn epoch; phân biệt với loss trên xác suất tổng hợp | TV3 train_one_epoch/evaluate_b2_model | PROPOSED – AWAITING TV3 APPROVAL |
+| Aggregation | Một dự đoán/ảnh | Mean softmax crop, argmax cấp ảnh | Mean probability; nhãn crop cùng ảnh phải nhất quán | TV3 src/evaluation/b2_evaluator.py | PROPOSED – AWAITING TV3 APPROVAL |
+| Metrics | Macro đủ 8 lớp, zero_division=0 | Macro theo toàn bộ num_classes | So ở cấp ảnh, đủ lớp/support, tính lại từ predictions | src/evaluation/metrics.py; TV3 evaluator | PROPOSED – AWAITING TV3 APPROVAL |
+| Best checkpoint | Max val macro-F1; tie giữ sớm | Max image macro-F1; best_epoch report sai | Cùng rule; reload best artifact thật | Hai training loop | PROPOSED – AWAITING TV3 APPROVAL |
+| Precision | FP32 | AMP khi CUDA | Cùng precision hoặc ghi rõ khác biệt được duyệt | Hai training loop | PROPOSED – AWAITING TV3 APPROVAL |
+| Workers | 0 | 4 trong config | Ghim và ghi runtime thực tế; ưu tiên0 cho tái lập ban đầu | Hai config | PROPOSED – AWAITING TV3 APPROVAL |
+| GPU budget | null; runtime CPU-only hiện tại | Chưa có booking được duyệt | Chủ GPU xác nhận thiết bị/khung giờ, ghi budget reference trước chạy | coordination/gpu_bookings.json; continuation_01/environment.txt | PROPOSED – AWAITING TV3 APPROVAL |
+
+Trọng số `1/N` ở từng crop là cần thiết nhưng chưa đủ để bảo đảm mỗi ảnh có
+cùng ảnh hưởng trong SGD: batch crop ngẫu nhiên có mẫu số trọng số thay đổi,
+ảnh nhiều crop có thể trải qua nhiều update, và `drop_last=True` có thể bỏ crop.
+TV2/TV3 phải chốt sampling/normalization/compute cùng nhau. TV2 không đổi riêng
+thuật toán hoặc gọi hai run là tương đương chỉ vì cùng số epoch.
+
+Giao diện receipt và literal `input_type=bbox_crop` bên dưới vẫn là adapter theo
+fixture/review, chưa được xác minh với bundle TV1 đã phát hành. Sau khi có bundle
+thật, điều chỉnh adapter theo schema có bằng chứng, giữ nguyên byte dữ liệu TV1.
+`P1 CODE FIX VERIFIED LOCALLY`; `REAL COMPARISON_V1 VERIFICATION PENDING`.
+
 Ngày 15/10/2026. Đây là đề xuất của TV2, **chưa được TV3 đồng thuận**.
 Không dùng việc config tồn tại làm bằng chứng cho phép train.
 

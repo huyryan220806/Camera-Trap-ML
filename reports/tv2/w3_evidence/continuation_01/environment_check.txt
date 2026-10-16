@@ -1,0 +1,8 @@
+Python 3.14.3 | C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\python.exe
+ijson: 3.5.1 (expected 3.5.1)
+numpy: 2.4.4 (expected 2.5.3)
+matplotlib: 3.10.9 (expected 3.11.2)
+jsonschema: 4.26.0 (expected 4.26.0)
+ERROR: Python 3.12 is required by the tested environment.
+ERROR: numpy: install the version pinned in requirements.txt
+ERROR: matplotlib: install the version pinned in requirements.txt

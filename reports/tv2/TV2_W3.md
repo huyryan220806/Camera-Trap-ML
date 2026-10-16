@@ -3,6 +3,35 @@
 Ngày cập nhật 16/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
 Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 chính thức.
 
+## Continuation 01 — kiểm chứng lại ngày 16/10/2026
+
+Trạng thái: **W3-02 CODE READY – OFFICIAL TRAINING BLOCKED**.
+[README bàn giao tạm thời](README_W3_HANDOFF_TEMP.md) chứa owner, điều kiện mở
+khóa và lệnh tiếp tục. Starting commit `881d143510d23e3862e3748ed2b7cb707aab7dc5`,
+đã push; code P1 tại `bf9aae4` không thay đổi trong lượt này.
+
+- Đã fetch/đọc main trước, kiểm TV1/TV3 lại. TV1 vẫn `468d81f`; TV3 vẫn
+  `d08eba7`; không có bundle W3-01 chính thức trên refs đã fetch.
+- **P1 CODE FIX VERIFIED LOCALLY**: regression mới **78/78 PASS**, 0 fail/error/skip,
+  29.998 giây. **REAL COMPARISON_V1 VERIFICATION PENDING**; chưa reviewer accepted.
+- Synthetic CPU smoke/reload PASS; official CLI exit1 đúng vì thiếu freeze.
+  Không có official epoch/checkpoint/validation metric.
+- Sửa nhận định phần cứng trước đây: `nvidia-smi` thấy **RTX4060 Laptop 8188MiB**,
+  driver610.78. Interpreter3.14.3 dùng torch2.13.0+cpu/torchvision0.28.0+cpu,
+  CUDA unavailable. Không có runtime CUDA hoặc budget được duyệt; checker
+  phiên bản ghim vẫn FAIL, pip check PASS. Ổ workspace còn 380165210112 byte
+  tại thời điểm audit; ảnh swg_pilot_v2/comparison_v1 chưa có local.
+- Draft PR4 đang mở, draft=true, mergeable=false. Giữ root README nguyên vẹn,
+  không merge/rebase hoặc sửa nhánh thành viên.
+- Đối chiếu SHA-256 trước/sau **53 file được bảo vệ**, gồm B0_run01, checkpoint
+  B0, W2 code/tests/reports và ba tài liệu cá nhân: không đổi.
+- Evidence mới ở [continuation_01](w3_evidence/continuation_01/verification.json),
+  log cũ vẫn giữ nguyên. Snapshot mới: `LOCAL_REVIEW_RESULTS/W3/CONTINUATION_01/`.
+
+Các mục A–N dưới đây giữ lịch sử triển khai; thông tin trạng thái mới nhất lấy
+từ mục continuation này và README tạm. Đặc biệt “máy không có GPU” trong lịch
+sử chỉ phản ánh torch CPU không thấy CUDA, không mô tả đúng phần cứng hiện tại.
+
 ## A. Repository audit
 
 Đã thực hiện READ MAIN → READ TV2/TV1/TV3/TV4 trước sửa code.
