@@ -1,5 +1,14 @@
 # CameraTrapML
 
+## Bản chung tuần 2 và nhánh cố định
+
+`main` đã tích hợp phần tuần 2 đã kiểm tra của cả bốn thành viên. Xem [biên bản tích hợp](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
+
+- TV1: `feat/metadata-split`; TV2: `feat/baseline`.
+- TV3: `feat/crop-classifier`; TV4: `feat/demo`.
+- Dùng lại các nhánh này cho tuần tiếp theo; không tạo nhánh mới theo tuần.
+- Phần tuần 3 của TV2/TV3 chưa đạt review nên chưa vào `main`; dữ liệu TV1 tuần 3 cũng chưa thuộc bản tích hợp này.
+
 ## TV2 – Week 2 – Baseline B0
 
 - Task: **W2-02**.

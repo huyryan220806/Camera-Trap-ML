@@ -1,9 +1,12 @@
 # Bàn giao tuần 2: TV4 và review TV2/TV3
 
-Cập nhật 09/10/2026. Nhánh bàn giao:
-[`codex/tv4-week2-demo-detector`](https://github.com/huyryan220806/Camera-Trap-ML/tree/codex/tv4-week2-demo-detector).
-Mã TV4 đã push ở commit `c69283a`. Không merge vào `main` hoặc nhánh thành viên.
-Nhánh này có phần nền TV1 tuần 2 `b9a92b9`; giữ phụ thuộc đó khi tích hợp.
+**Cập nhật 16/10/2026:** phần tuần 2 đã được tích hợp vào `main`; TV4 tiếp tục trên
+[`feat/demo`](https://github.com/huyryan220806/Camera-Trap-ML/tree/feat/demo), TV1
+trên `feat/metadata-split`. Trạng thái mới nhất: [biên bản tích hợp](integration_week2.md).
+
+Các mục dưới đây giữ lại biên bản review ngày **09/10/2026**, không phải danh sách
+lỗi hiện còn mở. Bản bàn giao lúc đó là commit `f61ca6d`, gồm TV4 `c69283a` và
+nền TV1 tuần 2 `b9a92b9`; nhánh `codex/tv4-week2-demo-detector` không dùng nữa.
 
 ## Gửi cho TV2
 
@@ -45,7 +48,7 @@ Mở http://127.0.0.1:8765. Máy nhận chưa có ảnh pilot vẫn upload ảnh
 MDv5a chỉ phát hiện động vật, chưa nhận dạng 8 loài; bản tiền huấn luyện có SWG,
 nên demo trên SWG không phải đánh giá độc lập detector/end-to-end.
 
-## Trạng thái nghiệm thu
+## Trạng thái nghiệm thu ngày 09/10/2026
 
 | Phần | Kết quả | Việc còn lại |
 |---|---|---|
@@ -53,5 +56,5 @@ nên demo trên SWG không phải đánh giá độc lập detector/end-to-end.
 | TV2 | Có B0 pilot và artifact nhất quán | Hai sửa lỗi + bàn giao checkpoint |
 | TV3 | Crop/Dataset cơ bản chạy được | Sửa resume/limit/validation, chốt đầu vào |
 
-Chưa tự merge. Không dùng trạng thái unit test xanh thay cho xác nhận dữ liệu,
+Tại ngày 09/10 chưa merge. Không dùng trạng thái unit test xanh thay cho xác nhận dữ liệu,
 checkpoint, khả năng chạy tiếp và nghiệm thu chéo.

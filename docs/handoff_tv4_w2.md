@@ -12,9 +12,10 @@
 | Giới hạn SWG | Banner luôn hiển thị; JSON và báo cáo có cảnh báo training overlap |
 | Sau quota | `docs/progress_tv4_w2.md` và checkpoint `outputs/tv4/setup/progress.json` |
 
-Nhánh `codex/tv4-week2-demo-detector` bắt đầu từ bản TV1 tuần 2 `b9a92b9`.
-Nhận bàn giao từ nhánh này; không sửa split hoặc hợp đồng phân loại v1 của nhóm.
-Phụ thuộc phần TV1 tuần 2 chưa merge vào main; không bỏ commit nền TV1 khi tích hợp.
+Từ 16/10/2026, nhánh cố định là `feat/demo`. Phần TV1/TV4 tuần 2 đã vào `main`;
+xem [biên bản tích hợp](integration_week2.md). Bản cũ `f61ca6d` có nền TV1 tuần 2
+`b9a92b9`; nhánh `codex/tv4-week2-demo-detector` không dùng nữa.
+Nhận bàn giao từ `main`; không sửa split hoặc hợp đồng phân loại v1 của nhóm.
 
 ## Cài và chạy trên Windows
 

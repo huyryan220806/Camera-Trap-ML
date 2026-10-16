@@ -2,27 +2,32 @@
 
 ## Branch và Pull Request
 
-Mỗi công việc dùng một branch. `main` dành cho bản đã kiểm tra. Người làm push branch, tạo Pull Request (PR), nhờ một thành viên khác kiểm tra rồi mới merge. Không force-push branch người khác.
+Từ 16/10/2026, mỗi thành viên dùng **một branch cố định** cho các tuần tiếp theo. `main` dành cho bản đã kiểm tra. Người làm push branch, tạo Pull Request (PR), nhờ một thành viên khác kiểm tra rồi mới merge. Không force-push branch người khác và không tạo thêm nhánh `codex/...` cho công việc thường lệ.
 
-| Thành viên | Phạm vi chính | Người kiểm tra tuần 1 |
-|---|---|---|
-| TV1 | Metadata, EDA, split | TV2 |
-| TV2 | Môi trường học máy và đánh giá | TV3 |
-| TV3 | Box và pipeline vùng cắt | TV1 |
-| TV4 | Cấu trúc dự án và giao diện dữ liệu | TV2 |
+| Thành viên | Branch cố định | Phạm vi chính | Người kiểm tra tuần 1 |
+|---|---|---|---|
+| TV1 | `feat/metadata-split` | Metadata, EDA, split | TV2 |
+| TV2 | `feat/baseline` | Môi trường học máy và đánh giá | TV3 |
+| TV3 | `feat/crop-classifier` | Box và pipeline vùng cắt | TV1 |
+| TV4 | `feat/demo` | Cấu trúc dự án và giao diện dữ liệu | TV2 |
 
 ```powershell
-git switch main
-git pull --ff-only origin main
-git switch -c feat/ten-cong-viec
+# Ví dụ TV1; các thành viên khác thay bằng branch của mình.
+# Commit hoặc cất giữ thay đổi đang làm trước khi cập nhật.
+git fetch --prune origin
+git switch feat/metadata-split
+git pull --ff-only origin feat/metadata-split
+git merge origin/main
 # Sửa file và chạy kiểm tra
 git status
 git add duong-dan-file-can-nop
 git commit -m "Describe the completed change"
-git push -u origin feat/ten-cong-viec
+git push origin feat/metadata-split
 ```
 
-Nhánh tuần 1 `feat/demo` kế thừa `feat/metadata-split`, vì cần class map và manifest của TV1. Nếu hai PR cùng mở, merge TV1 vào `main` trước, sau đó kiểm tra PR của TV4. Người kiểm tra không được tính phần TV1 là phần mới của TV4. Với công việc sau này, tạo branch mới từ `main` đã cập nhật.
+Trên máy chưa có branch local, dùng `git switch --track origin/feat/metadata-split` một lần (thay tên cho đúng thành viên). Giữ nguyên bốn branch cố định sau khi merge PR; không chọn xóa branch sau merge. Khi `main` cập nhật, merge `origin/main` vào branch đang làm và giải quyết conflict, không reset làm mất công việc chưa gộp.
+
+TV1 và TV4 tuần 2 đã được chuyển từ các nhánh `codex/...` về nhánh cố định. Bản tích hợp tuần 2 và các commit được chọn nằm trong [biên bản tích hợp](docs/integration_week2.md). TV2/TV3 đã bắt đầu tuần 3 nên chỉ các commit tuần 2 đã đạt mới được gộp; phần tuần 3 vẫn ở nhánh thành viên. Push branch không tự cập nhật `main`.
 
 ## Trước khi yêu cầu kiểm tra
 
