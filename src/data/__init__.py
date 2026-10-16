@@ -1,1 +1,1 @@
-"""Dataset readers for TV2 experiments."""
+"""Dataset readers for full-image and crop experiments."""

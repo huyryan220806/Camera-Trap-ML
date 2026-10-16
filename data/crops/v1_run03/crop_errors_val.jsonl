@@ -1,0 +1,1 @@
+{"image_id": "c8a19207-8c29-11eb-a09c-000d3a74c7de", "annotation_id": "308cb9ca-6670-11ec-b841-c82158b0a9cc", "crop_id": "c8a19207-8c29-11eb-a09c-000d3a74c7de_308cb9ca-6670-11ec-b841-c82158b0a9cc", "split": "val", "reason": "invalid_box_geometry", "bbox_xywh": [892.16, 809.28, 15.6288, 6.2496]}
