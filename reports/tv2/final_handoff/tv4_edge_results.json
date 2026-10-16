@@ -1,0 +1,62 @@
+{
+  "missing_weights_actual_adapter": {
+    "schema_version": "detector-demo-1.0",
+    "request_id": "e17d55b6-1d6c-4ee9-85dc-fea282658bca",
+    "image": {
+      "file_name": "image_00070.jpg",
+      "width": 3264,
+      "height": 2448
+    },
+    "pipeline": {
+      "mode": "megadetector",
+      "detector_id": "MDv5a.0.1",
+      "package_version": "10.0.25",
+      "weights_sha256": null,
+      "detector_threshold": 0.2,
+      "classifier_id": null,
+      "device": "cpu",
+      "image_size": 1280,
+      "coordinate_space": "original_raster_pixels_no_exif_rotation"
+    },
+    "status": "error",
+    "needs_review": true,
+    "detections": [],
+    "ignored_non_animals": 0,
+    "error": {
+      "stage": "detect",
+      "code": "DETECTOR_FAILED",
+      "message": "Detector khong chay duoc. Kiem tra weights, moi truong va log may chu; khong tu chuyen sang mock."
+    },
+    "elapsed_ms": 61.69,
+    "training_overlap_swg": true,
+    "limitation": "MegaDetector MDv5a da dung SWG khi huan luyen; thu tren SWG khong phai danh gia doc lap. Chua co classifier loai.",
+    "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data"
+  },
+  "multiple_box_conversion_fixture": [
+    {
+      "detection_id": "animal-1",
+      "category": "animal",
+      "bbox_xywh": [
+        100.0,
+        100.0,
+        300.0,
+        200.00000000000006
+      ],
+      "score": 0.8,
+      "species": null
+    },
+    {
+      "detection_id": "animal-2",
+      "category": "animal",
+      "bbox_xywh": [
+        500.0,
+        50.0,
+        200.0,
+        100.00000000000003
+      ],
+      "score": 0.7,
+      "species": null
+    }
+  ],
+  "status": "PASS"
+}

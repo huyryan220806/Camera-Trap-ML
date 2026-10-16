@@ -1,0 +1,42 @@
+{
+  "schema_version": "detector-demo-1.0",
+  "request_id": "d7a8a68d-7e7a-4c85-aa7b-d6e20a87cd2b",
+  "image": {
+    "file_name": "image_00070.jpg",
+    "width": 3264,
+    "height": 2448
+  },
+  "pipeline": {
+    "mode": "megadetector",
+    "detector_id": "MDv5a.0.1",
+    "package_version": "10.0.25",
+    "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+    "detector_threshold": 0.2,
+    "classifier_id": null,
+    "device": "cpu",
+    "image_size": 1280,
+    "coordinate_space": "original_raster_pixels_no_exif_rotation"
+  },
+  "status": "detected",
+  "needs_review": true,
+  "detections": [
+    {
+      "detection_id": "animal-1",
+      "category": "animal",
+      "bbox_xywh": [
+        1172.7552,
+        1374.7968,
+        1181.8944000000001,
+        334.88639999999987
+      ],
+      "score": 0.891,
+      "species": null
+    }
+  ],
+  "ignored_non_animals": 0,
+  "error": null,
+  "elapsed_ms": 26107.24,
+  "training_overlap_swg": true,
+  "limitation": "MegaDetector MDv5a da dung SWG khi huan luyen; thu tren SWG khong phai danh gia doc lap. Chua co classifier loai.",
+  "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data"
+}

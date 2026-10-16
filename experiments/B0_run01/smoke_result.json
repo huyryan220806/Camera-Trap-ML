@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "train_batch": 32,
+  "validation_batch": 32,
+  "forward_backward": true,
+  "checkpoint_save_load": true,
+  "parameter_counts": {
+    "total": 11180616,
+    "trainable": 4104,
+    "frozen": 11176512
+  },
+  "device": "cpu",
+  "samples": {
+    "train": {
+      "selected": 128,
+      "usable": 128,
+      "excluded": 0
+    },
+    "val": {
+      "selected": 64,
+      "usable": 64,
+      "excluded": 0
+    }
+  }
+}

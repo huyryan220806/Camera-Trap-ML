@@ -1,0 +1,1165 @@
+{
+  "source_manifest": "data/processed/v1/pilot_v1.jsonl",
+  "seed": 42,
+  "selected_counts": {
+    "train": 128,
+    "val": 64
+  },
+  "status_counts": {
+    "downloaded": 192
+  },
+  "images": [
+    {
+      "image_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 625181
+    },
+    {
+      "image_id": "c801d65f-8c29-11eb-8f72-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 647106
+    },
+    {
+      "image_id": "c81c0ec0-8c29-11eb-96c3-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 618557
+    },
+    {
+      "image_id": "c82f26f8-8c29-11eb-80e5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1229274
+    },
+    {
+      "image_id": "c82f29bd-8c29-11eb-b56f-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1296552
+    },
+    {
+      "image_id": "c857a802-8c29-11eb-a9f1-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 719083
+    },
+    {
+      "image_id": "c86dc148-8c29-11eb-aae0-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 652171
+    },
+    {
+      "image_id": "c87143f9-8c29-11eb-b191-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 717517
+    },
+    {
+      "image_id": "c8829833-8c29-11eb-a794-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 880360
+    },
+    {
+      "image_id": "c8829a13-8c29-11eb-b9a4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1435197
+    },
+    {
+      "image_id": "c894213e-8c29-11eb-afab-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 633161
+    },
+    {
+      "image_id": "c895ac95-8c29-11eb-931a-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 939568
+    },
+    {
+      "image_id": "c8a191f3-8c29-11eb-85de-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 706561
+    },
+    {
+      "image_id": "c8a1927e-8c29-11eb-a057-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 891920
+    },
+    {
+      "image_id": "c8ab1ff2-8c29-11eb-a04a-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 935952
+    },
+    {
+      "image_id": "c8f7667a-8c29-11eb-8264-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 739978
+    },
+    {
+      "image_id": "c900f15d-8c29-11eb-bd39-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2286714
+    },
+    {
+      "image_id": "c911a9ef-8c29-11eb-9d07-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2025929
+    },
+    {
+      "image_id": "c91d9284-8c29-11eb-b728-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1911637
+    },
+    {
+      "image_id": "c91d938c-8c29-11eb-af1e-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1955454
+    },
+    {
+      "image_id": "c91ff747-8c29-11eb-90a4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2404745
+    },
+    {
+      "image_id": "c91ff74a-8c29-11eb-9fd2-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2468124
+    },
+    {
+      "image_id": "c91ff766-8c29-11eb-8da0-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2371974
+    },
+    {
+      "image_id": "c92253d6-8c29-11eb-b334-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 724945
+    },
+    {
+      "image_id": "c92253f8-8c29-11eb-a0ff-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 764894
+    },
+    {
+      "image_id": "c9297d68-8c29-11eb-b3d1-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2213421
+    },
+    {
+      "image_id": "c939ca26-8c29-11eb-81d6-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2133048
+    },
+    {
+      "image_id": "c9736f92-8c29-11eb-91cd-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2287288
+    },
+    {
+      "image_id": "c97a9807-8c29-11eb-8a05-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1992255
+    },
+    {
+      "image_id": "c9c20f5f-8c29-11eb-b824-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1791051
+    },
+    {
+      "image_id": "ca511dc8-8c29-11eb-91f2-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 731963
+    },
+    {
+      "image_id": "ca61cd82-8c29-11eb-b5a5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 682790
+    },
+    {
+      "image_id": "ca6690a4-8c29-11eb-82df-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 632957
+    },
+    {
+      "image_id": "ca6694c6-8c29-11eb-a9cf-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 619214
+    },
+    {
+      "image_id": "ca79a151-8c29-11eb-b65a-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 634651
+    },
+    {
+      "image_id": "cacabbcf-8c29-11eb-81ec-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2221981
+    },
+    {
+      "image_id": "cad44101-8c29-11eb-9940-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 539979
+    },
+    {
+      "image_id": "cae4f878-8c29-11eb-a0bd-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 655597
+    },
+    {
+      "image_id": "caec19e0-8c29-11eb-b3ba-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1254113
+    },
+    {
+      "image_id": "caee7e55-8c29-11eb-ac1b-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1769808
+    },
+    {
+      "image_id": "caee7f5c-8c29-11eb-9fce-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2379917
+    },
+    {
+      "image_id": "caee7f5f-8c29-11eb-9303-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1909846
+    },
+    {
+      "image_id": "caf0dfb5-8c29-11eb-9ccc-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1653034
+    },
+    {
+      "image_id": "cb018e46-8c29-11eb-8391-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1872079
+    },
+    {
+      "image_id": "cb14a053-8c29-11eb-a313-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1884785
+    },
+    {
+      "image_id": "cb1bcd11-8c29-11eb-983e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1474721
+    },
+    {
+      "image_id": "cb313d3e-8c29-11eb-a318-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2718364
+    },
+    {
+      "image_id": "cb3d273d-8c29-11eb-9485-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2310537
+    },
+    {
+      "image_id": "cb4915a2-8c29-11eb-a896-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2271834
+    },
+    {
+      "image_id": "cb5766ea-8c29-11eb-850c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2283635
+    },
+    {
+      "image_id": "cb634bd9-8c29-11eb-a916-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1627096
+    },
+    {
+      "image_id": "cba60f60-8c29-11eb-8182-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1609272
+    },
+    {
+      "image_id": "cbad3743-8c29-11eb-85c4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2110130
+    },
+    {
+      "image_id": "cbb6c285-8c29-11eb-9762-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1929548
+    },
+    {
+      "image_id": "cbb6c344-8c29-11eb-bf74-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1957587
+    },
+    {
+      "image_id": "cbdf5107-8c29-11eb-8df5-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2511677
+    },
+    {
+      "image_id": "cbe67aed-8c29-11eb-81f2-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1765690
+    },
+    {
+      "image_id": "cbeb3e1d-8c29-11eb-87ef-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2013597
+    },
+    {
+      "image_id": "cbeb3f05-8c29-11eb-a4c0-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1447392
+    },
+    {
+      "image_id": "cbfe4669-8c29-11eb-8ceb-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2053500
+    },
+    {
+      "image_id": "cc00a81f-8c29-11eb-892c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1669020
+    },
+    {
+      "image_id": "cc07ccd4-8c29-11eb-b8c0-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2366582
+    },
+    {
+      "image_id": "cc07cd09-8c29-11eb-80a9-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2316959
+    },
+    {
+      "image_id": "cc07cd36-8c29-11eb-ad16-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2160668
+    },
+    {
+      "image_id": "cc161e17-8c29-11eb-955a-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1858047
+    },
+    {
+      "image_id": "cc1d41c0-8c29-11eb-93f3-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1838099
+    },
+    {
+      "image_id": "cc2207df-8c29-11eb-985d-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1848851
+    },
+    {
+      "image_id": "cc22081e-8c29-11eb-917e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1854393
+    },
+    {
+      "image_id": "cc22082b-8c29-11eb-9719-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1853389
+    },
+    {
+      "image_id": "cc246a7b-8c29-11eb-afb5-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1860144
+    },
+    {
+      "image_id": "ccef118e-8c29-11eb-9919-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2264185
+    },
+    {
+      "image_id": "cd0488a4-8c29-11eb-8c7d-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2359284
+    },
+    {
+      "image_id": "cd048973-8c29-11eb-bf7e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2397272
+    },
+    {
+      "image_id": "cd1537b1-8c29-11eb-9442-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2145927
+    },
+    {
+      "image_id": "cd31d8b0-8c29-11eb-96d6-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1202741
+    },
+    {
+      "image_id": "cd8c706a-8c29-11eb-9691-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2258043
+    },
+    {
+      "image_id": "cd913856-8c29-11eb-9523-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 880336
+    },
+    {
+      "image_id": "cd913870-8c29-11eb-b944-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 959758
+    },
+    {
+      "image_id": "cd9abd0d-8c29-11eb-9f8d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1342896
+    },
+    {
+      "image_id": "cdb758fd-8c29-11eb-ba58-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2451663
+    },
+    {
+      "image_id": "cdbe7fb7-8c29-11eb-b3f1-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 639639
+    },
+    {
+      "image_id": "ce0d363c-8c29-11eb-a7ed-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 519615
+    },
+    {
+      "image_id": "ce16bb26-8c29-11eb-80cc-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2468288
+    },
+    {
+      "image_id": "ce35b8f3-8c29-11eb-8c64-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1775426
+    },
+    {
+      "image_id": "ce9c3be2-8c29-11eb-95cf-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2085455
+    },
+    {
+      "image_id": "ce9e9ba8-8c29-11eb-8bf3-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2320631
+    },
+    {
+      "image_id": "ceb4125d-8c29-11eb-8a2d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2231867
+    },
+    {
+      "image_id": "cece4ca1-8c29-11eb-a7d0-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2333589
+    },
+    {
+      "image_id": "ced321ab-8c29-11eb-bc7f-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2139039
+    },
+    {
+      "image_id": "ceeaea5e-8c29-11eb-a29a-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1832000
+    },
+    {
+      "image_id": "cef4a21c-8c29-11eb-9bfc-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2307536
+    },
+    {
+      "image_id": "cf059851-8c29-11eb-9b60-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2456195
+    },
+    {
+      "image_id": "cf09b707-8c29-11eb-8bff-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2039467
+    },
+    {
+      "image_id": "cf0d6076-8c29-11eb-8a2c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2060713
+    },
+    {
+      "image_id": "cf28f554-8c29-11eb-a20c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2083861
+    },
+    {
+      "image_id": "cf399640-8c29-11eb-8feb-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1349036
+    },
+    {
+      "image_id": "cfd22f2e-8c29-11eb-87d3-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2309205
+    },
+    {
+      "image_id": "cfdbb884-8c29-11eb-8b4c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2257717
+    },
+    {
+      "image_id": "cff13cc1-8c29-11eb-ae24-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2270860
+    },
+    {
+      "image_id": "d02a6619-8c29-11eb-884c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1328829
+    },
+    {
+      "image_id": "d03b1568-8c29-11eb-870d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 714513
+    },
+    {
+      "image_id": "d04166a0-8c29-11eb-a0cb-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1386459
+    },
+    {
+      "image_id": "d0554d38-8c29-11eb-97c9-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1354195
+    },
+    {
+      "image_id": "d068605c-8c29-11eb-8285-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1373119
+    },
+    {
+      "image_id": "d06ac5bd-8c29-11eb-95a5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1376654
+    },
+    {
+      "image_id": "d07b7357-8c29-11eb-a89c-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 708582
+    },
+    {
+      "image_id": "d07dd9b6-8c29-11eb-9172-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1103798
+    },
+    {
+      "image_id": "d0876a62-8c29-11eb-ad45-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 649453
+    },
+    {
+      "image_id": "d0876af6-8c29-11eb-8a59-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 693070
+    },
+    {
+      "image_id": "d089d2f9-8c29-11eb-aaf2-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 656972
+    },
+    {
+      "image_id": "d0934cbd-8c29-11eb-91af-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 925461
+    },
+    {
+      "image_id": "d09f36ee-8c29-11eb-83a3-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1382988
+    },
+    {
+      "image_id": "d09f373a-8c29-11eb-a5aa-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1371799
+    },
+    {
+      "image_id": "d0b70d60-8c29-11eb-a950-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1372463
+    },
+    {
+      "image_id": "d0b9716b-8c29-11eb-bc4d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 707025
+    },
+    {
+      "image_id": "d0d61084-8c29-11eb-8322-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1396881
+    },
+    {
+      "image_id": "d0e1f9db-8c29-11eb-94b2-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 581582
+    },
+    {
+      "image_id": "d0e1fa17-8c29-11eb-b05b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 655337
+    },
+    {
+      "image_id": "d0e6bb25-8c29-11eb-a259-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1373267
+    },
+    {
+      "image_id": "d0e6bdc8-8c29-11eb-ac26-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1390987
+    },
+    {
+      "image_id": "d0e922ab-8c29-11eb-a5e7-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1370662
+    },
+    {
+      "image_id": "d0eb870e-8c29-11eb-ba51-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1367726
+    },
+    {
+      "image_id": "d0edf002-8c29-11eb-a447-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1619335
+    },
+    {
+      "image_id": "d1140dfb-8c29-11eb-8efe-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1670032
+    },
+    {
+      "image_id": "d1166c73-8c29-11eb-ac4c-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1424596
+    },
+    {
+      "image_id": "d1166f4f-8c29-11eb-8614-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1483273
+    },
+    {
+      "image_id": "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2335456
+    },
+    {
+      "image_id": "d118d2ee-8c29-11eb-b252-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2352905
+    },
+    {
+      "image_id": "d118d583-8c29-11eb-a7b0-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2113292
+    },
+    {
+      "image_id": "d126d6b6-8c29-11eb-81f8-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2416414
+    },
+    {
+      "image_id": "d12724c9-8c29-11eb-a615-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2226216
+    },
+    {
+      "image_id": "d12bedd7-8c29-11eb-85c4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2178519
+    },
+    {
+      "image_id": "d137d972-8c29-11eb-862d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2361882
+    },
+    {
+      "image_id": "d143c581-8c29-11eb-9a42-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1547095
+    },
+    {
+      "image_id": "d1aa3a9b-8c29-11eb-912a-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2504153
+    },
+    {
+      "image_id": "d2028412-8c29-11eb-8b54-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2283365
+    },
+    {
+      "image_id": "d22d5fac-8c29-11eb-a106-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1311021
+    },
+    {
+      "image_id": "d22d6007-8c29-11eb-b5c3-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1355862
+    },
+    {
+      "image_id": "d268fba9-8c29-11eb-a228-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1376637
+    },
+    {
+      "image_id": "d2f5a3f7-8c29-11eb-bf8a-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1383309
+    },
+    {
+      "image_id": "d2f807f2-8c29-11eb-8653-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1338630
+    },
+    {
+      "image_id": "d322ffda-8c29-11eb-bed4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1402835
+    },
+    {
+      "image_id": "d34da04c-8c29-11eb-b2ad-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1393200
+    },
+    {
+      "image_id": "d37b2e10-8c29-11eb-8089-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1365942
+    },
+    {
+      "image_id": "d3a15c7c-8c29-11eb-ace5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1377515
+    },
+    {
+      "image_id": "d3b20108-8c29-11eb-a553-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1394791
+    },
+    {
+      "image_id": "d451bd02-8c29-11eb-b303-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1348093
+    },
+    {
+      "image_id": "d48d5908-8c29-11eb-aa6b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1377580
+    },
+    {
+      "image_id": "d4bf5949-8c29-11eb-aa3e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1377993
+    },
+    {
+      "image_id": "d4ef1b87-8c29-11eb-8deb-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1360053
+    },
+    {
+      "image_id": "d4f17a82-8c29-11eb-9d8b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1356860
+    },
+    {
+      "image_id": "d52d1735-8c29-11eb-873e-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1366948
+    },
+    {
+      "image_id": "d5a1e7a5-8c29-11eb-bad4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2642622
+    },
+    {
+      "image_id": "d5a1e974-8c29-11eb-8292-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2048889
+    },
+    {
+      "image_id": "d5be916e-8c29-11eb-8797-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 611744
+    },
+    {
+      "image_id": "d5c35235-8c29-11eb-8161-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 620835
+    },
+    {
+      "image_id": "d5c35236-8c29-11eb-befa-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 619582
+    },
+    {
+      "image_id": "d5c3535b-8c29-11eb-a1be-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 618573
+    },
+    {
+      "image_id": "d673b99b-8c29-11eb-a1ea-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1348671
+    },
+    {
+      "image_id": "d682195f-8c29-11eb-bbbf-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1387169
+    },
+    {
+      "image_id": "d6acf209-8c29-11eb-b05b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1584412
+    },
+    {
+      "image_id": "d6b67a9f-8c29-11eb-a3f8-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1938125
+    },
+    {
+      "image_id": "d7e090e7-8c29-11eb-b52e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2294789
+    },
+    {
+      "image_id": "d7fd1d98-8c29-11eb-8cb3-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2385483
+    },
+    {
+      "image_id": "d81e7d5d-8c29-11eb-8e02-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1470688
+    },
+    {
+      "image_id": "d81e8069-8c29-11eb-bd2e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 1247353
+    },
+    {
+      "image_id": "d820dffa-8c29-11eb-a0f8-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1639259
+    },
+    {
+      "image_id": "d83195a7-8c29-11eb-ad7b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1199111
+    },
+    {
+      "image_id": "d833f60d-8c29-11eb-b59b-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1004184
+    },
+    {
+      "image_id": "d83b23e3-8c29-11eb-b8d5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1150095
+    },
+    {
+      "image_id": "d8424165-8c29-11eb-820f-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1786431
+    },
+    {
+      "image_id": "d863a15f-8c29-11eb-97b4-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2150456
+    },
+    {
+      "image_id": "d8be4b8a-8c29-11eb-9b48-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1868102
+    },
+    {
+      "image_id": "d8d3b9c3-8c29-11eb-b3d5-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1728201
+    },
+    {
+      "image_id": "d9298ea8-8c29-11eb-ad50-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 654899
+    },
+    {
+      "image_id": "d929dc9e-8c29-11eb-b480-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 951616
+    },
+    {
+      "image_id": "d92dd441-8c29-11eb-a1c8-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1545758
+    },
+    {
+      "image_id": "d92ff713-8c29-11eb-abb8-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1572459
+    },
+    {
+      "image_id": "d93379b5-8c29-11eb-a897-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1608933
+    },
+    {
+      "image_id": "d97cf8c9-8c29-11eb-be9e-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 786509
+    },
+    {
+      "image_id": "d9b3d4ea-8c29-11eb-9721-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1362389
+    },
+    {
+      "image_id": "d9b8978b-8c29-11eb-b7fe-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2625365
+    },
+    {
+      "image_id": "d9baf378-8c29-11eb-8744-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1686605
+    },
+    {
+      "image_id": "d9d7991f-8c29-11eb-b632-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2234909
+    },
+    {
+      "image_id": "da001646-8c29-11eb-a55d-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1470143
+    },
+    {
+      "image_id": "db59cc98-8c29-11eb-8e23-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2415461
+    },
+    {
+      "image_id": "db59cd49-8c29-11eb-a2c8-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1136354
+    },
+    {
+      "image_id": "dc163313-8c29-11eb-bafc-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 1261536
+    },
+    {
+      "image_id": "dc2475e7-8c29-11eb-b994-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 851267
+    },
+    {
+      "image_id": "dc411689-8c29-11eb-826e-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2751066
+    },
+    {
+      "image_id": "dc483de1-8c29-11eb-8b4a-000d3a74c7de",
+      "split": "train",
+      "status": "downloaded",
+      "bytes": 2349033
+    },
+    {
+      "image_id": "dc5428cd-8c29-11eb-9a76-000d3a74c7de",
+      "split": "val",
+      "status": "downloaded",
+      "bytes": 2102084
+    }
+  ]
+}

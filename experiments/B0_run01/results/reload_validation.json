@@ -1,0 +1,21 @@
+{
+  "checkpoint_path": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\experiments\\B0_run01\\checkpoints\\best_model.pth",
+  "checkpoint_bytes": 44837567,
+  "checkpoint_sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+  "checkpoint_epoch": 4,
+  "reload_successful": true,
+  "metric_absolute_differences": {
+    "macro_f1": 0.0,
+    "macro_precision": 0.0,
+    "macro_recall": 0.0,
+    "accuracy": 0.0
+  },
+  "validation_metrics": {
+    "macro_f1": 0.3616866793337382,
+    "macro_precision": 0.46773504273504274,
+    "macro_recall": 0.375,
+    "accuracy": 0.375
+  },
+  "val_loss": 1.7887232899665833,
+  "support": 64
+}
