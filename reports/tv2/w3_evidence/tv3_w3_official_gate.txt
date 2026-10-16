@@ -1,0 +1,41 @@
+16:03:56 [INFO] Sử dụng thiết bị huấn luyện: cpu
+16:03:56 [ERROR]
+======================================================================
+[LỖI TIÊU CHÍ NGHIỆM THU TUẦN 3]
+Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\b2\train.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\b2\val.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\class_map.json
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\provenance.json
+
+Quy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.
+Hãy đảm bảo TV1 đã hoàn tất scripts/freeze_comparison.py trước khi chạy.
+Để chạy thử nghiệm toàn bộ code mà không cần dữ liệu thật, hãy dùng:
+  python scripts/train_b2.py --smoke-test
+======================================================================
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\scripts\train_b2.py", line 385, in <module>
+    main()
+    ~~~~^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\scripts\train_b2.py", line 381, in main
+    run_training(config=config, smoke_test=args.smoke_test)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\scripts\train_b2.py", line 217, in run_training
+    check_w3_manifest_lock(config, ROOT)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\scripts\train_b2.py", line 132, in check_w3_manifest_lock
+    raise FileNotFoundError(msg)
+FileNotFoundError:
+======================================================================
+[LỖI TIÊU CHÍ NGHIỆM THU TUẦN 3]
+Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\b2\train.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\b2\val.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\class_map.json
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\comparison_v1\provenance.json
+
+Quy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.
+Hãy đảm bảo TV1 đã hoàn tất scripts/freeze_comparison.py trước khi chạy.
+Để chạy thử nghiệm toàn bộ code mà không cần dữ liệu thật, hãy dùng:
+  python scripts/train_b2.py --smoke-test
+======================================================================

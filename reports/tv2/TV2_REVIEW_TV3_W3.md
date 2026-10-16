@@ -1,41 +1,63 @@
-# TV2 review W3-03 — PENDING TV3 W3-03 HANDOFF
+# TV2 review W3-03 — BLOCKED; CODE REVIEW FAIL
 
-Ngày 15/10/2026. Nhánh đọc `origin/feat/crop-classifier`, commit
-`2c3c9928edb8f913f24df657464f47d480e3ae95`. Không sửa code TV3.
+Ngày 16/10/2026. Nhánh đọc `origin/feat/crop-classifier`, commit
+`d08eba7fffbfb6ecc813de8522fb4d58cd8ed904`. TV2 không sửa hoặc chạy trực tiếp
+trong nhánh TV3; một snapshot tạm được dùng để kiểm thử độc lập.
 
-Sản phẩm tìm thấy là W2 crop: `scripts/crop_dataset.py`,
-`src/data/crop_dataset.py`, `data/crops/v1_run03/crop_manifest_{train,val}.jsonl`
-và `run_meta_{train,val}.json`. Không tìm thấy B2 training config, checkpoint,
-epoch log, validation report hay reload evidence W3.
+Commit thêm 10 file cho B2: config, dataset, model ResNet18, training CLI,
+evaluator và tests. Chín test synthetic của TV3 đều PASS trên snapshot
+(9/9, 0 fail, 0 skipped). Lệnh official dừng đúng với exit code 1 vì thiếu
+`data/processed/comparison_v1/b2/{train,val}.jsonl`, `class_map.json` và
+`provenance.json`. Chưa có checkpoint, epoch log, validation report, reload
+evidence hoặc handoff B2 chính thức. Logs:
+[tests](w3_evidence/tv3_w3_tests.txt),
+[official gate](w3_evidence/tv3_w3_official_gate.txt).
 
-| Chỉ số artifact W2 | Train | Validation |
-|---|---:|---:|
-| Số crop | 4.480 | 1.131 |
-| Ảnh gốc duy nhất | 4.000 | 1.000 |
-| Giao với cùng split pilot v2 TV1 | 595 | 147 |
-| Pilot v2 chưa có crop tương ứng | 2.205 | 453 |
-| Ảnh crop ngoài pilot v2 cùng split | 3.405 | 853 |
+Các lỗi cần sửa trước khi nghiệm thu hoặc train chính thức:
 
-`run_meta` ghi source manifest v1, limit4000/1000, không phải pilot v2.
-Chênh lệch là khác nguồn W2, **không gọi đây là lỗi của B2 chưa tồn tại**.
-Chưa có căn cứ so sánh metric B1/B2. Artifact mapping có image_id,
-annotation_id, original bbox, clamped bbox, nguồn URL, crop hash; khả năng truy
-vết bằng metadata có sẵn nhưng chất lượng crop W3 chưa kiểm định.
+1. **Đường dẫn dữ liệu không nhất quán.** Preflight kiểm tra
+   `ROOT/data/processed/comparison_v1/...`, nhưng DataLoader ghép
+   `ROOT / config["data"]["dataset_version"]`. Với giá trị `comparison_v1`,
+   loader sẽ đọc `ROOT/comparison_v1`, nên vẫn lỗi sau khi gate đã PASS.
+2. **Preflight chỉ kiểm tra file tồn tại.** Chưa xác minh hash, trạng thái frozen,
+   commit, provenance, class map, source membership, eligible IDs, split,
+   leakage, exclusion accounting hoặc crop mapping. Config còn đặt
+   `preflight_hash_check=false`.
+3. **Protocol B1/B2 chưa đồng nhất.** B2 dùng 15 epoch, AdamW, cosine,
+   lr `1e-4`, dropout 0.2, Resize vuông 224, saturation 0.2,
+   `drop_last=true` và nhiều crop/ảnh với mean-probability aggregation. B1 đang
+   đề xuất 50 epoch, SGD/StepLR, không dropout, Resize256 + crop224,
+   saturation 0.1 và `drop_last=false`. So sánh hiện tại không công bằng.
+4. **Early stopping chưa được thi hành.** Config có patience 5 nhưng training
+   loop không dừng sớm.
+5. **`best_epoch` sai.** Evaluator không trả epoch; report đọc
+   `best_metrics.get("epoch", epochs)` nên thường ghi epoch cuối, không phải epoch
+   tạo best checkpoint.
+6. **Checkpoint và metrics không cùng trạng thái model.** File cuối lưu
+   `model.state_dict()` sau epoch cuối nhưng đính kèm `best_metrics`; chưa reload
+   best weights trước khi đóng gói checkpoint.
+7. **Thiếu kiểm định fresh reload/provenance.** Không có SHA-256 checkpoint,
+   fresh-process reload và đối chiếu logits/metrics. Evaluator dùng
+   `torch.load(..., weights_only=False)` trước khi xác minh hash.
+8. **Run không bất biến.** Tên output cố định, CSV append và checkpoint/report
+   bị ghi đè; chưa reserve run ID hoặc bảo vệ run đã tồn tại. Không ghi đủ môi
+   trường, GPU, peak memory và validation time.
+9. **Validation dữ liệu/crop chưa đủ.** Bbox chỉ kiểm `len == 4`, chưa kiểm số
+   hữu hạn, thứ tự, biên, crop rỗng, crop trùng hoặc nhãn nhất quán giữa các crop
+   của cùng ảnh. Aggregation lấy nhãn crop đầu tiên mà không xác nhận các nhãn
+   còn lại. CLI evaluator còn cho phép `--split test`, trái quy tắc W3 không mở
+   test. Tests hiện tại chưa bao phủ các trường hợp này.
 
-Khác biệt transform/multiple-box/drop_last cần chốt ở
-[protocol đề xuất](TV2_W3_PROTOCOL.md). Chưa xác minh crop bytes tại máy TV3;
-không chạy source TV3, không train B2 thay TV3.
-
-Checklist sau handoff (tất cả **NOT TESTED** đối với W3):
+Checklist nghiệm thu còn BLOCKED:
 
 - Cùng freeze receipt/version/hash, class map, eligible image IDs và split B1.
-- Source/annotation/bbox/padding/crop pixels đúng, không thất lạc hay thêm mẫu.
-- Không leakage; thống nhất một crop/ảnh hoặc phương án sampling/aggregation
-  khác đã phê duyệt trước khi train.
-- Cùng backbone, khởi tạo, seed, optimizer/scheduler, augmentation, số bước,
-  budget/early stopping; mọi khác biệt có lý do và ghi trước kết quả.
-- Best checkpoint theo val macro-F1 đủ mọi lớp, không test selection.
-- Validation metrics/per-class/confusion matrix có thể tính lại từ prediction.
-- Reload/hash/provenance PASS, runtime/GPU log và checkpoint có thể tải thật.
+- Quy tắc bbox/padding/multiple-box và đơn vị sampling/aggregation được TV2/TV3
+  đồng thuận trước kết quả.
+- Cùng backbone, pretrained weights, seed, augmentation, optimizer/scheduler,
+  số bước và early stopping, hoặc có protocol ghi rõ khác biệt được duyệt.
+- Best checkpoint theo validation macro-F1 đủ mọi lớp, có per-class metrics,
+  confusion matrix và prediction-level evidence có thể tính lại.
+- Checkpoint gắn đúng best epoch, hash/provenance, fresh reload PASS và run bất
+  biến; runtime/GPU log đầy đủ.
 
-**Status: PENDING TV3 W3-03 HANDOFF.** Không có B2 metrics để công bố.
+**Final: BLOCKED; CODE REVIEW FAIL. PENDING TV3 FIXES AND OFFICIAL HANDOFF.**

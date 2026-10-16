@@ -1,6 +1,6 @@
 # TV2 W3 IMPLEMENTATION REPORT
 
-Ngày 15/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
+Ngày cập nhật 16/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
 Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 chính thức.
 
 ## A. Repository audit
@@ -9,14 +9,15 @@ Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 ch�
 
 | Vai trò | Ref đọc | Commit thực tế |
 |---|---|---|
-| Main | origin/main | 4e7ad47f75b2e1dd1e7e42c624347627fb2f3d5c |
-| TV2 W2 | origin/feat/baseline | 8988d2812ab2ab22715f6fc686bf47cad74942a4 |
-| TV1 | origin/codex/tv1-week2-download-quality | b9a92b95edcc377aafcbe1efc4161bb7520f2090 |
-| TV3 | origin/feat/crop-classifier | 2c3c9928edb8f913f24df657464f47d480e3ae95 |
-| TV4 | origin/codex/tv4-week2-demo-detector | f61ca6d3180971c4d7725c7d3cab1046be44134a |
+| Main | origin/main | 468d81f7272a4497d8b54a53a3651fd13c6dfbc2 |
+| TV2 trước review mới | origin/feat/baseline | 8c0039ecb6e9987904e8a52b405cea4f8ccaac25 |
+| TV1 | origin/feat/metadata-split | 468d81f7272a4497d8b54a53a3651fd13c6dfbc2 |
+| TV3 | origin/feat/crop-classifier | d08eba7fffbfb6ecc813de8522fb4d58cd8ed904 |
+| TV4 | origin/feat/demo | 468d81f7272a4497d8b54a53a3651fd13c6dfbc2 |
 
-Main mới tích hợp W1: metadata/class map v1, JSON contract, metrics, notebook
-EDA và kiểm thử. Chưa có B0/B1/B2 trên main. Nguồn đọc: README.md,
+Main hiện đã tích hợp W2, gồm dữ liệu metadata v2 của TV1 và các phần khác đã
+merge. Không có W3-01 `comparison_v1` hoặc freeze handoff trên bất kỳ remote ref
+đã fetch. Nguồn đọc: README.md,
 CONTRIBUTING.md, docs/architecture.md, docs/experiment_protocol.md,
 docs/environment.md, docs/gpu_schedule.md, docs/result_contract.md,
 requirements*.txt, src/evaluation/metrics.py, data/processed/v1/class_map.json,
@@ -37,9 +38,10 @@ sẵn được xem là tài liệu người dùng, giữ nguyên và không stag
 
 ## B. W3-01 — Data gate
 
-**BLOCKED – W3-01 MANIFEST NOT FROZEN / PENDING TV1 HANDOFF.**
+**BLOCKED – W3-01 HANDOFF NOT PRESENT ON REMOTE.**
 Chưa có manifest/version/SHA-256/freeze evidence chính thức W3; train/val/classes
-của W3: chưa chốt. Có artifact W2-01 thật, nhưng handoff TV1 gọi đây là pilot.
+của W3: chưa chốt. Remote `feat/metadata-split` hiện bằng main. Có artifact W2
+v2 thật đã tích hợp, nhưng không có commit W3 để nâng nó thành comparison freeze.
 
 | Bằng chứng W2 v2 (không phải W3 frozen) | Giá trị |
 |---|---|
@@ -135,6 +137,12 @@ Chưa xác nhận chạy trên bộ pinned Python3.12 hay CUDA; cần kiểm đ�
 Logs ở [environment_check.txt](w3_evidence/environment_check.txt),
 [pip_check.txt](w3_evidence/pip_check.txt), [contracts.txt](w3_evidence/contracts.txt).
 
+Test độc lập code TV3 được chạy riêng trên snapshot commit `d08eba7`: **9/9
+PASS**. Đây không phải một phần của bộ 77 test TV2 và không chứng minh official
+B2 run. [TV3 test log](w3_evidence/tv3_w3_tests.txt),
+[TV3 official gate](w3_evidence/tv3_w3_official_gate.txt),
+[remote audit](w3_evidence/remote_audit_2026-10-16.json).
+
 Lệnh tái lập kiểm thử tại máy này (chọn interpreter có sẵn, không phụ thuộc
 WindowsApps python alias):
 
@@ -151,12 +159,16 @@ python -X utf8 scripts/train_b1.py --smoke
 
 ## H. Cross-review
 
-W3-01 TV1: **BLOCKED / PENDING TV1 HANDOFF**, có W2 pilot nhưng chưa freeze W3,
-chưa chung crop source với TV3. [Checklist/evidence](TV2_REVIEW_TV1_W3.md).
+W3-01 TV1: **BLOCKED — HANDOFF NOT PRESENT ON REMOTE**. Có W2 v2 đã tích hợp
+nhưng chưa có comparison freeze, receipt hay handoff W3.
+[Checklist/evidence](TV2_REVIEW_TV1_W3.md).
 
-W3-03 TV3: **PENDING TV3 W3-03 HANDOFF**, mới có crop W2, chưa B2 config,
-training/validation/reload. [Checklist/evidence](TV2_REVIEW_TV3_W3.md).
-Không tự xác nhận nghiệm thu thay reviewer TV3 đối với W3-02.
+W3-03 TV3: commit `d08eba7fffbfb6ecc813de8522fb4d58cd8ed904` có B2 code.
+TV2 kiểm thử snapshot: **9/9 PASS**, nhưng official gate exit 1 vì thiếu
+`comparison_v1`; không có checkpoint/kết quả/handoff. Review phát hiện lỗi
+đường dẫn dữ liệu, preflight, checkpoint/best epoch, run immutability, reload và
+protocol. Kết luận: **BLOCKED; CODE REVIEW FAIL**.
+[Checklist/evidence](TV2_REVIEW_TV3_W3.md).
 
 ## I. B1/B2 comparison
 
@@ -185,21 +197,23 @@ Stage từng đường dẫn TV2 sau kiểm tra diff; chỉ README thêm một m
 
 ## L. Commit and remote
 
-Commit dự kiến: `feat(tv2): prepare W3-02 B1 pipeline pending frozen manifest`.
-SHA/push không được tự ghi trước khi Git hoàn tất. Commit chứa báo cáo này là
-implementation commit; lấy bằng `git log -1 --format="%H %s" -- reports/tv2/TV2_W3.md`.
-Sau commit, fetch → kiểm không divergence → push đúng feat/baseline → fetch
-và đối chiếu HEAD với origin/feat/baseline. Kết quả SHA và push cuối cùng được
-ghi trong phản hồi bàn giao và `outputs/tv2_w3/remote_verification.json` (local,
-không tự tham chiếu hash của commit trong chính nội dung commit đó).
+Implementation commit đã push:
+`8c0039ecb6e9987904e8a52b405cea4f8ccaac25` —
+`feat(tv2): prepare W3-02 B1 pipeline pending frozen manifest`.
+Lượt cập nhật 16/10 chỉ bổ sung bằng chứng remote và review handoff mới; không
+merge/cherry-pick code TV1/TV3. SHA của review commit và trạng thái push được ghi
+trong phản hồi bàn giao sau khi Git hoàn tất, tránh tự tham chiếu hash trong
+chính nội dung commit.
 
 ## M. Remaining work
 
 - Hoàn thành trong phạm vi hợp lệ: audit, B1 pipeline, fail-closed gate,
   PROPOSED protocol, tests/smoke, cross-review checklists, báo cáo và README.
-- Chờ TV1: frozen W3 dataset/QA/exclusions/provenance và handoff thật.
-- Chờ TV3: thống nhất source IDs, box selection/padding/aggregation, transforms,
-  hyperparameters/budget và B2 W3 training artifacts để review.
+- Chờ TV1 push frozen W3 dataset/QA/exclusions/provenance và handoff thật; hiện
+  không có W3-01 trên remote.
+- Chờ TV3 sửa các lỗi code review, thống nhất source IDs, box selection,
+  padding/aggregation, transforms, hyperparameters/budget; sau đó mới tạo B2 W3
+  training artifacts để review.
 - Chờ CUDA và môi trường được kiểm định/budget được duyệt. CPU smoke không
   thay thế GPU smoke/preflight với dữ liệu đã khóa.
 - Chưa làm: official B1 train/validation/reload, upload checkpoint, metric

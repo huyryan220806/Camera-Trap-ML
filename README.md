@@ -4,16 +4,18 @@
 
 **PREPARED / BLOCKED — W3-02 CODE READY – TRAINING BLOCKED. COMPARISON PENDING.**
 
-- Dataset version/manifest W3: chưa được TV1 freeze. Pilot v2 W2 đã tồn tại trên
-  nhánh TV1 nhưng không tự coi là dữ liệu so sánh W3; không có metric B1 official.
+- Dataset version/manifest W3: chưa được TV1 freeze. Lần fetch ngày 16/10/2026
+  cho thấy `feat/metadata-split` bằng main và không có handoff/comparison_v1 W3;
+  không tự coi W2 v2 là dữ liệu so sánh W3, không có metric B1 official.
 - B1 đề xuất: ResNet18 ImageNet-1K trực tiếp, fine-tune toàn mạng; SGD/StepLR,
   seed42, batch32, tối đa50 epoch, chọn checkpoint theo validation macro-F1.
 - [Config](configs/b1.yaml), [protocol PROPOSED và gate evidence](reports/tv2/TV2_W3_PROTOCOL.md),
   [báo cáo TV2 W3](reports/tv2/TV2_W3.md), [checkpoint handoff đang chờ](reports/tv2/TV2_W3_CHECKPOINT.md).
 - Kiểm thử: 77/77 PASS (52 W2 +25 B1); synthetic CPU smoke/reload PASS.
   Chưa kiểm định CUDA/bộ phiên bản ghim Python3.12; máy hiện không có CUDA.
-- Review [W3-01 TV1](reports/tv2/TV2_REVIEW_TV1_W3.md): PENDING TV1 HANDOFF;
-  [W3-03 TV3](reports/tv2/TV2_REVIEW_TV3_W3.md): PENDING TV3 W3-03 HANDOFF.
+- Review [W3-01 TV1](reports/tv2/TV2_REVIEW_TV1_W3.md): HANDOFF NOT PRESENT;
+  [W3-03 TV3](reports/tv2/TV2_REVIEW_TV3_W3.md): commit `d08eba7` có code,
+  snapshot tests 9/9 PASS nhưng official gate bị chặn và code review FAIL.
   [So sánh](reports/tv2/TV2_W3_COMPARISON.md): chưa đủ dữ liệu, chưa chọn model thắng.
 
 ```powershell

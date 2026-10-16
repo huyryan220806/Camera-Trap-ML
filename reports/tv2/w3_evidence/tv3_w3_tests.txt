@@ -1,0 +1,38 @@
+test_fail_fast_on_split_mismatch (tests.test_tv3_w3_b2.B2DatasetTests.test_fail_fast_on_split_mismatch) ... ok
+test_fail_fast_on_unknown_label (tests.test_tv3_w3_b2.B2DatasetTests.test_fail_fast_on_unknown_label) ... ok
+test_on_the_fly_crop_and_sample_weight (tests.test_tv3_w3_b2.B2DatasetTests.test_on_the_fly_crop_and_sample_weight) ... ok
+test_checkpoint_save_and_load (tests.test_tv3_w3_b2.B2ModelTests.test_checkpoint_save_and_load) ... ok
+test_model_forward_shape_and_probabilities (tests.test_tv3_w3_b2.B2ModelTests.test_model_forward_shape_and_probabilities) ... ok
+test_aggregation_mean_probability_and_argmax (tests.test_tv3_w3_b2.ImageAggregationTests.test_aggregation_mean_probability_and_argmax) ... ok
+test_format_validation_markdown_table (tests.test_tv3_w3_b2.ImageAggregationTests.test_format_validation_markdown_table) ... ok
+test_check_w3_manifest_lock_fails_closed (tests.test_tv3_w3_b2.TrainingWorkflowTests.test_check_w3_manifest_lock_fails_closed) ... 16:03:27 [ERROR]
+======================================================================
+[LỖI TIÊU CHÍ NGHIỆM THU TUẦN 3]
+Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\non_existent_w3\train.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\non_existent_w3\val.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\non_existent_w3\class_map.json
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\processed\non_existent_w3\provenance.json
+
+Quy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.
+Hãy đảm bảo TV1 đã hoàn tất scripts/freeze_comparison.py trước khi chạy.
+Để chạy thử nghiệm toàn bộ code mà không cần dữ liệu thật, hãy dùng:
+  python scripts/train_b2.py --smoke-test
+======================================================================
+ok
+test_smoke_test_pipeline (tests.test_tv3_w3_b2.TrainingWorkflowTests.test_smoke_test_pipeline)
+Chạy thử toàn bộ pipeline với --smoke-test (chỉ 2 epoch dummy). ... 16:03:27 [INFO] Sử dụng thiết bị huấn luyện: cpu
+16:03:27 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset 16 mẫu kiểm tra pipeline...
+16:03:27 [INFO] Khởi tạo mô hình B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+16:03:27 [INFO] Bắt đầu huấn luyện B2 với ngân sách 2 epochs...
+16:03:31 [INFO] Epoch [1/2] (4.5s) - Train Loss: 3.5451, Acc: 12.50% | Val Loss: 2.3328 | Cấp Crop F1: 7.14% | CẤP ẢNH Acc: 25.00%, F1: 6.25%
+16:03:32 [INFO] --> Đã lưu checkpoint B2 tốt nhất tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\tmpscquy0xh\best_model.pt (Image Macro F1: 6.25%)
+16:03:36 [INFO] Epoch [2/2] (4.1s) - Train Loss: 2.6359, Acc: 18.75% | Val Loss: 6.3924 | Cấp Crop F1: 0.00% | CẤP ẢNH Acc: 0.00%, F1: 0.00%
+16:03:36 [INFO] Hoàn tất huấn luyện sau 8.8 giây! Best Image-level F1: 6.25%
+16:03:36 [INFO] Đã xuất bảng so sánh validation tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv3_w3_review\data\tmpscquy0xh\val_table.md
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 11.580s
+
+OK

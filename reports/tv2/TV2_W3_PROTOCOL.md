@@ -36,6 +36,23 @@ Resize(224,224), jitter 0.3, RandomGrayscale(0.05), drop_last train=True;
 seed/budget/model B2 W3 để nghiệm thu. Cần thống nhất cả số bước cập nhật và đơn vị
 tính metric, tránh ảnh nhiều box có trọng số lớn hơn một cách ngầm định.
 
+## Đối chiếu handoff TV3 ngày 16/10/2026
+
+TV3 đã push code B2 tại commit
+`d08eba7fffbfb6ecc813de8522fb4d58cd8ed904`. Snapshot tests PASS 9/9, nhưng
+không có official artifacts và code review chưa đạt. Config quan sát được dùng
+ResNet18 pretrained, dropout 0.2, AdamW lr `1e-4`, cosine scheduler, 15 epoch,
+patience 5, Resize vuông 224, color jitter saturation 0.2, `drop_last=true` và
+mean-probability aggregation cho nhiều crop. Early stopping chưa được triển khai.
+
+Những giá trị này khác đề xuất B1 ở optimizer/scheduler, budget, dropout,
+preprocessing, batch cuối và đơn vị sampling. Đường dẫn B2 giữa preflight và
+DataLoader cũng không nhất quán; preflight chưa xác minh hash/freeze/membership.
+Do đó protocol vẫn là **PROPOSED**, chưa thể coi là AGREED. TV2 và TV3 cần chốt
+một cấu hình chung, hoặc ghi trước từng khác biệt có chủ đích và cách kiểm soát
+compute/số bước, trước khi một bên chạy official training. Chi tiết lỗi ở
+[review TV3](TV2_REVIEW_TV3_W3.md).
+
 ## Giao diện bằng chứng đề xuất cho gate
 
 Đây là **giao diện TV2 đề xuất**, không phải file TV1 đã bàn giao. Không tạo
