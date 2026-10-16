@@ -11,7 +11,9 @@
   seed42, batch32, tối đa50 epoch, chọn checkpoint theo validation macro-F1.
 - [Config](configs/b1.yaml), [protocol PROPOSED và gate evidence](reports/tv2/TV2_W3_PROTOCOL.md),
   [báo cáo TV2 W3](reports/tv2/TV2_W3.md), [checkpoint handoff đang chờ](reports/tv2/TV2_W3_CHECKPOINT.md).
-- Kiểm thử: 77/77 PASS (52 W2 +25 B1); synthetic CPU smoke/reload PASS.
+- Kiểm thử sau sửa review P1: 78/78 PASS (52 W2 +26 B1); synthetic CPU
+  smoke/reload PASS. Gate hỗ trợ B1 projection và nhiều B2 crop/ảnh theo
+  `bbox_xyxy`, đồng thời từ chối thiếu/đổi crop mapping.
   Chưa kiểm định CUDA/bộ phiên bản ghim Python3.12; máy hiện không có CUDA.
 - Review [W3-01 TV1](reports/tv2/TV2_REVIEW_TV1_W3.md): HANDOFF NOT PRESENT;
   [W3-03 TV3](reports/tv2/TV2_REVIEW_TV3_W3.md): commit `d08eba7` có code,

@@ -42,7 +42,11 @@ của test. Bằng chứng remote được lưu tại
 TV1 cần push commit chứa bộ `comparison_v1` hoặc tên phiên bản chính thức,
 freeze receipt, hashes, provenance, ledger loại, QA và handoff. Sau đó TV2 mới
 có thể đối chiếu byte/hash, membership, mapping, train/val leakage, decode ảnh
-và crop coverage bằng gate hiện có. Không được đổi config để dùng W2 v2 làm
-fallback hoặc tự ghi receipt thay TV1.
+và crop coverage bằng gate hiện có. Adapter đã được sửa theo schema mô tả trong
+review ngày 16/10: B1 projection không cần `boxes`; B2 dùng mọi `bbox_xyxy`,
+hash/URL ảnh nguồn và nhiều crop/ảnh. Fixture kiểm ảnh hai box PASS; thiếu crop,
+đổi nhãn/split/tọa độ/hash hoặc ID bị từ chối. Chưa thể gọi đây là kiểm định
+bundle thật khi commit TV1 vẫn chưa xuất hiện. Không được đổi config để dùng W2
+v2 làm fallback hoặc tự ghi receipt thay TV1.
 
 **Final: BLOCKED — W3-01 HANDOFF NOT PRESENT ON REMOTE.**

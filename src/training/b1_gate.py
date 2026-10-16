@@ -93,7 +93,7 @@ def protocol_settings(config: dict) -> dict:
             "training": config["training"], "preprocessing": config["preprocessing"],
             "data": {k: config["data"][k] for k in ("image_size", "resize_size", "batch_size", "num_workers")},
             "loss": "unweighted_cross_entropy", "drop_last": False,
-            "comparison_unit": "one_selected_box_per_source_image"}
+            "comparison_unit": "all_valid_boxes_mean_probability_per_source_image"}
 
 
 def official_gate(config: dict, root: Path) -> tuple[dict, dict]:
@@ -117,6 +117,71 @@ def official_gate(config: dict, root: Path) -> tuple[dict, dict]:
     return receipt, agreement
 
 
+def read_b1_view(path: Path, expected_split: str, class_names: list[str]) -> list[dict]:
+    """Read TV1's B1 projection without requiring full source-manifest fields."""
+    rows = []
+    image_ids, sample_ids = set(), set()
+    with path.open(encoding="utf-8") as source:
+        for line_number, line in enumerate(source, 1):
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            class_id = row.get("class_id")
+            image_id = row.get("image_id")
+            sample_id = row.get("sample_id")
+            weight = row.get("sample_weight")
+            if row.get("split") != expected_split:
+                raise GateError(f"{path}:{line_number} has invalid split")
+            if type(class_id) is not int or not 0 <= class_id < len(class_names):
+                raise GateError(f"{path}:{line_number} has invalid class_id")
+            if row.get("label") != class_names[class_id]:
+                raise GateError(f"{path}:{line_number} has inconsistent label")
+            if not image_id or image_id in image_ids or not sample_id or sample_id in sample_ids:
+                raise GateError(f"{path}:{line_number} has missing/duplicate sample identity")
+            if row.get("input_type") != "full_image" or "boxes" in row:
+                raise GateError(f"{path}:{line_number} is not a B1 full-image projection")
+            if type(weight) not in (int, float) or not math.isfinite(weight) or not math.isclose(weight, 1.0):
+                raise GateError(f"{path}:{line_number} has invalid sample_weight")
+            image_ids.add(image_id)
+            sample_ids.add(sample_id)
+            rows.append(row)
+    if not rows:
+        raise GateError(f"No {expected_split} B1 rows in {path}")
+    return rows
+
+
+def projection_matches_source(view: dict, source: dict) -> bool:
+    """Compare stable provenance fields while allowing the B1 view to be a projection."""
+    required = ("image_id", "split", "class_id", "label")
+    if any(view.get(key) != source.get(key) for key in required):
+        return False
+    for key in ("file_name", "url", "seq_id", "sequence_id", "location", "width", "height"):
+        if key in view and view[key] != source.get(key):
+            return False
+    if "quality" in view:
+        quality = view.get("quality")
+        source_quality = source.get("quality") or {}
+        if not isinstance(quality, dict) or any(value != source_quality.get(key) for key, value in quality.items()):
+            return False
+    return True
+
+
+def bbox_xyxy(box: dict) -> list[float]:
+    bbox = box.get("bbox_xywh", [])
+    if len(bbox) != 4:
+        raise GateError("Invalid source bbox")
+    x, y, width, height = bbox
+    return [x, y, x + width, y + height]
+
+
+def same_bbox(left: object, right: object) -> bool:
+    if not isinstance(left, list) or len(left) != 4 or not isinstance(right, list) or len(right) != 4:
+        return False
+    if any(type(value) not in (int, float) or not math.isfinite(value) for value in left + right):
+        return False
+    return all(math.isclose(a, b, rel_tol=0.0, abs_tol=1e-6) for a, b in zip(left, right))
+
+
 def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *, inspect: bool = True) -> tuple[dict, list[str], Path, dict]:
     files = receipt["files"]
     required = ("train", "val", "source_train", "source_val", "crop_train", "crop_val", "class_map", "excluded", "quality_audit")
@@ -131,11 +196,13 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
     rows, stats = {}, {}
     identities = {key: {} for key in ("image_id", "file_name", "local_path", "sha256", "pixel_sha256", "location", "seq_id")}
     for split in ("train", "val"):
-        rows[split] = read_rows(paths[split], split, names)
+        b1_rows = read_b1_view(paths[split], split, names)
         source = {r["image_id"]: r for r in read_rows(paths[f"source_{split}"], split, names)}
+        for view in b1_rows:
+            if view["image_id"] not in source or not projection_matches_source(view, source[view["image_id"]]):
+                raise GateError(f"Source provenance mismatch: {view['image_id']}")
+        rows[split] = [source[view["image_id"]] for view in b1_rows]
         for row in rows[split]:
-            if row != source.get(row["image_id"]):
-                raise GateError(f"Source provenance mismatch: {row['image_id']}")
             if row.get("sequence_id", row.get("seq_id")) != row.get("seq_id"):
                 raise GateError("Sequence alias mismatch")
             quality_row = row.get("quality", {})
@@ -188,22 +255,44 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
         with paths[f"crop_{split}"].open(encoding="utf-8") as stream:
             crops = [json.loads(line) for line in stream if line.strip()]
         by_id = {r["image_id"]: r for r in rows[split]}
-        seen_crops = set()
+        expected = {(row["image_id"], box["annotation_id"]): bbox_xyxy(box)
+                    for row in rows[split] for box in row["boxes"]}
+        seen_pairs, seen_crop_ids, seen_annotation_ids = set(), set(), set()
+        crop_counts = {}
         for crop in crops:
             image_id = crop.get("image_id")
-            if image_id not in by_id or image_id in seen_crops:
-                raise GateError("Require exactly one selected crop per eligible source image")
-            seen_crops.add(image_id)
-            row = by_id[image_id]
-            box = next((b for b in row["boxes"] if b["annotation_id"] == crop.get("annotation_id")), None)
-            if (box is None or any(crop.get(k) != row[k] for k in ("split", "label", "class_id"))
-                    or crop.get("bbox_xywh_original") != box["bbox_xywh"] or crop.get("source_url") != row["url"]):
+            crop_id = crop.get("crop_id")
+            annotation_id = crop.get("annotation_id")
+            if image_id not in by_id or not crop_id or crop_id in seen_crop_ids:
+                raise GateError("Invalid or duplicate crop identity")
+            if not annotation_id or annotation_id in seen_annotation_ids:
+                raise GateError("Invalid or duplicate annotation identity")
+            pair = (image_id, annotation_id)
+            if pair in seen_pairs or pair not in expected:
                 raise GateError("Crop/source/box mapping mismatch")
-            if not re.fullmatch(r"[0-9a-f]{64}", crop.get("sha256", "")) or not crop.get("file_path"):
-                raise GateError("Missing crop artifact identity")
-        if seen_crops != set(by_id):
-            raise GateError("B1/B2 eligible source image sets differ")
-        stats[split] = {"images": len(rows[split]), "sequences": len({r["seq_id"] for r in rows[split]}), "per_class": {name: {"images": sum(r["label"] == name for r in rows[split]), "sequences": len({r["seq_id"] for r in rows[split] if r["label"] == name})} for name in names}}
+            row = by_id[image_id]
+            quality = crop.get("quality")
+            source_quality = row.get("quality") or {}
+            if (crop.get("input_type") != "bbox_crop"
+                    or any(crop.get(k) != row[k] for k in ("split", "label", "class_id"))
+                    or not same_bbox(crop.get("bbox_xyxy"), expected[pair])
+                    or crop.get("url") != row.get("url")
+                    or not isinstance(quality, dict)
+                    or quality.get("local_path") != source_quality.get("local_path")
+                    or quality.get("sha256") != source_quality.get("sha256")):
+                raise GateError("Crop/source/box mapping mismatch")
+            seen_pairs.add(pair)
+            seen_crop_ids.add(crop_id)
+            seen_annotation_ids.add(annotation_id)
+            crop_counts[image_id] = crop_counts.get(image_id, 0) + 1
+        if seen_pairs != set(expected) or {image_id for image_id, _ in seen_pairs} != set(by_id):
+            raise GateError("B1/B2 eligible source images or valid boxes differ")
+        for crop in crops:
+            weight = crop.get("sample_weight")
+            expected_weight = 1.0 / crop_counts[crop["image_id"]]
+            if type(weight) not in (int, float) or not math.isfinite(weight) or not math.isclose(weight, expected_weight, rel_tol=0.0, abs_tol=1e-12):
+                raise GateError("Invalid B2 image-balanced sample_weight")
+        stats[split] = {"images": len(rows[split]), "crops": len(crops), "sequences": len({r["seq_id"] for r in rows[split]}), "per_class": {name: {"images": sum(r["label"] == name for r in rows[split]), "sequences": len({r["seq_id"] for r in rows[split] if r["label"] == name})} for name in names}}
     excluded = [json.loads(line) for line in paths["excluded"].read_text(encoding="utf-8").splitlines() if line.strip()]
     excluded_ids = set()
     sources = {r["image_id"] for split in ("train", "val") for r in read_rows(paths[f"source_{split}"], split, names)}

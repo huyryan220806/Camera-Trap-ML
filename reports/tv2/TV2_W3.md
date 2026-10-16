@@ -64,6 +64,13 @@ leakage, duplicate, số lớp, crop coverage, exclusion accounting, full decode
 dimensions và byte/pixel hash; lỗi dừng, không âm thầm lọc ảnh. Chi tiết:
 [review TV1](TV2_REVIEW_TV1_W3.md), [audit máy đọc](w3_evidence/repository_audit.json).
 
+Sau review ngày 16/10, gate đã bỏ giả định một JPEG crop/ảnh. Adapter hiện đọc
+B1 projection (`sample_id`, `input_type`, `sample_weight`) và đối chiếu trường
+provenance có nghĩa với manifest ảnh nguồn; B2 chấp nhận mọi box hợp lệ cùng
+loài theo `bbox_xyxy`, URL/hash ảnh nguồn, ID crop/annotation duy nhất và trọng
+số `1/N`. Tập parent IDs và toàn bộ valid boxes phải khớp B1/source. Đây mới là
+fixture theo schema review; bundle TV1 thật vẫn chưa có trên Git để chạy preflight.
+
 ## C. B1 configuration
 
 Config [b1.yaml](../../configs/b1.yaml) là **PROPOSED**, chưa được TV3 đồng thuận.
@@ -120,9 +127,10 @@ nhưng đã xóa và không dùng bàn giao TV4. [Checkpoint handoff](TV2_W3_CHE
 
 ## G. TV2 tests
 
-**77/77 PASS, 0 FAIL, 0 SKIPPED**, gồm toàn bộ **52 test W2 +25 test B1**.
+**78/78 PASS, 0 FAIL, 0 SKIPPED**, gồm toàn bộ **52 test W2 +26 test B1**.
 Chạy `python -X utf8 -m unittest discover -s tests -v`.
-Log: [tests.txt](w3_evidence/tests.txt). Synthetic CLI smoke PASS; official CLI
+Log mới: [tests_after_p1.txt](w3_evidence/tests_after_p1.txt). Synthetic CLI
+smoke PASS; official CLI
 bị chặn đúng trước train; [official_gate.txt](w3_evidence/official_gate.txt).
 
 Lượt đầu bị lỗi TEMP sandbox và thiếu ijson, chưa được coi PASS. Đã đặt TEMP/TMP
@@ -207,8 +215,9 @@ chính nội dung commit.
 
 ## M. Remaining work
 
-- Hoàn thành trong phạm vi hợp lệ: audit, B1 pipeline, fail-closed gate,
-  PROPOSED protocol, tests/smoke, cross-review checklists, báo cáo và README.
+- Hoàn thành trong phạm vi hợp lệ: audit, B1 pipeline, fail-closed gate, adapter
+  schema comparison_v1 theo review, multi-crop tests, PROPOSED protocol,
+  tests/smoke, cross-review checklists, báo cáo và README.
 - Chờ TV1 push frozen W3 dataset/QA/exclusions/provenance và handoff thật; hiện
   không có W3-01 trên remote.
 - Chờ TV3 sửa các lỗi code review, thống nhất source IDs, box selection,

@@ -37,12 +37,16 @@ class B1Tests(unittest.TestCase):
         path = self.root / self.receipt["files"][name]["path"]
         return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
 
-    def write(self, name, rows, *, update_source=False):
+    def write(self, name, rows):
         path = self.root / self.receipt["files"][name]["path"]
         path.write_text("".join(json.dumps(row) + "\n" for row in rows))
         self.receipt["files"][name]["sha256"] = file_sha256(path)
-        if update_source:
-            self.write(f"source_{name}", rows)
+
+    def read_source(self, split):
+        return self.read(f"source_{split}")
+
+    def write_source(self, split, rows):
+        self.write(f"source_{split}", rows)
 
     def verify(self):
         return verify_data(self.receipt, self.root, self.root / "images", 2)
@@ -50,6 +54,7 @@ class B1Tests(unittest.TestCase):
     def test_valid_fixture_counts_and_no_test(self):
         rows, names, _, proof = self.verify()
         self.assertEqual(len(rows["train"]), 4)
+        self.assertEqual(proof["counts"]["train"]["crops"], 6)
         self.assertEqual(names, ["fixture_a", "fixture_b"])
         self.assertFalse(proof["test_rows_opened"])
 
@@ -115,8 +120,8 @@ class B1Tests(unittest.TestCase):
             self.verify()
 
     def test_location_sequence_and_content_leakage(self):
-        original = self.read("val")
-        train = self.read("train")
+        original = self.read_source("val")
+        train = self.read_source("train")
         for key in ("location", "seq_id", "sha256", "pixel_sha256"):
             with self.subTest(key=key):
                 changed = copy.deepcopy(original)
@@ -124,24 +129,24 @@ class B1Tests(unittest.TestCase):
                     changed[0]["quality"][key] = train[0]["quality"][key]
                 else:
                     changed[0][key] = train[0][key]
-                self.write("val", changed, update_source=True)
+                self.write_source("val", changed)
                 with self.assertRaisesRegex(GateError, "leakage"):
                     self.verify()
 
     def test_duplicate_ids_and_paths(self):
-        original = self.read("train")
+        original = self.read_source("train")
         for key in ("image_id", "file_name"):
             with self.subTest(key=key):
                 changed = copy.deepcopy(original)
                 changed[1][key] = changed[0][key]
-                self.write("train", changed, update_source=True)
+                self.write_source("train", changed)
                 with self.assertRaises(ValueError):
                     self.verify()
 
     def test_identical_content_with_conflicting_labels_rejected(self):
-        rows = self.read("train")
+        rows = self.read_source("train")
         rows[2]["quality"]["sha256"] = rows[0]["quality"]["sha256"]
-        self.write("train", rows, update_source=True)
+        self.write_source("train", rows)
         with self.assertRaisesRegex(GateError, "Duplicate"):
             self.verify()
 
@@ -151,20 +156,20 @@ class B1Tests(unittest.TestCase):
         invalid[0]["class_id"] = 99
         for rows in ([], invalid, original[:2]):
             with self.subTest(count=len(rows)):
-                self.write("train", rows, update_source=True)
+                self.write("train", rows)
                 with self.assertRaises(ValueError):
                     self.verify()
 
     def test_missing_corrupt_and_changed_images_fail_without_filtering(self):
-        path = self.root / self.read("val")[0]["quality"]["local_path"]
+        path = self.root / self.read_source("val")[0]["quality"]["local_path"]
         before = (self.root / "val.jsonl").read_bytes()
         path.unlink()
         with self.assertRaisesRegex(GateError, "Image invalid"):
             self.verify()
         path.write_bytes(b"corrupt")
-        rows = self.read("val")
+        rows = self.read_source("val")
         rows[0]["quality"]["sha256"] = file_sha256(path)
-        self.write("val", rows, update_source=True)
+        self.write_source("val", rows)
         with self.assertRaisesRegex(GateError, "Image invalid"):
             self.verify()
         Image.new("RGB", (64, 64), "red").save(path)
@@ -173,9 +178,9 @@ class B1Tests(unittest.TestCase):
         self.assertEqual(len(before.splitlines()), len(self.read("val")))
 
     def test_pixel_hash_is_recomputed(self):
-        rows = self.read("val")
+        rows = self.read_source("val")
         rows[0]["quality"]["pixel_sha256"] = "f"*64
-        self.write("val", rows, update_source=True)
+        self.write_source("val", rows)
         with self.assertRaisesRegex(GateError, "pixel SHA-256"):
             self.verify()
 
@@ -195,22 +200,44 @@ class B1Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "label"):
             self.verify()
 
-    def test_crop_missing_or_multiple_or_wrong_box(self):
+    def test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail(self):
         original = self.read("crop_train")
+        self.assertGreater(sum(row["image_id"] == original[0]["image_id"] for row in original), 1)
+        self.verify()
         wrong = copy.deepcopy(original)
-        wrong[0]["bbox_xywh_original"] = [1, 2, 3, 4]
-        for rows in (original[:-1], original + [original[0]], wrong):
+        wrong[0]["bbox_xyxy"] = [1, 2, 3, 4]
+        duplicate = copy.deepcopy(original)
+        duplicate[-1]["crop_id"] = duplicate[0]["crop_id"]
+        for rows in (original[:-1], duplicate, wrong):
             with self.subTest(count=len(rows)):
                 self.write("crop_train", rows)
                 with self.assertRaises(GateError):
                     self.verify()
 
+    def test_crop_label_split_and_annotation_changes_fail(self):
+        original = self.read("crop_train")
+        for key, value in (("label", "wrong"), ("split", "val"),
+                           ("annotation_id", "unknown"), ("input_type", "full_image"),
+                           ("sample_weight", 1.0)):
+            with self.subTest(key=key):
+                changed = copy.deepcopy(original)
+                changed[0][key] = value
+                self.write("crop_train", changed)
+                with self.assertRaises(GateError):
+                    self.verify()
+
+        changed = copy.deepcopy(original)
+        changed[0]["quality"]["sha256"] = "0" * 64
+        self.write("crop_train", changed)
+        with self.assertRaisesRegex(GateError, "mapping"):
+            self.verify()
+
     def test_box_label_and_geometry(self):
-        original = self.read("train")
+        original = self.read_source("train")
         for key, value in (("label", "wrong"), ("bbox_xywh", [0, 0, 1000, 64])):
             rows = copy.deepcopy(original)
             rows[0]["boxes"][0][key] = value
-            self.write("train", rows, update_source=True)
+            self.write_source("train", rows)
             with self.assertRaisesRegex(GateError, "[Bb]ox"):
                 self.verify()
 

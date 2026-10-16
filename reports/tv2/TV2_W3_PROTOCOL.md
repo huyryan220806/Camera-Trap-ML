@@ -6,15 +6,15 @@ Không dùng việc config tồn tại làm bằng chứng cho phép train.
 | Thuộc tính | Đề xuất cần TV2/TV3 chốt |
 |---|---|
 | Dữ liệu | W3-01 do TV1 khóa; cùng ảnh gốc, nhãn, split và danh sách loại |
-| Đơn vị so sánh | Một ảnh gốc → một crop được chọn trước; một dự đoán/ảnh |
-| Chọn box | TV1/TV3 cần chốt quy tắc chọn khi nhiều box, padding, rounding; TV2 không tự chọn |
+| Đơn vị so sánh | Một ảnh nguồn; B2 trung bình xác suất của mọi box hợp lệ cùng loài để tạo một dự đoán/ảnh |
+| Chọn box | Không tự chọn một box; dùng đủ annotation hợp lệ TV1 đã khóa, `sample_weight=1/N` với N crop của ảnh |
 | Khởi tạo | ResNet18, ImageNet-1K `IMAGENET1K_V1` trực tiếp; không tiếp tục B0 |
 | Nguồn weights | `https://download.pytorch.org/models/resnet18-f37072fd.pth`; torchvision enum cụ thể, không DEFAULT |
 | Fine-tune | Mở tất cả layer; BatchNorm cập nhật affine/running statistics khi train, eval khi validation |
 | Seed | 42; Python, NumPy, torch, CUDA, DataLoader generator và worker seeds |
 | Budget | Tối đa 50 epoch, patience 7 theo macro-F1; cùng quy tắc cho B2 |
 | Batch | 32, giữ batch cuối (`drop_last=False`), workers 0; không tự giảm khi OOM |
-| Input | B1 ảnh gốc; B2 crop chuẩn đã chọn, tuyệt đối không detector crop trong phép so sánh |
+| Input | B1 ảnh gốc; B2 crop on-the-fly từ `bbox_xyxy` đã khóa, tuyệt đối không detector crop trong phép so sánh |
 | Resolution | Resize cạnh ngắn 256, crop 224; normalize ImageNet |
 | Train augmentation | RandomCrop224, horizontal flip 0.5, ColorJitter(0.2,0.2,0.1,0.05) |
 | Validation | Resize256, CenterCrop224, không ngẫu nhiên |
@@ -25,9 +25,11 @@ Không dùng việc config tồn tại làm bằng chứng cho phép train.
 | Metrics | `src/evaluation/metrics.py`; toàn bộ lớp, zero_division=0, đơn vị ảnh nguồn |
 | Runtime | CUDA được xác nhận và có budget reference; log GPU, version, thời gian, peak allocated VRAM |
 
-Không phải protocol đã thống nhất. Nếu nhóm chọn all-box training/mean-probability
-aggregation thay cho một box/ảnh, phải cập nhật thiết kế, gate và tests trước;
-không bật train bằng cách chỉ sửa chữ PROPOSED thành AGREED.
+Phần hợp đồng dữ liệu đã được adapter hóa theo bàn giao review: B1 một dòng/ảnh;
+B2 mọi box hợp lệ cùng loài, loss cân bằng cấp ảnh bằng `1/N`, validation dùng
+mean-probability aggregation cấp ảnh. Gate và fixture tests đã được cập nhật.
+Các hyperparameter/budget vẫn chưa được TV2/TV3 thống nhất; không bật train bằng
+cách chỉ sửa chữ PROPOSED thành AGREED.
 
 Khác biệt tìm thấy trên TV3 `2c3c992`: `src/data/crop_dataset.py` dùng
 Resize(224,224), jitter 0.3, RandomGrayscale(0.05), drop_last train=True;
@@ -91,10 +93,15 @@ train/val: decode, kích thước, hash, nhãn, box, ID/path duplicate, location
 sequence, content leakage. Không tự loại ảnh lỗi hay đổi split. Lỗi chỉ rõ ID;
 run lỗi giữ status/exception, không resume hoặc ghi đè run cũ.
 
-Crop manifest dùng field W2 TV3: image_id, annotation_id, split, label, class_id,
-bbox_xywh_original, source_url, file_path, sha256. Gate kiểm tra mapping đến box
-và cùng source IDs, nhưng **không xác minh pixel crop**; kiểm tra crop bytes,
-padding và cách chọn box thuộc checklist độc lập W3-03 trước kết luận so sánh.
+B1 view dùng `sample_id`, `image_id`, `input_type=full_image`, `sample_weight=1`
+và không cần lặp lại `boxes`; gate đối chiếu các trường provenance có ý nghĩa
+với manifest ảnh nguồn thay vì so nguyên dict. B2 manifest dùng `crop_id`,
+`image_id`, `annotation_id`, split/label/class, `input_type=bbox_crop`,
+`sample_weight`, `bbox_xyxy`, `url` và `quality.{local_path,sha256}`. Gate chấp
+nhận nhiều crop/ảnh, bắt buộc crop/annotation ID duy nhất, đủ đúng tập box hợp
+lệ, cùng parent IDs với B1, cùng nhãn/split/nguồn và trọng số `1/N`. Crop được
+tạo on-the-fly nên không yêu cầu JPEG crop hay hash crop riêng; byte hash ảnh
+nguồn vẫn được kiểm trước khi huấn luyện.
 
 Excluded ledger có image_id, split, reason; chỉ train/val, không trùng accepted,
 accepted ∪ excluded phải bằng source. Mọi lớp phải có mẫu train và val. Counts

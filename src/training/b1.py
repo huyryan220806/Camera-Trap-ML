@@ -278,7 +278,7 @@ def create_fixture(root: Path, config: dict) -> dict:
         files[name] = {"path": path.name, "sha256": file_sha256(path)}
     save("class_map", dict(enumerate(names)))
     for split in ("train", "val"):
-        rows, crops = [], []
+        rows, views, crops = [], [], []
         for label in range(2):
             for index in range(2):
                 image_id = f"{split}_{label}_{index}"
@@ -286,12 +286,25 @@ def create_fixture(root: Path, config: dict) -> dict:
                 pixels = rng.integers(0, 255, (64, 64, 3), dtype=np.uint8)
                 path = root / "images" / f"{image_id}.png"
                 Image.fromarray(pixels).save(path)
+                boxes = [{"annotation_id": f"{image_id}_0", "label": names[label], "bbox_xywh": [0, 0, 32 if index == 0 else 64, 64]}]
+                if index == 0:
+                    boxes.append({"annotation_id": f"{image_id}_1", "label": names[label], "bbox_xywh": [32, 0, 32, 64]})
                 row = {"image_id": image_id, "file_name": path.name, "url": f"fixture://{image_id}", "seq_id": image_id, "location": f"{split}_{label}", "split": split, "class_id": label, "label": names[label], "width": 64, "height": 64,
-                       "boxes": [{"annotation_id": image_id, "label": names[label], "bbox_xywh": [0, 0, 64, 64]}],
+                       "boxes": boxes,
                        "quality": {"local_path": f"images/{path.name}", "sha256": file_sha256(path), "pixel_sha256": hashlib.sha256(b"RGB:64:64:" + pixels.tobytes()).hexdigest()}}
                 rows.append(row)
-                crops.append({"image_id": image_id, "annotation_id": image_id, "split": split, "class_id": label, "label": names[label], "bbox_xywh_original": [0, 0, 64, 64], "source_url": row["url"], "file_path": f"images/{path.name}", "sha256": file_sha256(path)})
-        save(split, rows, lines=True)
+                views.append({"sample_id": f"b1::{image_id}", "image_id": image_id,
+                              "input_type": "full_image", "sample_weight": 1.0,
+                              "split": split, "class_id": label, "label": names[label]})
+                weight = 1.0 / len(boxes)
+                for box in boxes:
+                    x, y, width, height = box["bbox_xywh"]
+                    crops.append({"crop_id": f"b2::{box['annotation_id']}", "image_id": image_id,
+                                  "annotation_id": box["annotation_id"], "input_type": "bbox_crop",
+                                  "sample_weight": weight, "split": split, "class_id": label,
+                                  "label": names[label], "bbox_xyxy": [x, y, x + width, y + height],
+                                  "url": row["url"], "quality": dict(row["quality"])})
+        save(split, views, lines=True)
         save(f"source_{split}", rows, lines=True)
         save(f"crop_{split}", crops, lines=True)
     save("excluded", [], lines=True)
