@@ -1,15 +1,25 @@
 # TV2 W3 IMPLEMENTATION REPORT
 
-## Cập nhật CONTINUATION_03 – 18/10/2026
+## Cập nhật CONTINUATION_04 – 18/10/2026
 
-Trạng thái mới nhất: **W3-02 B1 TRAINED – B1/B2 COMPARISON PENDING**.
-`B1_run01` đã hoàn tất 29 epoch, best epoch 22; validation macro-F1
-`0.5624506868`, accuracy `0.565`. Checkpoint 44.815.625 byte, SHA-256
-`5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`;
-fresh-process reload PASS với mọi delta bằng 0. TV3 mới nhất `c01a751` đã PASS
-23/23 test cô lập nhưng còn bốn finding P1, nên chưa có comparison hợp lệ.
-Xem [báo cáo mới](TV2_W3_CONTINUATION_03_REPORT.md) và
-[README bàn giao](README_W3_HANDOFF_TEMP.md). Các phần bên dưới là lịch sử.
+Trạng thái mới nhất:
+**B1 CHECKPOINT HANDOFF VERIFIED – B1/B2 COMPARISON PENDING OFFICIAL B2**.
+`B1_run01` giữ nguyên: 29 epoch, best epoch 22, validation macro-F1
+`0.5624506868`, accuracy `0.565`. Checkpoint local và bản tải riêng từ
+[Google Drive](https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing)
+cùng có 44.815.625 byte và SHA-256
+`5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`.
+Validator đầy đủ trên bản Drive PASS: official reload, provenance và 600 ảnh
+validation đều hợp lệ; metric/loss/logit delta bằng 0, test rows không được mở.
+Bằng chứng được ghi trong `w3_evidence/continuation_04/`.
+
+Đã fetch remote: TV3 vẫn ở `c01a751`, PASS 23/23 test cô lập nhưng bốn lỗi P1
+vẫn tồn tại và nhánh chưa có official checkpoint/log/validation/reload B2. Vì
+vậy không điền metric giả và không chọn model thắng. Xem
+[checkpoint handoff](TV2_W3_CHECKPOINT.md), [review TV3](TV2_REVIEW_TV3_W3.md),
+[comparison](TV2_W3_COMPARISON.md) và [README bàn giao](README_W3_HANDOFF_TEMP.md).
+87/87 test TV2 PASS; hash `comparison_v1` và B0 PASS, test rows không được mở.
+Các phần bên dưới là lịch sử tại thời điểm chúng được viết.
 
 Ngày cập nhật 16/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
 Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 chính thức.

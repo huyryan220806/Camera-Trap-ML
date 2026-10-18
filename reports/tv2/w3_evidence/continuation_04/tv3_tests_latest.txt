@@ -1,0 +1,103 @@
+test_drop_last_false_no_crop_lost (test_tv3_w3_b2.B2DatasetValidationTests.test_drop_last_false_no_crop_lost)
+L\u1ed7i 4: DataLoader ph\u1ea3i gi\u1eef �\u1ee7 t\u1ea5t c\u1ea3 crop, kh�ng drop batch cu\u1ed1i. ... ok
+test_fail_on_duplicate_crop_id (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_duplicate_crop_id)
+L\u1ed7i 3: crop_id tr�ng ph\u1ea3i raise ValueError. ... ok
+test_fail_on_multiple_labels_per_image (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_multiple_labels_per_image)
+L\u1ed7i 3: c�ng image_id c� nhi\u1ec1u nh\xe3n kh�c nhau ph\u1ea3i raise ValueError. ... ok
+test_fail_on_split_mismatch (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_split_mismatch)
+Dataset y�u c\u1ea7u val nh�ng manifest ghi train \u2192 raise. ... ok
+test_fail_on_unknown_label (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_unknown_label) ... ok
+test_fail_on_zero_size_box (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_zero_size_box)
+L\u1ed7i 3: box c� k�ch th�\u1edbc <= 0 ph\u1ea3i raise ValueError. ... ok
+test_preflight_fails_if_sha256_missing (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_missing)
+L\u1ed7i 3: preflight b\u1eadt m� thi\u1ebfu sha256 ph\u1ea3i raise, kh�ng b\u1ecf qua. ... ok
+test_preflight_fails_if_sha256_wrong (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_wrong)
+Preflight b\u1eadt, hash sai \u2192 raise. ... ok
+test_sample_weight_is_inverse_crop_count (test_tv3_w3_b2.B2DatasetValidationTests.test_sample_weight_is_inverse_crop_count)
+V\xec 2 crop c�ng img_001, m\u1ed7i crop ph\u1ea3i c� sample_weight = 0.5. ... ok
+test_valid_manifest_loads_ok (test_tv3_w3_b2.B2DatasetValidationTests.test_valid_manifest_loads_ok) ... ok
+test_checkpoint_save_and_load (test_tv3_w3_b2.B2ModelTests.test_checkpoint_save_and_load) ... ok
+test_default_dropout_is_zero_per_protocol (test_tv3_w3_b2.B2ModelTests.test_default_dropout_is_zero_per_protocol)
+Protocol: kh�ng d�ng dropout trong B2. ... ok
+test_model_forward_shape_and_probabilities (test_tv3_w3_b2.B2ModelTests.test_model_forward_shape_and_probabilities) ... ok
+test_best_epoch_tracking_accuracy (test_tv3_w3_b2.GateAndCheckpointTests.test_best_epoch_tracking_accuracy)
+L\u1ed7i 6: best_epoch ph\u1ea3i l� epoch th\u1eadt c\u1ee7a best F1, kh�ng ph\u1ea3i epoch cu\u1ed1i. ... 20:29:29 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+20:29:29 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_ckpt_test_qz5_3j2d
+20:29:29 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:29:29 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 2 epochs...
+20:29:31 [INFO] Epoch [1/2] (1.5s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:29:31 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=8.33%).
+20:29:32 [INFO] Epoch [2/2] (0.3s) Loss=2.1375 Acc=12.5% | Val Loss=2.0944 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+20:29:32 [INFO] Ho�n t\u1ea5t sau 2.1s! Best epoch=1, Best ImgF1=8.33%
+20:29:32 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_ckpt_test_qz5_3j2d\validation_comparison.md
+ok
+test_gate_fails_if_files_missing (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_files_missing)
+L\u1ed7i 3: Gate ph\u1ea3i t\u1eeb ch\u1ed1i khi file kh�ng t\u1ed3n t\u1ea1i. ... 20:29:32 [ERROR]
+======================================================================
+[L\u1ed6I TI�U CH� NGHI\u1ec6M THU TU\u1ea6N 3]
+Ch�a th\u1ec3 ch\u1ea1y hu\u1ea5n luy\u1ec7n B2 ch�nh th\u1ee9c v\xec thi\u1ebfu file kh�a d\u1eef li\u1ec7u W3-01:
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\b2\train.jsonl
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\b2\val.jsonl
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\class_map.json
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\provenance.json
+
+Quy t\u1eafc: 'Ch\u1ec9 ch\u1ea1y ch�nh th\u1ee9c sau khi W3-01 kh�a manifest'.
+H\xe3y l\u1ea5y d\u1eef li\u1ec7u t\u1eeb nh�nh TV1 (origin/feat/metadata-split) tr�\u1edbc khi ch\u1ea1y.
+�\u1ec3 ki\u1ec3m tra pipeline, d�ng: python scripts/train_b2.py --smoke-test
+======================================================================
+ok
+test_gate_fails_if_provenance_sha_wrong (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_provenance_sha_wrong)
+L\u1ed7i 3: Gate ph\u1ea3i t\u1eeb ch\u1ed1i n\u1ebfu provenance.json c� SHA-256 sai. ... 20:29:32 [ERROR]
+======================================================================
+[L\u1ed6I X�C MINH SNAPSHOT]
+provenance.json t\u1ed3n t\u1ea1i nh�ng SHA-256 kh�ng kh\u1edbp!
+  K\u1ef3 v\u1ecdng (�\xe3 th\u1ed1ng nh\u1ea5t v\u1edbi TV2): d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f
+  Th\u1ef1c t\u1ebf:                          d424d4f98e4981f8cdee4072972da4a850ac48f77564618864ed83fd34511911
+  File: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\tmpgzvalmsm\provenance.json
+
+Snapshot n�y KH�NG ph\u1ea3i b\u1ea3n �\xe3 kh�a t\u1eeb TV1 commit 7e9b194.
+Kh�ng ��\u1ee3c train tr�n d\u1eef li\u1ec7u ch�a x�c minh.
+======================================================================
+ok
+test_last_checkpoint_contains_last_epoch_not_best_metrics (test_tv3_w3_b2.GateAndCheckpointTests.test_last_checkpoint_contains_last_epoch_not_best_metrics)
+L\u1ed7i 6: last_model.pt ph\u1ea3i ch\u1ee9a metrics c\u1ee7a epoch cu\u1ed1i, kh�ng ph\u1ea3i best. ... 20:29:32 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+20:29:32 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_last_test_gso57_gy
+20:29:32 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:29:32 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 2 epochs...
+20:29:33 [INFO] Epoch [1/2] (0.3s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:29:33 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=8.33%).
+20:29:33 [INFO] Epoch [2/2] (0.3s) Loss=2.1375 Acc=12.5% | Val Loss=2.0944 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+20:29:33 [INFO] Ho�n t\u1ea5t sau 0.9s! Best epoch=1, Best ImgF1=8.33%
+20:29:34 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_last_test_gso57_gy\validation_comparison.md
+ok
+test_smoke_log_has_synthetic_marker (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_log_has_synthetic_marker)
+L\u1ed7i 2: log file c\u1ee7a smoke-test ph\u1ea3i c� SYNTHETIC_SMOKE marker \u1edf d\xf2ng �\u1ea7u. ... 20:29:34 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+20:29:34 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_log_test_b3cfw4im
+20:29:34 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:29:34 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 1 epochs...
+20:29:35 [INFO] Epoch [1/1] (0.6s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:29:35 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=8.33%).
+20:29:35 [INFO] Ho�n t\u1ea5t sau 0.8s! Best epoch=1, Best ImgF1=8.33%
+20:29:35 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_log_test_b3cfw4im\validation_comparison.md
+ok
+test_smoke_test_uses_isolated_tmp_dir (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_test_uses_isolated_tmp_dir)
+L\u1ed7i 2: Smoke-test kh�ng ��\u1ee3c �\u1ee5ng v�o th� m\u1ee5c output ch�nh th\u1ee9c. ... 20:29:35 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+20:29:35 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_smoke_5hmuekk4
+20:29:35 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:29:36 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 1 epochs...
+20:29:36 [INFO] Epoch [1/1] (0.4s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:29:36 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=8.33%).
+20:29:36 [INFO] Ho�n t\u1ea5t sau 0.6s! Best epoch=1, Best ImgF1=8.33%
+20:29:36 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_smoke_5hmuekk4\validation_comparison.md
+ok
+test_aggregation_mean_probability_and_argmax (test_tv3_w3_b2.ImageAggregationTests.test_aggregation_mean_probability_and_argmax) ... ok
+test_format_validation_markdown_table (test_tv3_w3_b2.ImageAggregationTests.test_format_validation_markdown_table) ... ok
+test_single_crop_per_image_matches_standard_ce (test_tv3_w3_b2.PerImageLossTests.test_single_crop_per_image_matches_standard_ce)
+Khi m\u1ed7i \u1ea3nh ch\u1ec9 c� 1 crop, k\u1ebft qu\u1ea3 ph\u1ea3i b\u1eb1ng CrossEntropyLoss th�ng th�\u1eddng. ... ok
+test_two_crops_per_image_gives_mean_of_means (test_tv3_w3_b2.PerImageLossTests.test_two_crops_per_image_gives_mean_of_means)
+\u1ea2nh A c� 2 crop, \u1ea3nh B c� 1 crop: loss ph\u1ea3i l� mean(mean_A, mean_B), bukan mean c\u1ee7a 3 crops. ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 10.633s
+
+OK

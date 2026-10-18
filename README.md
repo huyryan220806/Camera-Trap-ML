@@ -2,33 +2,36 @@
 
 ## TV2 Week 3 – B1 Fine-tuning
 
-**PREPARED / BLOCKED — W3-02 CODE READY – TRAINING BLOCKED. COMPARISON PENDING.**
+**B1 CHECKPOINT HANDOFF VERIFIED – B1/B2 COMPARISON PENDING OFFICIAL B2.**
 
-- Dataset version/manifest W3: chưa được TV1 freeze. Lần fetch ngày 16/10/2026
-  cho thấy `feat/metadata-split` bằng main và không có handoff/comparison_v1 W3;
-  không tự coi W2 v2 là dữ liệu so sánh W3, không có metric B1 official.
-- B1 đề xuất: ResNet18 ImageNet-1K trực tiếp, fine-tune toàn mạng; SGD/StepLR,
-  seed42, batch32, tối đa50 epoch, chọn checkpoint theo validation macro-F1.
-- [Config](configs/b1.yaml), [protocol PROPOSED và gate evidence](reports/tv2/TV2_W3_PROTOCOL.md),
-  [báo cáo TV2 W3](reports/tv2/TV2_W3.md), [checkpoint handoff đang chờ](reports/tv2/TV2_W3_CHECKPOINT.md).
-- Kiểm thử sau sửa review P1: 78/78 PASS (52 W2 +26 B1); synthetic CPU
-  smoke/reload PASS. Gate hỗ trợ B1 projection và nhiều B2 crop/ảnh theo
-  `bbox_xyxy`, đồng thời từ chối thiếu/đổi crop mapping.
-  Chưa kiểm định CUDA/bộ phiên bản ghim Python3.12; máy hiện không có CUDA.
-- Review [W3-01 TV1](reports/tv2/TV2_REVIEW_TV1_W3.md): HANDOFF NOT PRESENT;
-  [W3-03 TV3](reports/tv2/TV2_REVIEW_TV3_W3.md): commit `d08eba7` có code,
-  snapshot tests 9/9 PASS nhưng official gate bị chặn và code review FAIL.
-  [So sánh](reports/tv2/TV2_W3_COMPARISON.md): chưa đủ dữ liệu, chưa chọn model thắng.
+- `B1_run01` đã hoàn tất 29 epoch, early stopping patience 7, best epoch 22.
+- Validation: Macro-F1 `0.5624506868`, precision `0.5748610369`, recall và
+  accuracy `0.565`, loss `1.3379992723` trên 600 ảnh nguồn.
+- Model: ResNet18 ImageNet-1K, full fine-tune, FP32; seed42, SGD/StepLR,
+  batch32; 11.180.616 tham số trainable.
+- Checkpoint: 44.815.625 byte; SHA-256
+  `5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`;
+  local reload PASS. Bản tải riêng từ
+  [Google Drive](https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing)
+  có cùng size/hash; fresh-process reload, provenance và metrics đều PASS với
+  mọi delta bằng 0.
+- 87/87 test TV2 PASS trong workspace TEMP; `comparison_v1`, B0 và các artifact
+  W1/W2 đọc được đều giữ nguyên. Không mở test rows để đánh giá/tuning.
+- TV3 mới nhất `c01a751` PASS 23/23 test cô lập nhưng còn bốn lỗi P1 và chưa có
+  official B2 checkpoint/log/metrics/reload. Vì vậy chưa tính chênh lệch hoặc
+  chọn model thắng.
+- Tài liệu: [báo cáo W3](reports/tv2/TV2_W3.md),
+  [checkpoint/TV4 handoff](reports/tv2/TV2_W3_CHECKPOINT.md),
+  [review TV3](reports/tv2/TV2_REVIEW_TV3_W3.md),
+  [comparison](reports/tv2/TV2_W3_COMPARISON.md).
 
 ```powershell
-python -X utf8 scripts/train_b1.py --smoke
-# Hiện dừng ở gate; chỉ train sau frozen data + agreed protocol + CUDA/budget:
-python -X utf8 scripts/train_b1.py --config configs/b1.yaml
-python -X utf8 scripts/validate_b1.py --checkpoint <B1-checkpoint.pth> --sha256 <actual-sha256>
+python -X utf8 scripts/validate_b1.py --checkpoint <downloaded-best_model.pth> `
+  --sha256 5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c
 ```
 
-Smoke dùng ảnh giả và thư mục tạm, không tạo B1_run01 hoặc sửa B0_run01.
-Không dùng tập test trong W3; checkpoint official chưa tồn tại, chưa có URL tải.
+Không huấn luyện lại hoặc ghi đè `B1_run01`. Checkpoint `.pth`, ảnh nguồn và
+artifact tạm không được commit vào Git.
 
 ## TV2 – Week 2 – Baseline B0
 

@@ -4,7 +4,7 @@
 
 **Nhánh:** `feat/baseline`
 
-**Trạng thái:** **W3-02 B1 TRAINED – B1/B2 COMPARISON PENDING**
+**Trạng thái:** **B1 CHECKPOINT HANDOFF VERIFIED – B1/B2 COMPARISON PENDING**
 
 ## Kết quả chính
 
@@ -41,20 +41,26 @@ thức và kiểm tra checkpoint trong một process mới. Test set không đư
   learning curves, data gate và status.
 - Xác minh checkpoint ngay sau training và chạy lại `validate_b1.py` trong process
   mới: provenance/reload/metric/loss/logit đều PASS.
-- Kiểm lại 53 artifact được bảo vệ của W1/W2/B0: không file nào thay đổi.
+- Tải lại checkpoint từ Google Drive vào thư mục tạm riêng: size và SHA-256 trùng
+  tuyệt đối bản local; validator độc lập trên bản tải PASS với provenance và mọi
+  metric/loss/logit delta bằng 0. Bằng chứng ở `w3_evidence/continuation_04/`.
+- Kiểm lại SHA-256 của 51/53 artifact bảo vệ: không file dự án nào thay đổi;
+  hai tài liệu Office cá nhân đang bị ứng dụng khóa, kích thước vẫn khớp và
+  không được TV2 chạm tới.
 - Fetch và review read-only TV3 commit `c01a751`; 23/23 test cô lập PASS.
 
 ## Artifact
 
 - [Báo cáo Continuation 03](TV2_W3_CONTINUATION_03_REPORT.md)
 - [Bằng chứng B1](w3_evidence/continuation_03/b1_run01_verification.json)
+- [Bằng chứng tải Drive](w3_evidence/continuation_04/remote_checkpoint_verification.json)
 - [Checkpoint handoff](TV2_W3_CHECKPOINT.md)
 - [Review TV3](TV2_REVIEW_TV3_W3.md)
 - [Trạng thái so sánh](TV2_W3_COMPARISON.md)
 - Local run: `experiments/B1_run01/`.
 
-Checkpoint `.pth` không commit lên Git. URL tải vẫn chờ nơi lưu artifact được nhóm
-chỉ định.
+Checkpoint `.pth` không commit lên Git. URL bàn giao:
+[Google Drive](https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing).
 
 ## Phần còn phụ thuộc TV3
 

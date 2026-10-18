@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-10-18T20:55:00+07:00",
+  "b1_checkpoint": {
+    "local_sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+    "remote_sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+    "local_bytes": 44815625,
+    "remote_bytes": 44815625,
+    "remote_download_match": "PASS",
+    "remote_fresh_process_reload": "PASS",
+    "provenance": "PASS",
+    "metric_loss_logits_delta_zero": true
+  },
+  "tests": {
+    "tv2": {"passed": 87, "failed": 0, "status": "PASS"},
+    "tv3_isolated": {"passed": 23, "failed": 0, "status": "PASS"}
+  },
+  "integrity": {
+    "comparison_v1": "PASS",
+    "b0_and_project_artifacts": "PASS",
+    "locked_personal_files": 2,
+    "locked_personal_file_size_match": true,
+    "test_rows_opened": false
+  },
+  "tv3": {
+    "commit": "c01a75141bb8350c8a38a28cfc9b44a3f3ad12ba",
+    "official_checkpoint_available": false,
+    "official_validation_available": false,
+    "blocking_p1_findings": 4,
+    "comparison_eligible": false
+  },
+  "overall_status": "B1_CHECKPOINT_HANDOFF_VERIFIED_B1_B2_COMPARISON_PENDING"
+}

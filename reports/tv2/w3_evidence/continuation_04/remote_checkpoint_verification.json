@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-10-18T20:30:00+07:00",
+  "source_url": "https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing",
+  "file_id": "19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq",
+  "download_location": "system temporary directory outside repository",
+  "original_checkpoint_modified": false,
+  "local": {
+    "path": "experiments/B1_run01/checkpoints/best_model.pth",
+    "bytes": 44815625,
+    "sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c"
+  },
+  "google_drive_download": {
+    "bytes": 44815625,
+    "sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c"
+  },
+  "byte_count_match": true,
+  "sha256_match": true,
+  "download_verification": "PASS",
+  "validator": {
+    "status": "PASS",
+    "kind": "OFFICIAL",
+    "reload": "PASS",
+    "best_epoch": 22,
+    "validation_samples": 600,
+    "provenance": "PASS",
+    "source_images_verified": true,
+    "test_rows_opened": false,
+    "metric_absolute_differences": {
+      "macro_f1": 0.0,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "accuracy": 0.0
+    },
+    "val_loss_absolute_difference": 0.0,
+    "logits_max_absolute_difference": 0.0,
+    "evidence": "reports/tv2/w3_evidence/continuation_04/remote_drive_validator.json"
+  },
+  "remote_verification": "PASS"
+}
