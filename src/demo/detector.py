@@ -110,7 +110,7 @@ class MegaDetectorAdapter:
 
 
 def analyze(data, file_name, mode='mock', threshold=0.2, scenario='animal', adapter=None):
-    if mode not in ('mock', 'megadetector') or scenario not in ('animal', 'empty', 'error'):
+    if mode not in ('mock', 'megadetector') or scenario not in ('animal', 'multiple', 'empty', 'error'):
         raise ValueError('Unknown mode or scenario')
     if isinstance(threshold, bool) or not isinstance(threshold, (int, float)) or not math.isfinite(threshold) or not 0 <= threshold <= 1:
         raise ValueError('Threshold must be finite and between 0 and 1')
@@ -138,6 +138,10 @@ def analyze(data, file_name, mode='mock', threshold=0.2, scenario='animal', adap
                 raw = {'detections': [{'category': '1', 'conf': 0.91, 'bbox': [0.25, 0.2, 0.4, 0.6]}]}
                 if scenario == 'empty':
                     raw = {'detections': []}
+                elif scenario == 'multiple':
+                    raw = {'detections': [
+                        {'category': '1', 'conf': 0.91, 'bbox': [0.05, 0.1, 0.4, 0.7]},
+                        {'category': '1', 'conf': 0.82, 'bbox': [0.55, 0.2, 0.4, 0.6]}]}
                 elif scenario == 'error':
                     raw = {'failure': 'mock error'}
             else:

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-18T03:55:59.332Z",
+  "url": "http://127.0.0.1:8765",
+  "viewport_sizes": [
+    "1440x1100",
+    "390x844",
+    "320x740"
+  ],
+  "browser_errors": [],
+  "real_box_count": 1,
+  "classifier_load_count": 1,
+  "verified": [
+    "real MD+B0",
+    "warm cache",
+    "top 3 per box",
+    "uncalibrated score disclosure",
+    "explicit multiple-box mock",
+    "JSON provenance export",
+    "empty/read/detector errors",
+    "legacy detector-only",
+    "model selection clears results",
+    "disabled pending B1/B2",
+    "desktop/mobile no overflow",
+    "box alignment",
+    "no text-score overlap"
+  ]
+}

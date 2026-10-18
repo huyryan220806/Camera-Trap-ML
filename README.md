@@ -1,5 +1,13 @@
 # CameraTrapML
 
+## Ứng dụng tuần 3 của thành viên 4
+
+- [Bàn giao luồng suy luận và cache mô hình](docs/handoff_tv4_w3.md), [progress](docs/progress_tv4_w3.md).
+- [Bằng chứng kiểm thử](reports/tv4_w3/REPORT.md): MegaDetector + B0 thật, top 3 từng box, cache giữa các request.
+- Cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_classifier.py` để lấy B0 đã khóa SHA, rồi `scripts/run_demo.py --port 8765`.
+- B1/B2 chờ checkpoint được nghiệm thu; không tự thay bằng B0. Điểm softmax không phải xác suất đã hiệu chỉnh.
+- B0 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
+
 ## Bản chung tuần 2 và nhánh cố định
 
 `main` đã tích hợp phần tuần 2 đã kiểm tra của cả bốn thành viên. Xem [biên bản tích hợp](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
