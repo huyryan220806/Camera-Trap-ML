@@ -36,9 +36,10 @@ Exported envelope independently validated. pip check PASS. B0 setup rerun
 successfully reused cached weights. Frozen data and historical B0 artifacts
 are unchanged. Evidence copied to reports/tv4_w3; handoff in docs/handoff_tv4_w3.md.
 
-TV1 is already pushed. TV4 implementation is being saved as a local commit
-on feat/demo; remote publication/merge is not part of this TV4 delivery.
-Do not assume origin/feat/demo contains W3 until a subsequent push succeeds.
+TV1 is already pushed. TV4 implementation commit
+ddce6fb6863bc8d8f65a767ff94ff95c2152eece was successfully pushed to origin/feat/demo
+on 2026-10-18 with user authorization. It includes TV1 W3 ancestor 7e9b194.
+Do not merge into main until all members finish and the user authorizes integration.
 No branch codex/* was created. No code on TV2/TV3 branches was changed.
 
 Demo launched at http://127.0.0.1:8765 (local process); logs are under
@@ -46,5 +47,5 @@ outputs/tv4/w3/server.*.log. After a restart, run scripts/run_demo.py again.
 Read this file and git status before resuming; do not recreate the frozen
 snapshot, remove cached weights, drop the TV1 backup stash, or stage unrelated
 untracked reports/notebooks. Unit/real smoke processes completed; only the
-requested demo server is left running. A later push should target feat/demo,
+requested demo server is left running. Further TV4 pushes should target feat/demo,
 not main, and retain the TV1 W3 ancestor 7e9b194.
