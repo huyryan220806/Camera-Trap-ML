@@ -99,6 +99,19 @@ class B1Tests(unittest.TestCase):
         with self.assertRaisesRegex(GateError, "committed handoff"):
             committed_receipt(repo, "receipt.json", file_sha256(receipt), commit+":receipt.json")
 
+    def test_user_confirmed_team_protocol_still_requires_budget(self):
+        self.config["data"].update(freeze_receipt="receipt.json", freeze_sha256="a"*64, freeze_git_ref="b"*40+":receipt.json")
+        self.config["protocol"].update(status="AGREED", receipt="p.json", sha256="c"*64, git_ref="d"*40+":p.json")
+        receipt = {"status":"FROZEN","owner":"TV1","task":"W3-01","dataset_version":"fixture"}
+        agreement = {"status":"AGREED","approval":{"kind":"user_confirmed_team_agreement","confirmed_for":["TV2","TV3"],
+                     "source":"synthetic conversation evidence","quote":"fixture group confirmation"},
+                     "freeze_sha256":"a"*64,"settings":protocol_settings(self.config),"budget_reference":None}
+        with patch("src.training.b1_gate.committed_receipt",side_effect=[receipt,agreement]):
+            with self.assertRaisesRegex(GateError,"GPU BUDGET NOT CONFIRMED"):official_gate(self.config,self.root)
+        agreement['approval']['quote']=''
+        with patch("src.training.b1_gate.committed_receipt",side_effect=[receipt,agreement]):
+            with self.assertRaisesRegex(GateError,"differs"):official_gate(self.config,self.root)
+
     def test_invalid_configs(self):
         for section, field, value in [("experiment", "id", "../B0_run01"), ("experiment", "seed", True), ("model", "fine_tune", "fc"), ("data", "test_used_for_selection", True), ("data", "input_type", "crop"), ("data", "batch_size", 0), ("training", "lr", float("nan")), ("training", "epochs", 0), ("training", "optimizer", "adam"), ("runtime", "device", "cpu")]:
             with self.subTest(field=field):

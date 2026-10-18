@@ -1,0 +1,125 @@
+{
+  "tests": {
+    "exit_code": 0,
+    "seconds": 64.573,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  },
+  "smoke": {
+    "exit_code": 0,
+    "seconds": 41.999,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/train_b1.py",
+      "--smoke"
+    ]
+  },
+  "preflight_help": {
+    "exit_code": 0,
+    "seconds": 21.964,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/preflight_b1.py",
+      "--help"
+    ]
+  },
+  "snapshot_help": {
+    "exit_code": 0,
+    "seconds": 0.292,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/prepare_tv1_snapshot.py",
+      "--help"
+    ]
+  },
+  "train_help": {
+    "exit_code": 0,
+    "seconds": 15.079,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/train_b1.py",
+      "--help"
+    ]
+  },
+  "validate_help": {
+    "exit_code": 0,
+    "seconds": 15.265,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/validate_b1.py",
+      "--help"
+    ]
+  },
+  "tv1_validator_help": {
+    "exit_code": 0,
+    "seconds": 1.009,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "outputs/tv2_w3/tv1_7e9b194/scripts/validate_comparison.py",
+      "--help"
+    ]
+  },
+  "official_gate": {
+    "exit_code": 1,
+    "seconds": 20.195,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/train_b1.py",
+      "--config",
+      "configs/b1_comparison_v1.pending.yaml"
+    ]
+  },
+  "environment_check": {
+    "exit_code": 1,
+    "seconds": 0.365,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/check_environment.py"
+    ]
+  },
+  "gpu_schedule": {
+    "exit_code": 0,
+    "seconds": 0.388,
+    "argv": [
+      "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/validate_gpu_schedule.py"
+    ]
+  }
+}

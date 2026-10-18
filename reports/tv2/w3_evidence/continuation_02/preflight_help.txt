@@ -1,0 +1,11 @@
+usage: preflight_b1.py [-h] [--config CONFIG] [--metadata-only]
+                       [--report REPORT]
+
+Validate TV1 native train/validation handoff independently of training
+approval.
+
+options:
+  -h, --help       show this help message and exit
+  --config CONFIG
+  --metadata-only  Do not claim image preflight PASS
+  --report REPORT  New report path; existing files are never overwritten

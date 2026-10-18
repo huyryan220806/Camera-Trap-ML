@@ -1,0 +1,99 @@
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+B0 smoke test PASS
+test_a_smoke_preserves_completed_run_bytes_and_hashes (test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 3, 'excluded': 1}}
+B0 smoke test PASS
+test_b_smoke_with_missing_validation_image_preserves_run (test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run) ... ok
+test_c_existing_run_rejected_before_preparation (test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation) ... ok
+test_d_atomic_publication_rolls_back_all_files (test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files) ... ok
+test_d_prepare_failure_after_train_inspection_publishes_nothing (test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing) ... ok
+test_e_changed_image_id_rejected (test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected) ... ok
+test_f_changed_class_map_rejected (test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected) ... ok
+test_g_added_deleted_modified_validation_rows_rejected (test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected) ... ok
+test_h_changed_source_rejected (test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected) ... ok
+test_i_changed_decodable_image_bytes_rejected (test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected) ... ok
+test_inverse_checkpoint_mapping_checked (test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked) ... ok
+test_missing_class_hash_requires_exact_mapping (test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping) ... ok
+test_missing_frozen_validation_hash_rejected (test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+{"epoch": 1, "train_loss": 0.9608118236064911, "val_loss": 0.923206590116024, "val_macro_f1": 0.3333333333333333, "val_macro_precision": 0.25, "val_macro_recall": 0.5, "val_accuracy": 0.5, "learning_rate": 0.001}
+{"best_epoch": 1, "best_macro_f1": 0.3333333333333333, "checkpoint": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w3\\tmp\\tmp_phm5wlq\\experiments\\new_fixture\\checkpoints\\best_model.pth", "reload": "PASS", "checkpoint_bytes": 6025}
+test_new_fixture_run_can_train_save_and_verify_once (test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once) ... ok
+test_prepare_cli_rejects_completed_run (test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run) ... ok
+test_reservation_rejects_each_existing_run_marker (test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker) ... ok
+test_selected_inputs_allow_first_reservation_but_not_second (test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second) ... ok
+test_smoke_exception_preserves_run (test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run) ... ok
+test_source_membership_checked_even_with_matching_manifest_hash (test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash) ... ok
+test_source_row_path_mismatch_rejected (test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected) ... ok
+test_successful_validator_runs_inference_after_provenance (test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance) ... ok
+test_v1_without_image_hash_reports_limitation (test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation) ... ok
+test_v2_local_path_and_sha_verified (test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified) ... ok
+test_agreement_must_pin_actual_settings (test_b1.B1Tests.test_agreement_must_pin_actual_settings) ... ok
+test_box_label_and_geometry (test_b1.B1Tests.test_box_label_and_geometry) ... ok
+test_class_map_hash_and_mapping (test_b1.B1Tests.test_class_map_hash_and_mapping) ... ok
+test_crop_label_split_and_annotation_changes_fail (test_b1.B1Tests.test_crop_label_split_and_annotation_changes_fail) ... ok
+test_duplicate_ids_and_paths (test_b1.B1Tests.test_duplicate_ids_and_paths) ... ok
+test_empty_invalid_label_and_missing_class (test_b1.B1Tests.test_empty_invalid_label_and_missing_class) ... ok
+test_end_to_end_real_resnet_checkpoint_and_tamper_rejection (test_b1.B1Tests.test_end_to_end_real_resnet_checkpoint_and_tamper_rejection) ... ok
+test_exclusion_accounting (test_b1.B1Tests.test_exclusion_accounting) ... ok
+test_failure_keeps_reserved_run_and_records_status (test_b1.B1Tests.test_failure_keeps_reserved_run_and_records_status) ... ok
+test_frozen_data_does_not_imply_protocol_agreement (test_b1.B1Tests.test_frozen_data_does_not_imply_protocol_agreement) ... ok
+test_identical_content_with_conflicting_labels_rejected (test_b1.B1Tests.test_identical_content_with_conflicting_labels_rejected) ... ok
+test_invalid_configs (test_b1.B1Tests.test_invalid_configs) ... ok
+test_location_sequence_and_content_leakage (test_b1.B1Tests.test_location_sequence_and_content_leakage) ... ok
+test_manifest_hash_drift (test_b1.B1Tests.test_manifest_hash_drift) ... ok
+test_missing_corrupt_and_changed_images_fail_without_filtering (test_b1.B1Tests.test_missing_corrupt_and_changed_images_fail_without_filtering) ... ok
+test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail (test_b1.B1Tests.test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail) ... ok
+test_official_proposed_config_fails_before_run_or_model (test_b1.B1Tests.test_official_proposed_config_fails_before_run_or_model) ... ok
+test_path_escape_rejected (test_b1.B1Tests.test_path_escape_rejected) ... ok
+test_pixel_hash_is_recomputed (test_b1.B1Tests.test_pixel_hash_is_recomputed) ... ok
+test_receipt_checks_real_git_bytes (test_b1.B1Tests.test_receipt_checks_real_git_bytes) ... ok
+test_resnet_backbone_gradients_batchnorm_and_step (test_b1.B1Tests.test_resnet_backbone_gradients_batchnorm_and_step) ... ok
+test_smoke_preserves_project_and_existing_run (test_b1.B1Tests.test_smoke_preserves_project_and_existing_run) ... ok
+test_source_membership_mismatch (test_b1.B1Tests.test_source_membership_mismatch) ... ok
+test_test_row_rejected (test_b1.B1Tests.test_test_row_rejected) ... ok
+test_transform_and_loader_reproducibility (test_b1.B1Tests.test_transform_and_loader_reproducibility) ... ok
+test_user_confirmed_team_protocol_still_requires_budget (test_b1.B1Tests.test_user_confirmed_team_protocol_still_requires_budget) ... ok
+test_valid_fixture_counts_and_no_test (test_b1.B1Tests.test_valid_fixture_counts_and_no_test) ... ok
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+test_absolute_and_relative_box (test_metadata.MetadataTests.test_absolute_and_relative_box) ... ok
+test_audit_detects_sequence_and_location_leakage (test_metadata.MetadataTests.test_audit_detects_sequence_and_location_leakage) ... ok
+test_infeasible_split_is_rejected (test_metadata.MetadataTests.test_infeasible_split_is_rejected) ... ok
+test_label_normalization_does_not_merge_distinct_species (test_metadata.MetadataTests.test_label_normalization_does_not_merge_distinct_species) ... ok
+test_quality_and_ambiguous_labels_not_species (test_metadata.MetadataTests.test_quality_and_ambiguous_labels_not_species) ... ok
+test_reject_invalid_and_ambiguous_boxes (test_metadata.MetadataTests.test_reject_invalid_and_ambiguous_boxes) ... ok
+test_split_is_reproducible_and_location_disjoint (test_metadata.MetadataTests.test_split_is_reproducible_and_location_disjoint) ... ok
+test_git_hash_binding_and_local_tamper_fail (test_tv1_handoff.NativeTV1Tests.test_git_hash_binding_and_local_tamper_fail) ... ok
+test_image_path_cannot_be_double_joined_or_escape (test_tv1_handoff.NativeTV1Tests.test_image_path_cannot_be_double_joined_or_escape) ... ok
+test_metadata_pass_never_claims_image_pass (test_tv1_handoff.NativeTV1Tests.test_metadata_pass_never_claims_image_pass) ... ok
+test_missing_validator_and_failed_attestation_fail (test_tv1_handoff.NativeTV1Tests.test_missing_validator_and_failed_attestation_fail) ... ok
+test_native_data_is_not_protocol_approval (test_tv1_handoff.NativeTV1Tests.test_native_data_is_not_protocol_approval) ... ok
+test_native_views_rounding_multicrop_and_image_checks (test_tv1_handoff.NativeTV1Tests.test_native_views_rounding_multicrop_and_image_checks) ... ok
+test_republished_bad_crop_or_projection_is_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_bad_crop_or_projection_is_rejected) ... ok
+test_republished_leakage_attestation_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_leakage_attestation_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 87 tests in 14.677s
+
+OK

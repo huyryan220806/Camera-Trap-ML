@@ -1,0 +1,13 @@
+{
+  "commit": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+  "path": "docs/experiment_protocol.md",
+  "sha256": "187f2de7e65d6978910426fa65a2bbc379058dacf49a5cb6e24e3fee06cb5794",
+  "user_supplied": true,
+  "unresolved": [
+    "optimizer alternative",
+    "scheduler alternative",
+    "padding conflict with TV1 frozen v1",
+    "B2 config/code alignment",
+    "GPU budget"
+  ]
+}

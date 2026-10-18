@@ -1,0 +1,10 @@
+usage: validate_comparison.py [-h] [--folder FOLDER] [--metadata-only]
+                              [--report REPORT]
+
+Validate the frozen B1/B2 bundle against its source and every derived view.
+
+options:
+  -h, --help       show this help message and exit
+  --folder FOLDER
+  --metadata-only
+  --report REPORT

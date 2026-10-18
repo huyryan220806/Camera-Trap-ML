@@ -99,17 +99,28 @@ def protocol_settings(config: dict) -> dict:
 def official_gate(config: dict, root: Path) -> tuple[dict, dict]:
     validate_config(config)
     data = config["data"]
-    if not all(data.get(k) for k in ("freeze_receipt", "freeze_sha256", "freeze_git_ref")):
+    if data.get("tv1_handoff"):
+        from src.training.tv1_handoff import load_handoff
+        receipt = load_handoff(data["tv1_handoff"], root)
+        freeze_digest = receipt["provenance_sha256"]
+    elif not all(data.get(k) for k in ("freeze_receipt", "freeze_sha256", "freeze_git_ref")):
         raise GateError("BLOCKED - W3-01 MANIFEST NOT FROZEN")
-    receipt = committed_receipt(root, data["freeze_receipt"], data["freeze_sha256"], data["freeze_git_ref"])
-    if receipt.get("status") != "FROZEN" or receipt.get("owner") != "TV1" or receipt.get("task") != "W3-01" or not receipt.get("dataset_version"):
-        raise GateError("BLOCKED - W3-01 MANIFEST NOT FROZEN")
+    else:
+        receipt = committed_receipt(root, data["freeze_receipt"], data["freeze_sha256"], data["freeze_git_ref"])
+        if receipt.get("status") != "FROZEN" or receipt.get("owner") != "TV1" or receipt.get("task") != "W3-01" or not receipt.get("dataset_version"):
+            raise GateError("BLOCKED - W3-01 MANIFEST NOT FROZEN")
+        freeze_digest = data["freeze_sha256"]
     protocol = config["protocol"]
     if protocol.get("status") != "AGREED":
         raise GateError("BLOCKED - B1/B2 PROTOCOL NOT AGREED")
     agreement = committed_receipt(root, protocol["receipt"], protocol["sha256"], protocol["git_ref"])
-    if (agreement.get("status") != "AGREED" or set(agreement.get("approved_by", [])) != {"TV2", "TV3"}
-            or agreement.get("freeze_sha256") != data["freeze_sha256"]
+    approval = agreement.get("approval", {})
+    group_confirmation = (approval.get("kind") == "user_confirmed_team_agreement"
+                          and set(approval.get("confirmed_for", [])) == {"TV2", "TV3"}
+                          and isinstance(approval.get("source"), str) and bool(approval["source"].strip())
+                          and isinstance(approval.get("quote"), str) and bool(approval["quote"].strip()))
+    if (agreement.get("status") != "AGREED" or not (set(agreement.get("approved_by", [])) == {"TV2", "TV3"} or group_confirmation)
+            or agreement.get("freeze_sha256") != freeze_digest
             or agreement.get("settings") != protocol_settings(config)):
         raise GateError("B1/B2 agreement differs from requested experiment")
     if not config["runtime"].get("budget_reference") or agreement.get("budget_reference") != config["runtime"]["budget_reference"]:
@@ -183,6 +194,11 @@ def same_bbox(left: object, right: object) -> bool:
 
 
 def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *, inspect: bool = True) -> tuple[dict, list[str], Path, dict]:
+    native = receipt.get("format") == "tv1_comparison_v1"
+    if native:
+        from src.training.tv1_handoff import load_handoff
+        if load_handoff(receipt["binding"], root) != receipt:
+            raise GateError("TV1 adapter evidence changed")
     files = receipt["files"]
     required = ("train", "val", "source_train", "source_val", "crop_train", "crop_val", "class_map", "excluded", "quality_audit")
     paths = {k: hashed_file(root, files[k]) for k in required}
@@ -191,7 +207,7 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
         raise GateError("Class mapping mismatch")
     quality = json.loads(paths["quality_audit"].read_text(encoding="utf-8"))
     # TV1 audits ALL splits; TV2 only consumes this attestation, never test rows.
-    if any(quality.get(k) is not True for k in ("all_split_location_disjoint", "all_split_sequence_disjoint", "all_split_content_disjoint", "source_membership_verified", "box_review_passed")):
+    if not native and any(quality.get(k) is not True for k in ("all_split_location_disjoint", "all_split_sequence_disjoint", "all_split_content_disjoint", "source_membership_verified", "box_review_passed")):
         raise GateError("TV1 quality/leakage attestation incomplete")
     rows, stats = {}, {}
     identities = {key: {} for key in ("image_id", "file_name", "local_path", "sha256", "pixel_sha256", "location", "seq_id")}
@@ -201,6 +217,12 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
         for view in b1_rows:
             if view["image_id"] not in source or not projection_matches_source(view, source[view["image_id"]]):
                 raise GateError(f"Source provenance mismatch: {view['image_id']}")
+            if native:
+                source_row = source[view["image_id"]]
+                keys = ("image_id", "split", "label", "class_id", "seq_id", "sequence_id", "location", "file_name", "url", "width", "height", "quality")
+                expected_view = {**{k: source_row[k] for k in keys}, "sample_id": source_row["image_id"], "input_type": "full_image", "sample_weight": 1.0}
+                if view != expected_view:
+                    raise GateError("Native B1 projection mismatch")
         rows[split] = [source[view["image_id"]] for view in b1_rows]
         for row in rows[split]:
             if row.get("sequence_id", row.get("seq_id")) != row.get("seq_id"):
@@ -232,7 +254,8 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
                 if any(type(v) not in (int, float) or not math.isfinite(v) for v in bbox):
                     raise GateError("Invalid box coordinates")
                 x, y, bw, bh = bbox
-                if x < 0 or y < 0 or bw <= 0 or bh <= 0 or x+bw > w or y+bh > h:
+                tolerance = 1e-6 if native else 0
+                if x < 0 or y < 0 or bw <= 0 or bh <= 0 or x+bw > w + tolerance or y+bh > h + tolerance:
                     raise GateError("Box outside source image")
             if inspect:
                 path = image_path(image_root, row, project_root=root)
@@ -241,6 +264,8 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
                     with Image.open(path) as im:
                         im.verify()
                     with Image.open(path) as im:
+                        if native and (path.stat().st_size != quality_row.get("bytes") or im.format != quality_row.get("image_format") or im.mode != quality_row.get("image_mode")):
+                            raise GateError("Native image size/format/mode differs")
                         rgb = im.convert("RGB")
                         rgb.load()
                         if rgb.size != (w, h):
@@ -257,6 +282,12 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
         by_id = {r["image_id"]: r for r in rows[split]}
         expected = {(row["image_id"], box["annotation_id"]): bbox_xyxy(box)
                     for row in rows[split] for box in row["boxes"]}
+        if native:
+            for (image_id, annotation), coords in expected.items():
+                row = by_id[image_id]
+                coords[:] = [max(0, round(coords[0])), max(0, round(coords[1])), min(row["width"], round(coords[2])), min(row["height"], round(coords[3]))]
+                if coords[2] - coords[0] < 8 or coords[3] - coords[1] < 8:
+                    raise GateError("Native crop below minimum side")
         seen_pairs, seen_crop_ids, seen_annotation_ids = set(), set(), set()
         crop_counts = {}
         for crop in crops:
@@ -273,7 +304,7 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
             row = by_id[image_id]
             quality = crop.get("quality")
             source_quality = row.get("quality") or {}
-            if (crop.get("input_type") != "bbox_crop"
+            if (crop.get("input_type") != ("ground_truth_crop" if native else "bbox_crop")
                     or any(crop.get(k) != row[k] for k in ("split", "label", "class_id"))
                     or not same_bbox(crop.get("bbox_xyxy"), expected[pair])
                     or crop.get("url") != row.get("url")
@@ -281,6 +312,17 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
                     or quality.get("local_path") != source_quality.get("local_path")
                     or quality.get("sha256") != source_quality.get("sha256")):
                 raise GateError("Crop/source/box mapping mismatch")
+            if native:
+                box = next(b for b in row["boxes"] if b["annotation_id"] == annotation_id)
+                coords = expected[pair]
+                keys = ("image_id", "split", "label", "class_id", "seq_id", "sequence_id", "location", "file_name", "url", "width", "height", "quality")
+                expected_crop = {**{k: row[k] for k in keys}, "annotation_id": annotation_id,
+                                 "bbox_xywh_original": box["bbox_xywh"], "bbox_xyxy": coords,
+                                 "crop_w": coords[2]-coords[0], "crop_h": coords[3]-coords[1],
+                                 "crop_id": image_id + "_" + annotation_id, "input_type": "ground_truth_crop",
+                                 "parent_crop_count": len(row["boxes"]), "sample_weight": 1.0 / len(row["boxes"])}
+                if crop != expected_crop:
+                    raise GateError("Native crop projection mismatch")
             seen_pairs.add(pair)
             seen_crop_ids.add(crop_id)
             seen_annotation_ids.add(annotation_id)
@@ -293,6 +335,12 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
             if type(weight) not in (int, float) or not math.isfinite(weight) or not math.isclose(weight, expected_weight, rel_tol=0.0, abs_tol=1e-12):
                 raise GateError("Invalid B2 image-balanced sample_weight")
         stats[split] = {"images": len(rows[split]), "crops": len(crops), "sequences": len({r["seq_id"] for r in rows[split]}), "per_class": {name: {"images": sum(r["label"] == name for r in rows[split]), "sequences": len({r["seq_id"] for r in rows[split] if r["label"] == name})} for name in names}}
+        if native:
+            declared = [s for s in receipt["summary"]["by_split"] if s["split"] == split]
+            if len(declared) != 1 or any(declared[0].get(k) != value for k, value in {
+                "requested": len(source), "retained": len(rows[split]), "b1_samples": len(b1_rows), "b2_crops": len(crops),
+                "excluded": 0, "sequences": stats[split]["sequences"], "locations": len({r["location"] for r in rows[split]})}.items()):
+                raise GateError("TV1 summary differs from actual rows")
     excluded = [json.loads(line) for line in paths["excluded"].read_text(encoding="utf-8").splitlines() if line.strip()]
     excluded_ids = set()
     sources = {r["image_id"] for split in ("train", "val") for r in read_rows(paths[f"source_{split}"], split, names)}
@@ -303,4 +351,4 @@ def verify_data(receipt: dict, root: Path, image_root: Path, num_classes: int, *
         excluded_ids.add(row["image_id"])
     if accepted & excluded_ids or accepted | excluded_ids != sources:
         raise GateError("Accepted/excluded accounting differs from source")
-    return rows, names, paths["class_map"], {"status": "PASS", "counts": stats, "excluded": len(excluded), "files": files, "test_rows_opened": False, "crop_bytes_verified": False}
+    return rows, names, paths["class_map"], {"status": "PASS" if inspect else "METADATA PASS - IMAGES NOT CHECKED", "counts": stats, "excluded": len(excluded), "files": files, "test_rows_opened": False, "crop_bytes_verified": False, "source_images_verified": inspect}
