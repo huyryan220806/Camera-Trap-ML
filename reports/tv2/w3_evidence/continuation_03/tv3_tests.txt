@@ -1,0 +1,103 @@
+test_drop_last_false_no_crop_lost (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_drop_last_false_no_crop_lost)
+Lỗi 4: DataLoader phải giữ đủ tất cả crop, không drop batch cuối. ... ok
+test_fail_on_duplicate_crop_id (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_duplicate_crop_id)
+Lỗi 3: crop_id trùng phải raise ValueError. ... ok
+test_fail_on_multiple_labels_per_image (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_multiple_labels_per_image)
+Lỗi 3: cùng image_id có nhiều nhãn khác nhau phải raise ValueError. ... ok
+test_fail_on_split_mismatch (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_split_mismatch)
+Dataset yêu cầu val nhưng manifest ghi train → raise. ... ok
+test_fail_on_unknown_label (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_unknown_label) ... ok
+test_fail_on_zero_size_box (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_zero_size_box)
+Lỗi 3: box có kích thước <= 0 phải raise ValueError. ... ok
+test_preflight_fails_if_sha256_missing (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_missing)
+Lỗi 3: preflight bật mà thiếu sha256 phải raise, không bỏ qua. ... ok
+test_preflight_fails_if_sha256_wrong (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_wrong)
+Preflight bật, hash sai → raise. ... ok
+test_sample_weight_is_inverse_crop_count (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_sample_weight_is_inverse_crop_count)
+Vì 2 crop cùng img_001, mỗi crop phải có sample_weight = 0.5. ... ok
+test_valid_manifest_loads_ok (tests.test_tv3_w3_b2.B2DatasetValidationTests.test_valid_manifest_loads_ok) ... ok
+test_checkpoint_save_and_load (tests.test_tv3_w3_b2.B2ModelTests.test_checkpoint_save_and_load) ... ok
+test_default_dropout_is_zero_per_protocol (tests.test_tv3_w3_b2.B2ModelTests.test_default_dropout_is_zero_per_protocol)
+Protocol: không dùng dropout trong B2. ... ok
+test_model_forward_shape_and_probabilities (tests.test_tv3_w3_b2.B2ModelTests.test_model_forward_shape_and_probabilities) ... ok
+test_best_epoch_tracking_accuracy (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_best_epoch_tracking_accuracy)
+Lỗi 6: best_epoch phải là epoch thật của best F1, không phải epoch cuối. ... 20:09:35 [INFO] Sử dụng thiết bị huấn luyện: cuda
+20:09:35 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_ckpt_test_092k88vg
+20:09:35 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:09:35 [INFO] Bắt đầu huấn luyện B2 với ngân sách 2 epochs...
+20:09:35 [INFO] Epoch [1/2] (0.4s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:09:35 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=8.33%).
+20:09:35 [INFO] Epoch [2/2] (0.1s) Loss=2.1375 Acc=12.5% | Val Loss=2.0944 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+20:09:35 [INFO] Hoàn tất sau 0.6s! Best epoch=1, Best ImgF1=8.33%
+20:09:35 [INFO] Đã xuất bảng so sánh tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_ckpt_test_092k88vg\validation_comparison.md
+ok
+test_gate_fails_if_files_missing (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_files_missing)
+Lỗi 3: Gate phải từ chối khi file không tồn tại. ... 20:09:35 [ERROR]
+======================================================================
+[LỖI TIÊU CHÍ NGHIỆM THU TUẦN 3]
+Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\b2\train.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\b2\val.jsonl
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\class_map.json
+  - D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\processed\non_existent_xyz\provenance.json
+
+Quy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.
+Hãy lấy dữ liệu từ nhánh TV1 (origin/feat/metadata-split) trước khi chạy.
+Để kiểm tra pipeline, dùng: python scripts/train_b2.py --smoke-test
+======================================================================
+ok
+test_gate_fails_if_provenance_sha_wrong (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_provenance_sha_wrong)
+Lỗi 3: Gate phải từ chối nếu provenance.json có SHA-256 sai. ... 20:09:35 [ERROR]
+======================================================================
+[LỖI XÁC MINH SNAPSHOT]
+provenance.json tồn tại nhưng SHA-256 không khớp!
+  Kỳ vọng (đã thống nhất với TV2): d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f
+  Thực tế:                          d424d4f98e4981f8cdee4072972da4a850ac48f77564618864ed83fd34511911
+  File: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\data\tmp8nwwt1gf\provenance.json
+
+Snapshot này KHÔNG phải bản đã khóa từ TV1 commit 7e9b194.
+Không được train trên dữ liệu chưa xác minh.
+======================================================================
+ok
+test_last_checkpoint_contains_last_epoch_not_best_metrics (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_last_checkpoint_contains_last_epoch_not_best_metrics)
+Lỗi 6: last_model.pt phải chứa metrics của epoch cuối, không phải best. ... 20:09:35 [INFO] Sử dụng thiết bị huấn luyện: cuda
+20:09:35 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_last_test_7o4hnuvu
+20:09:35 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:09:36 [INFO] Bắt đầu huấn luyện B2 với ngân sách 2 epochs...
+20:09:36 [INFO] Epoch [1/2] (0.1s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:09:36 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=8.33%).
+20:09:36 [INFO] Epoch [2/2] (0.1s) Loss=2.1375 Acc=12.5% | Val Loss=2.0944 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+20:09:36 [INFO] Hoàn tất sau 0.3s! Best epoch=1, Best ImgF1=8.33%
+20:09:36 [INFO] Đã xuất bảng so sánh tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_last_test_7o4hnuvu\validation_comparison.md
+ok
+test_smoke_log_has_synthetic_marker (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_log_has_synthetic_marker)
+Lỗi 2: log file của smoke-test phải có SYNTHETIC_SMOKE marker ở dòng đầu. ... 20:09:36 [INFO] Sử dụng thiết bị huấn luyện: cuda
+20:09:36 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_log_test_a7emzg4t
+20:09:36 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:09:36 [INFO] Bắt đầu huấn luyện B2 với ngân sách 1 epochs...
+20:09:36 [INFO] Epoch [1/1] (0.1s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:09:36 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=8.33%).
+20:09:36 [INFO] Hoàn tất sau 0.2s! Best epoch=1, Best ImgF1=8.33%
+20:09:36 [INFO] Đã xuất bảng so sánh tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_log_test_a7emzg4t\validation_comparison.md
+ok
+test_smoke_test_uses_isolated_tmp_dir (tests.test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_test_uses_isolated_tmp_dir)
+Lỗi 2: Smoke-test không được đụng vào thư mục output chính thức. ... 20:09:36 [INFO] Sử dụng thiết bị huấn luyện: cuda
+20:09:36 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_smoke_x5wk3oy1
+20:09:36 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+20:09:36 [INFO] Bắt đầu huấn luyện B2 với ngân sách 1 epochs...
+20:09:37 [INFO] Epoch [1/1] (0.1s) Loss=2.2109 Acc=18.8% | Val Loss=2.0738 CropF1=10.0% ImgAcc=25.0% ImgF1=8.3%
+20:09:37 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=8.33%).
+20:09:37 [INFO] Hoàn tất sau 0.2s! Best epoch=1, Best ImgF1=8.33%
+20:09:37 [INFO] Đã xuất bảng so sánh tại: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w3\tv3_c01a751_review\outputs\b2_smoke_x5wk3oy1\validation_comparison.md
+ok
+test_aggregation_mean_probability_and_argmax (tests.test_tv3_w3_b2.ImageAggregationTests.test_aggregation_mean_probability_and_argmax) ... ok
+test_format_validation_markdown_table (tests.test_tv3_w3_b2.ImageAggregationTests.test_format_validation_markdown_table) ... ok
+test_single_crop_per_image_matches_standard_ce (tests.test_tv3_w3_b2.PerImageLossTests.test_single_crop_per_image_matches_standard_ce)
+Khi mỗi ảnh chỉ có 1 crop, kết quả phải bằng CrossEntropyLoss thông thường. ... ok
+test_two_crops_per_image_gives_mean_of_means (tests.test_tv3_w3_b2.PerImageLossTests.test_two_crops_per_image_gives_mean_of_means)
+Ảnh A có 2 crop, ảnh B có 1 crop: loss phải là mean(mean_A, mean_B), bukan mean của 3 crops. ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.959s
+
+OK

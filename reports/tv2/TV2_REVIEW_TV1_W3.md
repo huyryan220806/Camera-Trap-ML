@@ -1,15 +1,12 @@
 # TV2 review W3-01 — VERIFIED (train/validation scope)
 
-## Cập nhật CONTINUATION_02 – 18/10/2026
+## Cập nhật CONTINUATION_03 – 18/10/2026
 
-Trạng thái mới nhất: **W3-02 CODE READY – OFFICIAL TRAINING BLOCKED**. TV1 `7e9b1949f10126fbcfa83fa12baeca488b6aeab3` đã phát hành;
-provenance/native adapter và full train/val preflight PASS; 3.400 ảnh đã kiểm byte/pixel
-hash/decode. Protocol đã được người dùng xác nhận cụ thể cho nhóm. CUDA batch32 smoke
-PASS trong venv riêng; 87/87 regression PASS. Chưa có budget/window và official
-environment freeze, chưa train/validation/checkpoint B1 thật. TV3 vẫn d08eba7 cần sửa.
-Xem [báo cáo mới](TV2_W3_CONTINUATION_02_REPORT.md) và [README bàn giao](README_W3_HANDOFF_TEMP.md).
-Các phần bên dưới giữ làm lịch sử; các kết luận cũ “TV1 chưa push”, “chưa có cache”,
-“chưa thống nhất thông số” không còn là trạng thái hiện tại.
+TV1 train/validation handoff đã được dùng thành công cho official `B1_run01`.
+Run hoàn tất 29 epoch, best epoch 22; checkpoint reload trong process mới PASS.
+Không có drift provenance/image hash và test set không được mở. Xem
+[báo cáo Continuation 03](TV2_W3_CONTINUATION_03_REPORT.md). Các phần bên dưới
+là lịch sử review trước khi B1 chạy.
 
 Continuation 01 đã fetch lại ngày 16/10/2026: trạng thái không đổi; xem
 [remote.json](w3_evidence/continuation_01/remote.json). **BLOCKED – TV1 W3-01

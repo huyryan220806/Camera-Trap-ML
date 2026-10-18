@@ -4,25 +4,26 @@
 
 Người dùng dẫn chiếu `origin/main:docs/experiment_protocol.md` tại 468d81f,
 sau đó xác nhận lựa chọn cụ thể: **“Xác nhận cấu hình trên cho nhóm”**.
-Evidence machine-readable: [W3_PROTOCOL_AGREEMENT_2026-10-18.json](W3_PROTOCOL_AGREEMENT_2026-10-18.json).
+Evidence machine-readable ban đầu: [W3_PROTOCOL_AGREEMENT_2026-10-18.json](W3_PROTOCOL_AGREEMENT_2026-10-18.json).
+Runtime binding đã dùng cho B1: [W3_PROTOCOL_AND_RUNTIME_AUTHORIZATION_2026-10-18.json](W3_PROTOCOL_AND_RUNTIME_AUTHORIZATION_2026-10-18.json).
 Đây là xác nhận của người dùng cho nhóm, không phải chữ ký/review độc lập TV3.
 
 | Thuộc tính | Quyết định đã xác nhận | B2 hiện tại | Việc cần làm |
 |---|---|---|---|
-| Model | ResNet18 IMAGENET1K_V1, full fine-tune, no dropout | dropout0.2 | TV3 đồng bộ |
-| Seed / precision | 42 / FP32 | 42 / AMP | TV3 đồng bộ |
-| Optimizer | SGD lr0.001, momentum0.9, WD0.0001 | AdamW0.0001 | TV3 đồng bộ |
-| Scheduler | StepLR step10 gamma0.1 | Cosine | TV3 đồng bộ |
-| Epoch / stopping | max50 / patience7 theo val macro-F1, tie giữ sớm | 15 / config5 chưa thực thi | TV3 sửa |
-| Batch / preprocessing | 32; transforms mục6 đề cương, Resize256/Crop224 | crop batches/drop_last/Resize224 | TV3 đồng bộ và chứng minh sampling/compute |
-| Geometry B2 | TV1 bbox_xyxy, padding0, Python round/clip/min8 | bbox crop reader đã có | Không dùng padding10–15% từ đề cương W1 |
-| Loss B2 | Mean CE các crop trong từng ảnh rồi mean theo ảnh | Weighted crop batch normalization | TV3 sửa; không nhân thêm 1/N sau mean |
-| Evaluation | Một dự đoán/ảnh; B2 mean probability tất cả crop | Mean probability đã có | Kiểm label/parent completeness và fresh reload |
-| Budget | Chưa được xác nhận thời lượng/khung giờ | Chưa booking | Chủ GPU trả lời; không tự tạo approval |
+| Model | ResNet18 IMAGENET1K_V1, full fine-tune, no dropout | Đã khớp ở `c01a751` | Giữ nguyên |
+| Seed / precision | 42 / FP32 | Đã khớp | Giữ nguyên |
+| Optimizer | SGD lr0.001, momentum0.9, WD0.0001 | Đã khớp | Giữ nguyên |
+| Scheduler | StepLR step10 gamma0.1 | Đã khớp | Sửa thứ tự log LR nếu cần |
+| Epoch / stopping | max50 / patience7 theo val macro-F1 | Đã khớp | Thêm run/reload gate |
+| Batch / preprocessing | 32; Resize256/Crop224; transforms mục 6 | Gần khớp | Chứng minh sampling theo parent image |
+| Geometry B2 | TV1 bbox_xyxy, padding0, round/clip/min8 | Đã khớp bundle | Giữ nguyên |
+| Loss B2 | Mean CE crop trong ảnh rồi mean theo ảnh | Chỉ group trong shuffled batch | Sửa để đúng trên toàn epoch |
+| Evaluation | Một dự đoán/ảnh; B2 mean probability tất cả crop | Đã có | Thêm fresh reload |
+| Runtime | Một B1 run tối đa50/patience7 đã được phép | B2 chưa có run được duyệt | TV3 hoàn thiện gate trước train |
 
-Config `b1_comparison_v1.pending.yaml` gắn dữ liệu/protocol; còn chờ budget/environment
-freeze. B1/B2 dùng cùng parent IDs đã xác minh. Code B2 chưa khớp agreement nên chưa
-đủ điều kiện công bố comparison. Native provenance TV1 không có status=FROZEN/owner/task:
+Config chính thức `b1_comparison_v1.yaml` đã được chạy và B1 hoàn tất. B1/B2 dùng
+cùng parent IDs đã xác minh. Code B2 chưa đạt gate official nên chưa đủ điều kiện
+công bố comparison. Native provenance TV1 không có status=FROZEN/owner/task:
 adapter xác thực Git hash, config, sources, views, audit, verification; không thêm chữ ký giả.
 
 Các bảng PROPOSED bên dưới là lịch sử trước xác nhận; không phải lựa chọn còn mở hiện tại.

@@ -1,15 +1,15 @@
 # TV2 W3 IMPLEMENTATION REPORT
 
-## Cập nhật CONTINUATION_02 – 18/10/2026
+## Cập nhật CONTINUATION_03 – 18/10/2026
 
-Trạng thái mới nhất: **W3-02 CODE READY – OFFICIAL TRAINING BLOCKED**. TV1 `7e9b1949f10126fbcfa83fa12baeca488b6aeab3` đã phát hành;
-provenance/native adapter và full train/val preflight PASS; 3.400 ảnh đã kiểm byte/pixel
-hash/decode. Protocol đã được người dùng xác nhận cụ thể cho nhóm. CUDA batch32 smoke
-PASS trong venv riêng; 87/87 regression PASS. Chưa có budget/window và official
-environment freeze, chưa train/validation/checkpoint B1 thật. TV3 vẫn d08eba7 cần sửa.
-Xem [báo cáo mới](TV2_W3_CONTINUATION_02_REPORT.md) và [README bàn giao](README_W3_HANDOFF_TEMP.md).
-Các phần bên dưới giữ làm lịch sử; các kết luận cũ “TV1 chưa push”, “chưa có cache”,
-“chưa thống nhất thông số” không còn là trạng thái hiện tại.
+Trạng thái mới nhất: **W3-02 B1 TRAINED – B1/B2 COMPARISON PENDING**.
+`B1_run01` đã hoàn tất 29 epoch, best epoch 22; validation macro-F1
+`0.5624506868`, accuracy `0.565`. Checkpoint 44.815.625 byte, SHA-256
+`5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`;
+fresh-process reload PASS với mọi delta bằng 0. TV3 mới nhất `c01a751` đã PASS
+23/23 test cô lập nhưng còn bốn finding P1, nên chưa có comparison hợp lệ.
+Xem [báo cáo mới](TV2_W3_CONTINUATION_03_REPORT.md) và
+[README bàn giao](README_W3_HANDOFF_TEMP.md). Các phần bên dưới là lịch sử.
 
 Ngày cập nhật 16/10/2026. **W3-02 CODE READY – TRAINING BLOCKED**.
 Code, synthetic smoke và test đã chuẩn bị; chưa có thí nghiệm B1 chính thức.

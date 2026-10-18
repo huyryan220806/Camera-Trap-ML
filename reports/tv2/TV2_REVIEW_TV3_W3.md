@@ -1,83 +1,50 @@
-# TV2 review W3-03 — BLOCKED; CODE REVIEW FAIL
+# TV2 review TV3 W3 B2
 
-## Cập nhật CONTINUATION_02 – 18/10/2026
+**Commit:** `c01a75141bb8350c8a38a28cfc9b44a3f3ad12ba`
 
-Trạng thái mới nhất: **W3-02 CODE READY – OFFICIAL TRAINING BLOCKED**. TV1 `7e9b1949f10126fbcfa83fa12baeca488b6aeab3` đã phát hành;
-provenance/native adapter và full train/val preflight PASS; 3.400 ảnh đã kiểm byte/pixel
-hash/decode. Protocol đã được người dùng xác nhận cụ thể cho nhóm. CUDA batch32 smoke
-PASS trong venv riêng; 87/87 regression PASS. Chưa có budget/window và official
-environment freeze, chưa train/validation/checkpoint B1 thật. TV3 vẫn d08eba7 cần sửa.
-Xem [báo cáo mới](TV2_W3_CONTINUATION_02_REPORT.md) và [README bàn giao](README_W3_HANDOFF_TEMP.md).
-Các phần bên dưới giữ làm lịch sử; các kết luận cũ “TV1 chưa push”, “chưa có cache”,
-“chưa thống nhất thông số” không còn là trạng thái hiện tại.
+**Cách review:** read-only từ `origin/feat/crop-classifier`; không checkout/push nhánh
+TV3; không mở hoặc copy JSONL test.
 
-Continuation 01 ngày 16/10/2026: đã fetch, TV3 vẫn `d08eba7`; chưa có commit sửa
-mới. **PENDING TV3 FIX / REVIEW**. 9/9 là kết quả snapshot ở lần review trước,
-không được coi là bộ test mới của lượt này hoặc acceptance. Không chạy lại bộ
-TV3 không đổi; đã đọc lại config/model/training/evaluator để cập nhật
-[bảng protocol](TV2_W3_PROTOCOL.md). Thêm điểm cần chốt: batch crop với trọng
-số1/N và drop_last chưa bảo đảm cùng số update/ảnh với B1; epoch train loss B2
-đang cộng batch-weighted mean theo số crop thay vì tổng trọng số. Giữ các lỗi
-blocking bên dưới và chờ TV3 sửa; không can thiệp nhánh TV3.
+**Tests:** 23/23 PASS trong snapshot code/test cô lập.
 
-Ngày 16/10/2026. Nhánh đọc `origin/feat/crop-classifier`, commit
-`d08eba7fffbfb6ecc813de8522fb4d58cd8ed904`. TV2 không sửa hoặc chạy trực tiếp
-trong nhánh TV3; một snapshot tạm được dùng để kiểm thử độc lập.
+**Kết luận:** **PENDING TV3 FIX / REVIEW**.
 
-Commit thêm 10 file cho B2: config, dataset, model ResNet18, training CLI,
-evaluator và tests. Chín test synthetic của TV3 đều PASS trên snapshot
-(9/9, 0 fail, 0 skipped). Lệnh official dừng đúng với exit code 1 vì thiếu
-`data/processed/comparison_v1/b2/{train,val}.jsonl`, `class_map.json` và
-`provenance.json`. Chưa có checkpoint, epoch log, validation report, reload
-evidence hoặc handoff B2 chính thức. Logs:
-[tests](w3_evidence/tv3_w3_tests.txt),
-[official gate](w3_evidence/tv3_w3_official_gate.txt).
+## Các phần đã sửa đúng
 
-Các lỗi cần sửa trước khi nghiệm thu hoặc train chính thức:
+- Đường dẫn `data/processed/comparison_v1`.
+- ResNet18 ImageNet, full fine-tune, no dropout, FP32.
+- SGD `0.001/0.9/0.0001`, StepLR `10/0.1`, 50 epoch, patience 7, batch 32.
+- `drop_last=false`; aggregation validation bằng mean probability theo parent image.
+- Gate hash provenance, kiểm manifest chặt hơn, smoke isolation.
+- Theo dõi `best_epoch` và last metrics đúng hơn bản cũ.
 
-1. **Đường dẫn dữ liệu không nhất quán.** Preflight kiểm tra
-   `ROOT/data/processed/comparison_v1/...`, nhưng DataLoader ghép
-   `ROOT / config["data"]["dataset_version"]`. Với giá trị `comparison_v1`,
-   loader sẽ đọc `ROOT/comparison_v1`, nên vẫn lỗi sau khi gate đã PASS.
-2. **Preflight chỉ kiểm tra file tồn tại.** Chưa xác minh hash, trạng thái frozen,
-   commit, provenance, class map, source membership, eligible IDs, split,
-   leakage, exclusion accounting hoặc crop mapping. Config còn đặt
-   `preflight_hash_check=false`.
-3. **Protocol B1/B2 chưa đồng nhất.** B2 dùng 15 epoch, AdamW, cosine,
-   lr `1e-4`, dropout 0.2, Resize vuông 224, saturation 0.2,
-   `drop_last=true` và nhiều crop/ảnh với mean-probability aggregation. B1 đang
-   đề xuất 50 epoch, SGD/StepLR, không dropout, Resize256 + crop224,
-   saturation 0.1 và `drop_last=false`. So sánh hiện tại không công bằng.
-4. **Early stopping chưa được thi hành.** Config có patience 5 nhưng training
-   loop không dừng sớm.
-5. **`best_epoch` sai.** Evaluator không trả epoch; report đọc
-   `best_metrics.get("epoch", epochs)` nên thường ghi epoch cuối, không phải epoch
-   tạo best checkpoint.
-6. **Checkpoint và metrics không cùng trạng thái model.** File cuối lưu
-   `model.state_dict()` sau epoch cuối nhưng đính kèm `best_metrics`; chưa reload
-   best weights trước khi đóng gói checkpoint.
-7. **Thiếu kiểm định fresh reload/provenance.** Không có SHA-256 checkpoint,
-   fresh-process reload và đối chiếu logits/metrics. Evaluator dùng
-   `torch.load(..., weights_only=False)` trước khi xác minh hash.
-8. **Run không bất biến.** Tên output cố định, CSV append và checkpoint/report
-   bị ghi đè; chưa reserve run ID hoặc bảo vệ run đã tồn tại. Không ghi đủ môi
-   trường, GPU, peak memory và validation time.
-9. **Validation dữ liệu/crop chưa đủ.** Bbox chỉ kiểm `len == 4`, chưa kiểm số
-   hữu hạn, thứ tự, biên, crop rỗng, crop trùng hoặc nhãn nhất quán giữa các crop
-   của cùng ảnh. Aggregation lấy nhãn crop đầu tiên mà không xác nhận các nhãn
-   còn lại. CLI evaluator còn cho phép `--split test`, trái quy tắc W3 không mở
-   test. Tests hiện tại chưa bao phủ các trường hợp này.
+## Blocking findings
 
-Checklist nghiệm thu còn BLOCKED:
+1. **P1 – Source image hash preflight bị tắt.**
+   `configs/b2_crop_classifier.json:33` đặt `preflight_hash_check=false`, nên official
+   run không thực thi khả năng hash mà dataset đã hỗ trợ.
 
-- Cùng freeze receipt/version/hash, class map, eligible image IDs và split B1.
-- Quy tắc bbox/padding/multiple-box và đơn vị sampling/aggregation được TV2/TV3
-  đồng thuận trước kết quả.
-- Cùng backbone, pretrained weights, seed, augmentation, optimizer/scheduler,
-  số bước và early stopping, hoặc có protocol ghi rõ khác biệt được duyệt.
-- Best checkpoint theo validation macro-F1 đủ mọi lớp, có per-class metrics,
-  confusion matrix và prediction-level evidence có thể tính lại.
-- Checkpoint gắn đúng best epoch, hash/provenance, fresh reload PASS và run bất
-  biến; runtime/GPU log đầy đủ.
+2. **P1 – Loss chưa cân bằng parent image trên toàn epoch.**
+   `scripts/train_b2.py:186-218` chỉ gom crop theo `image_id` trong batch hiện tại,
+   trong khi `src/data/b2_dataset.py:317` shuffle từng crop. Khi crop của cùng một ảnh
+   nằm ở nhiều batch, ảnh đó có thể đóng góp nhiều lần và trọng số còn phụ thuộc số
+   parent khác trong từng batch. Cần sampler/batch construction giữ đầy đủ crop của
+   mỗi parent hoặc công thức weighting chứng minh tương đương trên toàn epoch.
 
-**Final: BLOCKED; CODE REVIEW FAIL. PENDING TV3 FIXES AND OFFICIAL HANDOFF.**
+3. **P1 – Official run có thể bị ghi đè.**
+   `scripts/train_b2.py:323` dùng `mkdir(..., exist_ok=True)` và dòng 363 mở log bằng
+   chế độ `w`; checkpoint/report cùng thư mục cũng bị thay thế. Cần run ID mới và
+   fail-closed nếu bất kỳ marker/artifact nào đã tồn tại.
+
+4. **P1 – Chưa có fresh-process checkpoint reload.**
+   `src/models/b2_classifier.py:106` có `load_checkpoint`, nhưng official training
+   không gọi lại model mới để kiểm hash, mapping, provenance, predictions và metric.
+
+## Test gap
+
+23 test hiện tại PASS nhưng test loss chỉ đặt mọi crop của parent trong cùng một
+batch. Cần thêm test chia crop của một parent qua hai batch để phát hiện finding 2,
+test config official bắt buộc hash, test từ chối output tồn tại và test fresh reload.
+
+Bằng chứng máy đọc được: [tv3_c01a751_review.json](w3_evidence/continuation_03/tv3_c01a751_review.json),
+[test log](w3_evidence/continuation_03/tv3_tests.txt).

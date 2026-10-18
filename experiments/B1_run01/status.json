@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED",
+  "kind": "OFFICIAL",
+  "epochs_completed": 29,
+  "best_epoch": 22,
+  "gradient_checked": true,
+  "training_seconds": 11409.952234999999,
+  "validation_seconds": 1557.8293692000098,
+  "peak_gpu_memory_bytes": 895525376,
+  "parameter_counts": {
+    "total": 11180616,
+    "trainable": 11180616,
+    "frozen": 0
+  },
+  "checkpoint_sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+  "checkpoint_bytes": 44815625,
+  "reload": "PASS",
+  "metric_absolute_differences": {
+    "macro_f1": 0.0,
+    "macro_precision": 0.0,
+    "macro_recall": 0.0,
+    "accuracy": 0.0
+  },
+  "logits_max_absolute_difference": 0.0,
+  "total_seconds": 14805.3855442
+}
