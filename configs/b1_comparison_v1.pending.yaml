@@ -8,7 +8,7 @@
   },
   "training": {"optimizer": "sgd", "lr": 0.001, "momentum": 0.9, "weight_decay": 0.0001, "scheduler": "step_lr", "step_size": 10, "gamma": 0.1, "epochs": 50, "early_stopping_patience": 7, "checkpoint_metric": "macro_f1", "checkpoint_mode": "max"},
   "preprocessing": {"train": "resize_random_crop_flip_jitter", "validation": "resize_center_crop", "mean": [0.485, 0.456, 0.406], "std": [0.229, 0.224, 0.225]},
-  "protocol": {"status": "PROPOSED", "receipt": null, "sha256": null, "git_ref": null},
+  "protocol": {"status": "AGREED", "receipt": "reports/tv2/W3_PROTOCOL_AGREEMENT_2026-10-18.json", "sha256": "3bd92988f055a27f23399f8a5a4fc43e7bd63067c209b1ca657fd3caaa6f6630", "git_ref": "d92f3f24875e9707395031574f3dc6d6afcfc0c5:reports/tv2/W3_PROTOCOL_AGREEMENT_2026-10-18.json"},
   "runtime": {"device": "cuda", "budget_reference": null},
   "readiness_note": "Data binding verified. Training settings remain the previous TV2 proposal: team confirms agreement but final parameters/budget evidence is pending. This is NOT a frozen official training config."
 }
