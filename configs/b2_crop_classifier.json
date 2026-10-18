@@ -1,47 +1,48 @@
 {
   "experiment_name": "b2_crop_classifier_comparison_v1",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "TV3",
   "task": "W3-02: Fine-tune B2 trên vùng cắt",
+  "protocol_agreement": "reports/tv2/W3_PROTOCOL_AGREEMENT_2026-10-18.json",
   "model": {
     "backbone": "resnet18",
+    "weights": "ResNet18_Weights.IMAGENET1K_V1",
     "pretrained": true,
     "num_classes": 8,
-    "dropout_p": 0.2
+    "fine_tune": "all",
+    "dropout_p": 0.0
   },
   "training": {
-    "epochs": 15,
-    "batch_size": 32,
-    "learning_rate": 0.0001,
+    "optimizer": "sgd",
+    "lr": 0.001,
+    "momentum": 0.9,
     "weight_decay": 0.0001,
-    "optimizer": "adamw",
-    "scheduler": "cosine",
+    "scheduler": "step_lr",
+    "step_size": 10,
+    "gamma": 0.1,
+    "epochs": 50,
+    "patience": 7,
+    "batch_size": 32,
     "seed": 42,
-    "loss_weighting": "per_image",
-    "early_stopping_patience": 5,
-    "mixed_precision": true
+    "mixed_precision": false,
+    "loss": "mean_crop_CE_per_image_then_mean_over_images"
   },
   "data": {
-    "dataset_version": "comparison_v1",
-    "manifest_train": "data/processed/comparison_v1/b2/train.jsonl",
-    "manifest_val": "data/processed/comparison_v1/b2/val.jsonl",
-    "class_map": "data/processed/comparison_v1/class_map.json",
-    "provenance": "data/processed/comparison_v1/provenance.json",
-    "image_size": 224,
+    "comparison_dir": "data/processed/comparison_v1",
     "num_workers": 4,
-    "preflight_hash_check": false
+    "preflight_hash_check": false,
+    "drop_last": false
   },
   "evaluation": {
     "metric_for_best": "image_macro_f1",
-    "aggregation_method": "mean_probability_argmax",
-    "compare_with_b1": true
+    "aggregation_method": "mean_probability_argmax"
   },
   "output": {
     "dir": "outputs/b2_crop_classifier",
-    "best_checkpoint": "outputs/b2_crop_classifier/best_model.pt",
-    "last_checkpoint": "outputs/b2_crop_classifier/last_model.pt",
-    "log_file": "outputs/b2_crop_classifier/train_log.jsonl",
-    "val_report": "outputs/b2_crop_classifier/validation_comparison.json",
-    "val_table_md": "outputs/b2_crop_classifier/validation_comparison.md"
+    "best_checkpoint_name": "best_model.pt",
+    "last_checkpoint_name": "last_model.pt",
+    "log_file_name": "train_log.jsonl",
+    "val_report_name": "validation_comparison.json",
+    "val_table_md_name": "validation_comparison.md"
   }
 }

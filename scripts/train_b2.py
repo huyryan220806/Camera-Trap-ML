@@ -1,14 +1,20 @@
 """TV3 - Tuần 3: Huấn luyện mô hình phân loại động vật trên vùng cắt (B2 Crop Classifier).
 
 Tiêu chí hoàn thành:
-1. Chỉ chạy chính thức sau khi W3-01 khóa manifest (data/processed/comparison_v1/provenance.json).
-2. Dùng cùng ảnh và ngân sách với B1 (backbone ResNet18, 15 epochs, optimizer AdamW, lr 1e-4).
-3. Trọng số mất mát theo ảnh: sample_weight = 1.0 / parent_crop_count.
-4. Đánh giá cấp ảnh: Trung bình vector xác suất (softmax) các crop cùng image_id rồi argmax.
-5. Lưu checkpoint tốt nhất, cấu hình huấn luyện và bảng so sánh validation.
+1. Chỉ chạy chính thức sau khi W3-01 khóa manifest: kiểm tra provenance.json tồn tại
+   VÀ SHA-256 khớp với hash đã thống nhất với TV2 (d9fd5461...).
+2. Dùng cùng ảnh và ngân sách với B1 theo W3_PROTOCOL_AGREEMENT:
+   ResNet18 ImageNet, SGD lr=0.001 momentum=0.9, StepLR step=10 gamma=0.1,
+   50 epochs, patience=7, batch=32, FP32, không dropout, không mixed precision.
+3. Loss: mean(crop CE per source image), rồi mean over source images trong batch.
+4. Đánh giá cấp ảnh: mean softmax probability của các crop cùng image_id rồi argmax.
+5. Checkpoint: lưu best theo image-level macro F1, theo dõi best_epoch chính xác,
+   lưu last checkpoint kèm metrics của epoch cuối (không phải best).
+6. Smoke-test: dùng TemporaryDirectory riêng, ghi marker SYNTHETIC_SMOKE,
+   không đụng output của run chính thức.
 
 Sử dụng:
-    # Chạy thử smoke-test kiểm tra toàn bộ pipeline (không cần GPU hay dữ liệu thật):
+    # Chạy thử smoke-test (không cần GPU hay dữ liệu thật):
     python scripts/train_b2.py --smoke-test
 
     # Chạy huấn luyện chính thức (sau khi W3-01 khóa manifest):
@@ -16,11 +22,14 @@ Sử dụng:
 """
 
 import argparse
+import hashlib
 import io
 import json
 import logging
 import random
+import shutil
 import sys
+import tempfile
 import time
 from pathlib import Path
 from typing import Any
@@ -46,6 +55,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger("train_b2")
 
+# Hash SHA-256 của provenance.json đã được TV2 thống nhất và ký trong biên bản
+# W3_PROTOCOL_AGREEMENT_2026-10-18.json (freeze_sha256 field)
+AGREED_PROVENANCE_SHA256 = "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f"
+
 
 def set_seed(seed: int = 42) -> None:
     random.seed(seed)
@@ -55,14 +68,28 @@ def set_seed(seed: int = 42) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 class DummyB2Dataset(Dataset):
-    """Dataset giả lập cho chế độ --smoke-test."""
+    """Dataset giả lập cho chế độ --smoke-test.
+
+    Dùng TemporaryDirectory riêng, có marker SYNTHETIC_SMOKE trong mọi output.
+    Không chia sẻ output dir với run chính thức.
+    """
 
     def __init__(self, num_samples: int = 16, num_classes: int = 8, split: str = "train") -> None:
         self.num_samples = num_samples
         self.num_classes = num_classes
         self.split = split
         self.transform = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ])
@@ -72,10 +99,10 @@ class DummyB2Dataset(Dataset):
             cls_id = img_idx % num_classes
             self.samples.append({
                 "image_id": f"dummy_img_{img_idx:03d}",
-                "crop_id": f"dummy_crop_{i:03d}",
+                "crop_id": f"dummy_crop_{split}_{i:03d}",
                 "class_id": cls_id,
                 "label": f"species_{cls_id}",
-                "sample_weight": 0.5,
+                "_sample_weight": 0.5,  # 2 crop / ảnh
             })
 
     def __len__(self) -> int:
@@ -84,14 +111,14 @@ class DummyB2Dataset(Dataset):
     def __getitem__(self, idx: int) -> dict[str, Any]:
         s = self.samples[idx]
         buf = io.BytesIO()
-        Image.new("RGB", (224, 224), color=(120, 100 + idx * 5, 80)).save(buf, format="JPEG")
+        Image.new("RGB", (224, 224), color=(120, (100 + idx * 3) % 256, 80)).save(buf, format="JPEG")
         buf.seek(0)
         img = Image.open(buf)
         tensor = self.transform(img)
         return {
             "image": tensor,
             "class_id": s["class_id"],
-            "sample_weight": torch.tensor(s["sample_weight"], dtype=torch.float32),
+            "sample_weight": torch.tensor(s["_sample_weight"], dtype=torch.float32),
             "image_id": s["image_id"],
             "crop_id": s["crop_id"],
             "label": s["label"],
@@ -99,12 +126,18 @@ class DummyB2Dataset(Dataset):
 
 
 def check_w3_manifest_lock(config: dict[str, Any], root: Path) -> None:
-    """Kiểm tra điều kiện tiên quyết: W3-01 phải khóa manifest trước khi chạy chính thức."""
+    """Kiểm tra điều kiện tiên quyết: W3-01 phải khóa manifest trước khi chạy chính thức.
+
+    Lỗi 3 sửa: không chỉ kiểm tra exists() mà còn xác minh SHA-256 của provenance.json
+    khớp với hash đã thống nhất trong W3_PROTOCOL_AGREEMENT_2026-10-18.
+    """
     data_cfg = config.get("data", {})
-    manifest_train = root / data_cfg.get("manifest_train", "data/processed/comparison_v1/b2/train.jsonl")
-    manifest_val = root / data_cfg.get("manifest_val", "data/processed/comparison_v1/b2/val.jsonl")
-    class_map = root / data_cfg.get("class_map", "data/processed/comparison_v1/class_map.json")
-    provenance = root / data_cfg.get("provenance", "data/processed/comparison_v1/provenance.json")
+    comp_dir = root / data_cfg.get("comparison_dir", "data/processed/comparison_v1")
+
+    manifest_train = comp_dir / "b2" / "train.jsonl"
+    manifest_val = comp_dir / "b2" / "val.jsonl"
+    class_map = comp_dir / "class_map.json"
+    provenance = comp_dir / "provenance.json"
 
     missing = []
     if not manifest_train.exists():
@@ -123,67 +156,116 @@ def check_w3_manifest_lock(config: dict[str, Any], root: Path) -> None:
             "Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:\n"
             + "\n".join(f"  - {f}" for f in missing)
             + "\n\nQuy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.\n"
-            "Hãy đảm bảo TV1 đã hoàn tất scripts/freeze_comparison.py trước khi chạy.\n"
-            "Để chạy thử nghiệm toàn bộ code mà không cần dữ liệu thật, hãy dùng:\n"
-            "  python scripts/train_b2.py --smoke-test\n"
+            "Hãy lấy dữ liệu từ nhánh TV1 (origin/feat/metadata-split) trước khi chạy.\n"
+            "Để kiểm tra pipeline, dùng: python scripts/train_b2.py --smoke-test\n"
             + "=" * 70
         )
         logger.error(msg)
         raise FileNotFoundError(msg)
+
+    # Lỗi 3 sửa: xác minh SHA-256 của provenance.json
+    actual_prov_sha = sha256_file(provenance)
+    if actual_prov_sha != AGREED_PROVENANCE_SHA256:
+        msg = (
+            "\n" + "=" * 70 + "\n"
+            "[LỖI XÁC MINH SNAPSHOT]\n"
+            f"provenance.json tồn tại nhưng SHA-256 không khớp!\n"
+            f"  Kỳ vọng (đã thống nhất với TV2): {AGREED_PROVENANCE_SHA256}\n"
+            f"  Thực tế:                          {actual_prov_sha}\n"
+            f"  File: {provenance}\n\n"
+            "Snapshot này KHÔNG phải bản đã khóa từ TV1 commit 7e9b194.\n"
+            "Không được train trên dữ liệu chưa xác minh.\n"
+            + "=" * 70
+        )
+        logger.error(msg)
+        raise ValueError(msg)
+
+    logger.info("Gate W3-01 OK: provenance.json SHA-256 khớp (%s...)", actual_prov_sha[:16])
+
+
+def compute_image_grouped_loss(
+    logits: torch.Tensor,
+    class_ids: torch.Tensor,
+    image_ids: list[str],
+    device: torch.device,
+) -> torch.Tensor:
+    """Tính loss theo protocol B2: mean(crop CE per image) rồi mean over images.
+
+    Lỗi 5 sửa: thay vì sum(w*loss)/sum(w) per batch (không tương đương per-image),
+    ta gom crop theo image_id, lấy trung bình CE trong từng ảnh rồi trung bình các ảnh.
+    Cách này đảm bảo mỗi ảnh đóng góp đều nhau, bất kể số crop.
+    """
+    criterion = nn.CrossEntropyLoss(reduction="none")
+    loss_per_crop = criterion(logits, class_ids)  # shape: (batch_size,)
+
+    # Gom theo image_id
+    image_to_losses: dict[str, list[torch.Tensor]] = {}
+    for i, img_id in enumerate(image_ids):
+        if img_id not in image_to_losses:
+            image_to_losses[img_id] = []
+        image_to_losses[img_id].append(loss_per_crop[i])
+
+    # Trung bình crop loss trong từng ảnh → trung bình qua các ảnh
+    image_losses = []
+    for img_id, crop_losses in image_to_losses.items():
+        stacked = torch.stack(crop_losses)
+        image_losses.append(stacked.mean())
+
+    return torch.stack(image_losses).mean()
 
 
 def train_one_epoch(
     model: nn.Module,
     train_loader: DataLoader,
     optimizer: torch.optim.Optimizer,
-    scaler: torch.amp.GradScaler | None,
     device: torch.device,
-    use_amp: bool = False,
 ) -> tuple[float, float]:
-    """Huấn luyện 1 epoch với sample weighting per-image."""
+    """Huấn luyện 1 epoch theo protocol B2: per-image loss grouping, FP32, SGD."""
     model.train()
-    criterion = nn.CrossEntropyLoss(reduction="none")
 
     total_loss = 0.0
-    total_weight = 0.0
+    total_images = 0
     correct = 0
-    total_samples = 0
+    total_crops = 0
 
     for batch in train_loader:
         images = batch["images"].to(device, non_blocking=True)
         class_ids = batch["class_ids"].to(device, non_blocking=True)
-        weights = batch["sample_weights"].to(device, non_blocking=True)
+        image_ids: list[str] = batch["image_ids"]
 
         optimizer.zero_grad()
 
-        if use_amp and scaler:
-            with torch.amp.autocast("cuda"):
-                logits = model(images)
-                loss_per_sample = criterion(logits, class_ids)
-                weighted_loss = torch.sum(loss_per_sample * weights) / (torch.sum(weights) + 1e-8)
-            scaler.scale(weighted_loss).backward()
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            logits = model(images)
-            loss_per_sample = criterion(logits, class_ids)
-            weighted_loss = torch.sum(loss_per_sample * weights) / (torch.sum(weights) + 1e-8)
-            weighted_loss.backward()
-            optimizer.step()
+        logits = model(images)
+
+        # Lỗi 5 sửa: loss theo ảnh, không theo weighted crop
+        loss = compute_image_grouped_loss(
+            logits=logits,
+            class_ids=class_ids,
+            image_ids=image_ids,
+            device=device,
+        )
+        loss.backward()
+        optimizer.step()
 
         preds = torch.argmax(logits, dim=-1)
         correct += int((preds == class_ids).sum().item())
-        total_samples += len(class_ids)
+        total_crops += len(class_ids)
 
-        total_loss += float(weighted_loss.item()) * len(class_ids)
-        total_weight += len(class_ids)
+        # Đếm số ảnh duy nhất trong batch để theo dõi loss per-image
+        n_unique_images = len(set(image_ids))
+        total_loss += float(loss.item()) * n_unique_images
+        total_images += n_unique_images
 
-    epoch_loss = total_loss / total_weight if total_weight > 0 else 0.0
-    epoch_acc = correct / total_samples if total_samples > 0 else 0.0
+    epoch_loss = total_loss / total_images if total_images > 0 else 0.0
+    epoch_acc = correct / total_crops if total_crops > 0 else 0.0
     return epoch_loss, epoch_acc
 
 
-def run_training(config: dict[str, Any], smoke_test: bool = False) -> dict[str, Any]:
+def run_training(
+    config: dict[str, Any],
+    smoke_test: bool = False,
+    smoke_out_dir: Path | None = None,
+) -> dict[str, Any]:
     """Tiến trình huấn luyện chính."""
     train_cfg = config.get("training", {})
     model_cfg = config.get("model", {})
@@ -196,69 +278,100 @@ def run_training(config: dict[str, Any], smoke_test: bool = False) -> dict[str, 
     device = torch.device(device_str)
     logger.info("Sử dụng thiết bị huấn luyện: %s", device)
 
-    # Thư mục xuất kết quả
-    out_dir = ROOT / out_cfg.get("dir", "outputs/b2_crop_classifier")
-    out_dir.mkdir(parents=True, exist_ok=True)
-
     num_classes = model_cfg.get("num_classes", 8)
     backbone = model_cfg.get("backbone", "resnet18")
-    pretrained = model_cfg.get("pretrained", True)
 
-    # 1. Khởi tạo Datasets / Loaders
+    # Lỗi 2 sửa: smoke-test dùng thư mục riêng, không đụng output chính thức
     if smoke_test:
-        logger.info("[SMOKE-TEST] Sử dụng Dummy Dataset 16 mẫu kiểm tra pipeline...")
+        if smoke_out_dir is None:
+            raise ValueError("smoke_out_dir phải được cung cấp khi smoke_test=True.")
+        out_dir = smoke_out_dir
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        logger.info("[SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: %s", out_dir)
         train_ds = DummyB2Dataset(num_samples=16, num_classes=num_classes, split="train")
         val_ds = DummyB2Dataset(num_samples=8, num_classes=num_classes, split="val")
-        train_loader = DataLoader(train_ds, batch_size=4, shuffle=True, collate_fn=b2_collate_fn)
-        val_loader = DataLoader(val_ds, batch_size=4, shuffle=False, collate_fn=b2_collate_fn)
+        train_loader = DataLoader(train_ds, batch_size=4, shuffle=True, drop_last=False, collate_fn=b2_collate_fn)
+        val_loader = DataLoader(val_ds, batch_size=4, shuffle=False, drop_last=False, collate_fn=b2_collate_fn)
         id_to_label = {i: f"species_{i}" for i in range(num_classes)}
-        epochs = 2
+        epochs = train_cfg.get("epochs", 2)
+        pretrained = False
     else:
+        # Lỗi 1 sửa: đường dẫn từ config key "comparison_dir", không dùng "dataset_version"
         check_w3_manifest_lock(config, ROOT)
-        comp_dir = ROOT / config["data"]["dataset_version"]
+        data_cfg = config.get("data", {})
+        comp_dir = ROOT / data_cfg.get("comparison_dir", "data/processed/comparison_v1")
         batch_size = train_cfg.get("batch_size", 32)
-        num_workers = config["data"].get("num_workers", 2)
+        num_workers = data_cfg.get("num_workers", 0)
         loaders = make_b2_loaders(
             comparison_dir=comp_dir,
             batch_size=batch_size,
             num_workers=num_workers,
             seed=seed,
             root=ROOT,
-            preflight_hash_check=config["data"].get("preflight_hash_check", False),
+            preflight_hash_check=data_cfg.get("preflight_hash_check", False),
         )
         train_loader = loaders["train"]
         val_loader = loaders["val"]
         class_map_path = comp_dir / "class_map.json"
         raw_map = json.loads(class_map_path.read_text(encoding="utf-8"))
         id_to_label = {int(k): v for k, v in raw_map.items()}
-        epochs = train_cfg.get("epochs", 15)
+        epochs = train_cfg.get("epochs", 50)
+        pretrained = model_cfg.get("pretrained", True)
 
-    # 2. Khởi tạo Model
-    logger.info("Khởi tạo mô hình B2CropClassifier (Backbone: %s, Pretrained: %s)...", backbone, pretrained)
+        out_dir = ROOT / out_cfg.get("dir", "outputs/b2_crop_classifier")
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Khởi tạo Model theo protocol: ResNet18 ImageNet, không dropout
+    logger.info("Khởi tạo B2CropClassifier (Backbone: %s, Pretrained: %s)...", backbone, pretrained)
     model = B2CropClassifier(
         num_classes=num_classes,
         backbone_name=backbone,
-        pretrained=pretrained if not smoke_test else False,
-        dropout_p=model_cfg.get("dropout_p", 0.2),
+        pretrained=pretrained,
+        dropout_p=model_cfg.get("dropout_p", 0.0),  # Protocol: không dropout
     ).to(device)
 
-    # 3. Optimizer & Scheduler
-    lr = train_cfg.get("learning_rate", 1e-4)
-    weight_decay = train_cfg.get("weight_decay", 1e-4)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+    # Optimizer & Scheduler theo protocol: SGD, StepLR
+    lr = train_cfg.get("lr", 0.001)
+    momentum = train_cfg.get("momentum", 0.9)
+    weight_decay = train_cfg.get("weight_decay", 0.0001)
+    step_size = train_cfg.get("step_size", 10)
+    gamma = train_cfg.get("gamma", 0.1)
+    patience = train_cfg.get("patience", 7)
 
-    use_amp = train_cfg.get("mixed_precision", True) and (device_str == "cuda")
-    scaler = torch.amp.GradScaler("cuda") if use_amp else None
+    optimizer = torch.optim.SGD(
+        model.parameters(),
+        lr=lr,
+        momentum=momentum,
+        weight_decay=weight_decay,
+    )
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=step_size, gamma=gamma)
 
-    # 4. Huấn luyện từng epoch
+    # Đường dẫn output
+    best_ckpt_path = out_dir / out_cfg.get("best_checkpoint_name", "best_model.pt")
+    last_ckpt_path = out_dir / out_cfg.get("last_checkpoint_name", "last_model.pt")
+    log_file = out_dir / out_cfg.get("log_file_name", "train_log.jsonl")
+    val_report_path = out_dir / out_cfg.get("val_report_name", "validation_comparison.json")
+    val_table_path = out_dir / out_cfg.get("val_table_md_name", "validation_comparison.md")
+
+    # Lỗi 2 sửa: ghi marker SYNTHETIC_SMOKE vào log header nếu là smoke test
+    if smoke_test:
+        with open(log_file, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"MARKER": "SYNTHETIC_SMOKE", "note": "Do not use as official B2 result."}) + "\n")
+    else:
+        # Run chính thức: mở log ở chế độ write (không append vào run cũ)
+        with open(log_file, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"MARKER": "OFFICIAL_RUN", "config_hash": _config_hash(config)}) + "\n")
+
+    # Huấn luyện từng epoch
     best_image_f1 = -1.0
-    best_metrics: dict[str, Any] = {}
-    train_history = []
-    log_file = ROOT / out_cfg.get("log_file", "outputs/b2_crop_classifier/train_log.jsonl")
+    best_epoch = -1  # Lỗi 6 sửa: theo dõi riêng
+    best_val_metrics: dict[str, Any] = {}
+    last_val_metrics: dict[str, Any] = {}  # Lỗi 6 sửa: lưu metrics epoch cuối riêng
 
     logger.info("Bắt đầu huấn luyện B2 với ngân sách %d epochs...", epochs)
     start_time = time.time()
+    no_improve = 0
 
     for epoch in range(1, epochs + 1):
         epoch_start = time.time()
@@ -266,13 +379,10 @@ def run_training(config: dict[str, Any], smoke_test: bool = False) -> dict[str, 
             model=model,
             train_loader=train_loader,
             optimizer=optimizer,
-            scaler=scaler,
             device=device,
-            use_amp=use_amp,
         )
         scheduler.step()
 
-        # Đánh giá validation (cả crop-level và image-level)
         val_eval = evaluate_b2_model(
             model=model,
             data_loader=val_loader,
@@ -297,23 +407,24 @@ def run_training(config: dict[str, Any], smoke_test: bool = False) -> dict[str, 
             "lr": optimizer.param_groups[0]["lr"],
             "epoch_time_sec": round(epoch_time, 2),
         }
-        train_history.append(log_entry)
 
         with open(log_file, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_entry) + "\n")
 
         logger.info(
-            "Epoch [%d/%d] (%0.1fs) - Train Loss: %.4f, Acc: %.2f%% | Val Loss: %.4f | "
-            "Cấp Crop F1: %.2f%% | CẤP ẢNH Acc: %.2f%%, F1: %.2f%%",
-            epoch, epochs, epoch_time, train_loss, train_acc * 100, val_eval["val_loss"],
-            crop_f1 * 100, img_acc * 100, img_f1 * 100,
+            "Epoch [%d/%d] (%0.1fs) Loss=%.4f Acc=%.1f%% | Val Loss=%.4f CropF1=%.1f%% ImgAcc=%.1f%% ImgF1=%.1f%%",
+            epoch, epochs, epoch_time, train_loss, train_acc * 100,
+            val_eval["val_loss"], crop_f1 * 100, img_acc * 100, img_f1 * 100,
         )
+
+        # Lỗi 6 sửa: lưu last_val_metrics đúng với epoch hiện tại
+        last_val_metrics = val_eval
 
         # Lưu checkpoint tốt nhất dựa trên Image-level Macro F1
         if img_f1 > best_image_f1:
             best_image_f1 = img_f1
-            best_metrics = val_eval
-            best_ckpt_path = ROOT / out_cfg.get("best_checkpoint", "outputs/b2_crop_classifier/best_model.pt")
+            best_epoch = epoch  # Lỗi 6 sửa: ghi epoch thật, không dùng epochs
+            best_val_metrics = val_eval
             save_checkpoint(
                 model=model,
                 path=best_ckpt_path,
@@ -323,52 +434,62 @@ def run_training(config: dict[str, Any], smoke_test: bool = False) -> dict[str, 
                 val_metrics=val_eval,
                 config=config,
             )
-            logger.info("--> Đã lưu checkpoint B2 tốt nhất tại: %s (Image Macro F1: %.2f%%)", best_ckpt_path, img_f1 * 100)
+            no_improve = 0
+            logger.info("--> Best checkpoint tại epoch %d (ImgF1=%.2f%%).", epoch, img_f1 * 100)
+        else:
+            no_improve += 1
+            if not smoke_test and no_improve >= patience:
+                logger.info("Early stopping tại epoch %d (không cải thiện %d epochs).", epoch, patience)
+                break
 
-    total_training_time = time.time() - start_time
-    logger.info("Hoàn tất huấn luyện sau %0.1f giây! Best Image-level F1: %.2f%%", total_training_time, best_image_f1 * 100)
+    total_time = time.time() - start_time
+    logger.info("Hoàn tất sau %.1fs! Best epoch=%d, Best ImgF1=%.2f%%", total_time, best_epoch, best_image_f1 * 100)
 
-    # 5. Lưu checkpoint cuối cùng
-    last_ckpt_path = ROOT / out_cfg.get("last_checkpoint", "outputs/b2_crop_classifier/last_model.pt")
+    # Lỗi 6 sửa: lưu last checkpoint với metrics của epoch cuối (không phải best)
     save_checkpoint(
         model=model,
         path=last_ckpt_path,
-        epoch=epochs,
+        epoch=epoch,  # epoch cuối đã chạy
         optimizer=optimizer,
         scheduler=scheduler,
-        val_metrics=best_metrics,
+        val_metrics=last_val_metrics,  # metrics thực của epoch cuối
         config=config,
     )
 
-    # 6. Xuất báo cáo và bảng so sánh Markdown
-    val_report_path = ROOT / out_cfg.get("val_report", "outputs/b2_crop_classifier/validation_comparison.json")
-    val_table_path = ROOT / out_cfg.get("val_table_md", "outputs/b2_crop_classifier/validation_comparison.md")
-
+    # Xuất báo cáo
     report_payload = {
         "task": "W3-02 B2 Crop Classifier",
-        "best_epoch": best_metrics.get("epoch", epochs),
-        "total_training_time_sec": round(total_training_time, 2),
+        "smoke_test": smoke_test,
+        "synthetic_marker": "SYNTHETIC_SMOKE" if smoke_test else None,
+        "best_epoch": best_epoch,  # Lỗi 6 sửa: epoch thật
+        "total_epochs_run": epoch,
+        "total_training_time_sec": round(total_time, 2),
         "config": config,
-        "image_level_metrics": best_metrics.get("image_level", {}),
-        "crop_level_metrics": best_metrics.get("crop_level", {}),
+        "image_level_metrics": best_val_metrics.get("image_level", {}),
+        "crop_level_metrics": best_val_metrics.get("crop_level", {}),
     }
     with open(val_report_path, "w", encoding="utf-8") as f:
         json.dump(report_payload, f, indent=2, ensure_ascii=False)
 
     md_table = format_validation_markdown_table(
-        image_metrics=best_metrics.get("image_level", {}),
-        crop_metrics=best_metrics.get("crop_level", {}),
+        image_metrics=best_val_metrics.get("image_level", {}),
+        crop_metrics=best_val_metrics.get("crop_level", {}),
     )
     val_table_path.write_text(md_table, encoding="utf-8")
-    logger.info("Đã xuất bảng so sánh validation tại: %s", val_table_path)
+    logger.info("Đã xuất bảng so sánh tại: %s", val_table_path)
 
     return report_payload
 
 
+def _config_hash(config: dict[str, Any]) -> str:
+    """Hash nhanh config để ghi vào log header."""
+    return hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()[:16]
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Huấn luyện mô hình B2 Crop Classifier (TV3 Tuần 3).")
-    parser.add_argument("--config", type=str, default="configs/b2_crop_classifier.json", help="Đường dẫn file cấu hình.")
-    parser.add_argument("--smoke-test", action="store_true", help="Chạy thử nghiệm kiểm tra pipeline trên dữ liệu giả lập.")
+    parser = argparse.ArgumentParser(description="Huấn luyện B2 Crop Classifier (TV3 Tuần 3).")
+    parser.add_argument("--config", type=str, default="configs/b2_crop_classifier.json", help="File cấu hình.")
+    parser.add_argument("--smoke-test", action="store_true", help="Chạy thử nghiệm pipeline trên dữ liệu giả lập.")
     args = parser.parse_args()
 
     cfg_path = ROOT / args.config
@@ -378,7 +499,14 @@ def main() -> None:
         logger.warning("Không tìm thấy file cấu hình %s, sử dụng cấu hình mặc định.", cfg_path)
         config = {}
 
-    run_training(config=config, smoke_test=args.smoke_test)
+    if args.smoke_test:
+        # Lỗi 2 sửa: tạo thư mục tạm riêng, tự dọn sau khi xong
+        with tempfile.TemporaryDirectory(prefix="b2_smoke_", dir=ROOT / "outputs") as tmp_dir:
+            logger.info("[SMOKE-TEST] Output tạm tại: %s", tmp_dir)
+            run_training(config=config, smoke_test=True, smoke_out_dir=Path(tmp_dir))
+        logger.info("[SMOKE-TEST] Đã dọn thư mục tạm. Pipeline OK!")
+    else:
+        run_training(config=config, smoke_test=False)
 
 
 if __name__ == "__main__":

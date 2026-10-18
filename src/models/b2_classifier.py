@@ -20,9 +20,10 @@ from torchvision import models
 class B2CropClassifier(nn.Module):
     """Mô hình phân loại động vật trên vùng cắt (crop classifier B2)."""
 
+    # Protocol B2 (W3_PROTOCOL_AGREEMENT_2026-10-18): dùng IMAGENET1K_V1 cho resnet18
     SUPPORTED_BACKBONES = {
-        "resnet18": (models.resnet18, models.ResNet18_Weights.DEFAULT),
-        "resnet50": (models.resnet50, models.ResNet50_Weights.DEFAULT),
+        "resnet18": (models.resnet18, models.ResNet18_Weights.IMAGENET1K_V1),
+        "resnet50": (models.resnet50, models.ResNet50_Weights.IMAGENET1K_V1),
         "mobilenet_v3_small": (models.mobilenet_v3_small, models.MobileNet_V3_Small_Weights.DEFAULT),
         "mobilenet_v3_large": (models.mobilenet_v3_large, models.MobileNet_V3_Large_Weights.DEFAULT),
     }
@@ -32,7 +33,7 @@ class B2CropClassifier(nn.Module):
         num_classes: int = 8,
         backbone_name: str = "resnet18",
         pretrained: bool = True,
-        dropout_p: float = 0.2,
+        dropout_p: float = 0.0,  # Protocol: không dropout
     ) -> None:
         super().__init__()
         self.num_classes = num_classes

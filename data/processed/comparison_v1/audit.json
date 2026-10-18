@@ -1,0 +1,38 @@
+{
+  "rows": 4000,
+  "duplicate_image_ids": 0,
+  "duplicate_file_paths": 0,
+  "cross_split_overlap": {
+    "image_id": 0,
+    "file_name": 0,
+    "seq_id": 0,
+    "location": 0
+  },
+  "metadata_leakage_check_passed": true,
+  "image_content_duplicates_checked": true,
+  "image_content_note": "Exact decoded RGB hashes only; near duplicates NOT checked.",
+  "unique_sequences": 3280,
+  "unique_locations": 658,
+  "exact_duplicate_groups": 1,
+  "unique_pixel_contents": 3999,
+  "source_audit": {
+    "rows": 4000,
+    "duplicate_image_ids": 0,
+    "duplicate_file_paths": 0,
+    "cross_split_overlap": {
+      "image_id": 0,
+      "file_name": 0,
+      "seq_id": 0,
+      "location": 0
+    },
+    "metadata_leakage_check_passed": true,
+    "image_content_duplicates_checked": true,
+    "image_content_note": "Exact decoded RGB hashes only; near duplicates NOT checked.",
+    "unique_sequences": 3280,
+    "unique_locations": 658,
+    "exact_duplicate_groups": 1,
+    "unique_pixel_contents": 3999
+  },
+  "b1_b2_same_parent_ids": true,
+  "b1_b2_same_labels_and_splits": true
+}

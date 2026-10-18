@@ -1,0 +1,15 @@
+{
+  "dataset_version": "comparison_v1",
+  "source_dir": "data/processed/v2",
+  "source_seed": 42,
+  "min_crop_side": 8,
+  "padding_fraction": 0,
+  "rounding": "python_round_half_even_then_clip",
+  "bad_box_policy": "exclude_entire_image_from_both_models",
+  "multi_box_policy": "all_boxes_same_species",
+  "b2_train_weight": "1 / number_of_crops_in_parent_image",
+  "evaluation_unit": "image_id",
+  "b2_evaluation_aggregation": "mean_class_probabilities_over_all_parent_crops",
+  "within_split_exact_duplicates": "retain_and_report",
+  "test_policy": "integrity_checks_only_no_model_selection"
+}
