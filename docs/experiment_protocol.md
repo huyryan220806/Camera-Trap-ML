@@ -95,13 +95,20 @@ Tất cả các baseline sử dụng chung kiến trúc **ResNet-18** (pretraine
 | **Backbone** | ResNet-18, pretrained ImageNet-1K |
 | **Chiến lược huấn luyện** | Fine-tune toàn bộ (giống B1) |
 | **Input** | **Vùng cắt (bounding box)** từ metadata/SWG annotation, resize về `224 × 224` |
-| **Tiền xử lý bổ sung** | Mở rộng bbox thêm 10-15% padding để tránh cắt mất phần cơ thể |
+| **Tiền xử lý bổ sung** | Bản chuẩn `comparison_v1`: padding 0, tọa độ crop khóa trong manifest; padding 10-15% là biến thể riêng |
 | **Optimizer** | Giống B1 |
 | **Epochs** | 50 (có Early Stopping) |
 | **Batch size** | 32 |
 
 **So sánh với B1:** Cùng chiến lược fine-tune nhưng khác ở input (cropped vs. full-image) → cho phép đo riêng tác động của cropping.
 > **Quy tắc công bằng dữ liệu:** Dùng chung danh sách ảnh huấn luyện đã lọc kỹ bounding box với B1.
+
+**Khóa dữ liệu tuần 3:** [Bàn giao TV1](handoff_tv1_w3.md) quy định nguồn pilot v2,
+manifest `data/processed/comparison_v1/` và cách crop khớp pipeline TV3 đã review.
+Một ảnh chỉ được giữ khi mọi box cùng loài và đạt điều kiện; một box lỗi làm loại
+cả ảnh ở B1/B2. Ảnh nhiều box được đánh giá bằng trung bình xác suất crop theo
+`image_id`, rồi tính metric cấp ảnh. Không so sánh metric cấp ảnh với cấp crop.
+Nguồn này khác danh sách B0/crop pilot riêng của từng thành viên ở tuần 2.
 
 ---
 
