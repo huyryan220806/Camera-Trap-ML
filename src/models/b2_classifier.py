@@ -88,6 +88,14 @@ def save_checkpoint(
     scheduler: Any | None = None,
     val_metrics: dict[str, Any] | None = None,
     config: dict[str, Any] | None = None,
+    *,
+    class_map: dict[str, int] | None = None,
+    id_to_label: dict[int, str] | None = None,
+    is_official: bool = False,
+    provenance_sha256: str | None = None,
+    preprocessing: dict[str, Any] | None = None,
+    backbone_name: str | None = None,
+    num_classes: int | None = None,
 ) -> None:
     """Lưu checkpoint mô hình kèm siêu tham số và kết quả đánh giá."""
     save_path = Path(path)
@@ -99,6 +107,14 @@ def save_checkpoint(
         "scheduler_state_dict": scheduler.state_dict() if scheduler else None,
         "val_metrics": val_metrics or {},
         "config": config or {},
+        # Metadata bổ sung cho bàn giao TV4
+        "class_map": class_map,
+        "id_to_label": id_to_label,
+        "is_official": is_official,
+        "provenance_sha256": provenance_sha256,
+        "preprocessing": preprocessing,
+        "backbone_name": backbone_name,
+        "num_classes": num_classes,
     }
     torch.save(payload, save_path)
 

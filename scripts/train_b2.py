@@ -182,6 +182,41 @@ def check_w3_manifest_lock(config: dict[str, Any], root: Path) -> None:
 
     logger.info("Gate W3-01 OK: provenance.json SHA-256 khớp (%s...)", actual_prov_sha[:16])
 
+    # Xác minh SHA-256 của từng file dữ liệu so với hash ghi trong provenance.json
+    import json as _json
+    with open(provenance, "r", encoding="utf-8") as _f:
+        prov_data = _json.load(_f)
+    files_sha256 = prov_data["files_sha256"]
+
+    files_to_verify = {
+        "b2/train.jsonl": manifest_train,
+        "b2/val.jsonl": manifest_val,
+        "class_map.json": class_map,
+    }
+
+    for file_key, file_path in files_to_verify.items():
+        expected_hash = files_sha256[file_key]
+        actual_hash = sha256_file(file_path)
+        if actual_hash != expected_hash:
+            msg = (
+                "\n" + "=" * 70 + "\n"
+                "[LỖI XÁC MINH DỮ LIỆU]\n"
+                f"File {file_key} SHA-256 không khớp với provenance.json!\n"
+                f"  Kỳ vọng (theo provenance.json): {expected_hash}\n"
+                f"  Thực tế:                        {actual_hash}\n"
+                f"  File: {file_path}\n\n"
+                "Dữ liệu trên đĩa không khớp với snapshot đã khóa.\n"
+                "Không được train trên dữ liệu chưa xác minh.\n"
+                + "=" * 70
+            )
+            logger.error(msg)
+            raise ValueError(msg)
+
+    logger.info(
+        "Gate W3-01 OK: tất cả file dữ liệu SHA-256 khớp với provenance.json "
+        "(%s file đã xác minh)", len(files_to_verify),
+    )
+
 
 def compute_image_grouped_loss(
     logits: torch.Tensor,
@@ -219,9 +254,14 @@ def train_one_epoch(
     train_loader: DataLoader,
     optimizer: torch.optim.Optimizer,
     device: torch.device,
+    epoch: int = 1,
 ) -> tuple[float, float]:
     """Huấn luyện 1 epoch theo protocol B2: per-image loss grouping, FP32, SGD."""
     model.train()
+
+    # Cập nhật epoch cho ImageGroupedBatchSampler nếu có
+    if hasattr(train_loader, "batch_sampler") and hasattr(train_loader.batch_sampler, "set_epoch"):
+        train_loader.batch_sampler.set_epoch(epoch)
 
     total_loss = 0.0
     total_images = 0
@@ -265,6 +305,7 @@ def run_training(
     config: dict[str, Any],
     smoke_test: bool = False,
     smoke_out_dir: Path | None = None,
+    run_id: str | None = None,
 ) -> dict[str, Any]:
     """Tiến trình huấn luyện chính."""
     train_cfg = config.get("training", {})
@@ -291,7 +332,9 @@ def run_training(
         logger.info("[SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: %s", out_dir)
         train_ds = DummyB2Dataset(num_samples=16, num_classes=num_classes, split="train")
         val_ds = DummyB2Dataset(num_samples=8, num_classes=num_classes, split="val")
-        train_loader = DataLoader(train_ds, batch_size=4, shuffle=True, drop_last=False, collate_fn=b2_collate_fn)
+        from src.data.b2_dataset import ImageGroupedBatchSampler
+        train_sampler = ImageGroupedBatchSampler(train_ds.samples, batch_size=4, shuffle=True, seed=seed)
+        train_loader = DataLoader(train_ds, batch_sampler=train_sampler, collate_fn=b2_collate_fn)
         val_loader = DataLoader(val_ds, batch_size=4, shuffle=False, drop_last=False, collate_fn=b2_collate_fn)
         id_to_label = {i: f"species_{i}" for i in range(num_classes)}
         epochs = train_cfg.get("epochs", 2)
@@ -319,8 +362,33 @@ def run_training(
         epochs = train_cfg.get("epochs", 50)
         pretrained = model_cfg.get("pretrained", True)
 
-        out_dir = ROOT / out_cfg.get("dir", "outputs/b2_crop_classifier")
+        # Issue 3: Run ID và bảo vệ chống ghi đè thí nghiệm cũ
+        effective_run_id = run_id or config.get("run_id") or out_cfg.get("run_id", "b2_run01")
+        out_base = ROOT / out_cfg.get("dir", "outputs/b2_crop_classifier")
+        out_dir = out_base / effective_run_id
+        if out_dir.exists() and any(out_dir.iterdir()):
+            msg = (
+                f"\n{'=' * 70}\n"
+                f"[LỖI TỪ CHỐI GHI ĐÈ RUN CŨ]\n"
+                f"Thư mục run '{out_dir}' đã tồn tại và chứa dữ liệu!\n"
+                f"Để bảo vệ kết quả thí nghiệm trước đó, hệ thống từ chối ghi đè.\n"
+                f"Hãy đổi run_id trong config hoặc truyền --run-id mới (ví dụ: b2_run02).\n"
+                f"{'=' * 70}"
+            )
+            logger.error(msg)
+            raise FileExistsError(msg)
         out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Metadata chuẩn bị cho bàn giao TV4 (Issue 4)
+    label_to_id = {v: k for k, v in id_to_label.items()}
+    preprocessing_meta = {
+        "resize": 256,
+        "crop_size": 224,
+        "mean": [0.485, 0.456, 0.406],
+        "std": [0.229, 0.224, 0.225],
+        "train_transforms": "Resize(256) -> RandomCrop(224) -> RandomHorizontalFlip(0.5) -> ColorJitter(b=0.2, c=0.2, s=0.1, h=0.05) -> ToTensor() -> Normalize()",
+        "val_transforms": "Resize(256) -> CenterCrop(224) -> ToTensor() -> Normalize()",
+    }
 
     # Khởi tạo Model theo protocol: ResNet18 ImageNet, không dropout
     logger.info("Khởi tạo B2CropClassifier (Backbone: %s, Pretrained: %s)...", backbone, pretrained)
@@ -380,6 +448,7 @@ def run_training(
             train_loader=train_loader,
             optimizer=optimizer,
             device=device,
+            epoch=epoch,
         )
         scheduler.step()
 
@@ -433,6 +502,13 @@ def run_training(
                 scheduler=scheduler,
                 val_metrics=val_eval,
                 config=config,
+                class_map=label_to_id,
+                id_to_label=id_to_label,
+                is_official=not smoke_test,
+                provenance_sha256=AGREED_PROVENANCE_SHA256 if not smoke_test else None,
+                preprocessing=preprocessing_meta,
+                backbone_name=backbone,
+                num_classes=num_classes,
             )
             no_improve = 0
             logger.info("--> Best checkpoint tại epoch %d (ImgF1=%.2f%%).", epoch, img_f1 * 100)
@@ -454,7 +530,34 @@ def run_training(
         scheduler=scheduler,
         val_metrics=last_val_metrics,  # metrics thực của epoch cuối
         config=config,
+        class_map=label_to_id,
+        id_to_label=id_to_label,
+        is_official=not smoke_test,
+        provenance_sha256=AGREED_PROVENANCE_SHA256 if not smoke_test else None,
+        preprocessing=preprocessing_meta,
+        backbone_name=backbone,
+        num_classes=num_classes,
     )
+
+    # Issue 4: Kiểm định reload độc lập checkpoint đã lưu
+    logger.info("Kiểm định reload độc lập checkpoint tại: %s", best_ckpt_path)
+    from src.models.b2_classifier import load_checkpoint
+    reload_model = B2CropClassifier(num_classes=num_classes, backbone_name=backbone, pretrained=False)
+    loaded_data = load_checkpoint(model=reload_model, path=best_ckpt_path, map_location="cpu")
+    if loaded_data.get("epoch") != best_epoch:
+        raise ValueError(f"Reload thất bại: epoch trong checkpoint ({loaded_data.get('epoch')}) != best_epoch ({best_epoch})")
+    if loaded_data.get("is_official") != (not smoke_test):
+        raise ValueError("Reload thất bại: marker is_official không khớp")
+    if loaded_data.get("class_map") is None or loaded_data.get("id_to_label") is None:
+        raise ValueError("Reload thất bại: thiếu class mapping hai chiều cho adapter TV4")
+    if loaded_data.get("preprocessing") is None:
+        raise ValueError("Reload thất bại: thiếu thông tin preprocessing")
+    reload_model.eval()
+    with torch.no_grad():
+        dummy_out = reload_model(torch.randn(1, 3, 224, 224))
+        if dummy_out.shape != (1, num_classes):
+            raise ValueError(f"Reload thất bại: forward pass shape sai: {dummy_out.shape}")
+    logger.info("Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.")
 
     # Xuất báo cáo
     report_payload = {
@@ -490,6 +593,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Huấn luyện B2 Crop Classifier (TV3 Tuần 3).")
     parser.add_argument("--config", type=str, default="configs/b2_crop_classifier.json", help="File cấu hình.")
     parser.add_argument("--smoke-test", action="store_true", help="Chạy thử nghiệm pipeline trên dữ liệu giả lập.")
+    parser.add_argument("--run-id", type=str, default=None, help="Mã định danh lần chạy (ví dụ: b2_run01).")
     args = parser.parse_args()
 
     cfg_path = ROOT / args.config
@@ -499,14 +603,17 @@ def main() -> None:
         logger.warning("Không tìm thấy file cấu hình %s, sử dụng cấu hình mặc định.", cfg_path)
         config = {}
 
+    # Đảm bảo thư mục outputs tồn tại trước khi tạo thư mục tạm (Issue 5)
+    (ROOT / "outputs").mkdir(parents=True, exist_ok=True)
+
     if args.smoke_test:
         # Lỗi 2 sửa: tạo thư mục tạm riêng, tự dọn sau khi xong
         with tempfile.TemporaryDirectory(prefix="b2_smoke_", dir=ROOT / "outputs") as tmp_dir:
             logger.info("[SMOKE-TEST] Output tạm tại: %s", tmp_dir)
-            run_training(config=config, smoke_test=True, smoke_out_dir=Path(tmp_dir))
+            run_training(config=config, smoke_test=True, smoke_out_dir=Path(tmp_dir), run_id=args.run_id)
         logger.info("[SMOKE-TEST] Đã dọn thư mục tạm. Pipeline OK!")
     else:
-        run_training(config=config, smoke_test=False)
+        run_training(config=config, smoke_test=False, run_id=args.run_id)
 
 
 if __name__ == "__main__":

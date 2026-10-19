@@ -15,13 +15,14 @@ Ghi chú protocol đã thống nhất:
 
 import hashlib
 import json
+import random
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Callable
 
 import torch
 from PIL import Image
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, Sampler
 from torchvision import transforms
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,7 +39,7 @@ DEFAULT_B2_TRANSFORMS: dict[str, transforms.Compose] = {
         transforms.Resize(256),
         transforms.RandomCrop(IMAGE_SIZE),
         transforms.RandomHorizontalFlip(p=0.5),
-        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.05),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.1, hue=0.05),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ]),
@@ -259,6 +260,61 @@ class B2ComparisonDataset(Dataset):
         return dict(Counter(s["label"] for s in self.samples))
 
 
+class ImageGroupedBatchSampler(Sampler[list[int]]):
+    """BatchSampler gom tất cả crops của cùng một ảnh (image_id) vào cùng một batch.
+
+    Giải quyết Issue 2: Khi huấn luyện theo protocol B2, loss cấp ảnh là mean(CE của các crop
+    trong ảnh) rồi mean giữa các ảnh. Nếu crops của cùng 1 ảnh bị chia tách sang các batch khác nhau,
+    việc nhóm crop theo batch sẽ bị thiếu crop của ảnh đó.
+    BatchSampler này đảm bảo:
+    1. Toàn bộ crop của cùng image_id luôn nằm trọn vẹn trong một batch.
+    2. Thứ tự các ảnh được xáo trộn ngẫu nhiên mỗi epoch qua set_epoch().
+    3. Kích thước batch xấp xỉ batch_size mục tiêu (không cắt rời ảnh).
+    """
+
+    def __init__(
+        self,
+        samples: list[dict[str, Any]],
+        batch_size: int = 32,
+        shuffle: bool = True,
+        seed: int = 42,
+    ) -> None:
+        self.batch_size = max(1, batch_size)
+        self.shuffle = shuffle
+        self.seed = seed
+        self.epoch = 0
+
+        # Gom index của từng crop theo image_id
+        self.image_to_indices: dict[str, list[int]] = defaultdict(list)
+        for idx, s in enumerate(samples):
+            self.image_to_indices[s["image_id"]].append(idx)
+        self.unique_image_ids = list(self.image_to_indices.keys())
+        self.total_crops = len(samples)
+
+    def set_epoch(self, epoch: int) -> None:
+        self.epoch = epoch
+
+    def __iter__(self):
+        rng = random.Random(self.seed + self.epoch)
+        image_ids = list(self.unique_image_ids)
+        if self.shuffle:
+            rng.shuffle(image_ids)
+
+        batch: list[int] = []
+        for img_id in image_ids:
+            indices = self.image_to_indices[img_id]
+            if len(batch) + len(indices) > self.batch_size and batch:
+                yield batch
+                batch = []
+            batch.extend(indices)
+
+        if batch:
+            yield batch
+
+    def __len__(self) -> int:
+        return max(1, (self.total_crops + self.batch_size - 1) // self.batch_size)
+
+
 def b2_collate_fn(batch: list[dict[str, Any]]) -> dict[str, Any]:
     """Collate function gom batch cho B2CropClassifier."""
     images = torch.stack([item["image"] for item in batch])
@@ -289,16 +345,15 @@ def make_b2_loaders(
 ) -> dict[str, DataLoader]:
     """Tạo DataLoader cho B2 train và val.
 
-    Ghi chú: drop_last=False để không mất crop và ảnh ở batch cuối (Lỗi 4 đã sửa).
+    Ghi chú:
+    - Train dùng ImageGroupedBatchSampler để giữ trọn vẹn mọi crop của cùng parent image trong 1 batch (Issue 2).
+    - Val dùng DataLoader tuần tự, drop_last=False để không mất crop và ảnh ở batch cuối (Lỗi 4).
     """
     if splits is None:
         splits = ["train", "val"]
 
     comp_dir = Path(comparison_dir)
     class_map_path = comp_dir / "class_map.json"
-
-    g = torch.Generator()
-    g.manual_seed(seed)
 
     loaders: dict[str, DataLoader] = {}
     for s in splits:
@@ -311,15 +366,30 @@ def make_b2_loaders(
             preflight_hash_check=preflight_hash_check,
         )
         is_train = (s == "train")
-        loaders[s] = DataLoader(
-            dataset,
-            batch_size=batch_size,
-            shuffle=is_train,
-            num_workers=num_workers,
-            collate_fn=b2_collate_fn,
-            generator=g if is_train else None,
-            pin_memory=torch.cuda.is_available(),
-            drop_last=False,  # Lỗi 4 sửa: không bỏ batch cuối, giữ đủ ảnh
-        )
+        if is_train:
+            sampler = ImageGroupedBatchSampler(
+                samples=dataset.samples,
+                batch_size=batch_size,
+                shuffle=True,
+                seed=seed,
+            )
+            loaders[s] = DataLoader(
+                dataset,
+                batch_sampler=sampler,
+                num_workers=num_workers,
+                collate_fn=b2_collate_fn,
+                pin_memory=torch.cuda.is_available(),
+            )
+        else:
+            loaders[s] = DataLoader(
+                dataset,
+                batch_size=batch_size,
+                shuffle=False,
+                num_workers=num_workers,
+                collate_fn=b2_collate_fn,
+                pin_memory=torch.cuda.is_available(),
+                drop_last=False,
+            )
 
     return loaders
+

@@ -379,6 +379,10 @@ class ImageAggregationTests(unittest.TestCase):
 class GateAndCheckpointTests(unittest.TestCase):
     """Lỗi 2, 3, 6: Gate provenance SHA-256, smoke isolation, best_epoch accuracy."""
 
+    def setUp(self):
+        # Đảm bảo thư mục outputs tồn tại trước khi chạy test trên checkout sạch (Issue 5)
+        (ROOT / "outputs").mkdir(parents=True, exist_ok=True)
+
     def test_gate_fails_if_files_missing(self):
         """Lỗi 3: Gate phải từ chối khi file không tồn tại."""
         cfg = {"data": {"comparison_dir": "data/processed/non_existent_xyz"}}
@@ -477,6 +481,73 @@ class GateAndCheckpointTests(unittest.TestCase):
             first_line = json.loads(log_path.read_text(encoding="utf-8").strip().splitlines()[0])
             self.assertEqual(first_line.get("MARKER"), "SYNTHETIC_SMOKE")
 
+    def test_image_grouped_batch_sampler_keeps_all_parent_crops_in_same_batch(self):
+        """Issue 2: Toàn bộ crop của cùng image_id phải nằm trọn vẹn trong một batch."""
+        from src.data.b2_dataset import ImageGroupedBatchSampler
+        # Giả lập 10 ảnh, mỗi ảnh có từ 1 đến 3 crop (tổng 20 crop)
+        samples = []
+        crop_counts = [1, 2, 3, 1, 2, 1, 3, 2, 1, 4]
+        for img_idx, count in enumerate(crop_counts):
+            for c in range(count):
+                samples.append({"image_id": f"img_{img_idx:02d}", "crop_id": f"crop_{img_idx}_{c}"})
+
+        sampler = ImageGroupedBatchSampler(samples=samples, batch_size=6, shuffle=True, seed=42)
+        batches = list(sampler)
+
+        # Kiểm tra: mọi batch không bao giờ chứa một phần crop của ảnh
+        for b_idx, batch_indices in enumerate(batches):
+            batch_images = [samples[i]["image_id"] for i in batch_indices]
+            from collections import Counter
+            batch_img_counts = Counter(batch_images)
+            for img_id, observed_count in batch_img_counts.items():
+                expected_count = sum(1 for s in samples if s["image_id"] == img_id)
+                self.assertEqual(
+                    observed_count, expected_count,
+                    f"Batch {b_idx}: Ảnh {img_id} bị tách crop qua nhiều batch! "
+                    f"Quan sát: {observed_count}/{expected_count} crop."
+                )
+
+    def test_anti_overwrite_refuses_existing_run_dir(self):
+        """Issue 3: Hệ thống phải từ chối ghi đè nếu thư mục run đã tồn tại và chứa file."""
+        import tempfile as _tmp
+        with _tmp.TemporaryDirectory(prefix="b2_overwrite_test_", dir=ROOT / "data") as tmp_dir:
+            run_dir = Path(tmp_dir) / "test_run"
+            run_dir.mkdir()
+            (run_dir / "old_checkpoint.pt").write_text("dummy", encoding="utf-8")
+
+            config = {
+                "model": {"backbone": "resnet18", "pretrained": False, "num_classes": 8, "dropout_p": 0.0},
+                "training": {"epochs": 1, "seed": 42},
+                "output": {"dir": str(Path(tmp_dir).relative_to(ROOT)).replace("\\", "/")},
+            }
+            # Cố chạy với run_id trỏ vào run_dir đã có file
+            with self.assertRaises(FileExistsError, msg="Phải từ chối ghi đè run cũ"):
+                run_training(config=config, smoke_test=False, run_id="test_run")
+
+    def test_checkpoint_contains_full_tv4_metadata_and_reloads(self):
+        """Issue 4: Checkpoint phải chứa class_map, id_to_label, preprocessing, is_official."""
+        import tempfile as _tmp
+        with _tmp.TemporaryDirectory(prefix="b2_meta_test_", dir=ROOT / "outputs") as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            config = {
+                "model": {"backbone": "resnet18", "pretrained": False, "num_classes": 8, "dropout_p": 0.0},
+                "training": {"epochs": 1, "seed": 42, "lr": 0.001, "momentum": 0.9,
+                             "weight_decay": 1e-4, "step_size": 10, "gamma": 0.1, "patience": 99},
+                "output": {},
+            }
+            run_training(config=config, smoke_test=True, smoke_out_dir=tmp_path)
+
+            best_ckpt = torch.load(tmp_path / "best_model.pt", map_location="cpu", weights_only=False)
+            self.assertIn("class_map", best_ckpt)
+            self.assertIn("id_to_label", best_ckpt)
+            self.assertIn("preprocessing", best_ckpt)
+            self.assertIn("is_official", best_ckpt)
+            self.assertIn("backbone_name", best_ckpt)
+            self.assertIn("num_classes", best_ckpt)
+            self.assertEqual(best_ckpt["num_classes"], 8)
+            self.assertEqual(best_ckpt["preprocessing"]["crop_size"], 224)
+
 
 if __name__ == "__main__":
     unittest.main()
+
