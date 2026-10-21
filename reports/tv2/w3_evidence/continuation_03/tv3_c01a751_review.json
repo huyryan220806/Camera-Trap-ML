@@ -1,0 +1,42 @@
+{
+  "commit": "c01a75141bb8350c8a38a28cfc9b44a3f3ad12ba",
+  "branch": "origin/feat/crop-classifier",
+  "scope": "Read-only code/config review; test JSONL files were not opened or copied.",
+  "isolated_tests": {
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0,
+    "real_test_data_opened": false
+  },
+  "fixed_since_d08eba7": [
+    "comparison_dir points to data/processed/comparison_v1",
+    "SGD/StepLR/50 epochs/patience 7/no dropout/FP32 aligned",
+    "drop_last=false",
+    "provenance SHA gate and stricter crop manifest checks added",
+    "best_epoch and last-checkpoint metrics corrected",
+    "smoke output isolated"
+  ],
+  "blocking_findings": [
+    {
+      "priority": "P1",
+      "issue": "Official config disables source-image hash preflight.",
+      "evidence": "configs/b2_crop_classifier.json:33 preflight_hash_check=false"
+    },
+    {
+      "priority": "P1",
+      "issue": "Per-image loss is grouped only within each shuffled crop batch. Crops from one parent can be split across batches, so parent images are not guaranteed equal weight over an epoch.",
+      "evidence": "scripts/train_b2.py:186-218 and src/data/b2_dataset.py:317 shuffle=is_train"
+    },
+    {
+      "priority": "P1",
+      "issue": "Official output directory is reusable and files are opened with write mode, so an existing run can be overwritten.",
+      "evidence": "scripts/train_b2.py:323 and 363"
+    },
+    {
+      "priority": "P1",
+      "issue": "No fresh-process official checkpoint reload/metric equivalence gate is executed after training.",
+      "evidence": "src/models/b2_classifier.py defines load_checkpoint at line 106, but scripts/train_b2.py never calls it"
+    }
+  ],
+  "decision": "PENDING TV3 FIX / REVIEW; no B2 official metrics accepted and no B1/B2 winner selected."
+}

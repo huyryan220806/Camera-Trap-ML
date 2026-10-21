@@ -1,0 +1,1 @@
+OK: 0 bookings; this does not reserve hardware or verify availability.

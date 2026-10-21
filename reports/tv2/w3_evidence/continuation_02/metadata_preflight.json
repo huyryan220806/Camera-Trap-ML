@@ -1,0 +1,132 @@
+{
+  "official_training_authorized": false,
+  "test_rows_opened": false,
+  "status": "METADATA PASS - IMAGES NOT CHECKED",
+  "source_commit": "7e9b1949f10126fbcfa83fa12baeca488b6aeab3",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "proof": {
+    "status": "METADATA PASS - IMAGES NOT CHECKED",
+    "counts": {
+      "train": {
+        "images": 2800,
+        "crops": 3125,
+        "sequences": 2277,
+        "per_class": {
+          "large_antlered_muntjac": {
+            "images": 350,
+            "sequences": 328
+          },
+          "annamite_striped_rabbit": {
+            "images": 350,
+            "sequences": 202
+          },
+          "sambar": {
+            "images": 350,
+            "sequences": 308
+          },
+          "chinese_serow": {
+            "images": 350,
+            "sequences": 287
+          },
+          "common_palm_civet": {
+            "images": 350,
+            "sequences": 276
+          },
+          "masked_palm_civet": {
+            "images": 350,
+            "sequences": 264
+          },
+          "silver_pheasant": {
+            "images": 350,
+            "sequences": 279
+          },
+          "eurasian_wild_pig": {
+            "images": 350,
+            "sequences": 333
+          }
+        }
+      },
+      "val": {
+        "images": 600,
+        "crops": 680,
+        "sequences": 508,
+        "per_class": {
+          "large_antlered_muntjac": {
+            "images": 75,
+            "sequences": 71
+          },
+          "annamite_striped_rabbit": {
+            "images": 75,
+            "sequences": 50
+          },
+          "sambar": {
+            "images": 75,
+            "sequences": 68
+          },
+          "chinese_serow": {
+            "images": 75,
+            "sequences": 64
+          },
+          "common_palm_civet": {
+            "images": 75,
+            "sequences": 57
+          },
+          "masked_palm_civet": {
+            "images": 75,
+            "sequences": 61
+          },
+          "silver_pheasant": {
+            "images": 75,
+            "sequences": 62
+          },
+          "eurasian_wild_pig": {
+            "images": 75,
+            "sequences": 75
+          }
+        }
+      }
+    },
+    "excluded": 0,
+    "files": {
+      "train": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/b1/train.jsonl",
+        "sha256": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c"
+      },
+      "val": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/b1/val.jsonl",
+        "sha256": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d"
+      },
+      "source_train": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/train.jsonl",
+        "sha256": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11"
+      },
+      "source_val": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/val.jsonl",
+        "sha256": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34"
+      },
+      "crop_train": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/b2/train.jsonl",
+        "sha256": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3"
+      },
+      "crop_val": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/b2/val.jsonl",
+        "sha256": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+      },
+      "class_map": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/class_map.json",
+        "sha256": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e"
+      },
+      "excluded": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/excluded.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "quality_audit": {
+        "path": "outputs/tv2_w3/tv1_7e9b194/data/processed/comparison_v1/audit.json",
+        "sha256": "a084db3f5a30f795034f5e1338697ac03962264b8108be6f95349dae0d757579"
+      }
+    },
+    "test_rows_opened": false,
+    "crop_bytes_verified": false,
+    "source_images_verified": false
+  }
+}

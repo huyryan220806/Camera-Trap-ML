@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-10-18T20:30:00+07:00",
+  "branch": "origin/feat/crop-classifier",
+  "commit": "c01a75141bb8350c8a38a28cfc9b44a3f3ad12ba",
+  "changed_since_previous_review": false,
+  "review_mode": "read-only isolated snapshot; no test manifest opened",
+  "tests": {
+    "passed": 23,
+    "failed": 0,
+    "status": "PASS",
+    "scope": "unit/synthetic only"
+  },
+  "official_artifacts": {
+    "checkpoint": false,
+    "training_log": false,
+    "validation_metrics": false,
+    "confusion_matrix": false,
+    "learning_curves": false,
+    "fresh_process_reload": false
+  },
+  "blocking_findings": [
+    {
+      "severity": "P1",
+      "file": "configs/b2_crop_classifier.json",
+      "line": 33,
+      "issue": "official source-image hash preflight is disabled"
+    },
+    {
+      "severity": "P1",
+      "file": "scripts/train_b2.py",
+      "lines": "186-218",
+      "related_file": "src/data/b2_dataset.py:317",
+      "issue": "per-image loss is grouped only inside each shuffled crop batch"
+    },
+    {
+      "severity": "P1",
+      "file": "scripts/train_b2.py",
+      "lines": "323,363",
+      "issue": "official run directory and artifacts can be overwritten"
+    },
+    {
+      "severity": "P1",
+      "file": "src/models/b2_classifier.py",
+      "line": 106,
+      "issue": "load helper exists but official fresh-process reload is absent"
+    }
+  ],
+  "code_readiness": "PARTIAL",
+  "official_training_readiness": "BLOCKED",
+  "comparison_eligible": false
+}

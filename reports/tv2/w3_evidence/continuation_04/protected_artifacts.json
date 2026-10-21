@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-18T20:36:00+07:00",
+  "protected_file_count": 53,
+  "sha256_checked": 51,
+  "changed": [],
+  "missing": [],
+  "unreadable_locked": [
+    {
+      "path": "docs/Phan_cong_4_thanh_vien.xlsx",
+      "current_size": 13579,
+      "expected_size": 13579,
+      "size_match": true,
+      "reason": "locked by another process; SHA-256 not readable"
+    },
+    {
+      "path": "Lich_trien_khai_6_tuan.docx",
+      "current_size": 45637,
+      "expected_size": 45637,
+      "size_match": true,
+      "reason": "locked by another process; SHA-256 not readable"
+    }
+  ],
+  "b0_checkpoint_sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+  "project_artifacts_status": "PASS",
+  "overall_status": "PASS_WITH_LOCKED_PERSONAL_FILES"
+}

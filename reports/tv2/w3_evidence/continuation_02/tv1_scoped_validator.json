@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Official TV1 select/audit rules on train+validation only. Full validate() intentionally not invoked: it opens mixed/test JSONL.",
+  "images": 3400,
+  "crops": 3805,
+  "audit": {
+    "rows": 3400,
+    "duplicate_image_ids": 0,
+    "duplicate_file_paths": 0,
+    "cross_split_overlap": {
+      "image_id": 0,
+      "file_name": 0,
+      "seq_id": 0,
+      "location": 0
+    },
+    "metadata_leakage_check_passed": true,
+    "image_content_duplicates_checked": true,
+    "image_content_note": "Exact decoded RGB hashes only; near duplicates NOT checked.",
+    "unique_sequences": 2785,
+    "unique_locations": 560,
+    "exact_duplicate_groups": 0,
+    "unique_pixel_contents": 3400
+  },
+  "excluded": 0,
+  "test_rows_opened": false,
+  "source_commit": "7e9b1949f10126fbcfa83fa12baeca488b6aeab3"
+}

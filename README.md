@@ -17,6 +17,38 @@
 - TV3: `feat/crop-classifier`; TV4: `feat/demo`.
 - Dùng lại các nhánh này cho tuần tiếp theo; không tạo nhánh mới theo tuần.
 - Phần tuần 3 của TV2/TV3 chưa đạt review nên chưa vào `main`; dữ liệu TV1 tuần 3 cũng chưa thuộc bản tích hợp này.
+## TV2 Week 3 – B1 Fine-tuning
+
+**B1 CHECKPOINT HANDOFF VERIFIED – B1/B2 COMPARISON PENDING OFFICIAL B2.**
+
+- `B1_run01` đã hoàn tất 29 epoch, early stopping patience 7, best epoch 22.
+- Validation: Macro-F1 `0.5624506868`, precision `0.5748610369`, recall và
+  accuracy `0.565`, loss `1.3379992723` trên 600 ảnh nguồn.
+- Model: ResNet18 ImageNet-1K, full fine-tune, FP32; seed42, SGD/StepLR,
+  batch32; 11.180.616 tham số trainable.
+- Checkpoint: 44.815.625 byte; SHA-256
+  `5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`;
+  local reload PASS. Bản tải riêng từ
+  [Google Drive](https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing)
+  có cùng size/hash; fresh-process reload, provenance và metrics đều PASS với
+  mọi delta bằng 0.
+- 87/87 test TV2 PASS trong workspace TEMP; `comparison_v1`, B0 và các artifact
+  W1/W2 đọc được đều giữ nguyên. Không mở test rows để đánh giá/tuning.
+- TV3 mới nhất `c01a751` PASS 23/23 test cô lập nhưng còn bốn lỗi P1 và chưa có
+  official B2 checkpoint/log/metrics/reload. Vì vậy chưa tính chênh lệch hoặc
+  chọn model thắng.
+- Tài liệu: [báo cáo W3](reports/tv2/TV2_W3.md),
+  [checkpoint/TV4 handoff](reports/tv2/TV2_W3_CHECKPOINT.md),
+  [review TV3](reports/tv2/TV2_REVIEW_TV3_W3.md),
+  [comparison](reports/tv2/TV2_W3_COMPARISON.md).
+
+```powershell
+python -X utf8 scripts/validate_b1.py --checkpoint <downloaded-best_model.pth> `
+  --sha256 5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c
+```
+
+Không huấn luyện lại hoặc ghi đè `B1_run01`. Checkpoint `.pth`, ảnh nguồn và
+artifact tạm không được commit vào Git.
 
 ## TV2 – Week 2 – Baseline B0
 

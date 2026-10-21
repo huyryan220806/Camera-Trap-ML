@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "kind": "SYNTHETIC_SMOKE",
+  "device": "cpu",
+  "pretrained_weights": false,
+  "temporary_artifacts_removed": true,
+  "official_training": false,
+  "epochs_completed": 2,
+  "best_epoch": 1,
+  "gradient_checked": true,
+  "training_seconds": 1.2431302000040887,
+  "validation_seconds": 0.19710740001755767,
+  "peak_gpu_memory_bytes": null,
+  "parameter_counts": {
+    "total": 11177538,
+    "trainable": 11177538,
+    "frozen": 0
+  },
+  "checkpoint_sha256": "d010e8fe97cd3b5a747b481708ae935f4f0c405cb096a8356802ef5bd0ba4007",
+  "checkpoint_bytes": 44791689,
+  "reload": "PASS",
+  "metric_absolute_differences": {
+    "macro_f1": 0.0,
+    "macro_precision": 0.0,
+    "macro_recall": 0.0,
+    "accuracy": 0.0
+  },
+  "logits_max_absolute_difference": 0.0,
+  "total_seconds": 5.17672199998924
+}

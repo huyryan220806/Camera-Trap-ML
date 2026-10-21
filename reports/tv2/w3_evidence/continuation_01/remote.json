@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-10-16T14:15:28.308641+00:00",
+  "head": "881d143510d23e3862e3748ed2b7cb707aab7dc5",
+  "refs": {
+    "origin": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "origin/feat/baseline": "881d143510d23e3862e3748ed2b7cb707aab7dc5",
+    "origin/feat/crop-classifier": "d08eba7fffbfb6ecc813de8522fb4d58cd8ed904",
+    "origin/feat/demo": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "origin/feat/metadata-split": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "origin/main": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2"
+  },
+  "w3_handoff_paths": {
+    "origin": [],
+    "origin/feat/baseline": [],
+    "origin/feat/crop-classifier": [],
+    "origin/feat/demo": [],
+    "origin/feat/metadata-split": [],
+    "origin/main": []
+  },
+  "tv3_new_since_review": false
+}

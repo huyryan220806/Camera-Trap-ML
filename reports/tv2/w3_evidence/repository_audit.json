@@ -1,0 +1,86 @@
+{
+  "refs": {
+    "refs/heads/main": "232cc63d6e7b1af36daa8330782777064102abfb",
+    "refs/heads/feat/baseline": "8988d2812ab2ab22715f6fc686bf47cad74942a4",
+    "origin/main": "4e7ad47f75b2e1dd1e7e42c624347627fb2f3d5c",
+    "origin/feat/baseline": "8988d2812ab2ab22715f6fc686bf47cad74942a4",
+    "origin/codex/tv1-week2-download-quality": "b9a92b95edcc377aafcbe1efc4161bb7520f2090",
+    "origin/feat/crop-classifier": "2c3c9928edb8f913f24df657464f47d480e3ae95",
+    "origin/codex/tv4-week2-demo-detector": "f61ca6d3180971c4d7725c7d3cab1046be44134a"
+  },
+  "tv1": {
+    "train": {
+      "path": "data/processed/v2/train.jsonl",
+      "sha256": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+      "images": 2800,
+      "sequences": 2277,
+      "locations": 458,
+      "per_class": {
+        "0": 350,
+        "1": 350,
+        "2": 350,
+        "3": 350,
+        "4": 350,
+        "5": 350,
+        "6": 350,
+        "7": 350
+      }
+    },
+    "val": {
+      "path": "data/processed/v2/val.jsonl",
+      "sha256": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+      "images": 600,
+      "sequences": 508,
+      "locations": 102,
+      "per_class": {
+        "0": 75,
+        "1": 75,
+        "2": 75,
+        "3": 75,
+        "4": 75,
+        "5": 75,
+        "6": 75,
+        "7": 75
+      }
+    },
+    "train_val_overlap": {
+      "image_id": 0,
+      "file_name": 0,
+      "seq_id": 0,
+      "location": 0,
+      "sha256": 0,
+      "pixel_sha256": 0
+    },
+    "class_map": {
+      "sha256": "e43e3cec029b4af1ac3c8183e35eed11d60cddc1a21be878e29ad40c1d79f0c3",
+      "mapping": {
+        "0": "large_antlered_muntjac",
+        "1": "annamite_striped_rabbit",
+        "2": "sambar",
+        "3": "chinese_serow",
+        "4": "common_palm_civet",
+        "5": "masked_palm_civet",
+        "6": "silver_pheasant",
+        "7": "eurasian_wild_pig"
+      }
+    },
+    "w3_status": "BLOCKED - W3-01 MANIFEST NOT FROZEN"
+  },
+  "tv3": {
+    "train": {
+      "crops": 4480,
+      "source_images": 4000,
+      "tv1_v2_overlap": 595,
+      "tv1_v2_missing": 2205,
+      "extra_vs_tv1_v2": 3405
+    },
+    "val": {
+      "crops": 1131,
+      "source_images": 1000,
+      "tv1_v2_overlap": 147,
+      "tv1_v2_missing": 453,
+      "extra_vs_tv1_v2": 853
+    },
+    "w3_status": "PENDING TV3 W3-03 HANDOFF"
+  }
+}

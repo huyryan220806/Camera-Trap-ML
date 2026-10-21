@@ -1,0 +1,135 @@
+{
+  "source_commit": "881d143510d23e3862e3748ed2b7cb707aab7dc5",
+  "tested_utc": "2026-10-16T14:18:25.887263+00:00",
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_count": 0,
+    "free_bytes": 380165210112,
+    "packages": {
+      "numpy": "2.4.4",
+      "matplotlib": "3.10.9",
+      "Pillow": "12.3.0",
+      "scikit-learn": "1.9.0",
+      "ijson": "3.5.1"
+    }
+  },
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 610.78",
+  "commands": {
+    "tests": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    "smoke": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/train_b1.py",
+        "--smoke"
+      ],
+      "exit_code": 0
+    },
+    "official_gate": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/train_b1.py",
+        "--config",
+        "configs/b1.yaml"
+      ],
+      "exit_code": 1
+    },
+    "train_help": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/train_b1.py",
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    "validate_help": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/validate_b1.py",
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    "environment_check": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/check_environment.py"
+      ],
+      "exit_code": 1
+    },
+    "pip_check": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0
+    },
+    "contracts": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/validate_results.py"
+      ],
+      "exit_code": 0
+    },
+    "gpu_schedule": {
+      "argv": [
+        "C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/validate_gpu_schedule.py"
+      ],
+      "exit_code": 0
+    }
+  },
+  "tests": {
+    "total": 78,
+    "exit_code": 0,
+    "ok": true,
+    "passed": 78,
+    "failed": 0,
+    "errors": 0,
+    "skipped_lines": 0
+  },
+  "w2_integrity_changed": [],
+  "protected_file_count": 53,
+  "real_comparison_v1_preflight": "NOT TESTED - OFFICIAL HANDOFF MISSING",
+  "P1_reviewer_acceptance": "PENDING INDEPENDENT REVIEW",
+  "test_dataset_opened": false,
+  "official_training_executed": false,
+  "comparison_dir_exists": false,
+  "image_root_exists": true,
+  "swg_pilot_v2_exists": false
+}

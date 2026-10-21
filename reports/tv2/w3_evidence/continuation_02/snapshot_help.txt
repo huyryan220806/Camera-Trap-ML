@@ -1,0 +1,9 @@
+usage: prepare_tv1_snapshot.py [-h] --commit COMMIT --output OUTPUT
+
+Copy a pinned TV1 train/val snapshot and validator code without merging
+branches.
+
+options:
+  -h, --help       show this help message and exit
+  --commit COMMIT
+  --output OUTPUT

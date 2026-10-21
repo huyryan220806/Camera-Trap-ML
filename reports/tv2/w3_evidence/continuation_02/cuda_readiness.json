@@ -1,0 +1,29 @@
+{
+  "python": "3.11.9",
+  "executable": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w3\\venv_cuda\\Scripts\\python.exe",
+  "torch": "2.8.0+cu126",
+  "torchvision": "0.23.0+cu126",
+  "cuda": "12.6",
+  "cuda_available": true,
+  "free_disk_bytes": 367542747136,
+  "official_training": false,
+  "environment_scope": "Separate candidate CUDA venv; differs from repository Python3.12/common pins; requires team acceptance before official training.",
+  "installation_source": "https://pytorch.org/get-started/previous-versions/#v280",
+  "budget_approved": false,
+  "test_rows_opened": false,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "vram_bytes": 8585216000,
+  "status": "CUDA FORWARD/BACKWARD PASS",
+  "batch_size": 32,
+  "input_shape": [
+    32,
+    3,
+    224,
+    224
+  ],
+  "smoke_seconds": 2.139999999999418,
+  "peak_allocated_bytes": 848898560,
+  "pretrained_weights": false,
+  "checkpoint_created": false,
+  "official_metrics_produced": false
+}

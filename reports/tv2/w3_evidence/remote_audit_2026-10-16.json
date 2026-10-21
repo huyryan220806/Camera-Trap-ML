@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-10-16",
+  "remote": "https://github.com/huyryan220806/Camera-Trap-ML.git",
+  "heads": {
+    "main": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "feat/metadata-split": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "feat/crop-classifier": "d08eba7fffbfb6ecc813de8522fb4d58cd8ed904",
+    "feat/demo": "468d81f7272a4497d8b54a53a3651fd13c6dfbc2",
+    "feat/baseline_before_review_update": "8c0039ecb6e9987904e8a52b405cea4f8ccaac25"
+  },
+  "tv1_w3": {
+    "comparison_v1_present": false,
+    "freeze_script_present": false,
+    "handoff_present": false,
+    "report_present": false,
+    "status": "BLOCKED - W3-01 HANDOFF NOT PRESENT ON REMOTE"
+  },
+  "tv1_w2_integrated_evidence": {
+    "dataset": "data/processed/v2",
+    "manifest_sha256": "5f957ea6004d9a8d468bd111bae2a7a2ffb29ffef295cde33c0df1a8ff3454cc",
+    "train_sha256": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "val_sha256": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+    "accepted": 4000,
+    "excluded": 0,
+    "train": 2800,
+    "validation": 600,
+    "test": 600,
+    "exact_cross_split_duplicates": 0,
+    "perceptual_duplicates_checked": false
+  },
+  "tv3_w3": {
+    "commit": "d08eba7fffbfb6ecc813de8522fb4d58cd8ed904",
+    "files_added": 10,
+    "official_artifacts_present": false,
+    "snapshot_tests": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "official_gate_exit_code": 1,
+    "official_gate_reason": "comparison_v1 files are absent",
+    "status": "BLOCKED; CODE REVIEW FAIL"
+  },
+  "test_isolation": {
+    "test_manifest_or_pixels_opened_by_tv2": false,
+    "note": "Counts and TV1 integrity attestation were read; TV2 did not load test rows or images."
+  }
+}

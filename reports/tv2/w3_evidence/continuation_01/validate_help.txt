@@ -1,0 +1,8 @@
+usage: validate_b1.py [-h] --checkpoint CHECKPOINT --sha256 SHA256
+
+Read-only validation: pinned checkpoint hash and frozen provenance required.
+
+options:
+  -h, --help            show this help message and exit
+  --checkpoint CHECKPOINT
+  --sha256 SHA256

@@ -1,0 +1,29 @@
+{
+  "tests_cuda_env": {
+    "exit_code": 0,
+    "seconds": 51.141,
+    "argv": [
+      "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w3\\venv_cuda\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  },
+  "cuda_pinned_environment_check": {
+    "exit_code": 1,
+    "seconds": 0.219,
+    "argv": [
+      "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w3\\venv_cuda\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "scripts/check_environment.py"
+    ]
+  }
+}
