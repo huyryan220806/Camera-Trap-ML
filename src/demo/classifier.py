@@ -51,6 +51,12 @@ def checkpoint_model(checkpoint, kind, entry, names):
     from torchvision import transforms as T
     from torchvision.models import resnet18
 
+    if kind == 'B2':
+        fmt = entry.get('checkpoint_format', 'tv4-v1')
+        if fmt == 'tv3-native-v1':
+            checkpoint = adapt_tv3_checkpoint(checkpoint, entry)
+        elif fmt != 'tv4-v1':
+            raise ValueError('Unsupported B2 checkpoint format')
     expected = {i: name for i, name in enumerate(names)}
     mapping = checkpoint.get('idx_to_class', {})
     if mapping not in (expected, {str(i): name for i, name in expected.items()}):
@@ -100,6 +106,31 @@ def checkpoint_model(checkpoint, kind, entry, names):
         operations.append(T.CenterCrop(spec['image_size']))
     operations += [T.ToTensor(), T.Normalize(spec['mean'], spec['std'])]
     return model, T.Compose(operations)
+
+
+def adapt_tv3_checkpoint(checkpoint, entry):
+    """Translate documented TV3 metadata in memory; never rewrite the checkpoint."""
+    if any(key in checkpoint for key in ('kind', 'idx_to_class', 'class_to_idx', 'inference_preprocessing')):
+        raise ValueError('Ambiguous B2 metadata formats')
+    if checkpoint.get('is_official') is not True or checkpoint.get('backbone_name') != 'resnet18':
+        raise ValueError('B2 requires native OFFICIAL ResNet18 metadata')
+    expected = entry.get('provenance_sha256')
+    if not isinstance(expected, str) or not re.fullmatch('[a-f0-9]{64}', expected):
+        raise ValueError('B2 requires pinned data provenance')
+    if checkpoint.get('provenance_sha256') != expected:
+        raise ValueError('B2 data provenance mismatch')
+    metadata = checkpoint.get('preprocessing', {})
+    if metadata.get('val_transforms') != 'Resize(256) -> CenterCrop(224) -> ToTensor() -> Normalize()':
+        raise ValueError('Unsupported native B2 validation transform')
+    spec = {'resize_mode': 'center_crop', 'resize_size': metadata.get('resize'),
+            'image_size': metadata.get('crop_size'), 'mean': metadata.get('mean'), 'std': metadata.get('std')}
+    if spec != entry['preprocessing'] or spec['resize_size'] != 256 or spec['image_size'] != 224:
+        raise ValueError('B2 native preprocessing differs from registry')
+    config = checkpoint.get('config', {}).get('model', {})
+    if config.get('backbone') != 'resnet18' or config.get('num_classes') != checkpoint.get('num_classes'):
+        raise ValueError('B2 native architecture metadata mismatch')
+    return {**checkpoint, 'kind': 'OFFICIAL', 'idx_to_class': checkpoint.get('id_to_label'),
+            'class_to_idx': checkpoint.get('class_map'), 'inference_preprocessing': spec}
 
 
 class ClassifierCache:

@@ -5,8 +5,9 @@
 - [Bàn giao luồng suy luận và cache mô hình](docs/handoff_tv4_w3.md), [progress](docs/progress_tv4_w3.md).
 - [Bằng chứng kiểm thử](reports/tv4_w3/REPORT.md): MegaDetector + B0 thật, top 3 từng box, cache giữa các request.
 - Cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_classifier.py` để lấy B0 đã khóa SHA, rồi `scripts/run_demo.py --port 8765`.
-- B1/B2 chờ checkpoint được nghiệm thu; không tự thay bằng B0. Điểm softmax không phải xác suất đã hiệu chỉnh.
-- B0 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
+- B1 thật đã tích hợp ngày 20/10: chạy `scripts/prepare_tv4_classifier.py --model B1`, rồi chọn B1 trong demo. Xem [bàn giao bổ sung](reports/tv4_w3_continuation/REPORT.md) và [progress](docs/progress_tv4_w3_continuation.md).
+- B2 `b2_run01` đã xác minh và bật: đặt file TV3 bàn giao tại `outputs/tv3/best_model.pt`, chạy `scripts/prepare_tv4_classifier.py --model B2 --source outputs/tv3/best_model.pt`. Đã kiểm tra lại 600 ảnh validation và demo thật. Điểm softmax không phải xác suất đã hiệu chỉnh.
+- B0/B1 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
 
 ## Bản chung tuần 2 và nhánh cố định
 

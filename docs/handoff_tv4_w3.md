@@ -1,7 +1,14 @@
 # TV4 W3 - Ket noi classifier va cache mo hinh
 
 Ngay 18/10/2026. Branch co dinh: `feat/demo`. Nen TV1 W3: `7e9b194`.
-Khong merge code W3 chua dat cua TV2/TV3. Khong train model moi.
+Khong merge code train cua TV2/TV3 vao nhanh demo. Khong train model moi.
+
+Cap nhat 21/10/2026: B1 va B2 run01 that da doi chieu SHA/size, chay MD+
+classifier cold/warm va browser QA. B2 nap truc tiep format native TV3,
+da kiem dinh doc lap 600 anh validation / 680 crop; ca B1/B2 deu enabled.
+Xem `reports/tv4_w3_continuation/REPORT.md` va `docs/progress_tv4_w3_continuation.md`.
+Nguoi dung da cho phep khoa B2 lam moc W3. B3 van la thu nghiem W4;
+khong chay test inference/chon B3 tu test trong cong viec nay.
 
 ## Ban giao
 
@@ -16,8 +23,8 @@ Khong merge code W3 chua dat cua TV2/TV3. Khong train model moi.
 
 Luot kiem tra that dung **mot anh train v2**, khong chay tren test. Nhieu box
 duoc test bang detector fixture va UI gia lap; khong khang dinh da kiem dinh
-do chinh xac tren anh thuc dia nhieu ca the. B1/B2 duoc test bang state dict
-gia lap dung kien truc; chua co checkpoint that duoc nghiem thu.
+do chinh xac tren anh thuc dia nhieu ca the. B0/B1/B2 deu da chay checkpoint
+that. B2 con duoc doi chieu native wrapper va full validation rieng.
 
 ## Chay tren Windows
 
@@ -27,6 +34,8 @@ Tu goc repo, Python 3.12:
 .venv/Scripts/python.exe -m pip install -r requirements-tv4.txt
 .venv/Scripts/python.exe scripts/prepare_tv4_demo.py
 .venv/Scripts/python.exe scripts/prepare_tv4_classifier.py
+.venv/Scripts/python.exe scripts/prepare_tv4_classifier.py --model B1
+.venv/Scripts/python.exe scripts/prepare_tv4_classifier.py --model B2 --source outputs/tv3/best_model.pt
 .venv/Scripts/python.exe scripts/run_demo.py --port 8765
 ```
 
@@ -86,7 +95,7 @@ xac, `checkpoint_bytes`, `training_input`, va `preprocessing` du 5 truong:
 resize_mode, resize_size, image_size, mean, std.
 
 Chung: PyTorch dictionary an toan cho `weights_only=True`, `model_state_dict`,
-`num_classes=8`, `idx_to_class` va `class_to_idx` khop chinh xac class map TV1.
+`num_classes=8`, mapping hai chieu khop chinh xac class map TV1.
 Khong suy doan thu tu lop tu ten thu muc/file. SHA va kich thuoc do thanh vien
 giao checkpoint cung cap, phai doi chieu truoc khi bat model.
 
@@ -97,14 +106,28 @@ giao checkpoint cung cap, phai doi chieu truoc khi bat model.
 - **B1:** nhu format TV2 hien tai: `kind=OFFICIAL`, `model_name=resnet18`,
   `freeze_backbone=false`. Nhanh adapter dung linear fc va validation config
   trong checkpoint; moi gia tri phai khop registry, khong doi transform ngam.
-- **B2:** format TV3 ResNet18 wrapper (`backbone.*`, `classifier.1.weight/bias`),
-  `config.model.backbone=resnet18`, `kind=OFFICIAL`, mapping hai chieu va
-  `inference_preprocessing` khop registry. Adapter doi key sang ResNet18 fc;
-  Dropout la identity o eval. Chua ho tro ResNet50/MobileNet o adapter demo.
+  Mapping TV2 dung `idx_to_class`/`class_to_idx`. SHA B1 run01 da pin:
+  `5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`,
+  44815625 bytes. Nguon: TV2 commit `8a7c99c`, `TV2_W3_CHECKPOINT.md`.
+- **B2 native:** registry `checkpoint_format=tv3-native-v1`, dung format
+  TV3 tai `7cc87e8`: `is_official=true`, `backbone_name=resnet18`,
+  `config.model.backbone=resnet18`, `class_map` (label -> ID), `id_to_label`
+  (ID -> label), `num_classes`, `provenance_sha256`, `preprocessing`.
+  Hash provenance phai khop registry/TV1 comparison_v1. Preprocessing phai
+  khai bao resize256, crop224, ImageNet mean/std va val_transforms
+  `Resize(256) -> CenterCrop(224) -> ToTensor() -> Normalize()`.
+  Metadata chi duoc chuyen ten trong RAM; khong sua checkpoint/SHA.
+  State dict wrapper (`backbone.*`, `classifier.1.weight/bias`) duoc remap
+  sang ResNet18 fc, Dropout identity o eval. Khong ho tro backbone khac.
+- **B2 legacy contract:** `checkpoint_format=tv4-v1` (mac dinh khi khong co
+  format) van nhan `kind=OFFICIAL`, `idx_to_class`/`class_to_idx` va
+  `inference_preprocessing`. Khong tu doan format hoac tron hai bo metadata.
 
-Checkpoint B2 draft hien tai chua luu mapping va preprocessing suy luan day
-du. TV3 phai ban giao nhung metadata nay tu run that, kem SHA. Khong tu gan
-`OFFICIAL` cho checkpoint smoke, khong lay class map bat ky de lap cho trong.
+B2 run01: 89548866 bytes, SHA-256
+`8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`.
+TV3 giao file local; chua co URL tai duoc cong bo. Can nhan file qua kenh
+ban giao ngoai Git. Khong commit trong so vao repository.
+Khong tu gan `OFFICIAL` cho checkpoint smoke, khong lay class map bat ky de lap cho trong.
 Neu format mo hinh khac, them adapter + regression truoc khi bat registry.
 Bat entry khong phai bang chung model da duoc nghiem thu khoa hoc.
 
@@ -150,11 +173,15 @@ tra file export, khong truyen nguyen envelope vao validator v1 cu.
 .venv/Scripts/python.exe -m unittest discover -s tests -p test_tv4_classifier.py -v
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 .venv/Scripts/python.exe scripts/verify_tv4_classifier.py
+.venv/Scripts/python.exe scripts/verify_tv4_classifier.py --model B1
+.venv/Scripts/python.exe scripts/verify_tv4_classifier.py --model B2
 node scripts/qa_tv4_w3.cjs
 ```
 
 Browser QA can Playwright va Edge; dung `PLAYWRIGHT_MODULE`, `PLAYWRIGHT_CHANNEL`,
-`DEMO_URL` de doi runtime/browser/URL. Phai mo server truoc. Script smoke thuc
+`DEMO_URL` de doi runtime/browser/URL. `REQUIRE_B1=1`, `REQUIRE_B2=1` bat buoc test tung model;
+`QA_OUTPUT` doi thu muc bang chung de khong ghi de lan cu.
+Phai co server dang chay truoc khi QA; warm cache khong duoc tang load count. Script smoke thuc
 chi dung anh train va ghi vao outputs, khong ghi de experiment B0 cua TV2.
 
 Doc `docs/progress_tv4_w3.md` va git status truoc khi tiep tuc. Setup B0 dung
@@ -163,6 +190,13 @@ o `outputs/tv4/classifier_setup/progress.json`. Chay lai se tai su dung file
 hoan tat; file tai dang do duoc tai lai tu dau, khong resume theo byte.
 Smoke co checkpoint atomic o `outputs/tv4/w3/smoke.json`; chay lai de xac minh
 cache moi, khong train. Khong xoa cache/weights khi quota hoi thoai het.
+Progress B1 rieng: `outputs/tv4/classifier_setup/B1/progress.json`.
+Mac dinh smoke B1: `outputs/tv4/w3/b1_smoke.json`; co the doi bang `--output`.
+Progress B2 rieng: `outputs/tv4/classifier_setup/B2/progress.json`.
+Doc progress continuation truoc khi chay lai. Kiem dinh B2 fresh-process:
+`python scripts/verify_tv4_b2_handoff.py --source outputs/tv3/best_model.pt --tv3-root <checkout-TV3-7cc87e8>`.
+Script yeu cau dung commit TV3 da pin; khong tu doi code/checkpoint theo branch moi.
+Khoan loss 0.0001 duoc cong khai; cac metric phan loai/ma tran phai khop chinh xac.
 
 ## Nguoi kiem tra TV2
 

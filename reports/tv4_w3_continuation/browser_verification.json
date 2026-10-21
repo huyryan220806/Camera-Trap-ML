@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-20T14:27:17.199Z",
+  "url": "http://127.0.0.1:8765",
+  "viewport_sizes": [
+    "1440x1100",
+    "390x844",
+    "320x740"
+  ],
+  "browser_errors": [],
+  "models": {
+    "B0": {
+      "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+      "warm_cache": true
+    },
+    "B1": {
+      "sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+      "warm_cache": true
+    },
+    "B2": {
+      "sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+      "warm_cache": true
+    }
+  },
+  "real_box_count": 1,
+  "classifier_load_count": 2,
+  "verified": [
+    "real MD+B0",
+    "real MD+B1 and JSON export",
+    "real MD+B2 and JSON export",
+    "warm cache",
+    "top 3 per box",
+    "uncalibrated score disclosure",
+    "explicit multiple-box mock",
+    "JSON provenance export",
+    "empty/read/detector errors",
+    "legacy detector-only",
+    "model selection clears results",
+    "availability follows registry",
+    "desktop/mobile no overflow",
+    "box alignment",
+    "no text-score overlap"
+  ]
+}

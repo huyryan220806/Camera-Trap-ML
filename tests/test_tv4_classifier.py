@@ -23,6 +23,7 @@ from src.models.b0 import build_b0
 from src.data.b0_dataset import make_transform
 sys.path.insert(0, str(ROOT / 'scripts'))
 from scripts.run_demo import make_handler
+from scripts.prepare_tv4_classifier import prepare
 
 
 def picture():
@@ -53,6 +54,7 @@ class ClassifierTests(unittest.TestCase):
         (cls.root / 'data/processed/v1/class_map.json').write_bytes(classes)
         cls.names = list(json.loads(classes).values())
         cls.registry = json.loads((ROOT / 'configs/demo_classifiers.json').read_text())
+        cls.registry['models']['B2']['checkpoint_format'] = 'tv4-v1'
         cls.config = json.loads((ROOT / 'experiments/B0_run01/config.yaml').read_text())
         torch.manual_seed(42)
         model = build_b0(8, pretrained=False)
@@ -168,6 +170,89 @@ class ClassifierTests(unittest.TestCase):
         tensor = torch.randn(2, 3, 224, 224)
         with torch.inference_mode():
             self.assertTrue(torch.equal(b0(tensor), b2(tensor)))
+
+    def native_b2(self):
+        entry = copy.deepcopy(self.registry['models']['B2'])
+        entry['checkpoint_format'] = 'tv3-native-v1'
+        spec = entry['preprocessing']
+        checkpoint = {
+            'model_state_dict': self.checkpoints['B2']['model_state_dict'],
+            'config': {'model': {'backbone': 'resnet18', 'num_classes': 8}},
+            'num_classes': 8, 'backbone_name': 'resnet18', 'is_official': True,
+            'class_map': self.base['class_to_idx'], 'id_to_label': self.base['idx_to_class'],
+            'provenance_sha256': entry['provenance_sha256'],
+            'preprocessing': {'resize': 256, 'crop_size': 224, 'mean': spec['mean'], 'std': spec['std'],
+                              'val_transforms': 'Resize(256) -> CenterCrop(224) -> ToTensor() -> Normalize()'},
+        }
+        return checkpoint, entry
+
+    def test_native_b2_remapping_and_center_crop_equivalent(self):
+        checkpoint, entry = self.native_b2()
+        model, transform = checkpoint_model(checkpoint, 'B2', entry, self.names)
+        canonical, _ = checkpoint_model(self.checkpoints['B2'], 'B2', self.registry['models']['B2'], self.names)
+        tensor = torch.randn(2, 3, 224, 224)
+        with torch.inference_mode():
+            self.assertTrue(torch.equal(model(tensor), canonical(tensor)))
+        self.assertTrue(torch.equal(transform(self.image), make_transform(self.config, False)(self.image)))
+        self.assertNotIn('kind', checkpoint)  # Adapter must not mutate the artifact metadata.
+
+    def test_native_b2_rejects_missing_or_inconsistent_handoff(self):
+        checkpoint, entry = self.native_b2()
+        changes = [
+            {'is_official': False}, {'is_official': 1}, {'class_map': {}}, {'id_to_label': {}},
+            {'provenance_sha256': '0' * 64}, {'backbone_name': 'resnet50'},
+            {'config': {'model': {'backbone': 'resnet18', 'num_classes': 7}}},
+            {'preprocessing': {}}, {'kind': 'OFFICIAL'},
+        ]
+        for change in changes:
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                checkpoint_model({**checkpoint, **change}, 'B2', entry, self.names)
+        for change in ({'provenance_sha256': None}, {'checkpoint_format': 'guess'}):
+            with self.subTest(entry=change), self.assertRaises(ValueError):
+                checkpoint_model(checkpoint, 'B2', {**entry, **change}, self.names)
+
+    def test_native_b2_cache_safe_load_and_multiple_boxes(self):
+        checkpoint, entry = self.native_b2()
+        path = self.root / 'outputs/native_b2.pth'
+        torch.save(checkpoint, path)
+        config = copy.deepcopy(self.registry)
+        entry.update(checkpoint='outputs/native_b2.pth', sha256=digest(path), checkpoint_bytes=path.stat().st_size)
+        config['models']['B2'] = entry
+        self.registry_path.write_text(json.dumps(config))
+        first, cold = self.cache.predict(self.image, self.boxes, 'B2')
+        second, warm = self.cache.predict(self.image, self.boxes, 'B2')
+        self.assertEqual(first, second)
+        self.assertEqual(len(first), 2)
+        self.assertFalse(cold['cache_hit'])
+        self.assertTrue(warm['cache_hit'])
+        self.assertEqual(warm['model_load_count'], 1)
+
+    def test_prepare_b1_copy_resume_and_no_network(self):
+        config = copy.deepcopy(self.registry)
+        with tempfile.TemporaryDirectory(dir=self.root / 'outputs') as temp:
+            relative = Path(temp).relative_to(self.root) / 'installed.pth'
+            config['models']['B1']['checkpoint'] = relative.as_posix()
+            self.registry_path.write_text(json.dumps(config))
+            with patch('scripts.prepare_tv4_classifier.requests.get') as network, patch('builtins.print'):
+                first = prepare(self.root / 'outputs/B1.pth', 'B1', self.cache)
+                second = prepare(model='B1', cache=self.cache)
+            network.assert_not_called()
+            self.assertEqual(first['status'], 'complete')
+            self.assertTrue(second['classifier']['cache_hit'])
+            self.assertEqual(digest(self.root / relative), config['models']['B1']['sha256'])
+
+    def test_prepare_refuses_disabled_model_and_bad_source(self):
+        config = copy.deepcopy(self.registry)
+        config['models']['B2']['enabled'] = False
+        config['models']['B1']['checkpoint'] = 'outputs/should_not_exist.pth'
+        self.registry_path.write_text(json.dumps(config))
+        with patch('scripts.prepare_tv4_classifier.requests.get') as network:
+            with self.assertRaisesRegex(ValueError, 'pending verified handoff'):
+                prepare(model='B2', cache=self.cache)
+            with self.assertRaisesRegex(ValueError, 'SHA/size'):
+                prepare(self.root / 'outputs/B0.pth', 'B1', self.cache)
+        network.assert_not_called()
+        self.assertFalse((self.root / 'outputs/should_not_exist.pth').exists())
 
     def test_each_box_uses_its_own_pixels(self):
         self.image.paste((210, 20, 30), (0, 0, 60, 100))
