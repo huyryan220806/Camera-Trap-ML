@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-14T09:48:10+00:00",
+  "dataset_version": "comparison_v1",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "requested": 4000,
+  "retained": 4000,
+  "excluded": 0,
+  "split_changes": 0,
+  "b1_b2_same_parent_ids": true,
+  "b1_b2_same_labels_and_splits": true,
+  "cross_split_overlap": {
+    "image_id": 0,
+    "file_name": 0,
+    "seq_id": 0,
+    "location": 0
+  },
+  "local_images_redecoded": true,
+  "perceptual_duplicates_checked": false
+}

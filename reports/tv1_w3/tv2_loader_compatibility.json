@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "reference_branch": "feat/baseline",
+  "counts": {
+    "train": 2800,
+    "val": 600,
+    "test": 600
+  },
+  "train_samples": [
+    {
+      "image_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+      "class_id": 4,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c7d949c2-8c29-11eb-b04d-000d3a74c7de",
+      "class_id": 6,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c7e5376a-8c29-11eb-a691-000d3a74c7de",
+      "class_id": 2,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de",
+      "class_id": 5,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c7eec2de-8c29-11eb-b3b8-000d3a74c7de",
+      "class_id": 7,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c7ff729e-8c29-11eb-abf8-000d3a74c7de",
+      "class_id": 0,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c820d26d-8c29-11eb-b63e-000d3a74c7de",
+      "class_id": 1,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    },
+    {
+      "image_id": "c82f2637-8c29-11eb-a144-000d3a74c7de",
+      "class_id": 3,
+      "tensor_shape": [
+        3,
+        224,
+        224
+      ]
+    }
+  ],
+  "scope": "Existing TV2 reader accepted all B1 metadata and loaded eight train images; no training, inference or test image decoding."
+}

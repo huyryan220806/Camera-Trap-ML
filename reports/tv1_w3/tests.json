@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-14",
+  "command": ".venv/Scripts/python.exe -X utf8 -m unittest discover -s tests -v",
+  "tests_run": 114,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 14.879,
+  "exit_code": 0,
+  "comparison_tests_included": 23,
+  "comparison_test_scope": [
+    "Single-species consistency, multi-box image weights and whole-image exclusions",
+    "Invalid/small/nonfinite boxes and missing/duplicate annotations",
+    "Image, path, sequence, location and exact-pixel leakage rejection",
+    "Reconciliation of counts and preservation of original splits",
+    "Interruption recovery, single publication and immutable resume",
+    "Raw and rehashed semantic tampering of model views and summaries",
+    "Missing/changed images stop the task rather than shrinking the dataset"
+  ],
+  "training_run": false
+}

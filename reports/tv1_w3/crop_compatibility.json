@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "geometry_checks": 4485,
+  "tv3_reference": "2c3c9928edb8f913f24df657464f47d480e3ae95",
+  "tv3_script_sha256": "7358c8825232c15a26293047f54a568e52866d0c11ef9d0a74541ef4455dcad9",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "b1_b2_parent_sets_match": true,
+  "b2_parent_weights_sum_to_one": true,
+  "train_crop_smoke": [
+    {
+      "label": "annamite_striped_rabbit",
+      "image_id": "c820d26d-8c29-11eb-b63e-000d3a74c7de",
+      "crop_id": "c820d26d-8c29-11eb-b63e-000d3a74c7de_3087f2ac-6670-11ec-9cfb-c82158b0a9cc",
+      "width": 436,
+      "height": 346,
+      "rgb_sha256": "ef72fab365b804b85335d228a359ba0ae402a8030efda41db00620c44bc7e8e3"
+    },
+    {
+      "label": "chinese_serow",
+      "image_id": "c82f2637-8c29-11eb-a144-000d3a74c7de",
+      "crop_id": "c82f2637-8c29-11eb-a144-000d3a74c7de_3087f54b-6670-11ec-8052-c82158b0a9cc",
+      "width": 680,
+      "height": 1030,
+      "rgb_sha256": "5cc9a32c5334125b8ea61069158a153ad26c5defaac7696fd79b06be82913d1a"
+    },
+    {
+      "label": "common_palm_civet",
+      "image_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+      "crop_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de_30859175-6670-11ec-8395-c82158b0a9cc",
+      "width": 455,
+      "height": 347,
+      "rgb_sha256": "3912af754e7a55874aaf579284dff7a6e3f3e4d3cc5b28db4102940ab27754f6"
+    },
+    {
+      "label": "eurasian_wild_pig",
+      "image_id": "c7eec2de-8c29-11eb-b3b8-000d3a74c7de",
+      "crop_id": "c7eec2de-8c29-11eb-b3b8-000d3a74c7de_308592fb-6670-11ec-a286-c82158b0a9cc",
+      "width": 371,
+      "height": 601,
+      "rgb_sha256": "9071adaad547d38a1a435f4f8b103bbd7127dc68c58d959d055df6018c882ed0"
+    },
+    {
+      "label": "large_antlered_muntjac",
+      "image_id": "c7ff729e-8c29-11eb-abf8-000d3a74c7de",
+      "crop_id": "c7ff729e-8c29-11eb-abf8-000d3a74c7de_30859426-6670-11ec-bc1d-c82158b0a9cc",
+      "width": 645,
+      "height": 690,
+      "rgb_sha256": "63f0d60ca9c7477534d59937e8d0e9b302c16d736479deee27c138dd4208ce90"
+    },
+    {
+      "label": "masked_palm_civet",
+      "image_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de",
+      "crop_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de_308593ac-6670-11ec-9dd6-c82158b0a9cc",
+      "width": 1246,
+      "height": 334,
+      "rgb_sha256": "2f9f01f3e65fe32594044dd5254384d659d01c3b30b3d945eed46c97fb1710f3"
+    },
+    {
+      "label": "sambar",
+      "image_id": "c7e5376a-8c29-11eb-a691-000d3a74c7de",
+      "crop_id": "c7e5376a-8c29-11eb-a691-000d3a74c7de_308591fe-6670-11ec-b3fe-c82158b0a9cc",
+      "width": 1658,
+      "height": 1046,
+      "rgb_sha256": "aa6e1bc1978f2cab48a43b04d04f7bf82b385745fa538fce93c073f534f59fc5"
+    },
+    {
+      "label": "silver_pheasant",
+      "image_id": "c7d949c2-8c29-11eb-b04d-000d3a74c7de",
+      "crop_id": "c7d949c2-8c29-11eb-b04d-000d3a74c7de_308591da-6670-11ec-a1a9-c82158b0a9cc",
+      "width": 1457,
+      "height": 1367,
+      "rgb_sha256": "4df21dce9883fb1bf87ff030278a8466f7597825aa87bddd3035419d07c8596c"
+    }
+  ],
+  "scope": "All crop geometry compared to actual TV3 clamp_box; eight train-only crops decoded in memory, no test inference or image writes."
+}

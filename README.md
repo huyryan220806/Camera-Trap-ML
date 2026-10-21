@@ -1,5 +1,14 @@
 # CameraTrapML
 
+## Ứng dụng tuần 3 của thành viên 4
+
+- [Bàn giao luồng suy luận và cache mô hình](docs/handoff_tv4_w3.md), [progress](docs/progress_tv4_w3.md).
+- [Bằng chứng kiểm thử](reports/tv4_w3/REPORT.md): MegaDetector + B0 thật, top 3 từng box, cache giữa các request.
+- Cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_classifier.py` để lấy B0 đã khóa SHA, rồi `scripts/run_demo.py --port 8765`.
+- B1 thật đã tích hợp ngày 20/10: chạy `scripts/prepare_tv4_classifier.py --model B1`, rồi chọn B1 trong demo. Xem [bàn giao bổ sung](reports/tv4_w3_continuation/REPORT.md) và [progress](docs/progress_tv4_w3_continuation.md).
+- B2 `b2_run01` đã xác minh và bật: đặt file TV3 bàn giao tại `outputs/tv3/best_model.pt`, chạy `scripts/prepare_tv4_classifier.py --model B2 --source outputs/tv3/best_model.pt`. Đã kiểm tra lại 600 ảnh validation và demo thật. Điểm softmax không phải xác suất đã hiệu chỉnh.
+- B0/B1 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
+
 ## Bản chung tuần 2 và nhánh cố định
 
 `main` đã tích hợp phần tuần 2 đã kiểm tra của cả bốn thành viên. Xem [biên bản tích hợp](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
@@ -53,6 +62,16 @@ Bàn giao checkpoint ngoài Git: **READY**, [TV2_W2_CHECKPOINT.md](reports/tv2/T
 Kiểm tra chéo TV4: [TV2_REVIEW_TV4_W2.md](reports/tv2/TV2_REVIEW_TV4_W2.md). Báo cáo ghi rõ commit TV4 được kiểm tra, môi trường và bằng chứng runtime/UI độc lập.
 
 Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
+
+## Bàn giao tuần 3 của thành viên 1
+
+- [Manifest so sánh B1/B2 và dữ liệu comparison_v1](docs/handoff_tv1_w3.md).
+- [Báo cáo giữ/loại và rò rỉ](reports/tv1_w3/REPORT.md), [progress sau quota](docs/progress_tv1_w3.md).
+- Chạy/tiếp tục: `.venv/Scripts/python.exe scripts/freeze_comparison.py`.
+- Kiểm định: `.venv/Scripts/python.exe scripts/validate_comparison.py`.
+- Snapshot: `data/processed/comparison_v1/`, nguồn pilot v2, giữ nguyên split/seed.
+- B1 dùng `b1/*.jsonl`; B2 dùng `b2/*.jsonl` là tọa độ crop từ cùng ảnh nguồn, không phải JPEG crop đã xuất.
+- Không dùng riêng danh sách B0 cũ hoặc run crop TV3 `v1_run03` để so sánh B1/B2.
 
 ## Demo tuần 2 của thành viên 4
 

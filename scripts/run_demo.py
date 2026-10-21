@@ -16,12 +16,15 @@ sys.path.insert(0, str(ROOT))
 from src.demo.detector import (analyze, decode_image, MegaDetectorAdapter, MODEL_VERSION,
                                MODEL_PATH, PACKAGE_VERSION, package_version, MAX_IMAGE_BYTES)
 from prepare_tv4_demo import sample_rows
+from src.demo.classifier import ClassifierCache, REGISTRY_PATH
+from src.demo.inference import analyze_classified
 
 WEB = ROOT / 'app'
 
 
-def make_handler(adapter, rows):
+def make_handler(adapter, rows, classifier_cache=None):
     samples = {str(i): row for i, row in enumerate(rows)}
+    classifier_cache = classifier_cache or ClassifierCache()
 
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
@@ -52,6 +55,7 @@ def make_handler(adapter, rows):
             if path == '/api/config':
                 return self.respond(200, {'model_version': MODEL_VERSION, 'package_version': package_version(),
                     'expected_package_version': PACKAGE_VERSION, 'weights_present': MODEL_PATH.is_file(),
+                    'classifiers': classifier_cache.status(),
                     'samples': [{'id': k, 'name': f'Train {int(k) + 1:02d}', 'file_name': r['file_name'].split('/')[-1]}
                                 for k, r in samples.items()]})
             if path.startswith('/api/sample/'):
@@ -96,8 +100,17 @@ def make_handler(adapter, rows):
                 else:
                     data = base64.b64decode(payload.get('image_base64', ''), validate=True)
                     name = payload.get('file_name', 'upload.jpg')
-                result = analyze(data, name, payload.get('mode', 'mock'), payload.get('threshold', 0.2),
-                                 payload.get('scenario', 'animal'), adapter)
+                classifier = payload.get('classifier', 'none')
+                envelope = None
+                if classifier == 'none':
+                    result = analyze(data, name, payload.get('mode', 'mock'), payload.get('threshold', 0.2),
+                                     payload.get('scenario', 'animal'), adapter)
+                else:
+                    envelope = analyze_classified(data, name, classifier=classifier, cache=classifier_cache,
+                        mode=payload.get('mode', 'megadetector'), threshold=payload.get('threshold', 0.2),
+                        review_threshold=payload.get('review_threshold', 0.7),
+                        scenario=payload.get('scenario', 'animal'), adapter=adapter)
+                    result = envelope['result']
                 # Render a raster without EXIF so preview and box coordinates always agree.
                 preview = None
                 if result['image']['width'] is not None:
@@ -106,7 +119,7 @@ def make_handler(adapter, rows):
                     buffer = io.BytesIO()
                     image.save(buffer, 'JPEG', quality=90)
                     preview = 'data:image/jpeg;base64,' + base64.b64encode(buffer.getvalue()).decode('ascii')
-                self.respond(200, {'result': result, 'preview': preview})
+                self.respond(200, {'result': result, 'preview': preview, 'classification': envelope})
             except (ValueError, TypeError, binascii.Error, KeyError):
                 self.respond(400, {'error': 'Yeu cau khong hop le. Kiem tra anh, che do va nguong.'})
             except (BrokenPipeError, ConnectionResetError):
@@ -121,8 +134,9 @@ def make_handler(adapter, rows):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8765)
+    parser.add_argument('--classifiers', type=Path, default=REGISTRY_PATH)
     args = parser.parse_args()
-    handler = make_handler(MegaDetectorAdapter(), sample_rows())
+    handler = make_handler(MegaDetectorAdapter(), sample_rows(), ClassifierCache(args.classifiers))
     server = ThreadingHTTPServer(('127.0.0.1', args.port), handler)
     print(f'CameraTrapML demo: http://127.0.0.1:{server.server_port}', flush=True)
     try:

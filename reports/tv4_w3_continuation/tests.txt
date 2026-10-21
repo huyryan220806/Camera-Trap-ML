@@ -1,0 +1,316 @@
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+B0 smoke test PASS
+test_a_smoke_preserves_completed_run_bytes_and_hashes (test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 3, 'excluded': 1}}
+B0 smoke test PASS
+test_b_smoke_with_missing_validation_image_preserves_run (test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run) ... ok
+test_c_existing_run_rejected_before_preparation (test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation) ... ok
+test_d_atomic_publication_rolls_back_all_files (test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files) ... ok
+test_d_prepare_failure_after_train_inspection_publishes_nothing (test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing) ... ok
+test_e_changed_image_id_rejected (test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected) ... ok
+test_f_changed_class_map_rejected (test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected) ... ok
+test_g_added_deleted_modified_validation_rows_rejected (test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected) ... ok
+test_h_changed_source_rejected (test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected) ... ok
+test_i_changed_decodable_image_bytes_rejected (test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected) ... ok
+test_inverse_checkpoint_mapping_checked (test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked) ... ok
+test_missing_class_hash_requires_exact_mapping (test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping) ... ok
+test_missing_frozen_validation_hash_rejected (test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+test_new_fixture_run_can_train_save_and_verify_once (test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once) ... fatal: not a git repository (or any of the parent directories): .git
+{"epoch": 1, "train_loss": 0.9608118236064911, "val_loss": 0.923206590116024, "val_macro_f1": 0.3333333333333333, "val_macro_precision": 0.25, "val_macro_recall": 0.5, "val_accuracy": 0.5, "learning_rate": 0.001}
+{"best_epoch": 1, "best_macro_f1": 0.3333333333333333, "checkpoint": "C:\\Users\\loval\\AppData\\Local\\Temp\\tmp2huv7yue\\experiments\\new_fixture\\checkpoints\\best_model.pth", "reload": "PASS", "checkpoint_bytes": 6006}
+ok
+test_prepare_cli_rejects_completed_run (test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run) ... ok
+test_reservation_rejects_each_existing_run_marker (test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker) ... ok
+test_selected_inputs_allow_first_reservation_but_not_second (test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second) ... ok
+test_smoke_exception_preserves_run (test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run) ... ok
+test_source_membership_checked_even_with_matching_manifest_hash (test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash) ... ok
+test_source_row_path_mismatch_rejected (test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected) ... ok
+test_successful_validator_runs_inference_after_provenance (test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance) ... ok
+test_v1_without_image_hash_reports_limitation (test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation) ... ok
+test_v2_local_path_and_sha_verified (test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified) ... ok
+test_image_metrics_exact (test_b2_handoff_metrics.HandoffMetricTests.test_image_metrics_exact) ... ok
+test_invalid_missing_loss_rejected (test_b2_handoff_metrics.HandoffMetricTests.test_invalid_missing_loss_rejected) ... ok
+test_rounded_loss_only_tolerance (test_b2_handoff_metrics.HandoffMetricTests.test_rounded_loss_only_tolerance) ... ok
+test_all_invalid_refuses_empty_snapshot (test_comparison.RuleTests.test_all_invalid_refuses_empty_snapshot) ... ok
+test_exact_duplicate_across_splits_fails_within_split_is_reported (test_comparison.RuleTests.test_exact_duplicate_across_splits_fails_within_split_is_reported) ... ok
+test_missing_duplicate_or_invalid_annotations_excluded (test_comparison.RuleTests.test_missing_duplicate_or_invalid_annotations_excluded) ... ok
+test_missing_group_identity_and_alias_mismatch_fail (test_comparison.RuleTests.test_missing_group_identity_and_alias_mismatch_fail) ... ok
+test_mixed_species_and_ambiguous_image_excluded (test_comparison.RuleTests.test_mixed_species_and_ambiguous_image_excluded) ... ok
+test_multiple_boxes_one_species_keeps_one_b1_image (test_comparison.RuleTests.test_multiple_boxes_one_species_keeps_one_b1_image) ... ok
+test_nonfinite_negative_and_small_geometry_rejected (test_comparison.RuleTests.test_nonfinite_negative_and_small_geometry_rejected) ... ok
+test_one_small_box_excludes_whole_parent_not_just_box (test_comparison.RuleTests.test_one_small_box_excludes_whole_parent_not_just_box) ... ok
+test_rounding_matches_tv3_and_eight_pixels_is_accepted (test_comparison.RuleTests.test_rounding_matches_tv3_and_eight_pixels_is_accepted) ... ok
+test_sequence_cannot_span_two_locations_even_inside_train (test_comparison.RuleTests.test_sequence_cannot_span_two_locations_even_inside_train) ... ok
+test_source_leakage_rejected_even_if_offending_row_would_be_filtered (test_comparison.RuleTests.test_source_leakage_rejected_even_if_offending_row_would_be_filtered) ... ok
+test_statistics_balance_and_no_split_changes (test_comparison.RuleTests.test_statistics_balance_and_no_split_changes) ... ok
+test_changed_policy_fails_without_rewriting_frozen_data (test_comparison.SnapshotTests.test_changed_policy_fails_without_rewriting_frozen_data) ... ok
+test_corruption_after_publication_cannot_pass_full_validation (test_comparison.SnapshotTests.test_corruption_after_publication_cannot_pass_full_validation) ... ok
+test_false_counts_rejected_after_rehash (test_comparison.SnapshotTests.test_false_counts_rejected_after_rehash) ... ok
+test_interrupted_publication_leaves_only_staging_then_recovers (test_comparison.SnapshotTests.test_interrupted_publication_leaves_only_staging_then_recovers) ... ok
+test_interruption_resumes_saved_receipts_and_publishes_once (test_comparison.SnapshotTests.test_interruption_resumes_saved_receipts_and_publishes_once) ... ok
+test_missing_image_stops_build_without_silently_excluding_it (test_comparison.SnapshotTests.test_missing_image_stops_build_without_silently_excluding_it) ... ok
+test_publish_and_resume_preserve_every_snapshot_byte (test_comparison.SnapshotTests.test_publish_and_resume_preserve_every_snapshot_byte) ... ok
+test_raw_manifest_tampering_rejected (test_comparison.SnapshotTests.test_raw_manifest_tampering_rejected) ... ok
+test_semantic_tampering_rejected_even_after_rehash (test_comparison.SnapshotTests.test_semantic_tampering_rejected_even_after_rehash) ... ok
+test_source_changed_rejected_even_with_new_source_hashes (test_comparison.SnapshotTests.test_source_changed_rejected_even_with_new_source_hashes) ... ok
+test_unexpected_frozen_file_rejected (test_comparison.SnapshotTests.test_unexpected_frozen_file_rejected) ... ok
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+test_changed_cache_is_quarantined_and_redownloaded (test_download_subset.DownloadTests.test_changed_cache_is_quarantined_and_redownloaded) ... ok
+test_corrupt_and_dimension_mismatch_excluded (test_download_subset.DownloadTests.test_corrupt_and_dimension_mismatch_excluded) ... ok
+test_download_and_offline_resume (test_download_subset.DownloadTests.test_download_and_offline_resume) ... ok
+Quality validation 1/1
+Quality validation 1/1
+test_export_rechecks_changed_and_missing_local_images (test_download_subset.DownloadTests.test_export_rechecks_changed_and_missing_local_images) ... ok
+test_export_rejects_receipt_for_a_different_split (test_download_subset.DownloadTests.test_export_rejects_receipt_for_a_different_split) ... ok
+test_freeze_refuses_unprocessed_source_rows (test_download_subset.DownloadTests.test_freeze_refuses_unprocessed_source_rows) ... ok
+test_interrupted_download_restarts_only_partial_image (test_download_subset.DownloadTests.test_interrupted_download_restarts_only_partial_image) ... ok
+test_interrupted_log_tail_preserved_and_repaired (test_download_subset.DownloadTests.test_interrupted_log_tail_preserved_and_repaired) ... ok
+test_missing_image_logged_without_three_retries (test_download_subset.DownloadTests.test_missing_image_logged_without_three_retries) ... ok
+test_only_root_is_resolved_when_leaf_does_not_exist (test_download_subset.DownloadTests.test_only_root_is_resolved_when_leaf_does_not_exist) ... ok
+test_retry_transient_http_failure (test_download_subset.DownloadTests.test_retry_transient_http_failure) ... ok
+test_truncated_jpeg_not_accepted (test_download_subset.DownloadTests.test_truncated_jpeg_not_accepted) ... ok
+test_unknown_cached_file_requires_a_proven_download (test_download_subset.DownloadTests.test_unknown_cached_file_requires_a_proven_download) ... ok
+test_unsafe_path_or_foreign_url_rejected (test_download_subset.DownloadTests.test_unsafe_path_or_foreign_url_rejected) ... ok
+test_wrong_content_length_rejected (test_download_subset.DownloadTests.test_wrong_content_length_rejected) ... ok
+test_cross_split_duplicates_exclude_all_without_moving (test_download_subset.ManifestV2Tests.test_cross_split_duplicates_exclude_all_without_moving) ... ok
+test_every_original_field_is_preserved_no_rebalancing (test_download_subset.ManifestV2Tests.test_every_original_field_is_preserved_no_rebalancing) ... ok
+test_same_split_duplicate_retained_but_label_conflict_excluded (test_download_subset.ManifestV2Tests.test_same_split_duplicate_retained_but_label_conflict_excluded) ... ok
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+test_build_refuses_overwrite (test_manifest_v2.BundleTests.test_build_refuses_overwrite) ... ok
+test_changed_split_rejected_even_with_updated_snapshot_hash (test_manifest_v2.BundleTests.test_changed_split_rejected_even_with_updated_snapshot_hash) ... ok
+test_local_corruption_requires_full_verification (test_manifest_v2.BundleTests.test_local_corruption_requires_full_verification) ... ok
+test_missing_download_log_coverage_is_rejected (test_manifest_v2.BundleTests.test_missing_download_log_coverage_is_rejected) ... ok
+test_real_bundle_reconciles_and_validates_local_images (test_manifest_v2.BundleTests.test_real_bundle_reconciles_and_validates_local_images) ... ok
+test_snapshot_file_tampering_is_rejected (test_manifest_v2.BundleTests.test_snapshot_file_tampering_is_rejected) ... ok
+test_wrong_split_counts_are_rejected (test_manifest_v2.BundleTests.test_wrong_split_counts_are_rejected) ... ok
+test_absolute_and_relative_box (test_metadata.MetadataTests.test_absolute_and_relative_box) ... ok
+test_audit_detects_sequence_and_location_leakage (test_metadata.MetadataTests.test_audit_detects_sequence_and_location_leakage) ... ok
+test_infeasible_split_is_rejected (test_metadata.MetadataTests.test_infeasible_split_is_rejected) ... ok
+test_label_normalization_does_not_merge_distinct_species (test_metadata.MetadataTests.test_label_normalization_does_not_merge_distinct_species) ... ok
+test_quality_and_ambiguous_labels_not_species (test_metadata.MetadataTests.test_quality_and_ambiguous_labels_not_species) ... ok
+test_reject_invalid_and_ambiguous_boxes (test_metadata.MetadataTests.test_reject_invalid_and_ambiguous_boxes) ... ok
+test_split_is_reproducible_and_location_disjoint (test_metadata.MetadataTests.test_split_is_reproducible_and_location_disjoint) ... ok
+Recovered stopped process; preserved lock: D:\VLU\261\ML\CameraTrapML\tmpde1hikr5\state\active.interrupted-d8e14c95e98e45019d643649cfded343.lock
+test_abrupt_process_exit_is_recovered_without_deleting_history (test_resume_tv1_w2.LockTests.test_abrupt_process_exit_is_recovered_without_deleting_history) ... ok
+test_exception_releases_lock_and_concurrent_writer_is_blocked (test_resume_tv1_w2.LockTests.test_exception_releases_lock_and_concurrent_writer_is_blocked) ... ok
+test_live_legacy_owner_is_never_removed (test_resume_tv1_w2.LockTests.test_live_legacy_owner_is_never_removed) ... ok
+test_unknown_owner_requires_manual_inspection (test_resume_tv1_w2.LockTests.test_unknown_owner_requires_manual_inspection) ... ok
+test_changed_or_missing_bytes_require_download (test_resume_tv1_w2.ResumeTests.test_changed_or_missing_bytes_require_download) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_checkpoint_is_not_trusted_when_files_are_missing (test_resume_tv1_w2.ResumeTests.test_checkpoint_is_not_trusted_when_files_are_missing) ... ok
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+[validate] running
+[complete] complete
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+Frozen v2 already exists; preserving it byte-for-byte.
+[validate] running
+[complete] complete
+test_completed_images_skip_network_and_second_run_preserves_snapshot (test_resume_tv1_w2.ResumeTests.test_completed_images_skip_network_and_second_run_preserves_snapshot) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_download_failure_keeps_checkpoint_and_never_freezes (test_resume_tv1_w2.ResumeTests.test_download_failure_keeps_checkpoint_and_never_freezes) ... ok
+[preflight] running
+[preflight] failed
+test_invalid_existing_snapshot_stops_before_download (test_resume_tv1_w2.ResumeTests.test_invalid_existing_snapshot_stops_before_download) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_receipt_split_mismatch_is_not_silently_rewritten (test_resume_tv1_w2.ResumeTests.test_receipt_split_mismatch_is_not_silently_rewritten) ... ok
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+[validate] running
+[validate] failed
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+Frozen v2 already exists; preserving it byte-for-byte.
+[validate] running
+[complete] complete
+test_resume_after_validation_interruption_does_not_rebuild (test_resume_tv1_w2.ResumeTests.test_resume_after_validation_interruption_does_not_rebuild) ... ok
+[preflight] running
+[preflight] failed
+test_source_binding_change_is_rejected (test_resume_tv1_w2.ResumeTests.test_source_binding_change_is_rejected) ... ok
+test_missing_bbox (test_tv3_crop_eda.BoxEdgeTests.test_missing_bbox) ... ok
+test_negative_coordinates_rejected (test_tv3_crop_eda.BoxEdgeTests.test_negative_coordinates_rejected) ... ok
+test_one_pixel_box_not_scaled (test_tv3_crop_eda.BoxEdgeTests.test_one_pixel_box_not_scaled) ... ok
+test_overflow_beyond_tolerance_rejected (test_tv3_crop_eda.BoxEdgeTests.test_overflow_beyond_tolerance_rejected) ... ok
+test_overflow_within_tolerance_is_clipped (test_tv3_crop_eda.BoxEdgeTests.test_overflow_within_tolerance_is_clipped) ... ok
+test_all_downloads_fail_returns_zero_saved (test_tv3_crop_eda.DownloadFailureTests.test_all_downloads_fail_returns_zero_saved) ... ok
+test_empty_selection_returns_all_zero_counts (test_tv3_crop_eda.DownloadFailureTests.test_empty_selection_returns_all_zero_counts) ... ok
+test_failed_downloads_are_logged_and_not_counted (test_tv3_crop_eda.DownloadFailureTests.test_failed_downloads_are_logged_and_not_counted) ... ok
+test_decimal_coordinates_are_read_as_float_and_accepted (test_tv3_crop_eda.IjsonDecimalTests.test_decimal_coordinates_are_read_as_float_and_accepted) ... ok
+test_does_not_fill_from_val_or_test (test_tv3_crop_eda.SamplingTests.test_does_not_fill_from_val_or_test) ... ok
+test_images_without_boxes_skipped (test_tv3_crop_eda.SamplingTests.test_images_without_boxes_skipped) ... ok
+test_only_unique_train_ids (test_tv3_crop_eda.SamplingTests.test_only_unique_train_ids) ... ok
+test_seed_is_reproducible (test_tv3_crop_eda.SamplingTests.test_seed_is_reproducible) ... ok
+test_box_clamped_at_boundary (test_tv3_crop_pipeline.ClampBoxTests.test_box_clamped_at_boundary) ... ok
+test_box_completely_outside_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_box_completely_outside_returns_none) ... ok
+test_negative_x_clamped_to_zero (test_tv3_crop_pipeline.ClampBoxTests.test_negative_x_clamped_to_zero) ... ok
+test_normal_box (test_tv3_crop_pipeline.ClampBoxTests.test_normal_box) ... ok
+test_one_pixel_box_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_one_pixel_box_returns_none) ... ok
+test_too_small_crop_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_too_small_crop_returns_none) ... ok
+test_zero_width_after_clamp_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_zero_width_after_clamp_returns_none) ... ok
+test_class_counts (test_tv3_crop_pipeline.CropDatasetTests.test_class_counts) ... ok
+test_dataset_length (test_tv3_crop_pipeline.CropDatasetTests.test_dataset_length) ... ok
+test_duplicate_crop_id_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_duplicate_crop_id_raises_valueerror)
+M\u1ee5c 1 fix: Dataset ph\u1ea3i t\u1eeb ch\u1ed1i crop_id tr�ng. ... ok
+test_getitem_returns_tensor_and_int (test_tv3_crop_pipeline.CropDatasetTests.test_getitem_returns_tensor_and_int) ... ok
+test_missing_manifest_raises_filenotfound (test_tv3_crop_pipeline.CropDatasetTests.test_missing_manifest_raises_filenotfound) ... ok
+test_wrong_split_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_wrong_split_raises_valueerror)
+M\u1ee5c 3 fix: D�ng c� split sai ph\u1ea3i b\u1ecb t\u1eeb ch\u1ed1i. ... ok
+test_box_without_label_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_box_without_label_is_skipped) ... ok
+test_decode_failure_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_decode_failure_logged) ... ok
+test_download_failure_logged_not_raised (test_tv3_crop_pipeline.ProcessRecordTests.test_download_failure_logged_not_raised) ... ok
+test_invalid_geometry_box_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_invalid_geometry_box_is_skipped) ... ok
+test_multi_animal_image_uses_box_label_not_image_label (test_tv3_crop_pipeline.ProcessRecordTests.test_multi_animal_image_uses_box_label_not_image_label)
+\u1ea2nh c� nhi\u1ec1u lo�i: m\u1ed7i box d�ng nh�n ri�ng c\u1ee7a box \u0111�. ... ok
+test_normal_record_produces_one_crop_row (test_tv3_crop_pipeline.ProcessRecordTests.test_normal_record_produces_one_crop_row) ... ok
+test_one_bad_box_does_not_block_other_good_boxes (test_tv3_crop_pipeline.ProcessRecordTests.test_one_bad_box_does_not_block_other_good_boxes) ... ok
+test_record_without_boxes_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_record_without_boxes_is_skipped) ... ok
+test_source_hash_mismatch_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_source_hash_mismatch_logged)
+M\u1ee5c 4: \u1ea2nh \u0111\u1ecdc \u0111\u01b0\u1ee3c nh\u01b0ng hash kh�ng kh\u1edbp quality.sha256. ... ok
+test_split_is_inherited_from_manifest_not_box (test_tv3_crop_pipeline.ProcessRecordTests.test_split_is_inherited_from_manifest_not_box) ... ok
+test_bad_box_fatal_does_not_block_good_box (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_bad_box_fatal_does_not_block_good_box)
+M\u1ee5c 2 fix: Box x\u1ea5u b\u1ecb \u0111�nh fatal, box t\u1ed1t c�n l\u1ea1i \u0111\u01b0\u1ee3c b\u1ecf qua \u0111�ng c�ch. ... ok
+test_create_metadata_on_fresh_output (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_create_metadata_on_fresh_output)
+V�ng 3 m\u1ee5c 2: Output m\u1edbi tinh (ch\u01b0a c� artifact) \u2192 t\u1ea1o meta OK. ... 09:53:20 INFO T\u1ea1o run m\u1edbi, \u0111� l\u01b0u fingerprint.
+ok
+test_fail_closed_missing_metadata_with_existing_artifact (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_fail_closed_missing_metadata_with_existing_artifact)
+V�ng 3 m\u1ee5c 2: C� manifest nh\u01b0ng thi\u1ebfu run_meta \u2192 ph\u1ea3i raise. ... ok
+test_hash_mismatch_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_hash_mismatch_not_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i nh\u01b0ng hash sai \u2192 check_completed_per_box tr\u1ea3 False. ... ok
+test_http_hash_match_accepted (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_match_accepted)
+V�ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP v� hash \u0111�ng \u2192 tr\u1ea3 bytes OK. ... ok
+test_http_hash_mismatch_rejected (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_mismatch_rejected)
+V�ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP nh\u01b0ng hash sai quality.sha256 ph\u1ea3i b\u1ecb t\u1eeb ch\u1ed1i. ... ok
+test_load_jsonl_safe_raises_on_mid_file_error (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_load_jsonl_safe_raises_on_mid_file_error)
+V�ng 3 m\u1ee5c 4: L\u1ed7i JSON \u1edf gi\u1eefa file ph\u1ea3i raise, kh�ng b\u1ecf qua. ... ok
+test_missing_file_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_missing_file_not_completed)
+M\u1ee5c 1 fix: File \u1ea3nh b\u1ecb m\u1ea5t \u2192 check_completed_per_box tr\u1ea3 False. ... ok
+test_partial_box_completion_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_partial_box_completion_not_completed)
+M\u1ee5c 2 fix: Ng\u1eaft gi\u1eefa \u1ea3nh c� 2 box \u2192 ch\u1ec9 1 crop \u2192 ch\u01b0a xong. ... ok
+test_repair_jsonl_fixes_file_on_disk (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_fixes_file_on_disk)
+V�ng 3 m\u1ee5c 4: repair_jsonl_if_needed ghi l\u1ea1i file s\u1ea1ch tr�n \u0111\u0129a. ... 09:53:20 WARNING D�ng cu\u1ed1i b\u1ecb c\u1eaft trong D:\VLU\261\ML\CameraTrapML\data\tmpj1z2dn47\manifest.jsonl, s\u1eeda v� ghi l\u1ea1i file ngay.
+09:53:20 INFO \u0110� ph\u1ee5c h\u1ed3i manifest.jsonl: 1 d�ng h\u1ee3p l\u1ec7.
+ok
+test_repair_jsonl_no_pending_still_clean (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_no_pending_still_clean)
+V�ng 3 m\u1ee5c 4: D� pending=0, file v\u1eabn \u0111\u01b0\u1ee3c s\u1eeda s\u1ea1ch. ... 09:53:20 WARNING D�ng cu\u1ed1i b\u1ecb c\u1eaft trong D:\VLU\261\ML\CameraTrapML\data\tmpmktcxl94\manifest.jsonl, s\u1eeda v� ghi l\u1ea1i file ngay.
+09:53:20 INFO \u0110� ph\u1ee5c h\u1ed3i manifest.jsonl: 1 d�ng h\u1ee3p l\u1ec7.
+ok
+test_upsert_rows_no_duplicate (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_upsert_rows_no_duplicate)
+M\u1ee5c 1 fix: Ch\u1ea1y l\u1ea1i sau m\u1ea5t file \u2192 kh�ng t\u1ea1o d�ng tr�ng crop_id. ... ok
+test_valid_file_is_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_valid_file_is_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i v� hash \u0111�ng \u2192 check_completed_per_box tr\u1ea3 True. ... ok
+test_b1_b2_switch_and_bounded_cache (test_tv4_classifier.ClassifierTests.test_b1_b2_switch_and_bounded_cache) ... ok
+test_bad_logits_fail_before_top3 (test_tv4_classifier.ClassifierTests.test_bad_logits_fail_before_top3) ... ok
+test_classifier_error_has_no_fake_or_partial_predictions (test_tv4_classifier.ClassifierTests.test_classifier_error_has_no_fake_or_partial_predictions) ... 09:53:22 ERROR Classifier failed (B0); no fallback or partial predictions
+Traceback (most recent call last):
+  File "D:\VLU\261\ML\CameraTrapML\src\demo\inference.py", line 70, in analyze_classified
+    predictions, proof['classifier'] = cache.predict(decode_image(data), detected['detections'], classifier)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\loval\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\loval\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\loval\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+ValueError: bad checkpoint
+ok
+test_concurrent_first_requests_load_once (test_tv4_classifier.ClassifierTests.test_concurrent_first_requests_load_once) ... ok
+test_decode_empty_and_detector_error_skip_classifier (test_tv4_classifier.ClassifierTests.test_decode_empty_and_detector_error_skip_classifier) ... 09:53:23 ERROR Detector failed (mode=mock)
+Traceback (most recent call last):
+  File "D:\VLU\261\ML\CameraTrapML\src\demo\detector.py", line 152, in analyze
+    result['detections'], result['ignored_non_animals'] = adapt_detections(raw, image.width, image.height, threshold)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\VLU\261\ML\CameraTrapML\src\demo\detector.py", line 61, in adapt_detections
+    raise ValueError('Detector failed or returned no detections array')
+ValueError: Detector failed or returned no detections array
+ok
+test_disabled_missing_and_bad_size_do_not_load (test_tv4_classifier.ClassifierTests.test_disabled_missing_and_bad_size_do_not_load) ... ok
+test_each_box_uses_its_own_pixels (test_tv4_classifier.ClassifierTests.test_each_box_uses_its_own_pixels) ... ok
+test_hash_checked_even_when_warm (test_tv4_classifier.ClassifierTests.test_hash_checked_even_when_warm) ... ok
+test_http_classifier_and_export_contract (test_tv4_classifier.ClassifierTests.test_http_classifier_and_export_contract) ... 127.0.0.1 - - [21/Oct/2026 09:53:24] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 09:53:24] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 09:53:24] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_inference_envelope_and_ignored_person (test_tv4_classifier.ClassifierTests.test_inference_envelope_and_ignored_person) ... ok
+test_invalid_and_tiny_boxes_fail_without_partial_output (test_tv4_classifier.ClassifierTests.test_invalid_and_tiny_boxes_fail_without_partial_output) ... ok
+test_invalid_review_threshold_is_rejected (test_tv4_classifier.ClassifierTests.test_invalid_review_threshold_is_rejected) ... ok
+test_mock_multiple_is_explicit_without_loading (test_tv4_classifier.ClassifierTests.test_mock_multiple_is_explicit_without_loading) ... ok
+test_native_b2_cache_safe_load_and_multiple_boxes (test_tv4_classifier.ClassifierTests.test_native_b2_cache_safe_load_and_multiple_boxes) ... ok
+test_native_b2_rejects_missing_or_inconsistent_handoff (test_tv4_classifier.ClassifierTests.test_native_b2_rejects_missing_or_inconsistent_handoff) ... ok
+test_native_b2_remapping_and_center_crop_equivalent (test_tv4_classifier.ClassifierTests.test_native_b2_remapping_and_center_crop_equivalent) ... ok
+test_nonfinite_and_wrong_shape_weights_rejected (test_tv4_classifier.ClassifierTests.test_nonfinite_and_wrong_shape_weights_rejected) ... ok
+test_prepare_b1_copy_resume_and_no_network (test_tv4_classifier.ClassifierTests.test_prepare_b1_copy_resume_and_no_network) ... ok
+test_prepare_refuses_disabled_model_and_bad_source (test_tv4_classifier.ClassifierTests.test_prepare_refuses_disabled_model_and_bad_source) ... ok
+test_real_architecture_top3_and_warm_cache (test_tv4_classifier.ClassifierTests.test_real_architecture_top3_and_warm_cache) ... ok
+test_registry_change_invalidates_cache (test_tv4_classifier.ClassifierTests.test_registry_change_invalidates_cache) ... ok
+test_transform_and_b2_remapping_match (test_tv4_classifier.ClassifierTests.test_transform_and_b2_remapping_match) ... ok
+test_wrong_mapping_transform_and_kind_rejected (test_tv4_classifier.ClassifierTests.test_wrong_mapping_transform_and_kind_rejected) ... ok
+test_empty_at_high_threshold (test_tv4_demo.DetectorTests.test_empty_at_high_threshold) ... ok
+test_limits_and_truncated_image (test_tv4_demo.DetectorTests.test_limits_and_truncated_image) ... ok
+test_malformed_boxes_or_failure_are_not_empty_success (test_tv4_demo.DetectorTests.test_malformed_boxes_or_failure_are_not_empty_success) ... ok
+test_mock_is_labelled_and_has_no_species (test_tv4_demo.DetectorTests.test_mock_is_labelled_and_has_no_species) ... ok
+test_modes_and_error_states_match_new_schema (test_tv4_demo.DetectorTests.test_modes_and_error_states_match_new_schema) ... ok
+test_normalization_filter_and_threshold_equality (test_tv4_demo.DetectorTests.test_normalization_filter_and_threshold_equality) ... ok
+test_real_failure_never_falls_back_to_mock (test_tv4_demo.DetectorTests.test_real_failure_never_falls_back_to_mock) ... ok
+test_threshold_and_mode_validation (test_tv4_demo.DetectorTests.test_threshold_and_mode_validation) ... ok
+test_bad_requests_rejected (test_tv4_demo.ServerTests.test_bad_requests_rejected) ... 127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_external_origin_and_host_are_rejected (test_tv4_demo.ServerTests.test_external_origin_and_host_are_rejected) ... 127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 403 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "GET / HTTP/1.1" 403 -
+ok
+test_mock_post_and_corrupt_image (test_tv4_demo.ServerTests.test_mock_post_and_corrupt_image) ... 127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "POST /api/analyze HTTP/1.1" 200 -
+ok
+test_static_and_config_do_not_expose_repository (test_tv4_demo.ServerTests.test_static_and_config_do_not_expose_repository) ... 127.0.0.1 - - [21/Oct/2026 09:53:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [21/Oct/2026 09:53:29] "GET /api/config HTTP/1.1" 200 -
+ok
+
+----------------------------------------------------------------------
+Ran 199 tests in 20.543s
+
+OK

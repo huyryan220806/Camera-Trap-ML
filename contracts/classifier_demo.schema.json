@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cameratrap.local/contracts/classifier_demo.schema.json",
+  "title": "Classifier demo: unchanged result v1 plus inference provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result", "provenance"],
+  "properties": {
+    "schema_version": {"const": "classifier-demo-1.0"},
+    "result": {"$ref": "inference_result.schema.json"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requested_classifier", "classifier", "detector", "ignored_non_animals", "score_kind", "scores_calibrated", "crop_policy", "max_boxes", "training_overlap_swg", "training_source", "warnings"],
+      "properties": {
+        "requested_classifier": {"enum": ["B0", "B1", "B2"]},
+        "classifier": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "object", "additionalProperties": false,
+             "required": ["classifier_id", "checkpoint_sha256", "training_input", "inference_input", "preprocessing", "cache_hit", "model_load_count", "device"],
+             "properties": {
+               "classifier_id": {"enum": ["B0", "B1", "B2"]},
+               "checkpoint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+               "training_input": {"enum": ["full_image", "crop"]},
+               "inference_input": {"const": "detector_crop"},
+               "preprocessing": {"type": "object"},
+               "cache_hit": {"type": "boolean"},
+               "model_load_count": {"type": "integer", "minimum": 1},
+               "device": {"const": "cpu"}
+             }}
+          ]
+        },
+        "detector": {"type": "object"},
+        "ignored_non_animals": {"type": "integer", "minimum": 0},
+        "score_kind": {"const": "softmax_class_score"},
+        "scores_calibrated": {"const": false},
+        "crop_policy": {"const": "round_clip_min8_padding0"},
+        "max_boxes": {"const": 64},
+        "training_overlap_swg": {"const": true},
+        "training_source": {"type": "string"},
+        "warnings": {"type": "array", "minItems": 2, "items": {"type": "string"}}
+      }
+    }
+  }
+}
