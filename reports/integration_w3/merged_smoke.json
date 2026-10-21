@@ -1,0 +1,638 @@
+{
+  "status": "PASS",
+  "code_commit": "2203592014dc02188bff84c1c72505e847602488",
+  "sample_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+  "sample_split": "train",
+  "test_inference_used": false,
+  "checked_utc": "2026-10-21T03:28:41+00:00",
+  "models": {
+    "B0": {
+      "cold": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "01bd7c15-0310-4fc3-ae26-560a1e20caee",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B0",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 4,
+                  "label": "common_palm_civet",
+                  "score": 0.30626243352890015
+                },
+                {
+                  "class_id": 3,
+                  "label": "chinese_serow",
+                  "score": 0.16391195356845856
+                },
+                {
+                  "class_id": 5,
+                  "label": "masked_palm_civet",
+                  "score": 0.15600953996181488
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 20076.68
+        },
+        "provenance": {
+          "requested_classifier": "B0",
+          "classifier": {
+            "classifier_id": "B0",
+            "checkpoint_sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+            "training_input": "full_image",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": false,
+            "model_load_count": 1,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+            "B0/B1 trained on full images; detector-crop input is a distribution shift, not a crop-model benchmark."
+          ]
+        }
+      },
+      "warm": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "9faa9eaf-f19f-4e62-81cb-f749799c099e",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B0",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 4,
+                  "label": "common_palm_civet",
+                  "score": 0.30626243352890015
+                },
+                {
+                  "class_id": 3,
+                  "label": "chinese_serow",
+                  "score": 0.16391195356845856
+                },
+                {
+                  "class_id": 5,
+                  "label": "masked_palm_civet",
+                  "score": 0.15600953996181488
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 5945.67
+        },
+        "provenance": {
+          "requested_classifier": "B0",
+          "classifier": {
+            "classifier_id": "B0",
+            "checkpoint_sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+            "training_input": "full_image",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": true,
+            "model_load_count": 1,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+            "B0/B1 trained on full images; detector-crop input is a distribution shift, not a crop-model benchmark."
+          ]
+        }
+      }
+    },
+    "B1": {
+      "cold": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "a7d3fade-f363-43b0-894b-47d65ca68a4c",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B1",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 3,
+                  "label": "chinese_serow",
+                  "score": 0.31570377945899963
+                },
+                {
+                  "class_id": 0,
+                  "label": "large_antlered_muntjac",
+                  "score": 0.3142596185207367
+                },
+                {
+                  "class_id": 2,
+                  "label": "sambar",
+                  "score": 0.24021664261817932
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 6281.92
+        },
+        "provenance": {
+          "requested_classifier": "B1",
+          "classifier": {
+            "classifier_id": "B1",
+            "checkpoint_sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+            "training_input": "full_image",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": false,
+            "model_load_count": 2,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+            "B0/B1 trained on full images; detector-crop input is a distribution shift, not a crop-model benchmark."
+          ]
+        }
+      },
+      "warm": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "7b6a02a1-ee12-4df8-b98d-6225f48eae35",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B1",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 3,
+                  "label": "chinese_serow",
+                  "score": 0.31570377945899963
+                },
+                {
+                  "class_id": 0,
+                  "label": "large_antlered_muntjac",
+                  "score": 0.3142596185207367
+                },
+                {
+                  "class_id": 2,
+                  "label": "sambar",
+                  "score": 0.24021664261817932
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 5942.47
+        },
+        "provenance": {
+          "requested_classifier": "B1",
+          "classifier": {
+            "classifier_id": "B1",
+            "checkpoint_sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+            "training_input": "full_image",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": true,
+            "model_load_count": 2,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+            "B0/B1 trained on full images; detector-crop input is a distribution shift, not a crop-model benchmark."
+          ]
+        }
+      }
+    },
+    "B2": {
+      "cold": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "5d6378e2-8ac2-4329-ac17-ef1d5ac73ba9",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B2",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 4,
+                  "label": "common_palm_civet",
+                  "score": 0.6221514344215393
+                },
+                {
+                  "class_id": 5,
+                  "label": "masked_palm_civet",
+                  "score": 0.17346185445785522
+                },
+                {
+                  "class_id": 1,
+                  "label": "annamite_striped_rabbit",
+                  "score": 0.13531343638896942
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 6455.49
+        },
+        "provenance": {
+          "requested_classifier": "B2",
+          "classifier": {
+            "classifier_id": "B2",
+            "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+            "training_input": "crop",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": false,
+            "model_load_count": 3,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+          ]
+        }
+      },
+      "warm": {
+        "schema_version": "classifier-demo-1.0",
+        "result": {
+          "schema_version": "1.0.0",
+          "request_id": "f31191d8-b190-4462-ad3f-7e299dd733dc",
+          "image": {
+            "image_id": null,
+            "file_name": "image_00001.jpg",
+            "width": 3264,
+            "height": 2448
+          },
+          "pipeline": {
+            "mode": "inference",
+            "detector_id": "MDv5a.0.1",
+            "classifier_id": "B2",
+            "class_map_version": "swg-v1",
+            "detector_threshold": 0.2,
+            "review_threshold": 0.7
+          },
+          "status": "needs_review",
+          "needs_review": true,
+          "detections": [
+            {
+              "detection_id": "animal-1",
+              "bbox_xywh": [
+                250.6752,
+                1162.8,
+                310.7327999999999,
+                361.8144000000002
+              ],
+              "detector_score": 0.733,
+              "top_k": [
+                {
+                  "class_id": 4,
+                  "label": "common_palm_civet",
+                  "score": 0.6221514344215393
+                },
+                {
+                  "class_id": 5,
+                  "label": "masked_palm_civet",
+                  "score": 0.17346185445785522
+                },
+                {
+                  "class_id": 1,
+                  "label": "annamite_striped_rabbit",
+                  "score": 0.13531343638896942
+                }
+              ]
+            }
+          ],
+          "error": null,
+          "elapsed_ms": 5999.35
+        },
+        "provenance": {
+          "requested_classifier": "B2",
+          "classifier": {
+            "classifier_id": "B2",
+            "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+            "training_input": "crop",
+            "inference_input": "detector_crop",
+            "preprocessing": {
+              "resize_mode": "center_crop",
+              "resize_size": 256,
+              "image_size": 224,
+              "mean": [
+                0.485,
+                0.456,
+                0.406
+              ],
+              "std": [
+                0.229,
+                0.224,
+                0.225
+              ]
+            },
+            "cache_hit": true,
+            "model_load_count": 3,
+            "device": "cpu"
+          },
+          "detector": {
+            "mode": "megadetector",
+            "detector_id": "MDv5a.0.1",
+            "package_version": "10.0.25",
+            "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+            "detector_threshold": 0.2,
+            "classifier_id": null,
+            "device": "cpu",
+            "image_size": 1280,
+            "coordinate_space": "original_raster_pixels_no_exif_rotation"
+          },
+          "ignored_non_animals": 0,
+          "score_kind": "softmax_class_score",
+          "scores_calibrated": false,
+          "crop_policy": "round_clip_min8_padding0",
+          "max_boxes": 64,
+          "training_overlap_swg": true,
+          "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+          "warnings": [
+            "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+            "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+          ]
+        }
+      }
+    }
+  }
+}

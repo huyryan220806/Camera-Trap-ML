@@ -1,0 +1,34 @@
+{
+  "train_only": true,
+  "parent_counts": {
+    "common_palm_civet": 350,
+    "silver_pheasant": 350,
+    "sambar": 350,
+    "masked_palm_civet": 350,
+    "eurasian_wild_pig": 350,
+    "large_antlered_muntjac": 350,
+    "annamite_striped_rabbit": 350,
+    "chinese_serow": 350
+  },
+  "parent_inverse_frequency_class_weights": {
+    "common_palm_civet": 1.0,
+    "silver_pheasant": 1.0,
+    "sambar": 1.0,
+    "masked_palm_civet": 1.0,
+    "eurasian_wild_pig": 1.0,
+    "large_antlered_muntjac": 1.0,
+    "annamite_striped_rabbit": 1.0,
+    "chinese_serow": 1.0
+  },
+  "b2_sum_parent_crop_weights": {
+    "common_palm_civet": 350.0,
+    "silver_pheasant": 349.99999999999943,
+    "sambar": 349.99999999999994,
+    "masked_palm_civet": 350.0,
+    "eurasian_wild_pig": 349.99999999999983,
+    "large_antlered_muntjac": 350.0,
+    "annamite_striped_rabbit": 350.0,
+    "chinese_serow": 350.0
+  },
+  "interpretation": "B3 defined as inverse-frequency class weighting is identical in loss when all parent-class weights are 1. Raw crop counts are not independent image counts."
+}

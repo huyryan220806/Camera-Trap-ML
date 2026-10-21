@@ -9,17 +9,24 @@
 - B2 `b2_run01` đã xác minh và bật: đặt file TV3 bàn giao tại `outputs/tv3/best_model.pt`, chạy `scripts/prepare_tv4_classifier.py --model B2 --source outputs/tv3/best_model.pt`. Đã kiểm tra lại 600 ảnh validation và demo thật. Điểm softmax không phải xác suất đã hiệu chỉnh.
 - B0/B1 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
 
-## Bản chung tuần 2 và nhánh cố định
+## Bản chung tuần 3 và nhánh cố định
 
-`main` đã tích hợp phần tuần 2 đã kiểm tra của cả bốn thành viên. Xem [biên bản tích hợp](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
+`main` đã tích hợp phần tuần 3 đã kiểm tra của cả bốn thành viên. Xem [biên bản tuần 3](docs/integration_week3.md), [lịch sử tuần 2](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
 
 - TV1: `feat/metadata-split`; TV2: `feat/baseline`.
 - TV3: `feat/crop-classifier`; TV4: `feat/demo`.
 - Dùng lại các nhánh này cho tuần tiếp theo; không tạo nhánh mới theo tuần.
-- Phần tuần 3 của TV2/TV3 chưa đạt review nên chưa vào `main`; dữ liệu TV1 tuần 3 cũng chưa thuộc bản tích hợp này.
+- Đã có `comparison_v1`, B1/B2 và demo B0/B1/B2. Tuần 4 của TV1 vẫn ở `feat/metadata-split`, chưa gộp vào `main`.
+
+## TV3 tuần 3 - B2 Crop Classifier
+
+- B2 `b2_run01`, best epoch 21, SHA `8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`.
+- Validation cấp ảnh: macro-F1 `0.7455`, accuracy `0.7467` trên 600 ảnh; 680 crop được gộp theo ảnh.
+- Đã kiểm định độc lập và chạy demo thật. [Bằng chứng kiểm định](reports/tv4_w3_continuation/REPORT.md), [bàn giao TV3](reports/tv3/TV3_W3_CHECKPOINT.md).
+- B3 thuộc tuần 4: chỉ thử nghiệm và chọn checkpoint bằng train/val. Demo tốt không chứng minh ưu thế trên test; chưa dùng test để chọn B2/B3.
 ## TV2 Week 3 – B1 Fine-tuning
 
-**B1 CHECKPOINT HANDOFF VERIFIED – B1/B2 COMPARISON PENDING OFFICIAL B2.**
+**B1 checkpoint đã kiểm định; B2 chính thức đã tích hợp trong tuần 3.**
 
 - `B1_run01` đã hoàn tất 29 epoch, early stopping patience 7, best epoch 22.
 - Validation: Macro-F1 `0.5624506868`, precision `0.5748610369`, recall và
@@ -34,9 +41,10 @@
   mọi delta bằng 0.
 - 87/87 test TV2 PASS trong workspace TEMP; `comparison_v1`, B0 và các artifact
   W1/W2 đọc được đều giữ nguyên. Không mở test rows để đánh giá/tuning.
-- TV3 mới nhất `c01a751` PASS 23/23 test cô lập nhưng còn bốn lỗi P1 và chưa có
-  official B2 checkpoint/log/metrics/reload. Vì vậy chưa tính chênh lệch hoặc
-  chọn model thắng.
+- Review TV3 `c01a751` bên dưới là lịch sử. Bản `7cc87e8` đã có checkpoint
+  B2, log và validation kiểm định lại. B2 image macro-F1 `0.7455` so với B1
+  `0.5624506868` trên cùng 600 ảnh validation; đây không phải kết quả test
+  hay bằng chứng B3 chắc chắn tốt hơn/kém hơn.
 - Tài liệu: [báo cáo W3](reports/tv2/TV2_W3.md),
   [checkpoint/TV4 handoff](reports/tv2/TV2_W3_CHECKPOINT.md),
   [review TV3](reports/tv2/TV2_REVIEW_TV3_W3.md),

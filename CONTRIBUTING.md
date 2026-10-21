@@ -27,7 +27,7 @@ git push origin feat/metadata-split
 
 Trên máy chưa có branch local, dùng `git switch --track origin/feat/metadata-split` một lần (thay tên cho đúng thành viên). Giữ nguyên bốn branch cố định sau khi merge PR; không chọn xóa branch sau merge. Khi `main` cập nhật, merge `origin/main` vào branch đang làm và giải quyết conflict, không reset làm mất công việc chưa gộp.
 
-TV1 và TV4 tuần 2 đã được chuyển từ các nhánh `codex/...` về nhánh cố định. Bản tích hợp tuần 2 và các commit được chọn nằm trong [biên bản tích hợp](docs/integration_week2.md). TV2/TV3 đã bắt đầu tuần 3 nên chỉ các commit tuần 2 đã đạt mới được gộp; phần tuần 3 vẫn ở nhánh thành viên. Push branch không tự cập nhật `main`.
+TV1 và TV4 tuần 2 đã được chuyển từ các nhánh `codex/...` về nhánh cố định. Lịch sử tuần 2 nằm trong [biên bản tuần 2](docs/integration_week2.md). Ngày 21/10/2026, phần tuần 3 đã kiểm tra được tích hợp theo [biên bản tuần 3](docs/integration_week3.md); tuần 4 của TV1 vẫn riêng trên `feat/metadata-split`. Push branch không tự cập nhật `main`.
 
 ## Trước khi yêu cầu kiểm tra
 
