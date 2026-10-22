@@ -1,0 +1,15 @@
+{
+  "source_images": 600,
+  "verified": 599,
+  "restored": 599,
+  "failures": [
+    {
+      "image_id": "d11da137-8c29-11eb-a2c7-000d3a74c7de",
+      "status": "FAILED",
+      "error": "ValueError('Frozen image path mismatch')"
+    }
+  ],
+  "model_inference_performed": false,
+  "frozen_manifest_sha256": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2",
+  "labels_or_splits_changed": false
+}

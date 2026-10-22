@@ -1,0 +1,10 @@
+{
+  "branch": "feat/baseline",
+  "starting_commit": "8a7c99c022fecec22778a6775428dc789a7becdd",
+  "integrated_main_commit": "0d822a91aa8cd694264c7af182434a91530e3fe2",
+  "implementation_commit": null,
+  "push_status": "NOT YET ATTEMPTED",
+  "pr_url": null,
+  "review_status": "PENDING TV1 REVIEW; W4-02 BLOCKED",
+  "self_acceptance": false
+}

@@ -1,0 +1,42 @@
+test_all_crops_mean_probability_and_one_prediction_per_image (test_w4_test_evaluation.AggregationTests.test_all_crops_mean_probability_and_one_prediction_per_image) ... ok
+test_changed_ground_truth_rejected (test_w4_test_evaluation.AggregationTests.test_changed_ground_truth_rejected) ... ok
+test_duplicate_crop_rejected (test_w4_test_evaluation.AggregationTests.test_duplicate_crop_rejected) ... ok
+test_empty_expected_rejected (test_w4_test_evaluation.AggregationTests.test_empty_expected_rejected) ... ok
+test_exact_tie_chooses_lowest_id (test_w4_test_evaluation.AggregationTests.test_exact_tie_chooses_lowest_id) ... ok
+test_extra_crop_rejected (test_w4_test_evaluation.AggregationTests.test_extra_crop_rejected) ... ok
+test_missing_crop_rejected (test_w4_test_evaluation.AggregationTests.test_missing_crop_rejected) ... ok
+test_nonfinite_negative_and_non_normalized_vectors_rejected (test_w4_test_evaluation.AggregationTests.test_nonfinite_negative_and_non_normalized_vectors_rejected) ... ok
+test_order_independent_associations (test_w4_test_evaluation.AggregationTests.test_order_independent_associations) ... ok
+test_wrong_parent_rejected (test_w4_test_evaluation.AggregationTests.test_wrong_parent_rejected) ... ok
+test_alternate_official_run_id_rejected (test_w4_test_evaluation.GateTests.test_alternate_official_run_id_rejected) ... ok
+test_checkpoint_real_bytes_hash_and_size (test_w4_test_evaluation.GateTests.test_checkpoint_real_bytes_hash_and_size) ... ok
+test_closed_boolean_alone_does_not_unlock (test_w4_test_evaluation.GateTests.test_closed_boolean_alone_does_not_unlock) ... ok
+test_dirty_lock_rejected (test_w4_test_evaluation.GateTests.test_dirty_lock_rejected) ... ok
+test_identical_committed_lock_passes (test_w4_test_evaluation.GateTests.test_identical_committed_lock_passes) ... ok
+test_missing_checkpoint_rejected (test_w4_test_evaluation.GateTests.test_missing_checkpoint_rejected) ... ok
+test_one_official_run_and_no_unsafe_resume (test_w4_test_evaluation.GateTests.test_one_official_run_and_no_unsafe_resume) ... ok
+test_path_escape_rejected (test_w4_test_evaluation.GateTests.test_path_escape_rejected) ... ok
+test_pending_lock_blocks_before_any_git_checkpoint_or_test_access (test_w4_test_evaluation.GateTests.test_pending_lock_blocks_before_any_git_checkpoint_or_test_access) ... ok
+test_pending_protocol_blocks_even_when_selection_marked_closed (test_w4_test_evaluation.GateTests.test_pending_protocol_blocks_even_when_selection_marked_closed) ... ok
+test_uncommitted_lock_rejected (test_w4_test_evaluation.GateTests.test_uncommitted_lock_rejected) ... ok
+test_duplicate_parent_prediction_rejected (test_w4_test_evaluation.MetricTests.test_duplicate_parent_prediction_rejected) ... ok
+test_independent_hand_computed_error_and_zero_division (test_w4_test_evaluation.MetricTests.test_independent_hand_computed_error_and_zero_division) ... ok
+test_missing_classes_still_eight_by_eight_and_macro_over_eight (test_w4_test_evaluation.MetricTests.test_missing_classes_still_eight_by_eight_and_macro_over_eight) ... ok
+test_missing_parent_prediction_rejected (test_w4_test_evaluation.MetricTests.test_missing_parent_prediction_rejected) ... ok
+test_perfect_eight_class_metrics_and_matrix (test_w4_test_evaluation.MetricTests.test_perfect_eight_class_metrics_and_matrix) ... ok
+test_relabelled_ground_truth_rejected (test_w4_test_evaluation.MetricTests.test_relabelled_ground_truth_rejected) ... ok
+test_box_outside_source_rejected (test_w4_test_evaluation.PopulationTests.test_box_outside_source_rejected) ... ok
+test_complete_population_passes (test_w4_test_evaluation.PopulationTests.test_complete_population_passes) ... ok
+test_crop_count_and_weight_must_match (test_w4_test_evaluation.PopulationTests.test_crop_count_and_weight_must_match) ... ok
+test_duplicate_crop_rejected (test_w4_test_evaluation.PopulationTests.test_duplicate_crop_rejected) ... ok
+test_duplicate_parent_rejected (test_w4_test_evaluation.PopulationTests.test_duplicate_parent_rejected) ... ok
+test_each_cross_split_leakage_dimension_rejected (test_w4_test_evaluation.PopulationTests.test_each_cross_split_leakage_dimension_rejected) ... ok
+test_missing_parent_crop_rejected (test_w4_test_evaluation.PopulationTests.test_missing_parent_crop_rejected) ... ok
+test_source_file_sha_leakage_rejected (test_w4_test_evaluation.PopulationTests.test_source_file_sha_leakage_rejected) ... ok
+test_wrong_class_order_rejected (test_w4_test_evaluation.PopulationTests.test_wrong_class_order_rejected) ... ok
+test_wrong_crop_label_rejected (test_w4_test_evaluation.PopulationTests.test_wrong_crop_label_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 4.921s
+
+OK

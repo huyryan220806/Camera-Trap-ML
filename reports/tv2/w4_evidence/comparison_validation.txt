@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\validate_comparison.py", line 62, in <module>
+    main()
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\validate_comparison.py", line 53, in main
+    result = validate(args.folder, check_images=not args.metadata_only)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\validate_comparison.py", line 17, in validate
+    config, source, rows, cmap = load_inputs(config_path)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\comparison_data.py", line 48, in load_inputs
+    validate_v2(source, check_images=False)
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\validate_manifest_v2.py", line 18, in validate
+    rows = load_source(source)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\download_subset.py", line 99, in load_source
+    safe_image_path(DEFAULT_IMAGES, row)
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\download_subset.py", line 76, in safe_image_path
+    if path.is_symlink() or path.is_junction():
+                            ^^^^^^^^^^^^^^^^
+AttributeError: 'WindowsPath' object has no attribute 'is_junction'

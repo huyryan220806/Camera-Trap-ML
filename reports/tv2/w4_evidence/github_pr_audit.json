@@ -1,0 +1,18 @@
+{
+  "repository": "huyryan220806/Camera-Trap-ML",
+  "source": "GitHub connector search_prs, retrieved 2026-10-22",
+  "existing_tv2_pr": {
+    "number": 4,
+    "url": "https://github.com/huyryan220806/Camera-Trap-ML/pull/4",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-10-21T03:31:49Z",
+    "head_sha": "8a7c99c022fecec22778a6775428dc789a7becdd"
+  },
+  "query_for_current_work": {
+    "query": "head:feat/baseline",
+    "state": "open",
+    "returned_issues_before_w4_publication": []
+  },
+  "w4_peer_acceptance": "NOT VERIFIED; branch content and report audits do not constitute reviewer acceptance"
+}

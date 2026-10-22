@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "images": 600,
+  "crops": 680,
+  "multi_crop_images": 57,
+  "validation": "Frozen metadata, labels, boxes, weights, crop/parent associations and leakage dimensions",
+  "test_rasters_decoded": false,
+  "model_inference_performed": false
+}

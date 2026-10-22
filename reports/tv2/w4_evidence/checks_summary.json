@@ -1,0 +1,63 @@
+{
+  "checked_utc": "2026-10-22T15:03:43.775743+00:00",
+  "json_files_parsed": [
+    "reports/tv2/w4_evidence/checks_summary.json",
+    "reports/tv2/w4_evidence/comparison_validation.json",
+    "reports/tv2/w4_evidence/comparison_validation_py312.json",
+    "reports/tv2/w4_evidence/environment.json",
+    "reports/tv2/w4_evidence/github_pr_audit.json",
+    "reports/tv2/w4_evidence/log_normalization.json",
+    "reports/tv2/w4_evidence/plans.json",
+    "reports/tv2/w4_evidence/protected_after.json",
+    "reports/tv2/w4_evidence/protected_baseline.json",
+    "reports/tv2/w4_evidence/protected_before.json",
+    "reports/tv2/w4_evidence/publication.json",
+    "reports/tv2/w4_evidence/repository_audit.json",
+    "reports/tv2/w4_evidence/repository_audit_initial.json",
+    "reports/tv2/w4_evidence/staged_audit.json",
+    "reports/tv2/w4_evidence/test_source_restoration.json",
+    "reports/tv2/w4_evidence/test_source_restoration_attempt01.json",
+    "reports/tv2/w4_evidence/train_val_source_hashes.json",
+    "reports/tv2/w4_evidence/tv1_inventory_audit.json",
+    "reports/tv2/w4_evidence/validation_matrix_audit.json",
+    "reports/tv2/w4_evidence/w4_population_validation.json",
+    "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json",
+    "reports/tv2/TV2_W4_EVALUATION_PROTOCOL.json"
+  ],
+  "protected_files_checked": 465,
+  "protected_files_changed": [],
+  "markdown_link_failures": [],
+  "diff_check_exit": 0,
+  "staged_diff_check_exit": 0,
+  "test_inference_performed": false,
+  "official_run_marker_exists": false,
+  "official_test_run_exists": false,
+  "tests": {
+    "regression_tests_final.txt": {
+      "status": "PASS",
+      "total": 311,
+      "seconds": 173.052,
+      "sha256": "124980e69bea2eb58f2737120f7d639e34afe251833580d1d5870877e9d2257a"
+    },
+    "w4_tests_py312.txt": {
+      "status": "PASS",
+      "total": 48,
+      "seconds": 21.683,
+      "sha256": "55aa73a6cdb53f4d93a031e4df492c57c763299050c73bf6fe46457414352ae6"
+    },
+    "tv3_w4_tests.txt": {
+      "status": "PASS",
+      "total": 6,
+      "seconds": 7.843,
+      "sha256": "922f851b81eccd5fbe0b60684ef6b013659ed836d1ae682b34b1d57d95ee550a"
+    },
+    "source_restoration_tests.txt": {
+      "status": "PASS",
+      "total": 6,
+      "seconds": 0.105,
+      "sha256": "15a0fa776f82461ed1fe11b0351027995d3a0204361a7bde5873a571734e3d84"
+    }
+  },
+  "TV2_W4_MODEL_SELECTION_LOCK.json_sidecar_matches": true,
+  "TV2_W4_EVALUATION_PROTOCOL.json_sidecar_matches": true
+}

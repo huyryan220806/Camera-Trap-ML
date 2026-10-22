@@ -1,0 +1,2 @@
+# Preserve evidence bytes across Windows checkouts so recorded SHA-256 stays valid.
+*.txt -text whitespace=cr-at-eol
