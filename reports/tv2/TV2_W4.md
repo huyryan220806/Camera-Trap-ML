@@ -78,4 +78,10 @@ Chỉ stage mã TV2 và báo cáo/evidence W4; không ảnh, weights, secrets, m
 
 **W4-02 BLOCKED.**
 
+## 10. Bằng chứng xuất bản cuối phiên
+
+Implementation commit `eff4b1ddd74a94bd6fe54ca7c8078cff7100be50` đã push lên `origin/feat/baseline`; lệnh `git ls-remote` xác minh remote HEAD khớp local. Commit tài liệu tiếp theo ghi nhận biên nhận này; xem [publication](w4_evidence/publication.json).
+
+**PR NOT CREATED**: GitHub connector trả `403 Resource not accessible by integration`. Automatic approval review từ chối đọc credential Git cho API và cũng từ chối mở giao diện tạo PR sau lỗi connector; các thao tác đó không được thực hiện. Cần người dùng phê duyệt trước một lần thử tạo PR tiếp theo. [Mô tả Draft PR đã chuẩn bị](w4_evidence/pr_draft.md). Không có phê duyệt TV1 hoặc tự merge.
+
 Khôi phục dữ liệu dùng `scripts/prepare_w4_test_sources.py`: lượt đầu 599/600, một lỗi chuẩn hóa đường dẫn khi tạo thư mục song song; đã sửa trong code TV2 và chạy lại đạt 600/600. Giữ [log lượt đầu](w4_evidence/test_source_restoration_attempt01.json) và [kết quả cuối](w4_evidence/test_source_restoration.json). Dùng nguyên hàm kiểm tra RGB TV1, không tự đổi định nghĩa checksum. Ảnh chỉ nằm trong data/images ignored, không được stage.

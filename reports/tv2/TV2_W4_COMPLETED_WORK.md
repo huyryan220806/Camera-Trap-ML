@@ -14,7 +14,8 @@
 | Evaluator và tests TV2 | DONE; log regression và w4_tests_py312.txt |
 | Hồ sơ final selection và protocol | PREPARED/PENDING; không khóa giả |
 | Test inference/metrics/CM/per-class/lỗi thực | BLOCKED; không có số liệu giả |
-| Commit/push/PR | Xem publication.json và PR; không suy diễn từ checklist |
+| Commit/push | DONE; eff4b1d đã push, local/remote HEAD được xác minh; xem publication.json |
+| Tạo PR | BLOCKED: connector 403 và automatic approval review từ chối hai fallback; draft body đã chuẩn bị |
 | TV1 nghiệm thu | PENDING; chưa có bằng chứng phê duyệt W4 |
 
 ## Điều kiện tiếp tục
