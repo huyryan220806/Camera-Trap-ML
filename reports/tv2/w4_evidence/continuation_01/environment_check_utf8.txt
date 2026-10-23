@@ -1,0 +1,8 @@
+Python 3.12.14 | D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe
+ijson: 3.5.1 (expected 3.5.1)
+numpy: 2.5.3 (expected 2.5.3)
+matplotlib: 3.11.2 (expected 3.11.2)
+jsonschema: 4.26.0 (expected 4.26.0)
+requests: 2.34.2 (expected 2.34.2)
+Pillow: 12.2.0 (expected 12.2.0)
+Week-one CPU environment OK. GPU, deep-learning runtime and real inference are not checked.

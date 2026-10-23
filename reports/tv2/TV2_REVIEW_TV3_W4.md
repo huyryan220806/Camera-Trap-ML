@@ -1,29 +1,34 @@
-# TV2 review TV3 W4-03
+# TV2 review TV3 W4-03 — tiếp nối 23/10/2026
 
-Kết luận: **PENDING FIX** tại `65b99b9def6a147abe6a4d436c18a067f3f37dc4`. TV2 không sửa nhánh TV3 và không nghiệm thu thay TV1.
+Kết luận: **PENDING FIX**. B2 đã được xác minh thật; B3 đọc/reload/forward được nhưng **không tái lập chính xác Validation reference** trên CPU hoặc CUDA. Không đổi tiêu chí PASS, không sửa weights/code TV3, không mở Test.
 
-## Bằng chứng xác minh được
+## Bằng chứng mới và blocker cũ đã giải quyết
 
-- Code thật: `scripts/train_b3.py`, `scripts/error_analysis.py`, `configs/b3_class_weighted.json`, `tests/test_tv3_w4.py`. Xem [index SHA và commit](w4_evidence/repository_audit.json).
-- Sáu test W4 của TV3 chạy đạt trong thư mục review độc lập: [log](w4_evidence/tv3_w4_tests.txt). Đây là fixture/synthetic smoke; không train lại B3 chính thức, không dùng ảnh SWG và không phải bằng chứng tái lập checkpoint thật.
-- B3 gọi loader mặc định `splits=['train','val']`, tính trọng số từ Train và chọn best epoch bằng image-level Validation Macro-F1. Code không yêu cầu Test trong vòng train; bằng chứng này không thay thế provenance của run thực tế.
-- Cả hai ma trận Validation có 600 ảnh, support 75/lớp, đúng thứ tự 0–7. Tính lại từ số đếm nguyên: B2 F1=0.7454765175212033, P=0.7484190016985997, R=0.7466666666666666, Accuracy=0.7466666666666667; B3 F1=0.7410465262846234, P=0.7406316201298413, R=0.7433333333333333, Accuracy=0.7433333333333333. Khớp số công bố khi làm tròn 4 chữ số. [Audit metric](w4_evidence/validation_matrix_audit.json).
-- TV3 quyết định giữ B2; commit quyết định có author time 22/10/2026 19:30:11 +07:00. TV2 chưa chạy Test. Không dùng Test để chọn lại B3.
+- B2 local `experiments/B2_run01/checkpoints/best_model.pt`: 89,548,866 byte, SHA `8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`, epoch21. Fresh process CPU tái lập đúng CM, 152 error IDs/labels và mọi metric phân loại; native/adapter max logit delta = 0 trên toàn bộ 680 crop. [Verification](w4_evidence/continuation_01/b2_validation/verification.json).
+- B3 user-delivered `experiments/B3_run01/checkpoints/best_model.pt`: 89,548,994 byte, SHA `93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b`, epoch14. Safe load `weights_only=True`, finite tensors, ResNet18/8 classes, mapping, preprocessing và embedded config khớp TV3 `65b99b9`. Embedded provenance khớp `comparison_v1`. [Inspection](w4_evidence/continuation_01/b3_checkpoint_inspection.json).
+- B2/B3 dùng đúng cùng 600 Validation IDs / 680 crop, SHA nguồn Train 2.800 ảnh và Val 600 ảnh được kiểm tra. Không suy ra cùng population chỉ từ support. Không đọc Test trong các verifier checkpoint.
+- Metadata B3 đánh dấu official, nhưng không có `run_id`/training commit; nguồn user + config/epoch/report phù hợp B3_run01, chưa chứng minh đầy đủ identity/runtime gốc. Best epoch14 được xác nhận trong file; early-stop epoch21 mới là báo cáo TV3, chưa kiểm chứng từ full log.
 
-## Trọng số crop và trọng số ảnh
+## Sai lệch Validation B3 còn tồn tại
 
-Train có 350 ảnh nguồn/lớp. Số crop theo ID 0–7 là 359, 350, 421, 360, 352, 353, 450, 480. Code tính `u_c=3125/(8*n_crop_c)`, rồi `w_c=u_c/mean(u)`; trọng số tương ứng khoảng 1.072638, 1.100220, 0.914673, 1.069659, 1.093969, 1.090870, 0.855727, 0.802244, khớp bảng TV3.
+| Nguồn | Macro-F1 | Macro-Precision | Macro-Recall | Accuracy | Đúng |
+|---|---:|---:|---:|---:|---:|
+| TV3/checkpoint reference | 0.7410465263 | 0.7406316201 | 0.7433333333 | 0.7433333333 | 446/600 |
+| Reload CPU | 0.7410527052 | 0.7408712201 | 0.7433333333 | 0.7433333333 | 446/600 |
+| Reload CUDA | 0.7427341579 | 0.7424361314 | 0.7450000000 | 0.7450000000 | 447/600 |
 
-Loss B3 trung bình CE có trọng số trong từng ảnh, rồi trung bình qua ảnh. B2 đã trung bình crop theo ảnh nên tổng trọng số nền mỗi lớp là 350. Áp dụng thêm nghịch đảo số crop làm thay đổi tầm quan trọng của các lớp vốn cân bằng ở cấp ảnh; đây không phải sửa mất cân bằng ở cấp ảnh. Nếu tính nghịch đảo theo ảnh nguồn thì tất cả trọng số bằng 1. Chuẩn hóa mean=1 có trong code, cần nêu rõ khi tái lập.
+CPU khác reference hai ảnh: `cc293eb4-8c29-11eb-81b9-000d3a74c7de` (GT sambar: reference wild_pig, reload sambar), `cbdf50b3-8c29-11eb-a63b-000d3a74c7de` (GT common_palm_civet: reference đúng, CPU annamite_striped_rabbit). CUDA còn khác reference ảnh `cc293eb4...`; không có lỗi khác bị che giấu. Xem [runtime comparison](w4_evidence/continuation_01/b3_runtime_comparison.json), [CPU FAIL](w4_evidence/continuation_01/b3_validation_diagnostic/verification.json), [CUDA FAIL](w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json).
 
-Mô tả bầy đàn và suy giảm do giảm trọng số là giả thuyết diễn giải, chưa chứng minh quan hệ nhân quả bằng một run/seed. Không có kiểm định theo cụm hay nhiều seed. Nguồn protocol gốc chỉ nêu inverse frequency; lựa chọn basis='crop' và margin +0.005 chưa có bằng chứng đồng thuận trước thử nghiệm. B3 thấp hơn B2 dưới cả quy tắc cải thiện dương và margin +0.005 nên không cần chọn lại mô hình.
+SHA ảnh, RGB crop và tensor normalized tại hai ID giống hệt giữa CPU env (Python3.12.14/torch2.8.0+cpu/Pillow12.2) và CUDA env (Python3.11.9/torch2.8.0+cu126/Pillow12.3, RTX4060 Laptop). Native/adapter logit delta bằng 0 trong từng runtime. Quan sát được độ nhạy runtime trên một dự đoán sát điểm; **chưa chứng minh nguyên nhân toàn bộ sai lệch với runtime TV3 gốc**. Không chọn runtime cho điểm đẹp hơn, không nới tolerance CM hoặc sửa metric bằng tay. Các lần chạy đều là Validation diagnostics, không Test official runs.
 
-## Điều kiện còn thiếu
+## Trọng số và giới hạn khoa học
 
-1. **NOT FOUND**: `outputs/b3_class_weighted/b3_run01/validation_comparison.json`, `train_log.jsonl`, `best_model.pt` trong Git tree commit đã audit. Không yêu cầu đưa weights vào Git: TV3 cần bàn giao weights ngoài Git với URL/đường dẫn dùng được, SHA-256, byte size và artifact JSON/log nhỏ.
-2. Báo cáo error analysis B3 là artifact thứ cấp từ checkpoint được khai báo bằng đường dẫn máy TV3, chưa chứa SHA checkpoint. Chưa kiểm tra được epoch 14, reload thật, config/run provenance hoặc đối chiếu đầy đủ prediction ID với cùng Validation population. Cùng support không tự chứng minh cùng 600 ID.
-3. `preflight_hash_check=false` trong config B3: manifest lock có hash nhưng chưa chứng minh ảnh Train/Val của run B3 được hash trước khi train. Không đổi config hay train lại để hợp thức hóa run cũ; cần bằng chứng run gốc và công khai giới hạn.
-4. Bảng TV3 dùng Macro-Precision B1 0.5688; artifact gốc TV2 là **0.5748610369**. Đây là sai lệch báo cáo, không làm đổi thứ tự B2/B3.
-5. Khuyến nghị review score 0.50 trong báo cáo TV3 chưa có mục tiêu/tie rule/chứng cứ chọn ngưỡng Validation; TV2 không khóa nó làm ngưỡng tối ưu. Demo 0.70 cũng là giá trị minh họa chưa tối ưu.
+Train vẫn 350 parent images/lớp; crop counts 359,350,421,360,352,353,450,480. TV3 code tính `u_c=3125/(8*n_crop_c)`, rồi normalize arithmetic mean=1. Trọng số khoảng 1.072638,1.100220,0.914673,1.069659,1.093969,1.090870,0.855727,0.802244, khớp định nghĩa công bố. Loss train: weighted CE theo crop → mean trong parent → mean qua parent. Nếu tính frequency theo parent thì mọi trọng số là 1. B2 đã cân bằng tổng ảnh nên B3 là tái trọng số các lớp theo crop, không phải chứng minh image-level imbalance.
 
-TV3 cần hoàn tất nguồn artifact và provenance để TV2 chốt review; hiện chưa đủ điều kiện đóng final lock. Những kết quả xác minh được vẫn được giữ nguyên, không sửa số B3.
+Validation CE lưu trong checkpoint là **unweighted parent-mean crop CE**, không phải weighted training objective B3. B2 CPU CE 0.8177321676 vs checkpoint 0.8178; B3 CPU 0.7961626964 vs 0.7962. Không trộn loss khác định nghĩa; không gọi loss B2 là trùng tuyệt đối. Class weights thực tế không được serialize riêng; tái dựng từ config/code và frozen Train, chưa kiểm tra được log train gốc. `preflight_hash_check=false` là giới hạn lịch sử, không thay config để hợp thức hóa run cũ.
+
+Quyết định TV3 giữ B2 ở commit `65b99b9` có trước mọi Test inference và B2 vẫn cao hơn các kết quả B3 local. Tuy nhiên không chuyển final lock sang LOCKED khi reference B3 chưa được đối chiếu đầy đủ. Margin +0.005/basis crop chưa có bằng chứng preregistration; không tự sửa. Bảng B1 Macro-Precision TV3 vẫn sai 0.5688; nguồn B1 TV2 là **0.5748610369**. Khuyến nghị threshold0.50 chưa được tối ưu Validation; softmax chưa calibration.
+
+## TV3 cần bàn giao
+
+Full log B3 gốc, standalone validation artifact, unrounded predictions/logits theo image/crop ID, runtime/GPU/cuDNN/TF32/determinism gốc, SHA/source attestation và training commit/run identity; giải thích/reconcile hai ảnh bất đồng. Không yêu cầu train lại hay đổi checkpoint/nhãn. Sáu test TV3 fixture W4 cũ vẫn là bằng chứng code, không thay thế việc kiểm định checkpoint thật. [Review machine-readable](w4_evidence/continuation_01/tv3_review.json).

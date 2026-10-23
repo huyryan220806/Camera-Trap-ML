@@ -1,0 +1,14 @@
+{
+  "branch": "feat/baseline",
+  "starting_commit": "a66f41cb7f966f17de7e132e1433103958c1af72",
+  "continuation_implementation_commit": null,
+  "push_status": "PENDING_CURRENT_CONTINUATION",
+  "existing_open_tv2_pr_found": false,
+  "pr_url": null,
+  "pr_creation_status": "NOT YET RETRIED VIA CONNECTOR",
+  "manual_pr_creation_url": "https://github.com/huyryan220806/Camera-Trap-ML/compare/main...feat%2Fbaseline?expand=1",
+  "prepared_body": "reports/tv2/w4_evidence/continuation_01/pr_draft.md",
+  "policy": "If connector returns 403, stop: no credential extraction or browser workaround.",
+  "review_status": "PENDING TV1; W4-02 BLOCKED by B3 reference reproducibility",
+  "self_acceptance": false
+}

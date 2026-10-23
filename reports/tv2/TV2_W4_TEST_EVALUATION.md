@@ -1,47 +1,40 @@
-# TV2 W4-02 Test evaluation
+# TV2 W4-02 Test evaluation — tiếp nối 23/10/2026
 
-Trạng thái: **BLOCKED — Test chưa mở để model inference**. Không có official Test run, metric hay Confusion Matrix Test trong gói này.
+**BLOCKED — CHƯA MODEL INFERENCE TEST.** Không có official Test run, metric Test, per-class Test hoặc Confusion Matrix Test. Lần tiếp nối không ghi đè run, không tạo số liệu giả.
 
-## Điều kiện và dữ liệu
+## Điều kiện còn thiếu
 
-Final model lock còn `FINAL MODEL LOCK PENDING`: thiếu checkpoint B2 local và artifact run B3 gốc. Bộ ảnh Test gốc đã khôi phục đúng SHA. [Lock](TV2_W4_MODEL_SELECTION_LOCK.json), [protocol](TV2_W4_EVALUATION_PROTOCOL.json), [audit](w4_evidence/repository_audit.json).
+B2 đã có file thật tại `experiments/B2_run01/checkpoints/best_model.pt`, đúng SHA/89,548,866 byte/epoch21, Validation reference PASS. B3 đã có file thật nhưng reference reproduction FAIL cả CPU và CUDA. [Model lock](TV2_W4_MODEL_SELECTION_LOCK.json) vẫn `FINAL MODEL LOCK PENDING`, `locked_utc=null`; [protocol](TV2_W4_EVALUATION_PROTOCOL.json) vẫn pending. Không commit một lock giả hay chọn runtime có điểm đẹp hơn để vượt cổng.
 
-Manifest Test được kiểm tra metadata: 600 ảnh nguồn, 680 crop, 495 chuỗi, 98 địa điểm, 75 ảnh/lớp. SHA provenance `d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f`; SHA Test source manifest `e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2`; SHA B2 Test manifest `2504cb38c946eba8a2e19cbcbe26f38973023a7bc4db32089a801ebde7bc9bbb`. Không giao image ID/file/location/sequence/file SHA giữa các split theo audit metadata. Việc kiểm kê không phải model inference.
+## Population và dữ liệu tái sử dụng
 
-TV1 đã kiểm tra 600 ảnh trên máy TV1, có 599 nội dung RGB duy nhất. TV2 đối chiếu đủ 600 quality record, ID, SHA file, kích thước và manifest; **600/600 file Test đã được khôi phục** từ URL gốc, khớp SHA-256/byte size, decode/kích thước và RGB hash theo hàm TV1. Việc khôi phục chỉ kiểm tra dữ liệu, không model inference. [Bằng chứng local](w4_evidence/test_source_restoration.json). [Đối chiếu TV1](w4_evidence/tv1_inventory_audit.json). Cặp ảnh trùng cùng Test được giữ nguyên.
+600 ảnh Test / 680 crop / 495 chuỗi / 98 địa điểm / 8 lớp, 75 ảnh/lớp. Không tải lại 600 ảnh: SHA 600/600 vẫn đúng, frozen manifests/provenance không đổi. [Integrity](w4_evidence/continuation_01/integrity_before_finalization.json). Một cặp RGB trùng cùng Test vẫn giữ nguyên; không loại ảnh khó, multi-box, box nhỏ/sát mép.
 
-## Phương pháp đề xuất đã hiện thực
+Provenance `d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f`; source Test manifest `e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2`; B2 crop Test manifest `2504cb38c946eba8a2e19cbcbe26f38973023a7bc4db32089a801ebde7bc9bbb`.
 
-Sau khi bằng chứng đầy đủ, khóa hai JSON và SHA sidecar trong commit trước Test. Chỉ B2 nằm trong kế hoạch; B1 Test là `NOT EVALUATED BY FROZEN PLAN`, B3 không đánh giá Test. Không thay đổi danh sách sau khi xem điểm.
+## Phương pháp giữ nguyên
 
-Mỗi ảnh dùng đủ crop nguyên đã khóa, padding 0, RGB không EXIF rotation, Resize(short side 256) → CenterCrop224 → tensor → ImageNet normalization. Chạy `eval`, `inference_mode`, không augmentation ngẫu nhiên. Trung bình vector softmax của mọi crop rồi argmax theo ID 0–7; tie chọn ID nhỏ nhất. Chỉ một prediction/ảnh. Không làm tròn trước macro average; zero_division=0; ma trận hàng thật/cột dự đoán.
+Chỉ B2 dự kiến đánh giá; B1 `NOT EVALUATED BY FROZEN PLAN`, B3 không Test. Dùng nguyên evaluator W4 đã có: RGB không EXIF rotation, integer GT crop/padding0, Resize short256 → CenterCrop224 → ImageNet normalize, eval/inference_mode, CPU/batch crop<=32/4 threads/seed42, không augmentation. Mean đủ softmax vector mọi crop theo parent → argmax (tie ID nhỏ nhất), một prediction/ảnh. Macro qua đủ labels0–7, zero_division0, không làm tròn trước macro; CM hàng thật/cột dự đoán. Không threshold để bỏ ảnh khó; threshold review chưa được chọn Validation, softmax chưa calibration. Test loss không báo cáo.
 
-Không có ngưỡng review được chọn bằng Validation. Phân loại cơ bản dùng argmax toàn bộ 600 ảnh, không bỏ ảnh điểm thấp. Softmax chưa calibration. Loss không báo cáo để tránh nhập nhằng crop CE và CE trên xác suất ảnh trung bình. CPU batch tối đa 32 crop, seed 42, 4 threads là phương án chưa frozen; không suy ra GPU latency.
+## Kết quả Test thực tế
 
-## Kết quả Test
-
-| Metric | B2 Test |
+| Metric / artifact | Kết quả |
 |---|---|
-| Macro-F1 | NOT RUN |
-| Macro-Precision | NOT RUN |
-| Macro-Recall | NOT RUN |
-| Accuracy | NOT RUN |
-| Evaluated support | 0; expected 600 |
-| Per-class P/R/F1/support | NOT RUN; expected support 75/lớp |
-| Confusion Matrix 8×8 | NOT GENERATED |
+| Macro-F1 / Macro-Precision / Macro-Recall / Accuracy | NOT RUN |
+| Per-class P/R/F1/support | NOT RUN; expected support75/lớp |
+| Evaluated source images | 0; expected600 |
+| Confusion Matrix8×8 / CSV / PNG | NOT GENERATED |
+| Official run ID | Chưa tạo; candidate W4_test_eval01 |
 
-Các ma trận trong [audit Validation](w4_evidence/validation_matrix_audit.json) thuộc **Validation**, không phải Test.
+Ma trận/predictions trong `continuation_01/b2_validation/` và `b3_validation_*` là **Validation**, không phải Test. Không sử dụng chúng để điền bảng Test.
 
-## Chạy an toàn và tính toàn vẹn
+## Lệnh tái lập và gate
 
 ```powershell
 $py = 'outputs/w2_final_handoff/tv4_env/Scripts/python.exe'
-& $py scripts/evaluate_w4_test.py
-# Hiện trả exit 2 BLOCKED trước khi đọc Test rows hay import inference runtime.
-# Chỉ sau khi thực sự hoàn tất/commit final lock và protocol:
-& $py scripts/evaluate_w4_test.py --checkpoint <verified-B2-file> --execute
+& $py scripts/evaluate_w4_test.py --checkpoint experiments/B2_run01/checkpoints/best_model.pt
+# Hiện BLOCKED trước Test inference; chỉ sau final lock/protocol hợp lệ đã commit:
+& $py scripts/evaluate_w4_test.py --checkpoint experiments/B2_run01/checkpoints/best_model.pt --execute
 ```
 
-Preflight kiểm tra lock committed, SHA code/config/provenance/manifests/checkpoint, mapping, threshold và kế hoạch đúng B2. Sau gate kiểm tra leakage/crop/source hash/full decode, metadata checkpoint và tái kiểm tra gate. Marker exclusive toàn repository chặn run thứ hai. Không hỗ trợ resume an toàn: nếu gián đoạn giữ journal/state và dừng để review, không xóa marker hay tự tạo run mới.
-
-Artifact dự kiến ở `outputs/tv2_w4/W4_test_eval01/`: metric JSON, per-class CSV, CM CSV/PNG, prediction CSV và journal đầy đủ softmax, config/manifest/checkpoint verification/log/environment/error analysis. Không tạo các file này khi bị chặn. Test synthetic kiểm tra đường xuất toàn bộ file và SHA trong thư mục tạm, không phải kết quả SWG. Metric kiểm tra chéo từ CM trước khi đánh COMPLETE. Không upload ảnh hay weights.
+Evaluator giữ nguyên SHA/code và gate đã kiểm thử. Một official marker toàn repo chặn lần chạy thứ hai; không resume an toàn thì giữ journal/state và dừng để review. Khi được phép, artifact ở `outputs/tv2_w4/W4_test_eval01/`: metrics/per-class/CM/predictions/config/manifest/checkpoint verification/log/environment/error analysis. Hiện chưa tạo thư mục official này. Không upload ảnh hoặc weights lên GitHub.

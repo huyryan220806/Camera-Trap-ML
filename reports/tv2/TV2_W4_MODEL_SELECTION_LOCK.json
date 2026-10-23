@@ -9,7 +9,7 @@
   "best_epoch": 21,
   "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
   "checkpoint_bytes": 89548866,
-  "checkpoint_verified_locally": false,
+  "checkpoint_verified_locally": true,
   "config_sha256": "3000b6c7a6d4d81441e991765f0f56bcc65b1124cf3b3e6a78cf7bab504bbed8",
   "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
   "dataset_version": "comparison_v1",
@@ -55,7 +55,7 @@
       "accuracy": 0.7433333333333333
     }
   },
-  "validation_metric_evidence": "w4_evidence/validation_matrix_audit.json; recomputed from published Validation confusion matrices, not new model inference",
+  "validation_metric_evidence": "Published Validation values retained as reference; B2 fresh-process verification PASS, B3 CPU/CUDA reference reproduction FAIL. See continuation_01/b3_runtime_comparison.json.",
   "tv3_decision": {
     "model": "B2",
     "source": "reports/tv3/TV3_W4_DECISION.md",
@@ -65,17 +65,17 @@
   },
   "review_status": "PENDING FIX",
   "evidence_verified": {
-    "b2_checkpoint_metadata": false,
-    "b2_independent_reload": false,
+    "b2_checkpoint_metadata": true,
+    "b2_independent_reload": true,
     "b3_original_validation_artifact": false,
-    "b3_checkpoint_hash": false,
+    "b3_checkpoint_hash": true,
     "b3_train_val_provenance": false,
     "decision_before_test": true
   },
   "historical_b2_independent_reload": {
     "source": "reports/tv4_w3_continuation/b2_validation.json",
     "commit": "254b40eab77b849647a2291aa0257c1b161b4da2",
-    "verified_by_tv2_this_session": false
+    "verified_by_tv2_this_session": true
   },
   "threshold_policy": {
     "status": "NOT_SELECTED",
@@ -88,12 +88,52 @@
   ],
   "b1_test": "NOT EVALUATED BY FROZEN PLAN",
   "decision_evidence_sha256": {
-    "reports/tv2/w4_evidence/validation_matrix_audit.json": "b90c388ff74b902ef5dcf28f60a361b4ed6b122656e1f8a239b830cb84516408"
+    "reports/tv2/w4_evidence/validation_matrix_audit.json": "b90c388ff74b902ef5dcf28f60a361b4ed6b122656e1f8a239b830cb84516408",
+    "reports/tv2/w4_evidence/continuation_01/b2_checkpoint_inspection.json": "6752d9898b0e4798a00fdf4b64a171ed71b40310f89bc7191831bbd6bc602891",
+    "reports/tv2/w4_evidence/continuation_01/b3_checkpoint_inspection.json": "16ab2599c59df10304c12597dc9b82c86d3f0fdf5b2d84d69be50b438598a04a",
+    "reports/tv2/w4_evidence/continuation_01/b2_validation/verification.json": "19bb6de7356a6601c25bf3727ac02ca089e98a84fae18f9c5f810647b8b10ab9",
+    "reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json": "48ce6aabe91178a1f8c8ebedd4a92f952a9355cd9499aa8a5ecb67e2cf549f19",
+    "reports/tv2/w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json": "b810d7324845461f665b9d131a0a1ae3ffd28470cdf16d3a08845355f0c04b06",
+    "reports/tv2/w4_evidence/continuation_01/b3_runtime_comparison.json": "257a82d0ffa33f26246b50faf4de7ecc5fa3edf76a37edc095ccd799698df841",
+    "reports/tv2/w4_evidence/continuation_01/repository_audit.json": "52784fe2928814de37d91e57fda52ae1ab4bcbae8ec72a1551243b91ccc9f2d5"
   },
   "test_sources_verified_locally": true,
   "blockers": [
-    "B2 checkpoint absent at all published handoff paths on this machine; no verified downloadable B2 handoff URL found in audited reports.",
-    "B3 original validation_comparison.json, train_log.jsonl, checkpoint SHA/size and reproducible runtime provenance NOT FOUND in published W4 handoff at 65b99b9def6a147abe6a4d436c18a067f3f37dc4."
+    "B3 Validation reference reproduction FAIL: CPU differs on 2 parent predictions and CUDA differs on 1 from checkpoint/published Validation CM; original runtime/predictions are required to reconcile before final selection is closed.",
+    "Original B3 run_id/training commit, full training log and original runtime provenance are absent; do not infer that delivered metadata alone authenticates the original B3 run or its historical input-byte checks."
   ],
-  "policy": "Never select model, checkpoint, threshold, augmentation or hyperparameters using Test. Do not overwrite the TV1 lock. Pending status is not permission to run Test."
+  "policy": "Never select model, checkpoint, threshold, augmentation or hyperparameters using Test. Do not overwrite the TV1 lock. Pending status is not permission to run Test.",
+  "last_verification_utc": "2026-10-23T04:34:55.781735+00:00",
+  "checkpoint_path": "experiments/B2_run01/checkpoints/best_model.pt",
+  "b2_checkpoint_metadata_verified": true,
+  "b2_independent_reload_verified": true,
+  "b3_checkpoint_path": "experiments/B3_run01/checkpoints/best_model.pt",
+  "b3_checkpoint_sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+  "b3_checkpoint_bytes": 89548994,
+  "b3_checkpoint_safe_load_verified": true,
+  "b3_embedded_config_mapping_preprocessing_and_provenance_match": true,
+  "b3_validation_artifact_present_in_checkpoint": true,
+  "b3_validation_reference_reproduced": false,
+  "b3_original_run_identity": "CONSISTENT METADATA; NOT FULLY VERIFIED",
+  "evidence_verified_scope": "Booleans mean successful verification, not mere presence. Embedded B3 provenance matches the frozen snapshot, but historical runtime provenance/reference reproduction remains unresolved.",
+  "validation_reloads": {
+    "B2_CPU": {
+      "macro_f1": 0.7454765175212033,
+      "macro_precision": 0.7484190016985997,
+      "macro_recall": 0.7466666666666666,
+      "accuracy": 0.7466666666666667
+    },
+    "B3_CPU_DIAGNOSTIC": {
+      "macro_f1": 0.7410527051783586,
+      "macro_precision": 0.7408712201097654,
+      "macro_recall": 0.7433333333333334,
+      "accuracy": 0.7433333333333333
+    },
+    "B3_CUDA_DIAGNOSTIC": {
+      "macro_f1": 0.7427341579103117,
+      "macro_precision": 0.7424361314080368,
+      "macro_recall": 0.745,
+      "accuracy": 0.745
+    }
+  }
 }

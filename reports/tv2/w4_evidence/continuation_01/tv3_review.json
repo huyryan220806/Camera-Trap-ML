@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-23T04:34:55.781735+00:00",
+  "tv3_commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+  "status": "PENDING FIX",
+  "b2_metadata_and_independent_validation": "PASS",
+  "b3_safe_load_architecture_mapping_config": "PASS",
+  "b3_original_validation_reference_reproduction": "FAIL_CPU_AND_CUDA",
+  "blockers": [
+    "B3 Validation reference reproduction FAIL: CPU differs on 2 parent predictions and CUDA differs on 1 from checkpoint/published Validation CM; original runtime/predictions are required to reconcile before final selection is closed.",
+    "Original B3 run_id/training commit, full training log and original runtime provenance are absent; do not infer that delivered metadata alone authenticates the original B3 run or its historical input-byte checks."
+  ],
+  "no_test_inference": true,
+  "not_tv1_acceptance": true
+}

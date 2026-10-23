@@ -1,0 +1,31 @@
+{
+  "purpose": "Validation input parity for two observed CPU/reference prediction disagreements; no inference/tuning",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.8.0+cpu",
+    "torchvision": "0.23.0+cpu",
+    "pillow": "12.2.0"
+  },
+  "records": [
+    {
+      "image_id": "cbdf50b3-8c29-11eb-a63b-000d3a74c7de",
+      "crop_id": "cbdf50b3-8c29-11eb-a63b-000d3a74c7de_30ae13bb-6670-11ec-8a3e-c82158b0a9cc",
+      "source_sha256": "12440f5b12579e71c13b84dd4090fa20285c1d678e4228c67f6b0269d5d87443",
+      "source_rgb_sha256": "42b8d3550e59b3c51fc0fc3d93743a4cba7371addd9ada478c0758e0b5bf9c93",
+      "source_rgb_matches_manifest": true,
+      "crop_rgb_sha256": "d6cb85037a75d27fd0460509d4d14a1e7ca01c456c775703dfcc66bb11eefd3c",
+      "normalized_tensor_sha256": "6ada37a5ae9743b51a919f2516f14dd2c9678f00a83a754342d3e7337abdaf8a"
+    },
+    {
+      "image_id": "cc293eb4-8c29-11eb-81b9-000d3a74c7de",
+      "crop_id": "cc293eb4-8c29-11eb-81b9-000d3a74c7de_30b2da8b-6670-11ec-a766-c82158b0a9cc",
+      "source_sha256": "8cd144c891819419de50825756a5952cf4413171567ff50a6d2fa450ae72ac2b",
+      "source_rgb_sha256": "b7f368612968fc17ce4a28df1bee74539e5c16a94683d562555b82ac2d06330d",
+      "source_rgb_matches_manifest": true,
+      "crop_rgb_sha256": "9a4854ec12e191e8d2758ec8cdfbeb64163ffc6e024baf17308f265441a9fbd6",
+      "normalized_tensor_sha256": "fc27ef1fdfa3db7f175be64a29102ac25a761a37ec55cd80bcbb655d5fc1ff0e"
+    }
+  ],
+  "test_opened": false,
+  "model_inference_performed": false
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 194, in <module>
+    main()
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 190, in main
+    verify(args.model, args.checkpoint.resolve(), args.output.resolve())
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 138, in verify
+    require(cm == stored["confusion_matrix"], "Reloaded Validation confusion matrix differs from checkpoint")
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 31, in require
+    raise ValueError(message)
+ValueError: Reloaded Validation confusion matrix differs from checkpoint

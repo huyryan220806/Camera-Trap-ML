@@ -7,7 +7,7 @@
   "evaluation_models": [
     "B2"
   ],
-  "model_selection_lock_sha256": "5ba01d404f404a399d5369bb0cb716d74c726ab3d7feb7b22dd05490fe3ac2f2",
+  "model_selection_lock_sha256": "2646325515dd3e610bc6055d0016d7771e90152b633a727ad2a951c6830ceaf7",
   "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
   "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
   "test_manifest_sha256": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2",
@@ -115,7 +115,10 @@
   "no_test_tuning": true,
   "source_image_policy": "All locked images retained, including known within-Test RGB duplicate pair; no EXIF rotation, crop padding 0, integer manifest boxes.",
   "blockers": [
-    "B2 checkpoint absent at all published handoff paths on this machine; no verified downloadable B2 handoff URL found in audited reports.",
-    "B3 original validation_comparison.json, train_log.jsonl, checkpoint SHA/size and reproducible runtime provenance NOT FOUND in published W4 handoff at 65b99b9def6a147abe6a4d436c18a067f3f37dc4."
-  ]
+    "B3 Validation reference reproduction FAIL: CPU differs on 2 parent predictions and CUDA differs on 1 from checkpoint/published Validation CM; original runtime/predictions are required to reconcile before final selection is closed.",
+    "Original B3 run_id/training commit, full training log and original runtime provenance are absent; do not infer that delivered metadata alone authenticates the original B3 run or its historical input-byte checks."
+  ],
+  "last_verification_utc": "2026-10-23T04:34:55.781735+00:00",
+  "checkpoint_path": "experiments/B2_run01/checkpoints/best_model.pt",
+  "no_official_test_run": true
 }

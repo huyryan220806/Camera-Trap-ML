@@ -1,0 +1,59 @@
+{
+  "checked_utc": "2026-10-23T04:40:26.605086+00:00",
+  "json_files_parsed": 30,
+  "markdown_link_failures": [],
+  "tests": {
+    "regression_tests_final.txt": {
+      "status": "PASS",
+      "total": 335,
+      "seconds": 59.13,
+      "sha256": "03acfef3c032d61695e40037d29504f2c86fd0bba6c5604d43a909973890569e"
+    },
+    "final_w4_tests.txt": {
+      "status": "PASS",
+      "total": 66,
+      "seconds": 8.387,
+      "sha256": "fa3f6a4f750efd2cf13724c09fcce15a2fbc2072e7418e353d4c5a1c9ba40842"
+    },
+    "checkpoint_verifier_reference_tests.txt": {
+      "status": "PASS",
+      "total": 18,
+      "seconds": 0.001,
+      "sha256": "244221ebe40ab7fc4a28c073f928f8055b0c1d3d86a8c818219dd060331dccc6"
+    }
+  },
+  "protected_files_checked": 528,
+  "canonical_reports_updated": [
+    "reports/tv2/TV2_REVIEW_TV3_W4.md",
+    "reports/tv2/TV2_REVIEW_TV4_W4.md",
+    "reports/tv2/TV2_W4.md",
+    "reports/tv2/TV2_W4_COMPLETED_WORK.md",
+    "reports/tv2/TV2_W4_ERROR_ANALYSIS.md",
+    "reports/tv2/TV2_W4_EVALUATION_PROTOCOL.json",
+    "reports/tv2/TV2_W4_EVALUATION_PROTOCOL.json.sha256",
+    "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json",
+    "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json.sha256",
+    "reports/tv2/TV2_W4_TEST_EVALUATION.md"
+  ],
+  "unexpected_protected_changes": [],
+  "historical_w4_evidence_changes": [],
+  "checkpoint_files_unchanged": {
+    "B0": true,
+    "B1": true,
+    "B2": true,
+    "B3": true
+  },
+  "diff_check_exit": 0,
+  "staged_diff_check_exit": 0,
+  "scientific_gates": {
+    "b2_reference": "PASS",
+    "b3_reference_cpu": "FAIL",
+    "b3_reference_cuda": "FAIL",
+    "final_model_lock_status": "FINAL MODEL LOCK PENDING",
+    "official_test_marker_exists": false,
+    "official_test_run_exists": false,
+    "test_inference_performed": false
+  },
+  "TV2_W4_MODEL_SELECTION_LOCK.json_sidecar_matches": true,
+  "TV2_W4_EVALUATION_PROTOCOL.json_sidecar_matches": true
+}

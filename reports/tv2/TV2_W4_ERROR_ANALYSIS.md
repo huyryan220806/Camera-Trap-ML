@@ -1,21 +1,19 @@
-# TV2 W4 Test error analysis
+# TV2 W4 error analysis — tiếp nối 23/10/2026
 
-**PENDING OFFICIAL TEST RUN.** Chưa có prediction Test nên chưa xác định lớp Precision/Recall thấp, cặp nhầm lẫn, tỷ lệ lỗi hay ví dụ model sai trên Test. Không dùng lỗi Validation thay thế kết quả Test.
+**PENDING OFFICIAL TEST RUN**. Chưa có prediction Test nên không có lớp Test Precision/Recall thấp, cặp nhầm lẫn hay ví dụ model sai trên Test. Không suy diễn từ Validation hoặc tạo ví dụ Test giả.
 
-## Quan sát có bằng chứng trước Test
+## Phát hiện thật thuộc Validation B3
 
-TV1 inventory cho biết 57 ảnh nhiều box, 70 ảnh có box dưới 1% diện tích ảnh, 171 ảnh có box cách mép <=1 px; các nhóm có thể giao nhau. Đây là cờ dữ liệu, không phải số lỗi mô hình hoặc nhãn sai. Test có cặp RGB trùng tại loc_0851: `d86f91b0-8c29-11eb-8c2e-000d3a74c7de` và `d86f91b6-8c29-11eb-94af-000d3a74c7de`; giữ nguyên cả hai. Xem [đối chiếu TV1](w4_evidence/tv1_inventory_audit.json) và [nguồn commit](w4_evidence/repository_audit.json).
+Hai ID bất đồng reference là `cc293eb4-8c29-11eb-81b9-000d3a74c7de` (GT sambar; reference wild_pig, local CPU/CUDA sambar) và `cbdf50b3-8c29-11eb-a63b-000d3a74c7de` (GT common_palm_civet; reference/local CUDA đúng, CPU annamite_striped_rabbit). CPU crop score ở ảnh thứ hai là rabbit0.3223070502 vs civet0.3222738504: gap khoảng0.0000332. Đây là **Validation diagnostic**, không phải kết quả Test và không dùng để chọn threshold.
 
-Theo **Validation** TV3, Mang lớn/Nai khó và nhầm lẫn đáng chú ý; đây chỉ là bối cảnh Validation, không dự đoán kết quả Test. Giả thuyết ánh sáng đêm/góc nhìn cần kiểm tra ảnh hoặc metadata thực tế; không tự gán nguyên nhân cho ví dụ Test chưa inference.
+Các ID, nhãn, confidence, vector và môi trường có trong [runtime comparison](w4_evidence/continuation_01/b3_runtime_comparison.json). Input tensor của hai ảnh giống hệt giữa hai môi trường; quan sát có runtime sensitivity nhưng chưa giải thích đầy đủ reference gốc. Không khẳng định label gốc sai, checkpoint bị sửa hay nguyên nhân ảnh tối khi chưa có chứng cứ. Không sửa dữ liệu/weights.
 
-## Phân tích sau official run
+## Dữ liệu Test và kế hoạch phân tích sau official run
 
-Evaluator xuất per-class errors/support, Precision/Recall/F1 và cặp nhầm lẫn từ CM, kèm image ID/true/predicted/softmax score/số crop cho mọi lỗi. Khi có run hợp lệ, đối chiếu với inventory nhiều box, box nhỏ/sát mép và metadata đủ chứng cứ; nếu trình bày ảnh phải ghi nguồn và trạng thái kiểm tra trực quan. Không đổi nhãn, bỏ mẫu, sửa model hoặc chọn threshold theo những lỗi này. Detector miss chỉ phân tích bằng kết quả end-to-end riêng của TV4.
+Tái sử dụng TV1: 57 ảnh nhiều box, 70 ảnh có box<1% diện tích, 171 ảnh box sát mép<=1px; nhóm có thể giao nhau và không phải số ảnh sai. Giữ cặp RGB duplicate cùng Test tại loc_0851 (`d86f91b0-8c29-11eb-8c2e-000d3a74c7de`, `d86f91b6-8c29-11eb-94af-000d3a74c7de`). Đây là data QA, không model error analysis Test.
 
-## Giới hạn khoa học
+Khi có official predictions hợp lệ, dùng evaluator đã có để tính P/R/F1 từng lớp, errors/support, directed confusion pairs, multi-crop/small-box/edge subgroups và ví dụ ID/true/predicted/score/source. Ảnh đêm/góc nhìn khó chỉ kết luận nếu metadata/kiểm tra trực quan hỗ trợ; detector miss cần kết quả MegaDetector end-to-end riêng của TV4. Không đổi model/threshold/labels theo Test.
 
-- 600 ảnh không phải 600 quan sát độc lập: 495 chuỗi, 98 địa điểm và một cặp trùng RGB. Mỗi lớp 75 ảnh; mỗi lỗi đổi recall lớp khoảng 1.33 điểm phần trăm. Không mặc định crop/ảnh độc lập khi ước lượng độ bất định.
-- Dữ liệu cân bằng lớp không đại diện tần suất động vật tự nhiên; bối cảnh camera có thể tập trung theo địa điểm.
-- Closed-set 8 lớp; không suy rộng sang loài lạ. Softmax chưa calibration và điểm thấp không chứng minh loài mới.
-- Ground-truth-box classification khác MegaDetector+classifier demo. Một số phiên bản MegaDetector đã dùng SWG trong nguồn train; SWG không tự là detector test độc lập.
-- Số ảnh/chuỗi không phải số cá thể. Không kết luận nhãn gốc sai khi chưa thẩm định loài.
+## Giới hạn
+
+600 ảnh không độc lập hoàn toàn:495 chuỗi/98 địa điểm, 75 ảnh/lớp, một cặp RGB trùng; mỗi lỗi đổi Recall lớp khoảng1.33 điểm phần trăm. Pilot cân bằng không phản ánh tần suất tự nhiên. Chỉ closed-set8 lớp, GT-box classification khác demo MegaDetector; một số phiên bản detector có SWG trong nguồn train. Softmax chưa calibration, confidence thấp không chứng minh loài lạ; số ảnh/chuỗi không phải số cá thể.
