@@ -1,0 +1,299 @@
+{
+  "val_loss": 0.7962,
+  "crop_level": {
+    "accuracy": 0.7279,
+    "macro_precision": 0.7238,
+    "macro_recall": 0.7313,
+    "macro_f1": 0.7258,
+    "total_samples": 680,
+    "per_class": {
+      "large_antlered_muntjac": {
+        "class_id": 0,
+        "precision": 0.5676,
+        "recall": 0.5455,
+        "f1": 0.5563,
+        "support": 77
+      },
+      "annamite_striped_rabbit": {
+        "class_id": 1,
+        "precision": 0.7889,
+        "recall": 0.9342,
+        "f1": 0.8554,
+        "support": 76
+      },
+      "sambar": {
+        "class_id": 2,
+        "precision": 0.6136,
+        "recall": 0.6279,
+        "f1": 0.6207,
+        "support": 86
+      },
+      "chinese_serow": {
+        "class_id": 3,
+        "precision": 0.7564,
+        "recall": 0.7763,
+        "f1": 0.7662,
+        "support": 76
+      },
+      "common_palm_civet": {
+        "class_id": 4,
+        "precision": 0.7375,
+        "recall": 0.7662,
+        "f1": 0.7516,
+        "support": 77
+      },
+      "masked_palm_civet": {
+        "class_id": 5,
+        "precision": 0.6829,
+        "recall": 0.7467,
+        "f1": 0.7134,
+        "support": 75
+      },
+      "silver_pheasant": {
+        "class_id": 6,
+        "precision": 0.9457,
+        "recall": 0.8447,
+        "f1": 0.8923,
+        "support": 103
+      },
+      "eurasian_wild_pig": {
+        "class_id": 7,
+        "precision": 0.6979,
+        "recall": 0.6091,
+        "f1": 0.6505,
+        "support": 110
+      }
+    },
+    "confusion_matrix": [
+      [
+        42,
+        5,
+        14,
+        0,
+        2,
+        2,
+        1,
+        11
+      ],
+      [
+        0,
+        71,
+        0,
+        1,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        10,
+        3,
+        54,
+        4,
+        1,
+        6,
+        1,
+        7
+      ],
+      [
+        0,
+        1,
+        7,
+        59,
+        2,
+        2,
+        0,
+        5
+      ],
+      [
+        1,
+        6,
+        3,
+        5,
+        59,
+        3,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        2,
+        1,
+        8,
+        56,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        2,
+        0,
+        2,
+        87,
+        6
+      ],
+      [
+        11,
+        0,
+        8,
+        6,
+        6,
+        9,
+        3,
+        67
+      ]
+    ],
+    "weighted_val_loss": 0.7962
+  },
+  "image_level": {
+    "accuracy": 0.7433,
+    "macro_precision": 0.7406,
+    "macro_recall": 0.7433,
+    "macro_f1": 0.741,
+    "total_samples": 600,
+    "per_class": {
+      "large_antlered_muntjac": {
+        "class_id": 0,
+        "precision": 0.6119,
+        "recall": 0.5467,
+        "f1": 0.5775,
+        "support": 75
+      },
+      "annamite_striped_rabbit": {
+        "class_id": 1,
+        "precision": 0.814,
+        "recall": 0.9333,
+        "f1": 0.8696,
+        "support": 75
+      },
+      "sambar": {
+        "class_id": 2,
+        "precision": 0.6267,
+        "recall": 0.6267,
+        "f1": 0.6267,
+        "support": 75
+      },
+      "chinese_serow": {
+        "class_id": 3,
+        "precision": 0.7733,
+        "recall": 0.7733,
+        "f1": 0.7733,
+        "support": 75
+      },
+      "common_palm_civet": {
+        "class_id": 4,
+        "precision": 0.7564,
+        "recall": 0.7867,
+        "f1": 0.7712,
+        "support": 75
+      },
+      "masked_palm_civet": {
+        "class_id": 5,
+        "precision": 0.7273,
+        "recall": 0.7467,
+        "f1": 0.7368,
+        "support": 75
+      },
+      "silver_pheasant": {
+        "class_id": 6,
+        "precision": 0.9583,
+        "recall": 0.92,
+        "f1": 0.9388,
+        "support": 75
+      },
+      "eurasian_wild_pig": {
+        "class_id": 7,
+        "precision": 0.6571,
+        "recall": 0.6133,
+        "f1": 0.6345,
+        "support": 75
+      }
+    },
+    "confusion_matrix": [
+      [
+        41,
+        5,
+        13,
+        0,
+        2,
+        2,
+        1,
+        11
+      ],
+      [
+        0,
+        70,
+        0,
+        1,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        9,
+        2,
+        47,
+        4,
+        1,
+        5,
+        1,
+        6
+      ],
+      [
+        0,
+        1,
+        7,
+        58,
+        2,
+        2,
+        0,
+        5
+      ],
+      [
+        1,
+        4,
+        3,
+        5,
+        59,
+        3,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        2,
+        1,
+        8,
+        56,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0,
+        69,
+        2
+      ],
+      [
+        10,
+        0,
+        3,
+        4,
+        4,
+        7,
+        1,
+        46
+      ]
+    ],
+    "total_unique_images": 600
+  }
+}

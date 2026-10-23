@@ -1,0 +1,26 @@
+{
+  "status": "FAIL",
+  "model": "B3",
+  "best_epoch": 14,
+  "checkpoint_sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+  "image_level_metrics": {
+    "macro_f1": 0.7427341579103117,
+    "macro_precision": 0.7424361314080368,
+    "macro_recall": 0.745,
+    "accuracy": 0.745
+  },
+  "validation_images": 600,
+  "validation_crops": 680,
+  "native_adapter_max_logit_delta_all_val_crops": 0.0,
+  "test_inference_performed": false
+}
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 220, in <module>
+    main()
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 216, in main
+    verify(args.model, args.checkpoint.resolve(), args.output.resolve(), args.device)
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 204, in verify
+    require(passed, "Reloaded Validation differs; FAIL evidence saved, no final model lock or Test inference permitted")
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\verify_w4_checkpoints.py", line 31, in require
+    raise ValueError(message)
+ValueError: Reloaded Validation differs; FAIL evidence saved, no final model lock or Test inference permitted

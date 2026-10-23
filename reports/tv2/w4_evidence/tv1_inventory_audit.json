@@ -1,0 +1,20 @@
+{
+  "source_commit": "4bcf85cb07953d3a77cd916ec2895a6c6e6dfa6c",
+  "published_inventory_total": {
+    "images": 600,
+    "sequences": 495,
+    "locations": 98,
+    "crops": 680,
+    "unique_rgb": 599
+  },
+  "quality_records": 600,
+  "unique_quality_records": 600,
+  "quality_ids_match_manifest": true,
+  "published_hashes_match_manifest": true,
+  "published_dimensions_match_manifest": true,
+  "published_valid_records": 600,
+  "unique_published_pixel_hashes": 599,
+  "tv2_collector_rasters_decoded": false,
+  "test_inference_performed": false,
+  "local_restoration_evidence": "test_source_restoration.json (separate source QA; no model inference)"
+}

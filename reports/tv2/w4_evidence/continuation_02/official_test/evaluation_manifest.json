@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "0c0b184d79167575cc18ca5bc3dfd7047d9d9799c43daa3bdf6e44d531a91b19",
+  "selection_sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
+  "files_sha256": {
+    "checkpoint_verification.json": "7a2e63bf305e950d1d14ad433030ddea9308f8cca39ec59631bc93434d8a5be0",
+    "confusion_matrix.csv": "4bdeacf1da55024ad3cf9474ad37d609ca34432fea80fef1a2a8010fdf06fde6",
+    "confusion_matrix.png": "22ff0ee715e84fde4902b116a6ce0a3717cd3236f76c0456dcfd0a4918bff306",
+    "environment.json": "e43ec16310409b401ff62a4337b1ef9fe77e45fc69f4840f829ed9da1a67f491",
+    "error_analysis.md": "4a8bbeb677fc0336fb4c518b5b39ba75da96a66a9ab909cf1c2568856a2e090b",
+    "evaluation_config.json": "b1776701480dbecb68c070a3c87ef333bd5037484328e72cbcb5175ce1c2f62e",
+    "evaluation_log.txt": "482f48d6cdd28bd1239be6fbc7f8c30d2c02399e211dc85ed8ea152c49c9640f",
+    "per_class_metrics.csv": "3b41bcfe0fd27efd9cd50aed0c428939ef0f42afd7e255402ada9b44ebb1bf44",
+    "progress.jsonl": "8ad2fd51870bd102f24912f58bf1b49dbcd4f7b351581813599c5e34f000404d",
+    "state.json": "76c01580a15fcc2840953ec5415b90675cd32d5c7163f929ae7dcea8cb965617",
+    "test_evaluation_log.txt": "482f48d6cdd28bd1239be6fbc7f8c30d2c02399e211dc85ed8ea152c49c9640f",
+    "test_metrics.json": "ac59f30a47798961a66513c3b105d2a4ce535aec6ac75ca477f611c2fb1baa20",
+    "test_predictions.csv": "e02d4f55190ad52e3abebc3eae370c1c3a04df65d288ccc3856591a48268516c"
+  }
+}

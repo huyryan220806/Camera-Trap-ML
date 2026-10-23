@@ -1,0 +1,30 @@
+{
+  "scope": "New console logs only; trailing whitespace and newline normalization, no assertion/result edits.",
+  "raw_local_path": "outputs/tv2_w4/continuation_02/raw_logs",
+  "files": {
+    "contracts.txt": {
+      "raw_sha256": "e9b6e22ef45270b72e4fc5b69a254e9fb3942a0f2ccaeabdf211bbd050a44f1b",
+      "normalized_sha256": "6326a34881f7a79d3a575e22b66fa225fb3d3abc14461ef542f297fd52fb5ba0"
+    },
+    "environment_check.txt": {
+      "raw_sha256": "7f394b8f46525429d4e64b938b341f4773a33a482ccf10526e0686e1b59f99fd",
+      "normalized_sha256": "a9979c1a6b4122fd8a591b1d4b42a8836bdebd69994d1c6963e9b794962f33dc"
+    },
+    "final_pre_test_regression.txt": {
+      "raw_sha256": "bc1943bbc539339191f13c6bd9d9586a456db5b1c7f70f4303d351799b7aba88",
+      "normalized_sha256": "d315be428c194f5280d20ae61b058bd1926dad95483545b50b47f3fc95373ea8"
+    },
+    "frozen_policy_tests.txt": {
+      "raw_sha256": "39ab68f64d72e0b036af6b6977a2d24377e02b9e5493115e61e02810f5c9975e",
+      "normalized_sha256": "65f8bbb55aba88bd650b58ceb5b200ddb3dd2ec0a1e44ee7f665036fb4db24ef"
+    },
+    "pre_lock_regression.txt": {
+      "raw_sha256": "b6829d7558beb47adbde8227e63400fbb9749dfa882e181e02e642da8d9694e2",
+      "normalized_sha256": "446327d0ebe2db584399186d69d641bf843db3ab9afccdcfa1a00bff9778f6f1"
+    },
+    "pre_lock_w4_tests.txt": {
+      "raw_sha256": "b4f35c7cfa0126d71ca049876a852a4380f47c034d4d2ec50db4971e4557238e",
+      "normalized_sha256": "7de74a58beb0b55466043f50d5933654181f9a355d2051da74f923df8eba2c7a"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "checked_utc": "2026-10-23T04:34:55.781735+00:00",
+  "status": "B3 REFERENCE REPRODUCTION UNRESOLVED; KEEP TEST CLOSED",
+  "checkpoint_safe_load_and_forward": "PASS",
+  "checkpoint_sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+  "checkpoint_bytes": 89548994,
+  "best_epoch": 14,
+  "checkpoint_reported_metrics_rounded": {
+    "macro_f1": 0.741,
+    "macro_precision": 0.7406,
+    "macro_recall": 0.7433,
+    "accuracy": 0.7433
+  },
+  "published_validation_metrics_full_precision": {
+    "macro_f1": 0.7410465262846234,
+    "macro_precision": 0.7406316201298413,
+    "macro_recall": 0.7433333333333333,
+    "accuracy": 0.7433333333333333
+  },
+  "cpu_reloaded_metrics": {
+    "macro_f1": 0.7410527051783586,
+    "macro_precision": 0.7408712201097654,
+    "macro_recall": 0.7433333333333334,
+    "accuracy": 0.7433333333333333
+  },
+  "cuda_reloaded_metrics": {
+    "macro_f1": 0.7427341579103117,
+    "macro_precision": 0.7424361314080368,
+    "macro_recall": 0.745,
+    "accuracy": 0.745
+  },
+  "cpu_reference_checks": {
+    "checkpoint_cm_matches": false,
+    "checkpoint_rounded_metrics_match": false,
+    "published_cm_matches": false,
+    "published_error_ids_and_labels_match": false
+  },
+  "cuda_reference_checks": {
+    "checkpoint_cm_matches": false,
+    "checkpoint_rounded_metrics_match": false,
+    "published_cm_matches": false,
+    "published_error_ids_and_labels_match": false
+  },
+  "validation_population_equal": true,
+  "validation_crop_manifest_equal": true,
+  "input_tensor_identity_for_disagreed_images": true,
+  "disagreed_image_ids": [
+    "cbdf50b3-8c29-11eb-a63b-000d3a74c7de",
+    "cc293eb4-8c29-11eb-81b9-000d3a74c7de"
+  ],
+  "cpu_disagreed_predictions": [
+    {
+      "image_id": "cbdf50b3-8c29-11eb-a63b-000d3a74c7de",
+      "true_class_id": 4,
+      "predicted_class_id": 1,
+      "confidence": 0.3223070502281189,
+      "probabilities": [
+        0.0020572729408740997,
+        0.3223070502281189,
+        0.02515297941863537,
+        0.005910765845328569,
+        0.322273850440979,
+        0.2669493854045868,
+        0.00023565512674394995,
+        0.05511308088898659
+      ],
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc293eb4-8c29-11eb-81b9-000d3a74c7de",
+      "true_class_id": 2,
+      "predicted_class_id": 2,
+      "confidence": 0.3973587155342102,
+      "probabilities": [
+        0.10613163560628891,
+        0.01740170828998089,
+        0.3973587155342102,
+        0.06491804867982864,
+        0.004340182524174452,
+        0.008370566181838512,
+        0.006197587586939335,
+        0.3952816426753998
+      ],
+      "num_crops": 1
+    }
+  ],
+  "cuda_disagreed_predictions": [
+    {
+      "image_id": "cbdf50b3-8c29-11eb-a63b-000d3a74c7de",
+      "true_class_id": 4,
+      "predicted_class_id": 4,
+      "confidence": 0.32278284430503845,
+      "probabilities": [
+        0.0020595905371010303,
+        0.3213784992694855,
+        0.02516375668346882,
+        0.005950108170509338,
+        0.32278284430503845,
+        0.26718440651893616,
+        0.00023619022977072746,
+        0.055244579911231995
+      ],
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc293eb4-8c29-11eb-81b9-000d3a74c7de",
+      "true_class_id": 2,
+      "predicted_class_id": 2,
+      "confidence": 0.3963511884212494,
+      "probabilities": [
+        0.10614904761314392,
+        0.017389321699738503,
+        0.3963511884212494,
+        0.0649241954088211,
+        0.004328030161559582,
+        0.008356954902410507,
+        0.0062009007669985294,
+        0.39630043506622314
+      ],
+      "num_crops": 1
+    }
+  ],
+  "interpretation": "One prediction changes between local CPU and CUDA with identical input tensors. Both still disagree with the original B3 reference. Runtime numerical sensitivity is observed, but the original-reference discrepancy is not explained conclusively.",
+  "no_method_change_or_best_runtime_selection": true,
+  "needed_from_tv3": [
+    "Original b3_run01 train_log.jsonl and validation_comparison.json",
+    "Original full-precision Validation predictions/logits with image/crop IDs",
+    "Original Python/PyTorch/torchvision/Pillow/CUDA/cuDNN, GPU and TF32/determinism settings",
+    "Independent checksum/source attestation for original B3 checkpoint and training commit/run identity",
+    "Documented reconciliation of the two Validation image IDs; no retraining, label edits or Test tuning"
+  ],
+  "test_inference_performed": false
+}

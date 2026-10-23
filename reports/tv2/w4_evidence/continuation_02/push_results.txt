@@ -1,0 +1,2 @@
+To https://github.com/huyryan220806/Camera-Trap-ML.git
+   bb96694..41ebfbf  feat/baseline -> feat/baseline

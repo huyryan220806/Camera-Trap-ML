@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-10-23T06:48:53.792415+00:00",
+  "selection_sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
+  "protocol_sha256": "0c0b184d79167575cc18ca5bc3dfd7047d9d9799c43daa3bdf6e44d531a91b19",
+  "protocol_contract_sha256": "0f6a31c860620f55919a21817eb662e0648c613a14aa77230bb4e1134d63c437",
+  "team_decision_sha256": "4aa3e889d8877afced4c0064e3f068c185d587bba32e966d69b204416112cf53",
+  "source": "Latest user-reported official team decision, archived decision record; TV3 decision65b99b9",
+  "b3_technical_reference": "FAIL / UNRESOLVED",
+  "b3_limitation_accepted_for_model_selection": true,
+  "test_inference_performed": false,
+  "next_gate": "Commit these exact bytes, verify HEAD blobs, only then execute once."
+}

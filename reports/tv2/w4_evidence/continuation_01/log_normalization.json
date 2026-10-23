@@ -1,0 +1,79 @@
+{
+  "operation": "Only trailing whitespace/line-ending normalization; no result/assertion edits.",
+  "raw_local_directory": "outputs/tv2_w4/continuation_01/raw_logs",
+  "files": {
+    "b2_validation_log.txt": {
+      "original_sha256": "f949d492453c2057061394fd348c37d7e04aa3172327ad0376c3468a92188bda",
+      "normalized_sha256": "c512ac60197bd3f85ab61d03d372ea66148b7899a0f6e416aad36c1bb03c2d4e"
+    },
+    "b3_validation_attempt01_log.txt": {
+      "original_sha256": "03d4da0fe361ade0f1e46b6d493fbdd4ff2b47a6075214f6150130502f5ad598",
+      "normalized_sha256": "1648cf395b26cd9aa0602cb15b962d73230934a238a8607843f57029f9316a13"
+    },
+    "b3_validation_cuda_log.txt": {
+      "original_sha256": "95ef6a31e7b6e78ba97cf44f99121d608a75ef85000277ca879fa3fcbf835b43",
+      "normalized_sha256": "b015e4787ca0a100600e30c7be39f441f383b57be1478acd8d0195ece99705ac"
+    },
+    "b3_validation_diagnostic_log.txt": {
+      "original_sha256": "553806d44949dc27f0fd0adc3beb9e0bf096037192a3bd2f95f55c6c2ee183df",
+      "normalized_sha256": "89a3fc6128a8a1b552dd16e89d144cb0071fc02244e74633055245abce5d1207"
+    },
+    "b3_validation_log.txt": {
+      "original_sha256": "03d4da0fe361ade0f1e46b6d493fbdd4ff2b47a6075214f6150130502f5ad598",
+      "normalized_sha256": "1648cf395b26cd9aa0602cb15b962d73230934a238a8607843f57029f9316a13"
+    },
+    "checkpoint_verifier_tests.txt": {
+      "original_sha256": "866765501d922eaf53df085d61150695985944dd58f990fcc3ee9f78010febea",
+      "normalized_sha256": "8d340f9d7c398e32892da37ee883253aa6eeaa1fc216853340166d8b56bb8253"
+    },
+    "checkpoint_verifier_tests_final.txt": {
+      "original_sha256": "b96b6710f521c3773ea154b0af71ddffc543ca46bf70e0086c4767f8a51726fc",
+      "normalized_sha256": "37d97c036beb93969aa25914657b88075bf67e91700d9b86acea8d5d24b48ad4"
+    },
+    "comparison_validation_log.txt": {
+      "original_sha256": "6833ccf830096e85bb9927147f7158d016d5728d11069bd3446ec01c5ee917d6",
+      "normalized_sha256": "2729fd0266eeece5c53e8fb7cf29e4603e2d5a3a8dc5ed89abe1990c31cb225e"
+    },
+    "contracts.txt": {
+      "original_sha256": "e9b6e22ef45270b72e4fc5b69a254e9fb3942a0f2ccaeabdf211bbd050a44f1b",
+      "normalized_sha256": "6326a34881f7a79d3a575e22b66fa225fb3d3abc14461ef542f297fd52fb5ba0"
+    },
+    "environment_check.txt": {
+      "original_sha256": "1195b23c5d3d32208c915acf517668515221612b3dd930556c3580dfc830eacc",
+      "normalized_sha256": "d3544ea8e01a38e24460b0cc32601546e52a8ec9e0366e042fae8b62416c0e65"
+    },
+    "environment_check_utf8.txt": {
+      "original_sha256": "7f394b8f46525429d4e64b938b341f4773a33a482ccf10526e0686e1b59f99fd",
+      "normalized_sha256": "a9979c1a6b4122fd8a591b1d4b42a8836bdebd69994d1c6963e9b794962f33dc"
+    },
+    "final_w4_tests.txt": {
+      "original_sha256": "177f42215e81c7022523a6393442db209ff7935123692b48e4a8484ad20adff2",
+      "normalized_sha256": "fa3f6a4f750efd2cf13724c09fcce15a2fbc2072e7418e353d4c5a1c9ba40842"
+    },
+    "official_execute_gate.txt": {
+      "original_sha256": "8231bf5dd189bd8c91e24829c78fee5869531041b9db94c6bc685a15ca0a6306",
+      "normalized_sha256": "08915d2a4626dfd5ce932f2ba6b4d555589acdc21780809a83ed2670e8edc63b"
+    },
+    "official_gate.txt": {
+      "original_sha256": "8231bf5dd189bd8c91e24829c78fee5869531041b9db94c6bc685a15ca0a6306",
+      "normalized_sha256": "08915d2a4626dfd5ce932f2ba6b4d555589acdc21780809a83ed2670e8edc63b"
+    },
+    "pip_check.txt": {
+      "original_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+      "normalized_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "regression_tests.txt": {
+      "original_sha256": "0aa7e98101984e620103d0d37fa1d060bb7e394526d087d80766b6d7aa4d421f",
+      "normalized_sha256": "a756f8c6b30a886538e3e1edb18ab16b607673c731badf91a48f8262d958a72b"
+    },
+    "regression_tests_final.txt": {
+      "original_sha256": "aed5be43c275c1ca14304df82b8ffdcde1f156ff044f44f62866e31b0cf02e54",
+      "normalized_sha256": "03acfef3c032d61695e40037d29504f2c86fd0bba6c5604d43a909973890569e"
+    },
+    "worktrees.txt": {
+      "original_sha256": "5cbba5aded0730ccb9a0bbba47cb6aac1110e4fcaf9307dc05c0b5060054f255",
+      "normalized_sha256": "418a583e8d76f68c2d2fe89914a971cd4fc0b065f5628de536bdf2323fbd6b51",
+      "final_blank_separator_removed": true
+    }
+  }
+}

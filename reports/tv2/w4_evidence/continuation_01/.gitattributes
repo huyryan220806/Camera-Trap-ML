@@ -1,0 +1,4 @@
+# Exact artifact bytes, including copied upstream decision text and result tables.
+*.md -text whitespace=cr-at-eol
+*.csv -text whitespace=cr-at-eol
+*.sha256 -text whitespace=cr-at-eol

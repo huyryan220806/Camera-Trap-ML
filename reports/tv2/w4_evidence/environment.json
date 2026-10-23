@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14",
+  "executable": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "torch": "2.8.0+cpu",
+  "torchvision": "0.23.0+cpu",
+  "cuda_build": null,
+  "cuda_available": false,
+  "gpu": null,
+  "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "evaluation_policy_device": "cpu",
+  "official_test_executed": false
+}

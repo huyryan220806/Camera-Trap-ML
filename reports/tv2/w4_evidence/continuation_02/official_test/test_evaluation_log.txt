@@ -1,0 +1,1 @@
+B2 eval/inference_mode. One forward per crop. No training. All 8 labels. Integrity checks PASS.

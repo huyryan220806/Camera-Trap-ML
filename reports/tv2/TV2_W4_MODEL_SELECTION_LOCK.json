@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "status": "FINAL MODEL LOCKED – B2",
+  "final_selection_closed": true,
+  "prepared_utc": "2026-10-22T15:00:33.253565+00:00",
+  "locked_utc": "2026-10-23T06:48:53.792415+00:00",
+  "model": "B2",
+  "run_id": "b2_run01",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "checkpoint_bytes": 89548866,
+  "checkpoint_verified_locally": true,
+  "config_sha256": "3000b6c7a6d4d81441e991765f0f56bcc65b1124cf3b3e6a78cf7bab504bbed8",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "dataset_version": "comparison_v1",
+  "class_map": {
+    "0": "large_antlered_muntjac",
+    "1": "annamite_striped_rabbit",
+    "2": "sambar",
+    "3": "chinese_serow",
+    "4": "common_palm_civet",
+    "5": "masked_palm_civet",
+    "6": "silver_pheasant",
+    "7": "eurasian_wild_pig"
+  },
+  "preprocessing": {
+    "resize_mode": "center_crop",
+    "resize_size": 256,
+    "image_size": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "selection_split": "val",
+  "test_used_for_selection": false,
+  "selection_rule": "Retain B2 unless B3 improves source-image Validation Macro-F1; a reported +0.005 margin was not independently verified as preregistered. B3 is lower under either rule.",
+  "validation_metrics": {
+    "b2": {
+      "macro_f1": 0.7454765175212033,
+      "macro_precision": 0.7484190016985997,
+      "macro_recall": 0.7466666666666666,
+      "accuracy": 0.7466666666666667
+    },
+    "b3": {
+      "macro_f1": 0.7410465262846234,
+      "macro_precision": 0.7406316201298413,
+      "macro_recall": 0.7433333333333333,
+      "accuracy": 0.7433333333333333
+    }
+  },
+  "validation_metric_evidence": "Published Validation values retained as reference; B2 fresh-process verification PASS, B3 CPU/CUDA reference reproduction FAIL. See continuation_01/b3_runtime_comparison.json.",
+  "tv3_decision": {
+    "model": "B2",
+    "source": "reports/tv3/TV3_W4_DECISION.md",
+    "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+    "sha256": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
+    "commit_author_time": "2026-10-22T19:30:11+07:00"
+  },
+  "review_status": "PASS WITH LIMITATIONS",
+  "evidence_verified": {
+    "b2_checkpoint_metadata": true,
+    "b2_independent_reload": true,
+    "b3_original_validation_artifact": false,
+    "b3_checkpoint_hash": true,
+    "b3_train_val_provenance": false,
+    "decision_before_test": true
+  },
+  "historical_b2_independent_reload": {
+    "source": "reports/tv4_w3_continuation/b2_validation.json",
+    "commit": "254b40eab77b849647a2291aa0257c1b161b4da2",
+    "verified_by_tv2_this_session": true
+  },
+  "threshold_policy": {
+    "status": "NOT_SELECTED",
+    "value": null,
+    "classification": "argmax_all_images",
+    "calibrated": false
+  },
+  "evaluation_models": [
+    "B2"
+  ],
+  "b1_test": "NOT EVALUATED BY FROZEN PLAN",
+  "decision_evidence_sha256": {
+    "reports/tv2/w4_evidence/validation_matrix_audit.json": "b90c388ff74b902ef5dcf28f60a361b4ed6b122656e1f8a239b830cb84516408",
+    "reports/tv2/w4_evidence/continuation_01/b2_checkpoint_inspection.json": "6752d9898b0e4798a00fdf4b64a171ed71b40310f89bc7191831bbd6bc602891",
+    "reports/tv2/w4_evidence/continuation_01/b3_checkpoint_inspection.json": "16ab2599c59df10304c12597dc9b82c86d3f0fdf5b2d84d69be50b438598a04a",
+    "reports/tv2/w4_evidence/continuation_01/b2_validation/verification.json": "19bb6de7356a6601c25bf3727ac02ca089e98a84fae18f9c5f810647b8b10ab9",
+    "reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json": "48ce6aabe91178a1f8c8ebedd4a92f952a9355cd9499aa8a5ecb67e2cf549f19",
+    "reports/tv2/w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json": "b810d7324845461f665b9d131a0a1ae3ffd28470cdf16d3a08845355f0c04b06",
+    "reports/tv2/w4_evidence/continuation_01/b3_runtime_comparison.json": "257a82d0ffa33f26246b50faf4de7ecc5fa3edf76a37edc095ccd799698df841",
+    "reports/tv2/w4_evidence/continuation_01/repository_audit.json": "52784fe2928814de37d91e57fda52ae1ab4bcbae8ec72a1551243b91ccc9f2d5",
+    "reports/tv2/w4_evidence/continuation_02/team_b2_decision.json": "4aa3e889d8877afced4c0064e3f068c185d587bba32e966d69b204416112cf53",
+    "reports/tv2/w4_evidence/continuation_01/tv3_decision_source.md": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
+    "reports/tv2/w4_evidence/continuation_02/pre_test_integrity.json": "6830986513a0cb758ae9cc656054fd39232fb52cba45f4b11fb64cccaf5cc40e"
+  },
+  "test_sources_verified_locally": true,
+  "blockers": [],
+  "policy": "B2 selection closed by explicit team decision on Validation. B2 independent reproduction mandatory. B3 unselected unresolved limitation accepted; technical FAIL retained. Test never used for selection. TV1 acceptance pending.",
+  "last_verification_utc": "2026-10-23T06:48:53.792415+00:00",
+  "checkpoint_path": "experiments/B2_run01/checkpoints/best_model.pt",
+  "b2_checkpoint_metadata_verified": true,
+  "b2_independent_reload_verified": true,
+  "b3_checkpoint_path": "experiments/B3_run01/checkpoints/best_model.pt",
+  "b3_checkpoint_sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+  "b3_checkpoint_bytes": 89548994,
+  "b3_checkpoint_safe_load_verified": true,
+  "b3_embedded_config_mapping_preprocessing_and_provenance_match": true,
+  "b3_validation_artifact_present_in_checkpoint": true,
+  "b3_validation_reference_reproduced": false,
+  "b3_original_run_identity": "CONSISTENT METADATA; NOT FULLY VERIFIED",
+  "evidence_verified_scope": "Booleans mean successful verification, not mere presence. Embedded B3 provenance matches the frozen snapshot, but historical runtime provenance/reference reproduction remains unresolved.",
+  "validation_reloads": {
+    "B2_CPU": {
+      "macro_f1": 0.7454765175212033,
+      "macro_precision": 0.7484190016985997,
+      "macro_recall": 0.7466666666666666,
+      "accuracy": 0.7466666666666667
+    },
+    "B3_CPU_DIAGNOSTIC": {
+      "macro_f1": 0.7410527051783586,
+      "macro_precision": 0.7408712201097654,
+      "macro_recall": 0.7433333333333334,
+      "accuracy": 0.7433333333333333
+    },
+    "B3_CUDA_DIAGNOSTIC": {
+      "macro_f1": 0.7427341579103117,
+      "macro_precision": 0.7424361314080368,
+      "macro_recall": 0.745,
+      "accuracy": 0.745
+    }
+  },
+  "architecture": "ResNet18 crop classifier; 8 output classes; TV3 native checkpoint via verified adapter",
+  "final_model_selection": "B2 SELECTED BY TEAM",
+  "b2_validation_evidence": "reports/tv2/w4_evidence/continuation_01/b2_validation/verification.json",
+  "team_decision_record": "reports/tv2/w4_evidence/continuation_02/team_b2_decision.json",
+  "b3_reproducibility": {
+    "status": "UNRESOLVED / LIMITATION ACCEPTED",
+    "reference_reproduced": false,
+    "selected_for_test": false,
+    "technical_review_status": "PENDING FIX",
+    "acceptance_scope": "Team accepts limitation for model selection only; does not authenticate missing original runtime/training provenance.",
+    "diagnostic_evidence": {
+      "CPU": "reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json",
+      "CUDA": "reports/tv2/w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json"
+    },
+    "cpu_reference_prediction_differences": 2,
+    "cuda_reference_prediction_differences": 1
+  },
+  "historical_blockers_preserved_in": "reports/tv2/w4_evidence/continuation_02/model_selection_pending_before.json",
+  "review_status_scope": "B2 selection prerequisites only; TV3 B3 technical review remains PENDING FIX; TV1 acceptance pending.",
+  "protocol_contract_sha256": "0f6a31c860620f55919a21817eb662e0648c613a14aa77230bb4e1134d63c437",
+  "protocol_contract_hash_definition": "SHA256 UTF-8 canonical JSON sorted keys compact separators ensure_ascii=False, omitting only model_selection_lock_sha256; all other protocol fields included."
+}

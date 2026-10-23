@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "model": "B2",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "image_level_metrics": {
+    "macro_f1": 0.7454765175212033,
+    "macro_precision": 0.7484190016985997,
+    "macro_recall": 0.7466666666666666,
+    "accuracy": 0.7466666666666667
+  },
+  "validation_images": 600,
+  "validation_crops": 680,
+  "native_adapter_max_logit_delta_all_val_crops": 0.0,
+  "test_inference_performed": false
+}

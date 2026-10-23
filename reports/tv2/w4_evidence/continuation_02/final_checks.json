@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-10-23T06:59:44.749277+00:00",
+  "status": "PASS",
+  "regression_after_official_test": {
+    "pass": 347,
+    "fail": 0,
+    "seconds": 149.718,
+    "w4_subset": 78
+  },
+  "regression_before_official_test": 347,
+  "focused_w4_before_official_test": 78,
+  "protected_files_checked": 581,
+  "unexpected_protected_changes": [],
+  "historical_w4_evidence_changes": [],
+  "frozen_lock_protocol_code_decision_evidence_matches_pre_test_commit": true,
+  "gate": "PASS read-only; no Test re-inference",
+  "official_run_count": 1,
+  "state": {
+    "status": "COMPLETE",
+    "test_images_forwarded": 600,
+    "resume_supported": false,
+    "started_utc": "2026-10-23T06:52:10.160808+00:00",
+    "artifact_integrity": "PASS",
+    "completed_utc": "2026-10-23T06:54:23.871877+00:00"
+  },
+  "all_official_artifact_hashes_match_original_and_copy": true,
+  "source_sha256_matches": 600,
+  "checkpoint_integrity": {
+    "B0": {
+      "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+      "unchanged": true
+    },
+    "B1": {
+      "sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+      "unchanged": true
+    },
+    "B2": {
+      "sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+      "unchanged": true
+    },
+    "B3": {
+      "sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+      "unchanged": true
+    }
+  },
+  "json_files_parsed": 21,
+  "csv_structure": "PASS",
+  "markdown_links_missing": [],
+  "metric_prediction_cm_support_consistency": "PASS, test_consistency.json",
+  "b3_reference_reproducibility": "FAIL / UNRESOLVED; unchanged",
+  "tv1_acceptance": "PENDING REVIEW"
+}

@@ -1,0 +1,90 @@
+{
+  "checked_utc": "2026-10-23T04:18:22.304109+00:00",
+  "refs": {
+    "main": "0d822a91aa8cd694264c7af182434a91530e3fe2",
+    "tv1": "4bcf85cb07953d3a77cd916ec2895a6c6e6dfa6c",
+    "tv2": "a66f41cb7f966f17de7e132e1433103958c1af72",
+    "tv3": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+    "tv4": "254b40eab77b849647a2291aa0257c1b161b4da2"
+  },
+  "sources": {
+    "tv3:reports/tv3/TV3_W4_DECISION.md": {
+      "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+      "sha256": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
+      "bytes": 8283
+    },
+    "tv3:configs/b3_class_weighted.json": {
+      "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+      "sha256": "2fe2697a8aec34a58b92d6772bc39c7846d5b4cdc4505a2f62c697738bd2ad5c",
+      "bytes": 1460
+    },
+    "tv3:scripts/train_b3.py": {
+      "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+      "sha256": "a67b8b66fefd82848ad4734d4c27b633968d6fbd4157deecd17f1e2da2a18fad",
+      "bytes": 20365
+    },
+    "tv3:reports/tv3/error_analysis_b2.json": {
+      "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+      "sha256": "9e5095295f74ae69c7e2eb06ddfaa44d3c14d8836ccaad303d2f5bd36257f83b",
+      "bytes": 105775
+    },
+    "tv3:reports/tv3/error_analysis_b3.json": {
+      "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+      "sha256": "e86de1755ed7f35b3a5a322eed1ea1abd866769657f0b917147a8a20eef10748",
+      "bytes": 106594
+    },
+    "tv1:configs/model_locks/b2_w3.json": {
+      "commit": "4bcf85cb07953d3a77cd916ec2895a6c6e6dfa6c",
+      "sha256": "a7231b81a660ae8797aa0131640f178781954f0edc776181616760161c669203",
+      "bytes": 1326
+    },
+    "tv1:reports/tv1_w4/inventory.json": {
+      "commit": "4bcf85cb07953d3a77cd916ec2895a6c6e6dfa6c",
+      "sha256": "8ca5056a7f5be74101c0c30b2052c206855d1f8b82582bf2ac2a6ba4a80d2878",
+      "bytes": 2472
+    },
+    "tv4:reports/tv4_w3_continuation/REPORT.md": {
+      "commit": "254b40eab77b849647a2291aa0257c1b161b4da2",
+      "sha256": "01f4133df9fe84b3744a8cbaad7ae3c04a9f2daf3bf3ca0808367e7ceaef370d",
+      "bytes": 4037
+    }
+  },
+  "local_delivered_artifacts": {
+    "experiments/B2_run01": [
+      "experiments/B2_run01/checkpoints/best_model.pt"
+    ],
+    "experiments/B3_run01": [
+      "experiments/B3_run01/checkpoints/best_model.pt"
+    ],
+    "outputs/b2_crop_classifier": "NOT FOUND",
+    "outputs/b3_class_weighted": "NOT FOUND",
+    "outputs/tv3": "NOT FOUND",
+    "outputs/tv4/models": "NOT FOUND"
+  },
+  "tv4_w4_paths": [],
+  "model_selection_must_use": "Validation only; retain TV3 decision B2; no B3 Test",
+  "official_run_marker_exists": false,
+  "official_run_directory_exists": false,
+  "user_authorization": {
+    "kind": "explicit continuation request after verification gates",
+    "date_in_user_timezone": "2026-10-23",
+    "attachment_sha256": "5323b5a5e280d2174ebf00613086c65c0ccba1a3ececf1c6df666eb18c64eb25",
+    "test_execution_condition": "Only after model lock and evaluation protocol are valid, committed, verified, and all pre-Test gates pass",
+    "not_tv1_acceptance": true
+  },
+  "group_policy": {
+    "source": "CONTRIBUTING.md",
+    "sha256": "dd9e79fb1d7d9a84abb80cee8598925205809d312b634e1db0d5614bdf08e879",
+    "peer_review_required_before_main_merge": true,
+    "additional_tv1_pre_test_signoff_required_in_contributing": false,
+    "tv3_w4_peer_reviewer_from_plan": "TV2",
+    "tv2_w4_final_reviewer_from_plan": "TV1"
+  },
+  "historical_evidence_reused": [
+    "reports/tv2/w4_evidence/test_source_restoration.json",
+    "reports/tv2/w4_evidence/validation_matrix_audit.json",
+    "reports/tv2/w4_evidence/continuation_01/protected_before.json"
+  ],
+  "checkpoint_files_modified": false,
+  "test_inference_performed": false
+}
