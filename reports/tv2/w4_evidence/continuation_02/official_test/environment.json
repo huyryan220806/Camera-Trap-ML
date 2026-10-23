@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14",
+  "torch": "2.8.0+cpu",
+  "cuda_build": null,
+  "cuda_available": false,
+  "evaluation_device": "cpu",
+  "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "threads": 4
+}

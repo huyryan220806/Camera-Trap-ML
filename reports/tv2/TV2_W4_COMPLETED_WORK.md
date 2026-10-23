@@ -1,11 +1,35 @@
-# TV2 W4-02 — B2 đã khóa, chuẩn bị official Test
+# TV2 W4-02 — completed work
 
-Quyết định nhóm được người dùng thông báo và lưu tại [decision record](w4_evidence/continuation_02/team_b2_decision.json). Chỉ B2 b2_run01 / epoch21 được chọn bằng Validation; SHA `8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`. Final model **LOCKED – B2**, thời điểm UTC thực tế `2026-10-23T06:48:53.792415+00:00`.
+**W4-02 IMPLEMENTATION COMPLETE – PENDING TV1 REVIEW.** Chưa TV1 accepted.
 
-B2 independent Validation PASS; B3 exact reference reproducibility vẫn FAIL/UNRESOLVED, nhóm chấp nhận giới hạn cho lựa chọn mô hình. Không Test B1/B3, không threshold hoặc tuning Test. Hồ sơ pending và tất cả FAIL lịch sử giữ nguyên trong evidence/commits. TV1 chưa nghiệm thu.
+| Công việc | Kết quả |
+|---|---|
+| Quyết định nhóm B2 bằng Validation | YES; decision record tạo trước khóa/Test |
+| Final B2 lock / protocol | LOCKED; commit `2a750c30c43d3b895577cf53d76f2d507321ec18` |
+| B2 checksum/metadata/independent Validation | PASS |
+| B3 readable / exact reference | PASS readable; FAIL/UNRESOLVED reference, limitation accepted for selection |
+| Dữ liệu |600 nguồn/680 crop/495 chuỗi/98 địa điểm;600 SHA PASS,0 download |
+| Official Test | COMPLETE;W4_test_eval01,một run,438 đúng,162 sai |
+| Metrics/per-class/CM8×8 | COMPLETE; tổng CM/support600 |
+| Error analysis | COMPLETE; cặp nhầm, subgroups và ví dụ xác thực |
+| Regression trước Test |347/347 PASS,78 W4 nằm trong suite |
+| Consistency Test |PASS; prediction/CSV/CM/metric/hash/commit chronology |
+| Post-Test regression |**347/347 PASS** sau Test (149.718s);78 W4 nằm trong suite; không forward lại Test |
+| B0/B1/B2/B3, dữ liệu và lịch sử |Nguyên SHA/byte; xem integrity proof |
+| TV3 W4-03 |B2 selection closed; B3 technical pending fix, không đổi FAIL |
+| TV4 W4-04 |HANDOFF NOT VERIFIED; cần artifact W4 thật |
+| GitHub |Kết quả commit riêng, publication receipt cập nhật sau push; không merge |
+| TV1 nghiệm thu |PENDING REVIEW |
 
-Protocol: comparison_v1, 600 ảnh / 680 crop / 495 chuỗi / 98 địa điểm / 75 ảnh mỗi lớp. Mean softmax đủ crop theo parent rồi argmax; CPU Python3.12, batch32, threads4, seed42, zero_division0. 600/600 nguồn đúng SHA, không tải lại; không có official marker trước khóa.
+| Metric Test | Giá trị |
+|---|---:|
+| Macro-F1 | 0.7263366903 |
+| Macro-Precision | 0.7302792835 |
+| Macro-Recall | 0.7300000000 |
+| Accuracy | 0.7300000000 |
+| Đúng / tổng | 438 / 600 |
+| Sai | 162 |
 
-[Lock](TV2_W4_MODEL_SELECTION_LOCK.json), [protocol](TV2_W4_EVALUATION_PROTOCOL.json), [pre-Test integrity](w4_evidence/continuation_02/pre_test_integrity.json), [regression](w4_evidence/continuation_02/final_pre_test_regression.txt). Gate yêu cầu tất cả byte khóa/code/evidence đã commit; protocol được ràng buộc hai chiều bằng hash. Chưa inference Test tại commit khóa này; sẽ chạy một official run sau khi HEAD gate PASS. Kết quả sẽ nằm ở commit sau riêng biệt.
+[Đánh giá Test và artifact](TV2_W4_TEST_EVALUATION.md), [phân tích lỗi](TV2_W4_ERROR_ANALYSIS.md), [decision](w4_evidence/continuation_02/team_b2_decision.json), [pre-inference receipt](w4_evidence/continuation_02/pre_inference_receipt.json), [consistency](w4_evidence/continuation_02/test_consistency.json). Model/protocol frozen giữ nguyên byte sau official run; không cập nhật kết quả vào lock hoặc dùng Test chọn lại mô hình.
 
-TV3 cần reconcile original runtime/provenance; TV4 W4-04 HANDOFF NOT VERIFIED tại254b40e, độc lập với Test B2. Không tự công nhận peer acceptance.
+[Post-Test regression log](w4_evidence/continuation_02/post_test_regression.txt), [final checks](w4_evidence/continuation_02/final_checks.json). Toàn bộ gate và byte khóa/code/evidence vẫn khớp commit trước Test.

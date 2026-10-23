@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-10-23T06:58:16.764632+00:00",
+  "branch": "feat/baseline",
+  "lock_commit": "2a750c30c43d3b895577cf53d76f2d507321ec18",
+  "test_run": "W4_test_eval01",
+  "test_run_status": "COMPLETE",
+  "selection_sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
+  "protocol_sha256": "0c0b184d79167575cc18ca5bc3dfd7047d9d9799c43daa3bdf6e44d531a91b19",
+  "results_commit": "PENDING: this record is prepared for the separate post-Test results commit",
+  "push_status": "PENDING PUBLICATION",
+  "pr_status": "PENDING CONNECTOR ATTEMPT AFTER PUSH",
+  "existing_open_pr_search": "No open PR returned by GitHub connector for head:feat/baseline",
+  "manual_compare_url": "https://github.com/huyryan220806/Camera-Trap-ML/compare/main...feat%2Fbaseline?expand=1",
+  "prepared_pr_body": "reports/tv2/w4_evidence/continuation_02/pr_draft.md",
+  "tv1_acceptance": "PENDING REVIEW",
+  "merged": false
+}
