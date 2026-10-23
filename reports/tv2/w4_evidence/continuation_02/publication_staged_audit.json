@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-10-23T07:03:26.224252+00:00",
+  "protected_files_checked": 581,
+  "allowed_changes": [
+    "reports/tv2/TV2_REVIEW_TV3_W4.md",
+    "reports/tv2/TV2_REVIEW_TV4_W4.md",
+    "reports/tv2/TV2_W4.md",
+    "reports/tv2/TV2_W4_COMPLETED_WORK.md",
+    "reports/tv2/TV2_W4_ERROR_ANALYSIS.md",
+    "reports/tv2/TV2_W4_EVALUATION_PROTOCOL.json",
+    "reports/tv2/TV2_W4_EVALUATION_PROTOCOL.json.sha256",
+    "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json",
+    "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json.sha256",
+    "reports/tv2/TV2_W4_TEST_EVALUATION.md",
+    "src/evaluation/w4_test.py",
+    "tests/test_w4_test_evaluation.py"
+  ],
+  "unexpected_protected_changes": [],
+  "historical_w4_evidence_changes": [],
+  "staged_files": [
+    "reports/tv2/TV2_W4.md",
+    "reports/tv2/TV2_W4_COMPLETED_WORK.md",
+    "reports/tv2/w4_evidence/continuation_02/github_pr_result.json",
+    "reports/tv2/w4_evidence/continuation_02/publication.json",
+    "reports/tv2/w4_evidence/continuation_02/publication_verification.json",
+    "reports/tv2/w4_evidence/continuation_02/push_results.txt"
+  ],
+  "staged_scope_secrets_size_check": "PASS",
+  "diff_check": "PASS",
+  "checkpoints_unchanged": true,
+  "personal_untracked_unchanged": true
+}

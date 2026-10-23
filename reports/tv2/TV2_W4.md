@@ -48,3 +48,7 @@ Regression cuối trước Test **347/347 PASS**, gồm **78/78 W4**. [Regressio
 ## GitHub và bàn giao
 
 Branch feat/baseline; commit khóa `2a750c30c43d3b895577cf53d76f2d507321ec18` có trước Test. Kết quả/report/evidence được commit riêng sau Test, push và kiểm tra remote HEAD; publication receipt trong continuation_02 ghi các SHA xuất bản. Không reset/rebase/force-push/merge nhánh khác, không tự merge. PR chỉ dùng connector nếu có quyền; nếu403 cung cấp compare link và PR draft, không credential/UI fallback. [PR body](w4_evidence/continuation_02/pr_draft.md), [publication](w4_evidence/continuation_02/publication.json). TV1 cần review báo cáo/metric/CM/hash/tests trước khi xác nhận nghiệm thu.
+
+## Biên nhận xuất bản
+
+Commit khóa trước Test `2a750c30c43d3b895577cf53d76f2d507321ec18`; commit kết quả/Test report `41ebfbf8587994192fa1dad2f57642b8fa95418f` đã push lên origin/feat/baseline, `git ls-remote` khớp local HEAD. Connector tạo Draft PR trả403 Resource not accessible by integration; chưa có PR URL, không dùng credential/UI fallback. [Tạo PR thủ công](https://github.com/huyryan220806/Camera-Trap-ML/compare/main...feat%2Fbaseline?expand=1) với [nội dung đã chuẩn bị](w4_evidence/continuation_02/pr_draft.md). [Publication receipt](w4_evidence/continuation_02/publication.json) ghi SHA và danh sách file. Commit biên nhận tiếp theo chỉ cập nhật tài liệu/evidence xuất bản; không đổi code, final lock/protocol hoặc official artifacts. TV1 nghiệm thu vẫn PENDING REVIEW.
