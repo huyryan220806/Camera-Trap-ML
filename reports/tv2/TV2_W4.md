@@ -84,6 +84,8 @@ Output verifier không overwrite; B3 lệnh reference hiện exit1 và lưu FAIL
 
 Commit/push/remote equality và PR xem [publication](w4_evidence/continuation_01/publication.json). Tạo/cập nhật PR chỉ qua connector nếu có quyền; nếu403 thì dừng, không đọc credential/đi vòng bằng UI, cung cấp manual compare URL và prepared body. Không force push, tự merge hay đánh REVIEWER ACCEPTED.
 
+Implementation commit tiếp nối `cf34e1f798e0d6dcf97f853622f50346452c7bec` đã push; `git ls-remote` khớp local HEAD. Connector tạo Draft PR trả **403 Resource not accessible by integration**; không thử fallback credential/UI trong phiên tiếp nối. [Tạo PR thủ công](https://github.com/huyryan220806/Camera-Trap-ML/compare/main...feat%2Fbaseline?expand=1) với [nội dung đã chuẩn bị](w4_evidence/continuation_01/pr_draft.md). Commit tài liệu tiếp theo ghi biên nhận này, không đổi code/weights/protocol.
+
 ## 10. Kết luận và điều kiện tiếp tục
 
 [Completed work](TV2_W4_COMPLETED_WORK.md) ghi các phần DONE/PENDING/FAIL. B2 missing đã giải quyết, B3 missing đã giải quyết về file/metadata; blocker còn lại là B3 reference reproduction và original runtime/run evidence. Cần TV3 bàn giao/reconcile chính xác các ID, không yêu cầu train lại hoặc dùng Test. Chỉ khi đủ bằng chứng và final lock/protocol thực sự committed/gates PASS mới chạy Test một lần.

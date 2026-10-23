@@ -16,7 +16,8 @@
 | Test inference / metrics / CM / Test error analysis | BLOCKED; không có official run |
 | Verifier và tests TV2 mới | DONE; không viết lại evaluator đã có |
 | Regression/integrity/JSON/links/diff | Xem continuation_01/checks_summary.json và logs |
-| Commit/push/PR | Xem continuation_01/publication.json; không tự nhận PR đã tạo |
+| Commit/push | DONE; cf34e1f đã push và local/remote HEAD khớp |
+| PR | BLOCKED_CONNECTOR_403; không fallback credential/UI, manual URL/body đã chuẩn bị |
 | TV1 nghiệm thu | PENDING; chưa có acceptance |
 
 TV3 cần cung cấp artifact Validation/log/runtime gốc và giải thích hai ID bất đồng trước khi TV2 khóa final method; không yêu cầu train lại hoặc đổi checkpoint. TV4 cần code/export sửa nhãn và benchmark W4 thật. Sau khi các gate thực sự PASS, commit immutable final lock/protocol trước Test, dùng đúng candidate run ID và không chạy lại official run. Không mở rộng W5/W6.
