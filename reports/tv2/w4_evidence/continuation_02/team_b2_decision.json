@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "recorded_utc": "2026-10-23T06:43:22.151010+00:00",
+  "source_kind": "user_reported_team_decision",
+  "source": "Latest user instruction in this Codex chat: CAMERA-TRAP-ML — TIẾP TỤC VÀ HOÀN THÀNH TV2 W4-02 SAU QUYẾT ĐỊNH CHỐT B2",
+  "source_date_local": "2026-10-23",
+  "source_quote": "TÔI XÁC NHẬN: NHÓM ĐÃ THỐNG NHẤT CHỐT MÔ HÌNH B2 (`b2_run01`) LÀM MÔ HÌNH PHÂN LOẠI CUỐI CÙNG CỦA DỰ ÁN CAMERA-TRAP-ML.",
+  "limitation_quote": "Nhóm chấp nhận ghi nhận sai lệch tái lập Validation B3 trên CPU/CUDA như một giới hạn thực nghiệm chưa được giải thích đầy đủ.",
+  "final_model_selection": "B2 SELECTED BY TEAM",
+  "run_id": "b2_run01",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "dataset_version": "comparison_v1",
+  "selection_split": "val",
+  "test_used_for_selection": false,
+  "evaluation_models": [
+    "B2"
+  ],
+  "b3_limitation_accepted_for_model_selection": true,
+  "b3_selected_for_test": false,
+  "b3_reference_reproducibility": "FAIL / UNRESOLVED",
+  "b3_original_runtime_training_provenance": "NOT FULLY VERIFIED",
+  "b3_cpu_reference_prediction_differences": 2,
+  "b3_cuda_reference_prediction_differences": 1,
+  "decision_scope": "Team model selection and acceptance of a disclosed unselected experiment limitation; not a technical B3 verification or TV1 acceptance.",
+  "tv1_w4_02_acceptance": "PENDING REVIEW",
+  "historical_approval_timestamp": "NOT PROVIDED; recorded_utc is the actual creation time of this record, not the original team meeting time.",
+  "signatures": "NOT PROVIDED; no individual approver identity inferred.",
+  "threshold_policy": "mean softmax all valid crops per source image, then argmax; no confidence cutoff or Test tuning",
+  "tv3_decision": {
+    "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+    "path": "reports/tv3/TV3_W4_DECISION.md",
+    "archived_source": "reports/tv2/w4_evidence/continuation_01/tv3_decision_source.md",
+    "sha256": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee"
+  },
+  "prior_blockers": "Preserved in prior commits and archived pending lock/protocol. Superseded only for B2 selection by this explicit team decision. All B3 technical FAIL evidence retained."
+}

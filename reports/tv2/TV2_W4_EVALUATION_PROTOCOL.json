@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "status": "PENDING_FINAL_MODEL_LOCK",
+  "status": "LOCKED",
   "prepared_utc": "2026-10-22T15:00:33.253565+00:00",
-  "locked_utc": null,
+  "locked_utc": "2026-10-23T06:48:53.792415+00:00",
   "run_id": "W4_test_eval01",
   "evaluation_models": [
     "B2"
   ],
-  "model_selection_lock_sha256": "2646325515dd3e610bc6055d0016d7771e90152b633a727ad2a951c6830ceaf7",
+  "model_selection_lock_sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
   "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
   "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
   "test_manifest_sha256": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2",
@@ -86,7 +86,7 @@
     }
   },
   "code_sha256": {
-    "src/evaluation/w4_test.py": "b58d7cd91645bfadcc1a81ed8ae6639a61d7c79d57c11dd341218ffccfb94713",
+    "src/evaluation/w4_test.py": "9a17d0c4951c813873905a5ddacc8b4c908d0b4ff3badcfe8d7b82a96f16c659",
     "scripts/evaluate_w4_test.py": "bcf9bedc0ade6a8aff85680c367c734ca2080f559bb1e2819aff2bf3541c1315",
     "src/evaluation/metrics.py": "59d3cec274f92537418e72fb8346a9da56b177c988ef2bafb7e47a109ae2f973",
     "src/demo/classifier.py": "ade16473d9cf8356acc86642642eb6448e3660754cb14e26b43eac5cbb08f3e1",
@@ -106,19 +106,23 @@
     "error_analysis.md",
     "environment.json",
     "state.json",
-    "progress.jsonl"
+    "progress.jsonl",
+    "test_evaluation_log.txt"
   ],
   "resume": "UNSUPPORTED: exclusive global marker prevents a second official run; preserve interrupted journal/state and stop for review.",
   "timing": "CPU; report model load separately, forward+softmax separately, and decode/preprocess/inference/journaling wall time excluding load. Not an end-to-end MegaDetector benchmark.",
   "b1_test": "NOT EVALUATED BY FROZEN PLAN",
-  "b3_test": "NOT PLANNED",
+  "b3_test": "EXCLUDED BY TEAM DECISION; REPRODUCIBILITY FAIL / LIMITATION ACCEPTED",
   "no_test_tuning": true,
   "source_image_policy": "All locked images retained, including known within-Test RGB duplicate pair; no EXIF rotation, crop padding 0, integer manifest boxes.",
-  "blockers": [
-    "B3 Validation reference reproduction FAIL: CPU differs on 2 parent predictions and CUDA differs on 1 from checkpoint/published Validation CM; original runtime/predictions are required to reconcile before final selection is closed.",
-    "Original B3 run_id/training commit, full training log and original runtime provenance are absent; do not infer that delivered metadata alone authenticates the original B3 run or its historical input-byte checks."
-  ],
-  "last_verification_utc": "2026-10-23T04:34:55.781735+00:00",
+  "blockers": [],
+  "last_verification_utc": "2026-10-23T06:48:53.792415+00:00",
   "checkpoint_path": "experiments/B2_run01/checkpoints/best_model.pt",
-  "no_official_test_run": true
+  "selection_policy": "B2 only, independent B2 PASS; B3 excluded with accepted disclosed technical limitation",
+  "dataset_version": "comparison_v1",
+  "split": "test",
+  "random_augmentation": false,
+  "modify_test_labels": false,
+  "exclude_low_confidence": false,
+  "official_run_exists_at_lock": false
 }

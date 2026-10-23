@@ -6,6 +6,7 @@ Only a committed final selection and a matching committed protocol enable infere
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from datetime import datetime, timezone
 import csv
 import hashlib
 import json
@@ -46,6 +47,13 @@ def load_json(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def protocol_contract_digest(protocol):
+    """Bind every protocol field except its reverse full-byte selection hash (no circular hash)."""
+    content = {k: v for k, v in protocol.items() if k != "model_selection_lock_sha256"}
+    return hashlib.sha256(json.dumps(content, sort_keys=True, separators=(",", ":"),
+                                     ensure_ascii=False, allow_nan=False).encode("utf-8")).hexdigest()
+
+
 def save_json(path, value):
     """Atomic replacement of this run's state only; never writes a frozen input."""
     path = Path(path)
@@ -82,7 +90,7 @@ def verify_gate(root, selection_path, protocol_path, checkpoint):
     root, checkpoint = Path(root).resolve(), Path(checkpoint)
     selection_path, protocol_path = Path(selection_path), Path(protocol_path)
     selection, protocol = load_json(selection_path), load_json(protocol_path)
-    require(selection.get("status") == "LOCKED" and selection.get("final_selection_closed") is True
+    require(selection.get("status") in ("LOCKED", "FINAL MODEL LOCKED – B2") and selection.get("final_selection_closed") is True
             and selection.get("blockers") == [], "FINAL MODEL LOCK PENDING: " + str(selection.get("blockers")))
     require(protocol.get("status") == "LOCKED", "Evaluation protocol is not LOCKED")
     require(selection.get("model") == "B2" and selection.get("run_id") == "b2_run01", "Unexpected final model/run")
@@ -90,10 +98,9 @@ def verify_gate(root, selection_path, protocol_path, checkpoint):
     require(selection.get("checkpoint_sha256") == protocol.get("checkpoint_sha256") == B2_SHA256, "Unapproved checkpoint hash")
     require(selection.get("selection_split") == "val" and selection.get("test_used_for_selection") is False,
             "Model must be selected on Validation only")
-    require(selection.get("review_status") in ("PASS", "PASS WITH LIMITATIONS"), "TV3 evidence review pending")
+    require(selection.get("review_status") in ("PASS", "PASS WITH LIMITATIONS"), "Selection evidence review pending")
     require(all(selection.get("evidence_verified", {}).get(k) is True for k in
-                ("b2_checkpoint_metadata", "b2_independent_reload", "b3_original_validation_artifact",
-                 "b3_checkpoint_hash", "b3_train_val_provenance", "decision_before_test")), "Required selection evidence missing")
+                ("b2_checkpoint_metadata", "b2_independent_reload", "decision_before_test")), "Required B2 selection evidence missing")
     require(isinstance(selection.get("locked_utc"), str) and selection["locked_utc"], "Lock timestamp missing")
     require(protocol.get("model_selection_lock_sha256") == digest(selection_path), "Selection/protocol hash mismatch")
     require(protocol.get("evaluation_unit") == "source_image" and protocol.get("aggregation") == AGGREGATION,
@@ -118,6 +125,7 @@ def verify_gate(root, selection_path, protocol_path, checkpoint):
         require(digest(path) == expected, f"Decision evidence changed: {name}")
         committed_bytes(root, path)
     require(selection.get("decision_evidence_sha256"), "Decision evidence files missing")
+    verify_selection_policy(root, selection)
     comp = root / "data/processed/comparison_v1"
     provenance = load_json(comp / "provenance.json")
     require(provenance.get("dataset_version") == "comparison_v1", "Wrong dataset version")
@@ -132,8 +140,52 @@ def verify_gate(root, selection_path, protocol_path, checkpoint):
     require(set(class_map) == {str(i) for i in range(8)} and len(set(class_map.values())) == 8, "Invalid class order")
     require(selection.get("class_map") == protocol.get("class_map") == class_map, "Class mapping changed")
     require(selection.get("checkpoint_bytes") == 89548866, "Unapproved checkpoint size")
+    require(selection.get("protocol_contract_sha256") == protocol_contract_digest(protocol),
+            "Protocol changed after selection lock")
     verify_checkpoint(checkpoint, B2_SHA256, 89548866)
     return selection, protocol
+
+
+def verify_selection_policy(root, selection):
+    """Team selection closes B2; it does not turn unselected B3 diagnostics into PASS."""
+    evidence = selection["decision_evidence_sha256"]
+    decision_path = selection.get("team_decision_record")
+    require(decision_path in evidence, "Committed B2 team decision missing")
+    decision = load_json(repository_file(root, decision_path))
+    require(decision.get("source_kind") == "user_reported_team_decision" and
+            decision.get("final_model_selection") == "B2 SELECTED BY TEAM" and
+            decision.get("run_id") == "b2_run01" and decision.get("selection_split") == "val" and
+            decision.get("test_used_for_selection") is False and decision.get("evaluation_models") == ["B2"],
+            "Explicit Validation-only B2 team decision missing")
+    require(decision.get("b3_limitation_accepted_for_model_selection") is True and
+            decision.get("b3_selected_for_test") is False and
+            decision.get("b3_reference_reproducibility") == "FAIL / UNRESOLVED",
+            "B3 limitation acceptance missing or technical FAIL concealed")
+    try:
+        recorded = datetime.fromisoformat(decision["recorded_utc"])
+        locked = datetime.fromisoformat(selection["locked_utc"])
+        require(recorded.utcoffset() == locked.utcoffset() == timezone.utc.utcoffset(None)
+                and recorded <= locked <= datetime.now(timezone.utc), "Decision/lock chronology invalid")
+    except (KeyError, TypeError, ValueError) as exc:
+        raise EvaluationBlocked("Decision/lock chronology invalid") from exc
+    b2_path = selection.get("b2_validation_evidence")
+    require(b2_path in evidence, "Independent B2 Validation evidence missing")
+    b2 = load_json(repository_file(root, b2_path))
+    require(b2.get("status") == "PASS" and b2.get("model") == "B2" and
+            b2.get("checkpoint_sha256") == B2_SHA256 and
+            b2.get("provenance_sha256") == selection.get("provenance_sha256") and
+            b2.get("preprocessing") == selection.get("preprocessing") and
+            b2.get("class_map") == selection.get("class_map"), "Independent B2 Validation not verified")
+    b3 = selection.get("b3_reproducibility", {})
+    require(b3.get("status") == "UNRESOLVED / LIMITATION ACCEPTED" and
+            b3.get("reference_reproduced") is False and b3.get("selected_for_test") is False,
+            "B3 reproducibility FAIL must remain disclosed and excluded from Test")
+    require(set(b3.get("diagnostic_evidence", {})) == {"CPU", "CUDA"}, "B3 diagnostic evidence missing")
+    for name in b3["diagnostic_evidence"].values():
+        require(name in evidence, "B3 FAIL evidence must be pinned")
+        diagnostic = load_json(repository_file(root, name))
+        require(diagnostic.get("status") == "FAIL" and diagnostic.get("model") == "B3",
+                "B3 historical technical FAIL must not become PASS")
 
 
 def read_rows(path):
@@ -240,7 +292,8 @@ def reserve_run(root, run_id):
     marker = parent / "OFFICIAL_TEST_STARTED.json"
     try:
         with marker.open("x", encoding="utf-8") as handle:
-            json.dump({"run_id": run_id, "resume_supported": False}, handle)
+            json.dump({"run_id": run_id, "resume_supported": False,
+                       "reserved_utc": datetime.now(timezone.utc).isoformat()}, handle)
     except FileExistsError as exc:
         raise EvaluationBlocked("An official evaluation was already reserved; inspect state, do not rerun") from exc
     run = parent / run_id
@@ -292,7 +345,8 @@ def evaluate(root, selection_path, protocol_path, checkpoint):
               "evaluation_device": "cpu", "cpu": platform.processor(), "threads": torch.get_num_threads()})
     save_json(run / "checkpoint_verification.json", {"sha256": digest(checkpoint), "bytes": Path(checkpoint).stat().st_size,
                                                      "epoch": ck["epoch"], "metadata": "PASS"})
-    state = {"status": "RUNNING", "test_images_forwarded": 0, "resume_supported": False}
+    state = {"status": "RUNNING", "test_images_forwarded": 0, "resume_supported": False,
+             "started_utc": datetime.now(timezone.utc).isoformat()}
     save_json(run / "state.json", state)
     predictions, forward_seconds = [], 0.
     start = time.perf_counter()
@@ -373,7 +427,8 @@ def evaluate(root, selection_path, protocol_path, checkpoint):
                   "Softmax is uncalibrated; image counts do not estimate animal individuals. MegaDetector demo is a separate evaluation."]
         (run / "error_analysis.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
         (run / "evaluation_log.txt").write_text("B2 eval/inference_mode. One forward per crop. No training. All 8 labels. Integrity checks PASS.\n", encoding="utf-8")
-        state.update(status="COMPLETE", artifact_integrity="PASS")
+        (run / "test_evaluation_log.txt").write_bytes((run / "evaluation_log.txt").read_bytes())
+        state.update(status="COMPLETE", artifact_integrity="PASS", completed_utc=datetime.now(timezone.utc).isoformat())
         save_json(run / "state.json", state)
         save_json(run / "evaluation_manifest.json", {"protocol_sha256": digest(protocol_path),
                   "selection_sha256": digest(selection_path), "files_sha256": {p.name: digest(p) for p in run.iterdir() if p.is_file()}})

@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "status": "FINAL MODEL LOCK PENDING",
-  "final_selection_closed": false,
+  "status": "FINAL MODEL LOCKED – B2",
+  "final_selection_closed": true,
   "prepared_utc": "2026-10-22T15:00:33.253565+00:00",
-  "locked_utc": null,
+  "locked_utc": "2026-10-23T06:48:53.792415+00:00",
   "model": "B2",
   "run_id": "b2_run01",
   "best_epoch": 21,
@@ -63,7 +63,7 @@
     "sha256": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
     "commit_author_time": "2026-10-22T19:30:11+07:00"
   },
-  "review_status": "PENDING FIX",
+  "review_status": "PASS WITH LIMITATIONS",
   "evidence_verified": {
     "b2_checkpoint_metadata": true,
     "b2_independent_reload": true,
@@ -95,15 +95,15 @@
     "reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json": "48ce6aabe91178a1f8c8ebedd4a92f952a9355cd9499aa8a5ecb67e2cf549f19",
     "reports/tv2/w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json": "b810d7324845461f665b9d131a0a1ae3ffd28470cdf16d3a08845355f0c04b06",
     "reports/tv2/w4_evidence/continuation_01/b3_runtime_comparison.json": "257a82d0ffa33f26246b50faf4de7ecc5fa3edf76a37edc095ccd799698df841",
-    "reports/tv2/w4_evidence/continuation_01/repository_audit.json": "52784fe2928814de37d91e57fda52ae1ab4bcbae8ec72a1551243b91ccc9f2d5"
+    "reports/tv2/w4_evidence/continuation_01/repository_audit.json": "52784fe2928814de37d91e57fda52ae1ab4bcbae8ec72a1551243b91ccc9f2d5",
+    "reports/tv2/w4_evidence/continuation_02/team_b2_decision.json": "4aa3e889d8877afced4c0064e3f068c185d587bba32e966d69b204416112cf53",
+    "reports/tv2/w4_evidence/continuation_01/tv3_decision_source.md": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
+    "reports/tv2/w4_evidence/continuation_02/pre_test_integrity.json": "6830986513a0cb758ae9cc656054fd39232fb52cba45f4b11fb64cccaf5cc40e"
   },
   "test_sources_verified_locally": true,
-  "blockers": [
-    "B3 Validation reference reproduction FAIL: CPU differs on 2 parent predictions and CUDA differs on 1 from checkpoint/published Validation CM; original runtime/predictions are required to reconcile before final selection is closed.",
-    "Original B3 run_id/training commit, full training log and original runtime provenance are absent; do not infer that delivered metadata alone authenticates the original B3 run or its historical input-byte checks."
-  ],
-  "policy": "Never select model, checkpoint, threshold, augmentation or hyperparameters using Test. Do not overwrite the TV1 lock. Pending status is not permission to run Test.",
-  "last_verification_utc": "2026-10-23T04:34:55.781735+00:00",
+  "blockers": [],
+  "policy": "B2 selection closed by explicit team decision on Validation. B2 independent reproduction mandatory. B3 unselected unresolved limitation accepted; technical FAIL retained. Test never used for selection. TV1 acceptance pending.",
+  "last_verification_utc": "2026-10-23T06:48:53.792415+00:00",
   "checkpoint_path": "experiments/B2_run01/checkpoints/best_model.pt",
   "b2_checkpoint_metadata_verified": true,
   "b2_independent_reload_verified": true,
@@ -135,5 +135,26 @@
       "macro_recall": 0.745,
       "accuracy": 0.745
     }
-  }
+  },
+  "architecture": "ResNet18 crop classifier; 8 output classes; TV3 native checkpoint via verified adapter",
+  "final_model_selection": "B2 SELECTED BY TEAM",
+  "b2_validation_evidence": "reports/tv2/w4_evidence/continuation_01/b2_validation/verification.json",
+  "team_decision_record": "reports/tv2/w4_evidence/continuation_02/team_b2_decision.json",
+  "b3_reproducibility": {
+    "status": "UNRESOLVED / LIMITATION ACCEPTED",
+    "reference_reproduced": false,
+    "selected_for_test": false,
+    "technical_review_status": "PENDING FIX",
+    "acceptance_scope": "Team accepts limitation for model selection only; does not authenticate missing original runtime/training provenance.",
+    "diagnostic_evidence": {
+      "CPU": "reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json",
+      "CUDA": "reports/tv2/w4_evidence/continuation_01/b3_validation_cuda_diagnostic/verification.json"
+    },
+    "cpu_reference_prediction_differences": 2,
+    "cuda_reference_prediction_differences": 1
+  },
+  "historical_blockers_preserved_in": "reports/tv2/w4_evidence/continuation_02/model_selection_pending_before.json",
+  "review_status_scope": "B2 selection prerequisites only; TV3 B3 technical review remains PENDING FIX; TV1 acceptance pending.",
+  "protocol_contract_sha256": "0f6a31c860620f55919a21817eb662e0648c613a14aa77230bb4e1134d63c437",
+  "protocol_contract_hash_definition": "SHA256 UTF-8 canonical JSON sorted keys compact separators ensure_ascii=False, omitting only model_selection_lock_sha256; all other protocol fields included."
 }

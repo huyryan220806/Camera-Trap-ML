@@ -1,9 +1,9 @@
-# TV2 review TV4 W4-04 — kiểm tra lại 23/10/2026
+# TV2 review TV4 W4-04 — 23/10/2026
 
-**PENDING FIX — W4-04 HANDOFF NOT VERIFIED**. Fetch lại cho thấy `origin/feat/demo` vẫn ở `254b40eab77b849647a2291aa0257c1b161b4da2`; không có đường dẫn W4/Week4 mới trong Git tree. [Audit mới](w4_evidence/continuation_01/repository_audit.json).
+**W4-04 HANDOFF NOT VERIFIED.** Fetch thực tế xác nhận `origin/feat/demo` vẫn ở `254b40eab77b849647a2291aa0257c1b161b4da2`, không có W4/Week4 paths mới trong tree. [Audit](w4_evidence/continuation_02/pre_test_integrity.json). Không lấy W3 thay bằng chứng nghiệm thu W4.
 
-Tái sử dụng review W3 đã kiểm tra: needs_review/top predictions/no_detection, cache, xóa kết quả khi đổi ảnh/model và JSON contract có code/fixtures. Regression mới kiểm tra lại chúng; không lấy W3 thay nghiệm thu W4. [Review lịch sử](https://github.com/huyryan220806/Camera-Trap-ML/blob/a66f41cb7f966f17de7e132e1433103958c1af72/reports/tv2/TV2_REVIEW_TV4_W4.md).
+TV4 cần bàn giao màn hình duyệt lại/sửa nhãn; JSON và CSV export phân biệt nhãn người sửa với prediction gốc; test nhiều box, confidence thấp, detector bỏ sót/no_detection và cache/không giữ prediction cũ. Cần benchmark W4 nêu hardware, CPU/GPU, batch size, resolution, cold/warm, phân phối latency và tách load/preprocess/MegaDetector/classifier. Chưa có artifact W4 để xác minh các mục này.
 
-TV4 vẫn cần push màn hình sửa nhãn và contract/export phân biệt nhãn người sửa với dự đoán gốc; log benchmark W4 với hardware/CPU-GPU, batch size/resolution, cold/warm, thống kê latency và phân tách load/preprocessing/MegaDetector/classifier. Cần bằng chứng nhiều box, detector miss/no_detection, confidence thấp và không giữ prediction cũ. Chưa có artifact W4 để chạy smoke/UI acceptance thực tế. Không sửa code TV4, không coi điểm thấp là loài lạ hoặc softmax đã calibration.
+Code/fixture W3 review trước vẫn là evidence lịch sử; regression TV2 tiếp tục kiểm tra contract và adapter. Không sửa code TV4, không tự xác nhận UI acceptance. Confidence thấp không chứng minh loài lạ và softmax chưa calibration.
 
-Handoff TV4 thiếu là công việc cross-review riêng; blocker khoa học trực tiếp của Test B2 hiện là việc xác minh reference B3/final selection chưa đóng.
+Handoff TV4 là cross-review riêng, không có phụ thuộc bắt buộc từ evaluator B2 ground-truth crop đến UI/detector TV4. Thiếu W4-04 không chặn official Test B2. TV1 nghiệm thu W4-02 sau khi sản phẩm TV2 hoàn thành.

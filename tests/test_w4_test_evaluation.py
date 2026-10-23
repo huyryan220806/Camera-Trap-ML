@@ -295,6 +295,29 @@ class FrozenContractTests(unittest.TestCase):
                   "code_sha256": {name: w4.digest(self.root / name) for name in w4.CODE_FILES},
                   "provenance_sha256": self.s["provenance_sha256"], "test_manifest_sha256": w4.digest(self.comp / "test.jsonl"),
                   "b2_test_manifest_sha256": w4.digest(self.comp / "b2/test.jsonl")}
+        decision = {"source_kind": "user_reported_team_decision", "final_model_selection": "B2 SELECTED BY TEAM",
+                    "run_id": "b2_run01", "selection_split": "val", "test_used_for_selection": False,
+                    "evaluation_models": ["B2"], "b3_limitation_accepted_for_model_selection": True,
+                    "b3_selected_for_test": False, "b3_reference_reproducibility": "FAIL / UNRESOLVED",
+                    "recorded_utc": "2026-10-21T00:00:00+00:00"}
+        b2 = {"status": "PASS", "model": "B2", "checkpoint_sha256": w4.B2_SHA256,
+              "provenance_sha256": self.s["provenance_sha256"], "preprocessing": w4.PREPROCESSING, "class_map": mapping}
+        for name, value in (("team_decision.json", decision), ("b2_validation.json", b2),
+                            ("b3_cpu.json", {"status": "FAIL", "model": "B3"}),
+                            ("b3_cuda.json", {"status": "FAIL", "model": "B3"})):
+            (self.root / name).write_text(json.dumps(value))
+            self.s["decision_evidence_sha256"][name] = w4.digest(self.root / name)
+        self.s.update(team_decision_record="team_decision.json", b2_validation_evidence="b2_validation.json",
+                      b3_reproducibility={"status": "UNRESOLVED / LIMITATION ACCEPTED", "reference_reproduced": False,
+                          "selected_for_test": False, "diagnostic_evidence": {"CPU": "b3_cpu.json", "CUDA": "b3_cuda.json"}})
+        self.s["evidence_verified"].update(b3_original_validation_artifact=False, b3_train_val_provenance=False)
+        self.s["protocol_contract_sha256"] = w4.protocol_contract_digest(self.p)
+
+    def change_evidence(self, name, **changes):
+        value = w4.load_json(self.root / name)
+        value.update(changes)
+        (self.root / name).write_text(json.dumps(value))
+        self.s["decision_evidence_sha256"][name] = w4.digest(self.root / name)
 
     def gate(self):
         self.selection.write_text(json.dumps(self.s))
@@ -310,9 +333,81 @@ class FrozenContractTests(unittest.TestCase):
     def test_complete_contract_passes(self):
         self.assertEqual(self.gate()[0]["model"], "B2")
 
-    def test_missing_original_b3_evidence_rejected(self):
-        self.s["evidence_verified"]["b3_original_validation_artifact"] = False
+    def test_accepted_unselected_b3_failure_does_not_block_independent_b2(self):
+        result, _ = self.gate()
+        self.assertFalse(result["evidence_verified"]["b3_original_validation_artifact"])
+        self.assertFalse(result["b3_reproducibility"]["reference_reproduced"])
+        self.assertEqual(w4.load_json(self.root / "b3_cpu.json")["status"], "FAIL")
+
+    def test_b2_evidence_cannot_be_waived_by_team_decision(self):
+        self.s["evidence_verified"]["b2_independent_reload"] = False
         with self.assertRaisesRegex(w4.EvaluationBlocked, "evidence missing"):
+            self.gate()
+
+    def test_b2_failed_validation_blocks_even_with_true_boolean(self):
+        self.change_evidence("b2_validation.json", status="FAIL")
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "B2 Validation not verified"):
+            self.gate()
+
+    def test_b3_failure_cannot_be_relabelled_pass(self):
+        self.change_evidence("b3_cpu.json", status="PASS")
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "technical FAIL"):
+            self.gate()
+
+    def test_b3_limitation_requires_explicit_team_acceptance(self):
+        self.change_evidence("team_decision.json", b3_limitation_accepted_for_model_selection=False)
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "limitation acceptance"):
+            self.gate()
+
+    def test_missing_b2_team_decision_blocks(self):
+        self.s.pop("team_decision_record")
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "team decision missing"):
+            self.gate()
+
+    def test_team_decision_cannot_use_test_or_select_b3(self):
+        self.change_evidence("team_decision.json", final_model_selection="B3 SELECTED BY TEAM")
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "Validation-only B2"):
+            self.gate()
+
+    def test_b3_cannot_be_declared_reproduced_in_lock(self):
+        self.s["b3_reproducibility"]["reference_reproduced"] = True
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "FAIL must remain"):
+            self.gate()
+
+    def test_decision_must_precede_lock(self):
+        self.change_evidence("team_decision.json", recorded_utc="2099-01-01T00:00:00+00:00")
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "chronology"):
+            self.gate()
+
+    def test_bad_b2_hash_blocks_before_checkpoint_load(self):
+        self.s["checkpoint_sha256"] = "0" * 64
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "checkpoint hash"):
+            self.gate()
+
+    def test_fully_populated_but_uncommitted_lock_blocks(self):
+        with patch.object(w4, "committed_bytes", side_effect=w4.EvaluationBlocked("Input must be committed")):
+            # Do not use gate(), which mocks the byte checks for other contract tests.
+            self.selection.write_text(json.dumps(self.s))
+            self.p["model_selection_lock_sha256"] = w4.digest(self.selection)
+            self.protocol.write_text(json.dumps(self.p))
+            with self.assertRaisesRegex(w4.EvaluationBlocked, "must be committed"):
+                w4.verify_gate(self.root, self.selection, self.protocol, self.root / "synthetic.pt")
+
+    def test_modified_protocol_after_commit_blocks(self):
+        self.selection.write_text(json.dumps(self.s))
+        self.p["model_selection_lock_sha256"] = w4.digest(self.selection)
+        self.protocol.write_text(json.dumps(self.p))
+        def committed(root, path):
+            if path == self.protocol:
+                raise w4.EvaluationBlocked("Uncommitted change to frozen input: protocol.json")
+            return path.read_bytes()
+        with patch.object(w4, "committed_bytes", side_effect=committed):
+            with self.assertRaisesRegex(w4.EvaluationBlocked, "Uncommitted change"):
+                w4.verify_gate(self.root, self.selection, self.protocol, self.root / "synthetic.pt")
+
+    def test_protocol_content_change_rejected_even_if_git_byte_check_passes(self):
+        self.p["timing"] = "changed after lock"
+        with self.assertRaisesRegex(w4.EvaluationBlocked, "Protocol changed after selection lock"):
             self.gate()
 
     def test_changed_evaluator_bytes_rejected(self):
@@ -398,7 +493,7 @@ class SyntheticExportTests(unittest.TestCase):
                 run = w4.evaluate(root, selection, protocol, checkpoint)
                 expected = {"test_metrics.json", "per_class_metrics.csv", "confusion_matrix.csv", "confusion_matrix.png",
                             "evaluation_config.json", "evaluation_manifest.json", "checkpoint_verification.json",
-                            "evaluation_log.txt", "test_predictions.csv", "error_analysis.md", "environment.json"}
+                            "evaluation_log.txt", "test_evaluation_log.txt", "test_predictions.csv", "error_analysis.md", "environment.json"}
                 self.assertTrue(expected <= {p.name for p in run.iterdir()})
                 self.assertEqual(w4.load_json(run / "test_metrics.json")["support"], 1)
                 self.assertEqual(w4.load_json(run / "state.json")["status"], "COMPLETE")

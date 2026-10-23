@@ -1,23 +1,11 @@
-# TV2 W4 completed work — tiếp nối 23/10/2026
+# TV2 W4-02 — B2 đã khóa, chuẩn bị official Test
 
-**W4-02 BLOCKED** tại bước đóng final selection, do reference B3 chưa tái lập được. Không còn blocker “không có B2 local” hoặc “không có B3 local”.
+Quyết định nhóm được người dùng thông báo và lưu tại [decision record](w4_evidence/continuation_02/team_b2_decision.json). Chỉ B2 b2_run01 / epoch21 được chọn bằng Validation; SHA `8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`. Final model **LOCKED – B2**, thời điểm UTC thực tế `2026-10-23T06:48:53.792415+00:00`.
 
-| Công việc | Trạng thái |
-|---|---|
-| Fetch/audit main và TV1/2/3/4 | DONE; remote heads không đổi, xem continuation_01/repository_audit.json |
-| Tái sử dụng 600 Test ảnh đã khôi phục | DONE;600/600 SHA đúng,0 download |
-| B2 file/hash/size/epoch/mapping/config/provenance | PASS |
-| B2 fresh-process Validation, CM/error IDs, native adapter | PASS |
-| B3 safe load/forward, mapping/config/provenance khai báo | PASS; SHA lần đầu ghi từ file người dùng |
-| B3 reference reproduction CPU và CUDA | FAIL; evidence giữ nguyên, cần TV3 reconcile |
-| Review TV3 W4 | PENDING FIX; blocker mới được chỉ rõ theo ID và runtime |
-| Review TV4 W4 | HANDOFF NOT VERIFIED; branch vẫn254b40e |
-| Model lock / evaluation protocol | UPDATED PENDING; locked_utc vẫnnull, chưa đóng giả |
-| Test inference / metrics / CM / Test error analysis | BLOCKED; không có official run |
-| Verifier và tests TV2 mới | DONE; không viết lại evaluator đã có |
-| Regression/integrity/JSON/links/diff | Xem continuation_01/checks_summary.json và logs |
-| Commit/push | DONE; cf34e1f đã push và local/remote HEAD khớp |
-| PR | BLOCKED_CONNECTOR_403; không fallback credential/UI, manual URL/body đã chuẩn bị |
-| TV1 nghiệm thu | PENDING; chưa có acceptance |
+B2 independent Validation PASS; B3 exact reference reproducibility vẫn FAIL/UNRESOLVED, nhóm chấp nhận giới hạn cho lựa chọn mô hình. Không Test B1/B3, không threshold hoặc tuning Test. Hồ sơ pending và tất cả FAIL lịch sử giữ nguyên trong evidence/commits. TV1 chưa nghiệm thu.
 
-TV3 cần cung cấp artifact Validation/log/runtime gốc và giải thích hai ID bất đồng trước khi TV2 khóa final method; không yêu cầu train lại hoặc đổi checkpoint. TV4 cần code/export sửa nhãn và benchmark W4 thật. Sau khi các gate thực sự PASS, commit immutable final lock/protocol trước Test, dùng đúng candidate run ID và không chạy lại official run. Không mở rộng W5/W6.
+Protocol: comparison_v1, 600 ảnh / 680 crop / 495 chuỗi / 98 địa điểm / 75 ảnh mỗi lớp. Mean softmax đủ crop theo parent rồi argmax; CPU Python3.12, batch32, threads4, seed42, zero_division0. 600/600 nguồn đúng SHA, không tải lại; không có official marker trước khóa.
+
+[Lock](TV2_W4_MODEL_SELECTION_LOCK.json), [protocol](TV2_W4_EVALUATION_PROTOCOL.json), [pre-Test integrity](w4_evidence/continuation_02/pre_test_integrity.json), [regression](w4_evidence/continuation_02/final_pre_test_regression.txt). Gate yêu cầu tất cả byte khóa/code/evidence đã commit; protocol được ràng buộc hai chiều bằng hash. Chưa inference Test tại commit khóa này; sẽ chạy một official run sau khi HEAD gate PASS. Kết quả sẽ nằm ở commit sau riêng biệt.
+
+TV3 cần reconcile original runtime/provenance; TV4 W4-04 HANDOFF NOT VERIFIED tại254b40e, độc lập với Test B2. Không tự công nhận peer acceptance.
