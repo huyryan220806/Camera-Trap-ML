@@ -439,20 +439,35 @@ def run_training_b3(
         num_classes=num_classes,
     )
 
-    # Kiểm định reload độc lập
+    # Kiểm định reload độc lập checkpoint B3 bằng full validation
     logger.info("Kiểm định reload độc lập checkpoint B3 tại: %s", best_ckpt_path)
     reload_model = B2CropClassifier(num_classes=num_classes, backbone_name=backbone, pretrained=False)
-    loaded_data = load_checkpoint(model=reload_model, path=best_ckpt_path, map_location="cpu")
+    loaded_data = load_checkpoint(model=reload_model, path=best_ckpt_path, map_location="cpu", weights_only=True)
     if loaded_data.get("epoch") != best_epoch:
         raise ValueError(f"Reload thất bại: epoch trong checkpoint ({loaded_data.get('epoch')}) != best_epoch ({best_epoch})")
     if loaded_data.get("is_official") != (not smoke_test):
         raise ValueError("Reload thất bại: marker is_official không khớp")
-    reload_model.eval()
-    with torch.no_grad():
-        dummy_out = reload_model(torch.randn(1, 3, 224, 224))
-        if dummy_out.shape != (1, num_classes):
-            raise ValueError(f"Reload thất bại: forward pass shape sai: {dummy_out.shape}")
-    logger.info("Kiểm định reload checkpoint B3 thành công: mô hình hợp lệ và sẵn sàng.")
+    if loaded_data.get("class_map") is None or loaded_data.get("id_to_label") is None:
+        raise ValueError("Reload thất bại: thiếu class mapping cho adapter TV4")
+    if loaded_data.get("preprocessing") is None:
+        raise ValueError("Reload thất bại: thiếu thông tin preprocessing")
+
+    reload_model = reload_model.to(device)
+    reload_eval = evaluate_b2_model(
+        model=reload_model,
+        data_loader=val_loader,
+        device=device,
+        num_classes=num_classes,
+        id_to_label=id_to_label,
+    )
+    reload_img_f1 = reload_eval["image_level"]["macro_f1"]
+    expected_f1 = best_val_metrics.get("image_level", {}).get("macro_f1", 0.0)
+    delta_f1 = abs(reload_img_f1 - expected_f1)
+    logger.info("Kiểm định reload full validation: Reload ImgF1=%.4f | Best ImgF1=%.4f | Delta=%.6f", reload_img_f1, expected_f1, delta_f1)
+    if delta_f1 > 0.01:
+        logger.warning("Cảnh báo tái lập: sai lệch F1 reload (%.6f) vượt ngưỡng 0.01!", delta_f1)
+    else:
+        logger.info("Kiểm định reload checkpoint B3 thành công: mô hình tái lập kết quả validation.")
 
     report_payload = {
         "task": "W4-03 B3 Class Weighted Crop Classifier",

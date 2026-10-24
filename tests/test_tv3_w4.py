@@ -9,6 +9,8 @@ Không phụ thuộc external test runner (chỉ dùng Python standard library u
 Không yêu cầu GPU, chạy an toàn trên mọi máy.
 """
 
+import hashlib
+import io
 import json
 import shutil
 import sys
@@ -19,6 +21,7 @@ from typing import Any
 
 import numpy as np
 import torch
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -34,8 +37,11 @@ from scripts.error_analysis import (
     _per_class_error_breakdown,
     _summary_statistics,
     _generate_markdown_report,
+    run_error_analysis,
+    sha256_file,
 )
 from src.models.b2_classifier import B2CropClassifier, load_checkpoint, save_checkpoint
+from src.data.b2_dataset import B2ComparisonDataset
 
 
 class TestTV3Week4(unittest.TestCase):
@@ -171,7 +177,7 @@ class TestTV3Week4(unittest.TestCase):
             self.assertIn("class_weights", header)
 
             test_model = B2CropClassifier(num_classes=8, backbone_name="resnet18", pretrained=False)
-            loaded = load_checkpoint(test_model, best_ckpt, map_location="cpu")
+            loaded = load_checkpoint(test_model, best_ckpt, map_location="cpu", weights_only=True)
             self.assertEqual(loaded["num_classes"], 8)
             self.assertFalse(loaded["is_official"])
             self.assertIn("class_map", loaded)
@@ -231,10 +237,12 @@ class TestTV3Week4(unittest.TestCase):
             confusion_matrix=cm,
             id_to_label=id_to_label,
             num_classes=8,
+            metadata={"checkpoint_sha256": "abc123sha"},
         )
         self.assertIn("# Báo cáo Phân tích Lỗi", md_report)
         self.assertIn("large_antlered_muntjac", md_report)
         self.assertIn("sambar", md_report)
+        self.assertIn("abc123sha", md_report)
 
     def test_b3_checkpoint_compatibility_tv4(self):
         """Kiểm tra format checkpoint B3 tương thích hoàn toàn với adapter TV4."""
@@ -264,7 +272,7 @@ class TestTV3Week4(unittest.TestCase):
                 num_classes=8,
             )
 
-            data = torch.load(tmp_ckpt, map_location="cpu", weights_only=False)
+            data = torch.load(tmp_ckpt, map_location="cpu", weights_only=True)
             required_keys = [
                 "epoch", "model_state_dict", "val_metrics",
                 "class_map", "id_to_label", "is_official",
@@ -272,6 +280,71 @@ class TestTV3Week4(unittest.TestCase):
             ]
             for key in required_keys:
                 self.assertIn(key, data, f"Thiếu key '{key}' cần thiết cho TV4")
+
+    def test_error_analysis_anti_overwrite(self):
+        """Kiểm tra cơ chế chống ghi đè (Anti-overwrite) của error_analysis.py."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            fake_out = tmp_path / "reports"
+            fake_out.mkdir()
+
+            # Tạo file giả lập đã tồn tại
+            target_json = fake_out / "error_analysis_b2.json"
+            target_json.write_text("{\"marker\": \"original_evidence\"}", encoding="utf-8")
+
+            # Tạo checkpoint giả lập
+            ckpt_path = tmp_path / "b2_model.pt"
+            model = B2CropClassifier(num_classes=8, backbone_name="resnet18", pretrained=False)
+            save_checkpoint(model, ckpt_path, epoch=1, num_classes=8, backbone_name="resnet18")
+
+            # 1. Gọi run_error_analysis khi file đã tồn tại và không có cờ overwrite -> Phải ném FileExistsError
+            with self.assertRaises(FileExistsError):
+                run_error_analysis(
+                    checkpoint_path=ckpt_path,
+                    output_dir=fake_out,
+                    overwrite=False,
+                )
+
+            # 2. File ban đầu phải được giữ nguyên vẹn không bị sửa đổi
+            self.assertIn("original_evidence", target_json.read_text(encoding="utf-8"))
+
+    def test_preflight_hash_check_rejection(self):
+        """Kiểm tra B2ComparisonDataset từ chối ảnh nếu sha256 không khớp khi bật preflight_hash_check."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_root = Path(tmp_dir)
+            class_map_file = tmp_root / "class_map.json"
+            class_map_file.write_text(json.dumps({"0": "species_0"}), encoding="utf-8")
+
+            # Tạo ảnh giả lập
+            img_file = tmp_root / "test_img.jpg"
+            img = Image.new("RGB", (100, 100), color=(255, 0, 0))
+            img.save(img_file, format="JPEG")
+
+            # Tạo manifest với sha256 sai (sai hash)
+            manifest_file = tmp_root / "val.jsonl"
+            row = {
+                "image_id": "img_001",
+                "crop_id": "crop_001",
+                "split": "val",
+                "label": "species_0",
+                "class_id": 0,
+                "bbox_xyxy": [0, 0, 50, 50],
+                "quality": {
+                    "local_path": "test_img.jpg",
+                    "sha256": "wrong_sha256_hash_here_1234567890",
+                },
+            }
+            manifest_file.write_text(json.dumps(row) + "\n", encoding="utf-8")
+
+            # Bật preflight_hash_check=True -> Phải ném ValueError do hash không khớp
+            with self.assertRaises(ValueError):
+                B2ComparisonDataset(
+                    split="val",
+                    manifest_path=manifest_file,
+                    class_map_path=class_map_file,
+                    root=tmp_root,
+                    preflight_hash_check=True,
+                )
 
 
 if __name__ == "__main__":

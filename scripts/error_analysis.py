@@ -5,6 +5,8 @@ Phân tích chi tiết các dự đoán sai trên tập validation để:
 2. Liệt kê tất cả ảnh bị phân loại sai kèm xác suất từng lớp.
 3. Tính tỷ lệ lỗi và mục tiêu nhầm phổ biến nhất theo từng lớp.
 4. Xuất báo cáo JSON (cấu trúc) và Markdown (đọc được) phục vụ tài liệu Week 4.
+5. Bảo vệ chống ghi đè bằng chứng gốc (anti-overwrite protection).
+6. Ghi nhận SHA-256 của checkpoint, manifest, provenance và runtime môi trường.
 
 Đánh giá cấp ảnh: trung bình softmax probabilities của các crop cùng image_id rồi argmax
 (theo đúng protocol B2 đã thống nhất với TV1).
@@ -15,14 +17,15 @@ Sử dụng:
     # Phân tích B2:
     python scripts/error_analysis.py --checkpoint outputs/b2_crop_classifier/b2_run01/best_model.pt
 
-    # Phân tích B3:
-    python scripts/error_analysis.py --checkpoint outputs/b3_class_weighted/b3_run01/best_model.pt
+    # Phân tích B3 với mã attempt riêng (không ghi đè bản gốc):
+    python scripts/error_analysis.py --checkpoint outputs/b3_class_weighted/b3_run01/best_model.pt --attempt attempt02
 
     # Tuỳ chọn thêm:
-    python scripts/error_analysis.py --checkpoint ... --top-n 15 --output-dir reports/tv3
+    python scripts/error_analysis.py --checkpoint ... --top-n 15 --output-dir reports/tv3 --preflight-hash-check
 """
 
 import argparse
+import hashlib
 import json
 import logging
 import sys
@@ -47,6 +50,15 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 logger = logging.getLogger("error_analysis")
+
+
+def sha256_file(path: Path) -> str:
+    """Tính hash SHA-256 của file."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 # ---------------------------------------------------------------------------
@@ -122,15 +134,7 @@ def _per_class_error_breakdown(
     num_classes: int,
     id_to_label: dict[int, str],
 ) -> dict[str, dict[str, Any]]:
-    """Tính tỷ lệ lỗi và mục tiêu nhầm phổ biến nhất theo từng lớp.
-
-    Trả về dict với key là tên lớp, value chứa:
-      - total: số ảnh thực sự thuộc lớp này
-      - errors: số ảnh bị phân loại sai
-      - error_rate: tỷ lệ sai (errors / total)
-      - most_common_mistake: lớp bị nhầm sang nhiều nhất
-      - mistake_counts: chi tiết số lần nhầm sang từng lớp khác
-    """
+    """Tính tỷ lệ lỗi và mục tiêu nhầm phổ biến nhất theo từng lớp."""
     class_errors: dict[int, Counter] = defaultdict(Counter)
     class_totals: Counter = Counter()
 
@@ -256,13 +260,22 @@ def _generate_markdown_report(
     confusion_matrix: list[list[int]],
     id_to_label: dict[int, str],
     num_classes: int,
+    metadata: dict[str, Any] | None = None,
 ) -> str:
     """Tạo báo cáo Markdown chi tiết phục vụ tài liệu Week 4."""
+    meta = metadata or {}
     lines: list[str] = []
 
     lines.append(f"# Báo cáo Phân tích Lỗi — Mô hình {model_name.upper()}")
     lines.append("")
     lines.append(f"> **Checkpoint:** `{checkpoint_path}`")
+    if "checkpoint_sha256" in meta:
+        lines.append(f"> **Checkpoint SHA-256:** `{meta['checkpoint_sha256']}`")
+    if "manifest_sha256" in meta and meta["manifest_sha256"]:
+        lines.append(f"> **Validation Manifest SHA-256:** `{meta['manifest_sha256']}`")
+    if "runtime" in meta:
+        rt = meta["runtime"]
+        lines.append(f"> **Thiết bị chạy:** `{rt.get('device_name', rt.get('device', 'N/A'))}` | **PyTorch:** `{rt.get('torch_version', 'N/A')}`")
     lines.append(f"> **Thời gian tạo:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
     lines.append(f"> **Tập đánh giá:** Validation (KHÔNG dùng test set)")
     lines.append("")
@@ -394,13 +407,48 @@ def run_error_analysis(
     checkpoint_path: Path,
     top_n: int = 10,
     output_dir: Path = ROOT / "reports" / "tv3",
+    attempt: str | None = None,
+    overwrite: bool = False,
+    preflight_hash_check: bool = False,
 ) -> dict[str, Any]:
-    """Chạy phân tích lỗi trên tập validation và xuất báo cáo JSON + Markdown."""
+    """Chạy phân tích lỗi trên tập validation và xuất báo cáo JSON + Markdown.
+
+    Tính năng bảo vệ:
+    - Nạp an toàn bằng weights_only=True.
+    - Cơ chế chống ghi đè: từ chối nếu báo cáo đích đã tồn tại và không có cờ --overwrite.
+    - Ghi nhận SHA-256 của Checkpoint, Manifest, Provenance và Runtime môi trường.
+    """
     logger.info("Nạp checkpoint từ: %s", checkpoint_path)
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Không tìm thấy checkpoint: {checkpoint_path}")
 
-    checkpoint_data = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
+    model_name = _derive_model_name(checkpoint_path)
+    file_suffix = f"_{attempt}" if attempt else ""
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    json_path = output_dir / f"error_analysis_{model_name}{file_suffix}.json"
+    md_path = output_dir / f"error_analysis_{model_name}{file_suffix}.md"
+
+    # Cơ chế bảo vệ chống ghi đè bằng chứng cũ
+    if (json_path.exists() or md_path.exists()) and not overwrite:
+        msg = (
+            f"\n{'=' * 70}\n"
+            f"[LỖI BẢO VỆ BẰNG CHỨNG GỐC - ANTI-OVERWRITE]\n"
+            f"File báo cáo '{json_path.name}' hoặc '{md_path.name}' đã tồn tại trong '{output_dir}'!\n"
+            f"Để tránh ghi đè làm mất bằng chứng gốc, hệ thống từ chối ghi đè.\n"
+            f"Hãy truyền tham số --attempt (ví dụ: --attempt attempt02) hoặc --overwrite để ghi đè.\n"
+            f"{'=' * 70}"
+        )
+        logger.error(msg)
+        raise FileExistsError(msg)
+
+    # Tính SHA-256 của checkpoint
+    ckpt_sha = sha256_file(checkpoint_path)
+    logger.info("Checkpoint SHA-256: %s", ckpt_sha)
+
+    # Nạp an toàn với weights_only=True
+    checkpoint_data = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     num_classes = checkpoint_data.get("num_classes", 8)
     backbone_name = checkpoint_data.get("backbone_name", "resnet18")
     id_to_label_raw = checkpoint_data.get("id_to_label", {})
@@ -432,26 +480,32 @@ def run_error_analysis(
         backbone_name=backbone_name,
         pretrained=False,
     )
-    load_checkpoint(model=model, path=checkpoint_path, map_location="cpu")
+    load_checkpoint(model=model, path=checkpoint_path, map_location="cpu", weights_only=True)
     model.eval()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     logger.info("Sử dụng thiết bị: %s", device)
 
-    logger.info("Tạo DataLoader cho tập validation...")
-
+    # Xác minh dữ liệu và tính SHA manifest/provenance
     config = checkpoint_data.get("config", {})
     data_cfg = config.get("data", {})
     comp_dir = ROOT / data_cfg.get("comparison_dir", "data/processed/comparison_v1")
 
+    val_manifest = comp_dir / "b2" / "val.jsonl"
+    manifest_sha = sha256_file(val_manifest) if val_manifest.exists() else None
+
+    prov_file = comp_dir / "provenance.json"
+    prov_sha = sha256_file(prov_file) if prov_file.exists() else None
+
+    logger.info("Tạo DataLoader cho tập validation (preflight_hash_check=%s)...", preflight_hash_check)
     loaders = make_b2_loaders(
         comparison_dir=comp_dir,
         batch_size=32,
         num_workers=0,
         splits=["val"],
         root=ROOT,
-        preflight_hash_check=False,
+        preflight_hash_check=preflight_hash_check,
     )
     val_loader = loaders["val"]
     logger.info("Đã tạo val loader: %d batches", len(val_loader))
@@ -526,24 +580,37 @@ def run_error_analysis(
         y_true_all, y_pred_all, per_class_breakdown, top_confused,
     )
 
-    model_name = _derive_model_name(checkpoint_path)
     logger.info("Mô hình: %s | Tổng lỗi: %d/%d (%.2f%%)",
                 model_name, summary["total_misclassified"], summary["total_images"],
                 summary["overall_error_rate"] * 100)
 
-    output_dir.mkdir(parents=True, exist_ok=True)
+    runtime_meta = {
+        "python_version": sys.version,
+        "torch_version": torch.__version__,
+        "device": str(device),
+        "device_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() and device.type == "cuda" else "CPU",
+        "platform": sys.platform,
+    }
 
-    json_path = output_dir / f"error_analysis_{model_name}.json"
+    metadata = {
+        "model_name": model_name,
+        "attempt": attempt,
+        "checkpoint_path": str(checkpoint_path),
+        "checkpoint_sha256": ckpt_sha,
+        "manifest_path": str(val_manifest) if val_manifest.exists() else None,
+        "manifest_sha256": manifest_sha,
+        "provenance_sha256": prov_sha,
+        "preflight_hash_check": preflight_hash_check,
+        "backbone": backbone_name,
+        "num_classes": num_classes,
+        "evaluation_split": "val",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "runtime": runtime_meta,
+        "author": "TV3",
+    }
+
     json_payload = {
-        "metadata": {
-            "model_name": model_name,
-            "checkpoint_path": str(checkpoint_path),
-            "backbone": backbone_name,
-            "num_classes": num_classes,
-            "evaluation_split": "val",
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "author": "TV3",
-        },
+        "metadata": metadata,
         "summary": summary,
         "confusion_matrix": {
             "matrix": confusion_matrix,
@@ -558,7 +625,6 @@ def run_error_analysis(
         json.dump(json_payload, f, indent=2, ensure_ascii=False)
     logger.info("Đã xuất báo cáo JSON: %s", json_path)
 
-    md_path = output_dir / f"error_analysis_{model_name}.md"
     md_content = _generate_markdown_report(
         model_name=model_name,
         checkpoint_path=str(checkpoint_path),
@@ -569,6 +635,7 @@ def run_error_analysis(
         confusion_matrix=confusion_matrix,
         id_to_label=id_to_label,
         num_classes=num_classes,
+        metadata=metadata,
     )
     md_path.write_text(md_content, encoding="utf-8")
     logger.info("Đã xuất báo cáo Markdown: %s", md_path)
@@ -599,6 +666,22 @@ def main() -> None:
         default="reports/tv3",
         help="Thư mục lưu báo cáo (mặc định: reports/tv3).",
     )
+    parser.add_argument(
+        "--attempt",
+        type=str,
+        default=None,
+        help="Mã lượt chạy (ví dụ: attempt02) để không ghi đè báo cáo gốc.",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Bật cờ này nếu chấp nhận ghi đè file báo cáo đã có.",
+    )
+    parser.add_argument(
+        "--preflight-hash-check",
+        action="store_true",
+        help="Xác thực SHA-256 của ảnh nguồn trước khi suy luận.",
+    )
     args = parser.parse_args()
 
     checkpoint_path = Path(args.checkpoint)
@@ -613,6 +696,9 @@ def main() -> None:
         checkpoint_path=checkpoint_path,
         top_n=args.top_n,
         output_dir=output_dir,
+        attempt=args.attempt,
+        overwrite=args.overwrite,
+        preflight_hash_check=args.preflight_hash_check,
     )
 
 
