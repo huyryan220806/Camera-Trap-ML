@@ -12,8 +12,8 @@ sắp xếp tài liệu. Không tạo nhánh mới, không xóa bốn nhánh c�
 | TV3 | `a692a10` | Báo cáo B2/B3 và sửa kiểm định sau review; PR #6 |
 | TV4 | `beb828d` | Duyệt/sửa nhãn, log và benchmark demo |
 
-Ứng viên tích hợp trên feat/demo: `d04fe09` gộp TV1, `93ae799` gộp TV3; lịch sử
-commit của thành viên giữ nguyên. Main chỉ được cập nhật sau khi kiểm tra.
+Bản tích hợp: `d04fe09` gộp TV1, `93ae799` gộp TV3, `1b9e118` bổ sung tài liệu
+và bằng chứng. Lịch sử commit của thành viên giữ nguyên. Main cập nhật sau kiểm tra.
 
 ## Trạng thái kiểm tra / tiếp tục
 
@@ -32,9 +32,18 @@ commit của thành viên giữ nguyên. Main chỉ được cập nhật sau kh
   [browser](../reports/integration_w4/browser.json),
   [audit](../reports/integration_w4/audit.json).
 - Log làm việc local: `outputs/integration_w4_2026-10-25/`.
-- Kiểm tra đã hoàn tất, chuẩn bị công bố. Nếu quota bị ngắt, đọc file này,
+- **Đã công bố:** xác minh `1b9e118` có trên `origin/main` và `origin/feat/demo`.
+  [PR TV3 #6](https://github.com/huyryan220806/Camera-Trap-ML/pull/6) đã được
+  GitHub ghi nhận **merged**, merge commit `93ae799`. TV2 đã merge qua PR #7.
+- Bốn nhánh cố định được đồng bộ fast-forward về bản chung, không force-push,
+  không tạo hoặc xóa nhánh. Các commit tiếp theo chỉ ghi nhận việc công bố.
+- Nếu quota bị ngắt, đọc file này,
   kiểm tra git log/status và các tiến trình trước khi chạy tiếp; không merge lại
   các commit đã là ancestor, không chạy lại official Test hoặc benchmark đã hoàn tất.
+
+Máy thành viên cập nhật bằng `git fetch origin`, chuyển về nhánh của mình rồi
+`git merge --ff-only origin/<nhánh-của-mình>` khi working tree sạch. Nếu có commit
+chưa push riêng thì merge `origin/main` theo CONTRIBUTING, không reset bỏ việc.
 
 ## Dữ liệu và giới hạn giữ nguyên
 
