@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "b2_w3_2026-10-20",
+  "locked_utc": "2026-10-20T14:27:00+00:00",
+  "authorization": "User: B3 is week 4; lock B2 now. B3 will be done in week 4.",
+  "model": "B2",
+  "run_id": "b2_run01",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "checkpoint_bytes": 89548866,
+  "training_commit": "7cc87e86a8ad2cb7ca034c59a8e03b708050c3f1",
+  "dataset_version": "comparison_v1",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "validation_report": "reports/tv1_w4/b2_validation.json",
+  "validation_report_sha256": "81aa76e7998170fe9a2127766dfbdc167df772982e519b7578ae21f0b79830cc",
+  "scope": "Immutable B2 reference for completion of week 3 and week 4 data inventory.",
+  "data_inventory_allowed": true,
+  "test_model_inference_allowed": false,
+  "final_b2_b3_selection_closed": false,
+  "b3_status": "planned_week_4",
+  "policy": [
+    "Never replace this checkpoint or alter the frozen comparison_v1 labels/splits.",
+    "Train and select B3 only with train/val. Do not use test quality examples to tune B3.",
+    "Record a separate selection decision before final comparative test inference.",
+    "Data quality flags are not permission to exclude difficult test samples."
+  ]
+}

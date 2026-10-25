@@ -1,0 +1,105 @@
+{
+  "total": {
+    "images": 600,
+    "sequences": 495,
+    "locations": 98,
+    "crops": 680,
+    "unique_rgb": 599
+  },
+  "per_class": {
+    "large_antlered_muntjac": {
+      "images": 75,
+      "sequences": 70,
+      "locations": 28,
+      "crops": 77,
+      "unique_rgb": 75
+    },
+    "annamite_striped_rabbit": {
+      "images": 75,
+      "sequences": 50,
+      "locations": 11,
+      "crops": 75,
+      "unique_rgb": 75
+    },
+    "sambar": {
+      "images": 75,
+      "sequences": 69,
+      "locations": 26,
+      "crops": 92,
+      "unique_rgb": 75
+    },
+    "chinese_serow": {
+      "images": 75,
+      "sequences": 61,
+      "locations": 24,
+      "crops": 78,
+      "unique_rgb": 75
+    },
+    "common_palm_civet": {
+      "images": 75,
+      "sequences": 62,
+      "locations": 26,
+      "crops": 75,
+      "unique_rgb": 74
+    },
+    "masked_palm_civet": {
+      "images": 75,
+      "sequences": 55,
+      "locations": 33,
+      "crops": 75,
+      "unique_rgb": 75
+    },
+    "silver_pheasant": {
+      "images": 75,
+      "sequences": 56,
+      "locations": 17,
+      "crops": 102,
+      "unique_rgb": 75
+    },
+    "eurasian_wild_pig": {
+      "images": 75,
+      "sequences": 72,
+      "locations": 27,
+      "crops": 106,
+      "unique_rgb": 75
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-21T02:53:47+00:00",
+  "lock_id": "b2_w3_2026-10-20",
+  "model_lock_sha256": "a7231b81a660ae8797aa0131640f178781954f0edc776181616760161c669203",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 600,
+  "invalid_images": 0,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true,
+    "checked_utc": "2026-10-21T02:52:35+00:00",
+    "dataset_version": "comparison_v1",
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "requested": 4000,
+    "retained": 4000,
+    "excluded": 0,
+    "split_changes": 0,
+    "b1_b2_same_parent_ids": true,
+    "b1_b2_same_labels_and_splits": true,
+    "cross_split_overlap": {
+      "image_id": 0,
+      "file_name": 0,
+      "seq_id": 0,
+      "location": 0
+    },
+    "local_images_redecoded": false,
+    "perceptual_duplicates_checked": false
+  },
+  "example_counts": {
+    "small_box_images": 70,
+    "border_box_images": 171,
+    "multiple_box_images": 57,
+    "duplicate_images": 2
+  }
+}

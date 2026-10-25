@@ -256,3 +256,10 @@ SWG (2021): Northern and Central Annamites Camera Traps 2.0. IUCN SSC Asian Wild
 - [Quy ước COCO Camera Traps](https://github.com/agentmorris/MegaDetector/blob/main/megadetector/data_management/README.md#coco-camera-traps-format)
 
 Nguồn tải, thời điểm tải, ETag và SHA-256 nằm trong `data/raw/sources.json` và bản sao tại `data/processed/v1/provenance.json`.
+
+## Bàn giao TV1 tuần 4
+
+- [Báo cáo phân bố test và chất lượng dữ liệu](reports/tv1_w4/REPORT.md), [hướng dẫn chạy tiếp](docs/handoff_tv1_w4.md), [progress](docs/progress_tv1_w4.md).
+- B2 `b2_run01` đã khóa; B3 tiếp tục trong tuần 4 trên train/val. Chưa chạy suy luận test.
+- 600 ảnh test hợp lệ, 495 chuỗi, 98 địa điểm; 12 ví dụ dữ liệu có truy vết. Không đổi nhãn, split hay loại mẫu.
+- Chạy `scripts/inventory_tv1_w4.py`; có `--data-root` để dùng lại ảnh ở checkout khác, lưu state từng ảnh để tiếp tục sau gián đoạn.

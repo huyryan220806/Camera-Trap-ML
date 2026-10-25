@@ -1,0 +1,385 @@
+{
+  "rules_version": "metadata-rules-v1",
+  "duplicate_groups": [
+    [
+      "d86f91b0-8c29-11eb-8c2e-000d3a74c7de",
+      "d86f91b6-8c29-11eb-94af-000d3a74c7de"
+    ]
+  ],
+  "counts": {
+    "small_box_images": 70,
+    "border_box_images": 171,
+    "multiple_box_images": 57,
+    "duplicate_images": 2
+  },
+  "examples": [
+    {
+      "image_id": "c7f5e6b8-8c29-11eb-9993-000d3a74c7de",
+      "label": "common_palm_civet",
+      "split": "test",
+      "sequence_id": "2e54a76c-8c2a-11eb-ab4b-000d3a74c7de",
+      "location": "loc_0011",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0011/2017/11/image_00018.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0011/2017/11/image_00018.jpg",
+      "sha256": "2c646e56d17d2bb5c19975d3452c73f844b930960b98b700f023d0fcdfbbb6ed",
+      "pixel_sha256": "105f6281e0450ddd34e04f8ca194d78c9a7dfd47ea1bec255ef4d8608af1c96a",
+      "width": 3264,
+      "height": 2448,
+      "bbox_xyxy": [
+        [
+          2687,
+          1672,
+          3264,
+          2211
+        ]
+      ],
+      "flags": [
+        "candidate_box_touches_border"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c7f5e709-8c29-11eb-8efc-000d3a74c7de",
+      "label": "large_antlered_muntjac",
+      "split": "test",
+      "sequence_id": "2e54a73e-8c2a-11eb-a723-000d3a74c7de",
+      "location": "loc_0011",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0011/2017/10/image_00057.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0011/2017/10/image_00057.jpg",
+      "sha256": "33202ec91986d70a8cc04dc2df21b15f59b390605f6034a84d40529a0d4dd975",
+      "pixel_sha256": "9d0cbab423430f5811202a096c2548d77e59ea25839577d495fed481293d7783",
+      "width": 3264,
+      "height": 2448,
+      "bbox_xyxy": [
+        [
+          0,
+          1132,
+          1043,
+          2218
+        ]
+      ],
+      "flags": [
+        "candidate_box_touches_border"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c7faae16-8c29-11eb-811b-000d3a74c7de",
+      "label": "silver_pheasant",
+      "split": "test",
+      "sequence_id": "27836d9e-8c2a-11eb-abec-000d3a74c7de",
+      "location": "loc_0012",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0012/2017/10/image_00614.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0012/2017/10/image_00614.jpg",
+      "sha256": "37c1d6bf34a79356d18aa2e10f6b6f1d84fb6be3918ffca155a81b746a70720a",
+      "pixel_sha256": "a789ff933123c432bc548063a8a6240eb195eb003803f05239ead20a3ad81622",
+      "width": 3264,
+      "height": 2448,
+      "bbox_xyxy": [
+        [
+          0,
+          1482,
+          481,
+          2074
+        ],
+        [
+          1263,
+          1398,
+          1448,
+          1740
+        ]
+      ],
+      "flags": [
+        "candidate_box_touches_border",
+        "candidate_small_box_under_1pct",
+        "multiple_boxes_not_an_error"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c85a0b3c-8c29-11eb-962d-000d3a74c7de",
+      "label": "annamite_striped_rabbit",
+      "split": "test",
+      "sequence_id": "3c3ec893-8c2a-11eb-9dfd-000d3a74c7de",
+      "location": "loc_0032",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0032/2017/09/image_00015.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0032/2017/09/image_00015.jpg",
+      "sha256": "e8fda272d806daa28eb48229bb833ec39cc64041f238e38a2869ba888207a7e0",
+      "pixel_sha256": "8c5a51c595a214d6a2e404e4e685f6b97e356184ff4ee83f4f2e5a6a0cdbe5d0",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          1668,
+          1164,
+          1927,
+          1330
+        ]
+      ],
+      "flags": [
+        "candidate_small_box_under_1pct"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c85a0bac-8c29-11eb-97a5-000d3a74c7de",
+      "label": "large_antlered_muntjac",
+      "split": "test",
+      "sequence_id": "3c3eca32-8c2a-11eb-bcec-000d3a74c7de",
+      "location": "loc_0032",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0032/2018/03/image_00189.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0032/2018/03/image_00189.jpg",
+      "sha256": "2b9a8539d1340dbd5a550962bfb6a21b2aaba1c941fc7fc9280650d0598f7cf2",
+      "pixel_sha256": "d6dff36d164d3a1d272e3d8f0e89696f8be1205db3ce10e1e6732dd53a5fe71a",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          0,
+          0,
+          1096,
+          550
+        ]
+      ],
+      "flags": [
+        "candidate_box_touches_border"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c85f9078-8c29-11eb-9c81-000d3a74c7de",
+      "label": "sambar",
+      "split": "test",
+      "sequence_id": "29badbdb-8c2a-11eb-926f-000d3a74c7de",
+      "location": "loc_0035",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0035/2017/09/image_00067.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0035/2017/09/image_00067.jpg",
+      "sha256": "7f2264a5d07b8085edcbb8b174e9143807fead10219b6b10938e22c67238ac3b",
+      "pixel_sha256": "5cdda62e4b74473ec7559637c3f4ddb1fb119184f117c8be0a4e0833e90e0847",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          700,
+          681,
+          1307,
+          1276
+        ],
+        [
+          1140,
+          478,
+          1866,
+          1425
+        ],
+        [
+          1724,
+          658,
+          2560,
+          1342
+        ]
+      ],
+      "flags": [
+        "multiple_boxes_not_an_error"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c87dd57b-8c29-11eb-b19b-000d3a74c7de",
+      "label": "annamite_striped_rabbit",
+      "split": "test",
+      "sequence_id": "2bdcd707-8c2a-11eb-8105-000d3a74c7de",
+      "location": "loc_0047",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0047/2017/09/image_00026.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0047/2017/09/image_00026.jpg",
+      "sha256": "7fe0e6a1ce2cf70570a246f888a261a2d3ee420afefb04b09e5d5e55b76d76c6",
+      "pixel_sha256": "4db914a9a389d1b80ab2a5c249679ddd8e0e026b21a1df81c0eb1033ce2ceff2",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          1114,
+          874,
+          1269,
+          1093
+        ]
+      ],
+      "flags": [
+        "candidate_small_box_under_1pct"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c8a3f425-8c29-11eb-9296-000d3a74c7de",
+      "label": "annamite_striped_rabbit",
+      "split": "test",
+      "sequence_id": "22dd3197-8c2a-11eb-a599-000d3a74c7de",
+      "location": "loc_0072",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0072/2018/01/image_00009.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0072/2018/01/image_00009.jpg",
+      "sha256": "8f3f787bede8cbcfdd33d39878b0ea10ae21e6a7b0c17d5865588b17b82e57c6",
+      "pixel_sha256": "a5dc49bed13f6c17475c16a959c3a967448c4804759ddca8302ad6a6ebbd07e8",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          1058,
+          527,
+          1220,
+          632
+        ]
+      ],
+      "flags": [
+        "candidate_small_box_under_1pct"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c8a3f4ce-8c29-11eb-ba36-000d3a74c7de",
+      "label": "sambar",
+      "split": "test",
+      "sequence_id": "22dd311a-8c2a-11eb-a923-000d3a74c7de",
+      "location": "loc_0072",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0072/2017/11/image_00041.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0072/2017/11/image_00041.jpg",
+      "sha256": "334e507ab55250cf65c4980515b9ac1bfb9aedfd6fdaee1439ea1a39b3b64cd5",
+      "pixel_sha256": "727f2d915ee4ced8db5df8ea40ea2fecdb5aa92239496f60b051975ad2436eb6",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          378,
+          877,
+          1591,
+          1502
+        ],
+        [
+          522,
+          5,
+          993,
+          464
+        ],
+        [
+          792,
+          706,
+          1736,
+          1191
+        ]
+      ],
+      "flags": [
+        "multiple_boxes_not_an_error"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "c8a3f4e5-8c29-11eb-a18c-000d3a74c7de",
+      "label": "sambar",
+      "split": "test",
+      "sequence_id": "22dd3157-8c2a-11eb-9ed3-000d3a74c7de",
+      "location": "loc_0072",
+      "local_path": "data/images/swg_pilot_v2/public/lao/loc_0072/2017/12/image_00033.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0072/2017/12/image_00033.jpg",
+      "sha256": "5bcf6f301bbd1dfeb045651db9bd94bf7c2ae85b6c3259846c6b654f4770bccb",
+      "pixel_sha256": "a2b982acc185c3847ec9481ffdfadb8be1a897873716e5f7e442839198e63fe7",
+      "width": 2560,
+      "height": 1920,
+      "bbox_xyxy": [
+        [
+          351,
+          92,
+          1051,
+          483
+        ],
+        [
+          419,
+          420,
+          1037,
+          1280
+        ],
+        [
+          684,
+          939,
+          1653,
+          1910
+        ]
+      ],
+      "flags": [
+        "multiple_boxes_not_an_error"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "d86f91b0-8c29-11eb-8c2e-000d3a74c7de",
+      "label": "common_palm_civet",
+      "split": "test",
+      "sequence_id": "dfe3ccb9-8c29-11eb-bbc9-000d3a74c7de",
+      "location": "loc_0851",
+      "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0851/2019/03/image_00081.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0851/2019/03/image_00081.jpg",
+      "sha256": "529f6c1ffc3a0c6ca8d6bc64ffa22cc3df90ff74b534bc6cc8aa8a988c4a7f48",
+      "pixel_sha256": "8b082297786bcd173f18c51cc8ec5504835987dea1a892407f6a86bdddace6e8",
+      "width": 4992,
+      "height": 2808,
+      "bbox_xyxy": [
+        [
+          1782,
+          1318,
+          2912,
+          2437
+        ]
+      ],
+      "flags": [
+        "confirmed_exact_rgb_duplicate"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    },
+    {
+      "image_id": "d86f91b6-8c29-11eb-94af-000d3a74c7de",
+      "label": "common_palm_civet",
+      "split": "test",
+      "sequence_id": "dfe3ccc2-8c29-11eb-8584-000d3a74c7de",
+      "location": "loc_0851",
+      "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0851/2019/03/image_00087.jpg",
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0851/2019/03/image_00087.jpg",
+      "sha256": "529f6c1ffc3a0c6ca8d6bc64ffa22cc3df90ff74b534bc6cc8aa8a988c4a7f48",
+      "pixel_sha256": "8b082297786bcd173f18c51cc8ec5504835987dea1a892407f6a86bdddace6e8",
+      "width": 4992,
+      "height": 2808,
+      "bbox_xyxy": [
+        [
+          1834,
+          1323,
+          2923,
+          2435
+        ]
+      ],
+      "flags": [
+        "confirmed_exact_rgb_duplicate"
+      ],
+      "action": "retain_unchanged",
+      "label_error_confirmed": false,
+      "model_prediction_used": false
+    }
+  ]
+}
