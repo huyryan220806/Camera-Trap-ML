@@ -4,7 +4,10 @@ Schema: `contracts/inference_result.schema.json`, JSON Schema Draft 2020-12. Ví
 
 ## Nguyên tắc
 
-Mỗi ảnh trả về một object. Một batch lưu JSONL, mỗi dòng một kết quả độc lập; không bỏ qua ảnh lỗi. `request_id` do bên gọi cấp, dùng để đối chiếu đầu vào/đầu ra. Trong batch, bên gọi cấp ID duy nhất cho mỗi ảnh hoặc mỗi lần thử lại. `image_id` có thể null với ảnh người dùng tải lên; không bịa ID SWG.
+Mỗi ảnh trả về một object. Một batch lưu JSONL, mỗi dòng một kết quả độc lập;
+không bỏ qua ảnh lỗi. API demo cấp UUID `request_id` cho mỗi lần phân tích,
+dùng đối chiếu kết quả và bản duyệt. Client batch phải giữ ID duy nhất theo
+từng lần xử lý. `image_id` có thể null với ảnh upload; không bịa ID SWG.
 
 Các ví dụ là giả lập (`pipeline.mode = mock`), không chứa ảnh thật và không chứng minh chất lượng mô hình. `elapsed_ms = 0` là giá trị mẫu, không phải phép đo hiệu năng. Ngưỡng 0.5 và 0.7 chỉ minh họa; TV2/TV3 phải chọn ngưỡng bằng validation khi có mô hình.
 
@@ -62,4 +65,27 @@ TV2/TV3 chuyển đầu ra mô hình sang hợp đồng này; TV4 chỉ phụ th
 
 Schema tự kiểm tra được kiểu dữ liệu và hình dạng trạng thái; các ràng buộc so sánh giữa trường như biên box, class map và ngưỡng được kiểm tra trong Python. Không bỏ qua bước Python rồi coi schema hợp lệ là đủ.
 
-Khi người dùng sửa nhãn ở tuần 5, lưu bản duyệt riêng gắn `request_id` và `detection_id`, giữ nguyên dự đoán gốc để truy vết. Bộ bàn giao tuần 1 chưa triển khai lưu bản duyệt hay giao diện web.
+## Các lớp bao ngoài ở tuần 3 và 4
+
+Kết quả lõi ở trên vẫn là `schema_version=1.0.0`. Với classifier, tuần 3 bọc
+kết quả trong `classifier-demo-1.0`, gồm `result` và `provenance` của mô hình.
+Tuần 4 xuất `review-session-1.0` gồm:
+
+- `original`: kết quả detector hoặc envelope classifier bất biến.
+- `review`: revision, người duyệt, ghi chú, kết luận ảnh và nhãn từng box.
+- `events`: lịch sử các revision; bản mới không ghi đè bản cũ.
+- `runtime`, `inference_wall_ms`, `source_sha256`: thông tin đo lường và truy vết.
+
+`POST /api/analyze` giữ các trường `result`, `classification`, `preview` và bổ
+sung `review_session`. `GET /api/review/<request_id>` đọc phiên;
+`POST /api/review` lưu bản duyệt, HTTP 409 nếu revision đã cũ. Chỉ chấp nhận
+nhãn trong class map hoặc trạng thái chưa xác định/không phải động vật.
+Detector bỏ sót cần ghi chú; lỗi suy luận không được ghi thành ảnh trống/bỏ sót.
+
+Validator `validate_results.py` kiểm tra **object kết quả lõi**, không kiểm tra
+toàn bộ review session. Với JSON xuất tuần 4, trích `original.result` (classifier)
+hoặc `original` (detector-only) trước khi đưa vào validator. Luồng lưu review
+được kiểm tra ở `src/demo/review.py` và `tests/test_tv4_w4_review.py`.
+
+[JSON mẫu đầy đủ](../reports/tv4_w4/evidence/review_example.json) chứa chỉnh nhãn
+QA, không phải nhãn ground truth đã thẩm định. [Hướng dẫn sử dụng](handoff_tv4_w4.md).

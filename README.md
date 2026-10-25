@@ -1,265 +1,125 @@
 # CameraTrapML
 
-## Ứng dụng tuần 4 của thành viên 4
+Đồ án **Học máy và ứng dụng**: nhận dạng động vật từ ảnh bẫy camera tại Trường
+Sơn, sử dụng dữ liệu SWG. Nhóm 4 thành viên, lộ trình 6 tuần. Bản tích hợp đến
+**tuần 4, ngày 25/10/2026** có dữ liệu khóa, B0/B1/B2, thử nghiệm B3 và demo duyệt ảnh.
 
-- [Bàn giao màn hình duyệt và log suy luận](docs/handoff_tv4_w4.md), [bằng chứng kiểm thử và tốc độ](reports/tv4_w4/REPORT.md), [progress](docs/progress_tv4_w4.md).
-- Demo mặc định MegaDetector + B2; sửa nhãn từng box, ghi nhận chưa xác định/bỏ sót và lưu lịch sử duyệt riêng với dự đoán gốc.
-- Đo tốc độ có ghi cấu hình máy, batch thực tế và hỗ trợ chạy tiếp; chỉ dùng ảnh train. B3 chưa được bật do vấn đề tái lập còn UNRESOLVED.
+## Mở web
 
-## Ứng dụng tuần 3 của thành viên 4
-
-- [Bàn giao luồng suy luận và cache mô hình](docs/handoff_tv4_w3.md), [progress](docs/progress_tv4_w3.md).
-- [Bằng chứng kiểm thử](reports/tv4_w3/REPORT.md): MegaDetector + B0 thật, top 3 từng box, cache giữa các request.
-- Cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_classifier.py` để lấy B0 đã khóa SHA, rồi `scripts/run_demo.py --port 8765`.
-- B1 thật đã tích hợp ngày 20/10: chạy `scripts/prepare_tv4_classifier.py --model B1`, rồi chọn B1 trong demo. Xem [bàn giao bổ sung](reports/tv4_w3_continuation/REPORT.md) và [progress](docs/progress_tv4_w3_continuation.md).
-- B2 `b2_run01` đã xác minh và bật: đặt file TV3 bàn giao tại `outputs/tv3/best_model.pt`, chạy `scripts/prepare_tv4_classifier.py --model B2 --source outputs/tv3/best_model.pt`. Đã kiểm tra lại 600 ảnh validation và demo thật. Điểm softmax không phải xác suất đã hiệu chỉnh.
-- B0/B1 học trên toàn ảnh; chạy trên crop chỉ xác nhận luồng tích hợp. Cảnh báo MegaDetector đã dùng SWG vẫn được giữ.
-
-## Bản chung tuần 3 và nhánh cố định
-
-`main` đã tích hợp phần tuần 3 đã kiểm tra của cả bốn thành viên. Xem [biên bản tuần 3](docs/integration_week3.md), [lịch sử tuần 2](docs/integration_week2.md) và [quy ước Git](CONTRIBUTING.md).
-
-- TV1: `feat/metadata-split`; TV2: `feat/baseline`.
-- TV3: `feat/crop-classifier`; TV4: `feat/demo`.
-- Dùng lại các nhánh này cho tuần tiếp theo; không tạo nhánh mới theo tuần.
-- Đã có `comparison_v1`, B1/B2 và demo B0/B1/B2. Tuần 4 của TV1 vẫn ở `feat/metadata-split`, chưa gộp vào `main`.
-
-## TV3 tuần 3 - B2 Crop Classifier
-
-- B2 `b2_run01`, best epoch 21, SHA `8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5`.
-- Validation cấp ảnh: macro-F1 `0.7455`, accuracy `0.7467` trên 600 ảnh; 680 crop được gộp theo ảnh.
-- Đã kiểm định độc lập và chạy demo thật. [Bằng chứng kiểm định](reports/tv4_w3_continuation/REPORT.md), [bàn giao TV3](reports/tv3/TV3_W3_CHECKPOINT.md).
-- B3 thuộc tuần 4: chỉ thử nghiệm và chọn checkpoint bằng train/val. Demo tốt không chứng minh ưu thế trên test; chưa dùng test để chọn B2/B3.
-## TV2 Week 3 – B1 Fine-tuning
-
-**B1 checkpoint đã kiểm định; B2 chính thức đã tích hợp trong tuần 3.**
-
-- `B1_run01` đã hoàn tất 29 epoch, early stopping patience 7, best epoch 22.
-- Validation: Macro-F1 `0.5624506868`, precision `0.5748610369`, recall và
-  accuracy `0.565`, loss `1.3379992723` trên 600 ảnh nguồn.
-- Model: ResNet18 ImageNet-1K, full fine-tune, FP32; seed42, SGD/StepLR,
-  batch32; 11.180.616 tham số trainable.
-- Checkpoint: 44.815.625 byte; SHA-256
-  `5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c`;
-  local reload PASS. Bản tải riêng từ
-  [Google Drive](https://drive.google.com/file/d/19efNKKDz0IwhoUYGrBr5X9fI_CnQ-EPq/view?usp=sharing)
-  có cùng size/hash; fresh-process reload, provenance và metrics đều PASS với
-  mọi delta bằng 0.
-- 87/87 test TV2 PASS trong workspace TEMP; `comparison_v1`, B0 và các artifact
-  W1/W2 đọc được đều giữ nguyên. Không mở test rows để đánh giá/tuning.
-- Review TV3 `c01a751` bên dưới là lịch sử. Bản `7cc87e8` đã có checkpoint
-  B2, log và validation kiểm định lại. B2 image macro-F1 `0.7455` so với B1
-  `0.5624506868` trên cùng 600 ảnh validation; đây không phải kết quả test
-  hay bằng chứng B3 chắc chắn tốt hơn/kém hơn.
-- Tài liệu: [báo cáo W3](reports/tv2/TV2_W3.md),
-  [checkpoint/TV4 handoff](reports/tv2/TV2_W3_CHECKPOINT.md),
-  [review TV3](reports/tv2/TV2_REVIEW_TV3_W3.md),
-  [comparison](reports/tv2/TV2_W3_COMPARISON.md).
+Trên máy đã cài môi trường và trọng số, mở PowerShell tại thư mục repo:
 
 ```powershell
-python -X utf8 scripts/validate_b1.py --checkpoint <downloaded-best_model.pth> `
-  --sha256 5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c
+.venv/Scripts/python.exe -X utf8 scripts/run_demo.py --port 8765
 ```
 
-Không huấn luyện lại hoặc ghi đè `B1_run01`. Checkpoint `.pth`, ảnh nguồn và
-artifact tạm không được commit vào Git.
+Mở **[http://127.0.0.1:8765](http://127.0.0.1:8765)** và giữ PowerShell đang chạy.
+Dừng bằng `Ctrl+C`. Nếu cổng đã dùng, mở trang đang chạy hoặc dùng `--port 8766`
+rồi truy cập đúng cổng. Đây là web cục bộ trên máy của bạn.
 
-## TV2 – Week 2 – Baseline B0
+1. Chọn ảnh mẫu train hoặc **Nạp ảnh**.
+2. Giữ **MegaDetector + B2**, bấm **Phân tích ảnh**.
+3. Xem box và top 3 từng vùng; điểm thấp chuyển **Cần kiểm tra**.
+4. Điền người duyệt, sửa/xác nhận nhãn hoặc ghi chưa xác định/bỏ sót; **Lưu duyệt**
+   trước khi **Xuất JSON**. Dự đoán gốc luôn được giữ riêng.
 
-- Task: **W2-02**.
-- Model: ResNet18 pretrained ImageNet, phân loại toàn ảnh.
-- Backbone được đóng băng; chỉ classifier cuối (`fc`) được huấn luyện.
-- Số lớp: **8**.
-- Lượt chạy thử: **128 train, 64 validation**.
-- Best epoch: **4**.
-- Validation Macro-F1: **0.3616866793337382**.
-- Validation Macro-Precision: **0.46773504273504274**.
-- Validation Macro-Recall: **0.375**.
-- Validation accuracy: **0.375**.
-- Checkpoint reload: **PASS**, sai khác 0 ở các metric chính.
-- Test set used for model selection: **NO**.
+Chi tiết: [bàn giao demo tuần 4](docs/handoff_tv4_w4.md).
 
-Đây là baseline B0 trên tập thử nhỏ, không phải hiệu năng cuối của hệ thống. `configs/b0.yaml` là JSON hợp lệ theo YAML 1.2; lượt chạy chọn cố định 16 ảnh train và 8 ảnh validation mỗi lớp từ `pilot_v1.jsonl` bằng seed 42, giữ nguyên split của TV1 và không đọc ảnh test.
+## Cài trên máy mới
 
-Tại thư mục gốc repo, dùng Python 3.12 và cài `requirements-tv2.txt`. Việc tải ảnh cần Internet. Trọng số ImageNet được torchvision tự tải vào cache khi khởi tạo B0; nếu cần cache trong workspace, đặt `TORCH_HOME` hoặc lưu file ResNet18 chính thức tại `data/images/torch/hub/checkpoints/resnet18-f37072fd.pth` như code huấn luyện.
+Dùng Git và Python **3.12**. Máy đã có repo/môi trường thì không cần cài lại.
 
 ```powershell
-.venv/Scripts/python.exe scripts/prepare_b0_pilot.py
-.venv/Scripts/python.exe scripts/train_b0.py --smoke
-.venv/Scripts/python.exe scripts/train_b0.py
-.venv/Scripts/python.exe scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth
+git clone https://github.com/huyryan220806/Camera-Trap-ML.git
+cd Camera-Trap-ML
+py -3.12 -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-tv4.txt
+.venv/Scripts/python.exe scripts/prepare_tv4_demo.py
+# Nhận checkpoint B2 từ TV3 và thay đường dẫn bằng file đã nhận:
+.venv/Scripts/python.exe scripts/prepare_tv4_classifier.py --model B2 --source "D:/duong-dan/best_model.pt"
+.venv/Scripts/python.exe -X utf8 scripts/run_demo.py --port 8765
 ```
 
-Tệp chính:
+B2 được bàn giao ngoài Git; script kiểm tra SHA trước khi bật. Trên máy TV1,
+file nguồn là `outputs/tv3/b2/best_model.pt`. Chưa có trọng số thì chọn **Giả lập**
+để thử giao diện; box/điểm khi đó là dữ liệu giả. Không cần tải 4.000 ảnh để
+upload ảnh riêng. [Môi trường và dữ liệu](docs/environment.md).
 
-- Training: [`scripts/train_b0.py`](scripts/train_b0.py)
-- Validation: [`scripts/validate_b0.py`](scripts/validate_b0.py)
-- Notebook: [`notebooks/TV2_W2_B0_Demo.ipynb`](notebooks/TV2_W2_B0_Demo.ipynb)
-- Report: [`reports/tv2/TV2_W2.md`](reports/tv2/TV2_W2.md)
+## Kết quả hiện tại
 
-Các file `.py` là pipeline train/validation chính thức; file `.ipynb` dùng để trình bày và phân tích kết quả đã sinh. Config đã giải quyết, danh sách ảnh chọn/dùng, lỗi ảnh, log từng epoch và báo cáo validation nằm ở `experiments/B0_run01/`. Best checkpoint nằm ở `experiments/B0_run01/checkpoints/best_model.pth` (bị `.gitignore` bỏ qua nhưng phải được giữ cục bộ hoặc sao lưu riêng). Không chạy lại `prepare_b0_pilot.py` với config khác sau khi đã chọn checkpoint mà không tạo run ID mới.
+| Mô hình | Dữ liệu đánh giá | Macro-F1 | Trạng thái |
+| --- | --- | ---: | --- |
+| B1: ResNet18 toàn ảnh | 600 ảnh validation | 56,25% | Mốc so sánh |
+| **B2: ResNet18 crop** | 600 ảnh validation, 680 GT crop | **74,55%** | Đã khóa `b2_run01`, epoch 21 |
+| **B2: Test chính thức** | 600 ảnh test, 680 GT crop | **72,63%** | Accuracy 73,00%, đúng 438/600 |
+| B3: thử nghiệm trọng số lớp | Validation | Chưa chốt tái lập | **UNRESOLVED**, ngoài Test và demo |
 
-**Sau review W2:** `B0_run01` là run lịch sử bất biến. Lệnh prepare/train mặc định ở trên sẽ từ chối ghi vào run này; smoke dùng `TemporaryDirectory` và chỉ cập nhật artifact tạm. Muốn chạy thí nghiệm mới, sao chép config, đổi `experiment.id` và hai đường dẫn selected manifest sang run mới, rồi truyền `--config <config-mới>` cho prepare/train. Resume chưa được hỗ trợ; run đã bắt đầu hoặc bị gián đoạn cũng cần ID mới.
+Nguồn: [B1](reports/tv2/TV2_W3.md), [B2 validation](reports/tv4_w3_continuation/REPORT.md),
+[B2 Test](reports/tv2/TV2_W4_TEST_EVALUATION.md), [giới hạn B3](reports/tv3/W4_FINAL_FIX.md).
+Test B2 dùng **box ground truth**; không phải điểm của toàn luồng MegaDetector + B2.
 
-Validator kiểm tra SHA-256 source/validation/class map, mapping hai chiều, từng dòng validation thuộc source và SHA ảnh khi manifest có metadata đó **trước inference**. Pilot v1 chưa lưu hash ảnh; B0_run01 không được chuyển ngầm sang v2. W3 phải chốt chung danh sách ảnh đánh giá với TV1/TV3 trước khi so sánh B0/B1/B2.
+Demo CPU Ryzen 5 7535HS, 4 threads, batch ảnh 1: mean **5,55 giây/ảnh khi có cache**,
+lần đầu **18,08 giây**. Mẫu train nhỏ; xem [cấu hình và log](reports/tv4_w4/REPORT.md).
 
-Bàn giao checkpoint ngoài Git: **READY**, [TV2_W2_CHECKPOINT.md](reports/tv2/TV2_W2_CHECKPOINT.md). File `best_model.pth`, size **44.837.567 bytes**, SHA-256 **`d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680`**. [Tải checkpoint từ Google Drive](https://drive.google.com/file/d/18ESoOAV8KqvSV2StS808BvKkcWaNSpUr/view?usp=drive_link). Ngày 11/10/2026 đã tải độc lập không đăng nhập, đối chiếu đúng size/hash và chạy lại validation local PASS, sai khác metric bằng 0. Có checkpoint và ảnh validation thì chạy `py scripts/validate_b0.py --checkpoint experiments/B0_run01/checkpoints/best_model.pth`; không cần train lại.
+## Dữ liệu và giới hạn
 
-Kiểm tra chéo TV4: [TV2_REVIEW_TV4_W2.md](reports/tv2/TV2_REVIEW_TV4_W2.md). Báo cáo ghi rõ commit TV4 được kiểm tra, môi trường và bằng chứng runtime/UI độc lập.
+- `comparison_v1`: **4.000 ảnh / 8 lớp**, train 2.800, validation 600, test 600;
+  B1/B2 dùng cùng ảnh gốc, không giao nhau về chuỗi hoặc địa điểm.
+- [Manifest](data/processed/comparison_v1/); ảnh local ở `data/images/swg_pilot_v2/`.
+  Tải tiếp bằng `.venv/Scripts/python.exe scripts/resume_tv1_w2.py`.
+  [Hướng dẫn dữ liệu](docs/handoff_tv1_w3.md).
+- MegaDetector **MDv5a.0.1** đã dùng SWG khi huấn luyện; demo trên SWG không phải
+  đánh giá detector độc lập. Softmax chưa hiệu chỉnh; ngưỡng review 0,70 là quy
+  tắc demo. Điểm thấp không kết luận loài lạ; không có box không chứng minh ảnh trống.
+- Mẫu được chọn/cân bằng có chủ đích, không đại diện phân bố tự nhiên của toàn
+  SWG. Không mặc định cả 8 lớp đều có cùng tình trạng bảo tồn.
+- Giữ nguyên nhãn/split/checkpoint đã khóa. Không chạy lại Test để chọn mô hình,
+  ngưỡng hoặc sửa nhãn nhằm tăng điểm.
 
-Đồ án Học máy và ứng dụng: hỗ trợ nhận dạng động vật từ ảnh bẫy camera SWG tại Trường Sơn. Kế hoạch Word/Excel ở `plan_outputs` chỉ được lưu trên máy đã tạo, không nằm trong Git.
+## Bàn giao tuần 4
 
-## Bàn giao tuần 3 của thành viên 1
+| Thành viên | Công việc đã tích hợp | Tài liệu |
+| --- | --- | --- |
+| TV1 | Kiểm kê test và ví dụ lỗi dữ liệu | [Bàn giao](docs/handoff_tv1_w4.md) · [Báo cáo](reports/tv1_w4/REPORT.md) |
+| TV2 | Khóa đánh giá và công bố Test B2 | [Kết quả](reports/tv2/TV2_W4_TEST_EVALUATION.md) · [Phân tích lỗi](reports/tv2/TV2_W4_ERROR_ANALYSIS.md) |
+| TV3 | Phân tích B2/B3, sửa kiểm định và nạp checkpoint | [Bản sửa](reports/tv3/W4_FINAL_FIX.md) · [Quyết định](reports/tv3/TV3_W4_DECISION.md) |
+| TV4 | Duyệt/sửa nhãn, ghi bỏ sót và đo tốc độ | [Bàn giao](docs/handoff_tv4_w4.md) · [Kiểm thử](reports/tv4_w4/REPORT.md) |
 
-- [Manifest so sánh B1/B2 và dữ liệu comparison_v1](docs/handoff_tv1_w3.md).
-- [Báo cáo giữ/loại và rò rỉ](reports/tv1_w3/REPORT.md), [progress sau quota](docs/progress_tv1_w3.md).
-- Chạy/tiếp tục: `.venv/Scripts/python.exe scripts/freeze_comparison.py`.
-- Kiểm định: `.venv/Scripts/python.exe scripts/validate_comparison.py`.
-- Snapshot: `data/processed/comparison_v1/`, nguồn pilot v2, giữ nguyên split/seed.
-- B1 dùng `b1/*.jsonl`; B2 dùng `b2/*.jsonl` là tọa độ crop từ cùng ảnh nguồn, không phải JPEG crop đã xuất.
-- Không dùng riêng danh sách B0 cũ hoặc run crop TV3 `v1_run03` để so sánh B1/B2.
+[Biên bản tích hợp tuần 4](docs/integration_week4.md) ghi commit, kiểm tra và giới hạn.
+Báo cáo cũ giữ trạng thái tại thời điểm viết; xem biên bản cho trạng thái mới nhất.
 
-## Demo tuần 2 của thành viên 4
+## Cấu trúc và kiểm tra
 
-- [Bàn giao chung và review TV2/TV3 ngày 09/10/2026](docs/handoff_team_w2.md).
-- [Hướng dẫn demo và adapter MegaDetector](docs/handoff_tv4_w2.md), [kết quả chạy thật](reports/tv4_w2/REPORT.md), [progress sau quota](docs/progress_tv4_w2.md).
-- Chạy `.venv/Scripts/python.exe scripts/run_demo.py --port 8765`, mở `http://127.0.0.1:8765`.
-- Detector thật: cài `requirements-tv4.txt`, chạy `scripts/prepare_tv4_demo.py --smoke` một lần; các lần sau tái sử dụng weights đã xác minh.
-- Có upload, box, giả lập, detector thật và xuất JSON. Chưa có classifier loài; MDv5a đã dùng SWG khi huấn luyện, không xem smoke test là đánh giá độc lập.
+```text
+app/                    Giao diện web
+src/                    Dữ liệu, mô hình, đánh giá và suy luận
+scripts/                Chạy demo, tải/kiểm tra dữ liệu và thí nghiệm
+configs/ · contracts/   Cấu hình, model lock và JSON Schema
+data/processed/         Manifest và ánh xạ lớp đã khóa
+experiments/            Cấu hình/kết quả thí nghiệm được theo dõi trong Git
+docs/ · reports/        Hướng dẫn, bàn giao và bằng chứng
+tests/                  Kiểm thử tự động
+outputs/                Trọng số/cache/log local; không đưa lên Git
+```
 
-## Bàn giao tuần 2 của thành viên 1
-
-- [Tải pilot 4.000 ảnh, kiểm tra chất lượng và giữ nguyên split](docs/handoff_tv1_w2.md).
-- [Báo cáo kết quả thực tế TV1 tuần 2](reports/tv1_w2/REPORT.md).
-- [Điểm tiếp tục sau gián đoạn/quota](docs/progress_tv1_w2.md).
-- Chạy/tiếp tục: `.venv/Scripts/python.exe scripts/resume_tv1_w2.py`.
-- Các bước riêng: `scripts/download_subset.py`, `scripts/build_manifest_v2.py`, `scripts/validate_manifest_v2.py`.
-- Ảnh cục bộ: `data/images/swg_pilot_v2/` (không đưa lên Git). Manifest và đối chiếu số mẫu: `data/processed/v2/`.
-- Log tải và kết quả xác minh: `reports/tv1_w2/`. Pilot chỉ dùng kiểm tra pipeline; không tune mô hình trên pilot test.
-
-## Bàn giao tuần 1 của thành viên 2
-
-- [Hướng dẫn bàn giao Baseline & Evaluation](docs/handoff_tv2_w1.md)
-- [Đề cương thí nghiệm B0–B3](docs/experiment_protocol.md)
-- [Notebook kiểm tra môi trường và metric](notebooks/TV2_baseline_evaluation.ipynb)
-
-Phần TV2 dùng `data/processed/v1/class_map.json` và manifest v1 của TV1. Cài các thư viện bổ sung bằng `requirements-tv2.txt`; notebook và hình confusion matrix hiện chỉ kiểm tra trên dữ liệu giả, chưa phải kết quả của mô hình đã huấn luyện.
-
-## Bàn giao tuần 1 của thành viên 4
-
-- [Môi trường và kiểm tra cài đặt](docs/environment.md)
-- [Cấu trúc dự án và sơ đồ luồng](docs/architecture.md)
-- [Quy ước Git và kiểm tra chéo](CONTRIBUTING.md)
-- [Hợp đồng JSON và cách xử lý kết quả](docs/result_contract.md)
-- [Lịch dùng GPU chung](docs/gpu_schedule.md)
-- [Checklist nghiệm thu cho TV2](docs/handoff_tv4_w1.md)
-
-Các JSON trong `examples/results` là **dữ liệu giả lập**, không phải kết quả của mô hình đã huấn luyện. Tuần 1 chốt giao diện dữ liệu; chưa có ứng dụng web hoặc mô hình suy luận chạy thật.
-
-Sau khi cài `requirements-tv2.txt` (bao gồm cả `requirements.txt` chung), kiểm tra toàn bộ phần bàn giao mà không cần tải dữ liệu gốc hoặc GPU:
+Để chạy toàn bộ kiểm thử, cài cả phụ thuộc TV2 và TV4:
 
 ```powershell
+.venv/Scripts/python.exe -m pip install -r requirements-tv2.txt -r requirements-tv4.txt
 .venv/Scripts/python.exe scripts/check_environment.py
 .venv/Scripts/python.exe scripts/validate_results.py
+.venv/Scripts/python.exe scripts/validate_comparison.py --metadata-only --report outputs/comparison_audit.json
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 ```
 
-## Bàn giao tuần 1 của thành viên 1
+Không dùng lệnh đánh giá Test chính thức như smoke test. Kiểm thử tự động dùng
+fixture/thư mục tạm, không thay kết quả thí nghiệm đã khóa.
 
-- **Báo cáo EDA:** [reports/eda/EDA_member1.md](reports/eda/EDA_member1.md)
-- **Notebook:** [notebooks/01_metadata_eda.ipynb](notebooks/01_metadata_eda.ipynb)
-- **Danh sách 8 lớp đề xuất:** [data/processed/v1/selected_classes.json](data/processed/v1/selected_classes.json)
-- **Manifest chính:** `data/processed/v1/manifest_v1.jsonl` gồm 31.589 ảnh đủ điều kiện so sánh toàn ảnh/vùng cắt.
-- **Manifest thử:** `data/processed/v1/pilot_v1.jsonl` gồm 4.000 ảnh, giữ nguyên split của manifest chính.
-- **Seed và kiểm tra rò rỉ:** `configs/split_v1.json`, `data/processed/v1/provenance.json`, `data/processed/v1/audit.json`.
+## Làm việc nhóm
 
-Ở tuần 1, đây là kết quả xử lý **metadata**, chưa tải ảnh hay kiểm tra hash nội dung. Phần tải và kiểm tra kỹ thuật pilot thuộc bàn giao tuần 2 ở trên; chưa xác nhận chất lượng box bằng chuyên gia. Danh sách lớp là đề xuất nghiên cứu; chưa xác nhận tình trạng bảo tồn của từng loài.
+`main` là bản tích hợp; mỗi người giữ một nhánh: TV1 `feat/metadata-split`,
+TV2 `feat/baseline`, TV3 `feat/crop-classifier`, TV4 `feat/demo`.
+Trước việc mới, đồng bộ `origin/main` theo [quy ước Git](CONTRIBUTING.md).
 
-## Bàn giao tuần 1 của thành viên 3
-
-- **Hướng dẫn chạy và kết quả:** [docs/handoff_tv3_w1.md](docs/handoff_tv3_w1.md)
-- **Notebook:** [notebooks/crop_classifier_eda.ipynb](notebooks/crop_classifier_eda.ipynb), logic ở [scripts/tv3_crop_eda.py](scripts/tv3_crop_eda.py), test ở [tests/test_tv3_crop_eda.py](tests/test_tv3_crop_eda.py)
-- **Audit mẫu và biên bản lỗi:** [reports/tv3/sampled_audit.json](reports/tv3/sampled_audit.json), [reports/tv3/bien_ban_loi_w1.json](reports/tv3/bien_ban_loi_w1.json)
-
-Toàn bộ 133.837 annotation trong file box metadata gốc, kiểm tra bằng `valid_bbox` của TV1: **101.384 box hợp lệ, 32.178 thiếu bbox, 275 lỗi hình học**. 80 ảnh mẫu (10/lớp) chỉ lấy từ train manifest, seed 42; ảnh gốc tải về không đưa vào Git.
-
-## Cách giải thích phần việc của TV1
-
-1. **Ảnh:** một file ảnh. **Chuỗi:** nhiều ảnh của một lần kích hoạt camera. **Địa điểm:** vị trí đặt camera. **Box:** một vùng đối tượng trong ảnh; một ảnh có thể có nhiều box.
-2. Đọc và đếm metadata trước. Không lấy số ảnh làm số cá thể, không coi mọi annotation là một box.
-3. Giữ dấu vết nhãn gốc, đánh dấu nhãn không dùng được và chuẩn hóa cách viết cùng nhãn.
-4. Chọn lớp theo số ảnh, số chuỗi và số địa điểm; kiểm tra riêng lượng ảnh có box vì nhóm cần so sánh B1/B2.
-5. Chia theo địa điểm để ảnh cùng bối cảnh không xuất hiện cả trong train lẫn test. Seed làm kết quả có thể lặp lại, nhưng seed không tự ngăn rò rỉ.
-6. Bàn giao manifest cố định cho TV2 và TV3. Không để mỗi người tự chia ngẫu nhiên ảnh.
-
-## Chạy lại trên Windows
-
-Yêu cầu Python 3.12 và kết nối mạng ở bước tải metadata. Không cần GPU cho phần tuần 1. Metadata nén khoảng 68 MB; cơ sở dữ liệu và báo cáo cần thêm dung lượng đĩa. Dữ liệu JSON được đọc tuần tự để tránh nạp toàn bộ vào RAM.
-
-```powershell
-python -m venv .venv
-.venv/Scripts/python.exe -m pip install -r requirements-tv2.txt
-.venv/Scripts/python.exe scripts/download_metadata.py
-.venv/Scripts/python.exe scripts/prepare_swg.py
-.venv/Scripts/python.exe scripts/split_swg.py
-.venv/Scripts/python.exe scripts/report_eda.py
-.venv/Scripts/python.exe -m unittest discover -s tests -v
-```
-
-Lần chạy hiện tại đã hoàn tất. Nếu cơ sở dữ liệu đã tồn tại, dùng `scripts/prepare_swg.py --stats` để đọc lại và xuất thống kê. Không chạy ingest đè lên dữ liệu đang có. Nếu ingest bị gián đoạn, đổi tên cơ sở dữ liệu chưa hoàn chỉnh trước khi chạy lại.
-
-Manifest v1 không bị ghi đè. Để kiểm tra tái lập hoặc tạo phiên bản mới:
-
-```powershell
-.venv/Scripts/python.exe scripts/split_swg.py --output data/processed/repro_check
-```
-
-Nếu đổi quy tắc chọn lớp, cấu hình hoặc seed, tạo một thư mục phiên bản mới chưa tồn tại và lưu cấu hình tương ứng; không ghi đè v2 tuần 2 hoặc tự thay split sau khi đã đánh giá mô hình. Muốn mở notebook tương tác có thể chọn môi trường `.venv` trong VS Code/Jupyter; các script và báo cáo không phụ thuộc Jupyter.
-
-## Quy ước manifest
-
-Mỗi dòng JSONL là **một ảnh**, gồm:
-
-| Trường | Ý nghĩa |
-|---|---|
-| `image_id`, `file_name`, `url` | ID nguồn, đường dẫn và URL dự kiến để tải |
-| `seq_id`, `sequence_id` | Cùng một mã chuỗi nguồn; hai tên để tiện tích hợp |
-| `location`, `country`, `datetime` | Địa điểm, quốc gia theo đường dẫn và thời điểm trong metadata |
-| `label`, `class_id` | Nhãn chuẩn hóa và ID từ `class_map.json` |
-| `split` | `train`, `val` hoặc `test` |
-| `width`, `height` | Kích thước ảnh trong metadata |
-| `image_annotation_sequence_level` | Nhãn ảnh gốc có được gán ở cấp chuỗi hay không |
-| `boxes` | Danh sách box cấp ảnh, gồm annotation ID, nhãn và tọa độ pixel `[x,y,w,h]` |
-
-Các file `train.jsonl`, `val.jsonl`, `test.jsonl` là tập con của manifest chính. Mọi crop của một ảnh phải kế thừa split ảnh gốc. Pilot chỉ dùng để thử pipeline; không dùng kết quả trên pilot test để chọn mô hình hay ngưỡng.
-
-## Nguyên tắc chọn lớp và đánh giá
-
-Manifest chính dùng ảnh public, không bị đánh dấu corrupt, đủ thông tin, đúng một nhãn loài đã chọn và tất cả box hợp lệ đồng ý với nhãn đó. Vì tập ảnh có box được gán nhãn chọn lọc, cần ghi rõ kết quả trên tập này không đại diện ngẫu nhiên cho toàn bộ SWG.
-
-Mục tiêu chia 70/15/15 theo địa điểm; dùng seed 42 và 2.000 hoán vị để giảm lệch tỷ lệ ảnh/chuỗi từng lớp. Không dùng độ chính xác mô hình để tìm split thuận lợi. Mỗi lớp có ít nhất 10 chuỗi và 2 địa điểm mỗi tập; đây là ngưỡng khả thi, không bảo đảm kết quả lớp ít mẫu có độ bất định thấp.
-
-**Điểm cần nhớ:** toàn bộ annotation nhãn ảnh trong bản metadata tải về được đánh dấu ở cấp chuỗi. Box cấp ảnh là nguồn bổ sung quan trọng; vẫn phải kiểm tra trực quan mẫu ảnh trước khi nhóm huấn luyện chính thức.
-
-## Việc tiếp theo của TV1 và TV3
-
-- Kiểm tra mẫu ảnh từ nhiều chuỗi và địa điểm của mỗi lớp, ưu tiên train/validation để khảo sát và phát triển.
-- Ghi ảnh thiếu, file lỗi, box sai vào biên bản; không sửa nhãn chỉ để tăng điểm mô hình.
-- Khi tải ảnh, kiểm tra SHA-256 và trùng nội dung gần giống. Nếu phát hiện rò rỉ thật, sửa ở phiên bản dữ liệu mới và ghi rõ nguyên nhân.
-- Đối chiếu tên khoa học và tình trạng bảo tồn bằng nguồn chuyên môn trước khi gọi các lớp là loài quý hiếm.
-
-## Nguồn
-
-SWG (2021): Northern and Central Annamites Camera Traps 2.0. IUCN SSC Asian Wild Cattle Specialist Group's Saola Working Group. Dataset.
-
-- [Trang SWG trên LILA](https://lila.science/datasets/swg-camera-traps)
-- [Quy ước COCO Camera Traps](https://github.com/agentmorris/MegaDetector/blob/main/megadetector/data_management/README.md#coco-camera-traps-format)
-
-Nguồn tải, thời điểm tải, ETag và SHA-256 nằm trong `data/raw/sources.json` và bản sao tại `data/processed/v1/provenance.json`.
-
-## Bàn giao TV1 tuần 4
-
-- [Báo cáo phân bố test và chất lượng dữ liệu](reports/tv1_w4/REPORT.md), [hướng dẫn chạy tiếp](docs/handoff_tv1_w4.md), [progress](docs/progress_tv1_w4.md).
-- B2 `b2_run01` đã khóa; B3 tiếp tục trong tuần 4 trên train/val. Chưa chạy suy luận test.
-- 600 ảnh test hợp lệ, 495 chuỗi, 98 địa điểm; 12 ví dụ dữ liệu có truy vết. Không đổi nhãn, split hay loại mẫu.
-- Chạy `scripts/inventory_tv1_w4.py`; có `--data-root` để dùng lại ảnh ở checkout khác, lưu state từng ảnh để tiếp tục sau gián đoạn.
+[Mục lục tài liệu](docs/README.md) · [Kiến trúc](docs/architecture.md) ·
+[Hợp đồng JSON](docs/result_contract.md) · [Lịch GPU](docs/gpu_schedule.md) ·
+[Nguồn SWG](https://lila.science/datasets/swg-camera-traps)

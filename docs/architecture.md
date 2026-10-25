@@ -1,23 +1,28 @@
 # Cấu trúc dự án và sơ đồ luồng
 
-## Cấu trúc hiện có
+## Cấu trúc hiện có đến tuần 4
 
 ```text
 Camera-Trap-ML/
-  configs/                 Cấu hình split, seed
+  app/                     Web HTML/CSS/JavaScript
+  src/                     Dữ liệu, mô hình, đánh giá và demo
+  configs/                 Cấu hình split, model registry và model lock
   contracts/               JSON Schema cho kết quả suy luận
   coordination/            Tài nguyên và lượt đăng ký GPU
-  data/processed/v1/       Manifest và class map dùng chung
+  data/processed/          v1, v2 và comparison_v1 đã khóa
   docs/                    Hướng dẫn và checklist bàn giao
   examples/results/        Kết quả giả lập cho TV2, TV3, TV4
   notebooks/               Notebook EDA
-  reports/eda/             Báo cáo và biểu đồ đã tính
-  scripts/                 Các lệnh xử lý metadata và kiểm tra dữ liệu
+  reports/                 EDA, bàn giao từng thành viên và bằng chứng kiểm thử
+  experiments/             Cấu hình và kết quả các lượt huấn luyện
+  scripts/                 Demo, xử lý dữ liệu, huấn luyện và kiểm định
   tests/                   Kiểm thử tự động
   requirements.txt         Phụ thuộc của phần đã triển khai
 ```
 
-Các thư mục local `data/raw`, `data/interim`, `data/images`, `.venv`, `outputs`, `runs` không được push. `outputs` dành cho kết quả demo xuất ra; `runs` dành cho log/checkpoint. Khi có code thật ở tuần 2, TV4 thêm thư mục ứng dụng, TV2/TV3 thêm module huấn luyện và suy luận theo cùng hợp đồng JSON.
+Các thư mục local `data/raw`, `data/interim`, `data/images`, `.venv`, `outputs`,
+`runs` không được push. `outputs` chứa weights/cache và nhật ký duyệt. Các file
+trọng số `.pt/.pth/.ckpt` không đưa lên Git dù nằm trong thư mục thí nghiệm.
 
 ## Luồng dữ liệu nghiên cứu đã triển khai
 
@@ -27,19 +32,24 @@ flowchart LR
   B --> C[Kiểm tra box và chọn lớp]
   C --> D[Chia theo location với seed 42]
   D --> E[Manifest v1 và class map]
-  E --> F[TV2 dùng toàn ảnh]
-  E --> G[TV3 dùng vùng cắt]
+  E --> V[Tải và kiểm tra pilot v2]
+  V --> W[Khóa comparison_v1]
+  W --> F[TV2 B1 dùng toàn ảnh]
+  W --> G[TV3 B2 dùng vùng cắt GT]
   F --> H[Đánh giá trên cùng tập ảnh]
   G --> H
 ```
 
-TV2 và TV3 chưa huấn luyện trong gói bàn giao này. Nhãn thật trong manifest phục vụ nghiên cứu, không được coi là dự đoán của mô hình và không đưa vào đường suy luận để quyết định kết quả.
+comparison_v1 gồm 4.000 ảnh với split 2.800/600/600; B1/B2 dùng cùng ảnh gốc.
+B2 đã khóa và đã đánh giá Test; B3 vẫn thăm dò, chưa tái lập khớp hoàn toàn.
+GT boxes dùng trong đánh giá classifier khác với box do detector tạo khi chạy
+demo. Nhãn thật trong manifest không đi vào demo để quyết định dự đoán.
 
-## Luồng ứng dụng đã thống nhất cho bước tích hợp
+## Luồng ứng dụng đã triển khai
 
 ```mermaid
 flowchart TD
-  A[Nhận ảnh và request_id] --> B{Đọc ảnh được không}
+  A[Nhận ảnh và cấp request_id] --> B{Đọc ảnh được không}
   B -->|Không| E[error với mã lỗi đọc ảnh]
   B -->|Có| C[Phát hiện vùng động vật]
   C -->|Lỗi detector| E2[error với mã lỗi mô hình]
@@ -56,10 +66,19 @@ flowchart TD
   E --> V
   E2 --> V
   E3 --> V
-  V --> U[Hiển thị và lưu JSON theo ảnh]
+  V --> U[Lưu original và hiển thị kết quả]
+  U --> R2[Người dùng duyệt từng box và ghi bỏ sót]
+  R2 --> J[Nhật ký revision riêng và xuất JSON]
 ```
 
-`no_detection` chỉ có nghĩa detector không trả box đạt ngưỡng, không chứng minh ảnh trống. Đầu ra `ok` cũng chỉ là gợi ý từ mô hình. Luồng giao diện, detector và classifier thật sẽ được xây ở tuần sau; tuần 1 chỉ có schema, ví dụ và validator.
+`no_detection` không chứng minh ảnh trống; `ok` chỉ là đạt ngưỡng demo. Mô hình
+mặc định là MDv5a.0.1 + B2, top 3 riêng từng box. Cache model trong RAM, batch
+crop tối đa 8, score chưa hiệu chỉnh. B0/B1 và Giả lập vẫn dùng được cho kiểm thử.
+
+Mỗi phiên có `inference.json` bất biến và `events.jsonl` bổ sung từng lần duyệt.
+Sửa nhãn không thay original hoặc dữ liệu khóa. Điểm thấp/không rõ loài được
+chuyển cần kiểm tra, không tự nhận dạng loài lạ. Xem [hợp đồng JSON](result_contract.md)
+và [bàn giao TV4](handoff_tv4_w4.md).
 
 ## Ranh giới tích hợp
 
@@ -67,7 +86,9 @@ flowchart TD
 |---|---|---|
 | TV1 | TV2 và TV3 | Manifest JSONL, class_map.json, location_split.json |
 | TV2 và TV3 | TV4 | Checkpoint, preprocessing, class map/version và kết quả theo schema |
-| TV4 | Giao diện và xuất file | Một JSON kết quả cho mỗi ảnh; batch là danh sách các kết quả độc lập |
+| TV4 | Giao diện và xuất file | JSON phiên duyệt cho mỗi ảnh, gồm original + review + events |
 | Người kiểm tra | Nhóm | Nhận xét trên PR và checklist nghiệm thu |
 
-Model ID, ngưỡng, ánh xạ nhãn và quy tắc preprocessing phải được lưu cùng checkpoint khi tích hợp. Mọi ảnh trong một batch đều phải có kết quả hoặc lỗi; một ảnh lỗi không làm mất kết quả các ảnh còn lại.
+Model ID, ngưỡng, ánh xạ nhãn và preprocessing đi cùng checkpoint/registry.
+Web xử lý một ảnh mỗi request. Benchmark chạy tuần tự, lưu từng job có trạng
+thái, phần cứng, cỡ lô và thời gian; resume không bỏ qua lỗi hoặc chạy trùng job.

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "url": "http://127.0.0.1:8765",
+  "errors": [],
+  "verified": [
+    "real MD+B2",
+    "per-box human correction",
+    "original immutable",
+    "GET persistence",
+    "JSON export",
+    "low-score review",
+    "unresolved is not novel species",
+    "mock detector miss",
+    "corrupt image",
+    "desktop/mobile/narrow layout",
+    "runtime and batch sizes"
+  ],
+  "real_request_id": "890be625-6ea7-4663-bc80-8e7dedb56463"
+}
