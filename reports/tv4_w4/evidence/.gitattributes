@@ -1,0 +1,4 @@
+# Preserve the exact Windows-generated evidence bytes and source journal SHA.
+*.jsonl -text whitespace=cr-at-eol
+# Raw test output includes trailing spaces emitted by the logger.
+*.txt -text whitespace=-blank-at-eol,cr-at-eol

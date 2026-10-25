@@ -1,0 +1,167 @@
+{
+  "schema_version": "review-session-1.0",
+  "request_id": "9c748272-78e1-41fe-8e98-40fcfafa45ac",
+  "created_utc": "2026-10-25T05:48:36.808417+00:00",
+  "source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+  "original": {
+    "schema_version": "classifier-demo-1.0",
+    "result": {
+      "schema_version": "1.0.0",
+      "request_id": "9c748272-78e1-41fe-8e98-40fcfafa45ac",
+      "image": {
+        "image_id": null,
+        "file_name": "image_00001.jpg",
+        "width": 3264,
+        "height": 2448
+      },
+      "pipeline": {
+        "mode": "inference",
+        "detector_id": "MDv5a.0.1",
+        "classifier_id": "B2",
+        "class_map_version": "swg-v1",
+        "detector_threshold": 0.2,
+        "review_threshold": 0.7
+      },
+      "status": "needs_review",
+      "needs_review": true,
+      "detections": [
+        {
+          "detection_id": "animal-1",
+          "bbox_xywh": [
+            250.6752,
+            1162.8,
+            310.7327999999999,
+            361.8144000000002
+          ],
+          "detector_score": 0.733,
+          "top_k": [
+            {
+              "class_id": 4,
+              "label": "common_palm_civet",
+              "score": 0.6221514344215393
+            },
+            {
+              "class_id": 5,
+              "label": "masked_palm_civet",
+              "score": 0.17346185445785522
+            },
+            {
+              "class_id": 1,
+              "label": "annamite_striped_rabbit",
+              "score": 0.13531343638896942
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "elapsed_ms": 17171.93
+    },
+    "provenance": {
+      "requested_classifier": "B2",
+      "classifier": {
+        "classifier_id": "B2",
+        "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "resize_mode": "center_crop",
+          "resize_size": 256,
+          "image_size": 224,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        },
+        "cache_hit": false,
+        "model_load_count": 1,
+        "device": "cpu"
+      },
+      "detector": {
+        "mode": "megadetector",
+        "detector_id": "MDv5a.0.1",
+        "package_version": "10.0.25",
+        "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+        "detector_threshold": 0.2,
+        "classifier_id": null,
+        "device": "cpu",
+        "image_size": 1280,
+        "coordinate_space": "original_raster_pixels_no_exif_rotation"
+      },
+      "ignored_non_animals": 0,
+      "score_kind": "softmax_class_score",
+      "scores_calibrated": false,
+      "crop_policy": "round_clip_min8_padding0",
+      "max_boxes": 64,
+      "training_overlap_swg": true,
+      "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+      "warnings": [
+        "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+        "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+      ]
+    }
+  },
+  "runtime": {
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "logical_cpus": 12,
+    "ram_gib": 31.24,
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 224,
+    "classifier_actual_crop_batches": [
+      1
+    ]
+  },
+  "inference_wall_ms": 17215.217,
+  "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+  "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+  "review": {
+    "revision": 1,
+    "operator": "TV1 - QA",
+    "note": "QA correction only; not a ground-truth adjudication.",
+    "image_outcome": "pending",
+    "box_reviews": [
+      {
+        "detection_id": "animal-1",
+        "decision": "corrected",
+        "label": "sambar"
+      }
+    ]
+  },
+  "events": [
+    {
+      "revision": 1,
+      "created_utc": "2026-10-25T05:48:37.195930+00:00",
+      "review": {
+        "revision": 1,
+        "operator": "TV1 - QA",
+        "note": "QA correction only; not a ground-truth adjudication.",
+        "image_outcome": "pending",
+        "box_reviews": [
+          {
+            "detection_id": "animal-1",
+            "decision": "corrected",
+            "label": "sambar"
+          }
+        ]
+      }
+    }
+  ]
+}

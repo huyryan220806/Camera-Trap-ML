@@ -1,0 +1,86 @@
+{
+  "status": "COMPLETE",
+  "config": {
+    "runtime": {
+      "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+      "logical_cpus": 12,
+      "ram_gib": 31.24,
+      "os": "Windows-11-10.0.26300-SP0",
+      "python": "3.12.10",
+      "versions": {
+        "torch": "2.8.0",
+        "torchvision": "0.23.0",
+        "Pillow": "12.2.0",
+        "megadetector": "10.0.25"
+      },
+      "device": "cpu",
+      "torch_threads": 4,
+      "image_batch_size": 1,
+      "detector_batch_size": 1,
+      "classifier_max_crop_batch_size": 8,
+      "detector_image_size": 1280,
+      "classifier_image_size": 224
+    },
+    "repeats": 2,
+    "classifier": "B2",
+    "detector_threshold": 0.2,
+    "review_threshold": 0.7,
+    "gt_matching_iou": 0.5,
+    "selection": "lowest image_id per class in frozen train; not selected by predictions",
+    "image_ids": [
+      "c7ff729e-8c29-11eb-abf8-000d3a74c7de",
+      "c820d26d-8c29-11eb-b63e-000d3a74c7de",
+      "c7e5376a-8c29-11eb-a691-000d3a74c7de",
+      "c82f2637-8c29-11eb-a144-000d3a74c7de",
+      "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+      "c7e79972-8c29-11eb-8c9f-000d3a74c7de",
+      "c7d949c2-8c29-11eb-b04d-000d3a74c7de",
+      "c7eec2de-8c29-11eb-b3b8-000d3a74c7de"
+    ],
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "stress_selection": "Four extra train parents with smallest normalized GT box area; excluded from primary timing summary",
+    "stress_image_ids": [
+      "d8424165-8c29-11eb-820f-000d3a74c7de",
+      "d5212da4-8c29-11eb-b4b4-000d3a74c7de",
+      "d5c5b9cf-8c29-11eb-a843-000d3a74c7de",
+      "cf2b5120-8c29-11eb-b8f5-000d3a74c7de"
+    ],
+    "code_sha256": {
+      "scripts/benchmark_tv4_w4.py": "7d5474de067e0ac246ec4f06cf2763ef27c602227e57e9c4ab68adfa604f1f8e",
+      "src/demo/inference.py": "84141e79775664cc038835ff657b894943224f39aec3d3af30c0fd6cf912922d",
+      "src/demo/classifier.py": "ade16473d9cf8356acc86642642eb6448e3660754cb14e26b43eac5cbb08f3e1",
+      "src/demo/detector.py": "fd040826b69c786f016bba47fd1471642b9eadb9f0a87745d97b8ce3e43ea6b9",
+      "src/demo/review.py": "5115c88dff9e7b4ef749e6c98f8d049c9ee1bc3c3860a5a6844f9807913e6094",
+      "configs/demo_classifiers.json": "ac2ceba8ba263eb7c83fe83c11e08876f8855373804d5ab28cb86e3e74dbd52a"
+    },
+    "limitations": [
+      "Train-only convenience sample, not independent detector evaluation; MD trained on SWG.",
+      "GT unmatched at IoU 0.5 is a missed/localization candidate, not adjudicated wildlife ground truth.",
+      "Timing excludes file read, GT matching, journaling, upload/preview/browser and human review."
+    ]
+  },
+  "requests": 21,
+  "statuses": {
+    "ok": 17,
+    "needs_review": 3,
+    "no_detection": 1
+  },
+  "warm_success_requests": 16,
+  "warm_mean_ms": 5547.205406255671,
+  "warm_p50_ms": 5999.543199955951,
+  "warm_p95_nearest_rank_ms": 6239.496499998495,
+  "warm_images_per_second": 0.18027095208558247,
+  "cold_ms": [
+    18078.91380006913
+  ],
+  "miss_candidate_image_ids": [
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de",
+    "d5212da4-8c29-11eb-b4b4-000d3a74c7de",
+    "d5c5b9cf-8c29-11eb-a843-000d3a74c7de",
+    "d8424165-8c29-11eb-820f-000d3a74c7de"
+  ],
+  "zero_detection_image_ids": [
+    "d5212da4-8c29-11eb-b4b4-000d3a74c7de"
+  ],
+  "official_test_inference": false
+}

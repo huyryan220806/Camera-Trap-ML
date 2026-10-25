@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="vi">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CameraTrapML | Trạm kiểm tra ảnh</title><link rel="stylesheet" href="/style.css"><script src="/vendor/lucide.js" defer></script><script src="/app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CameraTrapML | Trạm kiểm tra ảnh</title><link rel="stylesheet" href="/style.css"><script src="/vendor/lucide.js" defer></script><script src="/app.js" defer></script><script src="/review.js" defer></script></head>
 <body>
-<header><div class="brand"><i data-lucide="scan-line"></i><strong>CameraTrapML</strong><span>Trường Sơn</span></div><span class="local"><span class="dot"></span>Cục bộ · TV4 / Tuần 03</span></header>
+<header><div class="brand"><i data-lucide="scan-line"></i><strong>CameraTrapML</strong><span>Trường Sơn</span></div><span class="local"><span class="dot"></span>Cục bộ · TV4 / Tuần 04</span></header>
 <main>
 <div class="heading"><div><p class="eyebrow">BẪY CAMERA / KIỂM TRA ẢNH</p><h1>Nhận dạng động vật</h1></div><button id="export" class="secondary" disabled><i data-lucide="download"></i>Xuất JSON</button></div>
 <div class="notice"><i data-lucide="triangle-alert"></i><p><strong>Giới hạn dữ liệu huấn luyện</strong> MegaDetector MDv5a đã dùng SWG. Kết quả trên SWG không phải đánh giá độc lập. <a href="https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data" target="_blank" rel="noreferrer">Nguồn chính thức <span aria-hidden="true">↗</span></a></p></div>
@@ -17,7 +17,7 @@
 <div class="range-label"><label for="threshold">Ngưỡng phát hiện</label><output id="threshold-value">0.20</output></div><input id="threshold" type="range" min="0" max="1" step="0.01" value="0.2">
 <label class="checkbox"><input id="show-boxes" type="checkbox" checked>Hiện bounding box</label>
 <hr><h2>Phân loại loài</h2>
-<label for="classifier">Mô hình</label><select id="classifier"><option value="B0">B0 · ResNet18</option><option value="B1" disabled>B1 · Chưa có checkpoint</option><option value="B2" disabled>B2 · Chưa có checkpoint</option><option value="none">Chỉ detector</option></select>
+<label for="classifier">Mô hình</label><select id="classifier"><option value="B0">B0 · ResNet18</option><option value="B1" disabled>B1 · Chưa có checkpoint</option><option value="B2" selected>B2 · Đã khóa</option><option value="none">Chỉ detector</option></select>
 <div id="classification-settings"><div class="range-label"><label for="review-threshold">Ngưỡng cần kiểm tra</label><output id="review-value">0.70</output></div><input id="review-threshold" type="range" min="0" max="1" step="0.01" value="0.7"></div>
 <p id="crop-warning" class="scientific-note">B0 học trên toàn ảnh. Kết quả trên crop chỉ để thử luồng tích hợp.</p>
 <button id="run" class="primary" disabled><i data-lucide="play"></i><span>Phân tích ảnh</span></button>
@@ -29,6 +29,18 @@
 <div class="result-heading"><h2>Kết quả</h2><span id="timing">Chưa chạy</span></div><div id="status" role="status" aria-live="polite">Chưa có kết quả.</div>
 <p class="scientific-note" id="score-note">Điểm mô hình là điểm softmax, chưa phải xác suất đã hiệu chỉnh. Ngưỡng kiểm tra chỉ dành cho demo.</p>
 <div class="table-scroll"><table><thead><tr><th>Vùng</th><th>Điểm detector</th><th>Top 3 · điểm mô hình</th><th>Trạng thái</th></tr></thead><tbody id="results"><tr><td colspan="4" class="muted">—</td></tr></tbody></table></div>
+<section id="review-panel" hidden aria-labelledby="review-heading">
+<div class="result-heading"><h2 id="review-heading">Duyệt lại</h2><span id="review-revision">Bản 0</span></div>
+<div class="review-grid">
+<div><label for="reviewer">Người duyệt</label><input id="reviewer" maxlength="80" autocomplete="name"></div>
+<div><label for="image-outcome">Kết luận người duyệt</label><select id="image-outcome"><option value="pending">Chờ duyệt</option><option value="reviewed">Đã duyệt đủ vùng</option><option value="unresolved">Chưa xác định</option><option value="detector_miss">Detector bỏ sót động vật</option><option value="empty">Không thấy động vật</option></select></div>
+<div><label class="checkbox"><input type="checkbox" id="review-only">Chỉ vùng có điểm thấp</label><label for="review-box">Vùng đang duyệt</label><select id="review-box"></select></div>
+<div><label for="review-label">Nhãn người duyệt</label><select id="review-label"><option value="">Chờ duyệt</option><option value="unresolved">Chưa xác định</option><option value="not_animal">Không phải động vật</option></select></div>
+</div>
+<label for="review-note">Ghi chú / vị trí bị bỏ sót</label><textarea id="review-note" maxlength="2000" rows="3"></textarea>
+<div class="review-actions"><button id="reload-review" class="secondary" title="Nạp bản duyệt đã lưu"><i data-lucide="rotate-ccw"></i>Nạp lại</button><button id="save-review" class="secondary"><i data-lucide="save"></i>Lưu duyệt</button><span id="review-status" role="status" aria-live="polite"></span></div>
+<dl class="runtime-info"><dt>Máy / cỡ lô</dt><dd id="review-runtime"></dd></dl>
+</section>
 <details><summary>JSON kết quả</summary><pre id="json">{}</pre></details>
 </section></div>
 <footer><span>SWG · Pilot v2 · Chỉ dùng mẫu train</span><span id="server-state">Đang kết nối máy chủ</span></footer>

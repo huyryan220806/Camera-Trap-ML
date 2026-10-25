@@ -3,6 +3,7 @@ const $ = (id) => document.getElementById(id);
 let input = null, mode = 'megadetector', result = null, working = false, generation = 0;
 const icons = () => window.lucide?.createIcons();
 function clearResult() {
+  window.clearReviewSession?.();
   result = null; $('boxes').replaceChildren(); $('json').textContent = '{}';
   $('results').innerHTML = '<tr><td colspan="4" class="muted">—</td></tr>';
   $('status').textContent = 'Chưa có kết quả.'; $('status').className = '';
@@ -12,8 +13,9 @@ function clearResult() {
 }
 function setBusy(value) {
   working = value; $('busy').hidden = !value;
-  for (const el of document.querySelectorAll('.controls button,.controls select,.controls input,#reset')) el.disabled = value;
+  for (const el of document.querySelectorAll('.controls button,.controls select,.controls input,#reset,#review-panel button,#review-panel select,#review-panel input,#review-panel textarea')) el.disabled = value;
   $('run').disabled = value || !input;
+  if (!value && !$('review-panel').hidden) selectReviewBox();
 }
 function preview(url) {
   $('preview').src = url; $('image-frame').hidden = false; $('empty').hidden = true;
@@ -124,6 +126,7 @@ $('run').onclick = async () => {
     if (data.preview) preview(data.preview);
     else { $('image-frame').hidden = true; $('empty').hidden = false; }
     render(data.result, data.classification);
+    if (data.review_session) renderReviewSession(data.review_session);
   } catch (error) { showError(error.message); }
   finally { setBusy(false); }
 };
@@ -142,10 +145,13 @@ async function initialize() {
     for (const option of $('classifier').options) {
       const entry = config.classifiers?.[option.value];
       if (!entry) continue;
-      option.disabled = !entry.enabled;
+      option.disabled = !(entry.enabled && entry.checkpoint_present);
       option.textContent = `${option.value} · ${entry.enabled ? (entry.checkpoint_present ? 'Checkpoint có sẵn' : 'Thiếu checkpoint') : 'Chưa bàn giao'}`;
     }
     $('runtime').textContent = config.package_version ? `MD ${config.package_version}` : 'Chưa cài đặt';
+    window.demoClassNames = config.class_names || [];
+    window.configureReviewLabels?.(window.demoClassNames);
+    $('classifier').onchange();
     $('server-state').textContent = config.weights_present ? 'Weights có sẵn · Máy chủ sẵn sàng' : 'Chưa có weights · Giả lập sẵn sàng';
     for (const sample of config.samples) { const option = document.createElement('option'); option.value = sample.id; option.textContent = `${sample.name} · ${sample.file_name}`; $('sample').append(option); }
     if (config.samples.length) { $('sample').value = config.samples[0].id; $('sample').onchange(); }

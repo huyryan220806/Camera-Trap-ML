@@ -1,0 +1,9 @@
+{
+  "new_inference_jobs": 0,
+  "status": "PASS",
+  "jobs_before": 21,
+  "journal_sha256_after": "ff79c68887870564007a9d0a4b9fe3a80363f7be5c877af3ace22005ab5eaba0",
+  "jobs_after": 21,
+  "journal_sha256_before": "ff79c68887870564007a9d0a4b9fe3a80363f7be5c877af3ace22005ab5eaba0",
+  "scope": "Completed-run restart/resume; journal unchanged"
+}

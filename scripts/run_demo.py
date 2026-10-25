@@ -6,6 +6,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import io
 import json
 import logging
+import hashlib
+import time
 import mimetypes
 from pathlib import Path
 import sys
@@ -18,13 +20,15 @@ from src.demo.detector import (analyze, decode_image, MegaDetectorAdapter, MODEL
 from prepare_tv4_demo import sample_rows
 from src.demo.classifier import ClassifierCache, REGISTRY_PATH
 from src.demo.inference import analyze_classified
+from src.demo.review import ReviewStore, ReviewConflict
 
 WEB = ROOT / 'app'
 
 
-def make_handler(adapter, rows, classifier_cache=None):
+def make_handler(adapter, rows, classifier_cache=None, review_store=None):
     samples = {str(i): row for i, row in enumerate(rows)}
     classifier_cache = classifier_cache or ClassifierCache()
+    review_store = review_store or ReviewStore(ROOT / 'outputs/tv4/w4/sessions', classifier_cache.names())
 
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
@@ -56,8 +60,14 @@ def make_handler(adapter, rows, classifier_cache=None):
                 return self.respond(200, {'model_version': MODEL_VERSION, 'package_version': package_version(),
                     'expected_package_version': PACKAGE_VERSION, 'weights_present': MODEL_PATH.is_file(),
                     'classifiers': classifier_cache.status(),
+                    'class_names': classifier_cache.names(),
                     'samples': [{'id': k, 'name': f'Train {int(k) + 1:02d}', 'file_name': r['file_name'].split('/')[-1]}
                                 for k, r in samples.items()]})
+            if path.startswith('/api/review/'):
+                try:
+                    return self.respond(200, review_store.read(path.rsplit('/', 1)[-1]))
+                except (FileNotFoundError, ValueError):
+                    return self.respond(404, {'error': 'Không tìm thấy phiên duyệt hợp lệ.'})
             if path.startswith('/api/sample/'):
                 row = samples.get(path.rsplit('/', 1)[-1])
                 if row is None:
@@ -70,7 +80,7 @@ def make_handler(adapter, rows, classifier_cache=None):
                     return self.respond(200, output.getvalue(), 'image/jpeg')
                 except (OSError, ValueError):
                     return self.respond(422, {'error': 'Sample image unavailable'})
-            files = {'/': 'index.html', '/app.js': 'app.js', '/style.css': 'style.css',
+            files = {'/': 'index.html', '/app.js': 'app.js', '/review.js': 'review.js', '/style.css': 'style.css',
                      '/vendor/lucide.js': 'vendor/lucide.js'}
             if path not in files:
                 return self.respond(404, {'error': 'Not found'})
@@ -80,17 +90,22 @@ def make_handler(adapter, rows, classifier_cache=None):
         def do_POST(self):
             if not self.local_request():
                 return self.respond(403, {'error': 'Local requests only'})
-            if urlsplit(self.path).path != '/api/analyze':
+            path = urlsplit(self.path).path
+            if path not in ('/api/analyze', '/api/review'):
                 return self.respond(404, {'error': 'Not found'})
             try:
                 size = int(self.headers.get('Content-Length', '0'))
                 if not 0 < size <= MAX_IMAGE_BYTES * 4 // 3 + 8192:
                     return self.respond(413, {'error': 'Anh vuot gioi han 16 MiB'})
+                if path == '/api/review' and size > 65536:
+                    return self.respond(413, {'error': 'Bản duyệt vượt giới hạn 64 KiB.'})
                 if self.headers.get_content_type() != 'application/json':
                     return self.respond(415, {'error': 'Expected JSON'})
                 payload = json.loads(self.rfile.read(size))
                 if not isinstance(payload, dict):
                     raise ValueError('Expected object')
+                if path == '/api/review':
+                    return self.respond(200, review_store.save(payload.get('request_id'), payload))
                 if 'sample_id' in payload:
                     row = samples.get(str(payload['sample_id']))
                     if row is None:
@@ -102,6 +117,7 @@ def make_handler(adapter, rows, classifier_cache=None):
                     name = payload.get('file_name', 'upload.jpg')
                 classifier = payload.get('classifier', 'none')
                 envelope = None
+                started = time.perf_counter()
                 if classifier == 'none':
                     result = analyze(data, name, payload.get('mode', 'mock'), payload.get('threshold', 0.2),
                                      payload.get('scenario', 'animal'), adapter)
@@ -111,6 +127,8 @@ def make_handler(adapter, rows, classifier_cache=None):
                         review_threshold=payload.get('review_threshold', 0.7),
                         scenario=payload.get('scenario', 'animal'), adapter=adapter)
                     result = envelope['result']
+                wall_ms = round((time.perf_counter() - started) * 1000, 3)
+                session = review_store.create(envelope or result, hashlib.sha256(data).hexdigest(), wall_ms)
                 # Render a raster without EXIF so preview and box coordinates always agree.
                 preview = None
                 if result['image']['width'] is not None:
@@ -119,9 +137,14 @@ def make_handler(adapter, rows, classifier_cache=None):
                     buffer = io.BytesIO()
                     image.save(buffer, 'JPEG', quality=90)
                     preview = 'data:image/jpeg;base64,' + base64.b64encode(buffer.getvalue()).decode('ascii')
-                self.respond(200, {'result': result, 'preview': preview, 'classification': envelope})
-            except (ValueError, TypeError, binascii.Error, KeyError):
-                self.respond(400, {'error': 'Yeu cau khong hop le. Kiem tra anh, che do va nguong.'})
+                self.respond(200, {'result': result, 'preview': preview, 'classification': envelope, 'review_session': session})
+            except ReviewConflict as error:
+                self.respond(409, {'error': str(error)})
+            except FileNotFoundError:
+                self.respond(404, {'error': 'Không tìm thấy ảnh hoặc phiên duyệt.'})
+            except (ValueError, TypeError, binascii.Error, KeyError) as error:
+                message = str(error) if path == '/api/review' else 'Yeu cau khong hop le. Kiem tra anh, che do va nguong.'
+                self.respond(400, {'error': message})
             except (BrokenPipeError, ConnectionResetError):
                 pass
             except Exception:

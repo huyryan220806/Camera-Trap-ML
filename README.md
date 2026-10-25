@@ -1,5 +1,11 @@
 # CameraTrapML
 
+## Ứng dụng tuần 4 của thành viên 4
+
+- [Bàn giao màn hình duyệt và log suy luận](docs/handoff_tv4_w4.md), [bằng chứng kiểm thử và tốc độ](reports/tv4_w4/REPORT.md), [progress](docs/progress_tv4_w4.md).
+- Demo mặc định MegaDetector + B2; sửa nhãn từng box, ghi nhận chưa xác định/bỏ sót và lưu lịch sử duyệt riêng với dự đoán gốc.
+- Đo tốc độ có ghi cấu hình máy, batch thực tế và hỗ trợ chạy tiếp; chỉ dùng ảnh train. B3 chưa được bật do vấn đề tái lập còn UNRESOLVED.
+
 ## Ứng dụng tuần 3 của thành viên 4
 
 - [Bàn giao luồng suy luận và cache mô hình](docs/handoff_tv4_w3.md), [progress](docs/progress_tv4_w3.md).
