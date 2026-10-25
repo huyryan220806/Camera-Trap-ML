@@ -28,6 +28,7 @@ import argparse
 import hashlib
 import json
 import logging
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -50,6 +51,7 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 logger = logging.getLogger("error_analysis")
+from src.evaluation.reproducibility import verify_validation_inputs, runtime_metadata
 
 
 def sha256_file(path: Path) -> str:
@@ -275,7 +277,7 @@ def _generate_markdown_report(
         lines.append(f"> **Validation Manifest SHA-256:** `{meta['manifest_sha256']}`")
     if "runtime" in meta:
         rt = meta["runtime"]
-        lines.append(f"> **Thiết bị chạy:** `{rt.get('device_name', rt.get('device', 'N/A'))}` | **PyTorch:** `{rt.get('torch_version', 'N/A')}`")
+        lines.append(f"> **Thiết bị chạy:** `{rt.get('device_name', rt.get('device', 'N/A'))}` | **PyTorch:** `{rt.get('torch', 'N/A')}`")
     lines.append(f"> **Thời gian tạo:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
     lines.append(f"> **Tập đánh giá:** Validation (KHÔNG dùng test set)")
     lines.append("")
@@ -409,16 +411,21 @@ def run_error_analysis(
     output_dir: Path = ROOT / "reports" / "tv3",
     attempt: str | None = None,
     overwrite: bool = False,
-    preflight_hash_check: bool = False,
+    preflight_hash_check: bool = True,
+    data_root: Path | None = None,
 ) -> dict[str, Any]:
     """Chạy phân tích lỗi trên tập validation và xuất báo cáo JSON + Markdown.
 
     Tính năng bảo vệ:
     - Nạp an toàn bằng weights_only=True.
-    - Cơ chế chống ghi đè: từ chối nếu báo cáo đích đã tồn tại và không có cờ --overwrite.
+    - Từ chối ghi đè; bắt buộc xác minh bản khóa và SHA ảnh nguồn.
     - Ghi nhận SHA-256 của Checkpoint, Manifest, Provenance và Runtime môi trường.
     """
     logger.info("Nạp checkpoint từ: %s", checkpoint_path)
+    if overwrite or not preflight_hash_check:
+        raise ValueError('Immutable reports and source hash verification are mandatory')
+    if attempt is not None and not re.fullmatch(r'[A-Za-z0-9_-]{1,64}', attempt):
+        raise ValueError('Invalid attempt ID')
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Không tìm thấy checkpoint: {checkpoint_path}")
 
@@ -431,13 +438,13 @@ def run_error_analysis(
     md_path = output_dir / f"error_analysis_{model_name}{file_suffix}.md"
 
     # Cơ chế bảo vệ chống ghi đè bằng chứng cũ
-    if (json_path.exists() or md_path.exists()) and not overwrite:
+    if json_path.exists() or md_path.exists():
         msg = (
             f"\n{'=' * 70}\n"
             f"[LỖI BẢO VỆ BẰNG CHỨNG GỐC - ANTI-OVERWRITE]\n"
             f"File báo cáo '{json_path.name}' hoặc '{md_path.name}' đã tồn tại trong '{output_dir}'!\n"
             f"Để tránh ghi đè làm mất bằng chứng gốc, hệ thống từ chối ghi đè.\n"
-            f"Hãy truyền tham số --attempt (ví dụ: --attempt attempt02) hoặc --overwrite để ghi đè.\n"
+            f"Hãy truyền tham số --attempt (ví dụ: --attempt attempt02) để lưu bản mới.\n"
             f"{'=' * 70}"
         )
         logger.error(msg)
@@ -449,6 +456,8 @@ def run_error_analysis(
 
     # Nạp an toàn với weights_only=True
     checkpoint_data = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+    input_root = Path(data_root) if data_root is not None else ROOT
+    comp_dir, ckpt_sha, verified_model = verify_validation_inputs(input_root, checkpoint_path, checkpoint_data)
     num_classes = checkpoint_data.get("num_classes", 8)
     backbone_name = checkpoint_data.get("backbone_name", "resnet18")
     id_to_label_raw = checkpoint_data.get("id_to_label", {})
@@ -480,7 +489,7 @@ def run_error_analysis(
         backbone_name=backbone_name,
         pretrained=False,
     )
-    load_checkpoint(model=model, path=checkpoint_path, map_location="cpu", weights_only=True)
+    model.load_state_dict(checkpoint_data['model_state_dict'])
     model.eval()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -490,7 +499,6 @@ def run_error_analysis(
     # Xác minh dữ liệu và tính SHA manifest/provenance
     config = checkpoint_data.get("config", {})
     data_cfg = config.get("data", {})
-    comp_dir = ROOT / data_cfg.get("comparison_dir", "data/processed/comparison_v1")
 
     val_manifest = comp_dir / "b2" / "val.jsonl"
     manifest_sha = sha256_file(val_manifest) if val_manifest.exists() else None
@@ -504,8 +512,8 @@ def run_error_analysis(
         batch_size=32,
         num_workers=0,
         splits=["val"],
-        root=ROOT,
-        preflight_hash_check=preflight_hash_check,
+        root=input_root,
+        preflight_hash_check=True,
     )
     val_loader = loaders["val"]
     logger.info("Đã tạo val loader: %d batches", len(val_loader))
@@ -557,9 +565,9 @@ def run_error_analysis(
             "true_label": id_to_label.get(gt_class, str(gt_class)),
             "predicted_class_id": pred_class,
             "predicted_label": id_to_label.get(pred_class, str(pred_class)),
-            "confidence": round(confidence, 6),
+            "confidence": confidence,
             "all_probabilities": {
-                id_to_label.get(c, str(c)): round(float(mean_prob[c]), 6)
+                id_to_label.get(c, str(c)): float(mean_prob[c])
                 for c in range(num_classes)
             },
             "num_crops": len(crops),
@@ -584,13 +592,9 @@ def run_error_analysis(
                 model_name, summary["total_misclassified"], summary["total_images"],
                 summary["overall_error_rate"] * 100)
 
-    runtime_meta = {
-        "python_version": sys.version,
-        "torch_version": torch.__version__,
-        "device": str(device),
-        "device_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() and device.type == "cuda" else "CPU",
-        "platform": sys.platform,
-    }
+    runtime_meta = runtime_metadata(device)
+    if sha256_file(checkpoint_path) != ckpt_sha:
+        raise ValueError('Checkpoint changed during analysis')
 
     metadata = {
         "model_name": model_name,
@@ -607,6 +611,8 @@ def run_error_analysis(
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "runtime": runtime_meta,
         "author": "TV3",
+        "verified_checkpoint_model": verified_model,
+        "scope": "Validation diagnostic; not an overwrite or acceptance of historical B3 reference",
     }
 
     json_payload = {
@@ -619,9 +625,10 @@ def run_error_analysis(
         "top_confused_pairs": top_confused,
         "per_class_breakdown": per_class_breakdown,
         "misclassified_images": misclassified,
+        "all_image_predictions": image_records,
     }
 
-    with open(json_path, "w", encoding="utf-8") as f:
+    with open(json_path, "x", encoding="utf-8") as f:
         json.dump(json_payload, f, indent=2, ensure_ascii=False)
     logger.info("Đã xuất báo cáo JSON: %s", json_path)
 
@@ -637,7 +644,8 @@ def run_error_analysis(
         num_classes=num_classes,
         metadata=metadata,
     )
-    md_path.write_text(md_content, encoding="utf-8")
+    with md_path.open('x', encoding='utf-8') as handle:
+        handle.write(md_content)
     logger.info("Đã xuất báo cáo Markdown: %s", md_path)
 
     logger.info("Phân tích lỗi hoàn tất cho mô hình %s!", model_name.upper())
@@ -673,15 +681,12 @@ def main() -> None:
         help="Mã lượt chạy (ví dụ: attempt02) để không ghi đè báo cáo gốc.",
     )
     parser.add_argument(
-        "--overwrite",
-        action="store_true",
-        help="Bật cờ này nếu chấp nhận ghi đè file báo cáo đã có.",
-    )
-    parser.add_argument(
         "--preflight-hash-check",
         action="store_true",
+        default=True,
         help="Xác thực SHA-256 của ảnh nguồn trước khi suy luận.",
     )
+    parser.add_argument('--data-root', type=Path, default=ROOT)
     args = parser.parse_args()
 
     checkpoint_path = Path(args.checkpoint)
@@ -697,8 +702,8 @@ def main() -> None:
         top_n=args.top_n,
         output_dir=output_dir,
         attempt=args.attempt,
-        overwrite=args.overwrite,
         preflight_hash_check=args.preflight_hash_check,
+        data_root=args.data_root,
     )
 
 

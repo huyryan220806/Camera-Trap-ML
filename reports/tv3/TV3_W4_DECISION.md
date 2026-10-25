@@ -17,7 +17,9 @@ Theo đề cương và thỏa thuận kỹ thuật tuần 4:
 > [!IMPORTANT]
 > **Công bố giới hạn tái lập B3 (Reproduction Disclaimer):**
 > `B3 reference reproduction UNRESOLVED; exploratory only; excluded from Test.`
-> Lần kiểm định độc lập trên môi trường CPU ghi nhận 2 ảnh có nhãn dự đoán sai khác nhẹ so với lần chạy GPU ban đầu (tổng ảnh đúng giữ nguyên 446/600, Macro F1 74.1046% trên GPU vs 74.1052% trên CPU) do khác biệt tính toán dấu phẩy động (non-determinism) giữa CPU và CUDA cuDNN. Sự sai lệch nhỏ này không làm thay đổi kết luận: B3 hoàn toàn không vượt được B2. Do đó B3 chỉ mang tính chất thăm dò kỹ thuật, bị loại bỏ khỏi Test và chính thức bảo lưu B2.
+> Kiểm định CPU ghi nhận 2 ảnh dự đoán khác báo cáo gốc, dù tổng đúng vẫn 446/600. Macro-F1 tham chiếu là 0.7410465262846234; CPU kiểm định là 0.7410527051783586. Khác biệt runtime/số thực là một giả thuyết, chưa chứng minh được nguyên nhân gốc; chẩn đoán CUDA của TV2 cũng chưa tái lập hoàn toàn tham chiếu. Chưa có đầy đủ log B3, runtime, training commit và dự đoán chưa làm tròn của lần chạy gốc. Không suy đoán thông tin bị thiếu. Giữ B3 ngoài Test và giữ lựa chọn B2 theo bằng chứng validation hiện có, không khẳng định ưu thế thống kê hoặc ưu thế trong mọi điều kiện.
+>
+> Bằng chứng lịch sử: nhánh TV2 commit `5fe9083`, `reports/tv2/w4_evidence/continuation_01/b3_validation_diagnostic/verification.json` và `b3_validation_cuda_diagnostic/verification.json`. Kiểm định CPU độc lập ngày 23/10 của TV1 có cùng sai lệch hai ảnh. Các kết quả tham chiếu dưới đây được giữ nguyên, không thay bằng điểm chạy lại.
 
 ---
 
@@ -79,7 +81,7 @@ Nhóm TV3 đưa ra quyết định chính thức:
   - Macro F1 của B2 cao hơn B3 (**74.55% vs 74.10%**).
   - B2 có độ ổn định đồng đều hơn trên các lớp đông crop như Lợn rừng (+7.22 pp F1) và Nai (+3.06 pp F1).
   - B3 không đạt ngưỡng cải thiện tối thiểu $\ge +0.5$ pp trên tập validation.
-- **Tình trạng của B3:** Lưu trữ toàn bộ mã nguồn huấn luyện (`scripts/train_b3.py`), nhật ký và checkpoint B3 (`outputs/b3_class_weighted/b3_run01/best_model.pt`) trong dự án để làm bằng chứng thực nghiệm đối sánh cho báo cáo đồ án.
+- **Tình trạng của B3:** Đã bàn giao mã nguồn, báo cáo và checkpoint; nhật ký huấn luyện B3 gốc chưa có trong hồ sơ nhận được. `reports/tv3/train_log.jsonl` là log B2, không dùng thay cho B3. Giữ giới hạn này công khai; không train lại để thay thế lịch sử sau khi đã mở Test.
 
 ---
 
@@ -92,8 +94,7 @@ Mô hình B2 chính thức đã sẵn sàng bàn giao cho Thành viên 4:
 - **Cách nạp an toàn (`weights_only=True`):**
   ```python
   import torch
-  from torchvision import models
-  import torch.nn as nn
+  from src.models.b2_classifier import B2CropClassifier
 
   # Nạp an toàn không dùng unpickler không giới hạn
   ckpt = torch.load("outputs/b2_crop_classifier/b2_run01/best_model.pt", map_location="cpu", weights_only=True)
@@ -103,8 +104,8 @@ Mô hình B2 chính thức đã sẵn sàng bàn giao cho Thành viên 4:
   preprocessing = ckpt["preprocessing"]
 
   # Khởi tạo kiến trúc ResNet-18
-  model = models.resnet18(weights=None)
-  model.fc = nn.Linear(model.fc.in_features, num_classes)
+  model = B2CropClassifier(num_classes=num_classes,
+      backbone_name=ckpt["backbone_name"], pretrained=False)
   model.load_state_dict(ckpt["model_state_dict"])
   model.eval()
   ```

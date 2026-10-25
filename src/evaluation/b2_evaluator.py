@@ -137,6 +137,7 @@ def evaluate_b2_model(
     device: torch.device,
     num_classes: int = 8,
     id_to_label: dict[int, str] | None = None,
+    include_predictions: bool = False,
 ) -> dict[str, Any]:
     """Chạy đánh giá mô hình B2 trên toàn bộ DataLoader và trả về cả 2 cấp độ:
 
@@ -196,11 +197,29 @@ def evaluate_b2_model(
         id_to_label=id_to_label,
     )
 
-    return {
+    output = {
         "val_loss": round(avg_loss, 4),
         "crop_level": crop_metrics,
         "image_level": image_metrics,
     }
+    if include_predictions:
+        groups = defaultdict(list)
+        for record in crop_records:
+            groups[record['image_id']].append(record)
+        output['predictions'] = []
+        for image_id, records in sorted(groups.items()):
+            scores = np.mean([r['probabilities'] for r in records], axis=0).tolist()
+            output['predictions'].append({'image_id': image_id,
+                'true_class_id': records[0]['class_id'], 'predicted_class_id': int(np.argmax(scores)),
+                'scores': scores, 'num_crops': len(records)})
+        cm = np.asarray(image_metrics['confusion_matrix'], dtype=float)
+        tp, support, predicted = cm.diagonal(), cm.sum(axis=1), cm.sum(axis=0)
+        output['unrounded_metrics'] = {
+            'accuracy': float(tp.sum() / cm.sum()),
+            'macro_f1': float(np.divide(2 * tp, support + predicted, out=np.zeros_like(tp), where=(support + predicted) != 0).mean()),
+            'macro_precision': float(np.divide(tp, predicted, out=np.zeros_like(tp), where=predicted != 0).mean()),
+            'macro_recall': float(np.divide(tp, support, out=np.zeros_like(tp), where=support != 0).mean())}
+    return output
 
 
 def format_validation_markdown_table(

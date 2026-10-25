@@ -49,6 +49,7 @@ from src.data.b2_dataset import (
     make_b2_loaders,
 )
 from src.evaluation.b2_evaluator import evaluate_b2_model, format_validation_markdown_table
+from src.evaluation.reproducibility import compare_replay, runtime_metadata
 from scripts.train_b2 import (
     AGREED_PROVENANCE_SHA256,
     DummyB2Dataset,
@@ -361,6 +362,7 @@ def run_training_b3(
             device=device,
             num_classes=num_classes,
             id_to_label=id_to_label,
+            include_predictions=True,
         )
         epoch_time = time.time() - epoch_start
 
@@ -459,15 +461,16 @@ def run_training_b3(
         device=device,
         num_classes=num_classes,
         id_to_label=id_to_label,
+        include_predictions=True,
     )
-    reload_img_f1 = reload_eval["image_level"]["macro_f1"]
-    expected_f1 = best_val_metrics.get("image_level", {}).get("macro_f1", 0.0)
-    delta_f1 = abs(reload_img_f1 - expected_f1)
-    logger.info("Kiểm định reload full validation: Reload ImgF1=%.4f | Best ImgF1=%.4f | Delta=%.6f", reload_img_f1, expected_f1, delta_f1)
-    if delta_f1 > 0.01:
-        logger.warning("Cảnh báo tái lập: sai lệch F1 reload (%.6f) vượt ngưỡng 0.01!", delta_f1)
-    else:
-        logger.info("Kiểm định reload checkpoint B3 thành công: mô hình tái lập kết quả validation.")
+    replay = compare_replay(best_val_metrics, reload_eval)
+    replay.update(runtime=runtime_metadata(device), checkpoint_sha256=sha256_file(best_ckpt_path),
+                  scope='Same-process saved checkpoint replay; not independent cross-runtime reproduction')
+    with (out_dir / 'reload_verification.json').open('x', encoding='utf-8') as handle:
+        json.dump(replay, handle, indent=2, ensure_ascii=False, allow_nan=False)
+    if replay['status'] != 'PASS':
+        raise ValueError('Validation replay FAIL; checkpoint and reload_verification.json retained')
+    logger.info('Validation replay PASS: exact image predictions and confusion matrix.')
 
     report_payload = {
         "task": "W4-03 B3 Class Weighted Crop Classifier",
@@ -480,6 +483,7 @@ def run_training_b3(
         "class_weights": {id_to_label.get(i, str(i)): round(float(class_weights[i].item()), 4) for i in range(num_classes)},
         "image_level_metrics": best_val_metrics.get("image_level", {}),
         "crop_level_metrics": best_val_metrics.get("crop_level", {}),
+        "reload_verification": "reload_verification.json",
     }
     with open(val_report_path, "w", encoding="utf-8") as f:
         json.dump(report_payload, f, indent=2, ensure_ascii=False)
