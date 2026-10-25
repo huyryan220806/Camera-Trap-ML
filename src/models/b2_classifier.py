@@ -124,13 +124,14 @@ def load_checkpoint(
     path: str | Path,
     optimizer: torch.optim.Optimizer | None = None,
     map_location: str | torch.device = "cpu",
+    weights_only: bool = True,
 ) -> dict[str, Any]:
     """Khôi phục trạng thái mô hình từ checkpoint."""
     checkpoint_path = Path(path)
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Không tìm thấy checkpoint tại: {checkpoint_path}")
 
-    checkpoint = torch.load(checkpoint_path, map_location=map_location, weights_only=False)
+    checkpoint = torch.load(checkpoint_path, map_location=map_location, weights_only=weights_only)
     model.load_state_dict(checkpoint["model_state_dict"])
     if optimizer and checkpoint.get("optimizer_state_dict"):
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])

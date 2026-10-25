@@ -1,0 +1,3323 @@
+{
+  "metadata": {
+    "model_name": "b2",
+    "checkpoint_path": "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\Năm 3\\HK1nam3\\Học máy và ứng dụng\\Project ML\\outputs\\b2_crop_classifier\\b2_run01\\best_model.pt",
+    "backbone": "resnet18",
+    "num_classes": 8,
+    "evaluation_split": "val",
+    "timestamp": "2026-10-22T11:48:21.498341+00:00",
+    "author": "TV3"
+  },
+  "summary": {
+    "total_images": 600,
+    "total_misclassified": 152,
+    "overall_accuracy": 0.7467,
+    "overall_error_rate": 0.2533,
+    "worst_performing_classes": [
+      {
+        "class": "large_antlered_muntjac",
+        "error_rate": 0.48,
+        "errors": 36,
+        "total": 75,
+        "most_confused_with": "sambar"
+      },
+      {
+        "class": "sambar",
+        "error_rate": 0.3733,
+        "errors": 28,
+        "total": 75,
+        "most_confused_with": "large_antlered_muntjac"
+      },
+      {
+        "class": "eurasian_wild_pig",
+        "error_rate": 0.2933,
+        "errors": 22,
+        "total": 75,
+        "most_confused_with": "large_antlered_muntjac"
+      },
+      {
+        "class": "common_palm_civet",
+        "error_rate": 0.24,
+        "errors": 18,
+        "total": 75,
+        "most_confused_with": "annamite_striped_rabbit"
+      },
+      {
+        "class": "chinese_serow",
+        "error_rate": 0.2267,
+        "errors": 17,
+        "total": 75,
+        "most_confused_with": "eurasian_wild_pig"
+      },
+      {
+        "class": "masked_palm_civet",
+        "error_rate": 0.2267,
+        "errors": 17,
+        "total": 75,
+        "most_confused_with": "annamite_striped_rabbit"
+      },
+      {
+        "class": "annamite_striped_rabbit",
+        "error_rate": 0.0933,
+        "errors": 7,
+        "total": 75,
+        "most_confused_with": "common_palm_civet"
+      },
+      {
+        "class": "silver_pheasant",
+        "error_rate": 0.0933,
+        "errors": 7,
+        "total": 75,
+        "most_confused_with": "eurasian_wild_pig"
+      }
+    ],
+    "most_confused_pairs_bidirectional": [
+      {
+        "class_a": "large_antlered_muntjac",
+        "class_b": "sambar",
+        "a_to_b": 13,
+        "b_to_a": 12,
+        "total_confusion": 25
+      },
+      {
+        "class_a": "large_antlered_muntjac",
+        "class_b": "eurasian_wild_pig",
+        "a_to_b": 10,
+        "b_to_a": 9,
+        "total_confusion": 19
+      },
+      {
+        "class_a": "common_palm_civet",
+        "class_b": "annamite_striped_rabbit",
+        "a_to_b": 10,
+        "b_to_a": 0,
+        "total_confusion": 10
+      },
+      {
+        "class_a": "eurasian_wild_pig",
+        "class_b": "masked_palm_civet",
+        "a_to_b": 8,
+        "b_to_a": 0,
+        "total_confusion": 8
+      },
+      {
+        "class_a": "chinese_serow",
+        "class_b": "eurasian_wild_pig",
+        "a_to_b": 7,
+        "b_to_a": 0,
+        "total_confusion": 7
+      },
+      {
+        "class_a": "sambar",
+        "class_b": "masked_palm_civet",
+        "a_to_b": 6,
+        "b_to_a": 0,
+        "total_confusion": 6
+      },
+      {
+        "class_a": "masked_palm_civet",
+        "class_b": "annamite_striped_rabbit",
+        "a_to_b": 6,
+        "b_to_a": 0,
+        "total_confusion": 6
+      },
+      {
+        "class_a": "large_antlered_muntjac",
+        "class_b": "annamite_striped_rabbit",
+        "a_to_b": 5,
+        "b_to_a": 0,
+        "total_confusion": 5
+      }
+    ]
+  },
+  "confusion_matrix": {
+    "matrix": [
+      [
+        39,
+        5,
+        13,
+        1,
+        2,
+        5,
+        0,
+        10
+      ],
+      [
+        1,
+        68,
+        0,
+        1,
+        4,
+        1,
+        0,
+        0
+      ],
+      [
+        12,
+        2,
+        47,
+        3,
+        1,
+        6,
+        1,
+        3
+      ],
+      [
+        1,
+        2,
+        5,
+        58,
+        1,
+        1,
+        0,
+        7
+      ],
+      [
+        1,
+        10,
+        0,
+        4,
+        57,
+        3,
+        0,
+        0
+      ],
+      [
+        5,
+        6,
+        1,
+        1,
+        4,
+        58,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        68,
+        2
+      ],
+      [
+        9,
+        0,
+        1,
+        3,
+        1,
+        8,
+        0,
+        53
+      ]
+    ],
+    "labels": [
+      "large_antlered_muntjac",
+      "annamite_striped_rabbit",
+      "sambar",
+      "chinese_serow",
+      "common_palm_civet",
+      "masked_palm_civet",
+      "silver_pheasant",
+      "eurasian_wild_pig"
+    ]
+  },
+  "top_confused_pairs": [
+    {
+      "true_label": "large_antlered_muntjac",
+      "predicted_label": "sambar",
+      "true_class_id": 0,
+      "predicted_class_id": 2,
+      "count": 13,
+      "direction": "large_antlered_muntjac → sambar"
+    },
+    {
+      "true_label": "sambar",
+      "predicted_label": "large_antlered_muntjac",
+      "true_class_id": 2,
+      "predicted_class_id": 0,
+      "count": 12,
+      "direction": "sambar → large_antlered_muntjac"
+    },
+    {
+      "true_label": "large_antlered_muntjac",
+      "predicted_label": "eurasian_wild_pig",
+      "true_class_id": 0,
+      "predicted_class_id": 7,
+      "count": 10,
+      "direction": "large_antlered_muntjac → eurasian_wild_pig"
+    },
+    {
+      "true_label": "common_palm_civet",
+      "predicted_label": "annamite_striped_rabbit",
+      "true_class_id": 4,
+      "predicted_class_id": 1,
+      "count": 10,
+      "direction": "common_palm_civet → annamite_striped_rabbit"
+    },
+    {
+      "true_label": "eurasian_wild_pig",
+      "predicted_label": "large_antlered_muntjac",
+      "true_class_id": 7,
+      "predicted_class_id": 0,
+      "count": 9,
+      "direction": "eurasian_wild_pig → large_antlered_muntjac"
+    },
+    {
+      "true_label": "eurasian_wild_pig",
+      "predicted_label": "masked_palm_civet",
+      "true_class_id": 7,
+      "predicted_class_id": 5,
+      "count": 8,
+      "direction": "eurasian_wild_pig → masked_palm_civet"
+    },
+    {
+      "true_label": "chinese_serow",
+      "predicted_label": "eurasian_wild_pig",
+      "true_class_id": 3,
+      "predicted_class_id": 7,
+      "count": 7,
+      "direction": "chinese_serow → eurasian_wild_pig"
+    },
+    {
+      "true_label": "sambar",
+      "predicted_label": "masked_palm_civet",
+      "true_class_id": 2,
+      "predicted_class_id": 5,
+      "count": 6,
+      "direction": "sambar → masked_palm_civet"
+    },
+    {
+      "true_label": "masked_palm_civet",
+      "predicted_label": "annamite_striped_rabbit",
+      "true_class_id": 5,
+      "predicted_class_id": 1,
+      "count": 6,
+      "direction": "masked_palm_civet → annamite_striped_rabbit"
+    },
+    {
+      "true_label": "large_antlered_muntjac",
+      "predicted_label": "annamite_striped_rabbit",
+      "true_class_id": 0,
+      "predicted_class_id": 1,
+      "count": 5,
+      "direction": "large_antlered_muntjac → annamite_striped_rabbit"
+    }
+  ],
+  "per_class_breakdown": {
+    "large_antlered_muntjac": {
+      "class_id": 0,
+      "total": 75,
+      "errors": 36,
+      "error_rate": 0.48,
+      "most_common_mistake": "sambar",
+      "most_common_mistake_count": 13,
+      "mistake_counts": {
+        "sambar": 13,
+        "eurasian_wild_pig": 10,
+        "masked_palm_civet": 5,
+        "annamite_striped_rabbit": 5,
+        "common_palm_civet": 2,
+        "chinese_serow": 1
+      }
+    },
+    "annamite_striped_rabbit": {
+      "class_id": 1,
+      "total": 75,
+      "errors": 7,
+      "error_rate": 0.0933,
+      "most_common_mistake": "common_palm_civet",
+      "most_common_mistake_count": 4,
+      "mistake_counts": {
+        "common_palm_civet": 4,
+        "chinese_serow": 1,
+        "large_antlered_muntjac": 1,
+        "masked_palm_civet": 1
+      }
+    },
+    "sambar": {
+      "class_id": 2,
+      "total": 75,
+      "errors": 28,
+      "error_rate": 0.3733,
+      "most_common_mistake": "large_antlered_muntjac",
+      "most_common_mistake_count": 12,
+      "mistake_counts": {
+        "large_antlered_muntjac": 12,
+        "masked_palm_civet": 6,
+        "chinese_serow": 3,
+        "eurasian_wild_pig": 3,
+        "annamite_striped_rabbit": 2,
+        "silver_pheasant": 1,
+        "common_palm_civet": 1
+      }
+    },
+    "chinese_serow": {
+      "class_id": 3,
+      "total": 75,
+      "errors": 17,
+      "error_rate": 0.2267,
+      "most_common_mistake": "eurasian_wild_pig",
+      "most_common_mistake_count": 7,
+      "mistake_counts": {
+        "eurasian_wild_pig": 7,
+        "sambar": 5,
+        "annamite_striped_rabbit": 2,
+        "common_palm_civet": 1,
+        "large_antlered_muntjac": 1,
+        "masked_palm_civet": 1
+      }
+    },
+    "common_palm_civet": {
+      "class_id": 4,
+      "total": 75,
+      "errors": 18,
+      "error_rate": 0.24,
+      "most_common_mistake": "annamite_striped_rabbit",
+      "most_common_mistake_count": 10,
+      "mistake_counts": {
+        "annamite_striped_rabbit": 10,
+        "chinese_serow": 4,
+        "masked_palm_civet": 3,
+        "large_antlered_muntjac": 1
+      }
+    },
+    "masked_palm_civet": {
+      "class_id": 5,
+      "total": 75,
+      "errors": 17,
+      "error_rate": 0.2267,
+      "most_common_mistake": "annamite_striped_rabbit",
+      "most_common_mistake_count": 6,
+      "mistake_counts": {
+        "annamite_striped_rabbit": 6,
+        "large_antlered_muntjac": 5,
+        "common_palm_civet": 4,
+        "sambar": 1,
+        "chinese_serow": 1
+      }
+    },
+    "silver_pheasant": {
+      "class_id": 6,
+      "total": 75,
+      "errors": 7,
+      "error_rate": 0.0933,
+      "most_common_mistake": "eurasian_wild_pig",
+      "most_common_mistake_count": 2,
+      "mistake_counts": {
+        "eurasian_wild_pig": 2,
+        "chinese_serow": 2,
+        "sambar": 1,
+        "large_antlered_muntjac": 1,
+        "masked_palm_civet": 1
+      }
+    },
+    "eurasian_wild_pig": {
+      "class_id": 7,
+      "total": 75,
+      "errors": 22,
+      "error_rate": 0.2933,
+      "most_common_mistake": "large_antlered_muntjac",
+      "most_common_mistake_count": 9,
+      "mistake_counts": {
+        "large_antlered_muntjac": 9,
+        "masked_palm_civet": 8,
+        "chinese_serow": 3,
+        "common_palm_civet": 1,
+        "sambar": 1
+      }
+    }
+  },
+  "misclassified_images": [
+    {
+      "image_id": "d4bf5949-8c29-11eb-aa3e-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.226264,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.226264,
+        "annamite_striped_rabbit": 0.07727,
+        "sambar": 0.098114,
+        "chinese_serow": 0.04217,
+        "common_palm_civet": 0.025406,
+        "masked_palm_civet": 0.197274,
+        "silver_pheasant": 0.146717,
+        "eurasian_wild_pig": 0.186785
+      },
+      "num_crops": 4
+    },
+    {
+      "image_id": "d3019260-8c29-11eb-b090-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.259555,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.259555,
+        "annamite_striped_rabbit": 0.190688,
+        "sambar": 0.138651,
+        "chinese_serow": 0.01987,
+        "common_palm_civet": 0.075423,
+        "masked_palm_civet": 0.078172,
+        "silver_pheasant": 0.061698,
+        "eurasian_wild_pig": 0.175945
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d9dc68c1-8c29-11eb-8e12-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.274686,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.262695,
+        "annamite_striped_rabbit": 0.175821,
+        "sambar": 0.015163,
+        "chinese_serow": 0.003045,
+        "common_palm_civet": 0.018217,
+        "masked_palm_civet": 0.274686,
+        "silver_pheasant": 0.222921,
+        "eurasian_wild_pig": 0.02745
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "cc07cffd-8c29-11eb-ba6d-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.276799,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.129351,
+        "annamite_striped_rabbit": 0.18022,
+        "sambar": 0.065034,
+        "chinese_serow": 0.007132,
+        "common_palm_civet": 0.031637,
+        "masked_palm_civet": 0.095987,
+        "silver_pheasant": 0.21384,
+        "eurasian_wild_pig": 0.276799
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d5c35481-8c29-11eb-9c0f-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.286293,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.018778,
+        "annamite_striped_rabbit": 0.286293,
+        "sambar": 0.012206,
+        "chinese_serow": 0.213706,
+        "common_palm_civet": 0.249443,
+        "masked_palm_civet": 0.202387,
+        "silver_pheasant": 0.00327,
+        "eurasian_wild_pig": 0.013917
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "d2f5a73b-8c29-11eb-a260-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.28787,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.060985,
+        "annamite_striped_rabbit": 0.038017,
+        "sambar": 0.28787,
+        "chinese_serow": 0.222306,
+        "common_palm_civet": 0.017601,
+        "masked_palm_civet": 0.131239,
+        "silver_pheasant": 0.002874,
+        "eurasian_wild_pig": 0.239109
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0ad88d8-8c29-11eb-bfce-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.287947,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.022315,
+        "annamite_striped_rabbit": 0.059924,
+        "sambar": 0.050644,
+        "chinese_serow": 0.287947,
+        "common_palm_civet": 0.265086,
+        "masked_palm_civet": 0.142566,
+        "silver_pheasant": 0.069569,
+        "eurasian_wild_pig": 0.101951
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d5b2a18d-8c29-11eb-8dce-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.287992,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.287992,
+        "annamite_striped_rabbit": 0.005891,
+        "sambar": 0.222813,
+        "chinese_serow": 0.126575,
+        "common_palm_civet": 0.003002,
+        "masked_palm_civet": 0.002699,
+        "silver_pheasant": 0.250901,
+        "eurasian_wild_pig": 0.100127
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c8233778-8c29-11eb-91cb-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.300424,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.059827,
+        "annamite_striped_rabbit": 0.005425,
+        "sambar": 0.14583,
+        "chinese_serow": 0.226451,
+        "common_palm_civet": 0.109636,
+        "masked_palm_civet": 0.031377,
+        "silver_pheasant": 0.12103,
+        "eurasian_wild_pig": 0.300424
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c87143ea-8c29-11eb-88d1-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.302196,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.02653,
+        "annamite_striped_rabbit": 0.106864,
+        "sambar": 0.082528,
+        "chinese_serow": 0.099385,
+        "common_palm_civet": 0.248059,
+        "masked_palm_civet": 0.091286,
+        "silver_pheasant": 0.043152,
+        "eurasian_wild_pig": 0.302196
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d2f5a3ff-8c29-11eb-b3e5-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.305113,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.022678,
+        "annamite_striped_rabbit": 0.305113,
+        "sambar": 0.005767,
+        "chinese_serow": 0.007625,
+        "common_palm_civet": 0.297072,
+        "masked_palm_civet": 0.29633,
+        "silver_pheasant": 0.004103,
+        "eurasian_wild_pig": 0.061312
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1f8ef38-8c29-11eb-a8b5-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.3067,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.121073,
+        "annamite_striped_rabbit": 0.290094,
+        "sambar": 0.072963,
+        "chinese_serow": 0.06542,
+        "common_palm_civet": 0.127685,
+        "masked_palm_civet": 0.3067,
+        "silver_pheasant": 0.007073,
+        "eurasian_wild_pig": 0.008992
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c87143e9-8c29-11eb-98ff-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.309599,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.034915,
+        "annamite_striped_rabbit": 0.309599,
+        "sambar": 0.023816,
+        "chinese_serow": 0.022539,
+        "common_palm_civet": 0.150458,
+        "masked_palm_civet": 0.284448,
+        "silver_pheasant": 0.022729,
+        "eurasian_wild_pig": 0.151497
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c8a191da-8c29-11eb-80b4-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.324655,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.212021,
+        "annamite_striped_rabbit": 0.324655,
+        "sambar": 0.070291,
+        "chinese_serow": 0.050125,
+        "common_palm_civet": 0.138255,
+        "masked_palm_civet": 0.096177,
+        "silver_pheasant": 0.052505,
+        "eurasian_wild_pig": 0.055971
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e922ab-8c29-11eb-a5e7-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.325253,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.115302,
+        "annamite_striped_rabbit": 0.233874,
+        "sambar": 0.001295,
+        "chinese_serow": 0.000424,
+        "common_palm_civet": 0.012454,
+        "masked_palm_civet": 0.311146,
+        "silver_pheasant": 0.000251,
+        "eurasian_wild_pig": 0.325253
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d3019234-8c29-11eb-ac6a-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.326696,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.182242,
+        "annamite_striped_rabbit": 0.026513,
+        "sambar": 0.039894,
+        "chinese_serow": 0.008783,
+        "common_palm_civet": 0.163376,
+        "masked_palm_civet": 0.326696,
+        "silver_pheasant": 0.180705,
+        "eurasian_wild_pig": 0.071792
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c96adc33-8c29-11eb-8bb5-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.33684,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.028758,
+        "annamite_striped_rabbit": 0.139797,
+        "sambar": 0.05832,
+        "chinese_serow": 0.199832,
+        "common_palm_civet": 0.211476,
+        "masked_palm_civet": 0.33684,
+        "silver_pheasant": 0.008638,
+        "eurasian_wild_pig": 0.016338
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d83d8012-8c29-11eb-a0a5-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.344753,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.011777,
+        "annamite_striped_rabbit": 0.236962,
+        "sambar": 0.032474,
+        "chinese_serow": 0.344753,
+        "common_palm_civet": 0.077217,
+        "masked_palm_civet": 0.044007,
+        "silver_pheasant": 0.004013,
+        "eurasian_wild_pig": 0.248797
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cdb29149-8c29-11eb-bb49-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.347204,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.347204,
+        "annamite_striped_rabbit": 0.018843,
+        "sambar": 0.185884,
+        "chinese_serow": 0.014427,
+        "common_palm_civet": 0.008939,
+        "masked_palm_civet": 0.023949,
+        "silver_pheasant": 0.1072,
+        "eurasian_wild_pig": 0.293552
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "cff13df1-8c29-11eb-b1d8-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.355555,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.355555,
+        "annamite_striped_rabbit": 0.000532,
+        "sambar": 0.189956,
+        "chinese_serow": 0.053864,
+        "common_palm_civet": 0.003024,
+        "masked_palm_civet": 0.012868,
+        "silver_pheasant": 0.072215,
+        "eurasian_wild_pig": 0.311987
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf301233-8c29-11eb-ba3f-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.361603,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.361603,
+        "annamite_striped_rabbit": 0.215351,
+        "sambar": 0.014201,
+        "chinese_serow": 0.000361,
+        "common_palm_civet": 0.037176,
+        "masked_palm_civet": 0.264174,
+        "silver_pheasant": 0.103158,
+        "eurasian_wild_pig": 0.003976
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1f8ef1c-8c29-11eb-9472-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.366101,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.225906,
+        "annamite_striped_rabbit": 0.366101,
+        "sambar": 0.030233,
+        "chinese_serow": 0.073674,
+        "common_palm_civet": 0.044969,
+        "masked_palm_civet": 0.244852,
+        "silver_pheasant": 0.009668,
+        "eurasian_wild_pig": 0.004597
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c911a9f5-8c29-11eb-b2a4-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.379266,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.117453,
+        "annamite_striped_rabbit": 0.379266,
+        "sambar": 0.294212,
+        "chinese_serow": 0.110772,
+        "common_palm_civet": 0.022232,
+        "masked_palm_civet": 0.061199,
+        "silver_pheasant": 0.002634,
+        "eurasian_wild_pig": 0.012232
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c97a9807-8c29-11eb-8a05-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.380583,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.027479,
+        "annamite_striped_rabbit": 0.000851,
+        "sambar": 0.157669,
+        "chinese_serow": 0.380583,
+        "common_palm_civet": 0.004177,
+        "masked_palm_civet": 0.017564,
+        "silver_pheasant": 0.197164,
+        "eurasian_wild_pig": 0.214513
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc246b06-8c29-11eb-9781-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.382284,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.069844,
+        "annamite_striped_rabbit": 0.019401,
+        "sambar": 0.04385,
+        "chinese_serow": 0.020741,
+        "common_palm_civet": 0.035542,
+        "masked_palm_civet": 0.382284,
+        "silver_pheasant": 0.281437,
+        "eurasian_wild_pig": 0.146901
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d82344ee-8c29-11eb-9b29-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.388972,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.388972,
+        "annamite_striped_rabbit": 0.016679,
+        "sambar": 0.012047,
+        "chinese_serow": 0.034829,
+        "common_palm_civet": 0.314662,
+        "masked_palm_civet": 0.224435,
+        "silver_pheasant": 0.003256,
+        "eurasian_wild_pig": 0.005119
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d210c1e5-8c29-11eb-97c4-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.389662,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.38633,
+        "annamite_striped_rabbit": 0.013167,
+        "sambar": 0.106822,
+        "chinese_serow": 0.057106,
+        "common_palm_civet": 0.004192,
+        "masked_palm_civet": 0.005317,
+        "silver_pheasant": 0.037404,
+        "eurasian_wild_pig": 0.389662
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc5428e3-8c29-11eb-b92d-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.389877,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.007589,
+        "annamite_striped_rabbit": 0.000307,
+        "sambar": 0.056559,
+        "chinese_serow": 0.361895,
+        "common_palm_civet": 0.01341,
+        "masked_palm_civet": 0.014081,
+        "silver_pheasant": 0.156283,
+        "eurasian_wild_pig": 0.389877
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d095acc5-8c29-11eb-9b5d-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.391473,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.002351,
+        "annamite_striped_rabbit": 0.230361,
+        "sambar": 0.003894,
+        "chinese_serow": 0.002693,
+        "common_palm_civet": 0.364583,
+        "masked_palm_civet": 0.391473,
+        "silver_pheasant": 0.001734,
+        "eurasian_wild_pig": 0.002912
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc07cf29-8c29-11eb-bcb5-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.392164,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.132561,
+        "annamite_striped_rabbit": 0.392164,
+        "sambar": 0.156624,
+        "chinese_serow": 0.045166,
+        "common_palm_civet": 0.147644,
+        "masked_palm_civet": 0.089089,
+        "silver_pheasant": 0.005562,
+        "eurasian_wild_pig": 0.03119
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccef118e-8c29-11eb-9919-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.393152,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.011199,
+        "annamite_striped_rabbit": 0.393152,
+        "sambar": 0.013289,
+        "chinese_serow": 0.268966,
+        "common_palm_civet": 0.267029,
+        "masked_palm_civet": 0.01707,
+        "silver_pheasant": 0.000327,
+        "eurasian_wild_pig": 0.028968
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c8a191af-8c29-11eb-93f6-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.403301,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.039976,
+        "annamite_striped_rabbit": 0.007331,
+        "sambar": 0.140369,
+        "chinese_serow": 0.403301,
+        "common_palm_civet": 0.028524,
+        "masked_palm_civet": 0.035047,
+        "silver_pheasant": 0.036949,
+        "eurasian_wild_pig": 0.308504
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d22d5fac-8c29-11eb-a106-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.412477,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.123043,
+        "annamite_striped_rabbit": 0.008773,
+        "sambar": 0.1321,
+        "chinese_serow": 0.182134,
+        "common_palm_civet": 0.025227,
+        "masked_palm_civet": 0.035603,
+        "silver_pheasant": 0.080643,
+        "eurasian_wild_pig": 0.412477
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc32d3cc-8c29-11eb-8fa6-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.417292,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.003699,
+        "annamite_striped_rabbit": 0.001912,
+        "sambar": 0.086504,
+        "chinese_serow": 0.417292,
+        "common_palm_civet": 0.009465,
+        "masked_palm_civet": 0.062789,
+        "silver_pheasant": 0.227094,
+        "eurasian_wild_pig": 0.191245
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dbd5c8a6-8c29-11eb-9169-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.417384,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.015528,
+        "annamite_striped_rabbit": 0.021703,
+        "sambar": 0.003647,
+        "chinese_serow": 0.0164,
+        "common_palm_civet": 0.36024,
+        "masked_palm_civet": 0.417384,
+        "silver_pheasant": 0.136415,
+        "eurasian_wild_pig": 0.028684
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccf1744d-8c29-11eb-8ba9-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.417624,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.027021,
+        "annamite_striped_rabbit": 0.066083,
+        "sambar": 0.070284,
+        "chinese_serow": 0.050274,
+        "common_palm_civet": 0.19361,
+        "masked_palm_civet": 0.417624,
+        "silver_pheasant": 0.001323,
+        "eurasian_wild_pig": 0.173781
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d7ff7cb3-8c29-11eb-be9e-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.418359,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.130612,
+        "annamite_striped_rabbit": 0.111561,
+        "sambar": 0.005354,
+        "chinese_serow": 0.00331,
+        "common_palm_civet": 0.133763,
+        "masked_palm_civet": 0.418359,
+        "silver_pheasant": 0.160514,
+        "eurasian_wild_pig": 0.036527
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cd3b5d5a-8c29-11eb-add8-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.42388,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.053945,
+        "annamite_striped_rabbit": 0.00019,
+        "sambar": 0.056063,
+        "chinese_serow": 0.224436,
+        "common_palm_civet": 0.238524,
+        "masked_palm_civet": 0.42388,
+        "silver_pheasant": 0.00053,
+        "eurasian_wild_pig": 0.002433
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cfba540b-8c29-11eb-906a-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.429021,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.000572,
+        "annamite_striped_rabbit": 0.003358,
+        "sambar": 0.031966,
+        "chinese_serow": 0.112889,
+        "common_palm_civet": 0.110138,
+        "masked_palm_civet": 0.429021,
+        "silver_pheasant": 0.000275,
+        "eurasian_wild_pig": 0.311781
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0be3733-8c29-11eb-b4ad-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.435619,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.178236,
+        "annamite_striped_rabbit": 0.01834,
+        "sambar": 0.07809,
+        "chinese_serow": 0.10155,
+        "common_palm_civet": 0.028403,
+        "masked_palm_civet": 0.096299,
+        "silver_pheasant": 0.063464,
+        "eurasian_wild_pig": 0.435619
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "cf30122e-8c29-11eb-88cb-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.443188,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.010208,
+        "annamite_striped_rabbit": 0.342608,
+        "sambar": 0.005653,
+        "chinese_serow": 0.002803,
+        "common_palm_civet": 0.443188,
+        "masked_palm_civet": 0.170667,
+        "silver_pheasant": 0.001442,
+        "eurasian_wild_pig": 0.023432
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ce191d46-8c29-11eb-8e8d-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.444216,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.016788,
+        "annamite_striped_rabbit": 0.015124,
+        "sambar": 0.028388,
+        "chinese_serow": 0.077357,
+        "common_palm_civet": 0.22258,
+        "masked_palm_civet": 0.173344,
+        "silver_pheasant": 0.022203,
+        "eurasian_wild_pig": 0.444216
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc32d3af-8c29-11eb-b7de-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.449184,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.016025,
+        "annamite_striped_rabbit": 0.00083,
+        "sambar": 0.449184,
+        "chinese_serow": 0.309488,
+        "common_palm_civet": 0.009787,
+        "masked_palm_civet": 0.008148,
+        "silver_pheasant": 0.007144,
+        "eurasian_wild_pig": 0.199393
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cb14a163-8c29-11eb-9b17-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.45137,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001539,
+        "annamite_striped_rabbit": 0.45137,
+        "sambar": 0.001744,
+        "chinese_serow": 0.001328,
+        "common_palm_civet": 0.417456,
+        "masked_palm_civet": 0.118045,
+        "silver_pheasant": 0.000534,
+        "eurasian_wild_pig": 0.007984
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cdbe7fb7-8c29-11eb-b3f1-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.457086,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.263099,
+        "annamite_striped_rabbit": 0.033461,
+        "sambar": 0.05989,
+        "chinese_serow": 0.001059,
+        "common_palm_civet": 0.13924,
+        "masked_palm_civet": 0.457086,
+        "silver_pheasant": 0.032973,
+        "eurasian_wild_pig": 0.013192
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ce16bcda-8c29-11eb-b59a-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.459659,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.134071,
+        "annamite_striped_rabbit": 0.000858,
+        "sambar": 0.17575,
+        "chinese_serow": 0.023762,
+        "common_palm_civet": 0.000959,
+        "masked_palm_civet": 0.019141,
+        "silver_pheasant": 0.1858,
+        "eurasian_wild_pig": 0.459659
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c82a66d8-8c29-11eb-95ec-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.460639,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.405758,
+        "annamite_striped_rabbit": 0.005334,
+        "sambar": 0.046297,
+        "chinese_serow": 0.03813,
+        "common_palm_civet": 0.024661,
+        "masked_palm_civet": 0.460639,
+        "silver_pheasant": 0.00595,
+        "eurasian_wild_pig": 0.01323
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e6bb26-8c29-11eb-a906-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.462712,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.014619,
+        "annamite_striped_rabbit": 0.112541,
+        "sambar": 0.022528,
+        "chinese_serow": 0.462712,
+        "common_palm_civet": 0.07432,
+        "masked_palm_civet": 0.222199,
+        "silver_pheasant": 0.0482,
+        "eurasian_wild_pig": 0.04288
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.469528,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.469528,
+        "annamite_striped_rabbit": 0.004002,
+        "sambar": 0.224785,
+        "chinese_serow": 0.017076,
+        "common_palm_civet": 0.002799,
+        "masked_palm_civet": 0.032109,
+        "silver_pheasant": 0.051779,
+        "eurasian_wild_pig": 0.197922
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc2213e9-8c29-11eb-bd3d-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.473578,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.027429,
+        "annamite_striped_rabbit": 0.039573,
+        "sambar": 0.043013,
+        "chinese_serow": 0.036172,
+        "common_palm_civet": 0.333528,
+        "masked_palm_civet": 0.021418,
+        "silver_pheasant": 0.02529,
+        "eurasian_wild_pig": 0.473578
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "da728935-8c29-11eb-822a-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.476146,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.019573,
+        "annamite_striped_rabbit": 0.001326,
+        "sambar": 0.476146,
+        "chinese_serow": 0.011974,
+        "common_palm_civet": 0.137944,
+        "masked_palm_civet": 0.331807,
+        "silver_pheasant": 0.003915,
+        "eurasian_wild_pig": 0.017316
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d118d2ee-8c29-11eb-b252-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.48051,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.052868,
+        "annamite_striped_rabbit": 0.000376,
+        "sambar": 0.462851,
+        "chinese_serow": 0.003018,
+        "common_palm_civet": 6.8e-05,
+        "masked_palm_civet": 0.000116,
+        "silver_pheasant": 0.000193,
+        "eurasian_wild_pig": 0.48051
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca87fdf4-8c29-11eb-84d6-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.481488,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.481488,
+        "annamite_striped_rabbit": 0.143611,
+        "sambar": 0.245062,
+        "chinese_serow": 0.038645,
+        "common_palm_civet": 0.025098,
+        "masked_palm_civet": 0.048484,
+        "silver_pheasant": 0.006948,
+        "eurasian_wild_pig": 0.010664
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc0a314e-8c29-11eb-9392-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.485046,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.049232,
+        "annamite_striped_rabbit": 0.215844,
+        "sambar": 0.063281,
+        "chinese_serow": 0.046358,
+        "common_palm_civet": 0.485046,
+        "masked_palm_civet": 0.095077,
+        "silver_pheasant": 0.009087,
+        "eurasian_wild_pig": 0.036075
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d213252d-8c29-11eb-ab2c-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.489656,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.060829,
+        "annamite_striped_rabbit": 0.001663,
+        "sambar": 0.489656,
+        "chinese_serow": 0.030559,
+        "common_palm_civet": 0.000549,
+        "masked_palm_civet": 0.001934,
+        "silver_pheasant": 0.006064,
+        "eurasian_wild_pig": 0.408746
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d111ac09-8c29-11eb-8c3b-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.492406,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.018092,
+        "annamite_striped_rabbit": 0.492406,
+        "sambar": 0.303795,
+        "chinese_serow": 0.128989,
+        "common_palm_civet": 0.03465,
+        "masked_palm_civet": 0.017131,
+        "silver_pheasant": 0.001676,
+        "eurasian_wild_pig": 0.003262
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dbd364b2-8c29-11eb-a26c-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.4953,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.009926,
+        "annamite_striped_rabbit": 0.056971,
+        "sambar": 0.007146,
+        "chinese_serow": 0.003138,
+        "common_palm_civet": 0.4953,
+        "masked_palm_civet": 0.411218,
+        "silver_pheasant": 0.012087,
+        "eurasian_wild_pig": 0.004213
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cd0e1864-8c29-11eb-b11b-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.49549,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.035329,
+        "annamite_striped_rabbit": 0.050924,
+        "sambar": 0.330585,
+        "chinese_serow": 0.49549,
+        "common_palm_civet": 0.015011,
+        "masked_palm_civet": 0.066846,
+        "silver_pheasant": 0.000476,
+        "eurasian_wild_pig": 0.005339
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc2207df-8c29-11eb-985d-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.496602,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.059067,
+        "annamite_striped_rabbit": 0.197261,
+        "sambar": 0.002913,
+        "chinese_serow": 0.006121,
+        "common_palm_civet": 0.496602,
+        "masked_palm_civet": 0.215947,
+        "silver_pheasant": 0.014767,
+        "eurasian_wild_pig": 0.007322
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca87fe01-8c29-11eb-8ffa-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.497165,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.038443,
+        "annamite_striped_rabbit": 0.497165,
+        "sambar": 0.05335,
+        "chinese_serow": 0.00376,
+        "common_palm_civet": 0.043126,
+        "masked_palm_civet": 0.231357,
+        "silver_pheasant": 0.007905,
+        "eurasian_wild_pig": 0.124895
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca2afb40-8c29-11eb-be18-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.499984,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.499984,
+        "annamite_striped_rabbit": 5.1e-05,
+        "sambar": 0.334617,
+        "chinese_serow": 0.144226,
+        "common_palm_civet": 0.000284,
+        "masked_palm_civet": 0.000408,
+        "silver_pheasant": 0.002547,
+        "eurasian_wild_pig": 0.017882
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf09b702-8c29-11eb-a276-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.501408,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.176127,
+        "annamite_striped_rabbit": 0.501408,
+        "sambar": 0.103747,
+        "chinese_serow": 0.004172,
+        "common_palm_civet": 0.045728,
+        "masked_palm_civet": 0.15762,
+        "silver_pheasant": 0.000208,
+        "eurasian_wild_pig": 0.010989
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cff13cb4-8c29-11eb-ad84-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.501659,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.395049,
+        "annamite_striped_rabbit": 0.000142,
+        "sambar": 0.501659,
+        "chinese_serow": 0.024282,
+        "common_palm_civet": 0.001749,
+        "masked_palm_civet": 0.021207,
+        "silver_pheasant": 0.015055,
+        "eurasian_wild_pig": 0.040858
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d210c0f4-8c29-11eb-b458-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.504993,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.038529,
+        "annamite_striped_rabbit": 0.005459,
+        "sambar": 0.106663,
+        "chinese_serow": 0.16727,
+        "common_palm_civet": 0.010442,
+        "masked_palm_civet": 0.165612,
+        "silver_pheasant": 0.001032,
+        "eurasian_wild_pig": 0.504993
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c89809d0-8c29-11eb-a74e-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.515106,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.015734,
+        "annamite_striped_rabbit": 0.001514,
+        "sambar": 0.154038,
+        "chinese_serow": 0.515106,
+        "common_palm_civet": 0.029254,
+        "masked_palm_civet": 0.006259,
+        "silver_pheasant": 0.009239,
+        "eurasian_wild_pig": 0.268855
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cfc3dba6-8c29-11eb-a01b-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.515824,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.515824,
+        "annamite_striped_rabbit": 0.000768,
+        "sambar": 0.45193,
+        "chinese_serow": 0.000195,
+        "common_palm_civet": 9.5e-05,
+        "masked_palm_civet": 0.029985,
+        "silver_pheasant": 4.7e-05,
+        "eurasian_wild_pig": 0.001155
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf0c4eef-8c29-11eb-8a8e-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.520906,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.061835,
+        "annamite_striped_rabbit": 0.02143,
+        "sambar": 0.071705,
+        "chinese_serow": 0.034923,
+        "common_palm_civet": 0.520906,
+        "masked_palm_civet": 0.027204,
+        "silver_pheasant": 0.011106,
+        "eurasian_wild_pig": 0.25089
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "d210c44c-8c29-11eb-96f0-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.522281,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.080496,
+        "annamite_striped_rabbit": 0.000314,
+        "sambar": 0.309354,
+        "chinese_serow": 0.085854,
+        "common_palm_civet": 3.4e-05,
+        "masked_palm_civet": 0.000674,
+        "silver_pheasant": 0.000993,
+        "eurasian_wild_pig": 0.522281
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "caf0e004-8c29-11eb-b355-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.526039,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.017278,
+        "annamite_striped_rabbit": 0.000409,
+        "sambar": 0.526039,
+        "chinese_serow": 0.013628,
+        "common_palm_civet": 0.001404,
+        "masked_palm_civet": 0.002115,
+        "silver_pheasant": 0.397342,
+        "eurasian_wild_pig": 0.041784
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d4aebb02-8c29-11eb-b0a1-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.526325,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.526325,
+        "annamite_striped_rabbit": 0.002009,
+        "sambar": 0.012952,
+        "chinese_serow": 0.000387,
+        "common_palm_civet": 0.062469,
+        "masked_palm_civet": 0.3928,
+        "silver_pheasant": 0.001651,
+        "eurasian_wild_pig": 0.001408
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0eb870e-8c29-11eb-ba51-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.526675,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.526675,
+        "annamite_striped_rabbit": 0.001812,
+        "sambar": 0.031571,
+        "chinese_serow": 0.010797,
+        "common_palm_civet": 0.002306,
+        "masked_palm_civet": 0.030335,
+        "silver_pheasant": 0.09623,
+        "eurasian_wild_pig": 0.300274
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf2db3a4-8c29-11eb-b392-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.528467,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.005119,
+        "annamite_striped_rabbit": 0.034598,
+        "sambar": 0.032296,
+        "chinese_serow": 0.11552,
+        "common_palm_civet": 0.528467,
+        "masked_palm_civet": 0.258078,
+        "silver_pheasant": 0.001013,
+        "eurasian_wild_pig": 0.024909
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cd2123b2-8c29-11eb-8f96-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.532264,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.532264,
+        "annamite_striped_rabbit": 0.000183,
+        "sambar": 0.319712,
+        "chinese_serow": 0.000823,
+        "common_palm_civet": 9.3e-05,
+        "masked_palm_civet": 0.000462,
+        "silver_pheasant": 0.000469,
+        "eurasian_wild_pig": 0.145994
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca87fdee-8c29-11eb-b962-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.532967,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.00062,
+        "annamite_striped_rabbit": 0.178934,
+        "sambar": 0.000603,
+        "chinese_serow": 0.002226,
+        "common_palm_civet": 0.532967,
+        "masked_palm_civet": 0.258916,
+        "silver_pheasant": 0.002126,
+        "eurasian_wild_pig": 0.023608
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cee88a9b-8c29-11eb-8f9e-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.534149,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.078077,
+        "annamite_striped_rabbit": 0.019227,
+        "sambar": 0.534149,
+        "chinese_serow": 0.349345,
+        "common_palm_civet": 0.005481,
+        "masked_palm_civet": 0.003266,
+        "silver_pheasant": 0.000263,
+        "eurasian_wild_pig": 0.010192
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccc8f307-8c29-11eb-82ad-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.539757,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.00915,
+        "annamite_striped_rabbit": 0.000456,
+        "sambar": 0.094279,
+        "chinese_serow": 0.539757,
+        "common_palm_civet": 0.019265,
+        "masked_palm_civet": 0.005828,
+        "silver_pheasant": 0.074174,
+        "eurasian_wild_pig": 0.257092
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc32d32d-8c29-11eb-a45c-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.551016,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.216734,
+        "annamite_striped_rabbit": 0.551016,
+        "sambar": 0.067921,
+        "chinese_serow": 0.021729,
+        "common_palm_civet": 0.011613,
+        "masked_palm_civet": 0.036652,
+        "silver_pheasant": 0.016023,
+        "eurasian_wild_pig": 0.078311
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf2db6f0-8c29-11eb-aef0-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.553592,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.553592,
+        "annamite_striped_rabbit": 9e-05,
+        "sambar": 0.37331,
+        "chinese_serow": 0.018556,
+        "common_palm_civet": 0.000119,
+        "masked_palm_civet": 0.005747,
+        "silver_pheasant": 0.014505,
+        "eurasian_wild_pig": 0.034082
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1166c73-8c29-11eb-ac4c-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 6,
+      "predicted_label": "silver_pheasant",
+      "confidence": 0.558987,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.152253,
+        "annamite_striped_rabbit": 0.011687,
+        "sambar": 0.05124,
+        "chinese_serow": 0.013466,
+        "common_palm_civet": 0.060381,
+        "masked_palm_civet": 0.035324,
+        "silver_pheasant": 0.558987,
+        "eurasian_wild_pig": 0.116662
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d9dc6a82-8c29-11eb-aaaf-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.562028,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.562028,
+        "annamite_striped_rabbit": 0.002933,
+        "sambar": 0.030054,
+        "chinese_serow": 0.000795,
+        "common_palm_civet": 0.001164,
+        "masked_palm_civet": 0.037854,
+        "silver_pheasant": 0.025714,
+        "eurasian_wild_pig": 0.339458
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc26de2f-8c29-11eb-97bf-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.565233,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.331662,
+        "annamite_striped_rabbit": 0.00098,
+        "sambar": 0.01019,
+        "chinese_serow": 0.001466,
+        "common_palm_civet": 0.001255,
+        "masked_palm_civet": 0.068906,
+        "silver_pheasant": 0.020309,
+        "eurasian_wild_pig": 0.565233
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c82a66d9-8c29-11eb-b2b3-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.565896,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.214323,
+        "annamite_striped_rabbit": 0.003856,
+        "sambar": 0.0337,
+        "chinese_serow": 0.115439,
+        "common_palm_civet": 0.052729,
+        "masked_palm_civet": 0.565896,
+        "silver_pheasant": 0.005259,
+        "eurasian_wild_pig": 0.008799
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e9236d-8c29-11eb-be93-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.568839,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.012925,
+        "annamite_striped_rabbit": 0.002302,
+        "sambar": 0.568839,
+        "chinese_serow": 0.080477,
+        "common_palm_civet": 0.178813,
+        "masked_palm_civet": 0.146229,
+        "silver_pheasant": 0.002575,
+        "eurasian_wild_pig": 0.007839
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf301589-8c29-11eb-b9e5-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.571239,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.004926,
+        "annamite_striped_rabbit": 6.1e-05,
+        "sambar": 0.097914,
+        "chinese_serow": 0.323404,
+        "common_palm_civet": 0.000433,
+        "masked_palm_civet": 0.000671,
+        "silver_pheasant": 0.00135,
+        "eurasian_wild_pig": 0.571239
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccd018b3-8c29-11eb-8aaf-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.573492,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.399627,
+        "annamite_striped_rabbit": 0.001671,
+        "sambar": 0.573492,
+        "chinese_serow": 0.002902,
+        "common_palm_civet": 0.006656,
+        "masked_palm_civet": 0.014692,
+        "silver_pheasant": 0.000701,
+        "eurasian_wild_pig": 0.000259
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1140dfb-8c29-11eb-8efe-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.5761,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.5761,
+        "annamite_striped_rabbit": 8.2e-05,
+        "sambar": 0.421681,
+        "chinese_serow": 0.000834,
+        "common_palm_civet": 6.9e-05,
+        "masked_palm_civet": 0.000132,
+        "silver_pheasant": 0.000999,
+        "eurasian_wild_pig": 0.000103
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc031687-8c29-11eb-867f-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.576779,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.012165,
+        "annamite_striped_rabbit": 2e-06,
+        "sambar": 0.008271,
+        "chinese_serow": 0.576779,
+        "common_palm_civet": 0.000148,
+        "masked_palm_civet": 0.000745,
+        "silver_pheasant": 0.010846,
+        "eurasian_wild_pig": 0.391044
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c9aca994-8c29-11eb-8fc4-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.584583,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.584583,
+        "annamite_striped_rabbit": 0.004732,
+        "sambar": 0.139999,
+        "chinese_serow": 0.014079,
+        "common_palm_civet": 0.011271,
+        "masked_palm_civet": 0.2315,
+        "silver_pheasant": 0.005232,
+        "eurasian_wild_pig": 0.008605
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0233fc7-8c29-11eb-8d2c-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.587395,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.004976,
+        "annamite_striped_rabbit": 0.343814,
+        "sambar": 0.000388,
+        "chinese_serow": 5.6e-05,
+        "common_palm_civet": 0.063063,
+        "masked_palm_civet": 0.587395,
+        "silver_pheasant": 4.1e-05,
+        "eurasian_wild_pig": 0.000265
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d83fe2b2-8c29-11eb-b3ce-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.596727,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.000238,
+        "annamite_striped_rabbit": 0.000463,
+        "sambar": 0.004068,
+        "chinese_serow": 0.301355,
+        "common_palm_civet": 0.017048,
+        "masked_palm_civet": 0.596727,
+        "silver_pheasant": 0.004898,
+        "eurasian_wild_pig": 0.075203
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.600754,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.298716,
+        "annamite_striped_rabbit": 0.003455,
+        "sambar": 0.600754,
+        "chinese_serow": 0.041067,
+        "common_palm_civet": 0.001305,
+        "masked_palm_civet": 0.053322,
+        "silver_pheasant": 0.000691,
+        "eurasian_wild_pig": 0.000691
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d118d295-8c29-11eb-afbb-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.60233,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.60233,
+        "annamite_striped_rabbit": 3.1e-05,
+        "sambar": 0.347496,
+        "chinese_serow": 0.000926,
+        "common_palm_civet": 6e-05,
+        "masked_palm_civet": 0.001171,
+        "silver_pheasant": 0.002752,
+        "eurasian_wild_pig": 0.045234
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c97832ee-8c29-11eb-bcd1-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.606659,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.009689,
+        "annamite_striped_rabbit": 0.280989,
+        "sambar": 0.01707,
+        "chinese_serow": 0.004961,
+        "common_palm_civet": 0.606659,
+        "masked_palm_civet": 0.078063,
+        "silver_pheasant": 0.001044,
+        "eurasian_wild_pig": 0.001524
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d9926cd9-8c29-11eb-956c-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.606842,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.606842,
+        "annamite_striped_rabbit": 0.000957,
+        "sambar": 0.242014,
+        "chinese_serow": 0.009928,
+        "common_palm_civet": 0.001066,
+        "masked_palm_civet": 0.007407,
+        "silver_pheasant": 0.015095,
+        "eurasian_wild_pig": 0.11669
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1f8ef39-8c29-11eb-94a5-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.608777,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.608777,
+        "annamite_striped_rabbit": 0.230083,
+        "sambar": 0.059341,
+        "chinese_serow": 0.032011,
+        "common_palm_civet": 0.005083,
+        "masked_palm_civet": 0.048796,
+        "silver_pheasant": 0.004538,
+        "eurasian_wild_pig": 0.011371
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccd276a3-8c29-11eb-8566-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.609711,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.163192,
+        "annamite_striped_rabbit": 0.000992,
+        "sambar": 0.082422,
+        "chinese_serow": 0.00064,
+        "common_palm_civet": 0.140814,
+        "masked_palm_civet": 0.609711,
+        "silver_pheasant": 2.9e-05,
+        "eurasian_wild_pig": 0.002199
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc07cf66-8c29-11eb-8179-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.610575,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.067241,
+        "annamite_striped_rabbit": 0.610575,
+        "sambar": 0.067208,
+        "chinese_serow": 0.102767,
+        "common_palm_civet": 0.056166,
+        "masked_palm_civet": 0.086654,
+        "silver_pheasant": 0.000491,
+        "eurasian_wild_pig": 0.008897
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc07d08e-8c29-11eb-96ed-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.623255,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.084558,
+        "annamite_striped_rabbit": 0.051454,
+        "sambar": 0.080729,
+        "chinese_serow": 0.042948,
+        "common_palm_civet": 0.623255,
+        "masked_palm_civet": 0.055804,
+        "silver_pheasant": 0.024796,
+        "eurasian_wild_pig": 0.036457
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d9298ea8-8c29-11eb-ad50-000d3a74c7de",
+      "true_class_id": 6,
+      "true_label": "silver_pheasant",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.625907,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.173832,
+        "annamite_striped_rabbit": 0.016364,
+        "sambar": 0.125634,
+        "chinese_serow": 0.625907,
+        "common_palm_civet": 0.01767,
+        "masked_palm_civet": 0.014522,
+        "silver_pheasant": 0.01961,
+        "eurasian_wild_pig": 0.006462
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cea360a0-8c29-11eb-97ea-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.626636,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.008703,
+        "annamite_striped_rabbit": 0.010826,
+        "sambar": 0.012337,
+        "chinese_serow": 0.027092,
+        "common_palm_civet": 0.15728,
+        "masked_palm_civet": 0.075558,
+        "silver_pheasant": 0.081567,
+        "eurasian_wild_pig": 0.626636
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d1166f7e-8c29-11eb-96ac-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.631803,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001891,
+        "annamite_striped_rabbit": 0.00161,
+        "sambar": 0.07718,
+        "chinese_serow": 0.631803,
+        "common_palm_civet": 0.172017,
+        "masked_palm_civet": 0.003735,
+        "silver_pheasant": 0.003842,
+        "eurasian_wild_pig": 0.107921
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cae9b987-8c29-11eb-9522-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.632943,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.019116,
+        "annamite_striped_rabbit": 0.632943,
+        "sambar": 0.005636,
+        "chinese_serow": 0.006786,
+        "common_palm_civet": 0.133379,
+        "masked_palm_civet": 0.164918,
+        "silver_pheasant": 0.006057,
+        "eurasian_wild_pig": 0.031166
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c97833f0-8c29-11eb-ad89-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.634456,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.004082,
+        "annamite_striped_rabbit": 0.000215,
+        "sambar": 0.634456,
+        "chinese_serow": 0.347974,
+        "common_palm_civet": 0.006657,
+        "masked_palm_civet": 0.002524,
+        "silver_pheasant": 0.000258,
+        "eurasian_wild_pig": 0.003835
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c8a19250-8c29-11eb-824e-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.64092,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.64092,
+        "annamite_striped_rabbit": 0.000612,
+        "sambar": 0.307689,
+        "chinese_serow": 0.000713,
+        "common_palm_civet": 0.001539,
+        "masked_palm_civet": 0.027895,
+        "silver_pheasant": 0.011217,
+        "eurasian_wild_pig": 0.009415
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "d118d583-8c29-11eb-a7b0-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.654886,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.01457,
+        "annamite_striped_rabbit": 0.010016,
+        "sambar": 0.654886,
+        "chinese_serow": 0.076174,
+        "common_palm_civet": 0.155568,
+        "masked_palm_civet": 0.014931,
+        "silver_pheasant": 0.000895,
+        "eurasian_wild_pig": 0.072959
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0afeaa3-8c29-11eb-af62-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.658967,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.002241,
+        "annamite_striped_rabbit": 0.014918,
+        "sambar": 0.137949,
+        "chinese_serow": 0.072931,
+        "common_palm_civet": 0.090414,
+        "masked_palm_civet": 0.658967,
+        "silver_pheasant": 0.003878,
+        "eurasian_wild_pig": 0.018702
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d5c35482-8c29-11eb-94a9-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.664579,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.013751,
+        "annamite_striped_rabbit": 0.664579,
+        "sambar": 0.009535,
+        "chinese_serow": 0.053903,
+        "common_palm_civet": 0.085843,
+        "masked_palm_civet": 0.135119,
+        "silver_pheasant": 0.001229,
+        "eurasian_wild_pig": 0.036042
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "c96c62bf-8c29-11eb-87e8-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.671282,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.087627,
+        "annamite_striped_rabbit": 0.0018,
+        "sambar": 0.079548,
+        "chinese_serow": 0.671282,
+        "common_palm_civet": 0.00051,
+        "masked_palm_civet": 0.000971,
+        "silver_pheasant": 0.150186,
+        "eurasian_wild_pig": 0.008076
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cbdf50b3-8c29-11eb-a63b-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.673416,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.005231,
+        "annamite_striped_rabbit": 0.673416,
+        "sambar": 0.02278,
+        "chinese_serow": 0.014697,
+        "common_palm_civet": 0.141026,
+        "masked_palm_civet": 0.082978,
+        "silver_pheasant": 0.001191,
+        "eurasian_wild_pig": 0.058681
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c97832ed-8c29-11eb-ba65-000d3a74c7de",
+      "true_class_id": 1,
+      "true_label": "annamite_striped_rabbit",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.677893,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.003523,
+        "annamite_striped_rabbit": 0.268844,
+        "sambar": 0.002268,
+        "chinese_serow": 0.00258,
+        "common_palm_civet": 0.677893,
+        "masked_palm_civet": 0.04113,
+        "silver_pheasant": 0.001353,
+        "eurasian_wild_pig": 0.002411
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc483d34-8c29-11eb-8a16-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.680432,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.037047,
+        "annamite_striped_rabbit": 0.117766,
+        "sambar": 0.084354,
+        "chinese_serow": 0.019706,
+        "common_palm_civet": 0.023298,
+        "masked_palm_civet": 0.019073,
+        "silver_pheasant": 0.018323,
+        "eurasian_wild_pig": 0.680432
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cb1bcd20-8c29-11eb-bf67-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.68857,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.00026,
+        "annamite_striped_rabbit": 0.032453,
+        "sambar": 0.003314,
+        "chinese_serow": 0.000561,
+        "common_palm_civet": 0.273611,
+        "masked_palm_civet": 0.68857,
+        "silver_pheasant": 0.000287,
+        "eurasian_wild_pig": 0.000942
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d3b6c81b-8c29-11eb-a1bb-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.696571,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.01372,
+        "annamite_striped_rabbit": 0.00047,
+        "sambar": 0.022635,
+        "chinese_serow": 0.045072,
+        "common_palm_civet": 0.024086,
+        "masked_palm_civet": 0.696571,
+        "silver_pheasant": 0.017419,
+        "eurasian_wild_pig": 0.180027
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "c96e37b0-8c29-11eb-a65b-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.721829,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.262219,
+        "annamite_striped_rabbit": 0.000629,
+        "sambar": 0.721829,
+        "chinese_serow": 0.001092,
+        "common_palm_civet": 0.000218,
+        "masked_palm_civet": 0.008576,
+        "silver_pheasant": 4e-06,
+        "eurasian_wild_pig": 0.005432
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.743078,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.016498,
+        "annamite_striped_rabbit": 0.000247,
+        "sambar": 0.743078,
+        "chinese_serow": 0.149744,
+        "common_palm_civet": 0.059732,
+        "masked_palm_civet": 0.024249,
+        "silver_pheasant": 0.001718,
+        "eurasian_wild_pig": 0.004735
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0be372c-8c29-11eb-b45e-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.744786,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.744786,
+        "annamite_striped_rabbit": 0.001301,
+        "sambar": 0.081436,
+        "chinese_serow": 0.01204,
+        "common_palm_civet": 0.000416,
+        "masked_palm_civet": 0.012226,
+        "silver_pheasant": 0.128322,
+        "eurasian_wild_pig": 0.019473
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e6bb25-8c29-11eb-a259-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.749259,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.004665,
+        "annamite_striped_rabbit": 0.0168,
+        "sambar": 0.001151,
+        "chinese_serow": 0.003896,
+        "common_palm_civet": 0.199784,
+        "masked_palm_civet": 0.749259,
+        "silver_pheasant": 0.02168,
+        "eurasian_wild_pig": 0.002764
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d213248c-8c29-11eb-803a-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.760223,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.076539,
+        "annamite_striped_rabbit": 0.760223,
+        "sambar": 0.039991,
+        "chinese_serow": 0.019829,
+        "common_palm_civet": 0.008009,
+        "masked_palm_civet": 0.040178,
+        "silver_pheasant": 0.007488,
+        "eurasian_wild_pig": 0.047744
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc0a317b-8c29-11eb-83ea-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.760807,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.010627,
+        "annamite_striped_rabbit": 0.760807,
+        "sambar": 0.001412,
+        "chinese_serow": 0.000162,
+        "common_palm_civet": 0.031997,
+        "masked_palm_civet": 0.194113,
+        "silver_pheasant": 0.000181,
+        "eurasian_wild_pig": 0.000701
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cfc17c81-8c29-11eb-aa30-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.763631,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.068587,
+        "annamite_striped_rabbit": 0.014329,
+        "sambar": 0.050446,
+        "chinese_serow": 0.003958,
+        "common_palm_civet": 0.097513,
+        "masked_palm_civet": 0.763631,
+        "silver_pheasant": 0.001251,
+        "eurasian_wild_pig": 0.000285
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e921c3-8c29-11eb-b6c4-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.801295,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.063914,
+        "annamite_striped_rabbit": 0.003146,
+        "sambar": 0.005356,
+        "chinese_serow": 0.000359,
+        "common_palm_civet": 0.004521,
+        "masked_palm_civet": 0.02303,
+        "silver_pheasant": 0.09838,
+        "eurasian_wild_pig": 0.801295
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cee88a9a-8c29-11eb-9411-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.803652,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.013465,
+        "annamite_striped_rabbit": 0.002003,
+        "sambar": 0.803652,
+        "chinese_serow": 0.127629,
+        "common_palm_civet": 0.01988,
+        "masked_palm_civet": 0.013969,
+        "silver_pheasant": 0.000244,
+        "eurasian_wild_pig": 0.019158
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d7fd1dae-8c29-11eb-bed5-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.815075,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.005375,
+        "annamite_striped_rabbit": 0.815075,
+        "sambar": 0.015038,
+        "chinese_serow": 0.003391,
+        "common_palm_civet": 0.098142,
+        "masked_palm_civet": 0.051649,
+        "silver_pheasant": 0.001891,
+        "eurasian_wild_pig": 0.009439
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d22172f7-8c29-11eb-adca-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.816615,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001081,
+        "annamite_striped_rabbit": 0.002287,
+        "sambar": 0.014356,
+        "chinese_serow": 0.008494,
+        "common_palm_civet": 0.816615,
+        "masked_palm_civet": 0.118546,
+        "silver_pheasant": 0.000133,
+        "eurasian_wild_pig": 0.038488
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf09b701-8c29-11eb-ab78-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.824374,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.009747,
+        "annamite_striped_rabbit": 0.824374,
+        "sambar": 0.004737,
+        "chinese_serow": 0.00889,
+        "common_palm_civet": 0.088382,
+        "masked_palm_civet": 0.054226,
+        "silver_pheasant": 0.000509,
+        "eurasian_wild_pig": 0.009135
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cf1ef238-8c29-11eb-8cf0-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.838185,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.010848,
+        "annamite_striped_rabbit": 0.000419,
+        "sambar": 0.013968,
+        "chinese_serow": 0.027614,
+        "common_palm_civet": 0.037608,
+        "masked_palm_civet": 0.838185,
+        "silver_pheasant": 0.003039,
+        "eurasian_wild_pig": 0.068319
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0be372e-8c29-11eb-b0c0-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.848406,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.848406,
+        "annamite_striped_rabbit": 0.000139,
+        "sambar": 0.015334,
+        "chinese_serow": 0.017469,
+        "common_palm_civet": 0.000356,
+        "masked_palm_civet": 0.011422,
+        "silver_pheasant": 0.014675,
+        "eurasian_wild_pig": 0.0922
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dc5428cf-8c29-11eb-97b5-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.856241,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.003399,
+        "annamite_striped_rabbit": 6.6e-05,
+        "sambar": 0.01625,
+        "chinese_serow": 0.104297,
+        "common_palm_civet": 0.000407,
+        "masked_palm_civet": 0.000534,
+        "silver_pheasant": 0.018806,
+        "eurasian_wild_pig": 0.856241
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d4aeba97-8c29-11eb-a5f1-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.879297,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.003615,
+        "annamite_striped_rabbit": 4.5e-05,
+        "sambar": 0.000222,
+        "chinese_serow": 0.00046,
+        "common_palm_civet": 0.879297,
+        "masked_palm_civet": 0.116076,
+        "silver_pheasant": 3.4e-05,
+        "eurasian_wild_pig": 0.000251
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d5d407fd-8c29-11eb-9831-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.884646,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.884646,
+        "annamite_striped_rabbit": 0.002237,
+        "sambar": 0.028641,
+        "chinese_serow": 0.005985,
+        "common_palm_civet": 0.003108,
+        "masked_palm_civet": 0.058131,
+        "silver_pheasant": 0.011327,
+        "eurasian_wild_pig": 0.005925
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d3019504-8c29-11eb-8476-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.886185,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.886185,
+        "annamite_striped_rabbit": 0.00107,
+        "sambar": 0.022919,
+        "chinese_serow": 0.001923,
+        "common_palm_civet": 0.000216,
+        "masked_palm_civet": 0.02576,
+        "silver_pheasant": 0.003189,
+        "eurasian_wild_pig": 0.058738
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0934c2a-8c29-11eb-a378-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.894015,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001312,
+        "annamite_striped_rabbit": 0.002402,
+        "sambar": 0.00842,
+        "chinese_serow": 0.894015,
+        "common_palm_civet": 0.058361,
+        "masked_palm_civet": 0.015765,
+        "silver_pheasant": 0.013039,
+        "eurasian_wild_pig": 0.006687
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ccd018ba-8c29-11eb-b1e7-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.895461,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.038709,
+        "annamite_striped_rabbit": 6.6e-05,
+        "sambar": 0.895461,
+        "chinese_serow": 0.002897,
+        "common_palm_civet": 0.011981,
+        "masked_palm_civet": 0.047437,
+        "silver_pheasant": 1.8e-05,
+        "eurasian_wild_pig": 0.00343
+      },
+      "num_crops": 2
+    },
+    {
+      "image_id": "ccd27735-8c29-11eb-8d7a-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.896237,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.002582,
+        "annamite_striped_rabbit": 0.005101,
+        "sambar": 0.01764,
+        "chinese_serow": 0.001093,
+        "common_palm_civet": 0.058995,
+        "masked_palm_civet": 0.896237,
+        "silver_pheasant": 0.000109,
+        "eurasian_wild_pig": 0.018242
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc246b27-8c29-11eb-a0d8-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.897223,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.041036,
+        "annamite_striped_rabbit": 0.897223,
+        "sambar": 0.013228,
+        "chinese_serow": 0.002494,
+        "common_palm_civet": 0.023447,
+        "masked_palm_civet": 0.016241,
+        "silver_pheasant": 0.003006,
+        "eurasian_wild_pig": 0.003325
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d9fdb4d0-8c29-11eb-afe4-000d3a74c7de",
+      "true_class_id": 3,
+      "true_label": "chinese_serow",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.900698,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.00029,
+        "annamite_striped_rabbit": 1e-06,
+        "sambar": 0.029358,
+        "chinese_serow": 0.069282,
+        "common_palm_civet": 6e-06,
+        "masked_palm_civet": 0.000331,
+        "silver_pheasant": 3.4e-05,
+        "eurasian_wild_pig": 0.900698
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca87fded-8c29-11eb-93a1-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.900903,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.000169,
+        "annamite_striped_rabbit": 0.900903,
+        "sambar": 5e-05,
+        "chinese_serow": 1.7e-05,
+        "common_palm_civet": 0.093418,
+        "masked_palm_civet": 0.003188,
+        "silver_pheasant": 2.9e-05,
+        "eurasian_wild_pig": 0.002225
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cae9ba6b-8c29-11eb-a5c5-000d3a74c7de",
+      "true_class_id": 2,
+      "true_label": "sambar",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.901732,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.901732,
+        "annamite_striped_rabbit": 0.003544,
+        "sambar": 0.083411,
+        "chinese_serow": 0.002241,
+        "common_palm_civet": 3.7e-05,
+        "masked_palm_civet": 0.000135,
+        "silver_pheasant": 0.00043,
+        "eurasian_wild_pig": 0.00847
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc26dd1b-8c29-11eb-ab2e-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.902289,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.026106,
+        "annamite_striped_rabbit": 0.005164,
+        "sambar": 0.902289,
+        "chinese_serow": 0.034751,
+        "common_palm_civet": 0.004047,
+        "masked_palm_civet": 0.025273,
+        "silver_pheasant": 0.000353,
+        "eurasian_wild_pig": 0.002016
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e922d8-8c29-11eb-b16e-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 7,
+      "predicted_label": "eurasian_wild_pig",
+      "confidence": 0.923092,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.063334,
+        "annamite_striped_rabbit": 0.000446,
+        "sambar": 0.001111,
+        "chinese_serow": 0.000162,
+        "common_palm_civet": 0.000222,
+        "masked_palm_civet": 0.010146,
+        "silver_pheasant": 0.001489,
+        "eurasian_wild_pig": 0.923092
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d5d407ff-8c29-11eb-8612-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.933778,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.933778,
+        "annamite_striped_rabbit": 8.3e-05,
+        "sambar": 0.004982,
+        "chinese_serow": 0.00058,
+        "common_palm_civet": 0.000397,
+        "masked_palm_civet": 0.057814,
+        "silver_pheasant": 0.0008,
+        "eurasian_wild_pig": 0.001566
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "ca87fdff-8c29-11eb-aaf1-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.942383,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.022265,
+        "annamite_striped_rabbit": 0.942383,
+        "sambar": 0.00691,
+        "chinese_serow": 0.00025,
+        "common_palm_civet": 0.002879,
+        "masked_palm_civet": 0.018693,
+        "silver_pheasant": 0.000301,
+        "eurasian_wild_pig": 0.006319
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e6bb4b-8c29-11eb-8c70-000d3a74c7de",
+      "true_class_id": 4,
+      "true_label": "common_palm_civet",
+      "predicted_class_id": 1,
+      "predicted_label": "annamite_striped_rabbit",
+      "confidence": 0.944986,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001637,
+        "annamite_striped_rabbit": 0.944986,
+        "sambar": 0.000675,
+        "chinese_serow": 0.013342,
+        "common_palm_civet": 0.021827,
+        "masked_palm_civet": 0.008793,
+        "silver_pheasant": 0.000123,
+        "eurasian_wild_pig": 0.008617
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "dbd10236-8c29-11eb-95cf-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 3,
+      "predicted_label": "chinese_serow",
+      "confidence": 0.949869,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.001916,
+        "annamite_striped_rabbit": 0.000179,
+        "sambar": 0.024531,
+        "chinese_serow": 0.949869,
+        "common_palm_civet": 0.003717,
+        "masked_palm_civet": 0.010524,
+        "silver_pheasant": 0.003494,
+        "eurasian_wild_pig": 0.00577
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d0e921d1-8c29-11eb-bed7-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 5,
+      "predicted_label": "masked_palm_civet",
+      "confidence": 0.952503,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.005319,
+        "annamite_striped_rabbit": 0.018405,
+        "sambar": 0.000156,
+        "chinese_serow": 0.000105,
+        "common_palm_civet": 0.021821,
+        "masked_palm_civet": 0.952503,
+        "silver_pheasant": 0.000354,
+        "eurasian_wild_pig": 0.001336
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc26daf5-8c29-11eb-8ba6-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.953297,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.007237,
+        "annamite_striped_rabbit": 2.2e-05,
+        "sambar": 0.953297,
+        "chinese_serow": 0.037948,
+        "common_palm_civet": 0.000454,
+        "masked_palm_civet": 0.000797,
+        "silver_pheasant": 8.2e-05,
+        "eurasian_wild_pig": 0.000163
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc26dafe-8c29-11eb-bc66-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.956405,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.032427,
+        "annamite_striped_rabbit": 0.000184,
+        "sambar": 0.956405,
+        "chinese_serow": 0.007053,
+        "common_palm_civet": 0.001299,
+        "masked_palm_civet": 0.002384,
+        "silver_pheasant": 0.000168,
+        "eurasian_wild_pig": 8e-05
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d7e090ad-8c29-11eb-a26e-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.971313,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.971313,
+        "annamite_striped_rabbit": 0.001535,
+        "sambar": 0.011267,
+        "chinese_serow": 0.000193,
+        "common_palm_civet": 2.4e-05,
+        "masked_palm_civet": 0.000254,
+        "silver_pheasant": 0.000351,
+        "eurasian_wild_pig": 0.015064
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "d7e0902c-8c29-11eb-8366-000d3a74c7de",
+      "true_class_id": 7,
+      "true_label": "eurasian_wild_pig",
+      "predicted_class_id": 0,
+      "predicted_label": "large_antlered_muntjac",
+      "confidence": 0.974681,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.974681,
+        "annamite_striped_rabbit": 0.001599,
+        "sambar": 0.002643,
+        "chinese_serow": 5.4e-05,
+        "common_palm_civet": 0.000123,
+        "masked_palm_civet": 0.000478,
+        "silver_pheasant": 7.8e-05,
+        "eurasian_wild_pig": 0.020345
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cc26daf6-8c29-11eb-bd6a-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.976089,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.01953,
+        "annamite_striped_rabbit": 2.1e-05,
+        "sambar": 0.976089,
+        "chinese_serow": 0.003642,
+        "common_palm_civet": 0.00035,
+        "masked_palm_civet": 0.000315,
+        "silver_pheasant": 2e-05,
+        "eurasian_wild_pig": 3.5e-05
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "c87366c4-8c29-11eb-aa92-000d3a74c7de",
+      "true_class_id": 0,
+      "true_label": "large_antlered_muntjac",
+      "predicted_class_id": 2,
+      "predicted_label": "sambar",
+      "confidence": 0.984482,
+      "all_probabilities": {
+        "large_antlered_muntjac": 0.004405,
+        "annamite_striped_rabbit": 1e-06,
+        "sambar": 0.984482,
+        "chinese_serow": 0.000538,
+        "common_palm_civet": 0.0,
+        "masked_palm_civet": 3e-06,
+        "silver_pheasant": 2.2e-05,
+        "eurasian_wild_pig": 0.010549
+      },
+      "num_crops": 1
+    },
+    {
+      "image_id": "cd048973-8c29-11eb-bf7e-000d3a74c7de",
+      "true_class_id": 5,
+      "true_label": "masked_palm_civet",
+      "predicted_class_id": 4,
+      "predicted_label": "common_palm_civet",
+      "confidence": 0.996176,
+      "all_probabilities": {
+        "large_antlered_muntjac": 4.9e-05,
+        "annamite_striped_rabbit": 0.000151,
+        "sambar": 0.000114,
+        "chinese_serow": 0.000452,
+        "common_palm_civet": 0.996176,
+        "masked_palm_civet": 0.001468,
+        "silver_pheasant": 5.6e-05,
+        "eurasian_wild_pig": 0.001534
+      },
+      "num_crops": 1
+    }
+  ]
+}
