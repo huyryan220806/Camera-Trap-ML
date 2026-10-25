@@ -1,0 +1,833 @@
+{
+  "checked_utc": "2026-10-23T04:11:19.906333+00:00",
+  "path": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\experiments\\B2_run01\\checkpoints\\best_model.pt",
+  "bytes": 89548866,
+  "sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "safe_load_weights_only": true,
+  "keys": [
+    "epoch",
+    "model_state_dict",
+    "optimizer_state_dict",
+    "scheduler_state_dict",
+    "val_metrics",
+    "config",
+    "class_map",
+    "id_to_label",
+    "is_official",
+    "provenance_sha256",
+    "preprocessing",
+    "backbone_name",
+    "num_classes"
+  ],
+  "metadata": {
+    "epoch": 21,
+    "scheduler_state_dict": {
+      "step_size": 10,
+      "gamma": 0.1,
+      "base_lrs": [
+        0.001
+      ],
+      "last_epoch": 21,
+      "verbose": false,
+      "_step_count": 22,
+      "_get_lr_called_within_step": false,
+      "_last_lr": [
+        1e-05
+      ]
+    },
+    "val_metrics": {
+      "val_loss": 0.8178,
+      "crop_level": {
+        "accuracy": 0.7294,
+        "macro_precision": 0.7271,
+        "macro_recall": 0.7302,
+        "macro_f1": 0.7254,
+        "total_samples": 680,
+        "per_class": {
+          "large_antlered_muntjac": {
+            "class_id": 0,
+            "precision": 0.5263,
+            "recall": 0.5195,
+            "f1": 0.5229,
+            "support": 77
+          },
+          "annamite_striped_rabbit": {
+            "class_id": 1,
+            "precision": 0.7041,
+            "recall": 0.9079,
+            "f1": 0.7931,
+            "support": 76
+          },
+          "sambar": {
+            "class_id": 2,
+            "precision": 0.6795,
+            "recall": 0.6163,
+            "f1": 0.6463,
+            "support": 86
+          },
+          "chinese_serow": {
+            "class_id": 3,
+            "precision": 0.7662,
+            "recall": 0.7763,
+            "f1": 0.7712,
+            "support": 76
+          },
+          "common_palm_civet": {
+            "class_id": 4,
+            "precision": 0.8028,
+            "recall": 0.7403,
+            "f1": 0.7703,
+            "support": 77
+          },
+          "masked_palm_civet": {
+            "class_id": 5,
+            "precision": 0.6517,
+            "recall": 0.7733,
+            "f1": 0.7073,
+            "support": 75
+          },
+          "silver_pheasant": {
+            "class_id": 6,
+            "precision": 0.956,
+            "recall": 0.8447,
+            "f1": 0.8969,
+            "support": 103
+          },
+          "eurasian_wild_pig": {
+            "class_id": 7,
+            "precision": 0.73,
+            "recall": 0.6636,
+            "f1": 0.6952,
+            "support": 110
+          }
+        },
+        "confusion_matrix": [
+          [
+            40,
+            5,
+            14,
+            1,
+            2,
+            5,
+            0,
+            10
+          ],
+          [
+            1,
+            69,
+            0,
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            13,
+            4,
+            53,
+            3,
+            1,
+            8,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            5,
+            59,
+            1,
+            1,
+            0,
+            7
+          ],
+          [
+            1,
+            11,
+            0,
+            5,
+            57,
+            3,
+            0,
+            0
+          ],
+          [
+            5,
+            6,
+            1,
+            1,
+            4,
+            58,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            1,
+            2,
+            0,
+            2,
+            87,
+            7
+          ],
+          [
+            11,
+            1,
+            4,
+            5,
+            2,
+            11,
+            3,
+            73
+          ]
+        ],
+        "weighted_val_loss": 0.8178
+      },
+      "image_level": {
+        "accuracy": 0.7467,
+        "macro_precision": 0.7484,
+        "macro_recall": 0.7467,
+        "macro_f1": 0.7455,
+        "total_samples": 600,
+        "per_class": {
+          "large_antlered_muntjac": {
+            "class_id": 0,
+            "precision": 0.5652,
+            "recall": 0.52,
+            "f1": 0.5417,
+            "support": 75
+          },
+          "annamite_striped_rabbit": {
+            "class_id": 1,
+            "precision": 0.7312,
+            "recall": 0.9067,
+            "f1": 0.8095,
+            "support": 75
+          },
+          "sambar": {
+            "class_id": 2,
+            "precision": 0.6912,
+            "recall": 0.6267,
+            "f1": 0.6573,
+            "support": 75
+          },
+          "chinese_serow": {
+            "class_id": 3,
+            "precision": 0.7945,
+            "recall": 0.7733,
+            "f1": 0.7838,
+            "support": 75
+          },
+          "common_palm_civet": {
+            "class_id": 4,
+            "precision": 0.8143,
+            "recall": 0.76,
+            "f1": 0.7862,
+            "support": 75
+          },
+          "masked_palm_civet": {
+            "class_id": 5,
+            "precision": 0.6988,
+            "recall": 0.7733,
+            "f1": 0.7342,
+            "support": 75
+          },
+          "silver_pheasant": {
+            "class_id": 6,
+            "precision": 0.9855,
+            "recall": 0.9067,
+            "f1": 0.9444,
+            "support": 75
+          },
+          "eurasian_wild_pig": {
+            "class_id": 7,
+            "precision": 0.7067,
+            "recall": 0.7067,
+            "f1": 0.7067,
+            "support": 75
+          }
+        },
+        "confusion_matrix": [
+          [
+            39,
+            5,
+            13,
+            1,
+            2,
+            5,
+            0,
+            10
+          ],
+          [
+            1,
+            68,
+            0,
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            12,
+            2,
+            47,
+            3,
+            1,
+            6,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            5,
+            58,
+            1,
+            1,
+            0,
+            7
+          ],
+          [
+            1,
+            10,
+            0,
+            4,
+            57,
+            3,
+            0,
+            0
+          ],
+          [
+            5,
+            6,
+            1,
+            1,
+            4,
+            58,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            68,
+            2
+          ],
+          [
+            9,
+            0,
+            1,
+            3,
+            1,
+            8,
+            0,
+            53
+          ]
+        ],
+        "total_unique_images": 600
+      }
+    },
+    "config": {
+      "experiment_name": "b2_crop_classifier_comparison_v1",
+      "version": "2.0.0",
+      "author": "TV3",
+      "task": "W3-02: Fine-tune B2 trên vùng cắt",
+      "protocol_agreement": "reports/tv2/W3_PROTOCOL_AGREEMENT_2026-10-18.json",
+      "model": {
+        "backbone": "resnet18",
+        "weights": "ResNet18_Weights.IMAGENET1K_V1",
+        "pretrained": true,
+        "num_classes": 8,
+        "fine_tune": "all",
+        "dropout_p": 0.0
+      },
+      "training": {
+        "optimizer": "sgd",
+        "lr": 0.001,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "scheduler": "step_lr",
+        "step_size": 10,
+        "gamma": 0.1,
+        "epochs": 50,
+        "patience": 7,
+        "batch_size": 32,
+        "seed": 42,
+        "mixed_precision": false,
+        "loss": "mean_crop_CE_per_image_then_mean_over_images"
+      },
+      "data": {
+        "comparison_dir": "data/processed/comparison_v1",
+        "num_workers": 4,
+        "preflight_hash_check": false,
+        "drop_last": false
+      },
+      "evaluation": {
+        "metric_for_best": "image_macro_f1",
+        "aggregation_method": "mean_probability_argmax"
+      },
+      "output": {
+        "dir": "outputs/b2_crop_classifier",
+        "best_checkpoint_name": "best_model.pt",
+        "last_checkpoint_name": "last_model.pt",
+        "log_file_name": "train_log.jsonl",
+        "val_report_name": "validation_comparison.json",
+        "val_table_md_name": "validation_comparison.md"
+      }
+    },
+    "class_map": {
+      "large_antlered_muntjac": 0,
+      "annamite_striped_rabbit": 1,
+      "sambar": 2,
+      "chinese_serow": 3,
+      "common_palm_civet": 4,
+      "masked_palm_civet": 5,
+      "silver_pheasant": 6,
+      "eurasian_wild_pig": 7
+    },
+    "id_to_label": {
+      "0": "large_antlered_muntjac",
+      "1": "annamite_striped_rabbit",
+      "2": "sambar",
+      "3": "chinese_serow",
+      "4": "common_palm_civet",
+      "5": "masked_palm_civet",
+      "6": "silver_pheasant",
+      "7": "eurasian_wild_pig"
+    },
+    "is_official": true,
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "preprocessing": {
+      "resize": 256,
+      "crop_size": 224,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "train_transforms": "Resize(256) -> RandomCrop(224) -> RandomHorizontalFlip(0.5) -> ColorJitter(b=0.2, c=0.2, s=0.1, h=0.05) -> ToTensor() -> Normalize()",
+      "val_transforms": "Resize(256) -> CenterCrop(224) -> ToTensor() -> Normalize()"
+    },
+    "backbone_name": "resnet18",
+    "num_classes": 8,
+    "optimizer_param_groups": [
+      {
+        "lr": 1e-05,
+        "momentum": 0.9,
+        "dampening": 0,
+        "weight_decay": 0.0001,
+        "nesterov": false,
+        "maximize": false,
+        "foreach": null,
+        "differentiable": false,
+        "fused": null,
+        "initial_lr": 0.001
+      }
+    ]
+  },
+  "state_tensor_count": 122,
+  "state_keys_and_shapes": {
+    "backbone.conv1.weight": [
+      64,
+      3,
+      7,
+      7
+    ],
+    "backbone.bn1.weight": [
+      64
+    ],
+    "backbone.bn1.bias": [
+      64
+    ],
+    "backbone.bn1.running_mean": [
+      64
+    ],
+    "backbone.bn1.running_var": [
+      64
+    ],
+    "backbone.bn1.num_batches_tracked": [],
+    "backbone.layer1.0.conv1.weight": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "backbone.layer1.0.bn1.weight": [
+      64
+    ],
+    "backbone.layer1.0.bn1.bias": [
+      64
+    ],
+    "backbone.layer1.0.bn1.running_mean": [
+      64
+    ],
+    "backbone.layer1.0.bn1.running_var": [
+      64
+    ],
+    "backbone.layer1.0.bn1.num_batches_tracked": [],
+    "backbone.layer1.0.conv2.weight": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "backbone.layer1.0.bn2.weight": [
+      64
+    ],
+    "backbone.layer1.0.bn2.bias": [
+      64
+    ],
+    "backbone.layer1.0.bn2.running_mean": [
+      64
+    ],
+    "backbone.layer1.0.bn2.running_var": [
+      64
+    ],
+    "backbone.layer1.0.bn2.num_batches_tracked": [],
+    "backbone.layer1.1.conv1.weight": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "backbone.layer1.1.bn1.weight": [
+      64
+    ],
+    "backbone.layer1.1.bn1.bias": [
+      64
+    ],
+    "backbone.layer1.1.bn1.running_mean": [
+      64
+    ],
+    "backbone.layer1.1.bn1.running_var": [
+      64
+    ],
+    "backbone.layer1.1.bn1.num_batches_tracked": [],
+    "backbone.layer1.1.conv2.weight": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "backbone.layer1.1.bn2.weight": [
+      64
+    ],
+    "backbone.layer1.1.bn2.bias": [
+      64
+    ],
+    "backbone.layer1.1.bn2.running_mean": [
+      64
+    ],
+    "backbone.layer1.1.bn2.running_var": [
+      64
+    ],
+    "backbone.layer1.1.bn2.num_batches_tracked": [],
+    "backbone.layer2.0.conv1.weight": [
+      128,
+      64,
+      3,
+      3
+    ],
+    "backbone.layer2.0.bn1.weight": [
+      128
+    ],
+    "backbone.layer2.0.bn1.bias": [
+      128
+    ],
+    "backbone.layer2.0.bn1.running_mean": [
+      128
+    ],
+    "backbone.layer2.0.bn1.running_var": [
+      128
+    ],
+    "backbone.layer2.0.bn1.num_batches_tracked": [],
+    "backbone.layer2.0.conv2.weight": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "backbone.layer2.0.bn2.weight": [
+      128
+    ],
+    "backbone.layer2.0.bn2.bias": [
+      128
+    ],
+    "backbone.layer2.0.bn2.running_mean": [
+      128
+    ],
+    "backbone.layer2.0.bn2.running_var": [
+      128
+    ],
+    "backbone.layer2.0.bn2.num_batches_tracked": [],
+    "backbone.layer2.0.downsample.0.weight": [
+      128,
+      64,
+      1,
+      1
+    ],
+    "backbone.layer2.0.downsample.1.weight": [
+      128
+    ],
+    "backbone.layer2.0.downsample.1.bias": [
+      128
+    ],
+    "backbone.layer2.0.downsample.1.running_mean": [
+      128
+    ],
+    "backbone.layer2.0.downsample.1.running_var": [
+      128
+    ],
+    "backbone.layer2.0.downsample.1.num_batches_tracked": [],
+    "backbone.layer2.1.conv1.weight": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "backbone.layer2.1.bn1.weight": [
+      128
+    ],
+    "backbone.layer2.1.bn1.bias": [
+      128
+    ],
+    "backbone.layer2.1.bn1.running_mean": [
+      128
+    ],
+    "backbone.layer2.1.bn1.running_var": [
+      128
+    ],
+    "backbone.layer2.1.bn1.num_batches_tracked": [],
+    "backbone.layer2.1.conv2.weight": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "backbone.layer2.1.bn2.weight": [
+      128
+    ],
+    "backbone.layer2.1.bn2.bias": [
+      128
+    ],
+    "backbone.layer2.1.bn2.running_mean": [
+      128
+    ],
+    "backbone.layer2.1.bn2.running_var": [
+      128
+    ],
+    "backbone.layer2.1.bn2.num_batches_tracked": [],
+    "backbone.layer3.0.conv1.weight": [
+      256,
+      128,
+      3,
+      3
+    ],
+    "backbone.layer3.0.bn1.weight": [
+      256
+    ],
+    "backbone.layer3.0.bn1.bias": [
+      256
+    ],
+    "backbone.layer3.0.bn1.running_mean": [
+      256
+    ],
+    "backbone.layer3.0.bn1.running_var": [
+      256
+    ],
+    "backbone.layer3.0.bn1.num_batches_tracked": [],
+    "backbone.layer3.0.conv2.weight": [
+      256,
+      256,
+      3,
+      3
+    ],
+    "backbone.layer3.0.bn2.weight": [
+      256
+    ],
+    "backbone.layer3.0.bn2.bias": [
+      256
+    ],
+    "backbone.layer3.0.bn2.running_mean": [
+      256
+    ],
+    "backbone.layer3.0.bn2.running_var": [
+      256
+    ],
+    "backbone.layer3.0.bn2.num_batches_tracked": [],
+    "backbone.layer3.0.downsample.0.weight": [
+      256,
+      128,
+      1,
+      1
+    ],
+    "backbone.layer3.0.downsample.1.weight": [
+      256
+    ],
+    "backbone.layer3.0.downsample.1.bias": [
+      256
+    ],
+    "backbone.layer3.0.downsample.1.running_mean": [
+      256
+    ],
+    "backbone.layer3.0.downsample.1.running_var": [
+      256
+    ],
+    "backbone.layer3.0.downsample.1.num_batches_tracked": [],
+    "backbone.layer3.1.conv1.weight": [
+      256,
+      256,
+      3,
+      3
+    ],
+    "backbone.layer3.1.bn1.weight": [
+      256
+    ],
+    "backbone.layer3.1.bn1.bias": [
+      256
+    ],
+    "backbone.layer3.1.bn1.running_mean": [
+      256
+    ],
+    "backbone.layer3.1.bn1.running_var": [
+      256
+    ],
+    "backbone.layer3.1.bn1.num_batches_tracked": [],
+    "backbone.layer3.1.conv2.weight": [
+      256,
+      256,
+      3,
+      3
+    ],
+    "backbone.layer3.1.bn2.weight": [
+      256
+    ],
+    "backbone.layer3.1.bn2.bias": [
+      256
+    ],
+    "backbone.layer3.1.bn2.running_mean": [
+      256
+    ],
+    "backbone.layer3.1.bn2.running_var": [
+      256
+    ],
+    "backbone.layer3.1.bn2.num_batches_tracked": [],
+    "backbone.layer4.0.conv1.weight": [
+      512,
+      256,
+      3,
+      3
+    ],
+    "backbone.layer4.0.bn1.weight": [
+      512
+    ],
+    "backbone.layer4.0.bn1.bias": [
+      512
+    ],
+    "backbone.layer4.0.bn1.running_mean": [
+      512
+    ],
+    "backbone.layer4.0.bn1.running_var": [
+      512
+    ],
+    "backbone.layer4.0.bn1.num_batches_tracked": [],
+    "backbone.layer4.0.conv2.weight": [
+      512,
+      512,
+      3,
+      3
+    ],
+    "backbone.layer4.0.bn2.weight": [
+      512
+    ],
+    "backbone.layer4.0.bn2.bias": [
+      512
+    ],
+    "backbone.layer4.0.bn2.running_mean": [
+      512
+    ],
+    "backbone.layer4.0.bn2.running_var": [
+      512
+    ],
+    "backbone.layer4.0.bn2.num_batches_tracked": [],
+    "backbone.layer4.0.downsample.0.weight": [
+      512,
+      256,
+      1,
+      1
+    ],
+    "backbone.layer4.0.downsample.1.weight": [
+      512
+    ],
+    "backbone.layer4.0.downsample.1.bias": [
+      512
+    ],
+    "backbone.layer4.0.downsample.1.running_mean": [
+      512
+    ],
+    "backbone.layer4.0.downsample.1.running_var": [
+      512
+    ],
+    "backbone.layer4.0.downsample.1.num_batches_tracked": [],
+    "backbone.layer4.1.conv1.weight": [
+      512,
+      512,
+      3,
+      3
+    ],
+    "backbone.layer4.1.bn1.weight": [
+      512
+    ],
+    "backbone.layer4.1.bn1.bias": [
+      512
+    ],
+    "backbone.layer4.1.bn1.running_mean": [
+      512
+    ],
+    "backbone.layer4.1.bn1.running_var": [
+      512
+    ],
+    "backbone.layer4.1.bn1.num_batches_tracked": [],
+    "backbone.layer4.1.conv2.weight": [
+      512,
+      512,
+      3,
+      3
+    ],
+    "backbone.layer4.1.bn2.weight": [
+      512
+    ],
+    "backbone.layer4.1.bn2.bias": [
+      512
+    ],
+    "backbone.layer4.1.bn2.running_mean": [
+      512
+    ],
+    "backbone.layer4.1.bn2.running_var": [
+      512
+    ],
+    "backbone.layer4.1.bn2.num_batches_tracked": [],
+    "classifier.1.weight": [
+      8,
+      512
+    ],
+    "classifier.1.bias": [
+      8
+    ]
+  },
+  "all_state_tensors_finite": true,
+  "unchanged_after_load": true,
+  "test_opened": false
+}

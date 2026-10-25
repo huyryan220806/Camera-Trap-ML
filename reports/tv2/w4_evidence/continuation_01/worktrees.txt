@@ -1,0 +1,7 @@
+worktree D:/Năm 3/HK1_2026/Học máy và ứng dụng/Do_an
+HEAD a66f41cb7f966f17de7e132e1433103958c1af72
+branch refs/heads/feat/baseline
+
+worktree C:/Users/Huỳnh Phúc/.codex/visualizations/2026/10/02/01a0fc05-cae2-7503-9751-6df2a5c0ffc3/tv2-w1-fixes
+HEAD 738813494ac5d144989e3fcaa750acb8407e9e07
+branch refs/heads/codex/tv2-w1-fixes

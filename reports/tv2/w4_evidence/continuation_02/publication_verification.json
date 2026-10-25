@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-23T07:03:20.093339+00:00",
+  "final_fetch_refs_before_receipt_commit": {
+    "main": "0d822a91aa8cd694264c7af182434a91530e3fe2",
+    "tv1": "4bcf85cb07953d3a77cd916ec2895a6c6e6dfa6c",
+    "tv2": "41ebfbf8587994192fa1dad2f57642b8fa95418f",
+    "tv3": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+    "tv4": "254b40eab77b849647a2291aa0257c1b161b4da2"
+  },
+  "tv4_w4_handoff": "NOT VERIFIED; remote unchanged",
+  "gate": "PASS; read-only, no official rerun",
+  "frozen_lock_and_protocol": "UNCHANGED",
+  "official_artifact_hashes": "PASS",
+  "report_links": "PASS",
+  "pr": "CONNECTOR403; prepared manual URL/body",
+  "tv1_acceptance": "PENDING REVIEW"
+}

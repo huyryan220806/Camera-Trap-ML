@@ -1,0 +1,276 @@
+{
+  "Lich_trien_khai_6_tuan.docx": {
+    "sha256": "98c90d4cdc24b3d4046d364bcd8b767696a8b61f974b2e886f445f61004c3e73",
+    "section": "Tuần 4",
+    "paragraphs": [
+      "Tuần 4 Chốt mô hình và đánh giá",
+      "Mục tiêu: Khóa phương pháp, đánh giá tập test và giải thích lỗi trên lớp ít mẫu.",
+      "Lịch làm việc",
+      "Ngày 1 đến 3: thử B3 có trọng số lớp nếu còn thời gian; chọn mô hình và ngưỡng duyệt bằng validation; ghi quyết định trước khi chạy test.",
+      "Ngày 4 đến 6: chạy đánh giá test, phân tích các lỗi điển hình, đo thời gian suy luận và hoàn thiện màn hình duyệt lại. Ngày 7: nghiệm thu bảng kết quả.",
+      "Công việc của từng thành viên",
+      "Phụ trách",
+      "Công việc và sản phẩm",
+      "Tiêu chí hoàn thành",
+      "TV110 giờW4-01",
+      "Kiểm kê test và phân tích lỗi dữ liệuBàn giao: Báo cáo phân bố test và bộ ví dụ lỗi",
+      "Sau khi khóa mô hình, thống kê mẫu/chuỗi từng lớp; không sửa nhãn chỉ để tăng điểm; mô tả giới hạn lớp ít mẫu.Người kiểm tra: TV3",
+      "TV212 giờW4-02",
+      "Khóa đánh giá và tổng hợp kết quả testBàn giao: Bảng metric test và confusion matrix",
+      "Chờ quyết định B3 ngày 3; chốt mô hình/ngưỡng bằng validation; tính macro-F1, precision/recall và accuracy; không tối ưu bằng test.Người kiểm tra: TV1",
+      "TV310 giờW4-03",
+      "Thử trọng số lớp và chốt bộ phân loạiBàn giao: Quyết định B3 hoặc giữ B2",
+      "B3 là tùy chọn; quyết định chậm nhất ngày 3 bằng validation; lưu lý do, checkpoint và giới hạn. Nếu bỏ B3, dành giờ cho phân tích lỗi.Người kiểm tra: TV2",
+      "TV410 giờW4-04",
+      "Bổ sung duyệt lại và đo tốc độ demoBàn giao: Màn hình sửa nhãn và log suy luận",
+      "Điểm thấp được chuyển cần kiểm tra; không kết luận loài lạ; đo tốc độ với cấu hình máy và cỡ lô rõ ràng; ghi cả trường hợp detector bỏ sót.Người kiểm tra: TV2",
+      "",
+      "Nghiệm thu cuối tuần",
+      "Có macro-F1, precision/recall từng lớp, số ảnh và chuỗi kiểm thử, confusion matrix, ví dụ lỗi và giải thích giới hạn đánh giá.",
+      "Điều chỉnh khi có vướng mắc",
+      "Nếu B3 không cải thiện hoặc vượt thời gian, giữ B2. Không điều chỉnh mô hình dựa trên kết quả test.",
+      "W4-03 cần chốt lựa chọn chậm nhất ngày 3. TV2 chỉ mở đánh giá test sau khi có quyết định và cấu hình đã khóa.",
+      ""
+    ]
+  },
+  "docs/Phan_cong_4_thanh_vien.xlsx": {
+    "sha256": "5e8883b43220c0cf776399bcc956cf73372a7453dd51cea79580800c07e10b3c",
+    "sheets": {
+      "xl/worksheets/sheet2.xml": [
+        [
+          [
+            "A19",
+            "W4-01"
+          ],
+          [
+            "B19",
+            "4"
+          ],
+          [
+            "C19",
+            "Kiểm kê test và phân tích lỗi dữ liệu"
+          ],
+          [
+            "D19",
+            "TV1"
+          ],
+          [
+            "E19",
+            "TV3"
+          ],
+          [
+            "F19",
+            "W3-01; W3-02; W3-03"
+          ],
+          [
+            "G19",
+            "10"
+          ],
+          [
+            "H19",
+            "6"
+          ],
+          [
+            "I19",
+            ""
+          ],
+          [
+            "J19",
+            "Báo cáo phân bố test và bộ ví dụ lỗi"
+          ],
+          [
+            "K19",
+            "Sau khi khóa mô hình, thống kê mẫu/chuỗi từng lớp; không sửa nhãn chỉ để tăng điểm; mô tả giới hạn lớp ít mẫu."
+          ],
+          [
+            "L19",
+            "Chưa bắt đầu"
+          ],
+          [
+            "M19",
+            ""
+          ],
+          [
+            "N19",
+            ""
+          ]
+        ],
+        [
+          [
+            "A20",
+            "W4-02"
+          ],
+          [
+            "B20",
+            "4"
+          ],
+          [
+            "C20",
+            "Khóa đánh giá và tổng hợp kết quả test"
+          ],
+          [
+            "D20",
+            "TV2"
+          ],
+          [
+            "E20",
+            "TV1"
+          ],
+          [
+            "F20",
+            "W3-02; W3-03; W4-03"
+          ],
+          [
+            "G20",
+            "12"
+          ],
+          [
+            "H20",
+            "6"
+          ],
+          [
+            "I20",
+            ""
+          ],
+          [
+            "J20",
+            "Bảng metric test và confusion matrix"
+          ],
+          [
+            "K20",
+            "Chờ quyết định B3 ngày 3; chốt mô hình/ngưỡng bằng validation; tính macro-F1, precision/recall và accuracy; không tối ưu bằng test."
+          ],
+          [
+            "L20",
+            "Chưa bắt đầu"
+          ],
+          [
+            "M20",
+            ""
+          ],
+          [
+            "N20",
+            ""
+          ]
+        ],
+        [
+          [
+            "A21",
+            "W4-03"
+          ],
+          [
+            "B21",
+            "4"
+          ],
+          [
+            "C21",
+            "Thử trọng số lớp và chốt bộ phân loại"
+          ],
+          [
+            "D21",
+            "TV3"
+          ],
+          [
+            "E21",
+            "TV2"
+          ],
+          [
+            "F21",
+            "W3-03"
+          ],
+          [
+            "G21",
+            "10"
+          ],
+          [
+            "H21",
+            "3"
+          ],
+          [
+            "I21",
+            ""
+          ],
+          [
+            "J21",
+            "Quyết định B3 hoặc giữ B2"
+          ],
+          [
+            "K21",
+            "B3 là tùy chọn; quyết định chậm nhất ngày 3 bằng validation; lưu lý do, checkpoint và giới hạn. Nếu bỏ B3, dành giờ cho phân tích lỗi."
+          ],
+          [
+            "L21",
+            "Chưa bắt đầu"
+          ],
+          [
+            "M21",
+            ""
+          ],
+          [
+            "N21",
+            ""
+          ]
+        ],
+        [
+          [
+            "A22",
+            "W4-04"
+          ],
+          [
+            "B22",
+            "4"
+          ],
+          [
+            "C22",
+            "Bổ sung duyệt lại và đo tốc độ demo"
+          ],
+          [
+            "D22",
+            "TV4"
+          ],
+          [
+            "E22",
+            "TV2"
+          ],
+          [
+            "F22",
+            "W3-04"
+          ],
+          [
+            "G22",
+            "10"
+          ],
+          [
+            "H22",
+            "6"
+          ],
+          [
+            "I22",
+            ""
+          ],
+          [
+            "J22",
+            "Màn hình sửa nhãn và log suy luận"
+          ],
+          [
+            "K22",
+            "Điểm thấp được chuyển cần kiểm tra; không kết luận loài lạ; đo tốc độ với cấu hình máy và cỡ lô rõ ràng; ghi cả trường hợp detector bỏ sót."
+          ],
+          [
+            "L22",
+            "Chưa bắt đầu"
+          ],
+          [
+            "M22",
+            ""
+          ],
+          [
+            "N22",
+            ""
+          ]
+        ]
+      ]
+    },
+    "sheet_name": "Cong viec"
+  }
+}

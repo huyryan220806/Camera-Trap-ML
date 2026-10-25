@@ -1,0 +1,13 @@
+{
+  "macro_f1": 0.7263366903171361,
+  "macro_precision": 0.7302792835278411,
+  "macro_recall": 0.73,
+  "accuracy": 0.73,
+  "support": 600,
+  "correct": 438,
+  "device": "cpu",
+  "model_load_seconds": 7.049906199999896,
+  "forward_softmax_seconds": 46.82928709999578,
+  "source_hash_decode_preprocess_inference_journal_seconds": 117.61745809999957,
+  "images_per_second_excluding_load": 5.101283514305112
+}

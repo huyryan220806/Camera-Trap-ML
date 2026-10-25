@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-23T06:57:39.284659+00:00",
+  "selection_rule": "First two deterministic examples already selected from top directed confusion pairs, no reranking after viewing.",
+  "source_photos_committed": false,
+  "observations": [
+    {
+      "image_id": "c7f5e6b8-8c29-11eb-9993-000d3a74c7de",
+      "source_sha256": "2c646e56d17d2bb5c19975d3452c73f844b930960b98b700f023d0fcdfbbb6ed",
+      "observation": "Ảnh thang xám, vùng góc phải dưới chứa bbox rất tối và ít chi tiết ở bản hiển thị; chưa xác minh độc lập hình thái/ground truth. Dự đoán sai vẫn có softmax0.9232366085.",
+      "scope": "Visual inspection of source raster; no label edit, no causal attribution or detector evaluation."
+    },
+    {
+      "image_id": "c85f6991-8c29-11eb-b907-000d3a74c7de",
+      "source_sha256": "754fdc9bbc9218fdb8184b4b5808e7b9b4578d43dfe6b0595aae8c8267417f7f",
+      "observation": "Con vật lớn ở tiền cảnh có nhiều vùng đầu/thân sáng bệt, một phần gần mép ảnh; chi tiết hình thái khó quan sát. GT giữ nguyên muntjac, dự đoán sambar.",
+      "scope": "Visual inspection of source raster; saturation observed, not proven cause of classification error."
+    }
+  ],
+  "scientific_cm_visual_qa": "PASS: all eight labels/axes/colorbar/values visible; rows true, columns predicted; row-normalized proportions consistent with count CSV."
+}

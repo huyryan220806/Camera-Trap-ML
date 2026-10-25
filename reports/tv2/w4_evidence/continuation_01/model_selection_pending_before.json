@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "status": "FINAL MODEL LOCK PENDING",
+  "final_selection_closed": false,
+  "prepared_utc": "2026-10-22T15:00:33.253565+00:00",
+  "locked_utc": null,
+  "model": "B2",
+  "run_id": "b2_run01",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "checkpoint_bytes": 89548866,
+  "checkpoint_verified_locally": false,
+  "config_sha256": "3000b6c7a6d4d81441e991765f0f56bcc65b1124cf3b3e6a78cf7bab504bbed8",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "dataset_version": "comparison_v1",
+  "class_map": {
+    "0": "large_antlered_muntjac",
+    "1": "annamite_striped_rabbit",
+    "2": "sambar",
+    "3": "chinese_serow",
+    "4": "common_palm_civet",
+    "5": "masked_palm_civet",
+    "6": "silver_pheasant",
+    "7": "eurasian_wild_pig"
+  },
+  "preprocessing": {
+    "resize_mode": "center_crop",
+    "resize_size": 256,
+    "image_size": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "selection_split": "val",
+  "test_used_for_selection": false,
+  "selection_rule": "Retain B2 unless B3 improves source-image Validation Macro-F1; a reported +0.005 margin was not independently verified as preregistered. B3 is lower under either rule.",
+  "validation_metrics": {
+    "b2": {
+      "macro_f1": 0.7454765175212033,
+      "macro_precision": 0.7484190016985997,
+      "macro_recall": 0.7466666666666666,
+      "accuracy": 0.7466666666666667
+    },
+    "b3": {
+      "macro_f1": 0.7410465262846234,
+      "macro_precision": 0.7406316201298413,
+      "macro_recall": 0.7433333333333333,
+      "accuracy": 0.7433333333333333
+    }
+  },
+  "validation_metric_evidence": "w4_evidence/validation_matrix_audit.json; recomputed from published Validation confusion matrices, not new model inference",
+  "tv3_decision": {
+    "model": "B2",
+    "source": "reports/tv3/TV3_W4_DECISION.md",
+    "commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+    "sha256": "a48f1724f7bf52709aeb7c82813cf4d84a48d4bb434efa6731cf5bfdfb9903ee",
+    "commit_author_time": "2026-10-22T19:30:11+07:00"
+  },
+  "review_status": "PENDING FIX",
+  "evidence_verified": {
+    "b2_checkpoint_metadata": false,
+    "b2_independent_reload": false,
+    "b3_original_validation_artifact": false,
+    "b3_checkpoint_hash": false,
+    "b3_train_val_provenance": false,
+    "decision_before_test": true
+  },
+  "historical_b2_independent_reload": {
+    "source": "reports/tv4_w3_continuation/b2_validation.json",
+    "commit": "254b40eab77b849647a2291aa0257c1b161b4da2",
+    "verified_by_tv2_this_session": false
+  },
+  "threshold_policy": {
+    "status": "NOT_SELECTED",
+    "value": null,
+    "classification": "argmax_all_images",
+    "calibrated": false
+  },
+  "evaluation_models": [
+    "B2"
+  ],
+  "b1_test": "NOT EVALUATED BY FROZEN PLAN",
+  "decision_evidence_sha256": {
+    "reports/tv2/w4_evidence/validation_matrix_audit.json": "b90c388ff74b902ef5dcf28f60a361b4ed6b122656e1f8a239b830cb84516408"
+  },
+  "test_sources_verified_locally": true,
+  "blockers": [
+    "B2 checkpoint absent at all published handoff paths on this machine; no verified downloadable B2 handoff URL found in audited reports.",
+    "B3 original validation_comparison.json, train_log.jsonl, checkpoint SHA/size and reproducible runtime provenance NOT FOUND in published W4 handoff at 65b99b9def6a147abe6a4d436c18a067f3f37dc4."
+  ],
+  "policy": "Never select model, checkpoint, threshold, augmentation or hyperparameters using Test. Do not overwrite the TV1 lock. Pending status is not permission to run Test."
+}

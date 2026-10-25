@@ -1,0 +1,440 @@
+{
+  "status": "FAIL",
+  "model": "B3",
+  "checked_utc": "2026-10-23T04:25:35.567584+00:00",
+  "checkpoint_path": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\experiments\\B3_run01\\checkpoints\\best_model.pt",
+  "checkpoint_sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b",
+  "checkpoint_bytes": 89548994,
+  "best_epoch": 14,
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "config_source_commit": "65b99b9def6a147abe6a4d436c18a067f3f37dc4",
+  "config_source_path": "configs/b3_class_weighted.json",
+  "config_source_file_sha256": "2fe2697a8aec34a58b92d6772bc39c7846d5b4cdc4505a2f62c697738bd2ad5c",
+  "embedded_config_canonical_sha256": "eaffe58bae9b1df15b77603761952dac7cc8416cbd375c755111f61fbdae91aa",
+  "class_map": {
+    "0": "large_antlered_muntjac",
+    "1": "annamite_striped_rabbit",
+    "2": "sambar",
+    "3": "chinese_serow",
+    "4": "common_palm_civet",
+    "5": "masked_palm_civet",
+    "6": "silver_pheasant",
+    "7": "eurasian_wild_pig"
+  },
+  "preprocessing": {
+    "resize_mode": "center_crop",
+    "resize_size": 256,
+    "image_size": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "train_images_sha_verified": 2800,
+  "val_images_sha_verified": 600,
+  "validation_population_sha256": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+  "validation_crop_manifest_sha256": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+  "validation_image_ids_sha256": "0c1cf64e338a02fa15a5588f0659d4cf68c102f164cfb978e3708d6d0f4ed4ed",
+  "validation_images": 600,
+  "validation_crops": 680,
+  "image_level_metrics": {
+    "macro_f1": 0.7427341579103117,
+    "macro_precision": 0.7424361314080368,
+    "macro_recall": 0.745,
+    "accuracy": 0.745
+  },
+  "confusion_matrix": [
+    [
+      41,
+      5,
+      13,
+      0,
+      2,
+      2,
+      1,
+      11
+    ],
+    [
+      0,
+      70,
+      0,
+      1,
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      9,
+      2,
+      48,
+      4,
+      1,
+      5,
+      1,
+      5
+    ],
+    [
+      0,
+      1,
+      7,
+      58,
+      2,
+      2,
+      0,
+      5
+    ],
+    [
+      1,
+      4,
+      3,
+      5,
+      59,
+      3,
+      0,
+      0
+    ],
+    [
+      4,
+      4,
+      2,
+      1,
+      8,
+      56,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      69,
+      2
+    ],
+    [
+      10,
+      0,
+      3,
+      4,
+      4,
+      7,
+      1,
+      46
+    ]
+  ],
+  "per_class_metrics": [
+    {
+      "class_id": 0,
+      "label": "large_antlered_muntjac",
+      "precision": 0.6119402985074627,
+      "recall": 0.5466666666666666,
+      "f1": 0.5774647887323944,
+      "support": 75,
+      "errors": 34
+    },
+    {
+      "class_id": 1,
+      "label": "annamite_striped_rabbit",
+      "precision": 0.813953488372093,
+      "recall": 0.9333333333333333,
+      "f1": 0.8695652173913043,
+      "support": 75,
+      "errors": 5
+    },
+    {
+      "class_id": 2,
+      "label": "sambar",
+      "precision": 0.631578947368421,
+      "recall": 0.64,
+      "f1": 0.6357615894039735,
+      "support": 75,
+      "errors": 27
+    },
+    {
+      "class_id": 3,
+      "label": "chinese_serow",
+      "precision": 0.7733333333333333,
+      "recall": 0.7733333333333333,
+      "f1": 0.7733333333333333,
+      "support": 75,
+      "errors": 17
+    },
+    {
+      "class_id": 4,
+      "label": "common_palm_civet",
+      "precision": 0.7564102564102564,
+      "recall": 0.7866666666666666,
+      "f1": 0.7712418300653595,
+      "support": 75,
+      "errors": 16
+    },
+    {
+      "class_id": 5,
+      "label": "masked_palm_civet",
+      "precision": 0.7272727272727273,
+      "recall": 0.7466666666666667,
+      "f1": 0.7368421052631579,
+      "support": 75,
+      "errors": 19
+    },
+    {
+      "class_id": 6,
+      "label": "silver_pheasant",
+      "precision": 0.9583333333333334,
+      "recall": 0.92,
+      "f1": 0.9387755102040817,
+      "support": 75,
+      "errors": 6
+    },
+    {
+      "class_id": 7,
+      "label": "eurasian_wild_pig",
+      "precision": 0.6666666666666666,
+      "recall": 0.6133333333333333,
+      "f1": 0.6388888888888888,
+      "support": 75,
+      "errors": 29
+    }
+  ],
+  "validation_checks": {
+    "checkpoint_cm_matches": false,
+    "checkpoint_rounded_metrics_match": false,
+    "published_cm_matches": false,
+    "published_error_ids_and_labels_match": false
+  },
+  "stored_image_level_metrics_match": false,
+  "published_validation_cm_and_error_ids_match": false,
+  "checkpoint_image_level_metrics": {
+    "macro_f1": 0.741,
+    "macro_precision": 0.7406,
+    "macro_recall": 0.7433,
+    "accuracy": 0.7433
+  },
+  "checkpoint_confusion_matrix": [
+    [
+      41,
+      5,
+      13,
+      0,
+      2,
+      2,
+      1,
+      11
+    ],
+    [
+      0,
+      70,
+      0,
+      1,
+      2,
+      2,
+      0,
+      0
+    ],
+    [
+      9,
+      2,
+      47,
+      4,
+      1,
+      5,
+      1,
+      6
+    ],
+    [
+      0,
+      1,
+      7,
+      58,
+      2,
+      2,
+      0,
+      5
+    ],
+    [
+      1,
+      4,
+      3,
+      5,
+      59,
+      3,
+      0,
+      0
+    ],
+    [
+      4,
+      4,
+      2,
+      1,
+      8,
+      56,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      69,
+      2
+    ],
+    [
+      10,
+      0,
+      3,
+      4,
+      4,
+      7,
+      1,
+      46
+    ]
+  ],
+  "cm_difference_from_checkpoint": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "error_records_only_in_published": [
+    "cc293eb4-8c29-11eb-81b9-000d3a74c7de"
+  ],
+  "error_records_only_in_reloaded": [],
+  "error_records_with_changed_labels": {},
+  "unweighted_parent_mean_crop_validation_CE": 0.7961345728238424,
+  "checkpoint_reported_validation_CE": 0.7962,
+  "validation_loss_definition": "Mean unweighted crop CE within parent, then mean parents; this is NOT B3's weighted training loss",
+  "crop_frequency_class_weights_reconstructed_from_frozen_train": [
+    1.0726382476490803,
+    1.1002203740171996,
+    0.914672519966793,
+    1.0696586969611663,
+    1.0939691218921017,
+    1.0908700592238523,
+    0.855726957568933,
+    0.8022440227208747
+  ],
+  "parent_inverse_frequency_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "native_adapter_max_logit_delta_all_val_crops": 0.0,
+  "checkpoint_unchanged": true,
+  "fresh_process": true,
+  "weights_only_safe_load": true,
+  "run_id_embedded": null,
+  "training_commit_embedded": null,
+  "original_training_log_available": false,
+  "reported_final_training_epoch": 21,
+  "reported_final_training_epoch_independently_verified": false,
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.8.0+cu126",
+    "device": "cuda",
+    "num_threads": 4,
+    "cuda_build": "12.6",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false
+  },
+  "model_load_seconds": 1.2233780999999908,
+  "validation_wall_seconds": 71.8634462,
+  "test_manifest_opened": false,
+  "test_inference_performed": false,
+  "training_performed": false
+}

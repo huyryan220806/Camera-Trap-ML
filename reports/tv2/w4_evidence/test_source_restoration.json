@@ -1,0 +1,9 @@
+{
+  "source_images": 600,
+  "verified": 600,
+  "restored": 1,
+  "failures": [],
+  "model_inference_performed": false,
+  "frozen_manifest_sha256": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2",
+  "labels_or_splits_changed": false
+}

@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-10-23T06:49:52.055159+00:00",
+  "lock_commit": "2a750c30c43d3b895577cf53d76f2d507321ec18",
+  "commit_time": "2026-10-23T13:49:30+07:00",
+  "selection_sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
+  "protocol_sha256": "0c0b184d79167575cc18ca5bc3dfd7047d9d9799c43daa3bdf6e44d531a91b19",
+  "committed_byte_checks": "PASS",
+  "gate": "PASS",
+  "official_run_preexisting": false,
+  "test_inference_performed": false,
+  "execution_command": "outputs/w2_final_handoff/tv4_env/Scripts/python.exe scripts/evaluate_w4_test.py --checkpoint experiments/B2_run01/checkpoints/best_model.pt --execute"
+}

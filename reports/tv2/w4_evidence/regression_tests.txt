@@ -1,0 +1,846 @@
+test_a_smoke_preserves_completed_run_bytes_and_hashes (test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes) ... ERROR
+test_b_smoke_with_missing_validation_image_preserves_run (test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run) ... ERROR
+test_c_existing_run_rejected_before_preparation (test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation) ... ok
+test_d_atomic_publication_rolls_back_all_files (test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files) ... FAIL
+test_d_prepare_failure_after_train_inspection_publishes_nothing (test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing) ... ok
+test_e_changed_image_id_rejected (test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected) ... ok
+test_f_changed_class_map_rejected (test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected) ... ok
+test_g_added_deleted_modified_validation_rows_rejected (test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected) ... ok
+test_h_changed_source_rejected (test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected) ... ok
+test_i_changed_decodable_image_bytes_rejected (test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected) ... ok
+test_inverse_checkpoint_mapping_checked (test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked) ... ok
+test_missing_class_hash_requires_exact_mapping (test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping) ... ok
+test_missing_frozen_validation_hash_rejected (test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected) ... ok
+test_new_fixture_run_can_train_save_and_verify_once (test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once) ... ERROR
+test_prepare_cli_rejects_completed_run (test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run) ... ok
+test_reservation_rejects_each_existing_run_marker (test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker) ... ok
+test_selected_inputs_allow_first_reservation_but_not_second (test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second) ... ok
+test_smoke_exception_preserves_run (test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run) ... ok
+test_source_membership_checked_even_with_matching_manifest_hash (test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash) ... ok
+test_source_row_path_mismatch_rejected (test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected) ... ok
+test_successful_validator_runs_inference_after_provenance (test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance) ... ok
+test_v1_without_image_hash_reports_limitation (test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation) ... ok
+test_v2_local_path_and_sha_verified (test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified) ... ok
+test_agreement_must_pin_actual_settings (test_b1.B1Tests.test_agreement_must_pin_actual_settings) ... ok
+test_box_label_and_geometry (test_b1.B1Tests.test_box_label_and_geometry) ... ok
+test_class_map_hash_and_mapping (test_b1.B1Tests.test_class_map_hash_and_mapping) ... ok
+test_crop_label_split_and_annotation_changes_fail (test_b1.B1Tests.test_crop_label_split_and_annotation_changes_fail) ... ok
+test_duplicate_ids_and_paths (test_b1.B1Tests.test_duplicate_ids_and_paths) ... ok
+test_empty_invalid_label_and_missing_class (test_b1.B1Tests.test_empty_invalid_label_and_missing_class) ... ok
+test_end_to_end_real_resnet_checkpoint_and_tamper_rejection (test_b1.B1Tests.test_end_to_end_real_resnet_checkpoint_and_tamper_rejection) ... ERROR
+test_exclusion_accounting (test_b1.B1Tests.test_exclusion_accounting) ... ok
+test_failure_keeps_reserved_run_and_records_status (test_b1.B1Tests.test_failure_keeps_reserved_run_and_records_status) ... ERROR
+test_frozen_data_does_not_imply_protocol_agreement (test_b1.B1Tests.test_frozen_data_does_not_imply_protocol_agreement) ... ok
+test_identical_content_with_conflicting_labels_rejected (test_b1.B1Tests.test_identical_content_with_conflicting_labels_rejected) ... ok
+test_invalid_configs (test_b1.B1Tests.test_invalid_configs) ... ok
+test_location_sequence_and_content_leakage (test_b1.B1Tests.test_location_sequence_and_content_leakage) ... ok
+test_manifest_hash_drift (test_b1.B1Tests.test_manifest_hash_drift) ... ok
+test_missing_corrupt_and_changed_images_fail_without_filtering (test_b1.B1Tests.test_missing_corrupt_and_changed_images_fail_without_filtering) ... ok
+test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail (test_b1.B1Tests.test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail) ... ok
+test_official_proposed_config_fails_before_run_or_model (test_b1.B1Tests.test_official_proposed_config_fails_before_run_or_model) ... ok
+test_path_escape_rejected (test_b1.B1Tests.test_path_escape_rejected) ... ok
+test_pixel_hash_is_recomputed (test_b1.B1Tests.test_pixel_hash_is_recomputed) ... ok
+test_receipt_checks_real_git_bytes (test_b1.B1Tests.test_receipt_checks_real_git_bytes) ... error: could not write config file C:/Users/Huỳnh Phúc/AppData/Local/Packages/sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}/AC/Temp/test_B1_06_6rcyx/repo/.git/config: Permission denied
+fatal: could not set 'core.repositoryformatversion' to '0'
+ERROR
+test_resnet_backbone_gradients_batchnorm_and_step (test_b1.B1Tests.test_resnet_backbone_gradients_batchnorm_and_step) ... ok
+test_smoke_preserves_project_and_existing_run (test_b1.B1Tests.test_smoke_preserves_project_and_existing_run) ... ok
+test_source_membership_mismatch (test_b1.B1Tests.test_source_membership_mismatch) ... ok
+test_test_row_rejected (test_b1.B1Tests.test_test_row_rejected) ... ok
+test_transform_and_loader_reproducibility (test_b1.B1Tests.test_transform_and_loader_reproducibility) ... ok
+test_user_confirmed_team_protocol_still_requires_budget (test_b1.B1Tests.test_user_confirmed_team_protocol_still_requires_budget) ... ok
+test_valid_fixture_counts_and_no_test (test_b1.B1Tests.test_valid_fixture_counts_and_no_test) ... ok
+test_b2_handoff_metrics (unittest.loader._FailedTest.test_b2_handoff_metrics) ... ERROR
+test_comparison (unittest.loader._FailedTest.test_comparison) ... ERROR
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+test_download_subset (unittest.loader._FailedTest.test_download_subset) ... ERROR
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+test_manifest_v2 (unittest.loader._FailedTest.test_manifest_v2) ... ERROR
+test_absolute_and_relative_box (test_metadata.MetadataTests.test_absolute_and_relative_box) ... ok
+test_audit_detects_sequence_and_location_leakage (test_metadata.MetadataTests.test_audit_detects_sequence_and_location_leakage) ... ok
+test_infeasible_split_is_rejected (test_metadata.MetadataTests.test_infeasible_split_is_rejected) ... ok
+test_label_normalization_does_not_merge_distinct_species (test_metadata.MetadataTests.test_label_normalization_does_not_merge_distinct_species) ... ok
+test_quality_and_ambiguous_labels_not_species (test_metadata.MetadataTests.test_quality_and_ambiguous_labels_not_species) ... ok
+test_reject_invalid_and_ambiguous_boxes (test_metadata.MetadataTests.test_reject_invalid_and_ambiguous_boxes) ... ok
+test_split_is_reproducible_and_location_disjoint (test_metadata.MetadataTests.test_split_is_reproducible_and_location_disjoint) ... ok
+test_resume_tv1_w2 (unittest.loader._FailedTest.test_resume_tv1_w2) ... ERROR
+test_git_hash_binding_and_local_tamper_fail (test_tv1_handoff.NativeTV1Tests.test_git_hash_binding_and_local_tamper_fail) ... ok
+test_image_path_cannot_be_double_joined_or_escape (test_tv1_handoff.NativeTV1Tests.test_image_path_cannot_be_double_joined_or_escape) ... ok
+test_metadata_pass_never_claims_image_pass (test_tv1_handoff.NativeTV1Tests.test_metadata_pass_never_claims_image_pass) ... ok
+test_missing_validator_and_failed_attestation_fail (test_tv1_handoff.NativeTV1Tests.test_missing_validator_and_failed_attestation_fail) ... ok
+test_native_data_is_not_protocol_approval (test_tv1_handoff.NativeTV1Tests.test_native_data_is_not_protocol_approval) ... ok
+test_native_views_rounding_multicrop_and_image_checks (test_tv1_handoff.NativeTV1Tests.test_native_views_rounding_multicrop_and_image_checks) ... ok
+test_republished_bad_crop_or_projection_is_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_bad_crop_or_projection_is_rejected) ... ok
+test_republished_leakage_attestation_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_leakage_attestation_rejected) ... ok
+test_missing_bbox (test_tv3_crop_eda.BoxEdgeTests.test_missing_bbox) ... ok
+test_negative_coordinates_rejected (test_tv3_crop_eda.BoxEdgeTests.test_negative_coordinates_rejected) ... ok
+test_one_pixel_box_not_scaled (test_tv3_crop_eda.BoxEdgeTests.test_one_pixel_box_not_scaled) ... ok
+test_overflow_beyond_tolerance_rejected (test_tv3_crop_eda.BoxEdgeTests.test_overflow_beyond_tolerance_rejected) ... ok
+test_overflow_within_tolerance_is_clipped (test_tv3_crop_eda.BoxEdgeTests.test_overflow_within_tolerance_is_clipped) ... ok
+test_all_downloads_fail_returns_zero_saved (test_tv3_crop_eda.DownloadFailureTests.test_all_downloads_fail_returns_zero_saved) ... ok
+test_empty_selection_returns_all_zero_counts (test_tv3_crop_eda.DownloadFailureTests.test_empty_selection_returns_all_zero_counts) ... ok
+test_failed_downloads_are_logged_and_not_counted (test_tv3_crop_eda.DownloadFailureTests.test_failed_downloads_are_logged_and_not_counted) ... ok
+test_decimal_coordinates_are_read_as_float_and_accepted (test_tv3_crop_eda.IjsonDecimalTests.test_decimal_coordinates_are_read_as_float_and_accepted) ... ok
+test_does_not_fill_from_val_or_test (test_tv3_crop_eda.SamplingTests.test_does_not_fill_from_val_or_test) ... ok
+test_images_without_boxes_skipped (test_tv3_crop_eda.SamplingTests.test_images_without_boxes_skipped) ... ok
+test_only_unique_train_ids (test_tv3_crop_eda.SamplingTests.test_only_unique_train_ids) ... ok
+test_seed_is_reproducible (test_tv3_crop_eda.SamplingTests.test_seed_is_reproducible) ... ok
+test_box_clamped_at_boundary (test_tv3_crop_pipeline.ClampBoxTests.test_box_clamped_at_boundary) ... ERROR
+test_box_completely_outside_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_box_completely_outside_returns_none) ... ERROR
+test_negative_x_clamped_to_zero (test_tv3_crop_pipeline.ClampBoxTests.test_negative_x_clamped_to_zero) ... ERROR
+test_normal_box (test_tv3_crop_pipeline.ClampBoxTests.test_normal_box) ... ERROR
+test_one_pixel_box_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_one_pixel_box_returns_none) ... ERROR
+test_too_small_crop_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_too_small_crop_returns_none) ... ERROR
+test_zero_width_after_clamp_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_zero_width_after_clamp_returns_none) ... ERROR
+test_class_counts (test_tv3_crop_pipeline.CropDatasetTests.test_class_counts) ... ok
+test_dataset_length (test_tv3_crop_pipeline.CropDatasetTests.test_dataset_length) ... ok
+test_duplicate_crop_id_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_duplicate_crop_id_raises_valueerror)
+M\u1ee5c 1 fix: Dataset ph\u1ea3i t\u1eeb ch\u1ed1i crop_id tr�ng. ... ok
+test_getitem_returns_tensor_and_int (test_tv3_crop_pipeline.CropDatasetTests.test_getitem_returns_tensor_and_int) ... ok
+test_missing_manifest_raises_filenotfound (test_tv3_crop_pipeline.CropDatasetTests.test_missing_manifest_raises_filenotfound) ... ok
+test_wrong_split_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_wrong_split_raises_valueerror)
+M\u1ee5c 3 fix: D\xf2ng c� split sai ph\u1ea3i b\u1ecb t\u1eeb ch\u1ed1i. ... ok
+test_box_without_label_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_box_without_label_is_skipped) ... ERROR
+test_decode_failure_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_decode_failure_logged) ... ERROR
+test_download_failure_logged_not_raised (test_tv3_crop_pipeline.ProcessRecordTests.test_download_failure_logged_not_raised) ... ERROR
+test_invalid_geometry_box_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_invalid_geometry_box_is_skipped) ... ERROR
+test_multi_animal_image_uses_box_label_not_image_label (test_tv3_crop_pipeline.ProcessRecordTests.test_multi_animal_image_uses_box_label_not_image_label)
+\u1ea2nh c� nhi\u1ec1u lo�i: m\u1ed7i box d�ng nh\xe3n ri�ng c\u1ee7a box ��. ... ERROR
+test_normal_record_produces_one_crop_row (test_tv3_crop_pipeline.ProcessRecordTests.test_normal_record_produces_one_crop_row) ... ERROR
+test_one_bad_box_does_not_block_other_good_boxes (test_tv3_crop_pipeline.ProcessRecordTests.test_one_bad_box_does_not_block_other_good_boxes) ... ERROR
+test_record_without_boxes_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_record_without_boxes_is_skipped) ... ERROR
+test_source_hash_mismatch_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_source_hash_mismatch_logged)
+M\u1ee5c 4: \u1ea2nh �\u1ecdc ��\u1ee3c nh�ng hash kh�ng kh\u1edbp quality.sha256. ... ERROR
+test_split_is_inherited_from_manifest_not_box (test_tv3_crop_pipeline.ProcessRecordTests.test_split_is_inherited_from_manifest_not_box) ... ERROR
+test_bad_box_fatal_does_not_block_good_box (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_bad_box_fatal_does_not_block_good_box)
+M\u1ee5c 2 fix: Box x\u1ea5u b\u1ecb ��nh fatal, box t\u1ed1t c\xf2n l\u1ea1i ��\u1ee3c b\u1ecf qua ��ng c�ch. ... ERROR
+test_create_metadata_on_fresh_output (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_create_metadata_on_fresh_output)
+V\xf2ng 3 m\u1ee5c 2: Output m\u1edbi tinh (ch�a c� artifact) \u2192 t\u1ea1o meta OK. ... ERROR
+test_fail_closed_missing_metadata_with_existing_artifact (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_fail_closed_missing_metadata_with_existing_artifact)
+V\xf2ng 3 m\u1ee5c 2: C� manifest nh�ng thi\u1ebfu run_meta \u2192 ph\u1ea3i raise. ... ERROR
+test_hash_mismatch_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_hash_mismatch_not_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i nh�ng hash sai \u2192 check_completed_per_box tr\u1ea3 False. ... ERROR
+test_http_hash_match_accepted (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_match_accepted)
+V\xf2ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP v� hash ��ng \u2192 tr\u1ea3 bytes OK. ... ERROR
+test_http_hash_mismatch_rejected (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_mismatch_rejected)
+V\xf2ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP nh�ng hash sai quality.sha256 ph\u1ea3i b\u1ecb t\u1eeb ch\u1ed1i. ... ERROR
+test_load_jsonl_safe_raises_on_mid_file_error (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_load_jsonl_safe_raises_on_mid_file_error)
+V\xf2ng 3 m\u1ee5c 4: L\u1ed7i JSON \u1edf gi\u1eefa file ph\u1ea3i raise, kh�ng b\u1ecf qua. ... ERROR
+test_missing_file_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_missing_file_not_completed)
+M\u1ee5c 1 fix: File \u1ea3nh b\u1ecb m\u1ea5t \u2192 check_completed_per_box tr\u1ea3 False. ... ERROR
+test_partial_box_completion_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_partial_box_completion_not_completed)
+M\u1ee5c 2 fix: Ng\u1eaft gi\u1eefa \u1ea3nh c� 2 box \u2192 ch\u1ec9 1 crop \u2192 ch�a xong. ... ERROR
+test_repair_jsonl_fixes_file_on_disk (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_fixes_file_on_disk)
+V\xf2ng 3 m\u1ee5c 4: repair_jsonl_if_needed ghi l\u1ea1i file s\u1ea1ch tr�n �\u0129a. ... ERROR
+test_repair_jsonl_no_pending_still_clean (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_no_pending_still_clean)
+V\xf2ng 3 m\u1ee5c 4: D� pending=0, file v\u1eabn ��\u1ee3c s\u1eeda s\u1ea1ch. ... ERROR
+test_upsert_rows_no_duplicate (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_upsert_rows_no_duplicate)
+M\u1ee5c 1 fix: Ch\u1ea1y l\u1ea1i sau m\u1ea5t file \u2192 kh�ng t\u1ea1o d\xf2ng tr�ng crop_id. ... ERROR
+test_valid_file_is_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_valid_file_is_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i v� hash ��ng \u2192 check_completed_per_box tr\u1ea3 True. ... ERROR
+test_drop_last_false_no_crop_lost (test_tv3_w3_b2.B2DatasetValidationTests.test_drop_last_false_no_crop_lost)
+L\u1ed7i 4: DataLoader ph\u1ea3i gi\u1eef �\u1ee7 t\u1ea5t c\u1ea3 crop, kh�ng drop batch cu\u1ed1i. ... ok
+test_fail_on_duplicate_crop_id (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_duplicate_crop_id)
+L\u1ed7i 3: crop_id tr�ng ph\u1ea3i raise ValueError. ... ok
+test_fail_on_multiple_labels_per_image (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_multiple_labels_per_image)
+L\u1ed7i 3: c�ng image_id c� nhi\u1ec1u nh\xe3n kh�c nhau ph\u1ea3i raise ValueError. ... ok
+test_fail_on_split_mismatch (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_split_mismatch)
+Dataset y�u c\u1ea7u val nh�ng manifest ghi train \u2192 raise. ... ok
+test_fail_on_unknown_label (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_unknown_label) ... ok
+test_fail_on_zero_size_box (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_zero_size_box)
+L\u1ed7i 3: box c� k�ch th�\u1edbc <= 0 ph\u1ea3i raise ValueError. ... ok
+test_preflight_fails_if_sha256_missing (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_missing)
+L\u1ed7i 3: preflight b\u1eadt m� thi\u1ebfu sha256 ph\u1ea3i raise, kh�ng b\u1ecf qua. ... ok
+test_preflight_fails_if_sha256_wrong (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_wrong)
+Preflight b\u1eadt, hash sai \u2192 raise. ... ok
+test_sample_weight_is_inverse_crop_count (test_tv3_w3_b2.B2DatasetValidationTests.test_sample_weight_is_inverse_crop_count)
+V\xec 2 crop c�ng img_001, m\u1ed7i crop ph\u1ea3i c� sample_weight = 0.5. ... ok
+test_valid_manifest_loads_ok (test_tv3_w3_b2.B2DatasetValidationTests.test_valid_manifest_loads_ok) ... ok
+test_checkpoint_save_and_load (test_tv3_w3_b2.B2ModelTests.test_checkpoint_save_and_load) ... ok
+test_default_dropout_is_zero_per_protocol (test_tv3_w3_b2.B2ModelTests.test_default_dropout_is_zero_per_protocol)
+Protocol: kh�ng d�ng dropout trong B2. ... ok
+test_model_forward_shape_and_probabilities (test_tv3_w3_b2.B2ModelTests.test_model_forward_shape_and_probabilities) ... ok
+test_anti_overwrite_refuses_existing_run_dir (test_tv3_w3_b2.GateAndCheckpointTests.test_anti_overwrite_refuses_existing_run_dir)
+Issue 3: H\u1ec7 th\u1ed1ng ph\u1ea3i t\u1eeb ch\u1ed1i ghi �� n\u1ebfu th� m\u1ee5c run �\xe3 t\u1ed3n t\u1ea1i v� ch\u1ee9a file. ... 21:33:58 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:33:58 [INFO] Gate W3-01 OK: provenance.json SHA-256 kh\u1edbp (d9fd5461e47be8b7...)
+21:33:58 [INFO] Gate W3-01 OK: t\u1ea5t c\u1ea3 file d\u1eef li\u1ec7u SHA-256 kh\u1edbp v\u1edbi provenance.json (3 file �\xe3 x�c minh)
+21:33:58 [ERROR]
+======================================================================
+[L\u1ed6I T\u1eea CH\u1ed0I GHI �� RUN C\u0168]
+Th� m\u1ee5c run 'D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\b2_overwrite_test_zqccdfgu\test_run' �\xe3 t\u1ed3n t\u1ea1i v� ch\u1ee9a d\u1eef li\u1ec7u!
+�\u1ec3 b\u1ea3o v\u1ec7 k\u1ebft qu\u1ea3 th� nghi\u1ec7m tr�\u1edbc ��, h\u1ec7 th\u1ed1ng t\u1eeb ch\u1ed1i ghi ��.
+H\xe3y �\u1ed5i run_id trong config ho\u1eb7c truy\u1ec1n --run-id m\u1edbi (v� d\u1ee5: b2_run02).
+======================================================================
+ok
+test_best_epoch_tracking_accuracy (test_tv3_w3_b2.GateAndCheckpointTests.test_best_epoch_tracking_accuracy)
+L\u1ed7i 6: best_epoch ph\u1ea3i l� epoch th\u1eadt c\u1ee7a best F1, kh�ng ph\u1ea3i epoch cu\u1ed1i. ... 21:33:58 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:33:58 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_ckpt_test_qbctskeb
+21:33:58 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+21:33:58 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 2 epochs...
+21:34:00 [INFO] Epoch [1/2] (1.7s) Loss=2.2769 Acc=18.8% | Val Loss=2.1150 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:34:00 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:34:01 [INFO] Epoch [2/2] (0.5s) Loss=2.2749 Acc=6.2% | Val Loss=2.0896 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+21:34:01 [INFO] Ho�n t\u1ea5t sau 2.5s! Best epoch=1, Best ImgF1=6.25%
+21:34:01 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_ckpt_test_qbctskeb\best_model.pt
+21:34:02 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint th�nh c�ng: metadata �\u1ea7y �\u1ee7, m� h\xecnh s\u1eb5n s�ng cho TV4.
+21:34:02 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_ckpt_test_qbctskeb\validation_comparison.md
+ok
+test_checkpoint_contains_full_tv4_metadata_and_reloads (test_tv3_w3_b2.GateAndCheckpointTests.test_checkpoint_contains_full_tv4_metadata_and_reloads)
+Issue 4: Checkpoint ph\u1ea3i ch\u1ee9a class_map, id_to_label, preprocessing, is_official. ... 21:34:02 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:34:02 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_meta_test_rybdpqyp
+21:34:02 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+21:34:03 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 1 epochs...
+21:34:04 [INFO] Epoch [1/1] (0.6s) Loss=2.2769 Acc=18.8% | Val Loss=2.1150 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:34:04 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:34:04 [INFO] Ho�n t\u1ea5t sau 1.1s! Best epoch=1, Best ImgF1=6.25%
+21:34:04 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_meta_test_rybdpqyp\best_model.pt
+21:34:05 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint th�nh c�ng: metadata �\u1ea7y �\u1ee7, m� h\xecnh s\u1eb5n s�ng cho TV4.
+21:34:05 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_meta_test_rybdpqyp\validation_comparison.md
+ok
+test_gate_fails_if_files_missing (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_files_missing)
+L\u1ed7i 3: Gate ph\u1ea3i t\u1eeb ch\u1ed1i khi file kh�ng t\u1ed3n t\u1ea1i. ... 21:34:06 [ERROR]
+======================================================================
+[L\u1ed6I TI�U CH� NGHI\u1ec6M THU TU\u1ea6N 3]
+Ch�a th\u1ec3 ch\u1ea1y hu\u1ea5n luy\u1ec7n B2 ch�nh th\u1ee9c v\xec thi\u1ebfu file kh�a d\u1eef li\u1ec7u W3-01:
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\processed\non_existent_xyz\b2\train.jsonl
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\processed\non_existent_xyz\b2\val.jsonl
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\processed\non_existent_xyz\class_map.json
+  - D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\processed\non_existent_xyz\provenance.json
+
+Quy t\u1eafc: 'Ch\u1ec9 ch\u1ea1y ch�nh th\u1ee9c sau khi W3-01 kh�a manifest'.
+H\xe3y l\u1ea5y d\u1eef li\u1ec7u t\u1eeb nh�nh TV1 (origin/feat/metadata-split) tr�\u1edbc khi ch\u1ea1y.
+�\u1ec3 ki\u1ec3m tra pipeline, d�ng: python scripts/train_b2.py --smoke-test
+======================================================================
+ok
+test_gate_fails_if_provenance_sha_wrong (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_provenance_sha_wrong)
+L\u1ed7i 3: Gate ph\u1ea3i t\u1eeb ch\u1ed1i n\u1ebfu provenance.json c� SHA-256 sai. ... 21:34:06 [ERROR]
+======================================================================
+[L\u1ed6I X�C MINH SNAPSHOT]
+provenance.json t\u1ed3n t\u1ea1i nh�ng SHA-256 kh�ng kh\u1edbp!
+  K\u1ef3 v\u1ecdng (�\xe3 th\u1ed1ng nh\u1ea5t v\u1edbi TV2): d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f
+  Th\u1ef1c t\u1ebf:                          d424d4f98e4981f8cdee4072972da4a850ac48f77564618864ed83fd34511911
+  File: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\data\tmpsj4fumnz\provenance.json
+
+Snapshot n�y KH�NG ph\u1ea3i b\u1ea3n �\xe3 kh�a t\u1eeb TV1 commit 7e9b194.
+Kh�ng ��\u1ee3c train tr�n d\u1eef li\u1ec7u ch�a x�c minh.
+======================================================================
+ok
+test_image_grouped_batch_sampler_keeps_all_parent_crops_in_same_batch (test_tv3_w3_b2.GateAndCheckpointTests.test_image_grouped_batch_sampler_keeps_all_parent_crops_in_same_batch)
+Issue 2: To�n b\u1ed9 crop c\u1ee7a c�ng image_id ph\u1ea3i n\u1eb1m tr\u1ecdn v\u1eb9n trong m\u1ed9t batch. ... ok
+test_last_checkpoint_contains_last_epoch_not_best_metrics (test_tv3_w3_b2.GateAndCheckpointTests.test_last_checkpoint_contains_last_epoch_not_best_metrics)
+L\u1ed7i 6: last_model.pt ph\u1ea3i ch\u1ee9a metrics c\u1ee7a epoch cu\u1ed1i, kh�ng ph\u1ea3i best. ... 21:34:06 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:34:06 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_last_test_ji0_m53g
+21:34:06 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+21:34:06 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 2 epochs...
+21:34:07 [INFO] Epoch [1/2] (0.8s) Loss=2.2769 Acc=18.8% | Val Loss=2.1150 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:34:07 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:34:08 [INFO] Epoch [2/2] (0.5s) Loss=2.2749 Acc=6.2% | Val Loss=2.0896 CropF1=0.0% ImgAcc=0.0% ImgF1=0.0%
+21:34:08 [INFO] Ho�n t\u1ea5t sau 1.7s! Best epoch=1, Best ImgF1=6.25%
+21:34:08 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_last_test_ji0_m53g\best_model.pt
+21:34:09 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint th�nh c�ng: metadata �\u1ea7y �\u1ee7, m� h\xecnh s\u1eb5n s�ng cho TV4.
+21:34:09 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_last_test_ji0_m53g\validation_comparison.md
+ok
+test_smoke_log_has_synthetic_marker (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_log_has_synthetic_marker)
+L\u1ed7i 2: log file c\u1ee7a smoke-test ph\u1ea3i c� SYNTHETIC_SMOKE marker \u1edf d\xf2ng �\u1ea7u. ... 21:34:09 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:34:09 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_log_test_blwc493q
+21:34:09 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+21:34:10 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 1 epochs...
+21:34:11 [INFO] Epoch [1/1] (1.4s) Loss=2.2769 Acc=18.8% | Val Loss=2.1150 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:34:12 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:34:12 [INFO] Ho�n t\u1ea5t sau 1.8s! Best epoch=1, Best ImgF1=6.25%
+21:34:12 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_log_test_blwc493q\best_model.pt
+21:34:13 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint th�nh c�ng: metadata �\u1ea7y �\u1ee7, m� h\xecnh s\u1eb5n s�ng cho TV4.
+21:34:13 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_log_test_blwc493q\validation_comparison.md
+ok
+test_smoke_test_uses_isolated_tmp_dir (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_test_uses_isolated_tmp_dir)
+L\u1ed7i 2: Smoke-test kh�ng ��\u1ee3c �\u1ee5ng v�o th� m\u1ee5c output ch�nh th\u1ee9c. ... 21:34:13 [INFO] S\u1eed d\u1ee5ng thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n: cuda
+21:34:13 [INFO] [SMOKE-TEST] S\u1eed d\u1ee5ng Dummy Dataset (16 train / 8 val m\u1eabu), output: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_smoke_akbf3yav
+21:34:13 [INFO] Kh\u1edfi t\u1ea1o B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+21:34:13 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B2 v\u1edbi ng�n s�ch 1 epochs...
+21:34:14 [INFO] Epoch [1/1] (0.5s) Loss=2.2769 Acc=18.8% | Val Loss=2.1150 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:34:14 [INFO] --> Best checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:34:14 [INFO] Ho�n t\u1ea5t sau 0.8s! Best epoch=1, Best ImgF1=6.25%
+21:34:14 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_smoke_akbf3yav\best_model.pt
+21:34:15 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint th�nh c�ng: metadata �\u1ea7y �\u1ee7, m� h\xecnh s\u1eb5n s�ng cho TV4.
+21:34:15 [INFO] �\xe3 xu\u1ea5t b\u1ea3ng so s�nh t\u1ea1i: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\b2_smoke_akbf3yav\validation_comparison.md
+ok
+test_aggregation_mean_probability_and_argmax (test_tv3_w3_b2.ImageAggregationTests.test_aggregation_mean_probability_and_argmax) ... ok
+test_format_validation_markdown_table (test_tv3_w3_b2.ImageAggregationTests.test_format_validation_markdown_table) ... ok
+test_single_crop_per_image_matches_standard_ce (test_tv3_w3_b2.PerImageLossTests.test_single_crop_per_image_matches_standard_ce)
+Khi m\u1ed7i \u1ea3nh ch\u1ec9 c� 1 crop, k\u1ebft qu\u1ea3 ph\u1ea3i b\u1eb1ng CrossEntropyLoss th�ng th�\u1eddng. ... ok
+test_two_crops_per_image_gives_mean_of_means (test_tv3_w3_b2.PerImageLossTests.test_two_crops_per_image_gives_mean_of_means)
+\u1ea2nh A c� 2 crop, \u1ea3nh B c� 1 crop: loss ph\u1ea3i l� mean(mean_A, mean_B), bukan mean c\u1ee7a 3 crops. ... ok
+test_tv4_classifier (unittest.loader._FailedTest.test_tv4_classifier) ... ERROR
+test_tv4_demo (unittest.loader._FailedTest.test_tv4_demo) ... ERROR
+test_base_packages_do_not_eagerly_load_torch (test_week3_integration.WeekThreeIntegrationTests.test_base_packages_do_not_eagerly_load_torch) ... ok
+test_both_evaluation_interfaces_export_original_functions (test_week3_integration.WeekThreeIntegrationTests.test_both_evaluation_interfaces_export_original_functions) ... ok
+test_native_model_interface_preserved (test_week3_integration.WeekThreeIntegrationTests.test_native_model_interface_preserved) ... ok
+
+======================================================================
+ERROR: test_a_smoke_preserves_completed_run_bytes_and_hashes (test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 114, in test_a_smoke_preserves_completed_run_bytes_and_hashes
+    self.smoke()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 102, in smoke
+    b0.train(self.config_path, smoke=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 171, in train
+    _execute_train(config, Path(temporary), class_map, smoke=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 185, in _execute_train
+    rows, counts = prepare_data(config, run_dir, class_names)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 71, in prepare_data
+    atomic_write_files(payloads)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 55, in atomic_write_files
+    os.replace(temporary, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\B0_smoke_eeryvfq3\\.b0-n9tu53cf' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\B0_smoke_eeryvfq3\\used_train.jsonl'
+
+======================================================================
+ERROR: test_b_smoke_with_missing_validation_image_preserves_run (test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 120, in test_b_smoke_with_missing_validation_image_preserves_run
+    self.smoke()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 102, in smoke
+    b0.train(self.config_path, smoke=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 171, in train
+    _execute_train(config, Path(temporary), class_map, smoke=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 185, in _execute_train
+    rows, counts = prepare_data(config, run_dir, class_names)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 71, in prepare_data
+    atomic_write_files(payloads)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 55, in atomic_write_files
+    os.replace(temporary, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\B0_smoke_c9flja03\\.b0-twc036sc' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\B0_smoke_c9flja03\\used_train.jsonl'
+
+======================================================================
+ERROR: test_new_fixture_run_can_train_save_and_verify_once (test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 190, in test_new_fixture_run_can_train_save_and_verify_once
+    b0.train(self.config_path)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 174, in train
+    _execute_train(config, run_dir, class_map, smoke=False)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 185, in _execute_train
+    rows, counts = prepare_data(config, run_dir, class_names)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b0.py", line 71, in prepare_data
+    atomic_write_files(payloads)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 55, in atomic_write_files
+    os.replace(temporary, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmppddefwok\\experiments\\new_fixture\\.b0-ludiwew7' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmppddefwok\\experiments\\new_fixture\\used_train.jsonl'
+
+======================================================================
+ERROR: test_end_to_end_real_resnet_checkpoint_and_tamper_rejection (test_b1.B1Tests.test_end_to_end_real_resnet_checkpoint_and_tamper_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b1.py", line 307, in test_end_to_end_real_resnet_checkpoint_and_tamper_rejection
+    result = b1._execute(self.config, self.receipt, self.root, run, torch.device("cpu"), synthetic=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b1.py", line 118, in _execute
+    write_json(run / "status.json", {"status": "RUNNING", "kind": kind})
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b1.py", line 37, in write_json
+    atomic_write_text(path, json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 79, in atomic_write_text
+    atomic_write_files({path: text.encode("utf-8")})
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 55, in atomic_write_files
+    os.replace(temporary, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\test_B1_3ektd6p_\\run\\.b0-ub4ttg_1' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\test_B1_3ektd6p_\\run\\status.json'
+
+======================================================================
+ERROR: test_failure_keeps_reserved_run_and_records_status (test_b1.B1Tests.test_failure_keeps_reserved_run_and_records_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b1.py", line 339, in test_failure_keeps_reserved_run_and_records_status
+    b1._execute(self.config, self.receipt, self.root, run, torch.device("cpu"), synthetic=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b1.py", line 118, in _execute
+    write_json(run / "status.json", {"status": "RUNNING", "kind": kind})
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\b1.py", line 37, in write_json
+    atomic_write_text(path, json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 79, in atomic_write_text
+    atomic_write_files({path: text.encode("utf-8")})
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\src\training\run_artifacts.py", line 55, in atomic_write_files
+    os.replace(temporary, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\test_B1_pbe9skz9\\run\\.b0-8s3lifk7' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\test_B1_pbe9skz9\\run\\status.json'
+
+======================================================================
+ERROR: test_receipt_checks_real_git_bytes (test_b1.B1Tests.test_receipt_checks_real_git_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b1.py", line 90, in test_receipt_checks_real_git_bytes
+    subprocess.run(["git", "init", "-q", str(self.root / "repo")], check=True)
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'init', '-q', 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\test_B1_06_6rcyx\\repo']' returned non-zero exit status 128.
+
+======================================================================
+ERROR: test_b2_handoff_metrics (unittest.loader._FailedTest.test_b2_handoff_metrics)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_b2_handoff_metrics
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b2_handoff_metrics.py", line 6, in <module>
+    from verify_tv4_b2_handoff import metrics_match
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\verify_tv4_b2_handoff.py", line 15, in <module>
+    from download_subset import atomic_json, utc_now
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\download_subset.py", line 15, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_comparison (unittest.loader._FailedTest.test_comparison)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_comparison
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_comparison.py", line 15, in <module>
+    import comparison_data as c
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\comparison_data.py", line 6, in <module>
+    from download_subset import ROOT, SPLITS, inspect_image, load_json, read_rows, sha256
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\download_subset.py", line 15, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_download_subset (unittest.loader._FailedTest.test_download_subset)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_download_subset
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_download_subset.py", line 10, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_manifest_v2 (unittest.loader._FailedTest.test_manifest_v2)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_manifest_v2
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_manifest_v2.py", line 12, in <module>
+    import build_manifest_v2 as b
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\build_manifest_v2.py", line 10, in <module>
+    from download_subset import (ROOT, DEFAULT_SOURCE, DEFAULT_IMAGES, DEFAULT_STATE, DEFAULT_LOG,
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\download_subset.py", line 15, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_resume_tv1_w2 (unittest.loader._FailedTest.test_resume_tv1_w2)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_resume_tv1_w2
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_resume_tv1_w2.py", line 13, in <module>
+    import download_subset as d
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\download_subset.py", line 15, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_box_clamped_at_boundary (test_tv3_crop_pipeline.ClampBoxTests.test_box_clamped_at_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_box_completely_outside_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_box_completely_outside_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_negative_x_clamped_to_zero (test_tv3_crop_pipeline.ClampBoxTests.test_negative_x_clamped_to_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_normal_box (test_tv3_crop_pipeline.ClampBoxTests.test_normal_box)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_one_pixel_box_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_one_pixel_box_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_too_small_crop_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_too_small_crop_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_zero_width_after_clamp_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_zero_width_after_clamp_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 45, in setUp
+    from crop_dataset import clamp_box
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_box_without_label_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_box_without_label_is_skipped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_decode_failure_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_decode_failure_logged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_download_failure_logged_not_raised (test_tv3_crop_pipeline.ProcessRecordTests.test_download_failure_logged_not_raised)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_invalid_geometry_box_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_invalid_geometry_box_is_skipped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_multi_animal_image_uses_box_label_not_image_label (test_tv3_crop_pipeline.ProcessRecordTests.test_multi_animal_image_uses_box_label_not_image_label)
+\u1ea2nh c� nhi\u1ec1u lo�i: m\u1ed7i box d�ng nh\xe3n ri�ng c\u1ee7a box ��.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_normal_record_produces_one_crop_row (test_tv3_crop_pipeline.ProcessRecordTests.test_normal_record_produces_one_crop_row)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_one_bad_box_does_not_block_other_good_boxes (test_tv3_crop_pipeline.ProcessRecordTests.test_one_bad_box_does_not_block_other_good_boxes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_record_without_boxes_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_record_without_boxes_is_skipped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_source_hash_mismatch_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_source_hash_mismatch_logged)
+M\u1ee5c 4: \u1ea2nh �\u1ecdc ��\u1ee3c nh�ng hash kh�ng kh\u1edbp quality.sha256.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_split_is_inherited_from_manifest_not_box (test_tv3_crop_pipeline.ProcessRecordTests.test_split_is_inherited_from_manifest_not_box)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 79, in setUp
+    from crop_dataset import process_record
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_bad_box_fatal_does_not_block_good_box (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_bad_box_fatal_does_not_block_good_box)
+M\u1ee5c 2 fix: Box x\u1ea5u b\u1ecb ��nh fatal, box t\u1ed1t c\xf2n l\u1ea1i ��\u1ee3c b\u1ecf qua ��ng c�ch.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 404, in test_bad_box_fatal_does_not_block_good_box
+    from crop_dataset import check_completed_per_box, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_create_metadata_on_fresh_output (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_create_metadata_on_fresh_output)
+V\xf2ng 3 m\u1ee5c 2: Output m\u1edbi tinh (ch�a c� artifact) \u2192 t\u1ea1o meta OK.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 498, in test_create_metadata_on_fresh_output
+    from crop_dataset import load_or_create_run_meta
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_fail_closed_missing_metadata_with_existing_artifact (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_fail_closed_missing_metadata_with_existing_artifact)
+V\xf2ng 3 m\u1ee5c 2: C� manifest nh�ng thi\u1ebfu run_meta \u2192 ph\u1ea3i raise.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 483, in test_fail_closed_missing_metadata_with_existing_artifact
+    from crop_dataset import load_or_create_run_meta
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_hash_mismatch_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_hash_mismatch_not_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i nh�ng hash sai \u2192 check_completed_per_box tr\u1ea3 False.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 345, in test_hash_mismatch_not_completed
+    from crop_dataset import check_completed_per_box, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_http_hash_match_accepted (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_match_accepted)
+V\xf2ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP v� hash ��ng \u2192 tr\u1ea3 bytes OK.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 535, in test_http_hash_match_accepted
+    from crop_dataset import load_source_image, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_http_hash_mismatch_rejected (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_mismatch_rejected)
+V\xf2ng 3 m\u1ee5c 3: \u1ea2nh t\u1ea3i qua HTTP nh�ng hash sai quality.sha256 ph\u1ea3i b\u1ecb t\u1eeb ch\u1ed1i.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 514, in test_http_hash_mismatch_rejected
+    from crop_dataset import load_source_image, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_load_jsonl_safe_raises_on_mid_file_error (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_load_jsonl_safe_raises_on_mid_file_error)
+V\xf2ng 3 m\u1ee5c 4: L\u1ed7i JSON \u1edf gi\u1eefa file ph\u1ea3i raise, kh�ng b\u1ecf qua.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 438, in test_load_jsonl_safe_raises_on_mid_file_error
+    from crop_dataset import load_jsonl_safe
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_missing_file_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_missing_file_not_completed)
+M\u1ee5c 1 fix: File \u1ea3nh b\u1ecb m\u1ea5t \u2192 check_completed_per_box tr\u1ea3 False.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 330, in test_missing_file_not_completed
+    from crop_dataset import check_completed_per_box, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_partial_box_completion_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_partial_box_completion_not_completed)
+M\u1ee5c 2 fix: Ng\u1eaft gi\u1eefa \u1ea3nh c� 2 box \u2192 ch\u1ec9 1 crop \u2192 ch�a xong.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 381, in test_partial_box_completion_not_completed
+    from crop_dataset import check_completed_per_box, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_repair_jsonl_fixes_file_on_disk (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_fixes_file_on_disk)
+V\xf2ng 3 m\u1ee5c 4: repair_jsonl_if_needed ghi l\u1ea1i file s\u1ea1ch tr�n �\u0129a.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 451, in test_repair_jsonl_fixes_file_on_disk
+    from crop_dataset import repair_jsonl_if_needed
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_repair_jsonl_no_pending_still_clean (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_no_pending_still_clean)
+V\xf2ng 3 m\u1ee5c 4: D� pending=0, file v\u1eabn ��\u1ee3c s\u1eeda s\u1ea1ch.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 468, in test_repair_jsonl_no_pending_still_clean
+    from crop_dataset import repair_jsonl_if_needed
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_upsert_rows_no_duplicate (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_upsert_rows_no_duplicate)
+M\u1ee5c 1 fix: Ch\u1ea1y l\u1ea1i sau m\u1ea5t file \u2192 kh�ng t\u1ea1o d\xf2ng tr�ng crop_id.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 427, in test_upsert_rows_no_duplicate
+    from crop_dataset import upsert_rows
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_valid_file_is_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_valid_file_is_completed)
+M\u1ee5c 1 fix: File t\u1ed3n t\u1ea1i v� hash ��ng \u2192 check_completed_per_box tr\u1ea3 True.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv3_crop_pipeline.py", line 363, in test_valid_file_is_completed
+    from crop_dataset import check_completed_per_box, sha256_bytes
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\scripts\crop_dataset.py", line 36, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+======================================================================
+ERROR: test_tv4_classifier (unittest.loader._FailedTest.test_tv4_classifier)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tv4_classifier
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv4_classifier.py", line 16, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+ERROR: test_tv4_demo (unittest.loader._FailedTest.test_tv4_demo)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tv4_demo
+Traceback (most recent call last):
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_tv4_demo.py", line 13, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+
+======================================================================
+FAIL: test_d_atomic_publication_rolls_back_all_files (test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files)
+----------------------------------------------------------------------
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmp1gedw4xd\\experiments\\fixture\\.b0-9tapkte5' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmp1gedw4xd\\experiments\\fixture\\used_train.jsonl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\tests\test_b0_integrity.py", line 154, in test_d_atomic_publication_rolls_back_all_files
+    with self.assertRaisesRegex(OSError, "injected"):
+AssertionError: "injected" does not match "[WinError 5] Access is denied: 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmp1gedw4xd\\experiments\\fixture\\.b0-9tapkte5' -> 'C:\\Users\\Hu\u1ef3nh Ph�c\\AppData\\Local\\Packages\\sandbox.{2d7b949c-282e-421a-bf1f-1390c44234ed}\\AC\\Temp\\tmp1gedw4xd\\experiments\\fixture\\used_train.jsonl'"
+
+----------------------------------------------------------------------
+Ran 172 tests in 63.535s
+
+FAILED (failures=1, errors=43)

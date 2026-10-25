@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "test_images_forwarded": 600,
+  "resume_supported": false,
+  "started_utc": "2026-10-23T06:52:10.160808+00:00",
+  "artifact_integrity": "PASS",
+  "completed_utc": "2026-10-23T06:54:23.871877+00:00"
+}

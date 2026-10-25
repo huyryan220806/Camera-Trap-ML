@@ -1,0 +1,11 @@
+test_downloaded_wrong_pixel_hash_never_published (tests.test_w4_source_restoration.SourceRestorationTests.test_downloaded_wrong_pixel_hash_never_published) ... ok
+test_downloaded_wrong_sha_never_published (tests.test_w4_source_restoration.SourceRestorationTests.test_downloaded_wrong_sha_never_published) ... ok
+test_existing_changed_image_preserved_and_rejected (tests.test_w4_source_restoration.SourceRestorationTests.test_existing_changed_image_preserved_and_rejected) ... ok
+test_existing_correct_image_never_downloaded_or_replaced (tests.test_w4_source_restoration.SourceRestorationTests.test_existing_correct_image_never_downloaded_or_replaced) ... ok
+test_manifest_path_escape_rejected (tests.test_w4_source_restoration.SourceRestorationTests.test_manifest_path_escape_rejected) ... ok
+test_restore_exact_bytes_preserves_label_and_split (tests.test_w4_source_restoration.SourceRestorationTests.test_restore_exact_bytes_preserves_label_and_split) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.105s
+
+OK

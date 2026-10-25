@@ -1,0 +1,50 @@
+{
+  "experiment_name": "b3_class_weighted_comparison_v1",
+  "version": "1.0.0",
+  "author": "TV3",
+  "task": "W4-03: Thử trọng số lớp và chốt bộ phân loại",
+  "base_experiment": "b2_crop_classifier_comparison_v1",
+  "protocol_agreement": "reports/tv2/W3_PROTOCOL_AGREEMENT_2026-10-18.json",
+  "model": {
+    "backbone": "resnet18",
+    "weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "pretrained": true,
+    "num_classes": 8,
+    "fine_tune": "all",
+    "dropout_p": 0.0
+  },
+  "training": {
+    "optimizer": "sgd",
+    "lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "step_lr",
+    "step_size": 10,
+    "gamma": 0.1,
+    "epochs": 50,
+    "patience": 7,
+    "batch_size": 32,
+    "seed": 42,
+    "mixed_precision": false,
+    "loss": "class_weighted_mean_crop_CE_per_image_then_mean_over_images",
+    "class_weight_method": "inverse_frequency"
+  },
+  "data": {
+    "comparison_dir": "data/processed/comparison_v1",
+    "num_workers": 4,
+    "preflight_hash_check": false,
+    "drop_last": false
+  },
+  "evaluation": {
+    "metric_for_best": "image_macro_f1",
+    "aggregation_method": "mean_probability_argmax"
+  },
+  "output": {
+    "dir": "outputs/b3_class_weighted",
+    "best_checkpoint_name": "best_model.pt",
+    "last_checkpoint_name": "last_model.pt",
+    "log_file_name": "train_log.jsonl",
+    "val_report_name": "validation_comparison.json",
+    "val_table_md_name": "validation_comparison.md"
+  }
+}

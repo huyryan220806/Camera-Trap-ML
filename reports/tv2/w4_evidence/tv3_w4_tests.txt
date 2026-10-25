@@ -1,0 +1,29 @@
+test_b3_checkpoint_compatibility_tv4 (test_tv3_w4.TestTV3Week4.test_b3_checkpoint_compatibility_tv4)
+Ki\u1ec3m tra format checkpoint B3 t��ng th�ch ho�n to�n v\u1edbi adapter TV4. ... ok
+test_b3_config_validity (test_tv3_w4.TestTV3Week4.test_b3_config_validity)
+Ki\u1ec3m tra c\u1ea5u h\xecnh configs/b3_class_weighted.json h\u1ee3p l\u1ec7 v� ��ng chu\u1ea9n W4. ... ok
+test_b3_smoke_test_execution (test_tv3_w4.TestTV3Week4.test_b3_smoke_test_execution)
+Ch\u1ea1y th\u1eed nghi\u1ec7m smoke test B3 v� ki\u1ec3m �\u1ecbnh to�n b\u1ed9 pipeline sinh checkpoint. ... 21:33:06 [INFO] Thi\u1ebft b\u1ecb hu\u1ea5n luy\u1ec7n B3: cuda
+21:33:06 [INFO] [SMOKE-TEST] Ch\u1ea1y v\u1edbi Dummy Dataset (16 train / 8 val), output: C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Packages\sandbox.{0fe29c41-cc20-43ca-8b83-5d6b9f1c28e2}\AC\Temp\test_b3_smoke_kcinubtc
+21:33:06 [INFO] Kh\u1edfi t\u1ea1o m� h\xecnh B3 (Backbone: resnet18, Pretrained: False)...
+21:33:07 [INFO] B\u1eaft �\u1ea7u hu\u1ea5n luy\u1ec7n B3 v\u1edbi ng�n s�ch 2 epochs...
+21:33:10 [INFO] B3 Epoch [1/2] (3.7s) Loss=2.2678 Acc=18.8% | Val Loss=2.1147 CropF1=6.2% ImgAcc=25.0% ImgF1=6.2%
+21:33:11 [INFO] --> Best B3 checkpoint t\u1ea1i epoch 1 (ImgF1=6.25%).
+21:33:11 [INFO] B3 Epoch [2/2] (0.4s) Loss=2.1474 Acc=12.5% | Val Loss=2.1542 CropF1=7.1% ImgAcc=25.0% ImgF1=8.3%
+21:33:11 [INFO] --> Best B3 checkpoint t\u1ea1i epoch 2 (ImgF1=8.33%).
+21:33:11 [INFO] Ho�n t\u1ea5t hu\u1ea5n luy\u1ec7n B3 sau 4.7s! Best epoch=2, Best ImgF1=8.33%
+21:33:12 [INFO] Ki\u1ec3m �\u1ecbnh reload �\u1ed9c l\u1eadp checkpoint B3 t\u1ea1i: C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Packages\sandbox.{0fe29c41-cc20-43ca-8b83-5d6b9f1c28e2}\AC\Temp\test_b3_smoke_kcinubtc\best_model.pt
+21:33:12 [INFO] Ki\u1ec3m �\u1ecbnh reload checkpoint B3 th�nh c�ng: m� h\xecnh h\u1ee3p l\u1ec7 v� s\u1eb5n s�ng.
+21:33:12 [INFO] �\xe3 xu\u1ea5t b�o c�o B3 t\u1ea1i: C:\Users\Hu\u1ef3nh Ph�c\AppData\Local\Packages\sandbox.{0fe29c41-cc20-43ca-8b83-5d6b9f1c28e2}\AC\Temp\test_b3_smoke_kcinubtc\val_table.md
+ok
+test_class_weighted_loss_gradient (test_tv3_w4.TestTV3Week4.test_class_weighted_loss_gradient)
+Ki\u1ec3m tra loss c� tr\u1ecdng s\u1ed1 l\u1edbp l�m thay �\u1ed5i loss t��ng \u1ee9ng. ... ok
+test_class_weights_balanced_and_imbalanced (test_tv3_w4.TestTV3Week4.test_class_weights_balanced_and_imbalanced)
+Ki\u1ec3m tra t�nh to�n tr\u1ecdng s\u1ed1 l\u1edbp trong c�c tr�\u1eddng h\u1ee3p c�n b\u1eb1ng v� m\u1ea5t c�n b\u1eb1ng. ... ok
+test_error_analysis_components (test_tv3_w4.TestTV3Week4.test_error_analysis_components)
+Ki\u1ec3m tra c�c h�m ph�n t�ch l\u1ed7i �\u1ed9c l\u1eadp v\u1edbi d\u1eef li\u1ec7u m\u1eabu. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 7.843s
+
+OK

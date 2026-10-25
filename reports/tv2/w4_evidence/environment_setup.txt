@@ -1,0 +1,23 @@
+Collecting requests==2.34.2
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting charset_normalizer<4,>=2 (from requests==2.34.2)
+  Downloading charset_normalizer-3.5.2-cp311-cp311-win_amd64.whl.metadata (47 kB)
+     -------------------------------------- 47.3/47.3 kB 597.5 kB/s eta 0:00:00
+Collecting idna<4,>=2.5 (from requests==2.34.2)
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests==2.34.2)
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests==2.34.2)
+  Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+   ---------------------------------------- 136.5/136.5 kB 1.6 MB/s eta 0:00:00
+Downloading charset_normalizer-3.5.2-cp311-cp311-win_amd64.whl (214 kB)
+   -------------------------------------- 214.9/214.9 kB 874.8 kB/s eta 0:00:00
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Installing collected packages: urllib3, idna, charset_normalizer, certifi, requests
+Successfully installed certifi-2026.10.19 charset_normalizer-3.5.2 idna-3.20 requests-2.34.2 urllib3-2.8.0
+
+[notice] A new release of pip is available: 24.0 -> 26.2.2
+[notice] To update, run: D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w3\venv_cuda\Scripts\python.exe -m pip install --upgrade pip

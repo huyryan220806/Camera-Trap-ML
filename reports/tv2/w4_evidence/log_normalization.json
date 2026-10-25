@@ -1,0 +1,98 @@
+{
+  "operation": "Remove trailing whitespace and normalize log line endings only; no assertion/result edits.",
+  "original_local_directory": "outputs/tv2_w4/raw_logs",
+  "files": {
+    "comparison_validation.txt": {
+      "original_sha256": "c118061d43d6f0fbf91c5c6ca30e853881a7c34f65c1dc1608d7a694c36f33f5",
+      "normalized_sha256": "496f9b6c2b6559a2c1c5479d3113de54e162371ea29055e38f2346830035b3d5"
+    },
+    "comparison_validation_py312.txt": {
+      "original_sha256": "2750274c406ac826cd855ec7f33dfff83778073105f1eaf1f286fd5096c62498",
+      "normalized_sha256": "c6204e9a7f371f244d1a4df5c28405219376310eb89af6d73e07b26849e21e25"
+    },
+    "contracts.txt": {
+      "original_sha256": "e9b6e22ef45270b72e4fc5b69a254e9fb3942a0f2ccaeabdf211bbd050a44f1b",
+      "normalized_sha256": "6326a34881f7a79d3a575e22b66fa225fb3d3abc14461ef542f297fd52fb5ba0"
+    },
+    "environment_check.txt": {
+      "original_sha256": "54e8e5fe93978ff84f8f567a3d9c11b01933ae95e49e12d2795e5781a03cae64",
+      "normalized_sha256": "b8e0d94108e84cb6c26a23feb2ac94ab32354805869eb65a42af6a97a87c916a"
+    },
+    "environment_check_py312.txt": {
+      "original_sha256": "7f394b8f46525429d4e64b938b341f4773a33a482ccf10526e0686e1b59f99fd",
+      "normalized_sha256": "a9979c1a6b4122fd8a591b1d4b42a8836bdebd69994d1c6963e9b794962f33dc"
+    },
+    "environment_setup.txt": {
+      "original_sha256": "3f6b98d87a006c718d1bebf5d977564bbc7b2e612306f0a6ac2e53248452ec8a",
+      "normalized_sha256": "983318922403665cacb6c54d4a77d03c542d8888b0151894713afed448ef152b"
+    },
+    "final_checks.txt": {
+      "original_sha256": "7b27d5fbd3e36dbf16d2e40e396164f56194d6680ded8fc0275053ad1552234c",
+      "normalized_sha256": "6e2996735c033d90b9f4f38c758a2b90f6eed692145513fa73bf68e8e16ad475"
+    },
+    "official_execute_gate.txt": {
+      "original_sha256": "1b0b0d87b4aae8f9ea16f688e7b6a3d661e7a2023f4ec1054237e3a275edd8c7",
+      "normalized_sha256": "652e86cb3b4b39167e0c22b1406be56350bc85fde110de75a14a56101944f56a"
+    },
+    "official_gate.txt": {
+      "original_sha256": "1b0b0d87b4aae8f9ea16f688e7b6a3d661e7a2023f4ec1054237e3a275edd8c7",
+      "normalized_sha256": "652e86cb3b4b39167e0c22b1406be56350bc85fde110de75a14a56101944f56a"
+    },
+    "pip_check.txt": {
+      "original_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+      "normalized_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "pip_check_py312.txt": {
+      "original_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+      "normalized_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "regression_tests.txt": {
+      "original_sha256": "7893b3a5a022a7a6c3e433a71c6419842e2de6407c679ecafb0c6a0982f1d3c9",
+      "normalized_sha256": "63f3ab64858e825f84a3d4ae9e78118001e7b94aaa7f3286ccccfd64453ace13"
+    },
+    "regression_tests_final.txt": {
+      "original_sha256": "dd20f8bba8f0058c625867c2cc2a0e9f15888529f7974f9db493830311f39189",
+      "normalized_sha256": "124980e69bea2eb58f2737120f7d639e34afe251833580d1d5870877e9d2257a"
+    },
+    "regression_tests_py312.txt": {
+      "original_sha256": "0f624a0f59370f2f057e7697cf900d7fd07e978d49e4107b52c5c3502e0667a8",
+      "normalized_sha256": "54461a4d94725697ed75dea20044673649068268deb7c4ae58549056cb1f52b7"
+    },
+    "regression_tests_workspace_tmp.txt": {
+      "original_sha256": "2b128a3317198f05795b1634ae129dc61ab816f2a936b4d3aee053f3ff2b40a7",
+      "normalized_sha256": "fd4c1b219b39569b82129a6bba0562f12575e3c3b982a81907991f469487071f"
+    },
+    "source_restoration_tests.txt": {
+      "original_sha256": "40be7810cf4bdc6d4b8594f0372b2880c15b30a025bf202c558a22ad852061ab",
+      "normalized_sha256": "15a0fa776f82461ed1fe11b0351027995d3a0204361a7bde5873a571734e3d84"
+    },
+    "test_source_restoration.txt": {
+      "original_sha256": "c5443cb75f755c74495f505394a86b28c3eb617c308d52b618039dfac5408b33",
+      "normalized_sha256": "72880ad6afd93b00df5e790539b2debc30a30335ea3e8630dff88fec1d18c4de"
+    },
+    "test_source_restoration_attempt01.txt": {
+      "original_sha256": "4dd6ed327c41a4d2a90900fd95b5d2366996ff92fee934650e5a688be9186c65",
+      "normalized_sha256": "4a1f795de4dbeae892ee7a1b6f5c3d98e70e69c31699378760676d19368fa7b7"
+    },
+    "tv2_regression_workspace_tmp.txt": {
+      "original_sha256": "8fb7eafe7ecfda9fc55f366b4ed579335bf4f5db8629cfc5fe816a2484399e5f",
+      "normalized_sha256": "d635316e9919ea41fde58f9200f2f178c234c1ae4c70f2d5e36619cead3eaf21"
+    },
+    "tv3_w4_tests.txt": {
+      "original_sha256": "9783eee59aa289b07eeb07fd8caf2a11cb27e662bfa243c2c621500db8376852",
+      "normalized_sha256": "922f851b81eccd5fbe0b60684ef6b013659ed836d1ae682b34b1d57d95ee550a"
+    },
+    "verification_summary.txt": {
+      "original_sha256": "9ce74520335ae1442506def737babac8ea1031af04faf4852c83920d3465ad87",
+      "normalized_sha256": "4e5b4a75b6181be24b38c476901d1fa3bd30f1941d8833705eb6f68b0a2a6b30"
+    },
+    "w4_tests.txt": {
+      "original_sha256": "09a7aa04f278223e032fe0cf56abd2de4d2dfa417a3cf581630c0a2a68c6b118",
+      "normalized_sha256": "52b5f5da1a25089efd005811d9fe0487c93990104e2d0bc2e336963963d45764"
+    },
+    "w4_tests_py312.txt": {
+      "original_sha256": "99801ff4e66a584752fb730cac9de7c2af057a06b808f09eaa919c40c5ca6e54",
+      "normalized_sha256": "55aa73a6cdb53f4d93a031e4df492c57c763299050c73bf6fe46457414352ae6"
+    }
+  }
+}

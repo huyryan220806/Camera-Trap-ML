@@ -1,0 +1,13 @@
+Source restoration 50/600; failures=0
+Source restoration 100/600; failures=0
+Source restoration 150/600; failures=0
+Source restoration 200/600; failures=0
+Source restoration 250/600; failures=0
+Source restoration 300/600; failures=0
+Source restoration 350/600; failures=0
+Source restoration 400/600; failures=0
+Source restoration 450/600; failures=0
+Source restoration 500/600; failures=0
+Source restoration 550/600; failures=0
+Source restoration 600/600; failures=0
+{"source_images": 600, "verified": 600, "restored": 1, "model_inference_performed": false, "frozen_manifest_sha256": "e86e776dbf6416d21028230599b2699cf186d13d68f2f4c24d4c6a25ad2200f2", "labels_or_splits_changed": false}

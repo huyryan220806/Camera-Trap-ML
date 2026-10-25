@@ -1,0 +1,62 @@
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+B0 smoke test PASS
+test_a_smoke_preserves_completed_run_bytes_and_hashes (tests.test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 3, 'excluded': 1}}
+B0 smoke test PASS
+test_b_smoke_with_missing_validation_image_preserves_run (tests.test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run) ... ok
+test_c_existing_run_rejected_before_preparation (tests.test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation) ... ok
+test_d_atomic_publication_rolls_back_all_files (tests.test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files) ... ok
+test_d_prepare_failure_after_train_inspection_publishes_nothing (tests.test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing) ... ok
+test_e_changed_image_id_rejected (tests.test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected) ... ok
+test_f_changed_class_map_rejected (tests.test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected) ... ok
+test_g_added_deleted_modified_validation_rows_rejected (tests.test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected) ... ok
+test_h_changed_source_rejected (tests.test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected) ... ok
+test_i_changed_decodable_image_bytes_rejected (tests.test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected) ... ok
+test_inverse_checkpoint_mapping_checked (tests.test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked) ... ok
+test_missing_class_hash_requires_exact_mapping (tests.test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping) ... ok
+test_missing_frozen_validation_hash_rejected (tests.test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+{"epoch": 1, "train_loss": 0.9608118236064911, "val_loss": 0.923206590116024, "val_macro_f1": 0.3333333333333333, "val_macro_precision": 0.25, "val_macro_recall": 0.5, "val_accuracy": 0.5, "learning_rate": 0.001}
+{"best_epoch": 1, "best_macro_f1": 0.3333333333333333, "checkpoint": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w4\\test_tmp\\tmphlodqev0\\experiments\\new_fixture\\checkpoints\\best_model.pth", "reload": "PASS", "checkpoint_bytes": 6025}
+test_new_fixture_run_can_train_save_and_verify_once (tests.test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once) ... ok
+test_prepare_cli_rejects_completed_run (tests.test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run) ... ok
+test_reservation_rejects_each_existing_run_marker (tests.test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker) ... ok
+test_selected_inputs_allow_first_reservation_but_not_second (tests.test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second) ... ok
+test_smoke_exception_preserves_run (tests.test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run) ... ok
+test_source_membership_checked_even_with_matching_manifest_hash (tests.test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash) ... ok
+test_source_row_path_mismatch_rejected (tests.test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected) ... ok
+test_successful_validator_runs_inference_after_provenance (tests.test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance) ... ok
+test_v1_without_image_hash_reports_limitation (tests.test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation) ... ok
+test_v2_local_path_and_sha_verified (tests.test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified) ... ok
+test_agreement_must_pin_actual_settings (tests.test_b1.B1Tests.test_agreement_must_pin_actual_settings) ... ok
+test_box_label_and_geometry (tests.test_b1.B1Tests.test_box_label_and_geometry) ... ok
+test_class_map_hash_and_mapping (tests.test_b1.B1Tests.test_class_map_hash_and_mapping) ... ok
+test_crop_label_split_and_annotation_changes_fail (tests.test_b1.B1Tests.test_crop_label_split_and_annotation_changes_fail) ... ok
+test_duplicate_ids_and_paths (tests.test_b1.B1Tests.test_duplicate_ids_and_paths) ... ok
+test_empty_invalid_label_and_missing_class (tests.test_b1.B1Tests.test_empty_invalid_label_and_missing_class) ... ok
+test_end_to_end_real_resnet_checkpoint_and_tamper_rejection (tests.test_b1.B1Tests.test_end_to_end_real_resnet_checkpoint_and_tamper_rejection) ... ok
+test_exclusion_accounting (tests.test_b1.B1Tests.test_exclusion_accounting) ... ok
+test_failure_keeps_reserved_run_and_records_status (tests.test_b1.B1Tests.test_failure_keeps_reserved_run_and_records_status) ... ok
+test_frozen_data_does_not_imply_protocol_agreement (tests.test_b1.B1Tests.test_frozen_data_does_not_imply_protocol_agreement) ... ok
+test_identical_content_with_conflicting_labels_rejected (tests.test_b1.B1Tests.test_identical_content_with_conflicting_labels_rejected) ... ok
+test_invalid_configs (tests.test_b1.B1Tests.test_invalid_configs) ... ok
+test_location_sequence_and_content_leakage (tests.test_b1.B1Tests.test_location_sequence_and_content_leakage) ... ok
+test_manifest_hash_drift (tests.test_b1.B1Tests.test_manifest_hash_drift) ... ok
+test_missing_corrupt_and_changed_images_fail_without_filtering (tests.test_b1.B1Tests.test_missing_corrupt_and_changed_images_fail_without_filtering) ... ok
+test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail (tests.test_b1.B1Tests.test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail) ... ok
+test_official_proposed_config_fails_before_run_or_model (tests.test_b1.B1Tests.test_official_proposed_config_fails_before_run_or_model) ... ok
+test_path_escape_rejected (tests.test_b1.B1Tests.test_path_escape_rejected) ... ok
+test_pixel_hash_is_recomputed (tests.test_b1.B1Tests.test_pixel_hash_is_recomputed) ... ok
+test_receipt_checks_real_git_bytes (tests.test_b1.B1Tests.test_receipt_checks_real_git_bytes) ... ok
+test_resnet_backbone_gradients_batchnorm_and_step (tests.test_b1.B1Tests.test_resnet_backbone_gradients_batchnorm_and_step) ... ok
+test_smoke_preserves_project_and_existing_run (tests.test_b1.B1Tests.test_smoke_preserves_project_and_existing_run) ... ok
+test_source_membership_mismatch (tests.test_b1.B1Tests.test_source_membership_mismatch) ... ok
+test_test_row_rejected (tests.test_b1.B1Tests.test_test_row_rejected) ... ok
+test_transform_and_loader_reproducibility (tests.test_b1.B1Tests.test_transform_and_loader_reproducibility) ... ok
+test_user_confirmed_team_protocol_still_requires_budget (tests.test_b1.B1Tests.test_user_confirmed_team_protocol_still_requires_budget) ... ok
+test_valid_fixture_counts_and_no_test (tests.test_b1.B1Tests.test_valid_fixture_counts_and_no_test) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 29.066s
+
+OK
