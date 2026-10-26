@@ -5,7 +5,7 @@ const icons = () => window.lucide?.createIcons();
 function clearResult() {
   window.clearReviewSession?.();
   result = null; $('boxes').replaceChildren(); $('json').textContent = '{}';
-  $('results').innerHTML = '<tr><td colspan="4" class="muted">—</td></tr>';
+  $('results').innerHTML = '<tr><td colspan="4" class="muted">Chưa có dữ liệu phân tích</td></tr>';
   $('status').textContent = 'Chưa có kết quả.'; $('status').className = '';
   $('timing').textContent = 'Chưa chạy'; $('export').disabled = true;
   $('classifier-state').textContent = $('classifier').value === 'none' ? 'Không dùng' : `${$('classifier').value} · Chưa chạy`;
@@ -21,6 +21,14 @@ function preview(url) {
   $('preview').src = url; $('image-frame').hidden = false; $('empty').hidden = true;
 }
 function showError(message) { $('status').textContent = message; $('status').className = 'error'; }
+function chooseDetection(detectionId) {
+  if (!detectionId) return;
+  if (window.selectReviewDetection) window.selectReviewDetection(detectionId);
+  else {
+    for (const row of $('results').querySelectorAll('[data-detection-id]')) row.classList.toggle('selected-row', row.dataset.detectionId === detectionId);
+    for (const box of $('boxes').children) box.classList.toggle('selected-box', box.dataset.detectionId === detectionId);
+  }
+}
 function setMode(next) {
   mode = next; clearResult();
   for (const button of document.querySelectorAll('[data-mode]')) {
@@ -48,7 +56,10 @@ function render(data, classification) {
   result = classification || data; $('json').textContent = JSON.stringify(result, null, 2); $('export').disabled = false;
   $('dimensions').textContent = data.image.width ? `${data.image.width} × ${data.image.height}` : '—';
   $('timing').textContent = `${(data.elapsed_ms / 1000).toFixed(2)} s · ${data.pipeline.mode === 'mock' ? 'Giả lập' : 'CPU'}`;
-  $('status').className = data.status === 'error' ? 'error' : '';
+  $('status').className = data.status === 'error' ? 'error'
+    : data.status === 'needs_review' ? 'needs-review'
+    : data.status === 'no_detection' ? 'no-detection'
+    : data.status === 'ok' || data.status === 'detected' ? 'ok' : '';
   const prefix = data.pipeline.mode === 'mock' ? 'KẾT QUẢ GIẢ LẬP. ' : '';
   const text = data.status === 'error' ? data.error.message : data.status === 'no_detection'
     ? 'Chưa phát hiện động vật đạt ngưỡng. Không đồng nghĩa ảnh trống.'
@@ -63,9 +74,16 @@ function render(data, classification) {
   if (!data.detections.length) $('results').innerHTML = '<tr><td colspan="4" class="muted">Không có box được chấp nhận</td></tr>';
   for (const [index, detection] of data.detections.entries()) {
     const row = document.createElement('tr');
+    row.dataset.detectionId = detection.detection_id;
+    row.tabIndex = 0;
+    row.setAttribute('aria-label', `Chọn vùng ${index + 1} để duyệt`);
+    row.onclick = () => chooseDetection(detection.detection_id);
+    row.onkeydown = (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); chooseDetection(detection.detection_id); } };
     const score = detection.detector_score ?? detection.score;
-    const number = document.createElement('td'); number.textContent = String(index + 1).padStart(2, '0'); row.append(number);
-    const detector = document.createElement('td'); detector.textContent = score.toFixed(3); row.append(detector);
+    const number = document.createElement('td'), numberBadge = document.createElement('span');
+    numberBadge.className = 'region-index'; numberBadge.textContent = String(index + 1).padStart(2, '0'); number.append(numberBadge); row.append(number);
+    const detector = document.createElement('td'), detectorValue = document.createElement('span');
+    detectorValue.className = 'score-value'; detectorValue.textContent = score.toFixed(3); detector.append(detectorValue); row.append(detector);
     const species = document.createElement('td');
     if (detection.top_k) {
       const list = document.createElement('ol'); list.className = 'predictions';
@@ -77,14 +95,20 @@ function render(data, classification) {
       species.append(list);
     } else species.textContent = 'Chưa phân loại';
     row.append(species);
-    const state = document.createElement('td');
-    state.textContent = !detection.top_k ? 'Cần xem' : detection.top_k[0].score < data.pipeline.review_threshold ? 'Cần xem' : 'Đạt ngưỡng';
+    const state = document.createElement('td'), stateChip = document.createElement('span');
+    const needsReview = !detection.top_k || detection.top_k[0].score < data.pipeline.review_threshold;
+    stateChip.className = 'state-chip' + (needsReview ? ' review' : '');
+    stateChip.textContent = needsReview ? 'Cần xem' : 'Đạt ngưỡng'; state.append(stateChip);
     row.append(state);
     $('results').append(row);
     const box = document.createElement('div'), [x, y, w, h] = detection.bbox_xywh;
     box.className = 'box' + (data.pipeline.mode === 'mock' ? ' mock' : '');
+    box.dataset.detectionId = detection.detection_id;
+    box.tabIndex = 0; box.setAttribute('role', 'button'); box.setAttribute('aria-label', `Chọn vùng ${index + 1} để duyệt`);
+    box.onclick = () => chooseDetection(detection.detection_id);
+    box.onkeydown = (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); chooseDetection(detection.detection_id); } };
     Object.assign(box.style, {left: `${100 * x / data.image.width}%`, top: `${100 * y / data.image.height}%`, width: `${100 * w / data.image.width}%`, height: `${100 * h / data.image.height}%`});
-    const label = document.createElement('span'); label.textContent = String(index + 1); box.append(label); $('boxes').append(box);
+    const label = document.createElement('span'); label.textContent = String(index + 1).padStart(2, '0'); box.append(label); $('boxes').append(box);
   }
 }
 $('upload').onclick = () => $('file').click();
