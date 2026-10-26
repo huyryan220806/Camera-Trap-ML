@@ -50,12 +50,12 @@ Browser QA bằng Microsoft Edge:
 
 ## Việc còn lại
 
-- Chưa tạo PR để TV2 kiểm tra; thực hiện sau khi commit/push thay đổi đã được xác nhận.
+- PR [#8](https://github.com/huyryan220806/Camera-Trap-ML/pull/8) đã được tạo; đang chờ TV2 kiểm tra và nghiệm thu.
 - Ảnh browser QA mới là bằng chứng local trong `outputs/`, không đưa vào Git theo `.gitignore`.
 - Chức năng xử lý lô nhỏ/CSV là phần tiếp theo của W5, không nằm trong lượt làm đẹp UI này.
 
 ## Bước tiếp theo
 
-1. Xem lại diff và chỉ stage năm file nêu trên.
-2. Commit với thông điệp `Improve demo layout and review usability`.
-3. Push `feat/demo`, tạo PR vào `main` và nhờ TV2 kiểm tra hành vi/API.
+1. TV2 kiểm tra lại hành vi UI/API và luồng lưu/nạp revision trên PR #8.
+2. Sửa các nhận xét review nếu có mà không thay đổi hợp đồng dữ liệu.
+3. Chỉ merge sau khi TV2 xác nhận; giữ branch `feat/demo` sau merge.
