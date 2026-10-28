@@ -6,7 +6,10 @@ review còn BLOCKED.** Thực hiện28–29/10/2026 giờ Việt Nam, trên nhá
 
 Commit trước đồng bộ `5fe9083367a78de8bf3ed652a6b58eb26a171e47`; nền triển khai
 `60516f51fccbb85e6e266a022d94ea90d2239a11`. Kết quả Git cuối/PR được ghi trong
-`w5_evidence/attempt_01/publication.json` sau push. Implementation của evaluator
+`w5_evidence/attempt_01/publication.json` sau push. GitHub connector đã từ chối
+tạo PR và gửi comment review PR8 bằng HTTP403 `Resource not accessible by integration`.
+Chưa có PR W5 hoặc reviewer notification; nội dung chuẩn bị ở `pr_draft.md`
+và `tv4_review_comment.md` trong evidence. Implementation của evaluator
 và báo cáo đã có; technical verification B2 PASS; **reviewer approval chưa có,
 PR chưa được tự merge**. Bốn trạng thái này không tương đương.
 

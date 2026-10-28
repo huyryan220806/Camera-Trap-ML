@@ -1,7 +1,7 @@
 {
   ".gitattributes": {
-    "sha256": "8e4c584d5a02f547faf3c7b62e11f48c44fdfc9a340157dfdb466c8a47abd21f",
-    "bytes": 330
+    "sha256": "51cd7d908db58b204b3b31cbc96640a4e6b5d383dce6e883ba95c3e3d12279ef",
+    "bytes": 351
   },
   "b2_help.command.json": {
     "sha256": "703e593b0a36875c918c027d10fc95c10545bb1f646c2451f084f4e3752f1082",
@@ -135,6 +135,10 @@
     "sha256": "379bf0e18c59a82c9d30e51b1d388bba741ddabb2720b970a86edc02321e8e9b",
     "bytes": 640
   },
+  "file_inventory.json": {
+    "sha256": "f20321d9b2fddf02412a2c654dba3bd70a18eae5e1eb7c6293f4e63c70b349c6",
+    "bytes": 6070
+  },
   "final_integrity.json": {
     "sha256": "d0b6afa647c8bf5a825e552abaa448a214f5aa29f423beab576a18adba0a5d78",
     "bytes": 656
@@ -150,6 +154,14 @@
   "pr_8_snapshot.json": {
     "sha256": "3d26cc71b0344e76308627ffbb49894829b6ec5996344ee72f78392903d94aa3",
     "bytes": 2018
+  },
+  "pr_draft.md": {
+    "sha256": "8a2af563dfe21865288446d4c868b853b9277f911c15592997531c645bb3cad9",
+    "bytes": 3391
+  },
+  "publication.json": {
+    "sha256": "b5e60d646e8b754f3f45f8029ec71a52a9529b6cb1930df5549f4e6c9e147d9a",
+    "bytes": 1728
   },
   "regression.command.json": {
     "sha256": "6ef7559ef9f28e59e229c279800dd55151f678a2bf2a3ebf533958ca86cf01ed",
@@ -198,6 +210,10 @@
   "tv1_tests.log": {
     "sha256": "39760d34659274d66fe0e9c4f37518b79a9b5d661f4aa301f680f60ee995efd7",
     "bytes": 2157
+  },
+  "tv4_review_comment.md": {
+    "sha256": "502ca04e10f5eabaf7dbaf2e48d36703ec87b103ca3e19d00231e5c56fb66f44",
+    "bytes": 884
   },
   "tv4_tests.command.json": {
     "sha256": "0cd07f39c03f9b804a6b429d4afac39e6b1e9948b5acb4ba6456e94d1e203a2a",

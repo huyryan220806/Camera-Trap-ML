@@ -71,3 +71,15 @@ When TV3 handoff arrives, verify external approval provenance and dataset/hash,
 then run candidate audit and architecture-specific clean reload. No Test rerun.
 Git publication/PR/reviewer notifications are recorded in
 `reports/tv2/w5_evidence/attempt_01/publication.json` after delivery.
+
+## Git delivery outcome
+
+Implementation commit `0f43b5e`, report/evidence commit `0f002c9` pushed to
+`origin/feat/baseline`; no other branch pushed. Final publication receipt and
+raw-evidence attributes are in a following delivery commit, verified after push.
+GitHub connector rejected PR creation **and** PR8 review comment with HTTP403
+`Resource not accessible by integration`. No W5 PR/review request/comment was
+sent; no reviewer approval/merge. PR body and unsent TV4 comment are saved in
+`w5_evidence/attempt_01/pr_draft.md` and `tv4_review_comment.md`.
+Manual compare: https://github.com/huyryan220806/Camera-Trap-ML/compare/main...feat/baseline?expand=1
+Reviewers still need notification when PR can be created. Do not mark W5 COMPLETE.
