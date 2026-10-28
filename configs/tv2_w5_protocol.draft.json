@@ -1,0 +1,15 @@
+{
+  "status": "DRAFT",
+  "dataset_version": "comparison_v1",
+  "evaluation_split": "val",
+  "selection_metric": "image_macro_f1",
+  "prediction_tie_rule": "lowest_class_id",
+  "checkpoint_tie_rule": "earliest_epoch",
+  "proposed_seeds": [42],
+  "seeds": [],
+  "max_candidate_runs": null,
+  "experiments": [],
+  "reviewers": {"TV3": null, "TV1": null},
+  "approval_evidence": null,
+  "note": "Proposed tie/seed values require TV3 confirmation before an official candidate run. No budget or approval is inferred. B2 reference verification is not a candidate training run."
+}
