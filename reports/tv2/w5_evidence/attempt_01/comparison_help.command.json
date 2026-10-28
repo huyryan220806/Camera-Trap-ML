@@ -1,0 +1,19 @@
+{
+  "name": "comparison_help",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/validate_comparison.py",
+    "--help"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+  "started_utc": "2026-10-28T16:50:50.724532+00:00",
+  "seconds": 0.7777829000006022,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\comparison_help.log",
+  "log_sha256": "905204d9fa78f9ab3353459006a3ae2c36221048dafcaddc9286ce836450581a"
+}

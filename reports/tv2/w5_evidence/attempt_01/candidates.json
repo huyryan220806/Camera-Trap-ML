@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-28T16:51:04+00:00",
+  "action": "verified_existing",
+  "dataset_version": "w5_candidates_v1",
+  "source_files_unchanged": true,
+  "release_sha256": "37db148ec716e5666431eca6f78a3440651f63c9359779dc456fd9decd26cd07",
+  "source_images": 31589,
+  "additional_train_candidates": 1665,
+  "holdout_status": "NOT_READY_INSUFFICIENT_SUPPORT",
+  "new_images_downloaded": 0,
+  "model_inference_run": false,
+  "source_split_changes": 0
+}

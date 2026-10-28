@@ -1,0 +1,207 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 -m unittest discover -s tests -p test_inventory_tv1_w4.py -v
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4
+test_counts_use_distinct_sequences_not_crop_count (test_inventory_tv1_w4.InventoryTests.test_counts_use_distinct_sequences_not_crop_count) ... ok
+test_examples_deterministic_not_relabeling (test_inventory_tv1_w4.InventoryTests.test_examples_deterministic_not_relabeling) ... ok
+test_interrupted_run_keeps_per_image_check (test_inventory_tv1_w4.InventoryTests.test_interrupted_run_keeps_per_image_check) ... {
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-28T17:22:57+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 1,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+ok
+test_lock_proof_and_path_guards (test_inventory_tv1_w4.InventoryTests.test_lock_proof_and_path_guards) ... ok
+test_resume_rehashes_and_detects_changed_missing_files (test_inventory_tv1_w4.InventoryTests.test_resume_rehashes_and_detects_changed_missing_files) ... {
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-28T17:22:57+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-28T17:22:57+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 1,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-28T17:22:57+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 0,
+  "invalid_images": 1,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-28T17:22:57+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 0,
+  "invalid_images": 1,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.279s
+
+OK

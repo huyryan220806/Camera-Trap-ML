@@ -1,0 +1,25 @@
+{
+  "name": "tv4_tests_02",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_tv4*.py",
+    "-v"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv4",
+  "started_utc": "2026-10-28T17:18:57.523892+00:00",
+  "seconds": 12.161693500002002,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\tv4_tests_02.log",
+  "log_sha256": "345654cd56c191fe5748190586a10151f89f619e9b73402cfcd5b14167d5a0ad"
+}

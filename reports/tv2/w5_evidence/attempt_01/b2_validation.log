@@ -1,0 +1,18 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/verify_w4_checkpoints.py --model B2 --checkpoint "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\experiments\B2_run01\checkpoints\best_model.pt" --output "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\b2_validation" --device cpu
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+{
+  "status": "PASS",
+  "model": "B2",
+  "best_epoch": 21,
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "image_level_metrics": {
+    "macro_f1": 0.7454765175212033,
+    "macro_precision": 0.7484190016985997,
+    "macro_recall": 0.7466666666666666,
+    "accuracy": 0.7466666666666667
+  },
+  "validation_images": 600,
+  "validation_crops": 680,
+  "native_adapter_max_logit_delta_all_val_crops": 0.0,
+  "test_inference_performed": false
+}

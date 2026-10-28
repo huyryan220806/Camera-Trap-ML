@@ -1,0 +1,179 @@
+{
+  "result": {
+    "schema_version": "1.0.0",
+    "request_id": "ac2d6670-8d70-476a-bc03-1021c79c9ce7",
+    "image": {
+      "image_id": null,
+      "file_name": "synthetic_corrupt.jpg",
+      "width": null,
+      "height": null
+    },
+    "pipeline": {
+      "mode": "inference",
+      "detector_id": "MDv5a.0.1",
+      "classifier_id": "B2",
+      "class_map_version": "swg-v1",
+      "detector_threshold": 0.2,
+      "review_threshold": 0.7
+    },
+    "status": "error",
+    "needs_review": true,
+    "detections": [],
+    "error": {
+      "stage": "read",
+      "code": "IMAGE_DECODE_ERROR",
+      "message": "Khong doc duoc anh. Ho tro JPEG/PNG/WEBP, toi da 16 MiB va 24 MP."
+    },
+    "elapsed_ms": 62.8
+  },
+  "classification": {
+    "schema_version": "classifier-demo-1.0",
+    "result": {
+      "schema_version": "1.0.0",
+      "request_id": "ac2d6670-8d70-476a-bc03-1021c79c9ce7",
+      "image": {
+        "image_id": null,
+        "file_name": "synthetic_corrupt.jpg",
+        "width": null,
+        "height": null
+      },
+      "pipeline": {
+        "mode": "inference",
+        "detector_id": "MDv5a.0.1",
+        "classifier_id": "B2",
+        "class_map_version": "swg-v1",
+        "detector_threshold": 0.2,
+        "review_threshold": 0.7
+      },
+      "status": "error",
+      "needs_review": true,
+      "detections": [],
+      "error": {
+        "stage": "read",
+        "code": "IMAGE_DECODE_ERROR",
+        "message": "Khong doc duoc anh. Ho tro JPEG/PNG/WEBP, toi da 16 MiB va 24 MP."
+      },
+      "elapsed_ms": 62.8
+    },
+    "provenance": {
+      "requested_classifier": "B2",
+      "classifier": null,
+      "detector": {
+        "mode": "megadetector",
+        "detector_id": "MDv5a.0.1",
+        "package_version": "10.0.25",
+        "weights_sha256": null,
+        "detector_threshold": 0.2,
+        "classifier_id": null,
+        "device": "cpu",
+        "image_size": 1280,
+        "coordinate_space": "original_raster_pixels_no_exif_rotation"
+      },
+      "ignored_non_animals": 0,
+      "score_kind": "softmax_class_score",
+      "scores_calibrated": false,
+      "crop_policy": "round_clip_min8_padding0",
+      "max_boxes": 64,
+      "training_overlap_swg": true,
+      "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+      "warnings": [
+        "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+        "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+      ]
+    }
+  },
+  "review_session": {
+    "schema_version": "review-session-1.0",
+    "request_id": "ac2d6670-8d70-476a-bc03-1021c79c9ce7",
+    "created_utc": "2026-10-28T17:22:59.532918+00:00",
+    "source_sha256": "f1234d75178d892a133a410355a5a990cf75d2f33eba25d575943d4df632f3a4",
+    "original": {
+      "schema_version": "classifier-demo-1.0",
+      "result": {
+        "schema_version": "1.0.0",
+        "request_id": "ac2d6670-8d70-476a-bc03-1021c79c9ce7",
+        "image": {
+          "image_id": null,
+          "file_name": "synthetic_corrupt.jpg",
+          "width": null,
+          "height": null
+        },
+        "pipeline": {
+          "mode": "inference",
+          "detector_id": "MDv5a.0.1",
+          "classifier_id": "B2",
+          "class_map_version": "swg-v1",
+          "detector_threshold": 0.2,
+          "review_threshold": 0.7
+        },
+        "status": "error",
+        "needs_review": true,
+        "detections": [],
+        "error": {
+          "stage": "read",
+          "code": "IMAGE_DECODE_ERROR",
+          "message": "Khong doc duoc anh. Ho tro JPEG/PNG/WEBP, toi da 16 MiB va 24 MP."
+        },
+        "elapsed_ms": 62.8
+      },
+      "provenance": {
+        "requested_classifier": "B2",
+        "classifier": null,
+        "detector": {
+          "mode": "megadetector",
+          "detector_id": "MDv5a.0.1",
+          "package_version": "10.0.25",
+          "weights_sha256": null,
+          "detector_threshold": 0.2,
+          "classifier_id": null,
+          "device": "cpu",
+          "image_size": 1280,
+          "coordinate_space": "original_raster_pixels_no_exif_rotation"
+        },
+        "ignored_non_animals": 0,
+        "score_kind": "softmax_class_score",
+        "scores_calibrated": false,
+        "crop_policy": "round_clip_min8_padding0",
+        "max_boxes": 64,
+        "training_overlap_swg": true,
+        "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+        "warnings": [
+          "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+          "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+        ]
+      }
+    },
+    "runtime": {
+      "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
+      "logical_cpus": 16,
+      "ram_gib": 15.71,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.14",
+      "versions": {
+        "torch": "2.8.0",
+        "torchvision": "0.23.0",
+        "Pillow": "12.2.0",
+        "megadetector": "10.0.25"
+      },
+      "device": "cpu",
+      "torch_threads": 4,
+      "image_batch_size": 1,
+      "detector_batch_size": 1,
+      "classifier_max_crop_batch_size": 8,
+      "detector_image_size": 1280,
+      "classifier_image_size": 224,
+      "classifier_actual_crop_batches": []
+    },
+    "inference_wall_ms": 77.989,
+    "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+    "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+    "review": {
+      "revision": 0,
+      "operator": "",
+      "note": "",
+      "image_outcome": "pending",
+      "box_reviews": []
+    },
+    "events": []
+  }
+}

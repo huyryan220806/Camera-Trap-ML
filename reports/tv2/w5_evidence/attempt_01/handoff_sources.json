@@ -1,0 +1,23 @@
+{
+  "docs/handoff_tv1_w5.md": {
+    "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "sha256": "a20f1d8c1eda1333296c66ead180ba52e468c817badd58e020384af1d8c37113"
+  },
+  "docs/handoff_tv4_return_ui.md": {
+    "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "sha256": "013a448c3712b96cbb9e72fb71c5481622cff7753a5249e91e3eacc2cb26b341"
+  },
+  "reports/tv1_w5/REPORT.md": {
+    "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "sha256": "cea3a78f8b129bb1ca177811455813b3fa9bec2060bafe0287afa43ce3dd53c2"
+  },
+  "docs/plans/TV2_W5_W6.md": {
+    "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "sha256": "e3b2e82e603f0944d29269cdeae0b2ad34bafb79ec674f04c18a0347d8a02295"
+  },
+  "docs/plans/TV3_W5_W6.md": {
+    "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "sha256": "452d81e5909d3460be660ef5dd25a5d7cad9c2397317c32680bf90080ef99105"
+  },
+  "local_plan_matches_remote_text": true
+}

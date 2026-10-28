@@ -1,0 +1,17 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/review_tv4_w5.py --url http://127.0.0.1:8767 --snapshot "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4" --output "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\ui_api_03"
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+{"test_case": "API-01 B2 weights and train samples", "status": "PASS", "actual": null}
+{"test_case": "API-02 cold real B2 no fallback", "status": "PASS", "actual": {"status": "needs_review", "detections": 1}}
+{"test_case": "API-03 cold top3 and detection IDs", "status": "PASS", "actual": null}
+{"test_case": "API-04 cold calibrated score wording", "status": "PASS", "actual": null}
+{"test_case": "API-02 warm real B2 no fallback", "status": "PASS", "actual": {"status": "needs_review", "detections": 1}}
+{"test_case": "API-03 warm top3 and detection IDs", "status": "PASS", "actual": null}
+{"test_case": "API-04 warm calibrated score wording", "status": "PASS", "actual": null}
+{"test_case": "API-05 revision persisted; original immutable", "status": "PASS", "actual": null}
+{"test_case": "API-06 stale revision rejected", "status": "PASS", "actual": 409}
+{"test_case": "API-07 labelled synthetic multiple", "status": "PASS", "actual": {"status": "needs_review", "detections": 2}}
+{"test_case": "API-08 multiple detection IDs preserved", "status": "PASS", "actual": null}
+{"test_case": "API-07 labelled synthetic empty", "status": "PASS", "actual": {"status": "no_detection", "detections": 0}}
+{"test_case": "API-09 synthetic detector miss separate revision", "status": "PASS", "actual": null}
+{"test_case": "API-07 labelled synthetic error", "status": "PASS", "actual": {"status": "error", "detections": 0}}
+{"test_case": "API-10 corrupt image visible read error", "status": "PASS", "actual": null}

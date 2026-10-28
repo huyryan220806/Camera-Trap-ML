@@ -1,0 +1,12 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/validate_comparison.py --help
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+usage: validate_comparison.py [-h] [--folder FOLDER] [--metadata-only]
+                              [--report REPORT]
+
+Validate the frozen B1/B2 bundle against its source and every derived view.
+
+options:
+  -h, --help       show this help message and exit
+  --folder FOLDER
+  --metadata-only
+  --report REPORT

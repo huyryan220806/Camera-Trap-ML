@@ -1,0 +1,10 @@
+{
+  "number": 8,
+  "state": "open",
+  "merged": false,
+  "head": "fef2511b571b23be3d4e2cf6c1ccedd659097b6f",
+  "ref": "feat/demo",
+  "merged_at": null,
+  "title": "Improve demo layout and review usability",
+  "body": "## Phạm vi TV4\n\nCải thiện bố cục và trải nghiệm duyệt của ứng dụng demo mà không thay đổi API, schema, class ID, checkpoint hoặc logic suy luận.\n\n### Thay đổi chính\n\n- Tổ chức controls thành ba bước: ảnh đầu vào, detector và classifier.\n- Ưu tiên vùng ảnh; chuẩn hóa typography, khoảng cách, màu và trạng thái.\n- Phân biệt rõ giả lập, đạt ngưỡng, cần xem, không phát hiện và lỗi.\n- Chọn bounding box hoặc hàng kết quả sẽ đồng bộ đúng vùng duyệt bằng `detection_id`.\n- Hiển thị rõ bản nháp chưa lưu, bản đã lưu và lỗi lưu duyệt.\n- Thu gọn thông tin runtime/JSON vào phần mở rộng.\n- Responsive không tràn ngang tại 1440×1100, 390×844 và 320×740.\n\n## Kiểm tra\n\n- `node --check app/app.js` — PASS\n- `node --check app/review.js` — PASS\n- `git diff --check` — PASS\n- `scripts/check_environment.py` — PASS\n- `python -m unittest discover -s tests -p \"test_tv4*.py\" -v` — **44/44 PASS**\n- `scripts/validate_results.py` — **6/6 PASS**\n- `python -m unittest discover -s tests -v` — **377/377 PASS**\n- Browser QA Microsoft Edge — PASS ở cả ba viewport, box nằm trong ảnh, không có lỗi JavaScript.\n- Luồng thật MegaDetector MDv5a.0.1 + B2 — PASS, 1 detection, `needs_review`.\n\n## Ghi chú review\n\n- Dự đoán gốc vẫn bất biến; chỉnh nhãn chỉ nằm trong `review.box_reviews`.\n- Checkpoint B2 và MegaDetector đã được kiểm tra hash, chỉ lưu local trong `outputs/` và không được đưa lên Git.\n- Tiến độ chi tiết nằm tại `docs/progress_tv4_ui.md`.\n\nNhờ TV2 kiểm tra lại hành vi UI/API và luồng lưu/nạp revision trước khi merge.\n"
+}

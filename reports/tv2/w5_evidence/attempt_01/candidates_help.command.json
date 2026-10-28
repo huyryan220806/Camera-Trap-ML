@@ -1,0 +1,19 @@
+{
+  "name": "candidates_help",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/prepare_tv1_w5.py",
+    "--help"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv1",
+  "started_utc": "2026-10-28T16:50:51.744903+00:00",
+  "seconds": 0.806552300000476,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\candidates_help.log",
+  "log_sha256": "b3db0c4848cb3d6f8f8946c9eb40d9aee1ffc9106e85a556bcad33e62d0181dc"
+}

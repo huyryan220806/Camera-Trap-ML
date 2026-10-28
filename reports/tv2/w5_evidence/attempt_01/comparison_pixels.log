@@ -1,0 +1,5 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/validate_comparison.py --report "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\comparison_pixels.json"
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+Comparison image verification 250/4000
+Comparison image verification 500/4000
+Comparison image verification 750/4000

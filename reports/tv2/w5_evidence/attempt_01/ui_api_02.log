@@ -1,0 +1,10 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/review_tv4_w5.py --url http://127.0.0.1:8767 --snapshot "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4" --output "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\ui_api_02"
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\review_tv4_w5.py", line 130, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\review_tv4_w5.py", line 37, in main
+    assert (snapshot/name).read_bytes()==expected, 'Snapshot code mismatch: '+name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Snapshot code mismatch: app/index.html

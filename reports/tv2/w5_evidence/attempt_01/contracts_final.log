@@ -1,0 +1,8 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/validate_results.py
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+OK: image_error.json
+OK: model_error.json
+OK: multiple_animals.json
+OK: needs_review.json
+OK: no_detection.json
+OK: ok.json

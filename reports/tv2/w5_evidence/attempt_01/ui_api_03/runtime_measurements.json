@@ -1,0 +1,64 @@
+[
+  {
+    "phase": "cold",
+    "request_id": "dfdccbf6-02ea-4b04-96f4-94c59527d958",
+    "http_wall_seconds": 11.887630300003366,
+    "inference_wall_ms": 11713.562,
+    "runtime": {
+      "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
+      "logical_cpus": 16,
+      "ram_gib": 15.71,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.14",
+      "versions": {
+        "torch": "2.8.0",
+        "torchvision": "0.23.0",
+        "Pillow": "12.2.0",
+        "megadetector": "10.0.25"
+      },
+      "device": "cpu",
+      "torch_threads": 4,
+      "image_batch_size": 1,
+      "detector_batch_size": 1,
+      "classifier_max_crop_batch_size": 8,
+      "detector_image_size": 1280,
+      "classifier_image_size": 224,
+      "classifier_actual_crop_batches": [
+        1
+      ]
+    },
+    "classifier_cache_hit": false,
+    "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review"
+  },
+  {
+    "phase": "warm",
+    "request_id": "f314c118-f08d-449f-a0a2-c4058c4bfc35",
+    "http_wall_seconds": 2.154706500001339,
+    "inference_wall_ms": 2038.52,
+    "runtime": {
+      "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
+      "logical_cpus": 16,
+      "ram_gib": 15.71,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.14",
+      "versions": {
+        "torch": "2.8.0",
+        "torchvision": "0.23.0",
+        "Pillow": "12.2.0",
+        "megadetector": "10.0.25"
+      },
+      "device": "cpu",
+      "torch_threads": 4,
+      "image_batch_size": 1,
+      "detector_batch_size": 1,
+      "classifier_max_crop_batch_size": 8,
+      "detector_image_size": 1280,
+      "classifier_image_size": 224,
+      "classifier_actual_crop_batches": [
+        1
+      ]
+    },
+    "classifier_cache_hit": true,
+    "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review"
+  }
+]

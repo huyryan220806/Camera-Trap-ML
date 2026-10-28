@@ -1,0 +1,49 @@
+{
+  "generated_utc": "2026-10-28T17:30:11.215463+00:00",
+  "status": "PARTIAL",
+  "git_base": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "final_regression": {
+    "total": 409,
+    "pass": 409,
+    "fail": 0,
+    "errors": 0,
+    "skip": 0,
+    "runner_seconds": 53.59968780000054,
+    "unittest_seconds": 48.218,
+    "log": "regression_03.log",
+    "w5_added_tests": 32
+  },
+  "tv4_exact_head_tests": {
+    "total": 44,
+    "pass": 44,
+    "fail": 0,
+    "skip": 0,
+    "unittest_seconds": 8.534,
+    "log": "tv4_tests_02.log"
+  },
+  "tv1_w5_snapshot_tests": {
+    "total": 12,
+    "pass": 12,
+    "fail": 0,
+    "skip": 0,
+    "log": "tv1_tests.log"
+  },
+  "initial_failures_preserved": {
+    "first_direct_w5_run": "30 tests, 18 errors including cleanup; sandbox default TEMP access denied; tool transcript only",
+    "regression.log": "407 tests, 7 errors: 6 localhost WinError10013 and 1 TEMP-under-repo path-guard interaction",
+    "regression_02.log": "409 tests, 1 path-guard error with TEMP under repo outputs; no software/test change required",
+    "tv4_tests.log": "44 tests, 6 socket errors in sandbox; tv4_tests_02 outside sandbox 44 PASS",
+    "ui_api_02.log": "Byte guard rejected CRLF conversion in git archive; validated LF-equivalent code and retained both hashes before next attempt"
+  },
+  "expected_block": "candidate_draft_gate.log exits1 before candidate predictions/model load, no DINO output created",
+  "protected_integrity": "source_audit.json; old tracked artifacts unchanged except pre-existing Git line-ending representation; no W1-W4 file edited",
+  "code_sha256": {
+    "src/evaluation/w5_validation.py": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+    "scripts/evaluate_w5_validation.py": "033d3c3b3e5f68c6099cb4dcff9d5fdc962bc883bf7db3de0e509548563b7d5b",
+    "scripts/report_w5_b2.py": "10f297666f5cb41131113acd6b6c711f2ce0cf8c23620a7b44cf2c841d5fe2dc",
+    "scripts/verify_w5_pixels.py": "86b791f8f33e96819a33d5c7831d739501a1e5e686ff0693b8a00ae51fc65ee2",
+    "scripts/review_tv4_w5.py": "cc67d4e54acb341b8dfce99dcd57c01c30da66fb61e7e9956649cfbb141866a7",
+    "tests/test_w5_validation.py": "46eec300ed9a6f8670998c4791ce87983f22ab2476f12d9c72b67d38df787e0b",
+    "configs/tv2_w5_protocol.draft.json": "aef39d472659c4d8a9478d8c5713ef1448ae85c958c250e0767d5452eafaa3d2"
+  }
+}
