@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source_images": 31589,
+  "decisions_complete": true,
+  "source_row_values_unchanged": true,
+  "split_changes": 0,
+  "cross_group_overlap": {
+    "image_id": 0,
+    "file_name": 0,
+    "seq_id": 0,
+    "location": 0
+  },
+  "additional_train_candidates": 1665,
+  "additional_train_sequences": 1665,
+  "proposed_train_images_if_all_pass_quality": 4465,
+  "proposed_train_sequences": 3942,
+  "proposed_train_locations": 540,
+  "holdout_candidate_images": 109,
+  "holdout_historical_location_overlap": 0,
+  "sources_and_release_hashes_valid": true,
+  "image_decode_performed": false,
+  "new_downloads": 0,
+  "model_inference_performed": false,
+  "whole_unit_suite_passed": 389
+}

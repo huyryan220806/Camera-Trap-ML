@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "documents_checked": 9,
+  "local_links_checked": 88,
+  "missing": [],
+  "member_plan_files": [
+    "TV2_W5_W6.md",
+    "TV3_W5_W6.md",
+    "TV4_W5_W6.md"
+  ],
+  "pptx_or_training_changed": false
+}

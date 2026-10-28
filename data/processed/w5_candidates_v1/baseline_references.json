@@ -1,0 +1,15 @@
+{
+  "dataset_version": "comparison_v1",
+  "training_release": "Use existing baseline for the first DINO experiment",
+  "manifest": "data/processed/comparison_v1/manifest.jsonl",
+  "b2_train": "data/processed/comparison_v1/b2/train.jsonl",
+  "b2_val": "data/processed/comparison_v1/b2/val.jsonl",
+  "class_map": "data/processed/comparison_v1/class_map.json",
+  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+  "counts": {
+    "train_images": 2800,
+    "val_images": 600,
+    "old_test_images": 600
+  },
+  "old_test_policy": "Published B2 result only; do not use to tune new models"
+}

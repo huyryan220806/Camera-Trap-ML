@@ -3,6 +3,18 @@
 Trạng thái hiện tại: [README dự án](../README.md). Mở web/cài máy mới:
 [môi trường](environment.md). Sơ đồ xử lý: [kiến trúc](architecture.md).
 
+**TV4 tiếp nhận lại công việc:** [Bàn giao toàn bộ tuần 1–4 và checklist chỉnh giao diện](handoff_tv4_return_ui.md).
+
+## Tuần 5–6: kế hoạch đã cập nhật
+
+- **TV1 W5:** [Bàn giao](handoff_tv1_w5.md), [kiểm kê và manifest ứng viên](../reports/tv1_w5/REPORT.md),
+  [phần dữ liệu báo cáo](../reports/tv1_w5/DATA_CHAPTER.md), [progress](progress_tv1_w5.md).
+- **Ba kế hoạch riêng:** [TV2: đánh giá](plans/TV2_W5_W6.md),
+  [TV3: DINO và checkpoint](plans/TV3_W5_W6.md), [TV4: UI và ứng dụng](plans/TV4_W5_W6.md).
+- Lượt mô hình đầu dùng `comparison_v1`; 1.665 ảnh train bổ sung mới là ứng viên
+  metadata. Nguồn holdout mới chỉ có 109 ảnh, chưa đủ hỗ trợ 8 lớp; chưa phát
+  hành test mới. Xem báo cáo TV1 trước khi mở rộng train hoặc gọi kết quả độc lập.
+
 ## Tuần 4 đang dùng
 
 | Phần | Hướng dẫn / báo cáo | Tiếp tục sau gián đoạn |

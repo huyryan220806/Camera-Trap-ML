@@ -1,0 +1,23 @@
+{
+  "dataset_version": "w5_candidates_v1",
+  "seed": 42,
+  "source_manifest": "data/processed/v1/manifest_v1.jsonl",
+  "comparison_dir": "data/processed/comparison_v1",
+  "output_dir": "data/processed/w5_candidates_v1",
+  "state_dir": "data/interim/w5_candidates_v1",
+  "additional_train_per_class_cap": 250,
+  "selection": "one_image_per_new_sequence_then_round_robin_locations_sha256_seeded",
+  "holdout_source_split": "test",
+  "holdout_min_images_per_class": 75,
+  "holdout_min_sequences_per_class": 10,
+  "holdout_min_locations_per_class": 2,
+  "historical_exposure_globs": [
+    "data/crops/**/crop_manifest*.jsonl",
+    "data/crops/**/crop_errors*.jsonl",
+    "experiments/*/selected*.jsonl",
+    "experiments/*/used*.jsonl"
+  ],
+  "scope": "Metadata candidates only. No new downloads, training-ready release, model selection or inference on Test.",
+  "support_policy_note": "Planning floor matching the old 75-image class support and W1 group minima; not a statistical power guarantee. Do not relax to reach an accuracy target.",
+  "release_gate": "New images require download/decode, dimensions, byte/RGB hashes, cross-split duplicate audit and label/box review before a separate training release. Holdout also requires support and exposure review."
+}

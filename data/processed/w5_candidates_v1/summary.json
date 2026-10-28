@@ -1,0 +1,394 @@
+{
+  "dataset_version": "w5_candidates_v1",
+  "seed": 42,
+  "source": {
+    "images": 31589,
+    "sequences": 13258,
+    "locations": 792,
+    "boxes": 38322
+  },
+  "source_by_split": {
+    "train": {
+      "images": 22073,
+      "sequences": 9285,
+      "locations": 554,
+      "boxes": 26506
+    },
+    "val": {
+      "images": 4835,
+      "sequences": 2012,
+      "locations": 119,
+      "boxes": 5812
+    },
+    "test": {
+      "images": 4681,
+      "sequences": 1961,
+      "locations": 119,
+      "boxes": 6004
+    }
+  },
+  "baseline": {
+    "images": 4000,
+    "sequences": 3280,
+    "locations": 658,
+    "boxes": 4485
+  },
+  "train_pool": {
+    "images": 19266,
+    "sequences": 8783,
+    "locations": 548,
+    "boxes": 23362
+  },
+  "selected_additional_train": {
+    "images": 1665,
+    "sequences": 1665,
+    "locations": 480,
+    "boxes": 1835
+  },
+  "holdout_candidates": {
+    "images": 109,
+    "sequences": 50,
+    "locations": 21,
+    "boxes": 123
+  },
+  "excluded_invalid": {
+    "images": 9,
+    "sequences": 9,
+    "locations": 9,
+    "boxes": 25
+  },
+  "decision_counts": {
+    "baseline_retained": 4000,
+    "excluded_geometry_or_label": 9,
+    "holdout_candidate_unexposed_location": 109,
+    "reserved_test_exposed_location": 3972,
+    "reserved_validation": 4233,
+    "train_candidate": 19266
+  },
+  "selection_counts": {
+    "baseline_sequence_not_selected": 3017,
+    "not_selected_sequence_representative_or_cap": 14584,
+    "selected": 1665
+  },
+  "per_class": [
+    {
+      "label": "large_antlered_muntjac",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 328,
+        "locations": 103,
+        "boxes": 359
+      },
+      "train_pool": {
+        "images": 5217,
+        "sequences": 2286,
+        "locations": 203,
+        "boxes": 5374
+      },
+      "new_sequence_pool": {
+        "images": 4684,
+        "sequences": 1999,
+        "locations": 194,
+        "boxes": 4829
+      },
+      "selected_additional_train": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 194,
+        "boxes": 260
+      },
+      "proposed_train_images_if_all_pass_quality": 600,
+      "holdout_candidate": {
+        "images": 9,
+        "sequences": 3,
+        "locations": 3,
+        "boxes": 9
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences"
+      ]
+    },
+    {
+      "label": "annamite_striped_rabbit",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 202,
+        "locations": 59,
+        "boxes": 350
+      },
+      "train_pool": {
+        "images": 47,
+        "sequences": 43,
+        "locations": 23,
+        "boxes": 48
+      },
+      "new_sequence_pool": {
+        "images": 13,
+        "sequences": 13,
+        "locations": 9,
+        "boxes": 13
+      },
+      "selected_additional_train": {
+        "images": 13,
+        "sequences": 13,
+        "locations": 9,
+        "boxes": 13
+      },
+      "proposed_train_images_if_all_pass_quality": 363,
+      "holdout_candidate": {
+        "images": 1,
+        "sequences": 1,
+        "locations": 1,
+        "boxes": 1
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences",
+        "locations"
+      ]
+    },
+    {
+      "label": "sambar",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 308,
+        "locations": 116,
+        "boxes": 421
+      },
+      "train_pool": {
+        "images": 2382,
+        "sequences": 1087,
+        "locations": 166,
+        "boxes": 2790
+      },
+      "new_sequence_pool": {
+        "images": 1890,
+        "sequences": 811,
+        "locations": 152,
+        "boxes": 2207
+      },
+      "selected_additional_train": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 152,
+        "boxes": 276
+      },
+      "proposed_train_images_if_all_pass_quality": 600,
+      "holdout_candidate": {
+        "images": 13,
+        "sequences": 5,
+        "locations": 3,
+        "boxes": 19
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences"
+      ]
+    },
+    {
+      "label": "chinese_serow",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 287,
+        "locations": 117,
+        "boxes": 360
+      },
+      "train_pool": {
+        "images": 876,
+        "sequences": 463,
+        "locations": 146,
+        "boxes": 904
+      },
+      "new_sequence_pool": {
+        "images": 453,
+        "sequences": 206,
+        "locations": 91,
+        "boxes": 468
+      },
+      "selected_additional_train": {
+        "images": 206,
+        "sequences": 206,
+        "locations": 91,
+        "boxes": 211
+      },
+      "proposed_train_images_if_all_pass_quality": 556,
+      "holdout_candidate": {
+        "images": 19,
+        "sequences": 7,
+        "locations": 4,
+        "boxes": 20
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences"
+      ]
+    },
+    {
+      "label": "common_palm_civet",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 276,
+        "locations": 128,
+        "boxes": 352
+      },
+      "train_pool": {
+        "images": 860,
+        "sequences": 486,
+        "locations": 166,
+        "boxes": 866
+      },
+      "new_sequence_pool": {
+        "images": 520,
+        "sequences": 272,
+        "locations": 126,
+        "boxes": 525
+      },
+      "selected_additional_train": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 126,
+        "boxes": 251
+      },
+      "proposed_train_images_if_all_pass_quality": 600,
+      "holdout_candidate": {
+        "images": 3,
+        "sequences": 1,
+        "locations": 1,
+        "boxes": 3
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences",
+        "locations"
+      ]
+    },
+    {
+      "label": "masked_palm_civet",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 264,
+        "locations": 153,
+        "boxes": 353
+      },
+      "train_pool": {
+        "images": 720,
+        "sequences": 400,
+        "locations": 202,
+        "boxes": 740
+      },
+      "new_sequence_pool": {
+        "images": 425,
+        "sequences": 208,
+        "locations": 137,
+        "boxes": 438
+      },
+      "selected_additional_train": {
+        "images": 208,
+        "sequences": 208,
+        "locations": 137,
+        "boxes": 214
+      },
+      "proposed_train_images_if_all_pass_quality": 558,
+      "holdout_candidate": {
+        "images": 7,
+        "sequences": 5,
+        "locations": 5,
+        "boxes": 7
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences"
+      ]
+    },
+    {
+      "label": "silver_pheasant",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 279,
+        "locations": 122,
+        "boxes": 450
+      },
+      "train_pool": {
+        "images": 806,
+        "sequences": 460,
+        "locations": 169,
+        "boxes": 1060
+      },
+      "new_sequence_pool": {
+        "images": 452,
+        "sequences": 238,
+        "locations": 121,
+        "boxes": 587
+      },
+      "selected_additional_train": {
+        "images": 238,
+        "sequences": 238,
+        "locations": 121,
+        "boxes": 306
+      },
+      "proposed_train_images_if_all_pass_quality": 588,
+      "holdout_candidate": {
+        "images": 10,
+        "sequences": 8,
+        "locations": 3,
+        "boxes": 11
+      },
+      "holdout_failed_support_checks": [
+        "images",
+        "sequences"
+      ]
+    },
+    {
+      "label": "eurasian_wild_pig",
+      "baseline_train": {
+        "images": 350,
+        "sequences": 333,
+        "locations": 151,
+        "boxes": 480
+      },
+      "train_pool": {
+        "images": 8358,
+        "sequences": 3558,
+        "locations": 379,
+        "boxes": 11580
+      },
+      "new_sequence_pool": {
+        "images": 7812,
+        "sequences": 3260,
+        "locations": 370,
+        "boxes": 10810
+      },
+      "selected_additional_train": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 250,
+        "boxes": 304
+      },
+      "proposed_train_images_if_all_pass_quality": 600,
+      "holdout_candidate": {
+        "images": 47,
+        "sequences": 20,
+        "locations": 11,
+        "boxes": 53
+      },
+      "holdout_failed_support_checks": [
+        "images"
+      ]
+    }
+  ],
+  "source_split_changes": 0,
+  "training_ready": false,
+  "new_image_content_checked": false,
+  "new_image_near_duplicates_checked": false,
+  "holdout_support_sufficient": false,
+  "holdout_ready": false,
+  "holdout_status": "NOT_READY_INSUFFICIENT_SUPPORT",
+  "recommended_evaluation": "Keep comparison_v1 validation for development; preserve published B2 Test. No new independent 8-class claim from this candidate pool.",
+  "support_floor": {
+    "images": 75,
+    "sequences": 10,
+    "locations": 2
+  },
+  "scope": "Metadata candidates only. No new downloads, training-ready release, model selection or inference on Test."
+}
