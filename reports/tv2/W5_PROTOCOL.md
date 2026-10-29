@@ -1,6 +1,7 @@
 # TV2 W5 validation protocol
 
-**DRAFT — chờ TV3 xác nhận trước thử nghiệm ứng viên chính thức.** Lập theo kế
+**DRAFT — cấu hình cập nhật 29/10/2026; chờ bằng chứng phê duyệt TV2/TV3 và
+training config hoàn chỉnh trước thử nghiệm ứng viên chính thức.** Lập theo kế
 hoạch cập nhật 28/10/2026; thực hiện từ 28 sang 29/10 giờ Việt Nam. Lịch W5
 28/10–03/11 là đề xuất. TV2 không phê duyệt thay nhóm và không thực hiện W6.
 
@@ -11,6 +12,19 @@ trên origin lúc bắt đầu). TV1 W5: `9abc9c5` trên `feat/metadata-split`, 
 và chạy verify-only trong snapshot riêng, chưa merge vào nhánh TV2. TV3 tại
 `60516f5` chưa có gói DINO; TV4 PR #8 mở tại
 `fef2511b571b23be3d4e2cf6c1ccedd659097b6f`. PR #7 đã merge ngày 25/10.
+
+Cập nhật cấu hình ngày **29/10/2026** theo chỉ thị người dùng trong chat
+“Cập nhật TV2 W5 protocol theo cấu hình TV3 đã thống nhất”. Đây là nguồn quyết
+định cho seed, ngân sách, epochs/patience, effective batch và thiết bị dự kiến
+bên dưới; không tự coi là chữ ký/review độc lập của TV2/TV3.
+Đã fetch và đọc lại `feat/metadata-split` tại
+`9abc9c572a9191e8a43a5abef05ebaf846b8356f:docs/plans/TV3_W5_W6.md`, SHA-256
+nội dung Git `7708c9683b0938b728276302f88c15df5e9bac99edb0944a79e3fa0118f5d88a`.
+Commit do TV1 công bố kế hoạch; tài liệu mô tả hướng DINO/frozen backbone,
+dữ liệu và seed 42, **không phải approval riêng của TV3 cho toàn bộ đăng ký**.
+Kế hoạch cũ có đề xuất thêm seed/fine-tune khi đủ ngân sách; lượt cập nhật này
+chỉ cho tối đa một candidate training run, backbone frozen, seed 42. Không
+mở thêm seed, fine-tune hay lượt fallback thứ hai theo đề xuất cũ.
 
 Nguồn ưu tiên: `docs/experiment_protocol.md` (bảo vệ Test),
 `docs/handoff_tv1_w3.md` (geometry/data bất biến), kế hoạch W5–W6 cập nhật
@@ -77,18 +91,25 @@ Resize cạnh ngắn256 → CenterCrop224 → ToTensor → ImageNet normalize
 mean `[.485,.456,.406]`, std `[.229,.224,.225]`. Không augmentation khi đánh giá.
 Không train lại B0/B1/B2. B1 dùng full-image, chỉ dẫn số liệu lịch sử đã có.
 
-Ứng viên ưu tiên theo plan là DINOv3 ViT-S/16; dự phòng DINOv2 ViT-S/14 phải
-ghi đúng kiến trúc thực tế. **Chưa nhận model/pretrained/checkpoint/version,
-pooling/head, preprocessing, config hoặc adapter**, nên các trường đó là N/A.
-TV3 phải bàn giao giá trị chính xác và hash, không kế thừa preprocessing B2
-theo giả định. TV2 không viết adapter DINO bằng cách đổi tên ResNet.
+Ứng viên ưu tiên: **DINOv3 ViT-S/16, frozen backbone, linear classification
+head tám lớp**. Dự phòng **DINOv2 ViT-S/14** chỉ khi không lấy được weights
+DINOv3; phải chọn backbone thực tế và đăng ký experiment **trước official run**.
+Fallback dùng chung ngân sách tối đa một lượt, không cho phép chạy cả hai rồi
+chọn theo validation. Không đổi kiến trúc giữa lượt hoặc fine-tune backbone
+trong cấu hình này.
+
+`model.selected_model` và `experiments` vẫn chưa đăng ký: TV3 chưa bàn giao
+pooling, pretrained source/version/checkpoint SHA-256, preprocessing và adapter
+thực tế. Head linear/tám lớp đã được đề xuất rõ; các tham số còn thiếu giữ
+`null`/chưa xác minh, không lấy thông số giả hoặc preprocessing B2 để điền.
+TV2 không viết adapter DINO bằng cách đổi tên ResNet.
 
 ## 3. Dự đoán và metric
 
 Tính softmax từng crop, trung bình đủ vector tám lớp của **mọi** crop cùng
 `image_id`, rồi argmax. Không trung bình nhãn, majority vote, mean logits, chọn
-crop dễ hoặc lọc confidence. Dự đoán hòa vector chọn class ID nhỏ nhất (kế
-thừa B2; đề xuất dùng cùng rule cho DINO).
+crop dễ hoặc lọc confidence. Dự đoán hòa vector chọn **class ID nhỏ nhất**,
+cùng quy tắc B2 và cấu hình ứng viên cập nhật.
 
 Metric chọn checkpoint: **macro-F1 cấp ảnh**. Phụ: accuracy **top-1** cấp ảnh,
 macro-precision, macro-recall, P/R/F1/support đủ tám lớp; zero_division=0.
@@ -104,17 +125,42 @@ từ predictions đã lưu bằng CM arithmetic và kiểm thử đối chiếu 
 
 ## 4. Chọn checkpoint, hòa, seed và ngân sách
 
-Đề xuất: chọn macro-F1 validation cao nhất, hòa chính xác giữ epoch sớm nhất;
-argmax hòa chọn ID nhỏ nhất; seed đầu42 theo hướng TV3. Không đổi sau khi xem
-kết quả. Chưa chốt tie giữa ứng viên/seed hoặc ngân sách số lượt/epoch/GPU-hour.
-Không tuyên bố ưu thế ổn định từ một seed; chưa có seed DINO hợp lệ để phân tích.
+| Tham số cấu hình cập nhật từ người dùng | Giá trị |
+| --- | --- |
+| Seed | 42, duy nhất |
+| Ngân sách | Tối đa **1 candidate training run**, gồm lựa chọn DINO chính hoặc dự phòng |
+| Max epochs | 50 |
+| Early stopping | Patience 7, theo image-level validation macro-F1 |
+| Chọn checkpoint | Image-level validation macro-F1 lớn nhất; hòa giữ epoch sớm nhất |
+| Prediction tie | Class ID nhỏ nhất |
+| Aggregation | Mean crop softmax vectors theo image_id, rồi argmax |
+| Effective batch | **32 ảnh nguồn** mỗi optimizer update; không phải 32 crops |
+| Precision | FP32 |
+| Thiết bị dự kiến | RTX 4060 Laptop, VRAM 8 GB; chưa xác minh khả dụng |
 
-`configs/tv2_w5_protocol.draft.json`: status DRAFT, `seeds=[]`,
-`max_candidate_runs=null`, `experiments=[]`, reviewer TV3/TV1 chưa xác nhận.
-Seed42/rule hòa là **đề xuất, chưa phê duyệt W5**. TV3 xác nhận qua PR hoặc
-receipt có nguồn truy vết trước khi đăng ký lượt chính thức. Chỉ sửa thành
-APPROVED sau xác nhận thật. Gate CLI đã kiểm tra từ chối DRAFT trước khi đọc
-file dự đoán; không tạo prediction giả để thử DINO.
+Cho phép crop microbatch phù hợp VRAM 8 GB. TV3 phải giữ mỗi ảnh có tổng trọng
+số bằng nhau: trung bình CE các crop trong từng ảnh, rồi trung bình trên
+effective batch 32 ảnh nguồn. Nếu chia crop qua microbatch/gradient accumulation,
+không lấy mean mỗi microbatch rồi coi chúng có trọng số bằng nhau; không áp
+trọng số `1 / parent_crop_count` hai lần. Ghi crop microbatch thực, cách gom
+parent, accumulation/chuẩn hóa loss và cách xử lý batch cuối trong training
+config/log trước khi chạy. Không tự chọn kích thước microbatch chưa đo.
+
+`configs/tv2_w5_protocol.draft.json` ghi `seeds=[42]`, `max_candidate_runs=1`,
+max epochs 50/patience 7 và các giá trị trên, nhưng **status vẫn DRAFT**,
+`experiments=[]`, `model.selected_model=null`, reviewers TV2/TV3/TV1 chưa xác
+nhận và `approval_evidence=null`. Các trường seed/budget mô tả cấu hình được
+yêu cầu cập nhật, **không phải approval receipt hoặc quyền chạy chính thức**.
+Không tự tạo tên reviewer/chữ ký hay experiment giả để vượt gate.
+
+Trước official run: phải có bằng chứng xác nhận TV2/TV3 truy vết được theo quy
+trình nhóm, chọn/đăng ký đúng một model/experiment và training config đã xác
+minh learning rate, optimizer, scheduler, pooling, pretrained SHA, preprocessing
+và microbatch/runtime thật. Chỉ chuyển APPROVED sau kiểm tra nguồn xác nhận.
+Gate hiện tại chặn DRAFT trước khi đọc predictions; gate không tự kiểm tra đủ
+mọi tham số huấn luyện mới, nên không coi việc qua gate là training-config
+approval. Không chạy lượt thứ hai, kể cả đổi sang fallback, khi chưa có quyết
+định ngân sách mới. Một seed không cho phép tuyên bố độ ổn định giữa seed.
 
 B2 reference verification và API smoke train/fixture là công việc kiểm định,
 không phải ngân sách huấn luyện ứng viên. TV2 không tự chiếm việc train TV3.
@@ -125,7 +171,11 @@ Reference lần này: Windows11, Intel i7-13620H, 16 logical CPUs, RAM15,71 GiB;
 Python3.12.14, torch2.8.0+cpu, torchvision0.23.0, Pillow12.2.0. Không có `.venv`
 ở gốc; dùng venv3.12 có sẵn `outputs/w2_final_handoff/tv4_env/Scripts/python.exe`,
 không thay môi trường. B2 FP32/eval/inference_mode, CPU threads4, crop batch32,
-workers0, không drop_last. DINO runtime/budget: N/A chờ TV3.
+workers0, không drop_last. Đây là môi trường reference đã đo trước đó, không
+phải thiết bị DINO. DINO dự kiến RTX 4060 Laptop 8 GB/FP32, effective batch
+32 parent images, tối đa một training run; khả dụng GPU, VRAM thực, crop
+microbatch, thời gian và bộ nhớ đỉnh vẫn chờ TV3 xác minh/ghi config. Không có
+training hoặc kiểm tra checkpoint mới trong lần cập nhật tài liệu này.
 
 Một lượt hợp lệ cần đầy đủ checkpoint/hash/bytes, train/val version và manifest
 hash, class order, preprocessing, seed/config/train commit, log huấn luyện,

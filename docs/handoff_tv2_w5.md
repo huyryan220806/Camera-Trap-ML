@@ -8,8 +8,9 @@ W5 **PARTIAL**. Không có training run DINO hoặc đánh giá Test mới. Xem
 
 ## Người nhận
 
-- TV3 (`dohoangphuc2006`): chốt tie/seed/ngân sách và đăng ký experiment trước
-  lượt chính thức; bàn giao DINO thật với checkpoint, code nạp, preprocessing,
+- TV3 (`dohoangphuc2006`): xác nhận cấu hình cập nhật 29/10 cùng TV2, hoàn tất
+  tham số còn thiếu và đăng ký model/experiment trước lượt chính thức;
+  bàn giao DINO thật với checkpoint, code nạp, preprocessing,
   head/pooling, pretrained source/hash/version, config/log/predictions/reload.
 - TV1 (`huyryan220806`): đối chiếu verify-only gói `9abc9c5` và dataset hashes;
   ứng viên1.665 vẫn chưa được phép train. Không cần phát hành test109 ảnh.
@@ -20,6 +21,28 @@ W5 **PARTIAL**. Không có training run DINO hoặc đánh giá Test mới. Xem
   thật, hoàn thành bảng so sánh và review browser. B2 vẫn là fallback.
 
 ## CLI và hợp đồng đầu vào
+
+Cấu hình cập nhật **29/10/2026 theo chỉ thị người dùng**, đối chiếu kế hoạch
+TV3 ở `feat/metadata-split` commit `9abc9c572a9191e8a43a5abef05ebaf846b8356f`,
+`docs/plans/TV3_W5_W6.md`. Plan này không thay thế xác nhận TV2/TV3 thực tế;
+`status` vẫn **DRAFT**, reviewers và approval evidence chưa có.
+
+- Ưu tiên DINOv3 ViT-S/16 frozen backbone + linear head 8 lớp; DINOv2 ViT-S/14
+  chỉ dự phòng nếu thiếu weights DINOv3. Chọn và đăng ký trước official run.
+- comparison_v1: train 2.800 parent/3.125 GT crops, val 600 parent/680 GT crops.
+- Seed 42, tối đa **1 candidate training run**, max epochs 50, patience 7.
+- Chọn checkpoint bằng image-level val macro-F1; hòa giữ epoch sớm nhất.
+  Mean crop softmax vectors theo image_id rồi argmax; hòa chọn class ID nhỏ nhất.
+- Effective batch 32 **ảnh nguồn**; crop microbatch có thể nhỏ hơn theo VRAM,
+  nhưng loss là mean CE crops trong parent rồi mean parents của effective batch.
+  Ghi microbatch/accumulation/chuẩn hóa loss thực; không reweight parent hai lần.
+- Thiết bị dự kiến RTX 4060 Laptop 8 GB, FP32; chưa xác minh khả dụng.
+
+TV3 phải khai báo/xác minh **learning rate, optimizer, scheduler, pooling,
+pretrained source/version/SHA-256 và preprocessing**, cùng model đã chọn và
+microbatch/runtime thực trong training config trước official run. Không tự điền
+giá trị mặc định. Không dùng Test hoặc dữ liệu mở rộng chưa qua quality gate;
+không thêm lượt thử fallback ngoài ngân sách và không fine-tune backbone.
 
 Không có `.venv` ở gốc trên máy này. Interpreter đã dùng:
 `outputs/w2_final_handoff/tv4_env/Scripts/python.exe` (Python3.12.14).
@@ -35,10 +58,13 @@ $tv2py = 'outputs/w2_final_handoff/tv4_env/Scripts/python.exe'
 Đừng chạy lại pixel gate nếu chưa có đầu vào mới: attempt01 đã kiểm tra đủ
 3.400 ảnh train/val. Không dùng validator toàn snapshot để làm pixel gate W5.
 
-Sau approval thật, TV3/TV2 tạo receipt từ draft config, giữ approval trong PR/Git:
-`status=APPROVED`, `reviewers.TV3`, danh sách `seeds`, `max_candidate_runs`,
-`experiments` đã chốt; metric/tie policy khớp protocol. Không điền giá trị để
-vượt gate khi chưa có xác nhận. Gate tự động không xác thực tác giả approval.
+Draft config đã ghi `seeds=[42]`, `max_candidate_runs=1`, nhưng `experiments=[]`
+và `model.selected_model=null` để chưa đăng ký thay TV3. Chỉ sau khi có bằng
+chứng TV2/TV3 thực tế, giữ nguồn xác nhận trong PR/Git và kiểm đủ training
+config, mới chuyển `status=APPROVED`/ghi reviewer thực cùng experiment/model đã
+chọn. Không tạo approval receipt, chữ ký hoặc giá trị giả để vượt gate.
+Gate tự động không xác thực tác giả approval và chưa kiểm toàn bộ tham số train
+mới; cần review training config trước official run, không nới code gate ở lượt này.
 
 Handoff JSON cần đủ các trường (N/A chưa được chấp nhận để chạy chính thức):
 
@@ -51,7 +77,7 @@ Handoff JSON cần đủ các trường (N/A chưa được chấp nhận để 
   "pretrained_source": "NGUON_VA_HASH_WEIGHTS",
   "checkpoint_sha256": "SHA256_THUC_TE_64_HEX",
   "checkpoint_bytes": null,
-  "seed": null,
+  "seed": 42,
   "dataset_version": "comparison_v1",
   "train_dataset_version": "comparison_v1",
   "val_dataset_version": "comparison_v1",

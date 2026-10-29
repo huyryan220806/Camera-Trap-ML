@@ -1,5 +1,60 @@
 # TV2 W5 progress — 28–29/10/2026
 
+**Latest update — 29/10/2026:** protocol/config/handoff only, base commit
+`3f76643d1bc395098d90105e67a9cf29c8fe3256`, branch `feat/baseline`.
+User-supplied configuration recorded: frozen DINOv3 ViT-S/16 + linear8;
+conditional DINOv2 ViT-S/14 fallback registered before the official run;
+comparison_v1 Train2800parents/3125GTcrops, Val600parents/680GTcrops;
+seed42, max1candidate training run, max50epochs/patience7, image_macro_f1,
+earliest_epoch checkpoint tie, lowest_class_id prediction tie, mean crop
+softmax vectors per image, effective32parent batch, crop microbatch preserving
+per-image weights, planned RTX4060Laptop8GB/FP32. GPU availability is unverified.
+
+Source: current user instruction dated29/10 plus
+`feat/metadata-split@9abc9c572a9191e8a43a5abef05ebaf846b8356f:docs/plans/TV3_W5_W6.md`
+(Git content SHA2567708c9683b0938b728276302f88c15df5e9bac99edb0944a79e3fa0118f5d88a).
+The TV1-authored plan is not a separate TV3 reviewer confirmation. **DRAFT is
+retained**, all reviewers/approval_evidence remain null, selected_model=null,
+experiments=[]. Seed/budget fields now describe the requested configuration,
+not an approval receipt. Historical entries below describe the earlier attempt.
+
+Before official run, TV2/TV3 must provide actual approval evidence; TV3 must
+select/register the model and verify learning rate, optimizer, scheduler,
+pooling, pretrained source/version/SHA, model-specific preprocessing and actual
+device/microbatch/accumulation in the training config. Existing validation gate
+blocks DRAFT but does not validate all new training fields; code/gate unchanged.
+No training, Test inference, checkpoint change or W6 work in this update.
+Current check/commit/push results are appended in the protocol update ledger.
+
+## Protocol update ledger — 29/10/2026
+
+- Task: W5 protocol/config alignment only. Config SHA-256:
+  `7614281a0eb89f79160331f93b26594665775fbbcc8737adbc176121480edbc2`.
+  Dataset remains comparison_v1; no experiment registered or executed.
+- Source read: `git fetch origin`, then
+  `git show 9abc9c572a9191e8a43a5abef05ebaf846b8356f:docs/plans/TV3_W5_W6.md`.
+  User decision and source commit/content hash recorded in config/protocol.
+- JSON parse and declared configuration assertions PASS. Existing gate accepts
+  the field names/policies; actual DRAFT rejected with
+  `BLOCKED: W5 protocol needs TV3 approval` before checkpoint/prediction access.
+  Gate implementation/tests unchanged; it does not enforce every training field.
+- Related tests: existing Python3.12.14 venv,
+  `-X utf8 -m unittest discover -s tests -p test_w5_validation.py -v`:
+  **32 PASS, 0 FAIL, 0 SKIP**, 25.387s (runner26.304s). No training/Test inference.
+  Log: `outputs/tv2_w5/protocol_update_20261029_01/related_tests.log`, SHA-256
+  `a7f6b99e0d6d481ce51a1c8ac2ea015583da5cf6d6ff942729c8fff72f886caa`.
+  JSON/gate summary: same folder `checks.json`; earlier attempts retained.
+- `git diff --check` PASS; tracked scope is exactly config, protocol, handoff
+  and this progress file. Four original untracked user documents remain excluded.
+- Approval: **DRAFT**. TV2/TV3 real confirmation still required; no signatures,
+  approval receipt, official experiment or model-registration values invented.
+  LR/optimizer/scheduler/pooling/pretrained SHA/preprocessing and actual
+  microbatch/device remain pending TV3's verified training config.
+- Delivery: base/parent `3f76643d1bc395098d90105e67a9cf29c8fe3256`;
+  identify this update commit with `git log -1 -- configs/tv2_w5_protocol.draft.json`.
+  Push only to `origin/feat/baseline`; final handoff records local/remote SHA.
+  Next action is TV2/TV3 review of the missing config/approval, not a training run.
+
 Scope: W5 only (28/10–03/11 proposed schedule, not an official deadline).
 Branch: `feat/baseline`. Initial HEAD: `5fe9083367a78de8bf3ed652a6b58eb26a171e47`.
 Fetched and fast-forwarded to `60516f5` (also `origin/main`); no merge conflict.

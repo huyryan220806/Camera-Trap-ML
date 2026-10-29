@@ -5,11 +5,74 @@
   "selection_metric": "image_macro_f1",
   "prediction_tie_rule": "lowest_class_id",
   "checkpoint_tie_rule": "earliest_epoch",
+  "aggregation": "mean_crop_softmax_then_argmax",
   "proposed_seeds": [42],
-  "seeds": [],
-  "max_candidate_runs": null,
+  "seeds": [42],
+  "max_candidate_runs": 1,
   "experiments": [],
-  "reviewers": {"TV3": null, "TV1": null},
+  "dataset": {
+    "train_manifest": "data/processed/comparison_v1/b2/train.jsonl",
+    "validation_manifest": "data/processed/comparison_v1/b2/val.jsonl",
+    "train_parent_images": 2800,
+    "train_gt_crops": 3125,
+    "validation_parent_images": 600,
+    "validation_gt_crops": 680,
+    "test_allowed": false,
+    "ungated_extension_allowed": false
+  },
+  "model": {
+    "preferred": "DINOv3 ViT-S/16",
+    "fallback": "DINOv2 ViT-S/14",
+    "backbone_frozen": true,
+    "head": "linear",
+    "num_classes": 8,
+    "selected_model": null,
+    "fallback_condition": "DINOv3 weights unavailable; select and register the actual model before the official run within the same one-run budget",
+    "pooling": null,
+    "pretrained_checkpoint_sha256": null,
+    "preprocessing": null
+  },
+  "training": {
+    "max_epochs": 50,
+    "early_stopping_patience": 7,
+    "effective_batch_parent_images": 32,
+    "crop_microbatch_allowed": true,
+    "crop_microbatch_size": null,
+    "loss_weighting": "mean_crop_CE_per_parent_then_mean_over_effective_parent_batch",
+    "precision": "FP32",
+    "learning_rate": null,
+    "optimizer": null,
+    "scheduler": null
+  },
+  "planned_device": {
+    "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "vram_gb": 8,
+    "availability_verified": false,
+    "note": "Planned device only; actual GPU/VRAM, microbatch, accumulation and runtime must be recorded by TV3 before the official run"
+  },
+  "decision_sources": [
+    {
+      "type": "user_instruction",
+      "date": "2026-10-29",
+      "description": "NHIỆM VỤ: Cập nhật TV2 W5 protocol theo cấu hình TV3 đã thống nhất. User-supplied configuration; approval remains conditional on actual TV2/TV3 evidence."
+    },
+    {
+      "type": "repository_plan",
+      "branch": "feat/metadata-split",
+      "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+      "path": "docs/plans/TV3_W5_W6.md",
+      "git_content_sha256": "7708c9683b0938b728276302f88c15df5e9bac99edb0944a79e3fa0118f5d88a",
+      "description": "Plan supports DINO priority/fallback, frozen backbone, eight classes, frozen data and seed42; it is not an independent TV3 approval of this complete registration."
+    }
+  ],
+  "pending_before_official_run": [
+    "Actual TV2/TV3 approval evidence and reviewer provenance",
+    "Select DINOv3 or conditional DINOv2 fallback and register one real experiment ID",
+    "Verify learning rate, optimizer and scheduler in the training config",
+    "Verify feature pooling, exact pretrained source/version/checkpoint SHA256 and model-specific preprocessing",
+    "Verify actual device availability, crop microbatch and image-weight-preserving accumulation in the training config"
+  ],
+  "reviewers": {"TV2": null, "TV3": null, "TV1": null},
   "approval_evidence": null,
-  "note": "Proposed tie/seed values require TV3 confirmation before an official candidate run. No budget or approval is inferred. B2 reference verification is not a candidate training run."
+  "note": "Configuration updated from the 2026-10-29 user decision: seed42, at most one candidate training run, max50epochs/patience7. These values are not an approval receipt. Status remains DRAFT; experiments is empty and no reviewer signature is invented. Complete and verify the actual training config and TV2/TV3 approval before any official run. B2 reference verification is not a candidate training run."
 }
