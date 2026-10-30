@@ -57,6 +57,19 @@ Checks/UI/Draft PR results for this continuation are appended below after run.
   `reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/publication.json`.
   Delivery commit can be located by `git log -1 -- reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md`.
 
+### Publication result — 30/10/2026
+
+Review/evidence commit `9d8697a394cac26ee9a977755425df95b76b1b4f` pushed only
+to `origin/feat/baseline`; local/remote SHA matched. Draft PR creation and PR8
+P2 comment attempted with the GitHub connector after push, both rejected
+HTTP403 `Resource not accessible by integration`. **No W5 PR, comment or
+review request sent**. Body and unsent comment retained, manual compare link
+in W5_DRAFT_PR_2026-10-30.md; publication receipt records errors. Final delivery
+metadata follows in a separate commit, identifiable by publication.json history.
+Protocol remains DRAFT; official DINO training not authorized and no experiment
+officially registered. Continue only after TV3 supplies B1–B3; P2 retest is TV4
+handoff and is separate from the pretrained blockers. No PR8 merge/approval.
+
 **Historical update — 29/10/2026:** protocol/config/handoff only, base commit
 `3f76643d1bc395098d90105e67a9cf29c8fe3256`, branch `feat/baseline`.
 User-supplied configuration recorded: frozen DINOv3 ViT-S/16 + linear8;

@@ -23,6 +23,14 @@
     "sha256": "07d77aa4253ce4ea5c2e30307b18ecbfc4b4da632f1d0c6722b401aacba56710",
     "bytes": 637
   },
+  "file_inventory.json": {
+    "sha256": "f989ad5797d3ad8ca226ae911322c174cd60a2d0a5ef6926c4141d1938ae30c9",
+    "bytes": 3570
+  },
+  "publication.json": {
+    "sha256": "9c730d84634d08b6668f37bef6dc645ba281a5d04fef490699b123a9d50d5d91",
+    "bytes": 1944
+  },
   "received/backbone_smoke_2026-10-29.json": {
     "sha256": "52c635be70f6f4a5466a7a816d9fc425036924f350ed9b6ea0a7a99e94549043",
     "bytes": 3189
@@ -42,5 +50,9 @@
   "tv4_exact_head.log": {
     "sha256": "db3a21709f47311b6c42efc246fa01c84789a54787e65d28a91ffbbb2b499930",
     "bytes": 9379
+  },
+  "tv4_review_comment_draft.md": {
+    "sha256": "399f93247561f3e19a247f5cb70b298a57159b18643a1dceb8f17d890497ec59",
+    "bytes": 1184
   }
 }
