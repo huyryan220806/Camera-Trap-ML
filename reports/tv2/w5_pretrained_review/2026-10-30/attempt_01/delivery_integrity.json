@@ -1,0 +1,34 @@
+{
+  "status": "PASS_LOCAL_INTEGRITY_AND_SOFTWARE_CHECKS_OFFICIAL_APPROVAL_BLOCKED",
+  "received_files_preserved": 3,
+  "protected_original_files_unchanged": 512,
+  "preexisting_documents_preserved": 4,
+  "config_status": "DRAFT",
+  "official_registration": [],
+  "conditional_TV2_approval_only": true,
+  "regression": {
+    "pass": 409,
+    "fail": 0,
+    "skip": 0
+  },
+  "tv4_tests": {
+    "pass": 44,
+    "fail": 0,
+    "skip": 0
+  },
+  "browser_functional_cases": {
+    "pass": 15,
+    "fail": 0
+  },
+  "browser_additional_findings": [
+    {
+      "id": "UI-A11Y-01",
+      "severity": "P2",
+      "owner": "TV4"
+    }
+  ],
+  "raw_export_equals_saved": true,
+  "no_DINO_or_official_Test_inference": true,
+  "b2_checkpoint_and_frozen_data_unchanged": true,
+  "source_inputs_remain_untracked": true
+}

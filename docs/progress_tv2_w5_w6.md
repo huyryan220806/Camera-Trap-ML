@@ -1,6 +1,63 @@
-# TV2 W5 progress — 28–29/10/2026
+# TV2 W5 progress — 28–30/10/2026
 
-**Latest update — 29/10/2026:** protocol/config/handoff only, base commit
+## Latest status — 30/10/2026, pretrained approval review
+
+Base `163947b5eec79785c89b00dfc5b2b2d618a0d772`, branch `feat/baseline`.
+Read all three user-supplied TV3 files in `dino/`; originals unchanged and
+byte-exact copies/hashes stored in
+`reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/received/`.
+SGD0.01/momentum0.9/WD0.0001/cosine50, seed42/max50/patience7/effective32parents,
+frozen CLS384+Linear8 and evaluation rules are declared consistently in config,
+embedded smoke config and READY. TV2 user explicitly agrees technically with
+conditions, confirms no additional sources available and requests DRAFT retained.
+
+| Item | Current result | Evidence / next action |
+| --- | --- | --- |
+| Train/Val metadata | PASS:7/7 hash matches,2800/3125train,600/680val | pretrained review audit.json; no new raster/Test access |
+| Upstream commit/architecture | Official commit/factory confirmed; patch16/embed384/prefix08c60483 | Source links in pretrained review; does not verify full weights SHA |
+| GPU/backbone | TV3 reports PASS,32×384features,RTX4060Laptop,CUDA,AMPfalse | No independent replay at TV2; weights/vendor/source missing |
+| Config raw hash | **BLOCKED B1**:receivede9303b… vs smoke320718… | JSON identical; CRLF/LF not explanation; TV3 selects canonical bytes/SHA |
+| Approval | TV2 **CONDITIONAL** real chat confirmation; TV3 **BLOCKED B2** | READY still awaits confirmation; no invented reviewer/receipt |
+| Referenced verification bundle | **BLOCKED B3** | TV3 supplies source SHA852989…/commit,pretrained hash/strict-load and data preflight/sample receipts cited in READY |
+| Official registration | **NOT REGISTERED**, protocol **DRAFT** | proposed ID DINOv3_LP_run01 only;experiments=[],canonical config hash=null |
+
+User's follow-up explicitly retains verification gates and asks to finish
+independent W5 tasks (TV4 UI/testing/Draft PR) while B1–B3 await TV3. No DINO,
+Test W4, B2 checkpoint change or PR merge. Current technical report:
+`reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md`.
+Checks/UI/Draft PR results for this continuation are appended below after run.
+
+## Continuation checks and UI — 30/10/2026
+
+- Actual updated config JSON valid; statusDRAFT/TV3null/experiments[] preserved;
+  DRAFT gate rejects before real model/checkpoint/prediction access.
+- Current full software suite409PASS/0FAIL/0SKIP,64.740s; exact TV4head
+  suite44PASS/0FAIL/0SKIP,8.393s. Environment and6contract examplesPASS.
+  No tests/code altered. Logs/checks.json copied to
+  `reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/`.
+- Browser review reached correct PR8head fef2511 via loopback server8768 outside
+  sandbox; new QA journals only. **15functional UI casesPASS**: realMD+B2,
+  responsive1440/390/320/single+multiplebox geometry,maxerror<.011px,
+  bidirectional row/box IDs,low-score filter,draft/save/original immutability,
+  reload/discard draft,browser JSON download exactmatch,validtrain upload,
+  corruptread error,no_detection,syntheticdetector miss/error. NoDINO/TestW4.
+- Evidence/screenshots/JSON:
+  `reports/tv2/w5_ui_review/2026-10-30/attempt_01/`. Browserconsole empty.
+  Original invalidReviewFields1 count included the intentionally small checkbox;
+  corrected input/select/textarea audit has no clipped review fields.
+- **P2 UI-A11Y-01,ownerTV4**:mobile export icon lacks accessible name(span hidden,
+  aria-label/title null). Functional export works; report includes repro/retest.
+  App code/TV4 branch not changed; PR8 not APPROVED or merged.
+- B2 cold UI request52.27s under startup/regression context is not a benchmark
+  or validation result. Previous B2 model metrics unchanged. Historical UI
+  BLOCKED entries below remain historical; connection blocker is resolved.
+- Draft PR preparation/publication result is recorded after final push; no
+  protocol APPROVED or official DINO registration while B1–B3 persist.
+  Body: `reports/tv2/W5_DRAFT_PR_2026-10-30.md`; receipt:
+  `reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/publication.json`.
+  Delivery commit can be located by `git log -1 -- reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md`.
+
+**Historical update — 29/10/2026:** protocol/config/handoff only, base commit
 `3f76643d1bc395098d90105e67a9cf29c8fe3256`, branch `feat/baseline`.
 User-supplied configuration recorded: frozen DINOv3 ViT-S/16 + linear8;
 conditional DINOv2 ViT-S/14 fallback registered before the official run;

@@ -1,0 +1,92 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -X utf8 -m unittest discover -s tests -p test_tv4*.py -v
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4
+test_b1_b2_switch_and_bounded_cache (test_tv4_classifier.ClassifierTests.test_b1_b2_switch_and_bounded_cache) ... ok
+test_bad_logits_fail_before_top3 (test_tv4_classifier.ClassifierTests.test_bad_logits_fail_before_top3) ... ok
+test_classifier_error_has_no_fake_or_partial_predictions (test_tv4_classifier.ClassifierTests.test_classifier_error_has_no_fake_or_partial_predictions) ... ERROR:root:Classifier failed (B0); no fallback or partial predictions
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\inference.py", line 70, in analyze_classified
+    predictions, proof['classifier'] = cache.predict(decode_image(data), detected['detections'], classifier)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+ValueError: bad checkpoint
+ok
+test_concurrent_first_requests_load_once (test_tv4_classifier.ClassifierTests.test_concurrent_first_requests_load_once) ... ok
+test_decode_empty_and_detector_error_skip_classifier (test_tv4_classifier.ClassifierTests.test_decode_empty_and_detector_error_skip_classifier) ... ERROR:root:Detector failed (mode=mock)
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 152, in analyze
+    result['detections'], result['ignored_non_animals'] = adapt_detections(raw, image.width, image.height, threshold)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 61, in adapt_detections
+    raise ValueError('Detector failed or returned no detections array')
+ValueError: Detector failed or returned no detections array
+ok
+test_disabled_missing_and_bad_size_do_not_load (test_tv4_classifier.ClassifierTests.test_disabled_missing_and_bad_size_do_not_load) ... ok
+test_each_box_uses_its_own_pixels (test_tv4_classifier.ClassifierTests.test_each_box_uses_its_own_pixels) ... ok
+test_hash_checked_even_when_warm (test_tv4_classifier.ClassifierTests.test_hash_checked_even_when_warm) ... ok
+test_http_classifier_and_export_contract (test_tv4_classifier.ClassifierTests.test_http_classifier_and_export_contract) ... 127.0.0.1 - - [30/Oct/2026 12:27:17] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:17] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:17] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_inference_envelope_and_ignored_person (test_tv4_classifier.ClassifierTests.test_inference_envelope_and_ignored_person) ... ok
+test_invalid_and_tiny_boxes_fail_without_partial_output (test_tv4_classifier.ClassifierTests.test_invalid_and_tiny_boxes_fail_without_partial_output) ... ok
+test_invalid_review_threshold_is_rejected (test_tv4_classifier.ClassifierTests.test_invalid_review_threshold_is_rejected) ... ok
+test_mock_multiple_is_explicit_without_loading (test_tv4_classifier.ClassifierTests.test_mock_multiple_is_explicit_without_loading) ... ok
+test_native_b2_cache_safe_load_and_multiple_boxes (test_tv4_classifier.ClassifierTests.test_native_b2_cache_safe_load_and_multiple_boxes) ... ok
+test_native_b2_rejects_missing_or_inconsistent_handoff (test_tv4_classifier.ClassifierTests.test_native_b2_rejects_missing_or_inconsistent_handoff) ... ok
+test_native_b2_remapping_and_center_crop_equivalent (test_tv4_classifier.ClassifierTests.test_native_b2_remapping_and_center_crop_equivalent) ... ok
+test_nonfinite_and_wrong_shape_weights_rejected (test_tv4_classifier.ClassifierTests.test_nonfinite_and_wrong_shape_weights_rejected) ... ok
+test_prepare_b1_copy_resume_and_no_network (test_tv4_classifier.ClassifierTests.test_prepare_b1_copy_resume_and_no_network) ... ok
+test_prepare_refuses_disabled_model_and_bad_source (test_tv4_classifier.ClassifierTests.test_prepare_refuses_disabled_model_and_bad_source) ... ok
+test_real_architecture_top3_and_warm_cache (test_tv4_classifier.ClassifierTests.test_real_architecture_top3_and_warm_cache) ... ok
+test_registry_change_invalidates_cache (test_tv4_classifier.ClassifierTests.test_registry_change_invalidates_cache) ... ok
+test_transform_and_b2_remapping_match (test_tv4_classifier.ClassifierTests.test_transform_and_b2_remapping_match) ... ok
+test_wrong_mapping_transform_and_kind_rejected (test_tv4_classifier.ClassifierTests.test_wrong_mapping_transform_and_kind_rejected) ... ok
+test_empty_at_high_threshold (test_tv4_demo.DetectorTests.test_empty_at_high_threshold) ... ok
+test_limits_and_truncated_image (test_tv4_demo.DetectorTests.test_limits_and_truncated_image) ... ok
+test_malformed_boxes_or_failure_are_not_empty_success (test_tv4_demo.DetectorTests.test_malformed_boxes_or_failure_are_not_empty_success) ... ok
+test_mock_is_labelled_and_has_no_species (test_tv4_demo.DetectorTests.test_mock_is_labelled_and_has_no_species) ... ok
+test_modes_and_error_states_match_new_schema (test_tv4_demo.DetectorTests.test_modes_and_error_states_match_new_schema) ... ok
+test_normalization_filter_and_threshold_equality (test_tv4_demo.DetectorTests.test_normalization_filter_and_threshold_equality) ... ok
+test_real_failure_never_falls_back_to_mock (test_tv4_demo.DetectorTests.test_real_failure_never_falls_back_to_mock) ... ok
+test_threshold_and_mode_validation (test_tv4_demo.DetectorTests.test_threshold_and_mode_validation) ... ok
+test_bad_requests_rejected (test_tv4_demo.ServerTests.test_bad_requests_rejected) ... 127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_external_origin_and_host_are_rejected (test_tv4_demo.ServerTests.test_external_origin_and_host_are_rejected) ... 127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 403 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "GET / HTTP/1.1" 403 -
+ok
+test_mock_post_and_corrupt_image (test_tv4_demo.ServerTests.test_mock_post_and_corrupt_image) ... 127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "POST /api/analyze HTTP/1.1" 200 -
+ok
+test_static_and_config_do_not_expose_repository (test_tv4_demo.ServerTests.test_static_and_config_do_not_expose_repository) ... 127.0.0.1 - - [30/Oct/2026 12:27:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [30/Oct/2026 12:27:21] "GET /api/config HTTP/1.1" 200 -
+ok
+test_api_persistence_and_stale_revision (test_tv4_w4_review.ReviewTests.test_api_persistence_and_stale_revision) ... 127.0.0.1 - - [30/Oct/2026 12:27:22] "POST /api/review HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:22] "POST /api/review HTTP/1.1" 409 -
+127.0.0.1 - - [30/Oct/2026 12:27:22] "GET /api/review/b56c0b1c-b2fe-4f5f-91ab-d3abf671c619 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:27:22] "POST /api/review HTTP/1.1" 403 -
+127.0.0.1 - - [30/Oct/2026 12:27:22] "POST /api/review HTTP/1.1" 404 -
+ok
+test_correction_persists_and_original_is_immutable (test_tv4_w4_review.ReviewTests.test_correction_persists_and_original_is_immutable) ... ok
+test_duplicate_box_and_path_traversal_rejected (test_tv4_w4_review.ReviewTests.test_duplicate_box_and_path_traversal_rejected) ... ok
+test_gt_matching_is_one_to_one (test_tv4_w4_review.ReviewTests.test_gt_matching_is_one_to_one) ... ok
+test_low_scores_are_review_not_unknown_species (test_tv4_w4_review.ReviewTests.test_low_scores_are_review_not_unknown_species) ... ok
+test_miss_requires_note_and_errors_are_not_misses (test_tv4_w4_review.ReviewTests.test_miss_requires_note_and_errors_are_not_misses) ... ok
+test_partial_detector_miss_and_empty_outputs (test_tv4_w4_review.ReviewTests.test_partial_detector_miss_and_empty_outputs) ... ok
+test_real_classifier_batch_sizes_are_explicit (test_tv4_w4_review.ReviewTests.test_real_classifier_batch_sizes_are_explicit) ... ok
+test_unknown_label_and_incomplete_review_rejected (test_tv4_w4_review.ReviewTests.test_unknown_label_and_incomplete_review_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 8.393s
+
+OK

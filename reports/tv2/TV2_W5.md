@@ -1,8 +1,21 @@
 # TV2 tuần 5 đánh giá mô hình và tính tái lập
 
-**W5 PARTIAL — đã kiểm định B2 và API TV4; DINO, phê duyệt protocol và browser
-review còn BLOCKED.** Thực hiện28–29/10/2026 giờ Việt Nam, trên nhánh duy nhất
+**W5 PARTIAL — B2 đã kiểm định; UI TV4 functional PASS với một finding P2;
+DINO/phê duyệt protocol còn BLOCKED.** Thực hiện28–30/10/2026 giờ Việt Nam, trên nhánh duy nhất
 `feat/baseline`. Không nghiệm thu tuần6. Lịch28/10–03/11 là đề xuất của nhóm.
+
+**Cập nhật30/10:** review ba file pretrained TV3 tại
+[TV2_W5_PRETRAINED_REVIEW_2026-10-30.md](TV2_W5_PRETRAINED_REVIEW_2026-10-30.md).
+Hyperparameters SGD0.01/momentum0.9/WD0.0001/cosine và seed42/max50/patience7/
+effective32parents đã nhận, TV2 đồng ý kỹ thuật có điều kiện. Chưa khóa vì
+config raw SHA nhận khác SHA smoke, chưa có TV3 approval thực tế và gói
+source/pretrained/data-preflight dẫn chiếu. Giữ DRAFT, chưa đăng ký experiment.
+UI browser timeout đã giải quyết bằng server ngoài sandbox;15functional cases
+PASS gồm responsive,selection,upload,save/reload/export; một findingP2 thiếu
+accessible name nút export mobile, ownerTV4. Xem phần cập nhật30/10 của
+[review TV4](TV2_W5_TV4_REVIEW.md); không coi historical BLOCKED là trạng thái
+browser mới nhất. Regression mới409PASS,TV4suite44PASS,logs đã lưu riêng;
+metric B2/DINO lịch sử bên dưới không bị thay bằng kết quả phần mềm mới.
 
 Commit trước đồng bộ `5fe9083367a78de8bf3ed652a6b58eb26a171e47`; nền triển khai
 `60516f51fccbb85e6e266a022d94ea90d2239a11`. Kết quả Git cuối/PR được ghi trong
@@ -174,9 +187,10 @@ split/nhãn và checkpoint giữ nguyên; không dùng reset/force-push.
 [Review độc lập](TV2_W5_TV4_REVIEW.md): đúng head PR8 fef2511,15API assertions
 PASS trên B2 thật và mock được gắn nhãn; revision riêng, original immutable,
 GET reload khớp, stale409, corrupt read error, synthetic detector-miss riêng.
-Browser1440/390/320, click box/hàng và browser JSON export **BLOCKED** do
-localhost/browser app permission timeout; không có screenshot độc lập.
-CSV/batch chưa trong PR8. Chưa APPROVE/merge PR8.
+Ở lượt28–29/10, browser1440/390/320, click box/hàng và browser JSON export
+BLOCKED do kết nối/quyền app. Lượt30/10 đã chạy được bằng server ngoài sandbox:
+15functional UI casesPASS với screenshot thật; còn P2 accessible name export
+mobile, ownerTV4. CSV/batch chưa trong PR8. Chưa APPROVE/merge PR8.
 
 | Check | PASS | FAIL/ERROR | SKIP | Evidence |
 | --- | --- | --- | --- | --- |
@@ -203,9 +217,9 @@ ngoài repo rồi409PASS, không sửa/bỏ test hoặc thêm proof giả. `git 
 
 | Task | Đã làm | Trạng thái còn lại |
 | --- | --- | --- |
-| W5-01 | Đối chiếu data/hash/pixels, review TV1 W5, protocol đầy đủ | DRAFT chờ TV3 chốt tie/seed/budget và TV1 đối chiếu |
+| W5-01 | Đối chiếu data/hash/pixels; protocol ghi đủ hyperparameters nhận, TV2 đồng ý có điều kiện | DRAFT chờ B1 config chuẩn/B2 TV3 approval/B3 verification bundle |
 | W5-02 | B2 positive control, schema/evaluator/independent metrics/table thật | DINO BLOCKED; chưa có so sánh ứng viên |
-| W5-03 | Exact PR8/API15PASS/unit44PASS/static review | Browser UI acceptance BLOCKED |
+| W5-03 | Exact PR8/API và browser15functional casesPASS/unit44PASS | P2 accessibility mobile export chờ TV4; chưa APPROVE/merge |
 | W5-04 | B2 hash/fresh reload/native-adapter delta0 | DINO adapter/reload BLOCKED; giữ B2 |
 | W5-05 | Báo cáo/chương thực nghiệm, evidence,409testsPASS | Gửi reviewer, chưa có reviewer approval |
 
@@ -214,9 +228,9 @@ Danh mục file/code/lệnh tiếp tục ở [handoff](../../docs/handoff_tv2_w5
 [W5_EXPERIMENT_CHAPTER.md](W5_EXPERIMENT_CHAPTER.md).
 
 TV1: đối chiếu data và quality release nếu mở rộng. TV3: chốt protocol và bàn
-giao model/log/predictions/code thật. TV4: hỗ trợ browser retest, chỉ sửa lỗi
-được tái hiện trên nhánh họ. TV2: hoàn tất kiểm chứng ứng viên/browser và cập
+giao model/log/predictions/code thật. TV4: sửa findingP2 và hỗ trợ retest, chỉ sửa lỗi
+được tái hiện trên nhánh họ. TV2: hoàn tất kiểm chứng ứng viên/retest và cập
 nhật so sánh sau đầu vào hợp lệ. Đủ điều kiện gửi **review phần đã triển khai**;
 chưa đủ nghiệm thu W5 COMPLETE hoặc chuyển sang nghiệm thu W6. Không bắt buộc
-đạt88%, nhưng cần protocol được phê duyệt, input/model được xác minh và review
-UI có bằng chứng trước khi kết luận hoàn tất toàn bộ.
+đạt88%, nhưng cần protocol được phê duyệt, input/model được xác minh và xử lý
+finding/reviewer decision còn lại trước khi kết luận hoàn tất toàn bộ.

@@ -1,0 +1,20 @@
+{
+  "row2": {
+    "select": "animal-2",
+    "selectedBoxes": [
+      "animal-2"
+    ],
+    "selectedRows": [
+      "animal-2"
+    ]
+  },
+  "box1": {
+    "select": "animal-1",
+    "selectedBoxes": [
+      "animal-1"
+    ],
+    "selectedRows": [
+      "animal-1"
+    ]
+  }
+}

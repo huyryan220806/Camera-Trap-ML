@@ -1,0 +1,46 @@
+{
+  ".gitattributes": {
+    "sha256": "d29caa0cf8fe15d41e8701e937f2ba90dab874705ec6a91ecf244de5e87abf06",
+    "bytes": 116
+  },
+  "audit.json": {
+    "sha256": "ac08673edaf3d5101d7ee490e33c9c72e5d1bfc2568c80c468430f3dc738ce6a",
+    "bytes": 7281
+  },
+  "checks.json": {
+    "sha256": "44d3b48d6489b9c42c44b0463789984dccddebfc8bdd81c60afddae6a7f6c6d5",
+    "bytes": 2439
+  },
+  "contracts.log": {
+    "sha256": "02392f87230f9df05a68ea27b4aa7712deb42b93cba58ac3f345da993a764660",
+    "bytes": 342
+  },
+  "delivery_integrity.json": {
+    "sha256": "474e7563776ccaed0c6a388d96304cab303b13cd431904790a935e5b8f33bbab",
+    "bytes": 835
+  },
+  "environment.log": {
+    "sha256": "07d77aa4253ce4ea5c2e30307b18ecbfc4b4da632f1d0c6722b401aacba56710",
+    "bytes": 637
+  },
+  "received/backbone_smoke_2026-10-29.json": {
+    "sha256": "52c635be70f6f4a5466a7a816d9fc425036924f350ed9b6ea0a7a99e94549043",
+    "bytes": 3189
+  },
+  "received/dinov3_lp_w5.local.json": {
+    "sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+    "bytes": 1063
+  },
+  "received/W5_PRETRAINED_READY.md": {
+    "sha256": "0c5d7947d1d3aeb8e2421eb380e01a1d88c0d2639644ccc8aee5971a4c2de261",
+    "bytes": 2230
+  },
+  "regression.log": {
+    "sha256": "a7f7a82d437aa56996fa4ae342053770fd1ce985791e302f1366dd093ab39504",
+    "bytes": 79189
+  },
+  "tv4_exact_head.log": {
+    "sha256": "db3a21709f47311b6c42efc246fa01c84789a54787e65d28a91ffbbb2b499930",
+    "bytes": 9379
+  }
+}

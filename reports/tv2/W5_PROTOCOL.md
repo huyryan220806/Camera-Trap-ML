@@ -1,11 +1,32 @@
 # TV2 W5 validation protocol
 
-**DRAFT — cấu hình cập nhật 29/10/2026; chờ bằng chứng phê duyệt TV2/TV3 và
-training config hoàn chỉnh trước thử nghiệm ứng viên chính thức.** Lập theo kế
+**DRAFT — cập nhật 30/10/2026 sau khi đọc đủ ba file TV3. TV2 đồng ý kỹ thuật
+có điều kiện; còn blocker config hash, xác nhận TV3 và verification bundle.**
+Chưa đăng ký chính thức `DINOv3_LP_run01` hoặc khóa training config. Lập theo kế
 hoạch cập nhật 28/10/2026; thực hiện từ 28 sang 29/10 giờ Việt Nam. Lịch W5
 28/10–03/11 là đề xuất. TV2 không phê duyệt thay nhóm và không thực hiện W6.
 
 ## Nguồn và phạm vi
+
+Kết quả review mới nhất:
+[TV2_W5_PRETRAINED_REVIEW_2026-10-30.md](TV2_W5_PRETRAINED_REVIEW_2026-10-30.md).
+Ba file nhận từ TV3 tại `dino/` được lưu bản sao nguyên byte kèm SHA trong
+`w5_pretrained_review/2026-10-30/attempt_01/received/`. Người dùng tự xác nhận
+là TV2 đã đồng ý kỹ thuật với các hyperparameter ngày 30/10 và xác nhận chưa
+có tài liệu bổ sung ngoài ba file; yêu cầu giữ DRAFT, không bỏ qua điều kiện.
+Ghi đúng ý kiến này trong `approval_evidence.TV2` dưới dạng CONDITIONAL; không
+tự ghi tên reviewer TV3 hoặc coi READY/smoke PASS là approval chạy.
+
+Config nhận SHA `e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce`
+khác SHA config ghi trong smoke
+`32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8`.
+JSON values giống nhau nhưng CRLF/LF normalization không tái tạo SHA smoke.
+Không chọn một bản chuẩn thay TV3, không sửa hash smoke. Chưa đủ điều kiện
+chuyển APPROVED: cần TV3 xác định/xác nhận config byte chuẩn, nguồn approval
+TV3 và gói source/pretrained verification/data-preflight mà READY dẫn chiếu.
+
+Các đoạn mô tả chưa nhận gói ở thời điểm nền dưới đây là lịch sử; bảng khai
+báo cập nhật hiện tại và report review 30/10 có ưu tiên cho trạng thái W5 mới.
 
 Nền tích hợp: `60516f51fccbb85e6e266a022d94ea90d2239a11` (main và nhánh TV2
 trên origin lúc bắt đầu). TV1 W5: `9abc9c5` trên `feat/metadata-split`, được đọc
@@ -98,11 +119,19 @@ Fallback dùng chung ngân sách tối đa một lượt, không cho phép chạ
 chọn theo validation. Không đổi kiến trúc giữa lượt hoặc fine-tune backbone
 trong cấu hình này.
 
-`model.selected_model` và `experiments` vẫn chưa đăng ký: TV3 chưa bàn giao
-pooling, pretrained source/version/checkpoint SHA-256, preprocessing và adapter
-thực tế. Head linear/tám lớp đã được đề xuất rõ; các tham số còn thiếu giữ
-`null`/chưa xác minh, không lấy thông số giả hoặc preprocessing B2 để điền.
-TV2 không viết adapter DINO bằng cách đổi tên ResNet.
+TV3 đã khai báo source commit `6876159a11b4df116f30f667f8c9888617df0751`,
+weights LVD-1689M SHA `08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d`,
+86.531.063bytes; pooling `x_norm_clstoken` 384 → Linear8, frozen/eval.
+Official upstream factory đúng commit có patch16/embed384/prefix08c60483;
+đối chiếu này không chứng minh full SHA weights hoặc checkout actual của TV3.
+Weights/vendor paths không có tại TV2. Config chỉ nêu preprocessing ID
+`dinov3_square256_bilinear_uint8`, chưa có implementation để kiểm dtype/scaling/
+normalization/geometry. Không tự điền preprocessing B2 hoặc default upstream.
+
+`model.selected_model=null`, `experiments=[]` và canonical config hash=null
+vẫn giữ nguyên; `proposed_experiment_id=DINOv3_LP_run01` chỉ là đề xuất.
+Các SHA/pretrained/pooling trong draft được gắn trạng thái khai báo, chưa có
+independent weight rehash/strict-load tại TV2; không biến thành model READY.
 
 ## 3. Dự đoán và metric
 
@@ -131,6 +160,8 @@ từ predictions đã lưu bằng CM arithmetic và kiểm thử đối chiếu 
 | Ngân sách | Tối đa **1 candidate training run**, gồm lựa chọn DINO chính hoặc dự phòng |
 | Max epochs | 50 |
 | Early stopping | Patience 7, theo image-level validation macro-F1 |
+| Optimizer TV3 đề xuất, TV2 đồng ý kỹ thuật có điều kiện | SGD lr0.01, momentum0.9, weight_decay0.0001 |
+| Scheduler khai báo | Cosine50 theo READY; source/params/step order chưa kiểm |
 | Chọn checkpoint | Image-level validation macro-F1 lớn nhất; hòa giữ epoch sớm nhất |
 | Prediction tie | Class ID nhỏ nhất |
 | Aggregation | Mean crop softmax vectors theo image_id, rồi argmax |
@@ -148,15 +179,18 @@ config/log trước khi chạy. Không tự chọn kích thước microbatch ch�
 
 `configs/tv2_w5_protocol.draft.json` ghi `seeds=[42]`, `max_candidate_runs=1`,
 max epochs 50/patience 7 và các giá trị trên, nhưng **status vẫn DRAFT**,
-`experiments=[]`, `model.selected_model=null`, reviewers TV2/TV3/TV1 chưa xác
-nhận và `approval_evidence=null`. Các trường seed/budget mô tả cấu hình được
-yêu cầu cập nhật, **không phải approval receipt hoặc quyền chạy chính thức**.
+`experiments=[]`, `model.selected_model=null`; reviewer TV2 ghi đúng xác nhận
+có điều kiện trong chat 30/10, TV3/TV1 chưa có nguồn xác nhận; approval evidence
+TV2 có trạng thái CONDITIONAL, TV3=null và effective_official_approval=false.
+Các trường seed/budget/hyperparameter mô tả cấu hình được yêu cầu và bàn giao,
+**không phải approval receipt hoàn tất hoặc quyền chạy chính thức**.
 Không tự tạo tên reviewer/chữ ký hay experiment giả để vượt gate.
 
-Trước official run: phải có bằng chứng xác nhận TV2/TV3 truy vết được theo quy
-trình nhóm, chọn/đăng ký đúng một model/experiment và training config đã xác
-minh learning rate, optimizer, scheduler, pooling, pretrained SHA, preprocessing
-và microbatch/runtime thật. Chỉ chuyển APPROVED sau kiểm tra nguồn xác nhận.
+Trước official run: phải giải quyết B1 config byte chuẩn, B2 xác nhận thực tế
+TV3 trên đúng bản đó, B3 gói source/pretrained/data-preflight có hash/commit để
+kiểm implementation và điều kiện TV2. LR/SGD/momentum/WD/cosine/seed/epochs đã
+được bàn giao, không yêu cầu đề xuất hoặc xác nhận lại các giá trị từ TV2.
+Chỉ đăng ký model/experiment và chuyển APPROVED sau khi kiểm đủ các nguồn này.
 Gate hiện tại chặn DRAFT trước khi đọc predictions; gate không tự kiểm tra đủ
 mọi tham số huấn luyện mới, nên không coi việc qua gate là training-config
 approval. Không chạy lượt thứ hai, kể cả đổi sang fallback, khi chưa có quyết
@@ -173,9 +207,14 @@ Python3.12.14, torch2.8.0+cpu, torchvision0.23.0, Pillow12.2.0. Không có `.ven
 không thay môi trường. B2 FP32/eval/inference_mode, CPU threads4, crop batch32,
 workers0, không drop_last. Đây là môi trường reference đã đo trước đó, không
 phải thiết bị DINO. DINO dự kiến RTX 4060 Laptop 8 GB/FP32, effective batch
-32 parent images, tối đa một training run; khả dụng GPU, VRAM thực, crop
-microbatch, thời gian và bộ nhớ đỉnh vẫn chờ TV3 xác minh/ghi config. Không có
-training hoặc kiểm tra checkpoint mới trong lần cập nhật tài liệu này.
+32 parent images, tối đa một training run. Smoke TV3 báo RTX4060Laptop/CUDA,
+AMPfalse/TF32false, features32×384, forward4.632s và peak allocated299.583.488
+bytes cho smoke. Đó không phải runtime đo mới của TV2 hoặc peak toàn training.
+Cache extraction batch32crops khác effective batch32parents. READY nêu head
+học cache, không gradient accumulation, giữ batch cuối; cần source kiểm chứng.
+Smoke counter verified_source_images=0 không chứng minh full pixel/hash gate;
+report preflight/sample IDs/hash receipts được dẫn chiếu chưa nhận. Không có
+training hoặc load checkpoint mới trong lần review này.
 
 Một lượt hợp lệ cần đầy đủ checkpoint/hash/bytes, train/val version và manifest
 hash, class order, preprocessing, seed/config/train commit, log huấn luyện,

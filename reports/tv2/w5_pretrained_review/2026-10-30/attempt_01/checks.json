@@ -1,0 +1,72 @@
+{
+  "actual_config_json_valid": true,
+  "actual_config_DRAFT_gate": "PASS: rejected",
+  "checks": [
+    {
+      "name": "environment",
+      "command": [
+        "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/check_environment.py"
+      ],
+      "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+      "exit_code": 0,
+      "seconds": 0.40900710000005347,
+      "log_sha256": "07d77aa4253ce4ea5c2e30307b18ecbfc4b4da632f1d0c6722b401aacba56710"
+    },
+    {
+      "name": "contracts",
+      "command": [
+        "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "scripts/validate_results.py"
+      ],
+      "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+      "exit_code": 0,
+      "seconds": 0.5272578999997677,
+      "log_sha256": "02392f87230f9df05a68ea27b4aa7712deb42b93cba58ac3f345da993a764660"
+    },
+    {
+      "name": "regression",
+      "command": [
+        "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+      "exit_code": 0,
+      "seconds": 77.57555239999965,
+      "log_sha256": "a7f7a82d437aa56996fa4ae342053770fd1ce985791e302f1366dd093ab39504"
+    },
+    {
+      "name": "tv4_exact_head",
+      "command": [
+        "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_tv4*.py",
+        "-v"
+      ],
+      "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv4",
+      "exit_code": 0,
+      "seconds": 12.284181799999715,
+      "log_sha256": "db3a21709f47311b6c42efc246fa01c84789a54787e65d28a91ffbbb2b499930"
+    }
+  ],
+  "no_DINO_or_official_Test_inference": true,
+  "config_sha256": "5aae4ff51130b7fb5cd1da9e6f5fd02a5e39a528d84b5534a445d306d06870ff"
+}

@@ -1,0 +1,185 @@
+{
+  "status": "BLOCKED_FOR_OFFICIAL_TRAINING",
+  "protocol_status": "DRAFT",
+  "base_commit": "163947b5eec79785c89b00dfc5b2b2d618a0d772",
+  "received_files": {
+    "dinov3_lp_w5.local.json": {
+      "source": "dino/dinov3_lp_w5.local.json",
+      "sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+      "bytes": 1063
+    },
+    "backbone_smoke_2026-10-29.json": {
+      "source": "dino/backbone_smoke_2026-10-29.json",
+      "sha256": "52c635be70f6f4a5466a7a816d9fc425036924f350ed9b6ea0a7a99e94549043",
+      "bytes": 3189
+    },
+    "W5_PRETRAINED_READY.md": {
+      "source": "dino/W5_PRETRAINED_READY.md",
+      "sha256": "0c5d7947d1d3aeb8e2421eb380e01a1d88c0d2639644ccc8aee5971a4c2de261",
+      "bytes": 2230
+    }
+  },
+  "config_comparison": {
+    "received_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+    "smoke_recorded_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+    "byte_hash_matches": false,
+    "json_values_match": true,
+    "hash_variants": {
+      "received_bytes": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+      "lf_only": "446bf4b26ecf496b4d3a597d5522ba6d6951303f71705fb60ad9cea12d63d00e",
+      "crlf_only": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+      "canonical_json_sorted_compact": "8a1d9edaf9adda04cc69b5831e94cc1c86c010a0d071f58baeb8759a1cff90f8"
+    },
+    "line_ending_normalization_matches_smoke": false,
+    "canonical_config_selected_by_tv3": false
+  },
+  "declared_training_fields": {
+    "seed": 42,
+    "epochs": 50,
+    "patience": 7,
+    "images_per_batch": 32,
+    "optimizer": "sgd",
+    "lr": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine"
+  },
+  "all_requested_training_fields_present": true,
+  "dataset_metadata": {
+    "status": "PASS_TRAIN_VAL_ONLY",
+    "files": {
+      "class_map.json": {
+        "reported": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+        "actual": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+        "matches": true
+      },
+      "train.jsonl": {
+        "reported": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+        "actual": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+        "matches": true
+      },
+      "val.jsonl": {
+        "reported": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+        "actual": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+        "matches": true
+      },
+      "b1/train.jsonl": {
+        "reported": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c",
+        "actual": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c",
+        "matches": true
+      },
+      "b1/val.jsonl": {
+        "reported": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+        "actual": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+        "matches": true
+      },
+      "b2/train.jsonl": {
+        "reported": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+        "actual": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+        "matches": true
+      },
+      "b2/val.jsonl": {
+        "reported": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+        "actual": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+        "matches": true
+      }
+    },
+    "train_parent_images": 2800,
+    "train_gt_crops": 3125,
+    "val_parent_images": 600,
+    "val_gt_crops": 680,
+    "new_pixel_preflight_performed": false
+  },
+  "source": {
+    "official_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+    "official_commit_url": "https://github.com/facebookresearch/dinov3/commit/6876159a11b4df116f30f667f8c9888617df0751",
+    "official_factory_url": "https://raw.githubusercontent.com/facebookresearch/dinov3/6876159a11b4df116f30f667f8c9888617df0751/dinov3/hub/backbones.py",
+    "official_factory_verified_by_web": {
+      "patch_size": 16,
+      "embed_dim": 384,
+      "expected_weight_hash_prefix": "08c60483"
+    },
+    "local_vendor_checkout_verified": false,
+    "provided_training_source_code_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+    "matching_training_source_code_received": false
+  },
+  "weights": {
+    "declared_sha256": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d",
+    "declared_bytes_from_ready": 86531063,
+    "factory_hash_prefix_matches": true,
+    "independently_rehashed": false,
+    "availability": {
+      "repo_dir": {
+        "declared_path": "outputs/tv3_w5/vendor/dinov3",
+        "exists_on_tv2": false
+      },
+      "weights_path": {
+        "declared_path": "outputs/tv3_w5/pretrained/dinov3_vits16.pth",
+        "exists_on_tv2": false
+      }
+    }
+  },
+  "gpu_smoke": {
+    "status": "REPORTED_PASS_NOT_INDEPENDENTLY_REPLAYED",
+    "reported_status": "PASS",
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "pillow": "12.2.0",
+      "numpy": "2.5.3",
+      "sklearn": "1.9.0",
+      "cuda": "12.4",
+      "cudnn": 90100,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "vram_bytes": 8585216000,
+      "os": "Windows-11-10.0.26100-SP0",
+      "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+      "num_threads": 10,
+      "num_interop_threads": 10,
+      "amp": false,
+      "tf32": false,
+      "deterministic_algorithms": true
+    },
+    "feature_shape": [
+      32,
+      384
+    ],
+    "frozen": true,
+    "forward_seconds": 4.6320425000003524,
+    "peak_cuda_allocated_bytes": 299583488,
+    "peak_cuda_reserved_bytes": 402653184,
+    "source_images_verified_counter": 0,
+    "sample_ids_and_hash_receipts_received": false,
+    "full_data_preflight_proven_by_this_smoke": false
+  },
+  "approval": {
+    "TV2": "CONDITIONAL_USER_CONFIRMATION_2026-10-30",
+    "TV3": "NOT_CONFIRMED_READY_EXPLICITLY_SAYS_PENDING",
+    "effective_official_approval": false
+  },
+  "blockers": [
+    {
+      "id": "B1",
+      "owner": "TV3",
+      "need": "Identify exact canonical config bytes and full SHA; explain mismatch and bind smoke to that file before lock"
+    },
+    {
+      "id": "B2",
+      "owner": "TV3",
+      "need": "Provide actual approval of that canonical config via traceable response/commit/PR; READY still says awaiting confirmation"
+    },
+    {
+      "id": "B3",
+      "owner": "TV3",
+      "need": "Provide referenced pretrained verification/source code and data-preflight evidence so full weights hash, preprocessing, parent-weighted training and source-image checks can be verified"
+    }
+  ],
+  "official_experiments_registered": [],
+  "proposed_experiment_id": "DINOv3_LP_run01",
+  "training_performed_by_tv2": false,
+  "test_inference_performed": false,
+  "test_manifest_opened_by_audit": false,
+  "b2_checkpoint_loaded": false,
+  "input_files_preserved": true
+}

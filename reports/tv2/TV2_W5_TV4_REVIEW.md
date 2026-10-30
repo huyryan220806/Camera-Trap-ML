@@ -1,5 +1,80 @@
 # TV2 W5 independent review of TV4 PR 8
 
+## Cập nhật độc lập ngày 30/10/2026
+
+**Functional UI PASS với một finding P2 về accessibility; chưa APPROVE/merge PR.**
+Review đúng head `fef2511b571b23be3d4e2cf6c1ccedd659097b6f`, snapshot code
+không sửa (đối chiếu Git, chỉ CRLF conversion đã ghi hash). Server ngoài sandbox
+trên localhost8768 đã giải quyết blocker kết nối browser trước đó. Journal QA
+mới nằm riêng trong `outputs/tv2_w5/ui_review_20261030_01/sessions/`, không sửa
+checkpoint/nhánh TV4 hoặc các receipt cũ. Browser là in-app Chromium; screenshot
+và JSON thực trong `w5_ui_review/2026-10-30/attempt_01/`.
+
+| Test case mới | Expected / Actual | Kết quả |
+| --- | --- | --- |
+| UI30-01 real B2 | MegaDetector+B2 thật trên mẫu0train;1box,top3,status needs_review,không fallback | PASS |
+| UI30-02 responsive |1440×1100,390×844,320×740;không tràn ngang,box trong ảnh | PASS |
+| UI30-03 nhiều box/resize | Synthetic2box đúng nhãn giả lập;tọa độ sau resize ở3kích thước,sai lệch tối đa<0,011px | PASS |
+| UI30-04 row→box | Click hàng2 chọn đúng review-box/selected row/box theo detection_id | PASS |
+| UI30-05 box→row | Click overlay1 chọn đúng hàng/vùng1 | PASS |
+| UI30-06 lọc điểm thấp | Fixture2box thấp giữ đủ2options,không mất ID | PASS |
+| UI30-07 draft | Đổi nhãn/note hiển thị Có thay đổi chưa lưu | PASS |
+| UI30-08 save | Revision0→1,original giữ nguyên;correction có nhãn software QA,không phải expert GT | PASS |
+| UI30-09 reload | Đổi note chưa lưu rồi Nạp lại;khôi phục đúng saved revision/note | PASS |
+| UI30-10 export | Click browser download;JSON tải về deep-equal saved session,original bất biến | PASS |
+| UI30-11 upload | File chooser nạp ảnh train có hash;filename/preview/kết quả mock đúng | PASS |
+| UI30-12 ảnh hỏng | Upload synthetic_corrupt.jpg;status error/error.stage read,không output một phần | PASS |
+| UI30-13 no_detection | Fixture0box,label review disabled,UI nói không đồng nghĩa ảnh trống | PASS |
+| UI30-14 detector miss | Ghi quyết định riêng/revision,note synthetic;original no_detection không bị đổi | PASS |
+| UI30-15 detector error | Fixture lỗi detector có status error và hướng dẫn rõ,không silent fallback | PASS |
+| UI30-A11Y-01 | Nút export mobile cần accessible name | **FAIL/P2**,xem dưới |
+
+Kết quả raw: [verification.json](w5_ui_review/2026-10-30/attempt_01/verification.json),
+[selection mapping](w5_ui_review/2026-10-30/attempt_01/selection_mapping.json),
+[responsive multiple](w5_ui_review/2026-10-30/attempt_01/responsive_multiple_geometry.json),
+[browser export](w5_ui_review/2026-10-30/attempt_01/browser_exported_session.json).
+Browser console errors/warnings rỗng trong lượt này. Counter ban đầu
+invalidReviewFields=1 gồm checkbox16px có chủ đích; audit sửa điều kiện để chỉ
+đo input/select/textarea dùng nhập liệu, tất cả nằm trong viewport. Giữ cả hai
+audit, không coi kích thước checkbox là bug responsive.
+
+Ảnh thực đã quan sát độc lập:
+
+![Desktop1440 B2 thật và revision QA đã lưu](w5_ui_review/2026-10-30/attempt_01/desktop_real_reviewed.jpg)
+
+[Mobile390](w5_ui_review/2026-10-30/attempt_01/mobile_390_real_reviewed.jpg),
+[mobile320](w5_ui_review/2026-10-30/attempt_01/mobile_320_real_reviewed.jpg),
+[hai box synthetic](w5_ui_review/2026-10-30/attempt_01/desktop_synthetic_multiple.jpg),
+[ảnh hỏng](w5_ui_review/2026-10-30/attempt_01/desktop_corrupt_error.jpg).
+
+### Finding P2 UI-A11Y-01 — owner TV4
+
+Tại320/390px, CSS ẩn span “Xuất JSON”, nút chỉ còn icon. DOM không có
+`aria-label` hoặc `title`; AX tại mobile hiển thị nút export không có tên đọc.
+Nút vẫn click/download được nên không chặn chức năng export; screen reader
+không nhận được mục đích rõ ràng. [DOM evidence](w5_ui_review/2026-10-30/attempt_01/mobile_export_accessibility.json).
+
+Tái hiện: mở đúng headPR8 với kết quả đã chạy → viewport320px hoặc390px →
+kiểm AX nút export; `innerText=''`,span display none,aria-label/title null.
+Expected: nút icon vẫn có accessible name “Xuất JSON”. TV4 sửa nhãn truy cập
+trên nhánh của họ; TV2 retest AX/mobile download cùng checkpoint/fixtures.
+Không tự sửa app hoặc APPROVE PR8 trong lượt TV2 này. Không có findingP0/P1.
+
+### Runtime và kiểm thử mới
+
+B2 thật chạy trên CPU i7-13620H/RAM15,71GiB,4threads,ảnhbatch1,
+maxcropbatch8,actual1crop. UI ghi52,27s cho cold request khi đang khởi tạo model
+và gần thời điểm regression; không dùng làm benchmark đại diện hoặc so DINO.
+Runtime/raw timings ở real_initial.json. Không có validation metric mới.
+
+Regression mới **409PASS/0FAIL/0SKIP**,64,740s unittest; snapshotTV4
+**44PASS/0FAIL/0SKIP**,8,393s. Environment và6contract fixtures PASS. Logs trong
+`w5_pretrained_review/2026-10-30/attempt_01/`. CSV/batch chưa triển khai trong
+PR8, không ép nghiệm thu ngoài phạm vi. Mọi nhãn sửa là QA synthetic riêng,
+không là training GT. Không chạy DINO hoặc Test W4.
+
+## Lịch sử review 28–29/10/2026 — giữ nguyên bằng chứng
+
 **PARTIAL — API verified; browser/UI acceptance BLOCKED.** Thực hiện
 28–29/10/2026 (giờ Việt Nam). PR
 [#8](https://github.com/huyryan220806/Camera-Trap-ML/pull/8) đang mở, chưa merge.

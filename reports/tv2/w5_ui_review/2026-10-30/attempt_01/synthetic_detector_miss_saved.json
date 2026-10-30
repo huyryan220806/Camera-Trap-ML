@@ -1,0 +1,103 @@
+{
+  "schema_version": "review-session-1.0",
+  "request_id": "c49ab5f2-6ef6-4e15-b216-5b7f377351f8",
+  "created_utc": "2026-10-30T05:36:52.687020+00:00",
+  "source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+  "original": {
+    "schema_version": "classifier-demo-1.0",
+    "result": {
+      "schema_version": "1.0.0",
+      "request_id": "c49ab5f2-6ef6-4e15-b216-5b7f377351f8",
+      "image": {
+        "image_id": null,
+        "file_name": "image_00001.jpg",
+        "width": 3264,
+        "height": 2448
+      },
+      "pipeline": {
+        "mode": "mock",
+        "detector_id": "mock-geometry-v1",
+        "classifier_id": "mock-scores-v1",
+        "class_map_version": "swg-v1",
+        "detector_threshold": 0.2,
+        "review_threshold": 0.7
+      },
+      "status": "no_detection",
+      "needs_review": true,
+      "detections": [],
+      "error": null,
+      "elapsed_ms": 42.57
+    },
+    "provenance": {
+      "requested_classifier": "B2",
+      "classifier": null,
+      "detector": {
+        "mode": "mock",
+        "detector_id": "mock-geometry-v1",
+        "package_version": null,
+        "weights_sha256": null,
+        "detector_threshold": 0.2,
+        "classifier_id": null,
+        "device": "cpu",
+        "image_size": 1280,
+        "coordinate_space": "original_raster_pixels_no_exif_rotation"
+      },
+      "ignored_non_animals": 0,
+      "score_kind": "softmax_class_score",
+      "scores_calibrated": false,
+      "crop_policy": "round_clip_min8_padding0",
+      "max_boxes": 64,
+      "training_overlap_swg": true,
+      "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+      "warnings": [
+        "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+        "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+        "Both boxes and class scores are synthetic; no model inference was performed."
+      ]
+    }
+  },
+  "runtime": {
+    "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
+    "logical_cpus": 16,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 224,
+    "classifier_actual_crop_batches": []
+  },
+  "inference_wall_ms": 59.052,
+  "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+  "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+  "review": {
+    "revision": 1,
+    "operator": "TV2 UI QA — synthetic correction",
+    "note": "Synthetic detector-miss UI fixture only: animal at left; not an expert annotation.",
+    "image_outcome": "detector_miss",
+    "box_reviews": []
+  },
+  "events": [
+    {
+      "revision": 1,
+      "created_utc": "2026-10-30T05:37:06.754252+00:00",
+      "review": {
+        "revision": 1,
+        "operator": "TV2 UI QA — synthetic correction",
+        "note": "Synthetic detector-miss UI fixture only: animal at left; not an expert annotation.",
+        "image_outcome": "detector_miss",
+        "box_reviews": []
+      }
+    }
+  ]
+}

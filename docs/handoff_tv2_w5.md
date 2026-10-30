@@ -6,6 +6,27 @@ W5 **PARTIAL**. Không có training run DINO hoặc đánh giá Test mới. Xem
 [review TV4](../reports/tv2/TV2_W5_TV4_REVIEW.md) và
 [tiến độ](progress_tv2_w5_w6.md). Không thực hiện nghiệm thu W6 trong lượt này.
 
+**Cập nhật 30/10:** đã review đủ ba file TV3. TV2 đồng ý kỹ thuật có điều kiện
+với SGD0.01/momentum0.9/WD0.0001/cosine, seed42/max50/patience7/effective32parents
+và các quy tắc đánh giá. Protocol vẫn DRAFT theo xác nhận trực tiếp của TV2;
+không đăng ký `DINOv3_LP_run01` chính thức khi B1–B3 dưới đây chưa đạt.
+Xem [review pretrained](../reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md).
+
+TV3 cần bàn giao chính xác các phần còn thiếu (không cần đề xuất lại LR/SGD/seed):
+
+1. **B1:** file config chuẩn/full SHA và giải thích/bind smoke hash320718… với
+   file nhận hashe9303b…; JSON giống nhau nhưng CRLF/LF vẫn không khớp hash.
+2. **B2:** xác nhận thực tế của TV3 trên bản chuẩn/experiment qua nguồn truy vết;
+   READY hiện tự ghi còn chờ TV2/TV3 xác nhận, chưa commit/push.
+3. **B3:** gói `pretrained_2026-10-29/` và preflight28/10 được READY dẫn chiếu:
+   source pipeline đúng SHA852989…/commit, proof checkout/weights hash+strict-load,
+   transform/cache/parent-weighted loss/scheduler code và report/sample IDs/hash
+   dữ liệu train/val. Không cần URL ký số hay credential. TV2 chưa nhận weights,
+   vendor hoặc code ở đường dẫn gói nêu; source_images counter smoke là0.
+
+Evidence nhận nguyên byte và metadata comparison nằm trong
+`reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/`.
+
 ## Người nhận
 
 - TV3 (`dohoangphuc2006`): xác nhận cấu hình cập nhật 29/10 cùng TV2, hoàn tất
@@ -14,18 +35,20 @@ W5 **PARTIAL**. Không có training run DINO hoặc đánh giá Test mới. Xem
   head/pooling, pretrained source/hash/version, config/log/predictions/reload.
 - TV1 (`huyryan220806`): đối chiếu verify-only gói `9abc9c5` và dataset hashes;
   ứng viên1.665 vẫn chưa được phép train. Không cần phát hành test109 ảnh.
-- TV4 (`TienMoi79`): xem review PR #8 tại `fef2511`; API đạt nhưng cần kiểm tra
-  UI trực quan 1440/390/320, chọn box/hàng, export/reload trình duyệt. Không có
-  lỗi sản phẩm đã tái hiện trong phần API; không yêu cầu CSV ngoài phạm vi PR8.
+- TV4 (`TienMoi79`): xem review PR #8 tại `fef2511`; từ30/10 browser responsive
+  1440/390/320, chọn box/hàng, export/reload và fixtures đã PASS. Còn findingP2
+  UI-A11Y-01: nút export mobile thiếu accessible name; TV4 sửa, TV2 retest.
+  Không yêu cầu CSV ngoài phạm vi PR8 và không tự merge.
 - TV2: kiểm tra nguồn approval và gói TV3, chạy adapter/reload theo kiến trúc
-  thật, hoàn thành bảng so sánh và review browser. B2 vẫn là fallback.
+  thật, hoàn thành bảng so sánh và retest finding UI. B2 vẫn là fallback.
 
 ## CLI và hợp đồng đầu vào
 
 Cấu hình cập nhật **29/10/2026 theo chỉ thị người dùng**, đối chiếu kế hoạch
 TV3 ở `feat/metadata-split` commit `9abc9c572a9191e8a43a5abef05ebaf846b8356f`,
 `docs/plans/TV3_W5_W6.md`. Plan này không thay thế xác nhận TV2/TV3 thực tế;
-`status` vẫn **DRAFT**, reviewers và approval evidence chưa có.
+`status` vẫn **DRAFT**. Từ cập nhật 30/10 đã có TV2 CONDITIONAL trong chat;
+approval TV3 và approval có hiệu lực vẫn chưa có.
 
 - Ưu tiên DINOv3 ViT-S/16 frozen backbone + linear head 8 lớp; DINOv2 ViT-S/14
   chỉ dự phòng nếu thiếu weights DINOv3. Chọn và đăng ký trước official run.
@@ -38,11 +61,12 @@ TV3 ở `feat/metadata-split` commit `9abc9c572a9191e8a43a5abef05ebaf846b8356f`,
   Ghi microbatch/accumulation/chuẩn hóa loss thực; không reweight parent hai lần.
 - Thiết bị dự kiến RTX 4060 Laptop 8 GB, FP32; chưa xác minh khả dụng.
 
-TV3 phải khai báo/xác minh **learning rate, optimizer, scheduler, pooling,
-pretrained source/version/SHA-256 và preprocessing**, cùng model đã chọn và
-microbatch/runtime thực trong training config trước official run. Không tự điền
-giá trị mặc định. Không dùng Test hoặc dữ liệu mở rộng chưa qua quality gate;
-không thêm lượt thử fallback ngoài ngân sách và không fine-tune backbone.
+Các giá trị learning rate/optimizer/momentum/WD/scheduler/pooling/pretrained
+source/commit/SHA đã có ở ba file nhận và được ghi rõ là khai báo chưa lock.
+Còn phải kiểm config byte chuẩn và source thực, đặc biệt preprocessing ID
+chưa có implementation, grouping/normalization loss và scheduler step. Không
+tự điền default. Không dùng Test/mở rộng chưa gate, thêm lượt fallback ngoài
+ngân sách hoặc fine-tune backbone. Smoke reported PASS không là official approval.
 
 Không có `.venv` ở gốc trên máy này. Interpreter đã dùng:
 `outputs/w2_final_handoff/tv4_env/Scripts/python.exe` (Python3.12.14).
@@ -59,8 +83,9 @@ $tv2py = 'outputs/w2_final_handoff/tv4_env/Scripts/python.exe'
 3.400 ảnh train/val. Không dùng validator toàn snapshot để làm pixel gate W5.
 
 Draft config đã ghi `seeds=[42]`, `max_candidate_runs=1`, nhưng `experiments=[]`
-và `model.selected_model=null` để chưa đăng ký thay TV3. Chỉ sau khi có bằng
-chứng TV2/TV3 thực tế, giữ nguồn xác nhận trong PR/Git và kiểm đủ training
+và `model.selected_model=null` để chưa đăng ký thay TV3. TV2 đã đồng ý có điều
+kiện ngày30/10, không yêu cầu lại. Chỉ sau khi TV3 giải quyết B1–B3 và điều kiện
+TV2 đạt, giữ nguồn xác nhận trong PR/Git và kiểm đủ training
 config, mới chuyển `status=APPROVED`/ghi reviewer thực cùng experiment/model đã
 chọn. Không tạo approval receipt, chữ ký hoặc giá trị giả để vượt gate.
 Gate tự động không xác thực tác giả approval và chưa kiểm toàn bộ tham số train
