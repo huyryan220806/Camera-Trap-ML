@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "protected_old_files_unchanged": 189,
+  "checkpoint_hashes_unchanged": {
+    "experiments/B0_run01/checkpoints/best_model.pth": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680",
+    "experiments/B1_run01/checkpoints/best_model.pth": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c",
+    "experiments/B2_run01/checkpoints/best_model.pt": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+    "experiments/B3_run01/checkpoints/best_model.pt": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b"
+  },
+  "tests": {
+    "tv3_dino_tests": 11,
+    "tv3_compat_tests": 5,
+    "tv2_w5_tests": 32
+  },
+  "failures": 0,
+  "skipped": 0,
+  "protocol_status": "APPROVED",
+  "experiments": [
+    "DINOv3_LP_run01"
+  ],
+  "receipt_sha256": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a",
+  "json_valid": true,
+  "prior_draft_preserved": true,
+  "historical_receipts_untouched": true,
+  "official_training_performed": false,
+  "test_w4_evaluation_performed": false,
+  "w6_performed": false,
+  "raw_source_inputs_untracked_and_preserved": true
+}

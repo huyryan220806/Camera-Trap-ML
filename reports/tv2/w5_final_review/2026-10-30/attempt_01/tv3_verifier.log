@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "config_canonical_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "local_assets_verified": false,
+  "model_inference_performed": false
+}

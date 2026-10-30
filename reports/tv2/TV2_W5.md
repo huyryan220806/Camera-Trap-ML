@@ -1,21 +1,32 @@
 # TV2 tuần 5 đánh giá mô hình và tính tái lập
 
-**W5 PARTIAL — B2 đã kiểm định; UI TV4 functional PASS với một finding P2;
-DINO/phê duyệt protocol còn BLOCKED.** Thực hiện28–30/10/2026 giờ Việt Nam, trên nhánh duy nhất
-`feat/baseline`. Không nghiệm thu tuần6. Lịch28/10–03/11 là đề xuất của nhóm.
+**W5 PARTIAL — B1/B2/B3 PASS, protocol APPROVED; DINO RESULT PENDING.**
 
-**Cập nhật30/10:** review ba file pretrained TV3 tại
-[TV2_W5_PRETRAINED_REVIEW_2026-10-30.md](TV2_W5_PRETRAINED_REVIEW_2026-10-30.md).
-Hyperparameters SGD0.01/momentum0.9/WD0.0001/cosine và seed42/max50/patience7/
-effective32parents đã nhận, TV2 đồng ý kỹ thuật có điều kiện. Chưa khóa vì
-config raw SHA nhận khác SHA smoke, chưa có TV3 approval thực tế và gói
-source/pretrained/data-preflight dẫn chiếu. Giữ DRAFT, chưa đăng ký experiment.
-UI browser timeout đã giải quyết bằng server ngoài sandbox;15functional cases
-PASS gồm responsive,selection,upload,save/reload/export; một findingP2 thiếu
-accessible name nút export mobile, ownerTV4. Xem phần cập nhật30/10 của
-[review TV4](TV2_W5_TV4_REVIEW.md); không coi historical BLOCKED là trạng thái
-browser mới nhất. Regression mới409PASS,TV4suite44PASS,logs đã lưu riêng;
-metric B2/DINO lịch sử bên dưới không bị thay bằng kết quả phần mềm mới.
+Final review30/10 theo yêu cầu/ủy quyền mới TV2 và hồ sơ TV3 đã push tại
+`14d79fd18e2a22bc853cc89559ec9bbb708403da` (source `173db631cf74611aca5f95044fe572ab08e81d26`).
+Đã tái tạo hai loại config hash, kiểm38artifacts/source/data/TV3approval và
+48softwaretestsPASS; độc lập kiểm7metadata/provenance/32train byte hashes.
+B3 chấp nhận published TV3 weights/checkout/GPU receipts với giới hạn rõ:
+TV2 không có binary/vendor, không tự load/replayGPU. TV1 reviewer=null.
+
+Đăng ký chính thức duy nhất DINOv3_LP_run01; seed42,max1run,50epochs,patience7,
+effective32parents,FP32. Receipt `configs/dinov3_lp_w5.local.protocol.json`, SHA
+`e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a`;
+legacy draft-named config cũng APPROVED. DRAFT trước khóa giữ nguyên byte.
+TV3 áp dụng exact receipt trên nhánh mình và check gate/assets trước training.
+Không còn blocker approval B1–B3 ở TV2; chưa có kết quả/checkpoint DINO nên W5
+chưa COMPLETE. TV2 tiếp theo nhận gói thật, validation audit/reload/so sánh B2.
+
+Xem [final review](TV2_W5_FINAL_REVIEW_2026-10-30.md),
+[protocol](W5_PROTOCOL.md), [handoff](../../docs/handoff_tv2_w5.md),
+[progress](../../docs/progress_tv2_w5_w6.md). UI TV4 functional15cases đã PASS;
+P2UI-A11Y-01 còn chờ TV4 sửa/retest, tách khỏi phê duyệt pretrained.
+Không train DINO thay TV3, chạy Test W4, sửa checkpoint/dữ liệu hoặc làm W6.
+
+## Lịch sử nền và các kết quả trước final approval
+
+Các trạng thái DRAFT/BLOCKED hoặc reviewer pending dưới đây là lịch sử trước
+gói TV3 mới. Không thay các metric/receipt cũ bằng software tests hoặc approval.
 
 Commit trước đồng bộ `5fe9083367a78de8bf3ed652a6b58eb26a171e47`; nền triển khai
 `60516f51fccbb85e6e266a022d94ea90d2239a11`. Kết quả Git cuối/PR được ghi trong

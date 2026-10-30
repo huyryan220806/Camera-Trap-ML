@@ -1,6 +1,43 @@
 # TV2 W5 progress — 28–30/10/2026
 
-## Latest status — 30/10/2026, pretrained approval review
+## Latest status — 30/10/2026, final B1–B3 review
+
+**B1 PASS / B2 PASS / B3 PASS; protocol APPROVED. W5 PARTIAL — DINO RESULT PENDING.**
+Base TV2 `9f528d241c607be81853a2669d189bd1dd9c4237`; fetched TV3 HEAD
+`14d79fd18e2a22bc853cc89559ec9bbb708403da`, source
+`173db631cf74611aca5f95044fe572ab08e81d26`. Only feat/baseline modified.
+
+- B1: independently reproduced raw e9303b… and serialized320718… SHA from
+  exact Git bytes/source recipe; embedded smoke equals canonical config;
+  preflight differs only3 disclosed pretrained pins. Historical smoke unchanged.
+- B2: published TV3_APPROVAL.json binds hashes/run01/max1 and awaits TV2 lock;
+  user TV2's explicit conditional authorization now fulfilled. Attributed
+  confirmation, not cryptographic identity verification; TV1=null.
+- B3:38/38 Git artifacts verified,7metadata+provenance match,32train sample byte
+  hashes independently match. Reviewed exact source transform/grouping/loss/
+  SGD/cosine/ties/runtime. Accepted historical TV3 binary rehash/checkout/GPU
+  smoke and full3400 preflight with explicit limits; no TV2 weights/load/GPU replay.
+- Official registration: DINOv3_LP_run01 only; seed42,max1candidate,50epochs,
+  patience7,32parents,FP32. Canonical raw config copied unchanged. Receipt
+  `configs/dinov3_lp_w5.local.protocol.json` SHA
+  `e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a`;
+  legacy draft-named config is identical APPROVED. Prior DRAFT preserved as bytes.
+- New related tests:11DINO+5compat+32TV2=48PASS/0FAIL/0SKIP;
+  verifier/environment/6contractsPASS. Actual approved receipt validatorPASS,
+  7negative mutationsREJECTED; absent candidate still fails TV2 gate.
+- TV3 may proceed with the registered run after installing exact receipt on its
+  branch and checking gate/current CUDA/assets/source. No further approval
+  blocker at TV2; no training performed by TV2, Test W4, B2/data changes or W6.
+- Pending W5: genuine DINO checkpoint/config/log/predictions/reload delivery,
+  TV2 validation/reload/comparison/error review; TV4 UI P2 retest separately.
+
+Final report: `reports/tv2/TV2_W5_FINAL_REVIEW_2026-10-30.md`; evidence
+`reports/tv2/w5_final_review/2026-10-30/attempt_01/`; current handoff has exact
+hash/gate steps. Final receipt commit supplied after push; locate via
+`git log -1 -- configs/dinov3_lp_w5.local.protocol.json`. All status entries
+below describe earlier stages and do not override this final review.
+
+## Historical status — 30/10/2026, before final B1–B3 review
 
 Base `163947b5eec79785c89b00dfc5b2b2d618a0d772`, branch `feat/baseline`.
 Read all three user-supplied TV3 files in `dino/`; originals unchanged and

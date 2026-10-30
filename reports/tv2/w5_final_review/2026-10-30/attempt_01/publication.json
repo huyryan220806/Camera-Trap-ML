@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-30",
+  "branch": "feat/crop-classifier",
+  "source_and_evidence_commit": "173db631cf74611aca5f95044fe572ab08e81d26",
+  "repository": "https://github.com/huyryan220806/Camera-Trap-ML",
+  "artifact_index": "reports/tv3/w5_review_response_2026-10-30/artifact_index.json",
+  "artifact_index_sha256": "5c772da14f3e37aec92ae9bf2f7f8592082d54c4edf4d31da5a70b931c0ec7de",
+  "committed_artifacts_verified": 38,
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "source_pipeline_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+  "tv3_approval": "reports/tv3/w5_review_response_2026-10-30/TV3_APPROVAL.json",
+  "tv2_protocol_status": "DRAFT_PENDING_REVIEW_AND_LOCK",
+  "official_training_performed": false,
+  "unrelated_tracked_changes_preserved": 11,
+  "note": "This receipt is committed after the source/evidence commit so the source commit SHA is not self-referential. It records commit content integrity, not TV2 approval."
+}

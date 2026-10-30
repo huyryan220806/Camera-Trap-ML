@@ -1,164 +1,99 @@
-# TV2 W5 handoff and continuation
+# TV2 W5 handoff — protocol APPROVED, 30/10/2026
 
-W5 **PARTIAL**. Không có training run DINO hoặc đánh giá Test mới. Xem
-[protocol DRAFT](../reports/tv2/W5_PROTOCOL.md),
-[báo cáo](../reports/tv2/TV2_W5.md),
-[review TV4](../reports/tv2/TV2_W5_TV4_REVIEW.md) và
-[tiến độ](progress_tv2_w5_w6.md). Không thực hiện nghiệm thu W6 trong lượt này.
+**B1/B2/B3 PASS. Đã đăng ký chính thức DINOv3_LP_run01, tối đa một lượt,
+seed42. W5 PARTIAL: chưa có kết quả/checkpoint DINO.**
 
-**Cập nhật 30/10:** đã review đủ ba file TV3. TV2 đồng ý kỹ thuật có điều kiện
-với SGD0.01/momentum0.9/WD0.0001/cosine, seed42/max50/patience7/effective32parents
-và các quy tắc đánh giá. Protocol vẫn DRAFT theo xác nhận trực tiếp của TV2;
-không đăng ký `DINOv3_LP_run01` chính thức khi B1–B3 dưới đây chưa đạt.
-Xem [review pretrained](../reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md).
+TV2 final review theo ủy quyền người dùng; TV3 receipt có nguồn Git, không phải
+chữ ký mật mã; TV1 reviewer=null. Không cần xác nhận lại cùng hyperparameter.
+Xem [final review](../reports/tv2/TV2_W5_FINAL_REVIEW_2026-10-30.md),
+[protocol](../reports/tv2/W5_PROTOCOL.md), [progress](progress_tv2_w5_w6.md).
 
-TV3 cần bàn giao chính xác các phần còn thiếu (không cần đề xuất lại LR/SGD/seed):
+## Bản khóa bàn giao cho TV3
 
-1. **B1:** file config chuẩn/full SHA và giải thích/bind smoke hash320718… với
-   file nhận hashe9303b…; JSON giống nhau nhưng CRLF/LF vẫn không khớp hash.
-2. **B2:** xác nhận thực tế của TV3 trên bản chuẩn/experiment qua nguồn truy vết;
-   READY hiện tự ghi còn chờ TV2/TV3 xác nhận, chưa commit/push.
-3. **B3:** gói `pretrained_2026-10-29/` và preflight28/10 được READY dẫn chiếu:
-   source pipeline đúng SHA852989…/commit, proof checkout/weights hash+strict-load,
-   transform/cache/parent-weighted loss/scheduler code và report/sample IDs/hash
-   dữ liệu train/val. Không cần URL ký số hay credential. TV2 chưa nhận weights,
-   vendor hoặc code ở đường dẫn gói nêu; source_images counter smoke là0.
+- TV3 source commit: `173db631cf74611aca5f95044fe572ab08e81d26`.
+- TV3 bundle HEAD: `14d79fd18e2a22bc853cc89559ec9bbb708403da`.
+- TV2 base trước khóa: `9f528d241c607be81853a2669d189bd1dd9c4237`.
+- Config chuẩn `configs/dinov3_lp_w5.local.json`: raw SHA-256
+  `e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce`.
+- Config serialized digest cho validator/smoke:
+  `32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8`.
+- Receipt **`configs/dinov3_lp_w5.local.protocol.json`**, SHA-256
+  **`e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a`**.
+- `configs/tv2_w5_protocol.draft.json` byte-identical receipt, statusAPPROVED
+  dù tên file có draft để giữ tương thích đường dẫn.
 
-Evidence nhận nguyên byte và metadata comparison nằm trong
-`reports/tv2/w5_pretrained_review/2026-10-30/attempt_01/`.
+Commit TV2 mới chứa receipt được báo sau push trong bàn giao cuối. Truy bằng
+`git log -1 -- configs/dinov3_lp_w5.local.protocol.json` trên feat/baseline.
+Không ghi SHA commit tự tham chiếu trong chính receipt. Các source commit TV3,
+base TV2 và hash artifact cụ thể đã có trong receipt/evidence.
 
-## Người nhận
+## TV3 phải thực hiện trước official run
 
-- TV3 (`dohoangphuc2006`): xác nhận cấu hình cập nhật 29/10 cùng TV2, hoàn tất
-  tham số còn thiếu và đăng ký model/experiment trước lượt chính thức;
-  bàn giao DINO thật với checkpoint, code nạp, preprocessing,
-  head/pooling, pretrained source/hash/version, config/log/predictions/reload.
-- TV1 (`huyryan220806`): đối chiếu verify-only gói `9abc9c5` và dataset hashes;
-  ứng viên1.665 vẫn chưa được phép train. Không cần phát hành test109 ảnh.
-- TV4 (`TienMoi79`): xem review PR #8 tại `fef2511`; từ30/10 browser responsive
-  1440/390/320, chọn box/hàng, export/reload và fixtures đã PASS. Còn findingP2
-  UI-A11Y-01: nút export mobile thiếu accessible name; TV4 sửa, TV2 retest.
-  Không yêu cầu CSV ngoài phạm vi PR8 và không tự merge.
-- TV2: kiểm tra nguồn approval và gói TV3, chạy adapter/reload theo kiến trúc
-  thật, hoàn thành bảng so sánh và retest finding UI. B2 vẫn là fallback.
+1. Fetch commit TV2 mới được bàn giao, lấy **nguyên byte receipt** từ commit đó
+   và áp dụng vào nhánh TV3. Không merge nhánh TV2/đổi proposal DRAFT bằng tay.
+2. Kiểm SHA receipt/config và serialized digest đúng giá trị trên; giữ nguyên
+   ba pipeline file hashes trong `source_lock.files_sha256`. Ghi receipt hash,
+   actual execution commit và full binding trong output training.
+3. Recheck weights/full SHA, vendor clean đúng upstream commit và data
+   comparison_v1 bằng verifier local-assets, output mới. Kiểm CUDA hiện tại.
+4. Gọi validator TV3 trên config/receipt thật **trước** official training.
+   Gate FAIL hoặc assets/config/source đổi thì dừng/review, không sửa field
+   cho qua gate, tự đổi model/device/batch hoặc mở thêm seed/lượt chạy.
+5. Chỉ TV3 chạy lượt DINOv3_LP_run01 đã đăng ký; tối đa50epochs/patience7,
+   SGD.01/momentum.9/WD.0001/cosine50, FP32, effective32parents. Feature cache32
+   crops/shard128 là bước riêng; mean crop CE per parent rồi mean parents,
+   batch cuối16 giữ lại. Không tự fallback DINOv2 hoặc dùng1665 ảnh mở rộng.
 
-## CLI và hợp đồng đầu vào
-
-Cấu hình cập nhật **29/10/2026 theo chỉ thị người dùng**, đối chiếu kế hoạch
-TV3 ở `feat/metadata-split` commit `9abc9c572a9191e8a43a5abef05ebaf846b8356f`,
-`docs/plans/TV3_W5_W6.md`. Plan này không thay thế xác nhận TV2/TV3 thực tế;
-`status` vẫn **DRAFT**. Từ cập nhật 30/10 đã có TV2 CONDITIONAL trong chat;
-approval TV3 và approval có hiệu lực vẫn chưa có.
-
-- Ưu tiên DINOv3 ViT-S/16 frozen backbone + linear head 8 lớp; DINOv2 ViT-S/14
-  chỉ dự phòng nếu thiếu weights DINOv3. Chọn và đăng ký trước official run.
-- comparison_v1: train 2.800 parent/3.125 GT crops, val 600 parent/680 GT crops.
-- Seed 42, tối đa **1 candidate training run**, max epochs 50, patience 7.
-- Chọn checkpoint bằng image-level val macro-F1; hòa giữ epoch sớm nhất.
-  Mean crop softmax vectors theo image_id rồi argmax; hòa chọn class ID nhỏ nhất.
-- Effective batch 32 **ảnh nguồn**; crop microbatch có thể nhỏ hơn theo VRAM,
-  nhưng loss là mean CE crops trong parent rồi mean parents của effective batch.
-  Ghi microbatch/accumulation/chuẩn hóa loss thực; không reweight parent hai lần.
-- Thiết bị dự kiến RTX 4060 Laptop 8 GB, FP32; chưa xác minh khả dụng.
-
-Các giá trị learning rate/optimizer/momentum/WD/scheduler/pooling/pretrained
-source/commit/SHA đã có ở ba file nhận và được ghi rõ là khai báo chưa lock.
-Còn phải kiểm config byte chuẩn và source thực, đặc biệt preprocessing ID
-chưa có implementation, grouping/normalization loss và scheduler step. Không
-tự điền default. Không dùng Test/mở rộng chưa gate, thêm lượt fallback ngoài
-ngân sách hoặc fine-tune backbone. Smoke reported PASS không là official approval.
-
-Không có `.venv` ở gốc trên máy này. Interpreter đã dùng:
-`outputs/w2_final_handoff/tv4_env/Scripts/python.exe` (Python3.12.14).
-Không đổi môi trường trong lúc có process khác đang chạy. Mỗi output mới dùng
-attempt/path chưa tồn tại; không xóa attempt cũ để chạy lại.
+Lệnh kiểm do **TV3 chạy tại repository/môi trường của TV3** sau áp dụng receipt:
 
 ```powershell
-$tv2py = 'outputs/w2_final_handoff/tv4_env/Scripts/python.exe'
-& $tv2py -X utf8 scripts/evaluate_w5_validation.py --help
-& $tv2py -X utf8 scripts/verify_w5_pixels.py --output outputs/tv2_w5/attempt_02/train_val_pixels.json
+python -X utf8 scripts/verify_tv3_w5_bundle.py --local-assets --output outputs/tv3_w5/preofficial_after_tv2_lock_01.json
+python -X utf8 -c "from src.training import dino_probe as d, dino_handoff as h; c=d.read_json('configs/dinov3_lp_w5.local.json'); p=d.read_json('configs/dinov3_lp_w5.local.protocol.json'); d.validate_config(c); h.validate_protocol(c,p); assert d.sha('configs/dinov3_lp_w5.local.json')==p['config_file_sha256']; print('PROTOCOL GATE PASS')"
 ```
 
-Đừng chạy lại pixel gate nếu chưa có đầu vào mới: attempt01 đã kiểm tra đủ
-3.400 ảnh train/val. Không dùng validator toàn snapshot để làm pixel gate W5.
+Chọn output mới nếu path đã tồn tại. Hai lệnh chỉ kiểm chứng, không train.
+Validator này ràng buộc serialized digest/registration/policy và reviewer
+fields; không xác thực danh tính hay tự kiểm mọi nội dung source. Review nguồn
+và đối chiếu hash phải giữ nguyên. Recheck availability/asset trước thực thi là
+điều kiện vận hành của TV3, không phải B1–B3 đang BLOCKED tại TV2.
 
-Draft config đã ghi `seeds=[42]`, `max_candidate_runs=1`, nhưng `experiments=[]`
-và `model.selected_model=null` để chưa đăng ký thay TV3. TV2 đã đồng ý có điều
-kiện ngày30/10, không yêu cầu lại. Chỉ sau khi TV3 giải quyết B1–B3 và điều kiện
-TV2 đạt, giữ nguồn xác nhận trong PR/Git và kiểm đủ training
-config, mới chuyển `status=APPROVED`/ghi reviewer thực cùng experiment/model đã
-chọn. Không tạo approval receipt, chữ ký hoặc giá trị giả để vượt gate.
-Gate tự động không xác thực tác giả approval và chưa kiểm toàn bộ tham số train
-mới; cần review training config trước official run, không nới code gate ở lượt này.
+TV2 không có weights/vendor và không replay GPU; chấp nhận receipt TV3 rehash/
+clean checkout ngày30 cùng strict-load smoke ngày29 gắn exact source SHA.
+Không có missing/unexpected-key log riêng. Full3400 pixel gate là lịch sử;
+TV2 kiểm7 metadata/provenance và32 train byte SHA hôm nay. Không gọi đó là
+independent binary load, GPU benchmark hoặc full pixel rerun của TV2.
 
-Handoff JSON cần đủ các trường (N/A chưa được chấp nhận để chạy chính thức):
+## TV3 bàn giao sau training
 
-```json
-{
-  "experiment_id": "ID_DA_DANG_KY",
-  "model_name": "TEN_THUC_TE",
-  "architecture": "KIEN_TRUC_VA_HEAD_THUC_TE",
-  "model_version": "PHIEN_BAN_CODE_VA_BACKBONE",
-  "pretrained_source": "NGUON_VA_HASH_WEIGHTS",
-  "checkpoint_sha256": "SHA256_THUC_TE_64_HEX",
-  "checkpoint_bytes": null,
-  "seed": 42,
-  "dataset_version": "comparison_v1",
-  "train_dataset_version": "comparison_v1",
-  "val_dataset_version": "comparison_v1",
-  "evaluation_split": "val",
-  "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
-  "manifest_sha256": {},
-  "class_order": [],
-  "aggregation": "mean_crop_softmax_then_argmax",
-  "preprocessing": {},
-  "training_status": "complete",
-  "training_commit": "SHA_THUC_TE",
-  "training_log": "DUONG_DAN_LOG",
-  "device": "CAU_HINH_THUC_TE",
-  "fresh_process_reload": {"status": "PASS", "evidence": "DUONG_DAN_BAO_CAO"},
-  "artifacts": {
-    "training_config": {"path": "config.json", "sha256": "SHA_THUC_TE"},
-    "training_log": {"path": "train.jsonl", "sha256": "SHA_THUC_TE"},
-    "reload_report": {"path": "reload.json", "sha256": "SHA_THUC_TE"}
-  },
-  "validation_metrics": {"accuracy": null, "macro_f1": null, "macro_precision": null, "macro_recall": null}
-}
-```
+Checkpoint full model/head với SHA/bytes; config chuẩn, protocol receipt và
+hash; binding actual execution commit/source hashes/runtime; train_log đủ epoch,
+selected epoch, optimizer/scheduler/early-stop; class_map/preprocessing;
+validation crop/image predictions đủ680crops/600parents, scores đầy đủ;
+metrics/CM/per-class support; fresh-process reload report và predictions/hashes;
+handoff.json/model card/cache identity/runtime/time/peak memory/thực tế batch.
+Chỉ validation, không mở Test W4 hoặc đổi B2. Không coi synthetic test fixture
+là checkpoint, metric hoặc approval thật.
 
-Đây là **hướng dẫn trường dữ liệu**, không phải artifact DINO đã tồn tại.
-Copy đầy đủ `manifest_sha256` và `class_order` từ protocol/bằng chứng B2, không
-đổi thứ tự score. Đường dẫn artifact tương đối với thư mục chứa handoff JSON.
-Reload report phải ghi status PASS, fresh_process true, checkpoint_sha256,
-evaluation_split val, manifest_sha256 khớp, test_inference_performed false;
-reviewer kiểm tra nội dung và chạy lại thật, không chỉ tin các trường này.
+## Việc TV2 tiếp theo
 
-Crop JSONL theo `contracts/w5_crop_prediction.schema.json`: đủ crop IDs từ
-`b2/val.jsonl`, `ground_truth` ID0–7 và **một trong** logits/class_scores đủ8.
-Không nộp top3 thay vector8, không làm tròn scores.
+- Kiểm integrity/provenance/budget/split của gói thật, config/receipt/source/hash,
+  đủ600parent/680crop và selected epoch theo macro-F1, hòa epoch sớm nhất.
+- Chạy artifact auditor và model/adapter reload tiến trình sạch trên validation;
+  tính lại accuracy, macro-F1/P/R, per-class/support/CM và error analysis.
+- So sánh B2 cùng frozen release; không suy ra lợi thế kiến trúc thuần túy từ
+  khác pretraining/recipe, không dùng mục tiêu88% hay một seed làm kết quả.
+- Chỉ đề xuất DINO cho demo sau validation/reload/review; B2 vẫn fallback demo.
+- TV4 sửa UI-A11Y-01 P2 (export mobile thiếu accessible name), TV2 retest.
+  Functional review15cases đã PASS; không merge/APPROVE PR8 thay reviewer.
 
-```powershell
-& $tv2py -X utf8 scripts/evaluate_w5_validation.py `
-  --protocol outputs/tv2_w5/approved_protocol.json `
-  --handoff outputs/tv3_w5/handoff.json `
-  --checkpoint outputs/tv3_w5/model.pt `
-  --crop-predictions outputs/tv3_w5/val_crops.jsonl `
-  --b2-predictions reports/tv2/w5_evidence/attempt_01/validation_02/b2_predictions.jsonl `
-  --output outputs/tv2_w5/attempt_02/candidate_audit
-```
+## Trạng thái và lịch sử
 
-Các đường dẫn TV3/approved ở lệnh là **đầu vào cần nhận sau**, chưa tồn tại.
-CLI audit predictions, không nạp DINO hoặc tự thực hiện reload. ARTIFACT_VERIFIED
-khác technical inference PASS, reviewer approved và PR merged. Sau adapter
-thật mới đánh giá readiness. Nếu preprocessing/model khác dự kiến, cập nhật
-protocol trước lượt chính thức, giữ vết thay đổi và không dùng Test để quyết định.
+48 tests liên quan mới PASS, verifier/environment/contracts PASS; receipt thật
+qua validator,7 mutation sai bị chặn. Mọi code/tests production giữ nguyên.
+Evidence mới `reports/tv2/w5_final_review/2026-10-30/attempt_01/` lưu DRAFT cũ,
+ủy quyền, TV3 receipts, audit, tests và integrity; lịch sử trong
+[review trước khóa](../reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md) không sửa.
 
-Để tái hiện API QA: tạo snapshot đúng commit PR8 bằng Git archive, chuẩn bị
-checkpoint B2/MD và tám ảnh mẫu **train** theo đường dẫn gốc. Chạy
-`scripts/review_tv4_w5.py --snapshot <snapshot> --commit fef2511b571b23be3d4e2cf6c1ccedd659097b6f --url http://127.0.0.1:8767 --output outputs/tv2_w5/attempt_02/ui_api`.
-Script xác minh nội dung code với Git (ghi riêng CRLF conversion), tự mở/đóng
-server local. Browser QA là bước riêng, không được thay bằng API PASS.
-
-Trên Windows, regression cần TEMP ngoài `repo/outputs` để path-guard tests giữ
-đúng điều kiện. Attempt01 dùng writable visualization root riêng, đã lưu lệnh,
-thời gian và log. Không sửa test hoặc thêm proof giả để che lỗi TEMP.
+W5 **PARTIAL — APPROVAL PASS, DINO RESULT PENDING**. Draft PR từng chuẩn bị và
+GitHub connector403 được giữ như lịch sử; không tự merge PR hoặc làm W6.
+Không train DINO thay TV3, chạy Test W4, sửa B2/dataset hoặc receipt lịch sử.

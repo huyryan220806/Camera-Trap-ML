@@ -1,0 +1,10 @@
+test_registration_and_policy_fail_closed (test_dino_tv2_compat.ProtocolTests.test_registration_and_policy_fail_closed) ... ok
+test_no_pass_for_missing_wrong_or_failed_reload (test_dino_tv2_compat.TV2CompatibilityTests.test_no_pass_for_missing_wrong_or_failed_reload) ... ok
+test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2 (test_dino_tv2_compat.TV2CompatibilityTests.test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2) ... ok
+test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest) ... ok
+test_tv2_rejects_missing_crop_and_export_uses_original_softmax (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_missing_crop_and_export_uses_original_softmax) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 13.882s
+
+OK

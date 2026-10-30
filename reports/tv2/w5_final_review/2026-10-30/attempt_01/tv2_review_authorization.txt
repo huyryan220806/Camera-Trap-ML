@@ -1,0 +1,139 @@
+# CODEX — TV2 W5: FINAL REVIEW B1–B3 VÀ KHÓA PROTOCOL DINOv3
+
+Repository: https://github.com/huyryan220806/Camera-Trap-ML
+
+Nhánh làm việc duy nhất: `feat/baseline`
+
+TV3 đã hoàn tất và push hồ sơ B1–B3.
+
+- TV3 HEAD: `14d79fd18e2a22bc853cc89559ec9bbb708403da`
+- Source commit: `173db631cf74611aca5f95044fe572ab08e81d26`
+- Bundle: `reports/tv3/w5_review_response_2026-10-30/`
+
+Mục tiêu: Độc lập xác minh ba blocker B1–B3. Nếu toàn bộ điều kiện protocol được đáp ứng, đăng ký chính thức `DINOv3_LP_run01` và khóa TV2 W5 protocol thành APPROVED.
+
+## Nhiệm vụ 1 — Kiểm tra nguồn
+
+1. Fetch origin và xác minh đúng hai commit TV3.
+2. Kiểm tra HEAD TV2 và tình trạng worktree.
+3. Đọc đầy đủ bundle B1–B3 cùng source code TV3 tại commit cố định.
+4. Đối chiếu với `reports/tv2/W5_PROTOCOL.md`, `configs/tv2_w5_protocol.draft.json` và báo cáo review ngày 30/10.
+5. Không sửa nhánh TV3, TV1, TV4 hoặc main.
+
+## Nhiệm vụ 2 — Xác minh B1
+
+TV3 xác nhận file chuẩn:
+
+`configs/dinov3_lp_w5.local.json`
+
+Raw file SHA-256:
+
+`e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce`
+
+Serialized config SHA-256:
+
+`32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8`
+
+Tự tính lại cả hai hash từ đúng file Git.
+
+Kiểm tra:
+- Config nhúng trong GPU smoke bằng config chuẩn.
+- `config.digest-input.txt` khớp phép tuần tự hóa của source thật.
+- Source hash liên kết đúng smoke.
+- Preflight ngày 28/10 chỉ khác bản pin ba trường pretrained đã công bố.
+- Không có thay đổi ngoài dự kiến đối với hyperparameter hoặc data.
+
+Nếu PASS, đóng B1 bằng bằng chứng cụ thể. Không chỉnh sửa smoke lịch sử.
+
+## Nhiệm vụ 3 — Xác minh B2
+
+Đọc:
+
+`reports/tv3/w5_review_response_2026-10-30/TV3_APPROVAL.json`
+
+Xác minh receipt ghi đúng:
+- Config file SHA.
+- Experiment `DINOv3_LP_run01`.
+- Tối đa một lượt training chính thức.
+- TV3 chỉ bắt đầu sau khi TV2 khóa APPROVED.
+
+TV2 đã đồng ý kỹ thuật có điều kiện trong review trước. Xác nhận các điều kiện ấy đã được kiểm tra trước khi chuyển thành phê duyệt cuối.
+
+Không giả mạo chữ ký, không coi receipt là xác thực danh tính bằng mật mã.
+
+## Nhiệm vụ 4 — Xác minh B3
+
+Đọc và kiểm tra:
+- `src/training/dino_probe.py`
+- `src/training/dino_handoff.py`
+- `scripts/dino_w5.py`
+- `scripts/verify_tv3_w5_bundle.py`
+- `reports/tv3/w5_evidence/preflight.json`
+- `reports/tv3/pretrained_2026-10-29/backbone_smoke_2026-10-29.json`
+- `reports/tv3/w5_review_response_2026-10-30/verification.json`
+- `reports/tv3/w5_review_response_2026-10-30/artifact_index.json`
+
+Đặc biệt kiểm tra:
+- Frozen DINOv3 ViT-S/16, CLS384, Linear8.
+- Pretrained weights SHA, nguồn và upstream commit.
+- Strict loading và bằng chứng smoke thực.
+- Preprocessing thực tế, RGB, resize, normalization.
+- Frozen comparison_v1, 2.800 train/600 val.
+- Không truy cập Test.
+- SGD lr0.01, momentum0.9, WD0.0001.
+- Cosine T_max50, step order.
+- Image-balanced loss đúng theo parent.
+- Batch32 parent images khác cache batch32 crops.
+- Seed42, 50 epoch, patience7.
+- Checkpoint tie earliest epoch.
+- Mean softmax theo parent image, prediction tie lowest ID.
+- Runtime FP32, không tự đổi model hoặc hyperparameter.
+
+Chạy các kiểm tra verification tương ứng có thể thực hiện trong môi trường TV2 mà không train, không dùng Test.
+
+Phân biệt rõ evidence do TV3 báo cáo và phép kiểm chứng TV2 tự chạy. Nếu weights/vendor không có trên máy TV2, không tuyên bố đã tự rehash hoặc load binary. Đối chiếu gói receipt TV3 và đánh giá xem giới hạn đó có phù hợp điều kiện phê duyệt hay không.
+
+## Nhiệm vụ 5 — Khóa protocol nếu tất cả PASS
+
+Nếu B1–B3 đáp ứng đầy đủ điều kiện:
+
+1. Cập nhật protocol TV2 sang `APPROVED`.
+2. Đăng ký chính thức `DINOv3_LP_run01`.
+3. Chọn `DINOv3 ViT-S/16` làm model duy nhất.
+4. Giữ seed42, max_candidate_runs=1, max_epochs50, patience7.
+5. Gắn canonical file SHA và serialized config SHA đúng vai trò.
+6. Ghi evidence và commit chính xác của TV2/TV3.
+7. Ghi reviewer TV2/TV3 dựa trên bằng chứng thực tế.
+8. Giữ TV1 reviewer null nếu chưa có xác nhận.
+9. Chuẩn bị receipt APPROVED có thể bàn giao cho TV3, tương thích schema `configs/dinov3_lp_w5.local.protocol.json` và validator của TV3.
+10. Cập nhật progress, report, handoff và bằng chứng kiểm định.
+
+Lưu trạng thái DRAFT cũ để truy vết. Không sửa các receipt lịch sử.
+
+Sau khi khóa, commit/push lên `feat/baseline` và cung cấp commit SHA/đường dẫn receipt cho TV3. TV3 phải áp dụng đúng receipt đã được TV2 xác nhận vào nhánh của họ và kiểm tra gate trước official training.
+
+Nếu còn bất kỳ blocker thực sự nào, giữ DRAFT, không giả approval và báo chính xác blocker cần giải quyết.
+
+## Điều cấm
+
+- Không tự chạy official DINO training.
+- Không chạy Test W4.
+- Không sửa checkpoint B2.
+- Không dùng 1.665 ảnh mở rộng chưa release.
+- Không mở thêm seed hoặc experiment.
+- Không merge PR hoặc sửa nhánh thành viên khác.
+
+## Báo cáo cuối
+
+Trả lời bằng tiếng Việt:
+
+1. B1: PASS/BLOCKED và bằng chứng.
+2. B2: PASS/BLOCKED và bằng chứng.
+3. B3: PASS/BLOCKED và giới hạn xác minh.
+4. Protocol: APPROVED hay DRAFT.
+5. Experiment đã đăng ký chính thức chưa.
+6. Commit mới và đường dẫn receipt.
+7. TV3 đã đủ điều kiện bắt đầu official training chưa.
+8. Những việc TV2 cần làm sau khi nhận checkpoint.
+
+Ưu tiên hoàn thiện đúng quy trình phê duyệt, không làm W6 và không tuyên bố W5 COMPLETE khi chưa có kết quả DINO.
