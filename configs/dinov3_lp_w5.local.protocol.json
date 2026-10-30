@@ -1,0 +1,46 @@
+{
+  "status": "DRAFT",
+  "dataset_version": "comparison_v1",
+  "evaluation_split": "val",
+  "selection_metric": "image_macro_f1",
+  "prediction_tie_rule": "lowest_class_id",
+  "checkpoint_tie_rule": "earliest_epoch",
+  "proposed_seeds": [
+    42
+  ],
+  "seeds": [],
+  "max_candidate_runs": null,
+  "experiments": [],
+  "reviewers": {
+    "TV2": null,
+    "TV3": "TV3: user confirmation recorded in TV3_APPROVAL.json",
+    "TV1": null
+  },
+  "approval_evidence": {
+    "TV3": "reports/tv3/w5_review_response_2026-10-30/TV3_APPROVAL.json",
+    "TV2_conditional_review": "https://github.com/huyryan220806/Camera-Trap-ML/blob/9f528d2/reports/tv2/TV2_W5_PRETRAINED_REVIEW_2026-10-30.md"
+  },
+  "config_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "budget_reference": "TV3_APPROVAL.json: max one official run after TV2 protocol lock",
+  "proposal": {
+    "experiment_id": "DINOv3_LP_run01",
+    "max_candidate_runs": 1,
+    "training": {
+      "seed": 42,
+      "epochs": 50,
+      "patience": 7,
+      "images_per_batch": 32,
+      "optimizer": "sgd",
+      "lr": 0.01,
+      "momentum": 0.9,
+      "weight_decay": 0.0001,
+      "scheduler": "cosine"
+    },
+    "runtime": {
+      "device": "cuda",
+      "amp": false
+    }
+  },
+  "note": "TV3 approved canonical config on 2026-10-30; TV2 technical review conditional. Status remains DRAFT and experiments empty pending TV2 verification and final lock.",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce"
+}

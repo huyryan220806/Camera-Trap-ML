@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "status": "READY_FOR_TV2_B1_B3_REVIEW_NOT_TRAINING_AUTHORIZATION",
+  "tests": {
+    "passed": 393,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 55.162
+  },
+  "base_environment": "PASS",
+  "result_contracts": "6/6 PASS",
+  "smoke_rerun": false,
+  "official_training_performed": false,
+  "protocol_status": "DRAFT",
+  "tv3_config_approval": "TV3_APPROVAL.json",
+  "tv2_review_commit": "9f528d241c607be81853a2669d189bd1dd9c4237",
+  "checks_commands": [
+    "python -X utf8 scripts/check_environment.py",
+    "python -X utf8 scripts/validate_results.py",
+    "python -X utf8 -m unittest discover -s tests -v",
+    "python -X utf8 scripts/verify_tv3_w5_bundle.py --local-assets --output reports/tv3/w5_review_response_2026-10-30/verification.json"
+  ],
+  "test_scope": "Synthetic software tests and metadata; no new real DINO smoke, candidate training, or Test inference."
+}

@@ -1,0 +1,9 @@
+# Preserve byte hashes of W5 evidence across Git checkouts (including logs).
+w5_evidence/** -text whitespace=cr-at-eol
+pretrained_2026-10-29/** -text whitespace=cr-at-eol
+w5_review_response_2026-10-30/** -text whitespace=cr-at-eol
+W5_PRETRAINED_READY.md -text whitespace=cr-at-eol
+# Original console logs contain trailing spaces; keep hashed evidence verbatim.
+w5_evidence/**/*.txt -text -whitespace
+pretrained_2026-10-29/*.txt -text -whitespace
+w5_review_response_2026-10-30/*.log -text -whitespace

@@ -1,0 +1,18 @@
+{
+  "source_commit": "3f76643d1bc395098d90105e67a9cf29c8fe3256",
+  "files_sha256": {
+    "scripts/evaluate_w5_validation.py": "033d3c3b3e5f68c6099cb4dcff9d5fdc962bc883bf7db3de0e509548563b7d5b",
+    "src/evaluation/w5_validation.py": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+    "contracts/w5_crop_prediction.schema.json": "4b69c300c7363b154754934409e1c953e79208c204f3b90e03c177089572a91c",
+    "contracts/w5_image_prediction.schema.json": "e4ecdc06613d38862b73d077112c83a0bfaae0c4e95445a9c8ed9813f4c14d22",
+    "configs/tv2_w5_protocol.draft.json": "aef39d472659c4d8a9478d8c5713ef1448ae85c958c250e0767d5452eafaa3d2",
+    "reports/tv2/w5_evidence/attempt_01/validation_02/b2_predictions.jsonl": "7229dcf489cdc145e0540fb0352d45c77a99aa417ec934a230cc075457ac9224",
+    "data/processed/comparison_v1/provenance.json": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "data/processed/comparison_v1/class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+    "data/processed/comparison_v1/train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "data/processed/comparison_v1/val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+    "data/processed/comparison_v1/b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+    "data/processed/comparison_v1/b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+  },
+  "scope": "Unmodified TV2 audit code, frozen train/val metadata and published B2 predictions. No model inference."
+}
