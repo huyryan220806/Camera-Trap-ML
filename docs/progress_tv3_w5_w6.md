@@ -8,6 +8,12 @@ TV2/TV3 trong nhánh đó. Chưa merge W5 của TV1; metadata ứng viên không
 
 ## Trạng thái
 
+- Cập nhật 02/11: `DINOv3_LP_run01` COMPLETE, best epoch9, dừng epoch16;
+  accuracy84.5%, macro-F1 0.8444008279545705. Reload exact PASS và auditor TV2
+  tại3f76643 trả ARTIFACT_VERIFIED trên máy TV3. Run chính thức dùng receipt
+  APPROVED của TV2 tại8137ef7, training commit aa64fd7. Gói bàn giao:
+  `reports/tv3/w5_final/DINOv3_LP_run01/README.md`; original outputs giữ nguyên.
+  Không resume hoặc tạo lượt mới. Các mục DRAFT/chưa train sau đây là lịch sử.
 - Cập nhật 30/10: TV3 đã xác nhận config raw SHA e9303ba3… và cho phép
   commit/push gói B1–B3. Xem `reports/tv3/w5_review_response_2026-10-30/README.md`
   và `TV3_APPROVAL.json` trong đó. Config/pretrained/smoke giữ nguyên; TV2 đã
@@ -59,9 +65,8 @@ TV2/TV3 trong nhánh đó. Chưa merge W5 của TV1; metadata ứng viên không
 
 ## Các việc còn cần thực hiện sau khi chuẩn bị
 
-- Gửi TV2 gói B1–B3 và commit SHA; chờ TV2 kiểm tra và khóa APPROVED.
-- Không thay config hoặc chạy thêm smoke chỉ để bổ sung hồ sơ; weights,
-  architecture và smoke ViT-S/16 đã có bằng chứng riêng.
-- Chạy lượt seed 42, kiểm tra reload độc lập, gửi gói cho TV4/TV2.
-- Bổ sung kết quả thật vào báo cáo W5. Không đánh dấu toàn bộ tuần 5 hoàn thành
-  khi mới có code/kiểm thử. Week 6 là phạm vi tiếp theo.
+- Gửi checkpoint/gói bằng chứng thực cho TV2 kiểm định model độc lập.
+- Gửi checkpoint và mã nạp cho TV4 kiểm adapter/per-box predictions.
+- Công bố báo cáo kết quả và link weights của nhóm sau khi kiểm tra gói.
+- Giữ một lượt seed42 đã chạy; không dùng Test/đổi recipe/chạy thêm để đạt88%.
+- Hoàn tất nghiệm thu sau review TV2/TV4; Week6 là phạm vi tiếp theo.

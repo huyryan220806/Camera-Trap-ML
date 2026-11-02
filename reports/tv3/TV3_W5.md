@@ -1,5 +1,11 @@
 # TV3 tuần 5 — DINO linear probe và đối chứng B2
 
+**Cập nhật 02/11/2026: official run COMPLETE, reload PASS, artifact audit PASS.**
+`DINOv3_LP_run01`: accuracy0.845, macro-F1 0.8444008279545705, best epoch9,
+16 epoch hoàn tất; đủ600 ảnh/680crop. Bàn giao thật và giới hạn diễn giải tại
+[w5_final/DINOv3_LP_run01/README.md](w5_final/DINOv3_LP_run01/README.md).
+Chờ TV2 kiểm định độc lập và TV4 tích hợp. Nội dung bên dưới lưu lịch sử chuẩn bị.
+
 Ngày 28/10/2026. **CODE PREPARED; DATA PREFLIGHT PASS; DINO RUN PENDING.**
 Đây là báo cáo triển khai và kiểm tra đầu vào, chưa phải bàn giao mô hình DINO
 đã huấn luyện. Chưa có điểm validation, checkpoint DINO hoặc kết luận đạt 88%.

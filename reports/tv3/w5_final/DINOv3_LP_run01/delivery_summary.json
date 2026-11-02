@@ -1,0 +1,40 @@
+{
+  "experiment_id": "DINOv3_LP_run01",
+  "status": "TRAINING_COMPLETE_RELOAD_PASS_ARTIFACT_VERIFIED_PENDING_TEAM_REVIEW",
+  "training_commit": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+  "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "checkpoint_bytes": 86851958,
+  "validation_metrics_training": {
+    "accuracy": 0.845,
+    "macro_f1": 0.8444008279545705,
+    "macro_precision": 0.8479570314127787,
+    "macro_recall": 0.845
+  },
+  "validation_metrics_independent_arithmetic": {
+    "accuracy": 0.845,
+    "macro_precision": 0.8479570314127788,
+    "macro_recall": 0.845,
+    "macro_f1": 0.8444008279545706
+  },
+  "metric_note": "Last-bit differences (~1e-16) between sklearn and independent arithmetic are retained; exact reload within the same runtime remains PASS.",
+  "best_epoch": 9,
+  "epochs_completed": 16,
+  "paired_counts": {
+    "b2_correct_candidate_wrong": 36,
+    "b2_wrong_candidate_correct": 95,
+    "both_wrong": 57,
+    "both_correct": 412
+  },
+  "metric_delta_candidate_minus_b2": {
+    "accuracy": 0.09833333333333327,
+    "macro_precision": 0.09953802971417913,
+    "macro_recall": 0.09833333333333327,
+    "macro_f1": 0.09892431043336736
+  },
+  "tv2_auditor_commit": "3f76643d1bc395098d90105e67a9cf29c8fe3256",
+  "tv2_protocol_commit": "8137ef720222784bac859ab953124b4cc293f179",
+  "tv2_independent_model_replay_completed": false,
+  "tv4_integration_completed": false,
+  "test_inference_performed": false,
+  "source_artifacts_modified": false
+}
