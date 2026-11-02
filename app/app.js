@@ -16,12 +16,14 @@ function setBusy(value) {
   for (const el of document.querySelectorAll('.controls button,.controls select,.controls input,#reset,#review-panel button,#review-panel select,#review-panel input,#review-panel textarea')) el.disabled = value;
   $('run').disabled = value || !input;
   if (!value && !$('review-panel').hidden) selectReviewBox();
+  window.syncBatchControls?.();
 }
 function preview(url) {
   $('preview').src = url; $('image-frame').hidden = false; $('empty').hidden = true;
 }
 function showError(message) { $('status').textContent = message; $('status').className = 'error'; }
 function chooseDetection(detectionId) {
+  if (working) return;
   if (!detectionId) return;
   if (window.selectReviewDetection) window.selectReviewDetection(detectionId);
   else {
@@ -40,7 +42,8 @@ function setMode(next) {
   $('mode-badge').classList.toggle('mock', mode === 'mock');
 }
 async function acceptFile(file) {
-  if (!file || working) return;
+  if (!file || working || window.isBatchLocked?.()) return;
+  window.detachBatchView?.();
   const current = ++generation; input = null; clearResult(); $('run').disabled = true;
   $('sample').value = ''; $('file-name').textContent = file.name;
   $('image-frame').hidden = true; $('empty').hidden = false; $('dimensions').textContent = '—';
@@ -128,7 +131,7 @@ $('classifier').onchange = () => {
   clearResult();
   const id = $('classifier').value;
   $('classification-settings').hidden = id === 'none';
-  $('crop-warning').hidden = id === 'none' || id === 'B2';
+  $('crop-warning').hidden = id === 'none' || id === 'B2' || id === 'DINOv3_LP_run01';
   $('crop-warning').textContent = `${id} học trên toàn ảnh. Kết quả trên crop chỉ để thử luồng tích hợp.`;
 };
 $('review-threshold').oninput = () => { $('review-value').textContent = Number($('review-threshold').value).toFixed(2); clearResult(); };

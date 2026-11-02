@@ -9,6 +9,7 @@
   <script src="/vendor/lucide.js" defer></script>
   <script src="/app.js" defer></script>
   <script src="/review.js" defer></script>
+  <script src="/batch.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -28,7 +29,7 @@
         <h1 id="page-title">Nhận dạng và duyệt động vật</h1>
         <p class="lead">Phát hiện vùng động vật, xem dự đoán theo từng vùng và ghi nhận kết quả duyệt trong một quy trình.</p>
       </div>
-      <button id="export" class="secondary export-button" disabled><i data-lucide="download"></i><span>Xuất JSON</span></button>
+      <button id="export" class="secondary export-button" aria-label="Xuất JSON phiên đã lưu" disabled><i data-lucide="download" aria-hidden="true"></i><span>Xuất JSON</span></button>
     </section>
 
     <div class="notice" role="note">
@@ -49,6 +50,16 @@
           <div class="or"><span>hoặc dùng ảnh mẫu</span></div>
           <label for="sample">Ảnh train v2 có sẵn</label>
           <select id="sample"><option value="">Chọn ảnh mẫu</option></select>
+          <hr>
+          <label for="batch-files">Lô nhỏ · tối đa 10 ảnh, 16 MiB/ảnh</label>
+          <input id="batch-files" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+          <p class="scientific-note">Xử lý tuần tự. Kết quả và bản nháp của lô giữ trong tab này; tải JSON trước khi đóng trang.</p>
+          <button id="batch-run" class="secondary" disabled>Chạy lô</button>
+          <button id="batch-stop" class="secondary" disabled>Dừng sau ảnh hiện tại</button>
+          <p id="batch-status" role="status" aria-live="polite">Chưa chọn lô.</p>
+          <ol id="batch-queue" aria-label="Danh sách ảnh trong lô"></ol>
+          <button id="batch-csv" class="secondary" disabled>Xuất CSV đã lưu</button>
+          <button id="batch-json" class="secondary" disabled>Xuất JSON lô đã lưu</button>
         </div>
 
         <div class="control-section">
@@ -69,7 +80,7 @@
         <div class="control-section">
           <div class="section-title"><span class="section-number">03</span><div><p>PHÂN LOẠI</p><h2>Chọn mô hình</h2></div></div>
           <label for="classifier">Classifier</label>
-          <select id="classifier"><option value="B0">B0 · ResNet18</option><option value="B1" disabled>B1 · Chưa có checkpoint</option><option value="B2" selected>B2 · Đã khóa</option><option value="none">Chỉ detector</option></select>
+          <select id="classifier"><option value="B0">B0 · ResNet18</option><option value="B1" disabled>B1 · Chưa có checkpoint</option><option value="B2" selected>B2 · Đã khóa</option><option value="DINOv3_LP_run01" disabled>DINOv3 · Ứng viên kiểm thử</option><option value="none">Chỉ detector</option></select>
           <div id="classification-settings">
             <div class="range-label"><label for="review-threshold">Ngưỡng cần kiểm tra</label><output id="review-value">0.70</output></div>
             <input id="review-threshold" type="range" min="0" max="1" step="0.01" value="0.7">

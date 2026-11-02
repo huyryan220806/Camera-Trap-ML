@@ -26,7 +26,7 @@ function selectReviewBox() {
   for (const row of $('results').querySelectorAll('[data-detection-id]')) row.classList.toggle('selected-row', row.dataset.detectionId === box?.detection_id);
 }
 function selectReviewDetection(detectionId) {
-  if (!reviewSession) return;
+  if (!reviewSession || working || window.isBatchLocked?.()) return;
   let option = Array.from($('review-box').options).find(item => item.value === detectionId);
   if (!option && $('review-only').checked) {
     $('review-only').checked = false;

@@ -1,5 +1,39 @@
 # Tiến độ TV4 — cải thiện giao diện demo
 
+## W5 tiếp tục và bàn giao kiểm chéo — 02/11/2026
+
+- Đã nhận ZIP TV3 và handoff/acceptance TV2; tiếp tục từ `fef2511`, giữ B2 mặc định.
+- Hoàn thiện bản nháp lô10ảnh/CSV/JSON; thêm adapter DINO opt-in CPU FP32,
+  kiểm source/architecture/checkpoint, crop batch≤8, giữ top3 theo detection.
+- Sửa UI-A11Y-01 bằng aria-label của nút export mobile.
+- Kết quả: 47/47TV4,380/380toàn suite PASS; native/adapter logits exact0,
+  batch1/3/8+1, RGB/grayscale/portrait; browser real MD+DINO, saved review,
+  revision409, lỗi model thật, queue/corrupt/drafts/CSV/stop-resume/3viewport PASS.
+- Bằng chứng và giới hạn: `reports/tv4_w5/REPORT.md`, `reports/tv4_w5/evidence/`.
+  Hướng dẫn: `docs/tv4_w5_demo.md`; script QA mới được version-control.
+- Lỗi preview cũ khi mở mục ảnh lỗi đã sửa và chạy lại regression riêng;
+  kết quả mở lại phục hồi đúng mode/model/ngưỡng của chính phiên đó.
+- Source TV3 `src/training/dino_probe.py` giữ nguyên byte của training commit;
+  model/ZIP/vendor checkout không đưa vào Git. B2 registry/checkpoint giữ riêng.
+- Chờ TV2 review PR #8 và retest đúng commit; chưa merge hoặc thay production.
+  GPU adapter/cài sạch/video/W6 chưa thực hiện; không chạy official Test.
+
+Mục tạm dừng dưới đây là lịch sử ngày28/10, đã được tiếp tục sau khi nhận gói.
+
+## Tạm dừng W5/W6 — 28/10/2026
+
+Theo yêu cầu của TV4, dừng triển khai để chờ TV3 gửi gói model.
+
+- HEAD tại thời điểm dừng: `fef2511`, branch `feat/demo`; PR #8 vẫn OPEN, chưa có review chuyên môn của TV2.
+- TV4 xác nhận chưa nhận gói DINO vì TV3 chưa làm xong.
+- Bản nháp local đã sửa `app/index.html`, `app/style.css`, `app/app.js`, `scripts/run_demo.py` và thêm `app/batch.js`.
+- Bản nháp gồm hàng đợi tối đa 10 ảnh, xử lý tuần tự, dừng sau ảnh hiện tại, lưu trạng thái/bản nháp theo ảnh, xuất CSV và JSON lô từ phiên backend đã lưu.
+- Mới chạy `node --check app/batch.js` trước chỉnh sửa nhỏ cuối; chưa chạy browser QA, kiểm thử CSV hoặc regression cho bản nháp W5. Chưa coi phần W5 là hoàn thành.
+- Chưa commit/push thay đổi W5; giữ nguyên để tiếp tục. Không xóa phiên duyệt hoặc outputs.
+- Khi tiếp tục: kiểm tra `git status`, đọc phân công `C:/Users/lequy/Downloads/TV4_W5_W6.md`, kiểm tra tiến trình/cổng trước khi khởi động demo; nhận weights/config/class map/preprocessing/pooling/hash và bằng chứng reload từ TV3, rồi kiểm thử bản nháp và tích hợp adapter nếu đủ điều kiện.
+
+Các kết quả PASS và ảnh trong phần dưới thuộc bản UI ngày 26/10, không phải bản nháp W5.
+
 **Cập nhật:** 26/10/2026
 
 **Branch:** `feat/demo`

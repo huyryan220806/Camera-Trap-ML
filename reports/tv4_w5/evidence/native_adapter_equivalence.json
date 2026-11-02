@@ -1,0 +1,250 @@
+{
+  "status": "PASS",
+  "scope": "CPU synthetic-crop integration, not validation accuracy or GPU replay",
+  "artifact_payload_files": 27,
+  "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "runtime": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": 12,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 256
+  },
+  "process_memory_bytes": {
+    "rss": 482209792,
+    "vms": 954470400,
+    "num_page_faults": 1063739,
+    "peak_wset": 577695744,
+    "wset": 482209792,
+    "peak_paged_pool": 854448,
+    "paged_pool": 850216,
+    "peak_nonpaged_pool": 61672,
+    "nonpaged_pool": 48272,
+    "pagefile": 954470400,
+    "peak_pagefile": 1022963712,
+    "private": 954470400
+  },
+  "device": "cpu",
+  "precision": "FP32",
+  "amp": false,
+  "tf32": false,
+  "crops": [
+    {
+      "mode": "RGB",
+      "size": [
+        193,
+        77
+      ]
+    },
+    {
+      "mode": "L",
+      "size": [
+        61,
+        205
+      ]
+    },
+    {
+      "mode": "RGB",
+      "size": [
+        8,
+        8
+      ]
+    }
+  ],
+  "crop_batch": 3,
+  "max_crop_batch": 8,
+  "bounded_batches_tested": [
+    8,
+    1
+  ],
+  "portrait_per_box_top3": [
+    [
+      {
+        "class_id": 2,
+        "label": "sambar",
+        "score": 0.3649185597896576
+      },
+      {
+        "class_id": 3,
+        "label": "chinese_serow",
+        "score": 0.29246795177459717
+      },
+      {
+        "class_id": 0,
+        "label": "large_antlered_muntjac",
+        "score": 0.13594366610050201
+      }
+    ],
+    [
+      {
+        "class_id": 2,
+        "label": "sambar",
+        "score": 0.3649185597896576
+      },
+      {
+        "class_id": 3,
+        "label": "chinese_serow",
+        "score": 0.29246795177459717
+      },
+      {
+        "class_id": 0,
+        "label": "large_antlered_muntjac",
+        "score": 0.13594366610050201
+      }
+    ]
+  ],
+  "max_abs_logit_delta": 0.0,
+  "predictions_changed": 0,
+  "adapter_logits": [
+    [
+      2.1442158222198486,
+      -1.8148188591003418,
+      1.5270007848739624,
+      0.21220824122428894,
+      -0.05243253707885742,
+      -1.5017863512039185,
+      0.4642072021961212,
+      0.6422662734985352
+    ],
+    [
+      1.186946153640747,
+      0.2571297883987427,
+      0.6711511611938477,
+      -0.5824177861213684,
+      0.8212165236473083,
+      -0.9772820472717285,
+      0.3255611062049866,
+      0.24791646003723145
+    ],
+    [
+      1.6007025241851807,
+      -0.7323486804962158,
+      1.106659173965454,
+      -0.13727900385856628,
+      0.567095935344696,
+      -0.5488646626472473,
+      -0.14060407876968384,
+      -0.46440595388412476
+    ]
+  ],
+  "native_logits": [
+    [
+      2.1442158222198486,
+      -1.8148188591003418,
+      1.5270007848739624,
+      0.21220824122428894,
+      -0.05243253707885742,
+      -1.5017863512039185,
+      0.4642072021961212,
+      0.6422662734985352
+    ],
+    [
+      1.186946153640747,
+      0.2571297883987427,
+      0.6711511611938477,
+      -0.5824177861213684,
+      0.8212165236473083,
+      -0.9772820472717285,
+      0.3255611062049866,
+      0.24791646003723145
+    ],
+    [
+      1.6007025241851807,
+      -0.7323486804962158,
+      1.106659173965454,
+      -0.13727900385856628,
+      0.567095935344696,
+      -0.5488646626472473,
+      -0.14060407876968384,
+      -0.46440595388412476
+    ]
+  ],
+  "single_logits": [
+    [
+      [
+        2.1442153453826904,
+        -1.8148187398910522,
+        1.5270007848739624,
+        0.21220824122428894,
+        -0.052432700991630554,
+        -1.5017868280410767,
+        0.4642072916030884,
+        0.642265796661377
+      ]
+    ],
+    [
+      [
+        1.186945915222168,
+        0.2571293115615845,
+        0.6711510419845581,
+        -0.5824174880981445,
+        0.8212167620658875,
+        -0.9772821068763733,
+        0.3255611062049866,
+        0.24791626632213593
+      ]
+    ],
+    [
+      [
+        1.6007016897201538,
+        -0.7323490381240845,
+        1.106658935546875,
+        -0.13727888464927673,
+        0.5670962333679199,
+        -0.5488647222518921,
+        -0.14060431718826294,
+        -0.46440601348876953
+      ]
+    ]
+  ],
+  "metadata": {
+    "classifier_id": "DINOv3_LP_run01",
+    "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+    "training_input": "crop",
+    "inference_input": "detector_crop",
+    "preprocessing": {
+      "id": "dinov3_square256_bilinear_uint8",
+      "rgb": true,
+      "exif_transpose": false,
+      "image_size": 256,
+      "pooling": "x_norm_clstoken",
+      "architecture_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+      "source_commit": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+      "precision": "float32",
+      "max_crop_batch": 8,
+      "adapter_wall_ms": 1887.011
+    },
+    "cache_hit": false,
+    "model_load_count": 1,
+    "device": "cpu"
+  },
+  "cold_seconds": 2.195017100078985,
+  "warm_seconds": [
+    1.1178508999291807,
+    1.0362106000538915,
+    1.2596126000862569,
+    1.1642990000545979,
+    1.185704399831593
+  ],
+  "warm_mean_seconds": 1.152735499991104,
+  "warm_p50_seconds": 1.1642990000545979,
+  "timing_scope": "checksum + source/vendor gates + load when cold + crop transforms + forward; excludes HTTP/detector/UI",
+  "limitations": [
+    "CPU environment differs from TV2 GPU replay",
+    "Synthetic fixtures; no accuracy measurement",
+    "5 warm calls insufficient for robust p95 estimate"
+  ]
+}
