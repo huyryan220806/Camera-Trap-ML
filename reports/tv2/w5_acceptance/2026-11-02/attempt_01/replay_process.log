@@ -1,0 +1,35 @@
+TV2 validation pixel checks 100 /600
+TV2 validation pixel checks 200 /600
+TV2 validation pixel checks 300 /600
+TV2 validation pixel checks 400 /600
+TV2 validation pixel checks 500 /600
+TV2 validation pixel checks 600 /600
+Strict architecture load PASS, frozen CLS384 + Linear8; CUDA FP32
+TV2 fresh features 32 /680
+TV2 fresh features 64 /680
+TV2 fresh features 96 /680
+TV2 fresh features 128 /680
+TV2 fresh features 160 /680
+TV2 fresh features 192 /680
+TV2 fresh features 224 /680
+TV2 fresh features 256 /680
+TV2 fresh features 288 /680
+TV2 fresh features 320 /680
+TV2 fresh features 352 /680
+TV2 fresh features 384 /680
+TV2 fresh features 416 /680
+TV2 fresh features 448 /680
+TV2 fresh features 480 /680
+TV2 fresh features 512 /680
+TV2 fresh features 544 /680
+TV2 fresh features 576 /680
+TV2 fresh features 608 /680
+TV2 fresh features 640 /680
+TV2 fresh features 672 /680
+TV2 fresh features 680 /680
+{
+  "status": "PASS",
+  "max_abs_logit_delta": 0.0,
+  "image_prediction_changes": 0,
+  "total_seconds": 263.13337360002333
+}

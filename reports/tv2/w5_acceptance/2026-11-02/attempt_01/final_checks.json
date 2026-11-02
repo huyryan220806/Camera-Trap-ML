@@ -1,0 +1,19 @@
+{
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_w5_validation.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "seconds": 2.8553330000140704,
+  "after_document_updates": true,
+  "replay_runner_ast": "PASS"
+}

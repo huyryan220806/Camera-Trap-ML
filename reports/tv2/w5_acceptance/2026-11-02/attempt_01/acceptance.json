@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-02",
+  "experiment_id": "DINOv3_LP_run01",
+  "gates": {
+    "zip_intake": "PASS",
+    "checkpoint_integrity": "PASS",
+    "configuration_protocol_source_binding": "PASS",
+    "saved_predictions_independent_metrics": "PASS",
+    "original_tv2_evaluator": "PASS",
+    "independent_fresh_process_model_replay": "PASS",
+    "tv4_adapter_integration": "PENDING_TV4",
+    "tv4_ui_p2_retest": "PENDING_TV4_FIX"
+  },
+  "independent_model_acceptance": "PASS",
+  "weekly_status": "PARTIAL",
+  "weekly_remaining": [
+    "TV4 adapter/native equivalence and per-box/UI smoke evidence, then TV2 cross-review",
+    "UI-A11Y-01 accessible-name fix/retest",
+    "PR/reviewer delivery confirmation remains unverified"
+  ],
+  "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "checkpoint_bytes": 86851958,
+  "tv3_report_commit": "5734d38c3af2fe052cf04c4c33d940e8f186306d",
+  "training_commit": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+  "protocol_commit": "8137ef720222784bac859ab953124b4cc293f179",
+  "dino_metrics": {
+    "accuracy": 0.845,
+    "macro_precision": 0.8479570314127788,
+    "macro_recall": 0.845,
+    "macro_f1": 0.8444008279545706
+  },
+  "b2_metrics": {
+    "accuracy": 0.7466666666666667,
+    "macro_precision": 0.7484190016985997,
+    "macro_recall": 0.7466666666666667,
+    "macro_f1": 0.7454765175212033
+  },
+  "metric_delta": {
+    "accuracy": 0.09833333333333327,
+    "macro_precision": 0.09953802971417913,
+    "macro_recall": 0.09833333333333327,
+    "macro_f1": 0.09892431043336736
+  },
+  "paired_counts": {
+    "b2_correct_candidate_wrong": 36,
+    "b2_wrong_candidate_correct": 95,
+    "both_wrong": 57,
+    "both_correct": 412
+  },
+  "best_epoch": 9,
+  "early_stopping_epoch": 16,
+  "software_tests": {
+    "passed": 48,
+    "failed": 0,
+    "skipped": 0
+  },
+  "exact_replay": {
+    "max_abs_logit_delta": 0.0,
+    "image_prediction_changes": 0,
+    "all_predictions_and_metrics_equal": true
+  },
+  "demo_recommendation": "DINOv3 candidate recommended after TV4 adapter/per-box/UI smoke and team review; keep controlled B2 fallback. No production model change authorized by this receipt.",
+  "approval_kind": "TV2 technical acceptance under direct user request; not fabricated human signature or TV4/TV1 approval",
+  "official_training_performed_by_tv2": false,
+  "test_w4_performed": false,
+  "w6_performed": false,
+  "merged_pr": false,
+  "official_run_budget_consumed": true,
+  "additional_training_slots_authorized": 0
+}

@@ -1,4 +1,36 @@
-# TV2 W5 handoff — protocol APPROVED, 30/10/2026
+# TV2 W5 handoff — DINO independently accepted, 02/11/2026
+
+**Independent model acceptance PASS; W5 PARTIAL pending TV4 adapter/UI review.**
+TV3 has completed the one registered DINOv3_LP_run01 run. No additional training
+slot/seed or W6/Test execution is authorized. Training sourceaa64fd7/report5734d38,
+protocol8137ef7 exact; original config/approval receipt remain unchanged.
+
+Checkpoint86851958bytes/SHA
+`acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3`.
+ZIP CRC/path/index27payloadPASS, weights_only/strict architecturePASS, predictions/
+metrics independently600images/680cropsPASS, original TV2 evaluatorPASS. Fresh
+process TV2 re-read600val byte/RGB and forward680crops without feature cache;
+full logits/scores/predictions/metrics exactPASS, maxlogitdelta0. New isolated
+CUDA12.4 torch2.6/torchvision.21 environment; old environment/artifacts preserved.
+
+DINO507/600(.845),F1.8444008279545706 vs B2448/600(.7466666666666667),F1.7454765175212033;
+95improved/36regressed/412bothcorrect/57bothwrong. Weakness:masked-civet recall
+58→56/75 and direct civet confusion7→13; muntjac↔sambar still12. This is frozen
+GT-box validation only, one seed; not Test/webcam/detector accuracy or calibration.
+
+See [acceptance report](../reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md),
+[TV4 adapter handoff](handoff_tv2_dino_w5_to_tv4.md),
+[evidence](../reports/tv2/w5_acceptance/2026-11-02/attempt_01/acceptance.json),
+[progress](progress_tv2_w5_w6.md). TV4 tests explicit DINO loader/classmap/preprocess,
+per-box results/native-adapter equivalence/error/fallback and real UI latency,
+then TV2 cross-reviews. Keep B2 controlled fallback; no production change now.
+TV4 UI-A11Y-01 P2 still needs fix/evidence/retest. Overall W5PARTIAL, modelPASS.
+No PR/reviewer notification or integration is implied by prepared documents.
+
+The approval-stage instructions below are historical context, not permission
+to rerun the already consumed official training budget.
+
+## Historical handoff — protocol lock 30/10/2026
 
 **B1/B2/B3 PASS. Đã đăng ký chính thức DINOv3_LP_run01, tối đa một lượt,
 seed42. W5 PARTIAL: chưa có kết quả/checkpoint DINO.**

@@ -1,0 +1,34 @@
+from pathlib import Path
+import hashlib,json,sys
+import torch
+ROOT=Path(__file__).resolve().parents[4]
+WORK=Path(__file__).resolve().parent
+EVID=ROOT/'reports/tv2/w5_acceptance/2026-11-02/attempt_01'
+RUN=WORK/'received/DINOv3_LP_run01'
+def read(p):return json.loads(p.read_bytes())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+p=torch.load(RUN/'best_model.pt',map_location='cpu',weights_only=True)
+last=torch.load(RUN/'last_model.pt',map_location='cpu',weights_only=True)
+assert p['format']=='TV3_DINO_LINEAR_V1' and p['epoch']==9
+assert p['config']==read(RUN/'config.json') and p['binding']==read(RUN/'binding.json')
+assert p['validation']==read(RUN/'validation.json') and p['class_map']==read(RUN/'class_map.json')
+assert p['feature_pooling']=='x_norm_clstoken'
+assert tuple(p['head']['weight'].shape)==(8,384) and tuple(p['head']['bias'].shape)==(8,)
+assert last['epoch']==16 and last['best_epoch']==9 and last['bad']==7
+assert last['history']==read(RUN/'train_log.json') and last['binding']==p['binding']
+assert last['scheduler']['T_max']==50 and last['scheduler']['last_epoch']==16
+assert last['amp_scaler'] is None
+assert all(torch.equal(v,last['best_head'][k]) for k,v in p['head'].items())
+tensor_info={}
+for group in ['backbone','head']:
+ for k,v in p[group].items():
+  assert torch.is_tensor(v) and torch.isfinite(v).all().item()
+  tensor_info[group+'.'+k]=dict(shape=list(v.shape),dtype=str(v.dtype),numel=v.numel())
+out=dict(status='PASS',weights_only=True,torch=str(torch.__version__),python=sys.version,
+ checkpoint_sha256=sha(RUN/'best_model.pt'),format=p['format'],best_epoch=p['epoch'],
+ last_epoch=last['epoch'],patience_counter=last['bad'],checkpoint_validation_exactly_matches_json=True,
+ checkpoint_binding_exactly_matches_json=True,best_head_matches_last_checkpoint_best_head=True,
+ tensor_count=len(tensor_info),tensor_numel=sum(v['numel'] for v in tensor_info.values()),tensors=tensor_info,
+ architecture_strict_loaded=False,note='Safe checkpoint structure inspection only; strict architecture load and frozen/eval checks belong to fresh-process replay.')
+with (EVID/'checkpoint_inspection.json').open('x',encoding='utf-8') as f:json.dump(out,f,indent=2);f.write('\n')
+print('Checkpoint weights_only inspection PASS',len(tensor_info),'tensors; best9,last16,bad7')

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "old_files_unchanged": 742,
+  "intentionally_updated_old_docs": [
+    "docs/handoff_tv2_w5.md",
+    "docs/progress_tv2_w5_w6.md",
+    "reports/tv2/TV2_W5.md",
+    "reports/tv2/W5_DRAFT_PR_2026-10-30.md",
+    "reports/tv2/W5_EXPERIMENT_CHAPTER.md",
+    "reports/tv2/W5_PROTOCOL.md"
+  ],
+  "received_zip_unchanged": true,
+  "received_payload_unchanged": 28,
+  "approved_config_and_protocol_unchanged": true,
+  "all_four_old_checkpoints_unchanged": true,
+  "full_real_model_replay": "PASS_EXACT",
+  "json_valid": true,
+  "related_distinct_tests_passed": 48,
+  "final_tv2_tests_passed": 32,
+  "official_training_performed_by_tv2": false,
+  "test_w4_performed": false,
+  "w6_performed": false,
+  "git_scope": "Only TV2 W5 docs/reports/evidence; source snapshots/vendor/env/models/images stay ignored in outputs; no other project branch mutation"
+}

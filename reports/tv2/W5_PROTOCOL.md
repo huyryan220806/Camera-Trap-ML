@@ -1,13 +1,25 @@
 # TV2 W5 validation protocol
 
 **APPROVED — 30/10/2026. B1/B2/B3 PASS; đăng ký chính thức duy nhất
-`DINOv3_LP_run01`. W5 PARTIAL, chưa có kết quả DINO.**
+`DINOv3_LP_run01`. W5 PARTIAL; model acceptance PASS ngày02/11, TV4 pending.**
 
 Quyết định thực hiện theo đồng ý có điều kiện của người dùng TV2 trong chat và
 ủy quyền mới: khóa sau khi độc lập kiểm đủ B1–B3. TV3 đã xác nhận đúng config
 qua receipt Git. Không tạo chữ ký hoặc xác thực danh tính bằng mật mã; TV1
 reviewer=null. Xem [final review](TV2_W5_FINAL_REVIEW_2026-10-30.md),
 [handoff](../../docs/handoff_tv2_w5.md) và [progress](../../docs/progress_tv2_w5_w6.md).
+
+## Kiểm định sau training — 02/11/2026
+
+Lượt duy nhất đã hoàn thành, trainingaa64fd7/report5734d38. Checkpoint full
+SHAacbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3,86851958bytes.
+TV2 intake/config/source/binding,600image/680crop metrics và original auditorPASS;
+independent fresh-process strict-load/forward680val cropsPASS,600source byte/RGB
+đúng,khôngcache,maxlogitdelta0/fullscores+metrics exact. Accuracy.845,F1 arithmetic
+.8444008279545706; best9/stop16. [Biên bản](TV2_W5_DINO_ACCEPTANCE_2026-11-02.md).
+Không thay config/receipt/tiêu chí/tolerance; ngân sách1 đã tiêu thụ, không cho
+train thêm. Phần modelPASS, tổngW5PARTIAL do TV4 adapter/UI cross-review pending.
+Thông tin chưa replay ở phần nguồn30/10 dưới đây là lịch sử phê duyệt.
 
 ## Nguồn khóa và receipt
 
@@ -74,7 +86,7 @@ crop theo bbox khóa → ToImage uint8 → Resize square256×256 bilinear,
 antialias=True → ToDtype float32 scale=True → Normalize mean[.485,.456,.406],
 std[.229,.224,.225]. Không random augmentation. Không dùng preprocessing B2.
 
-TV2 không có weights/vendor và không replay GPU. Chấp nhận gói TV3 rehash/
+Ở review30/10, TV2 chưa có weights/vendor và chưa replay GPU. Khi đó chấp nhận gói TV3 rehash/
 checkout ngày30 và smoke ngày29 gắn source đúng SHA/strict=True; không có log
 missing/unexpected keys riêng. Đây là review receipt/source, không tự load lại
 binary. GPU smoke reports RTX4060Laptop8GB, FP32, frozen/features32×384,
@@ -141,5 +153,6 @@ hoặc receipt PASS từ lệnh đó; sau đó gate chỉ train/val3400 đã PAS
 `w5_evidence/attempt_01/deviations.json`; không tuyên bố toàn chat chưa bao giờ
 truy cập raster Test. Lần final review không chạy lại lệnh đó.
 
-B1–B3 và approval đã PASS. **W5 PARTIAL — DINO RESULT PENDING**; UI-A11Y-01 P2
-chờ TV4 sửa/TV2 retest là việc riêng. Không gọi W5 COMPLETE khi chưa có DINO.
+B1–B3 và approval đã PASS. **W5 PARTIAL — MODEL ACCEPTANCE PASS, TV4 PENDING**; UI-A11Y-01 P2
+chờ TV4 sửa/TV2 retest là việc riêng. Chỉ đóng W5 sau adapter/UI cross-review và
+bàn giao/reviewer review; model PASS chưa thay thế các phần còn lại.

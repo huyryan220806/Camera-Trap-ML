@@ -1,6 +1,42 @@
 # TV2 W5 progress — 28–30/10/2026
 
-## Latest status — 30/10/2026, final B1–B3 review
+## Latest status — 02/11/2026, independent DINO acceptance
+
+**MODEL ACCEPTANCE PASS; W5 PARTIAL — TV4 adapter/cross-review pending.**
+TV2 base8137ef720222784bac859ab953124b4cc293f179, branch feat/baseline only.
+TV3 report5734d38c3af2fe052cf04c4c33d940e8f186306d;
+trainingaa64fd7661827af78ddec4e3e0155b2b9c87b9e2; source hashes match lock.
+
+| Gate | Result | Evidence |
+| --- | --- | --- |
+| ZIP CRC/path/duplicates/index | PASS,28entries/27payload hashes/bytes | intake.json |
+| Checkpoint | PASS,86851958bytes,acbe3225…0fbc3;190FP32tensors;best9,last16,bad7 | checkpoint_inspection.json |
+| Config/protocol/binding/data | PASS,exact approved8137/confige930/serialized320718/receipte47 | intake/source/binding audit |
+| 600image/680crop metrics and original TV2 evaluator | PASS / ARTIFACT_VERIFIED | independent_metrics.json,tv2_audit.json/log |
+| Fresh-process real model | PASS,600val source byte/RGB,680crop forward,no cache;full exact/logitdelta0 | independent_replay/report.json,process log |
+| Regression tests | 48distinct relatedPASS/0FAIL/0SKIP;environment/6contractsPASS | checks.json,logs |
+| TV4 adapter + UI P2 | Pending ownerTV4 evidence/fix, then TV2 cross-review | handoff_tv2_dino_w5_to_tv4.md |
+
+DINO accuracy.845,F1.8444008279545706,507/600 vs B2448/600;delta59images,
+accuracy+9.8333pp,F1+9.8924pp. Paired:95improved,36regressed,412bothright,
+57bothwrong. AllF1up but masked-civet recall58→56/75;direct civet confusion7→13.
+Muntjac/sambar direct confusion25→12. No Test/model tuning/extra training.
+
+Replay uses isolated new Python3.12.14/torch2.6.0+cu124/torchvision.21/Pillow12.2/
+NumPy2.5.3/sklearn1.9.0,RTX4060Laptop,10threads,FP32/deterministic/AMP-TF32false.
+Vendor checkout official6876159clean; no pretrained download needed for full
+checkpoint. Old envs and originals preserved. Exact comparison, no tolerance change.
+
+Reports: reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md and updated experiment
+chapter; evidence reports/tv2/w5_acceptance/2026-11-02/attempt_01/; TV4 handoff
+prepared, no message/integration/reviewer approval fabricated. Protocol stays
+APPROVED unchanged; max1 official run consumed, no additional slot authorized.
+No production/B2/data change, PR merge, official Test or W6. Pending adapter/UI
+and delivery review keeps overall W5PARTIAL; model gate itself is PASS.
+Final commit supplied after push; find via git log -1 -- reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md.
+Earlier entries below are historical, not current DINO blockers.
+
+## Historical status — 30/10/2026, final B1–B3 review
 
 **B1 PASS / B2 PASS / B3 PASS; protocol APPROVED. W5 PARTIAL — DINO RESULT PENDING.**
 Base TV2 `9f528d241c607be81853a2669d189bd1dd9c4237`; fetched TV3 HEAD

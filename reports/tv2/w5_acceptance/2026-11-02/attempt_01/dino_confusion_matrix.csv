@@ -1,0 +1,9 @@
+true/predicted,Muntjac,Rabbit,Sambar,Serow,Common civet,Masked civet,Pheasant,Wild pig
+Muntjac,54,2,8,0,2,2,0,7
+Rabbit,0,71,0,1,1,2,0,0
+Sambar,4,1,59,1,0,2,1,7
+Serow,0,0,4,68,0,0,0,3
+Common civet,0,4,0,1,64,5,0,1
+Masked civet,0,6,0,2,8,56,0,3
+Pheasant,0,0,0,1,0,0,72,2
+Wild pig,4,0,4,0,3,0,1,63

@@ -1,5 +1,37 @@
 # TV2 tuần 5 đánh giá mô hình và tính tái lập
 
+**Cập nhật02/11/2026: INDEPENDENT DINOv3 MODEL ACCEPTANCE PASS; W5 tổng thể PARTIAL.**
+
+Gói thật DINOv3_LP_run01 từ report5734d38/trainingaa64fd7, checkpoint SHA
+`acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3`,
+86.851.958bytes: ZIP28entries/27payload CRC/path/hash PASS; config/protocol/source/
+binding/classmap/data và checkpoint weights_only/strict load PASS.
+Tính lại đủ600image/680crop predictions và evaluator TV2 nguyên bản PASS.
+
+Fresh-process TV2 replay thực:600val ảnh byte/RGB/dimensionsPASS, forward680crops,
+không feature cache, CUDA12.4 torch2.6/torchvision.21 FP32/frozen CLS384+Linear8;
+**max logit delta0, không đổi ảnh dự đoán; full scores/metrics exact PASS**.
+Không chỉ đọc lại reload TV3. Môi trường mới riêng, không sửa môi trường cũ.
+
+DINO accuracy.845(507/600),macro-F1 arithmetic.8444008279545706;
+B2.7466666666666667(448/600),.7454765175212033. Tăng59ảnh/+9,8333điểm% accuracy;
+95ảnh sửa được,36ảnh regression,412cùng đúng,57cùng sai. F1 mọi lớp tăng nhưng
+masked-civet đúng giảm58→56/75; nhầm common↔masked tăng7→13. Muntjac↔sambar
+còn12 nhầm, giảm từ25. Không suy diễn nguyên nhân thị giác/nhãn.
+
+Model acceptance PASS theo protocol, đề xuất DINO ứng viên demo sau TV4 adapter/
+per-box/UI smoke và kiểm chéo; B2 giữ fallback tường minh. **W5 PARTIAL** vì còn
+TV4 adapter, UI-A11Y-01 P2 fix/retest và reviewer/delivery review chưa xác nhận.
+Một lượt ngân sách đã sử dụng, không mở seed/lượt train thêm hoặc W6/Test W4.
+
+Xem [nghiệm thu DINO02/11](TV2_W5_DINO_ACCEPTANCE_2026-11-02.md),
+[chương thực nghiệm](W5_EXPERIMENT_CHAPTER.md),
+[handoff TV4](../../docs/handoff_tv2_dino_w5_to_tv4.md),
+[evidence](w5_acceptance/2026-11-02/attempt_01/acceptance.json).
+48 related tests PASS/0FAIL/0SKIP; final config/receipts/checkpoints/data bảo toàn.
+
+## Lịch sử phê duyệt 30/10/2026 trước nhận checkpoint
+
 **W5 PARTIAL — B1/B2/B3 PASS, protocol APPROVED; DINO RESULT PENDING.**
 
 Final review30/10 theo yêu cầu/ủy quyền mới TV2 và hồ sơ TV3 đã push tại

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\replay_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\reports\\tv2\\w5_acceptance\\2026-11-02\\attempt_01\\replay_runner.py",
+    "--root",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "--source",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\tv3_source",
+    "--run",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\received\\DINOv3_LP_run01",
+    "--vendor",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\vendor\\dinov3",
+    "--output",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\fresh_model_replay_01"
+  ],
+  "returncode": 0,
+  "wall_seconds": 275.9221926999744,
+  "fresh_process": true,
+  "tolerance": "Exact; never relaxed"
+}
