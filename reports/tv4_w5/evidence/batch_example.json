@@ -1,0 +1,454 @@
+{
+  "schema_version": "batch-demo-1.0",
+  "exported_utc": "2026-11-02T09:54:09.706Z",
+  "review_source": "server_saved",
+  "items": [
+    {
+      "id": "bf7a5407-425a-4109-aa8e-87e3f72a1fb8",
+      "name": "same.jpg",
+      "status": "needs_review",
+      "session": {
+        "schema_version": "review-session-1.0",
+        "request_id": "67cac839-bd21-43b9-97e8-562d8f0632d2",
+        "created_utc": "2026-11-02T09:54:04.120644+00:00",
+        "source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+        "original": {
+          "schema_version": "classifier-demo-1.0",
+          "result": {
+            "schema_version": "1.0.0",
+            "request_id": "67cac839-bd21-43b9-97e8-562d8f0632d2",
+            "image": {
+              "image_id": null,
+              "file_name": "same.jpg",
+              "width": 3264,
+              "height": 2448
+            },
+            "pipeline": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "classifier_id": "mock-scores-v1",
+              "class_map_version": "swg-v1",
+              "detector_threshold": 0.2,
+              "review_threshold": 0.7
+            },
+            "status": "needs_review",
+            "needs_review": true,
+            "detections": [
+              {
+                "detection_id": "animal-1",
+                "bbox_xywh": [
+                  163.20000000000002,
+                  244.8,
+                  1305.6,
+                  1713.6
+                ],
+                "detector_score": 0.91,
+                "top_k": [
+                  {
+                    "class_id": 0,
+                    "label": "large_antlered_muntjac",
+                    "score": 0.58
+                  },
+                  {
+                    "class_id": 1,
+                    "label": "annamite_striped_rabbit",
+                    "score": 0.24
+                  },
+                  {
+                    "class_id": 2,
+                    "label": "sambar",
+                    "score": 0.08
+                  }
+                ]
+              },
+              {
+                "detection_id": "animal-2",
+                "bbox_xywh": [
+                  1795.2,
+                  489.6,
+                  1305.6000000000001,
+                  1468.8000000000002
+                ],
+                "detector_score": 0.82,
+                "top_k": [
+                  {
+                    "class_id": 1,
+                    "label": "annamite_striped_rabbit",
+                    "score": 0.58
+                  },
+                  {
+                    "class_id": 2,
+                    "label": "sambar",
+                    "score": 0.24
+                  },
+                  {
+                    "class_id": 3,
+                    "label": "chinese_serow",
+                    "score": 0.08
+                  }
+                ]
+              }
+            ],
+            "error": null,
+            "elapsed_ms": 179.13
+          },
+          "provenance": {
+            "requested_classifier": "DINOv3_LP_run01",
+            "classifier": null,
+            "detector": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "package_version": null,
+              "weights_sha256": null,
+              "detector_threshold": 0.2,
+              "classifier_id": null,
+              "device": "cpu",
+              "image_size": 1280,
+              "coordinate_space": "original_raster_pixels_no_exif_rotation"
+            },
+            "ignored_non_animals": 0,
+            "score_kind": "softmax_class_score",
+            "scores_calibrated": false,
+            "crop_policy": "round_clip_min8_padding0",
+            "max_boxes": 64,
+            "training_overlap_swg": true,
+            "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+            "warnings": [
+              "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+              "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+              "Both boxes and class scores are synthetic; no model inference was performed."
+            ]
+          }
+        },
+        "runtime": {
+          "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+          "logical_cpus": 12,
+          "ram_gib": 15.71,
+          "os": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.5",
+          "versions": {
+            "torch": "2.8.0",
+            "torchvision": "0.23.0",
+            "Pillow": "12.2.0",
+            "megadetector": "10.0.25"
+          },
+          "device": "cpu",
+          "torch_threads": 4,
+          "image_batch_size": 1,
+          "detector_batch_size": 1,
+          "classifier_max_crop_batch_size": 8,
+          "detector_image_size": 1280,
+          "classifier_image_size": 224,
+          "classifier_actual_crop_batches": []
+        },
+        "inference_wall_ms": 269.339,
+        "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+        "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+        "review": {
+          "revision": 1,
+          "operator": "TV4 QA",
+          "note": "=SUM(1,2)\n\"chưa lưu\"",
+          "image_outcome": "pending",
+          "box_reviews": [
+            {
+              "detection_id": "animal-1",
+              "decision": "unresolved",
+              "label": null
+            },
+            {
+              "detection_id": "animal-2",
+              "decision": "pending",
+              "label": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "revision": 1,
+            "created_utc": "2026-11-02T09:54:09.141389+00:00",
+            "review": {
+              "revision": 1,
+              "operator": "TV4 QA",
+              "note": "=SUM(1,2)\n\"chưa lưu\"",
+              "image_outcome": "pending",
+              "box_reviews": [
+                {
+                  "detection_id": "animal-1",
+                  "decision": "unresolved",
+                  "label": null
+                },
+                {
+                  "detection_id": "animal-2",
+                  "decision": "pending",
+                  "label": null
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "f94e6786-9aa4-4ffb-b610-cabcc2d148bd",
+      "name": "bad.jpg",
+      "status": "error",
+      "session": {
+        "schema_version": "review-session-1.0",
+        "request_id": "83647c71-3f49-4ae3-a7dd-72b53533f135",
+        "created_utc": "2026-11-02T09:54:04.835695+00:00",
+        "source_sha256": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+        "original": {
+          "schema_version": "classifier-demo-1.0",
+          "result": {
+            "schema_version": "1.0.0",
+            "request_id": "83647c71-3f49-4ae3-a7dd-72b53533f135",
+            "image": {
+              "image_id": null,
+              "file_name": "bad.jpg",
+              "width": null,
+              "height": null
+            },
+            "pipeline": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "classifier_id": "mock-scores-v1",
+              "class_map_version": "swg-v1",
+              "detector_threshold": 0.2,
+              "review_threshold": 0.7
+            },
+            "status": "error",
+            "needs_review": true,
+            "detections": [],
+            "error": {
+              "stage": "read",
+              "code": "IMAGE_DECODE_ERROR",
+              "message": "Khong doc duoc anh. Ho tro JPEG/PNG/WEBP, toi da 16 MiB va 24 MP."
+            },
+            "elapsed_ms": 261.56
+          },
+          "provenance": {
+            "requested_classifier": "DINOv3_LP_run01",
+            "classifier": null,
+            "detector": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "package_version": null,
+              "weights_sha256": null,
+              "detector_threshold": 0.2,
+              "classifier_id": null,
+              "device": "cpu",
+              "image_size": 1280,
+              "coordinate_space": "original_raster_pixels_no_exif_rotation"
+            },
+            "ignored_non_animals": 0,
+            "score_kind": "softmax_class_score",
+            "scores_calibrated": false,
+            "crop_policy": "round_clip_min8_padding0",
+            "max_boxes": 64,
+            "training_overlap_swg": true,
+            "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+            "warnings": [
+              "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+              "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+              "Both boxes and class scores are synthetic; no model inference was performed."
+            ]
+          }
+        },
+        "runtime": {
+          "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+          "logical_cpus": 12,
+          "ram_gib": 15.71,
+          "os": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.5",
+          "versions": {
+            "torch": "2.8.0",
+            "torchvision": "0.23.0",
+            "Pillow": "12.2.0",
+            "megadetector": "10.0.25"
+          },
+          "device": "cpu",
+          "torch_threads": 4,
+          "image_batch_size": 1,
+          "detector_batch_size": 1,
+          "classifier_max_crop_batch_size": 8,
+          "detector_image_size": 1280,
+          "classifier_image_size": 224,
+          "classifier_actual_crop_batches": []
+        },
+        "inference_wall_ms": 348.563,
+        "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+        "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+        "review": {
+          "revision": 0,
+          "operator": "",
+          "note": "",
+          "image_outcome": "pending",
+          "box_reviews": []
+        },
+        "events": []
+      }
+    },
+    {
+      "id": "50bfea00-9dba-400a-8232-264deb61e361",
+      "name": "same.jpg",
+      "status": "needs_review",
+      "session": {
+        "schema_version": "review-session-1.0",
+        "request_id": "07910d8b-6f30-42ba-a3e0-d47dd75aa7c9",
+        "created_utc": "2026-11-02T09:54:05.147665+00:00",
+        "source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+        "original": {
+          "schema_version": "classifier-demo-1.0",
+          "result": {
+            "schema_version": "1.0.0",
+            "request_id": "07910d8b-6f30-42ba-a3e0-d47dd75aa7c9",
+            "image": {
+              "image_id": null,
+              "file_name": "same.jpg",
+              "width": 3264,
+              "height": 2448
+            },
+            "pipeline": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "classifier_id": "mock-scores-v1",
+              "class_map_version": "swg-v1",
+              "detector_threshold": 0.2,
+              "review_threshold": 0.7
+            },
+            "status": "needs_review",
+            "needs_review": true,
+            "detections": [
+              {
+                "detection_id": "animal-1",
+                "bbox_xywh": [
+                  163.20000000000002,
+                  244.8,
+                  1305.6,
+                  1713.6
+                ],
+                "detector_score": 0.91,
+                "top_k": [
+                  {
+                    "class_id": 0,
+                    "label": "large_antlered_muntjac",
+                    "score": 0.58
+                  },
+                  {
+                    "class_id": 1,
+                    "label": "annamite_striped_rabbit",
+                    "score": 0.24
+                  },
+                  {
+                    "class_id": 2,
+                    "label": "sambar",
+                    "score": 0.08
+                  }
+                ]
+              },
+              {
+                "detection_id": "animal-2",
+                "bbox_xywh": [
+                  1795.2,
+                  489.6,
+                  1305.6000000000001,
+                  1468.8000000000002
+                ],
+                "detector_score": 0.82,
+                "top_k": [
+                  {
+                    "class_id": 1,
+                    "label": "annamite_striped_rabbit",
+                    "score": 0.58
+                  },
+                  {
+                    "class_id": 2,
+                    "label": "sambar",
+                    "score": 0.24
+                  },
+                  {
+                    "class_id": 3,
+                    "label": "chinese_serow",
+                    "score": 0.08
+                  }
+                ]
+              }
+            ],
+            "error": null,
+            "elapsed_ms": 172.59
+          },
+          "provenance": {
+            "requested_classifier": "DINOv3_LP_run01",
+            "classifier": null,
+            "detector": {
+              "mode": "mock",
+              "detector_id": "mock-geometry-v1",
+              "package_version": null,
+              "weights_sha256": null,
+              "detector_threshold": 0.2,
+              "classifier_id": null,
+              "device": "cpu",
+              "image_size": 1280,
+              "coordinate_space": "original_raster_pixels_no_exif_rotation"
+            },
+            "ignored_non_animals": 0,
+            "score_kind": "softmax_class_score",
+            "scores_calibrated": false,
+            "crop_policy": "round_clip_min8_padding0",
+            "max_boxes": 64,
+            "training_overlap_swg": true,
+            "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+            "warnings": [
+              "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+              "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation.",
+              "Both boxes and class scores are synthetic; no model inference was performed."
+            ]
+          }
+        },
+        "runtime": {
+          "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+          "logical_cpus": 12,
+          "ram_gib": 15.71,
+          "os": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.5",
+          "versions": {
+            "torch": "2.8.0",
+            "torchvision": "0.23.0",
+            "Pillow": "12.2.0",
+            "megadetector": "10.0.25"
+          },
+          "device": "cpu",
+          "torch_threads": 4,
+          "image_batch_size": 1,
+          "detector_batch_size": 1,
+          "classifier_max_crop_batch_size": 8,
+          "detector_image_size": 1280,
+          "classifier_image_size": 224,
+          "classifier_actual_crop_batches": []
+        },
+        "inference_wall_ms": 237.452,
+        "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+        "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+        "review": {
+          "revision": 0,
+          "operator": "",
+          "note": "",
+          "image_outcome": "pending",
+          "box_reviews": [
+            {
+              "detection_id": "animal-1",
+              "decision": "pending",
+              "label": null
+            },
+            {
+              "detection_id": "animal-2",
+              "decision": "pending",
+              "label": null
+            }
+          ]
+        },
+        "events": []
+      }
+    }
+  ]
+}

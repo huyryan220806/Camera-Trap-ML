@@ -1,0 +1,2 @@
+full_tests.txt -text whitespace=-blank-at-eol
+batch_example.csv -text whitespace=cr-at-eol

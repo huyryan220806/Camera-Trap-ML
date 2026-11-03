@@ -1,0 +1,165 @@
+{
+  "schema_version": "review-session-1.0",
+  "request_id": "286a1ab9-8ce3-433b-aba5-8d5646cdcca5",
+  "created_utc": "2026-11-02T09:53:59.404596+00:00",
+  "source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+  "original": {
+    "schema_version": "classifier-demo-1.0",
+    "result": {
+      "schema_version": "1.0.0",
+      "request_id": "286a1ab9-8ce3-433b-aba5-8d5646cdcca5",
+      "image": {
+        "image_id": null,
+        "file_name": "image_00001.jpg",
+        "width": 3264,
+        "height": 2448
+      },
+      "pipeline": {
+        "mode": "inference",
+        "detector_id": "MDv5a.0.1",
+        "classifier_id": "DINOv3_LP_run01",
+        "class_map_version": "swg-v1",
+        "detector_threshold": 0.2,
+        "review_threshold": 0.7
+      },
+      "status": "ok",
+      "needs_review": false,
+      "detections": [
+        {
+          "detection_id": "animal-1",
+          "bbox_xywh": [
+            250.6752,
+            1162.8,
+            310.7327999999999,
+            361.8144000000002
+          ],
+          "detector_score": 0.733,
+          "top_k": [
+            {
+              "class_id": 4,
+              "label": "common_palm_civet",
+              "score": 0.7340233325958252
+            },
+            {
+              "class_id": 5,
+              "label": "masked_palm_civet",
+              "score": 0.13625571131706238
+            },
+            {
+              "class_id": 1,
+              "label": "annamite_striped_rabbit",
+              "score": 0.08251045644283295
+            }
+          ]
+        }
+      ],
+      "error": null,
+      "elapsed_ms": 10300.41
+    },
+    "provenance": {
+      "requested_classifier": "DINOv3_LP_run01",
+      "classifier": {
+        "classifier_id": "DINOv3_LP_run01",
+        "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "id": "dinov3_square256_bilinear_uint8",
+          "rgb": true,
+          "exif_transpose": false,
+          "image_size": 256,
+          "pooling": "x_norm_clstoken",
+          "architecture_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "source_commit": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+          "precision": "float32",
+          "max_crop_batch": 8,
+          "adapter_wall_ms": 330.658
+        },
+        "cache_hit": true,
+        "model_load_count": 1,
+        "device": "cpu"
+      },
+      "detector": {
+        "mode": "megadetector",
+        "detector_id": "MDv5a.0.1",
+        "package_version": "10.0.25",
+        "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+        "detector_threshold": 0.2,
+        "classifier_id": null,
+        "device": "cpu",
+        "image_size": 1280,
+        "coordinate_space": "original_raster_pixels_no_exif_rotation"
+      },
+      "ignored_non_animals": 0,
+      "score_kind": "softmax_class_score",
+      "scores_calibrated": false,
+      "crop_policy": "round_clip_min8_padding0",
+      "max_boxes": 64,
+      "training_overlap_swg": true,
+      "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+      "warnings": [
+        "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+        "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+      ]
+    }
+  },
+  "runtime": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": 12,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 256,
+    "classifier_device": "cpu",
+    "classifier_actual_crop_batches": [
+      1
+    ]
+  },
+  "inference_wall_ms": 10363.382,
+  "timing_scope": "Decode + detector + classifier + checksum/cache access; excludes upload, preview, journal, browser and human review",
+  "review_policy": "Human annotations only; never modifies original predictions or frozen datasets",
+  "review": {
+    "revision": 1,
+    "operator": "TV4 QA",
+    "note": "QA only: \"Unicode tiếng Việt\",\nnot expert labels",
+    "image_outcome": "pending",
+    "box_reviews": [
+      {
+        "detection_id": "animal-1",
+        "decision": "corrected",
+        "label": "sambar"
+      }
+    ]
+  },
+  "events": [
+    {
+      "revision": 1,
+      "created_utc": "2026-11-02T09:53:59.920896+00:00",
+      "review": {
+        "revision": 1,
+        "operator": "TV4 QA",
+        "note": "QA only: \"Unicode tiếng Việt\",\nnot expert labels",
+        "image_outcome": "pending",
+        "box_reviews": [
+          {
+            "detection_id": "animal-1",
+            "decision": "corrected",
+            "label": "sambar"
+          }
+        ]
+      }
+    }
+  ]
+}

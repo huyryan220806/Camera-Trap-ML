@@ -80,7 +80,7 @@ def make_handler(adapter, rows, classifier_cache=None, review_store=None):
                     return self.respond(200, output.getvalue(), 'image/jpeg')
                 except (OSError, ValueError):
                     return self.respond(422, {'error': 'Sample image unavailable'})
-            files = {'/': 'index.html', '/app.js': 'app.js', '/review.js': 'review.js', '/style.css': 'style.css',
+            files = {'/': 'index.html', '/app.js': 'app.js', '/review.js': 'review.js', '/batch.js': 'batch.js', '/style.css': 'style.css',
                      '/vendor/lucide.js': 'vendor/lucide.js'}
             if path not in files:
                 return self.respond(404, {'error': 'Not found'})
@@ -158,8 +158,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--classifiers', type=Path, default=REGISTRY_PATH)
+    parser.add_argument('--dino-package', type=Path, help='Opt-in candidate package directory; B2 remains default')
+    parser.add_argument('--dino-repo', type=Path, help='Clean official architecture checkout at locked commit')
     args = parser.parse_args()
-    handler = make_handler(MegaDetectorAdapter(), sample_rows(), ClassifierCache(args.classifiers))
+    from src.demo.dino import DinoCache
+    cache = DinoCache(ClassifierCache(args.classifiers), args.dino_package, args.dino_repo)
+    handler = make_handler(MegaDetectorAdapter(), sample_rows(), cache)
     server = ThreadingHTTPServer(('127.0.0.1', args.port), handler)
     print(f'CameraTrapML demo: http://127.0.0.1:{server.server_port}', flush=True)
     try:

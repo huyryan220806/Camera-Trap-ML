@@ -66,6 +66,10 @@ class ReviewStore:
         result = original.get('result', original)
         runtime = runtime_info()
         classifier_ran = bool(original.get('provenance', {}).get('classifier'))
+        classifier_metadata = original.get('provenance', {}).get('classifier') or {}
+        if classifier_metadata:
+            runtime['classifier_image_size'] = classifier_metadata.get('preprocessing', {}).get('image_size', 224)
+            runtime['classifier_device'] = classifier_metadata.get('device')
         count = len(result['detections']) if classifier_ran else 0
         runtime['classifier_actual_crop_batches'] = [min(8, count - offset) for offset in range(0, count, 8)]
         if result.get('error') and result['error']['stage'] == 'classify':
