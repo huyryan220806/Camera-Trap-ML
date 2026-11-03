@@ -1,0 +1,2 @@
+# Preserve byte-for-byte QA evidence covered by evidence/index.json.
+evidence/** -text whitespace=-trailing-space

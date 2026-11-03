@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "timings": [
+    {
+      "phase": "cold",
+      "client_click_to_enabled_ms": 14038,
+      "inference_wall_ms": 13681.526,
+      "crop_count": 1,
+      "cache_hit": false
+    },
+    {
+      "phase": "warm",
+      "client_click_to_enabled_ms": 3698,
+      "inference_wall_ms": 3378.632,
+      "crop_count": 1,
+      "cache_hit": true
+    },
+    {
+      "phase": "warm",
+      "client_click_to_enabled_ms": 3493,
+      "inference_wall_ms": 3329.117,
+      "crop_count": 1,
+      "cache_hit": true
+    },
+    {
+      "phase": "warm",
+      "client_click_to_enabled_ms": 3495,
+      "inference_wall_ms": 3330.173,
+      "crop_count": 1,
+      "cache_hit": true
+    }
+  ],
+  "runtime": {
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "logical_cpus": 12,
+    "ram_gib": 31.24,
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 256,
+    "classifier_device": "cpu",
+    "classifier_actual_crop_batches": [
+      1
+    ]
+  },
+  "verified": [
+    "B2 default",
+    "explicit real MD+DINO",
+    "saved correction/reload/export",
+    "409 rejects stale revision",
+    "mobile accessible export name",
+    "per-box mock multiple",
+    "mixed batch continues",
+    "duplicate names",
+    "draft preserved",
+    "CSV saved-only/formula/quoting/UTF8",
+    "batch JSON original immutable",
+    "10-file cap",
+    "stop/resume",
+    "empty/detector error",
+    "3 viewports"
+  ],
+  "real_request_id": "04d91e68-1e1a-4a53-a174-9eb17f9c9d74"
+}

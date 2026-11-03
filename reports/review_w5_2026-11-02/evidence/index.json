@@ -1,0 +1,70 @@
+{
+  "batch_verification.json": {
+    "bytes": 226,
+    "sha256": "cb59f21a0c2f28d6324f98bd17c376adbf13e1f90c35e951bd5c75ed2228a924"
+  },
+  "browser_verification.json": {
+    "bytes": 1832,
+    "sha256": "9081f1119580c7d9f10b88612a52314a3d9baa9b1e7b077bc1ab6b90d5858d60"
+  },
+  "combined_tests.txt": {
+    "bytes": 84317,
+    "sha256": "4600d503689553dbb9b19308e6b9a4eb1c993095b4239429c0e3dcb8f5d2365c"
+  },
+  "contracts.txt": {
+    "bytes": 130,
+    "sha256": "e9b6e22ef45270b72e4fc5b69a254e9fb3942a0f2ccaeabdf211bbd050a44f1b"
+  },
+  "environment.txt": {
+    "bytes": 371,
+    "sha256": "7f262779ad888aa0fb29532c1e08fadadee1f2974cace637e5ec87c847bf02bc"
+  },
+  "extra_ui_verification.json": {
+    "bytes": 376,
+    "sha256": "149397df57b7a3f5a29707df6163c630fed2f0c2ff4a6cd7c13ec82d6339c89d"
+  },
+  "independent_audit.json": {
+    "bytes": 1659,
+    "sha256": "923c21c1796ba2046c7ed89ab9435442dc97893aef45e059bb6a97741ec10962"
+  },
+  "intake.json": {
+    "bytes": 664,
+    "sha256": "17c440f696d3546348fae0cdac359e0c1bee630578ce7f387e30decaad18fa26"
+  },
+  "merge_preview.json": {
+    "bytes": 586,
+    "sha256": "f5817169fc83b56f229e7a42a5ad523c334e603d41e5eb8acefe480c9bd6bd0c"
+  },
+  "native_adapter_equivalence.json": {
+    "bytes": 6042,
+    "sha256": "e8e5ba00f14ae81ffa5bfb9a6f18cafaa0fd4a1f4dfbc7649c00e16e7df88433"
+  },
+  "pr8.json": {
+    "bytes": 565,
+    "sha256": "da13c8b8e76d3b58dd6a8a777fdcc6542891d1ff8faa192559b399d4208dc4a6"
+  },
+  "summary.json": {
+    "bytes": 1577,
+    "sha256": "04e6aeb589b603ce299be222286c2b53a909734030c58d5fef46e2d179e2ec1c"
+  },
+  "tv2_evaluator_audit.json": {
+    "bytes": 31906,
+    "sha256": "5b803ff70148d04d1bce2d310288e962ac46f03b14f485d964e88c4b10c26443"
+  },
+  "tv2_tests.txt": {
+    "bytes": 3756,
+    "sha256": "fcc046755cf1e31017ecd27348ecaa24f27511f498d353f80db7ad5ac42a8efe"
+  },
+  "tv3_tests.txt": {
+    "bytes": 2593,
+    "sha256": "d176d1fb39e08c3e70cbc41fd669d9209bb34cbcf09273b41e5bac2dd2262c2f"
+  },
+  "tv4_tests.txt": {
+    "bytes": 10457,
+    "sha256": "533cbcdfba56615bfd003121d7d64b42b79cd88b0d795ef3878eefceed674356"
+  },
+  "zip_intake.json": {
+    "bytes": 1119,
+    "sha256": "25b84ec387a2672678011c2482ca350869b7dbc0f00bab1e7bdb96307bf62f22"
+  }
+}

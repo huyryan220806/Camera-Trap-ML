@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "images": 600,
+  "crops": 680,
+  "correct": 507,
+  "accuracy": 0.845,
+  "macro_f1": 0.8444008279545706,
+  "confusion_matrix": [
+    [
+      54,
+      2,
+      8,
+      0,
+      2,
+      2,
+      0,
+      7
+    ],
+    [
+      0,
+      71,
+      0,
+      1,
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      59,
+      1,
+      0,
+      2,
+      1,
+      7
+    ],
+    [
+      0,
+      0,
+      4,
+      68,
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      4,
+      0,
+      1,
+      64,
+      5,
+      0,
+      1
+    ],
+    [
+      0,
+      6,
+      0,
+      2,
+      8,
+      56,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      72,
+      2
+    ],
+    [
+      4,
+      0,
+      4,
+      0,
+      3,
+      0,
+      1,
+      63
+    ]
+  ],
+  "per_class_support": [
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75
+  ],
+  "paired_b2_dino": {
+    "(True, True)": 412,
+    "(True, False)": 36,
+    "(False, False)": 57,
+    "(False, True)": 95
+  },
+  "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "best_epoch": 9,
+  "stop_epoch": 16,
+  "tv2_published_full_replay_equal_tv3": true,
+  "source_and_config_locks_verified": true,
+  "frozen_data_and_w4_lock_diffs": {
+    "tv2": [],
+    "tv3": [],
+    "tv4": []
+  },
+  "training_performed": false,
+  "test_inference_performed": false,
+  "scope": "Independent saved-artifact arithmetic/checkpoint inspection; no new full-validation inference"
+}

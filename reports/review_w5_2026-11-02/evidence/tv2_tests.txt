@@ -1,0 +1,37 @@
+test_bare_pass_without_physical_artifacts_rejected (tests.test_w5_validation.W5HandoffTests.test_bare_pass_without_physical_artifacts_rejected) ... ok
+test_checkpoint_hash_mismatch (tests.test_w5_validation.W5HandoffTests.test_checkpoint_hash_mismatch) ... ok
+test_class_order_mismatch (tests.test_w5_validation.W5HandoffTests.test_class_order_mismatch) ... ok
+test_complete_synthetic_handoff (tests.test_w5_validation.W5HandoffTests.test_complete_synthetic_handoff) ... ok
+test_draft_blocks_candidate (tests.test_w5_validation.W5HandoffTests.test_draft_blocks_candidate) ... ok
+test_manifest_hash_mismatch (tests.test_w5_validation.W5HandoffTests.test_manifest_hash_mismatch) ... ok
+test_no_preprocessing (tests.test_w5_validation.W5HandoffTests.test_no_preprocessing) ... ok
+test_no_reload_evidence (tests.test_w5_validation.W5HandoffTests.test_no_reload_evidence) ... ok
+test_tampered_reload_artifact (tests.test_w5_validation.W5HandoffTests.test_tampered_reload_artifact) ... ok
+test_test_and_expanded_data_rejected (tests.test_w5_validation.W5HandoffTests.test_test_and_expanded_data_rejected) ... ok
+test_unregistered_seed_and_budget (tests.test_w5_validation.W5HandoffTests.test_unregistered_seed_and_budget) ... ok
+test_bad_class_id (tests.test_w5_validation.W5ValidationTests.test_bad_class_id) ... ok
+test_bad_scores (tests.test_w5_validation.W5ValidationTests.test_bad_scores) ... ok
+test_duplicate_crop_prediction (tests.test_w5_validation.W5ValidationTests.test_duplicate_crop_prediction) ... ok
+test_duplicate_image_manifest (tests.test_w5_validation.W5ValidationTests.test_duplicate_image_manifest) ... ok
+test_exact_prediction_tie_lowest_class (tests.test_w5_validation.W5ValidationTests.test_exact_prediction_tie_lowest_class) ... ok
+test_frozen_loader_never_opens_test (tests.test_w5_validation.W5ValidationTests.test_frozen_loader_never_opens_test) ... ok
+test_independent_metrics_equal_sklearn_all_eight_classes (tests.test_w5_validation.W5ValidationTests.test_independent_metrics_equal_sklearn_all_eight_classes) ... ok
+test_label_association (tests.test_w5_validation.W5ValidationTests.test_label_association) ... ok
+test_logits_softmax_before_mean_not_mean_logits (tests.test_w5_validation.W5ValidationTests.test_logits_softmax_before_mean_not_mean_logits) ... ok
+test_mean_softmax_is_image_level (tests.test_w5_validation.W5ValidationTests.test_mean_softmax_is_image_level) ... ok
+test_missing_crop (tests.test_w5_validation.W5ValidationTests.test_missing_crop) ... ok
+test_missing_parent_crop (tests.test_w5_validation.W5ValidationTests.test_missing_parent_crop) ... ok
+test_paired_outcomes (tests.test_w5_validation.W5ValidationTests.test_paired_outcomes) ... ok
+test_population_mismatch_in_comparison (tests.test_w5_validation.W5ValidationTests.test_population_mismatch_in_comparison) ... ok
+test_saved_argmax_consistency (tests.test_w5_validation.W5ValidationTests.test_saved_argmax_consistency) ... ok
+test_saved_checkpoint_and_experiment (tests.test_w5_validation.W5ValidationTests.test_saved_checkpoint_and_experiment) ... ok
+test_saved_crop_count_consistency (tests.test_w5_validation.W5ValidationTests.test_saved_crop_count_consistency) ... ok
+test_saved_missing_duplicate_image (tests.test_w5_validation.W5ValidationTests.test_saved_missing_duplicate_image) ... ok
+test_score_and_logit_ambiguity (tests.test_w5_validation.W5ValidationTests.test_score_and_logit_ambiguity) ... ok
+test_softmax_large_logits (tests.test_w5_validation.W5ValidationTests.test_softmax_large_logits) ... ok
+test_test_split_rejected (tests.test_w5_validation.W5ValidationTests.test_test_split_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 18.564s
+
+OK
