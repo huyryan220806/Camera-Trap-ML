@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "handoff": "adb897af064f0db29517c7687b42a4419e7453d0917b6e87a1652920be404e1b",
+    "protocol": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a",
+    "crop_predictions": "04e6ebe2252984fe04b7eceedc2b8dec14dca3a40da045c8d6f8b20c0798f05f",
+    "b2_predictions": "7229dcf489cdc145e0540fb0352d45c77a99aa417ec934a230cc075457ac9224"
+  },
+  "historical_tv2_source_commit": "3f76643d1bc395098d90105e67a9cf29c8fe3256",
+  "current_tv2_evaluator_module_bytes_equal_historical": true,
+  "confusion_matrix_csv_equal_recomputed": true,
+  "tv3_auditor_is_independent_tv2_model_replay": false
+}

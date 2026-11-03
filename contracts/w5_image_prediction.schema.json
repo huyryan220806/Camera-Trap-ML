@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "W5 image-level validation prediction (one JSONL row)",
+  "type": "object",
+  "required": ["image_id", "ground_truth", "predicted_class", "class_scores", "crop_count", "experiment_id", "checkpoint_sha256"],
+  "additionalProperties": false,
+  "properties": {
+    "image_id": {"type": "string", "minLength": 1},
+    "ground_truth": {"type": "integer", "minimum": 0, "maximum": 7},
+    "predicted_class": {"type": "integer", "minimum": 0, "maximum": 7},
+    "class_scores": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "crop_count": {"type": "integer", "minimum": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "checkpoint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

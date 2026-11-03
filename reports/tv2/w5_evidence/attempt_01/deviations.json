@@ -1,0 +1,26 @@
+{
+  "raster_validator": {
+    "status": "INTERRUPTED_NOT_PASS",
+    "command": "validate_comparison.py --report outputs/tv2_w5/attempt_01/comparison_pixels.json",
+    "scope": "Whole comparison_v1 snapshot including Test rasters; mistakenly launched, then Ctrl+C",
+    "last_logged_progress": "750/4000",
+    "exact_decoded_ids_and_count": "unknown; worker pool may run ahead of progress",
+    "test_raster_non_access_claim": false,
+    "model_inference_performed": false,
+    "test_metrics_computed": false,
+    "used_for_model_selection": false,
+    "receipt_created": false,
+    "corrective_action": "New explicit Train/Val-only pixel verifier PASS 3400/3400; original log preserved"
+  },
+  "ui_browser": {
+    "status": "BLOCKED",
+    "iab": "net::ERR_CONNECTION_TIMED_OUT http://127.0.0.1:8766",
+    "native_edge": "Computer Use app approval timed out",
+    "screenshots_created": 0,
+    "no_product_bug_inferred": true
+  },
+  "api_first_attempt": "Host client could not reach sandbox server (WinError10060); no API checks executed. Tool transcript; empty ui_api folder retained local.",
+  "temporary_directory": "Use visualization writable root outside repository; repo outputs TEMP changed existing path-guard test semantics. No tests modified.",
+  "untracked_documents": "Four original user files preserved, not staged",
+  "protocol": "DRAFT; proposed seed42/ties not team-approved; max_candidate_runs=null; no candidate training/inference"
+}

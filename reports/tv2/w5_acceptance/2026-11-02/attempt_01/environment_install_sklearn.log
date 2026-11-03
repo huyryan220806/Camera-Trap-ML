@@ -1,0 +1,9 @@
+Collecting scikit-learn==1.9.0
+  Downloading scikit_learn-1.9.0-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Downloading scikit_learn-1.9.0-cp312-cp312-win_amd64.whl (8.2 MB)
+   ---------------------------------------- 8.2/8.2 MB 19.6 MB/s eta 0:00:00
+Installing collected packages: scikit-learn
+Successfully installed scikit-learn-1.9.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Scripts\python.exe -m pip install --upgrade pip

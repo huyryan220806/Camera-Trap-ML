@@ -1,0 +1,75 @@
+{
+  "model_version": "MDv5a.0.1",
+  "package_version": "10.0.25",
+  "expected_package_version": "10.0.25",
+  "weights_present": true,
+  "classifiers": {
+    "B0": {
+      "enabled": true,
+      "checkpoint_present": false,
+      "training_input": "full_image"
+    },
+    "B1": {
+      "enabled": true,
+      "checkpoint_present": false,
+      "training_input": "full_image"
+    },
+    "B2": {
+      "enabled": true,
+      "checkpoint_present": true,
+      "training_input": "crop"
+    }
+  },
+  "class_names": [
+    "large_antlered_muntjac",
+    "annamite_striped_rabbit",
+    "sambar",
+    "chinese_serow",
+    "common_palm_civet",
+    "masked_palm_civet",
+    "silver_pheasant",
+    "eurasian_wild_pig"
+  ],
+  "samples": [
+    {
+      "id": "0",
+      "name": "Train 01",
+      "file_name": "image_00001.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Train 02",
+      "file_name": "image_00068.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Train 03",
+      "file_name": "image_00003.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Train 04",
+      "file_name": "image_00090.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Train 05",
+      "file_name": "image_00091.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Train 06",
+      "file_name": "image_00003.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Train 07",
+      "file_name": "image_00017.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Train 08",
+      "file_name": "image_00070.jpg"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "candidates",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/prepare_tv1_w5.py",
+    "--verify-only",
+    "--report",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv1\\outputs\\tv2_w5\\candidates.json"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv1",
+  "started_utc": "2026-10-28T16:50:58.649166+00:00",
+  "seconds": 5.691570999999385,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\candidates.log",
+  "log_sha256": "4cb5d38b15bf46781b95f47c647b54eb0f721c1084e9c596e5e990c34ad1b466"
+}

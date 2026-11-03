@@ -1,0 +1,1407 @@
+{
+  "status": "PASS",
+  "weights_only": true,
+  "torch": "2.8.0+cpu",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "format": "TV3_DINO_LINEAR_V1",
+  "best_epoch": 9,
+  "last_epoch": 16,
+  "patience_counter": 7,
+  "checkpoint_validation_exactly_matches_json": true,
+  "checkpoint_binding_exactly_matches_json": true,
+  "best_head_matches_last_checkpoint_best_head": true,
+  "tensor_count": 190,
+  "tensor_numel": 21618072,
+  "tensors": {
+    "backbone.cls_token": {
+      "shape": [
+        1,
+        1,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.storage_tokens": {
+      "shape": [
+        1,
+        4,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.mask_token": {
+      "shape": [
+        1,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.patch_embed.proj.weight": {
+      "shape": [
+        384,
+        3,
+        16,
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 294912
+    },
+    "backbone.patch_embed.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.rope_embed.periods": {
+      "shape": [
+        16
+      ],
+      "dtype": "torch.float32",
+      "numel": 16
+    },
+    "backbone.blocks.0.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.0.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.0.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.0.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.0.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.0.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.0.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.0.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.0.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.1.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.1.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.1.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.1.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.1.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.1.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.1.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.1.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.2.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.2.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.2.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.2.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.2.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.2.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.2.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.2.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.3.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.3.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.3.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.3.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.3.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.3.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.3.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.3.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.4.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.4.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.4.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.4.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.4.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.4.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.4.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.4.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.5.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.5.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.5.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.5.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.5.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.5.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.5.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.5.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.6.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.6.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.6.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.6.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.6.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.6.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.6.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.6.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.7.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.7.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.7.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.7.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.7.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.7.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.7.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.7.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.8.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.8.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.8.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.8.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.8.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.8.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.8.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.8.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.9.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.9.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.9.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.9.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.9.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.9.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.9.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.9.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.10.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.10.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.10.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.10.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.10.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.10.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.10.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.10.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.norm1.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.norm1.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.attn.qkv.weight": {
+      "shape": [
+        1152,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 442368
+    },
+    "backbone.blocks.11.attn.qkv.bias": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.11.attn.qkv.bias_mask": {
+      "shape": [
+        1152
+      ],
+      "dtype": "torch.float32",
+      "numel": 1152
+    },
+    "backbone.blocks.11.attn.proj.weight": {
+      "shape": [
+        384,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 147456
+    },
+    "backbone.blocks.11.attn.proj.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.ls1.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.norm2.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.norm2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.mlp.fc1.weight": {
+      "shape": [
+        1536,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.11.mlp.fc1.bias": {
+      "shape": [
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 1536
+    },
+    "backbone.blocks.11.mlp.fc2.weight": {
+      "shape": [
+        384,
+        1536
+      ],
+      "dtype": "torch.float32",
+      "numel": 589824
+    },
+    "backbone.blocks.11.mlp.fc2.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.blocks.11.ls2.gamma": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.norm.weight": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "backbone.norm.bias": {
+      "shape": [
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 384
+    },
+    "head.weight": {
+      "shape": [
+        8,
+        384
+      ],
+      "dtype": "torch.float32",
+      "numel": 3072
+    },
+    "head.bias": {
+      "shape": [
+        8
+      ],
+      "dtype": "torch.float32",
+      "numel": 8
+    }
+  },
+  "architecture_strict_loaded": false,
+  "note": "Safe checkpoint structure inspection only; strict architecture load and frozen/eval checks belong to fresh-process replay."
+}

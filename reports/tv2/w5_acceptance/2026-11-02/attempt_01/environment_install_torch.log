@@ -1,0 +1,436 @@
+Looking in indexes: https://download.pytorch.org/whl/cu124
+Collecting torch==2.6.0
+  Downloading https://download-r2.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp312-cp312-win_amd64.whl.metadata (28 kB)
+Collecting torchvision==0.21.0
+  Downloading https://download-r2.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Downloading https://download-r2.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp312-cp312-win_amd64.whl (2532.3 MB)
+   ---------------------------------------- 2.5/2.5 GB 16.0 MB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp312-cp312-win_amd64.whl (6.1 MB)
+   ---------------------------------------- 6.1/6.1 MB 25.0 MB/s eta 0:00:00
+Installing collected packages: torchvision, torch
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.23.0
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 65, in install_given_reqs
+    uninstalled_pathset = requirement.uninstall(auto_confirm=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_install.py", line 722, in uninstall
+    uninstalled_pathset = UninstallPathSet.from_dist(dist)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_uninstall.py", line 436, in from_dist
+    logger.info(
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: 'Not uninstalling %s at %s, outside environment %s'
+Arguments: ('torchvision', 'd:\\n�m 3\\hk1_2026\\h\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\\do_an\\outputs\\w2_final_handoff\\tv4_env\\lib\\site-packages', 'D:\\N�m 3\\HK1_2026\\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\replay_env')
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 65, in install_given_reqs
+    uninstalled_pathset = requirement.uninstall(auto_confirm=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_install.py", line 723, in uninstall
+    uninstalled_pathset.remove(auto_confirm, verbose)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_uninstall.py", line 354, in remove
+    logger.info(
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: "Can't uninstall '%s'. No files were found to uninstall."
+Arguments: ('torchvision',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 63, in install_given_reqs
+    logger.info("Attempting uninstall: %s", req_name)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: 'Attempting uninstall: %s'
+Arguments: ('torch',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 65, in install_given_reqs
+    uninstalled_pathset = requirement.uninstall(auto_confirm=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_install.py", line 720, in uninstall
+    logger.info("Found existing installation: %s", dist)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: 'Found existing installation: %s'
+Arguments: (torch 2.8.0 (D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\w2_final_handoff\tv4_env\Lib\site-packages),)
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 65, in install_given_reqs
+    uninstalled_pathset = requirement.uninstall(auto_confirm=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_install.py", line 722, in uninstall
+    uninstalled_pathset = UninstallPathSet.from_dist(dist)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_uninstall.py", line 436, in from_dist
+    logger.info(
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: 'Not uninstalling %s at %s, outside environment %s'
+Arguments: ('torch', 'd:\\n�m 3\\hk1_2026\\h\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\\do_an\\outputs\\w2_final_handoff\\tv4_env\\lib\\site-packages', 'D:\\N�m 3\\HK1_2026\\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\replay_env')
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 458, in run
+    installed = install_given_reqs(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\__init__.py", line 65, in install_given_reqs
+    uninstalled_pathset = requirement.uninstall(auto_confirm=True)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_install.py", line 723, in uninstall
+    uninstalled_pathset.remove(auto_confirm, verbose)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\req\req_uninstall.py", line 354, in remove
+    logger.info(
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: "Can't uninstall '%s'. No files were found to uninstall."
+Arguments: ('torch',)
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 184, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 1678, in print
+    with self:
+         ^^^^
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 864, in __exit__
+    self._exit_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 822, in _exit_buffer
+    self._check_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2019, in _check_buffer
+    self._write_buffer()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\console.py", line 2055, in _write_buffer
+    legacy_windows_render(buffer, LegacyWindowsTerm(self.file))
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py", line 19, in legacy_windows_render
+    term.write_text(text)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_vendor\rich\_win32_console.py", line 402, in write_text
+    self.write(text)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1258.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecd' in position 55: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\__main__.py", line 24, in <module>
+    sys.exit(_main())
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\main.py", line 80, in main
+    return command.main(cmd_args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 158, in main
+    return self._main(args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 240, in _main
+    return self._run_wrapper(level_number, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 106, in _run_wrapper
+    status = _inner_run()
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\base_command.py", line 97, in _inner_run
+    return self.run(options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\cli\req_command.py", line 67, in wrapper
+    return func(self, options, args)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\commands\install.py", line 502, in run
+    write_output(
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\misc.py", line 375, in write_output
+    logger.info(msg, *args)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1684, in _log
+    self.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\Hu\u1ef3nh Ph�c\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\logging\__init__.py", line 1028, in handle
+    self.emit(record)
+  File "D:\N�m 3\HK1_2026\H\u1ecdc m�y v� \u1ee9ng d\u1ee5ng\Do_an\outputs\tv2_w5\acceptance_20261102\attempt_01\replay_env\Lib\site-packages\pip\_internal\utils\logging.py", line 186, in emit
+    self.handleError(record)
+Message: 'Successfully installed %s'
+Arguments: ('torch-2.6.0+cu124 torchvision-0.21.0+cu124',)

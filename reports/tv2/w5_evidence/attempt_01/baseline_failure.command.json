@@ -1,0 +1,25 @@
+{
+  "name": "baseline_failure",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_inventory_tv1_w4.py",
+    "-v"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv4",
+  "started_utc": "2026-10-28T17:22:56.705239+00:00",
+  "seconds": 1.0517245000010007,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\baseline_failure.log",
+  "log_sha256": "21a2f69f0640d56fbe9486e8e3c2b400e46b869f9634bdb6c9051959ae41385a"
+}

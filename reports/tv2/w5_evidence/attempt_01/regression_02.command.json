@@ -1,0 +1,23 @@
+{
+  "name": "regression_02",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+  "started_utc": "2026-10-28T17:18:29.825276+00:00",
+  "seconds": 54.734976600000664,
+  "exit_code": 1,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\regression_02.log",
+  "log_sha256": "b56fff08956617ec50d72d789a0b8b136ca45b0ed5f4331671fa9e71ad6d484c"
+}

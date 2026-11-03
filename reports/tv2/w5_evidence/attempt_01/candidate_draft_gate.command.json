@@ -1,0 +1,28 @@
+{
+  "name": "candidate_draft_gate",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/evaluate_w5_validation.py",
+    "--handoff",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\configs\\tv2_w5_protocol.draft.json",
+    "--protocol",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\configs\\tv2_w5_protocol.draft.json",
+    "--checkpoint",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\experiments\\B2_run01\\checkpoints\\best_model.pt",
+    "--crop-predictions",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\no_candidate_predictions.jsonl",
+    "--output",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\blocked_candidate"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+  "started_utc": "2026-10-28T17:24:14.296846+00:00",
+  "seconds": 0.17232289999810746,
+  "exit_code": 1,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\candidate_draft_gate.log",
+  "log_sha256": "6e441b345f8e854826eab4ec10af3a763a7eaad142bb0e67b65860a4689014ab"
+}

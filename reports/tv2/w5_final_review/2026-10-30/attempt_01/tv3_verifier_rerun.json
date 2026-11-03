@@ -1,0 +1,562 @@
+{
+  "status": "PASS",
+  "config_path": "configs/dinov3_lp_w5.local.json",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "config_canonical_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "serialization": "json.dumps(config, sort_keys=True, ensure_ascii=False, allow_nan=False).encode('utf-8'); default separators ', ' and ': '; no trailing newline",
+  "smoke_path": "reports/tv3/pretrained_2026-10-29/backbone_smoke_2026-10-29.json",
+  "smoke_file_sha256": "52c635be70f6f4a5466a7a816d9fc425036924f350ed9b6ea0a7a99e94549043",
+  "embedded_config_equal": true,
+  "source_path": "src/training/dino_probe.py",
+  "source_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+  "strict_load_evidence": {
+    "kind": "historical smoke PASS linked to exact source containing strict=True; no new load",
+    "historical_missing_unexpected_keys_log": "not separately captured"
+  },
+  "preflight_path": "reports/tv3/w5_evidence/preflight.json",
+  "preflight_sha256": "343f30034f525f740c730c3ccea5769dda53bb6a40500e75c4099fa01b2183e2",
+  "preflight_config_differences": {
+    "repo_commit": {
+      "preflight": null,
+      "pinned": "6876159a11b4df116f30f667f8c9888617df0751"
+    },
+    "weights_sha256": {
+      "preflight": null,
+      "pinned": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d"
+    },
+    "weights_source": {
+      "preflight": "https://github.com/facebookresearch/dinov3 (LVD-1689M ViT-S/16)",
+      "pinned": "facebookresearch/dinov3:LVD-1689M:ViT-S16"
+    }
+  },
+  "manifest_sha256": {
+    "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+    "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+    "b1/train.jsonl": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c",
+    "b1/val.jsonl": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+    "b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+    "b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+  },
+  "data_scope": "Historical 28/10 full 3400-image decode/byte/RGB check; current metadata hashes; optional current sample byte checks. No full pixel recheck today.",
+  "smoke_sample_scope": "Reconstructed from the executed smoke recipe rows[train][:32], not a contemporaneous sample receipt; no smoke rerun.",
+  "sample_unique_images": 32,
+  "samples": [
+    {
+      "index": 0,
+      "crop_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de_30859175-6670-11ec-8395-c82158b0a9cc",
+      "image_id": "c7a284b5-8c29-11eb-beac-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        108,
+        1169,
+        563,
+        1516
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0001/2017/06/image_00001.jpg",
+      "expected_source_sha256": "a4b7e3b86fedf28e173573ad34d416fa9a78f3ccb27800638a2a5fb3b7f77e3c",
+      "expected_rgb_sha256": "51be4942161d752f926d045c6f0d8a0e30bd341ba51bedd245d6b84f7588186d"
+    },
+    {
+      "index": 1,
+      "crop_id": "c7ba5472-8c29-11eb-b5a5-000d3a74c7de_3085916c-6670-11ec-88d3-c82158b0a9cc",
+      "image_id": "c7ba5472-8c29-11eb-b5a5-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        380,
+        1306,
+        1374,
+        2191
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0002/2018/03/image_00068.jpg",
+      "expected_source_sha256": "45e77b9f6b251be5e5f29c24df0ec56da96c361b5c03c2c00c3cc40dd216d491",
+      "expected_rgb_sha256": "4d8152a0f6240cf73452c594cd3d7865592cae4366a9b27ad97ecf76af414457"
+    },
+    {
+      "index": 2,
+      "crop_id": "c7d949c2-8c29-11eb-b04d-000d3a74c7de_308591da-6670-11ec-a1a9-c82158b0a9cc",
+      "image_id": "c7d949c2-8c29-11eb-b04d-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1142,
+        977,
+        2599,
+        2344
+      ],
+      "class_id": 6,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0002/2017/06/image_00003.jpg",
+      "expected_source_sha256": "0dc138058ece43686a40dcc73b45ebf627281c39ad438ccd310ed218ff202ae4",
+      "expected_rgb_sha256": "15089caa83fe09af4e7b6518e5e01f4c9874c17c3433d08980e620a23d420304"
+    },
+    {
+      "index": 3,
+      "crop_id": "c7d949d1-8c29-11eb-b66e-000d3a74c7de_308591d7-6670-11ec-a694-c82158b0a9cc",
+      "image_id": "c7d949d1-8c29-11eb-b66e-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1502,
+        1186,
+        2423,
+        1597
+      ],
+      "class_id": 6,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0002/2017/10/image_00090.jpg",
+      "expected_source_sha256": "04333f115f1ac90758232caa9e1bfbc7c48ce0ed3df90a23f41c86400bac8379",
+      "expected_rgb_sha256": "2cefd3a19d8f5f84dca46fbfea8ecfee7d235b1aa83eeab826a33e7e2818b79b"
+    },
+    {
+      "index": 4,
+      "crop_id": "c7d949d2-8c29-11eb-97db-000d3a74c7de_308591d8-6670-11ec-a5ef-c82158b0a9cc",
+      "image_id": "c7d949d2-8c29-11eb-97db-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1163,
+        1195,
+        2188,
+        1550
+      ],
+      "class_id": 6,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0002/2017/10/image_00091.jpg",
+      "expected_source_sha256": "b1f201c109d561751efca2150e5141bd5ab1f9adf893d9cc003619d4539dd216",
+      "expected_rgb_sha256": "295532a8e1d7398b057f8ad8c29ba0653007d7963e037296e8ab4f953bf50da7"
+    },
+    {
+      "index": 5,
+      "crop_id": "c7e5376a-8c29-11eb-a691-000d3a74c7de_308591fe-6670-11ec-b3fe-c82158b0a9cc",
+      "image_id": "c7e5376a-8c29-11eb-a691-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        335,
+        458,
+        1993,
+        1504
+      ],
+      "class_id": 2,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0004/2017/09/image_00003.jpg",
+      "expected_source_sha256": "bb3fe7f6eb50d1e8b991ecde55651b0564fa24b1515c660e65861243f3e62173",
+      "expected_rgb_sha256": "7b9a387c0aa0983d53723142daaf5c5f9e0b35c99c12d35bad0722ad501c487d"
+    },
+    {
+      "index": 6,
+      "crop_id": "c7e53772-8c29-11eb-a636-000d3a74c7de_308591fd-6670-11ec-9e57-c82158b0a9cc",
+      "image_id": "c7e53772-8c29-11eb-a636-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        0,
+        605,
+        1081,
+        2345
+      ],
+      "class_id": 2,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0004/2017/10/image_00017.jpg",
+      "expected_source_sha256": "3df5c8f8b3ba29fc08e6d693be85de07443ad1d4c4ca440b0edefbdfcf9433cb",
+      "expected_rgb_sha256": "ea24369b291a7f99435c8835d86bdb9f7b79dc973f18de926a7842ed16c57538"
+    },
+    {
+      "index": 7,
+      "crop_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de_308593ac-6670-11ec-9dd6-c82158b0a9cc",
+      "image_id": "c7e79972-8c29-11eb-8c9f-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1176,
+        1375,
+        2422,
+        1709
+      ],
+      "class_id": 5,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0006/2017/07/image_00070.jpg",
+      "expected_source_sha256": "72baf57897621f93aaa9a6a11e04b0aa1bb2179ed77828df1db8c30829d40865",
+      "expected_rgb_sha256": "e354cdc8a698ff68c3722a37eeb80dfee1f720e17a446bba68be2fc6c68f36e4"
+    },
+    {
+      "index": 8,
+      "crop_id": "c7e79973-8c29-11eb-b19f-000d3a74c7de_308593ad-6670-11ec-b5eb-c82158b0a9cc",
+      "image_id": "c7e79973-8c29-11eb-b19f-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1287,
+        1359,
+        2709,
+        1713
+      ],
+      "class_id": 5,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0006/2017/07/image_00071.jpg",
+      "expected_source_sha256": "01f1041df0d9192ed877dc0eb24050eb5fa1868d25bc0df645560dce4490c618",
+      "expected_rgb_sha256": "96a1e7461afbd10ddb867878f1f25e3918ff5e9c21ef7a2b778ebf71191e8173"
+    },
+    {
+      "index": 9,
+      "crop_id": "c7e799b3-8c29-11eb-aa32-000d3a74c7de_308593a8-6670-11ec-a5ee-c82158b0a9cc",
+      "image_id": "c7e799b3-8c29-11eb-aa32-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1554,
+        1240,
+        2439,
+        1890
+      ],
+      "class_id": 6,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0006/2017/07/image_00081.jpg",
+      "expected_source_sha256": "eca068b38de5e0383e0cf9bc909699bdecf80450f6e83d0e3f130b7c741d0e86",
+      "expected_rgb_sha256": "5e7e3919d4ae0d57dad4c52c055cf7d7aa6d66bf58e3eeea60cb072ff92f235a"
+    },
+    {
+      "index": 10,
+      "crop_id": "c7e799d4-8c29-11eb-a0f9-000d3a74c7de_3085939f-6670-11ec-9cbc-c82158b0a9cc",
+      "image_id": "c7e799d4-8c29-11eb-a0f9-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        2418,
+        1142,
+        3041,
+        1787
+      ],
+      "class_id": 6,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0006/2017/07/image_00114.jpg",
+      "expected_source_sha256": "1b3c3faa9c01c711d16e9b654aa65b208e9dd603d7b3154c61e066b576343553",
+      "expected_rgb_sha256": "153ac2a49041eca2901949db592832bee58e8b08e05980d889b965271384f150"
+    },
+    {
+      "index": 11,
+      "crop_id": "c7ec6150-8c29-11eb-997f-000d3a74c7de_3085937c-6670-11ec-ad38-c82158b0a9cc",
+      "image_id": "c7ec6150-8c29-11eb-997f-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        749,
+        1033,
+        1813,
+        1498
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/11/image_00299.jpg",
+      "expected_source_sha256": "ab7693057b000c38d3c97186486ba6781a19a602258faac029fda3e4892e6dbe",
+      "expected_rgb_sha256": "295793d47bad47d9b18fc6a33b46edd9b081b18f56c124ada8ef52e6008b33b7"
+    },
+    {
+      "index": 12,
+      "crop_id": "c7eec2de-8c29-11eb-b3b8-000d3a74c7de_308592fb-6670-11ec-a286-c82158b0a9cc",
+      "image_id": "c7eec2de-8c29-11eb-b3b8-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1502,
+        741,
+        1873,
+        1342
+      ],
+      "class_id": 7,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/09/image_00818.jpg",
+      "expected_source_sha256": "bdf46606b15e3fe6d8936e57fd831eeb30f022e4677e7029f32d45d25df464db",
+      "expected_rgb_sha256": "3462dc3c6a057cc67fe05519f56e1556dacc177822f11f54a2fefa15b1ba6bcf"
+    },
+    {
+      "index": 13,
+      "crop_id": "c7eec2fd-8c29-11eb-8f01-000d3a74c7de_308592f6-6670-11ec-88b2-c82158b0a9cc",
+      "image_id": "c7eec2fd-8c29-11eb-8f01-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1528,
+        792,
+        1808,
+        1354
+      ],
+      "class_id": 7,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/09/image_00849.jpg",
+      "expected_source_sha256": "136f4e19cd872c38e957711f64177e354fe235ec4bec165933b77ef70687e93a",
+      "expected_rgb_sha256": "a3f1f5caa7f92782c56f8029e2e9e9bdaaa80839dac3532f406953bf94db5519"
+    },
+    {
+      "index": 14,
+      "crop_id": "c7f12448-8c29-11eb-b68e-000d3a74c7de_308592c8-6670-11ec-a448-c82158b0a9cc",
+      "image_id": "c7f12448-8c29-11eb-b68e-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1139,
+        602,
+        2346,
+        1562
+      ],
+      "class_id": 7,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/10/image_01105.jpg",
+      "expected_source_sha256": "f13d1337669081302e972c13f03ed459aef53b795aaa44cd6c057d7c1ddbe00d",
+      "expected_rgb_sha256": "5f5236ca99efbd775daa12b92cb41f4d2426435159de58a8c01c9796d37e41c0"
+    },
+    {
+      "index": 15,
+      "crop_id": "c7f124e4-8c29-11eb-b6a9-000d3a74c7de_308592bf-6670-11ec-9225-c82158b0a9cc",
+      "image_id": "c7f124e4-8c29-11eb-b6a9-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        0,
+        699,
+        675,
+        1348
+      ],
+      "class_id": 7,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/10/image_01261.jpg",
+      "expected_source_sha256": "885e8f9f837fc81c191e85d47bd6cb3ea22d8a2c1de6c2e56a34bf7f28fb59de",
+      "expected_rgb_sha256": "1bde808dc9289524e29a1b6571e103a7cb667eb464bbd944950a5eedead9f56e"
+    },
+    {
+      "index": 16,
+      "crop_id": "c7f1250f-8c29-11eb-856e-000d3a74c7de_308592bd-6670-11ec-9bc8-c82158b0a9cc",
+      "image_id": "c7f1250f-8c29-11eb-856e-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        2186,
+        690,
+        3042,
+        1242
+      ],
+      "class_id": 7,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0008/2017/10/image_01304.jpg",
+      "expected_source_sha256": "b1c2bd5a6416ecfb4510eb1342f921ce772aad9b9e78fb425f4e1fa03d478f5a",
+      "expected_rgb_sha256": "d692fac39c8125d3a3845515ad8d58b21134b2bdfcf24f9617dd2850d13ed639"
+    },
+    {
+      "index": 17,
+      "crop_id": "c7f38823-8c29-11eb-90e2-000d3a74c7de_308592a7-6670-11ec-a4a2-c82158b0a9cc",
+      "image_id": "c7f38823-8c29-11eb-90e2-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1326,
+        1553,
+        1849,
+        1671
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0009/2017/09/image_00019.jpg",
+      "expected_source_sha256": "f0bcb18bddefc0ef6222232cf62385a564d3874c5e860e13a3e7ee327642e744",
+      "expected_rgb_sha256": "d4bca85af5db91dde10e500b440b766e213fb00574d2e62833c1cc7904b82559"
+    },
+    {
+      "index": 18,
+      "crop_id": "c7ff71b3-8c29-11eb-b898-000d3a74c7de_30859447-6670-11ec-9169-c82158b0a9cc",
+      "image_id": "c7ff71b3-8c29-11eb-b898-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        0,
+        1351,
+        2087,
+        1961
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00075.jpg",
+      "expected_source_sha256": "da793b1c0f0280483b689e868bfdb8260a3720664a0dea1d7362e2b82497d504",
+      "expected_rgb_sha256": "e2f03e41f108bd97e862792726511779b79986cb9b4efa888bc9fd0abf68ab52"
+    },
+    {
+      "index": 19,
+      "crop_id": "c7ff71b5-8c29-11eb-bfe1-000d3a74c7de_30859449-6670-11ec-9f72-c82158b0a9cc",
+      "image_id": "c7ff71b5-8c29-11eb-bfe1-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        0,
+        1453,
+        1025,
+        1747
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00077.jpg",
+      "expected_source_sha256": "ab86e064d5c8f8e8fecfc1b92fc3f50d7b85b1dca42b9a30e250db42d2b59398",
+      "expected_rgb_sha256": "ddc3d43ca96a0b3f5ffba1b24a20699f6b4d5d1785cad4bf5788783968bdecee"
+    },
+    {
+      "index": 20,
+      "crop_id": "c7ff71bf-8c29-11eb-b155-000d3a74c7de_30859444-6670-11ec-970b-c82158b0a9cc",
+      "image_id": "c7ff71bf-8c29-11eb-b155-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        0,
+        1264,
+        1464,
+        1758
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00087.jpg",
+      "expected_source_sha256": "c4f1806a3c6362b612c6f2f31488815ef37ce68cf913c5eb52e71296b82ac397",
+      "expected_rgb_sha256": "21f1f401cb95c7cba912dc6213139180aafdc783eb5b085364819cdb7ce42105"
+    },
+    {
+      "index": 21,
+      "crop_id": "c7ff71e7-8c29-11eb-9f99-000d3a74c7de_3085943f-6670-11ec-8664-c82158b0a9cc",
+      "image_id": "c7ff71e7-8c29-11eb-9f99-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1197,
+        1122,
+        1848,
+        1453
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/12/image_00128.jpg",
+      "expected_source_sha256": "c42e743c04afa684a9c3b87bb361cb4a8f92a647d6571c9d96d6dd68e82d79a4",
+      "expected_rgb_sha256": "a3a52bdf707948894ecf1c0934f733d7044265d3d66d071127d0b18e96a19ac7"
+    },
+    {
+      "index": 22,
+      "crop_id": "c7ff7213-8c29-11eb-8cc7-000d3a74c7de_3085943b-6670-11ec-ab3b-c82158b0a9cc",
+      "image_id": "c7ff7213-8c29-11eb-8cc7-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1258,
+        880,
+        3082,
+        1666
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2018/01/image_00081.jpg",
+      "expected_source_sha256": "a664c2183e80b70d952ff8068052c46ee95298eb8914881831e9668a3cc1bb33",
+      "expected_rgb_sha256": "7840971f8a50b42232e21d9b38b5bf6c8b559d0902dcc982ac88d9ef5b036477"
+    },
+    {
+      "index": 23,
+      "crop_id": "c7ff7215-8c29-11eb-85b1-000d3a74c7de_3085943d-6670-11ec-b263-c82158b0a9cc",
+      "image_id": "c7ff7215-8c29-11eb-85b1-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1268,
+        784,
+        2791,
+        1306
+      ],
+      "class_id": 4,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2018/01/image_00083.jpg",
+      "expected_source_sha256": "04ca37eedafba1093da52b2ca028bbdc3d1e617a89b67c825be816129c593d92",
+      "expected_rgb_sha256": "d783c91c252906f252463019fa374b2edc5b04402c4551f11d9ecf770acf8938"
+    },
+    {
+      "index": 24,
+      "crop_id": "c7ff729e-8c29-11eb-abf8-000d3a74c7de_30859426-6670-11ec-bc1d-c82158b0a9cc",
+      "image_id": "c7ff729e-8c29-11eb-abf8-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        2615,
+        950,
+        3260,
+        1640
+      ],
+      "class_id": 0,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/10/image_00096.jpg",
+      "expected_source_sha256": "84db008647adbe3e60eb42e6d5ccd86c282c836dc805f526b504bdb724e6cd7e",
+      "expected_rgb_sha256": "0ab318cb08a795fdf0634b92ba32292c9eeda2bd04a35c31702b61306cf65929"
+    },
+    {
+      "index": 25,
+      "crop_id": "c7ff72a0-8c29-11eb-a0eb-000d3a74c7de_30859428-6670-11ec-b008-c82158b0a9cc",
+      "image_id": "c7ff72a0-8c29-11eb-a0eb-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        2262,
+        817,
+        3264,
+        1663
+      ],
+      "class_id": 0,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/10/image_00098.jpg",
+      "expected_source_sha256": "ed98bb9ef056823e04bd65124d50aec8b83d0ca426f5019345560ce381b1aa12",
+      "expected_rgb_sha256": "62ab9dc56cd72077aa47f4ed2cad65cafbffa84defaa8da012d2c5e8dcc75e53"
+    },
+    {
+      "index": 26,
+      "crop_id": "c7ff72d2-8c29-11eb-a790-000d3a74c7de_3085941e-6670-11ec-a0ba-c82158b0a9cc",
+      "image_id": "c7ff72d2-8c29-11eb-a790-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        442,
+        388,
+        2664,
+        2347
+      ],
+      "class_id": 0,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00154.jpg",
+      "expected_source_sha256": "eed5c563b80c6f001f572f4eae744f50bc569f640176f47175903ecd8f0d835d",
+      "expected_rgb_sha256": "3c519e6b4a2c401ec4d8584ae8b36abcdecd7fee6be55649319e02b141c1d8e6"
+    },
+    {
+      "index": 27,
+      "crop_id": "c7ff72d3-8c29-11eb-892a-000d3a74c7de_3085941f-6670-11ec-821d-c82158b0a9cc",
+      "image_id": "c7ff72d3-8c29-11eb-892a-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        425,
+        372,
+        2674,
+        2347
+      ],
+      "class_id": 0,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00155.jpg",
+      "expected_source_sha256": "998689ed007a8965d4220eadae00547bb702d7d97a0f394a8cdfd372a6b1e0c9",
+      "expected_rgb_sha256": "e38d3421b186ad6f2a752379f79146f21e272624f25466875fd38b968e5a6434"
+    },
+    {
+      "index": 28,
+      "crop_id": "c7ff72f5-8c29-11eb-9187-000d3a74c7de_3085941a-6670-11ec-8cc8-c82158b0a9cc",
+      "image_id": "c7ff72f5-8c29-11eb-9187-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        445,
+        396,
+        2991,
+        2347
+      ],
+      "class_id": 0,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/11/image_00189.jpg",
+      "expected_source_sha256": "79277ed038be2044f6e45438b99385374107e29ecf1e8aab8e5e6d631bbba934",
+      "expected_rgb_sha256": "9ac52d556128e116d907a6d9bdfe00ac0e6d5884f8a3c4fb456351775e54d9bb"
+    },
+    {
+      "index": 29,
+      "crop_id": "c7ff7337-8c29-11eb-8fa2-000d3a74c7de_30859411-6670-11ec-9c6b-c82158b0a9cc",
+      "image_id": "c7ff7337-8c29-11eb-8fa2-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1002,
+        1055,
+        1294,
+        1342
+      ],
+      "class_id": 5,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/09/image_00090.jpg",
+      "expected_source_sha256": "4424860b4032a944b82499a30f3997097693d5f7d780f525490fed1180057dfb",
+      "expected_rgb_sha256": "d284609778d5ad8aa5603d0e2cbe830e0438fe384b92b6193faa5b08788afbde"
+    },
+    {
+      "index": 30,
+      "crop_id": "c7ff7338-8c29-11eb-84e8-000d3a74c7de_30859412-6670-11ec-a340-c82158b0a9cc",
+      "image_id": "c7ff7338-8c29-11eb-84e8-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1002,
+        1055,
+        1294,
+        1342
+      ],
+      "class_id": 5,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/09/image_00091.jpg",
+      "expected_source_sha256": "1118633ae09b27fcd8f4cbb32c80048e5ae1539f17eacd785b9f1633bff6812d",
+      "expected_rgb_sha256": "c8a7748228d8b0057fb3ed1f4a050375db3d48f4bbcc83c66ba73eeb450550b8"
+    },
+    {
+      "index": 31,
+      "crop_id": "c7ff7339-8c29-11eb-892f-000d3a74c7de_30859413-6670-11ec-b81b-c82158b0a9cc",
+      "image_id": "c7ff7339-8c29-11eb-892f-000d3a74c7de",
+      "split": "train",
+      "bbox_xyxy": [
+        1002,
+        1055,
+        1294,
+        1342
+      ],
+      "class_id": 5,
+      "source_path": "data/images/swg_pilot_v2/public/lao/loc_0013/2017/09/image_00092.jpg",
+      "expected_source_sha256": "f23bd24f86f91dc43715f140eebeaa5f0a7266f32332df8e548af1fb50aa01cc",
+      "expected_rgb_sha256": "6ea1699f790c0f3a490dd4156ca880c7376a9e9996c8cb2575a4362efdbbd294"
+    }
+  ],
+  "model_inference_performed": false,
+  "training_performed": false,
+  "test_accessed": false,
+  "local_assets_verified": false
+}

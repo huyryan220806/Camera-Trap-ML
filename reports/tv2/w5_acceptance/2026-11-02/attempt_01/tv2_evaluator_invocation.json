@@ -1,0 +1,24 @@
+{
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\scripts\\evaluate_w5_validation.py",
+    "--handoff",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\received\\DINOv3_LP_run01\\handoff.json",
+    "--protocol",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\received\\DINOv3_LP_run01\\protocol.approved.json",
+    "--checkpoint",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\received\\DINOv3_LP_run01\\best_model.pt",
+    "--crop-predictions",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\received\\DINOv3_LP_run01\\val_crops.jsonl",
+    "--b2-predictions",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\reports\\tv2\\w5_evidence\\attempt_01\\validation_02\\b2_predictions.jsonl",
+    "--output",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\tv2_evaluator"
+  ],
+  "returncode": 0,
+  "source_commit": "8137ef720222784bac859ab953124b4cc293f179",
+  "evaluator_sha256": "033d3c3b3e5f68c6099cb4dcff9d5fdc962bc883bf7db3de0e509548563b7d5b",
+  "module_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21"
+}

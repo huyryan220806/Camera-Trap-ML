@@ -1,0 +1,149 @@
+[
+  {
+    "clientWidth": 1425,
+    "controls": [
+      {
+        "clippedHorizontally": false,
+        "id": "export",
+        "left": 1260.800048828125,
+        "right": 1392.800048828125,
+        "width": 132
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "reviewer",
+        "left": 401.6000061035156,
+        "right": 868.4000244140625,
+        "width": 466.8000183105469
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "image-outcome",
+        "left": 884.4000244140625,
+        "right": 1351.2000427246094,
+        "width": 466.8000183105469
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-box",
+        "left": 401.6000061035156,
+        "right": 868.4000244140625,
+        "width": 466.8000183105469
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-label",
+        "left": 884.4000244140625,
+        "right": 1351.2000427246094,
+        "width": 466.8000183105469
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-note",
+        "left": 401.6000061035156,
+        "right": 1351.2000427246094,
+        "width": 949.6000366210938
+      }
+    ],
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "clientWidth": 375,
+    "controls": [
+      {
+        "clippedHorizontally": false,
+        "id": "export",
+        "left": 323.6000061035156,
+        "right": 363.200008392334,
+        "width": 39.60000228881836
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "reviewer",
+        "left": 33.60000228881836,
+        "right": 341.60000228881836,
+        "width": 308
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "image-outcome",
+        "left": 33.60000228881836,
+        "right": 341.60000228881836,
+        "width": 308
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-box",
+        "left": 33.60000228881836,
+        "right": 341.60000228881836,
+        "width": 308
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-label",
+        "left": 33.60000228881836,
+        "right": 341.60000228881836,
+        "width": 308
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-note",
+        "left": 33.60000228881836,
+        "right": 341.60000228881836,
+        "width": 308
+      }
+    ],
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "clientWidth": 305,
+    "controls": [
+      {
+        "clippedHorizontally": false,
+        "id": "export",
+        "left": 256.20001220703125,
+        "right": 295.8000144958496,
+        "width": 39.60000228881836
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "reviewer",
+        "left": 28.600000381469727,
+        "right": 276.20000648498535,
+        "width": 247.6000061035156
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "image-outcome",
+        "left": 28.600000381469727,
+        "right": 276.20000648498535,
+        "width": 247.6000061035156
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-box",
+        "left": 28.600000381469727,
+        "right": 276.20000648498535,
+        "width": 247.6000061035156
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-label",
+        "left": 28.600000381469727,
+        "right": 276.20000648498535,
+        "width": 247.6000061035156
+      },
+      {
+        "clippedHorizontally": false,
+        "id": "review-note",
+        "left": 28.600000381469727,
+        "right": 276.20000648498535,
+        "width": 247.6000061035156
+      }
+    ],
+    "scrollWidth": 305,
+    "width": 320
+  }
+]

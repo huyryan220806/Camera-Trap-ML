@@ -1,0 +1,16 @@
+{
+  "status": "APPROVED",
+  "receipt": "configs/dinov3_lp_w5.local.protocol.json",
+  "receipt_sha256": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a",
+  "protocol": "configs/tv2_w5_protocol.draft.json",
+  "protocol_sha256": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a",
+  "config": "configs/dinov3_lp_w5.local.json",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "serialized_config_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "previous_draft_sha256": "5aae4ff51130b7fb5cd1da9e6f5fd02a5e39a528d84b5534a445d306d06870ff",
+  "tv2_base_commit": "9f528d241c607be81853a2669d189bd1dd9c4237",
+  "tv3_head": "14d79fd18e2a22bc853cc89559ec9bbb708403da",
+  "tv3_source_commit": "173db631cf74611aca5f95044fe572ab08e81d26",
+  "approved_receipt_commit_locator": "git log -1 -- configs/dinov3_lp_w5.local.protocol.json",
+  "note": "Actual new commit is reported after commit/push; no circular self-commit SHA is invented. TV3 must install exact receipt and gate-check before training."
+}

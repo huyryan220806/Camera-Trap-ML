@@ -1,0 +1,175 @@
+{
+  "metrics": {
+    "accuracy": 0.7466666666666667,
+    "macro_precision": 0.7484190016985997,
+    "macro_recall": 0.7466666666666667,
+    "macro_f1": 0.7454765175212033
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "label": "large_antlered_muntjac",
+      "precision": 0.5652173913043478,
+      "recall": 0.52,
+      "f1": 0.5416666666666666,
+      "support": 75
+    },
+    {
+      "class_id": 1,
+      "label": "annamite_striped_rabbit",
+      "precision": 0.7311827956989247,
+      "recall": 0.9066666666666666,
+      "f1": 0.8095238095238095,
+      "support": 75
+    },
+    {
+      "class_id": 2,
+      "label": "sambar",
+      "precision": 0.6911764705882353,
+      "recall": 0.6266666666666667,
+      "f1": 0.6573426573426573,
+      "support": 75
+    },
+    {
+      "class_id": 3,
+      "label": "chinese_serow",
+      "precision": 0.7945205479452054,
+      "recall": 0.7733333333333333,
+      "f1": 0.7837837837837838,
+      "support": 75
+    },
+    {
+      "class_id": 4,
+      "label": "common_palm_civet",
+      "precision": 0.8142857142857143,
+      "recall": 0.76,
+      "f1": 0.7862068965517242,
+      "support": 75
+    },
+    {
+      "class_id": 5,
+      "label": "masked_palm_civet",
+      "precision": 0.6987951807228916,
+      "recall": 0.7733333333333333,
+      "f1": 0.7341772151898734,
+      "support": 75
+    },
+    {
+      "class_id": 6,
+      "label": "silver_pheasant",
+      "precision": 0.9855072463768116,
+      "recall": 0.9066666666666666,
+      "f1": 0.9444444444444444,
+      "support": 75
+    },
+    {
+      "class_id": 7,
+      "label": "eurasian_wild_pig",
+      "precision": 0.7066666666666667,
+      "recall": 0.7066666666666667,
+      "f1": 0.7066666666666667,
+      "support": 75
+    }
+  ],
+  "confusion_matrix": [
+    [
+      39,
+      5,
+      13,
+      1,
+      2,
+      5,
+      0,
+      10
+    ],
+    [
+      1,
+      68,
+      0,
+      1,
+      4,
+      1,
+      0,
+      0
+    ],
+    [
+      12,
+      2,
+      47,
+      3,
+      1,
+      6,
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      5,
+      58,
+      1,
+      1,
+      0,
+      7
+    ],
+    [
+      1,
+      10,
+      0,
+      4,
+      57,
+      3,
+      0,
+      0
+    ],
+    [
+      5,
+      6,
+      1,
+      1,
+      4,
+      58,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      0,
+      1,
+      68,
+      2
+    ],
+    [
+      9,
+      0,
+      1,
+      3,
+      1,
+      8,
+      0,
+      53
+    ]
+  ],
+  "images": 600,
+  "crops": 680,
+  "experiment_id": "B2_W5_reference_attempt01",
+  "verification": "PASS",
+  "dataset_version": "comparison_v1",
+  "manifest_sha256": {
+    "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+    "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+    "b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+    "b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+  },
+  "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+  "input_sha256": {
+    "checkpoint_validation_metrics.json": "1020a6fd8940627989e39bac77cc62f0f4cc27696d0dbaa39bd90c320c722644",
+    "embedded_config.json": "d3b40c5829c94273d54eb1d649b93a56dbb0a5a4852a62fd79e42ae98e6f21dc",
+    "validation_predictions.json": "1e25ec17c8ca2d883a2d12b09bff834b1cc190ef4e9d62b517b6ff466248cee3",
+    "verification.json": "85e9c7d577e396240be979dac3f554c776277b14fcefabf884d6907ee895d101"
+  }
+}

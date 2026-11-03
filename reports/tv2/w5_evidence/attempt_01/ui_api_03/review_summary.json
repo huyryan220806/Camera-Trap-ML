@@ -1,0 +1,106 @@
+{
+  "status": "API_PASS_BROWSER_BLOCKED",
+  "review_commit": "fef2511b571b23be3d4e2cf6c1ccedd659097b6f",
+  "url": "http://127.0.0.1:8767",
+  "checks": [
+    {
+      "test_case": "API-01 B2 weights and train samples",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-02 cold real B2 no fallback",
+      "status": "PASS",
+      "actual": {
+        "status": "needs_review",
+        "detections": 1
+      }
+    },
+    {
+      "test_case": "API-03 cold top3 and detection IDs",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-04 cold calibrated score wording",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-02 warm real B2 no fallback",
+      "status": "PASS",
+      "actual": {
+        "status": "needs_review",
+        "detections": 1
+      }
+    },
+    {
+      "test_case": "API-03 warm top3 and detection IDs",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-04 warm calibrated score wording",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-05 revision persisted; original immutable",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-06 stale revision rejected",
+      "status": "PASS",
+      "actual": 409
+    },
+    {
+      "test_case": "API-07 labelled synthetic multiple",
+      "status": "PASS",
+      "actual": {
+        "status": "needs_review",
+        "detections": 2
+      }
+    },
+    {
+      "test_case": "API-08 multiple detection IDs preserved",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-07 labelled synthetic empty",
+      "status": "PASS",
+      "actual": {
+        "status": "no_detection",
+        "detections": 0
+      }
+    },
+    {
+      "test_case": "API-09 synthetic detector miss separate revision",
+      "status": "PASS",
+      "actual": null
+    },
+    {
+      "test_case": "API-07 labelled synthetic error",
+      "status": "PASS",
+      "actual": {
+        "status": "error",
+        "detections": 0
+      }
+    },
+    {
+      "test_case": "API-10 corrupt image visible read error",
+      "status": "PASS",
+      "actual": null
+    }
+  ],
+  "browser": {
+    "status": "BLOCKED",
+    "reason": "IAB localhost timeout; native Edge app approval timed out"
+  },
+  "screenshots": [],
+  "browser_export": "BLOCKED (API reload verified; browser download not exercised)",
+  "responsive_1440_390_320": "BLOCKED",
+  "batch_csv": "NOT_IMPLEMENTED_IN_PR8",
+  "test_inference_performed": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "b2_help",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/verify_w4_checkpoints.py",
+    "--help"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+  "started_utc": "2026-10-28T16:50:51.540873+00:00",
+  "seconds": 0.15727350000088336,
+  "exit_code": 0,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\b2_help.log",
+  "log_sha256": "01d7f73f461bfb97117ff87a09894d822edbb57d193b287a4fe14b972deca855"
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "tv3_verifier",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "scripts/verify_tv3_w5_bundle.py",
+      "--output",
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\reports\\tv2\\w5_final_review\\2026-10-30\\attempt_01\\tv3_verifier_rerun.json"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\final_review_20261030_01\\tv3_snapshot",
+    "returncode": 0,
+    "seconds": 0.33076730000175303
+  },
+  {
+    "name": "tv3_dino_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dino_w5.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\final_review_20261030_01\\tv3_snapshot",
+    "returncode": 0,
+    "seconds": 53.19189010000264
+  },
+  {
+    "name": "tv3_compat_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dino_tv2_compat.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\final_review_20261030_01\\tv3_snapshot",
+    "returncode": 0,
+    "seconds": 22.324456999995164
+  },
+  {
+    "name": "tv2_w5_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_w5_validation.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 2.8468241000009584
+  },
+  {
+    "name": "environment",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "scripts/check_environment.py"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 0.2869135000000824
+  },
+  {
+    "name": "contracts",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "scripts/validate_results.py"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 0.4777016000007279
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.000030517578125
+      },
+      {
+        "id": "animal-2",
+        "inside": true,
+        "maxCoordinateError": 0.000030517578125
+      }
+    ],
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.007548522949264225
+      },
+      {
+        "id": "animal-2",
+        "inside": true,
+        "maxCoordinateError": 0.007495117187517053
+      }
+    ],
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.010000038146973369
+      },
+      {
+        "id": "animal-2",
+        "inside": true,
+        "maxCoordinateError": 0.01000385284424965
+      }
+    ],
+    "overflow": false,
+    "width": 320
+  }
+]

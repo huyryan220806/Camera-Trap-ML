@@ -1,0 +1,43 @@
+[
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.008496948242225244
+      }
+    ],
+    "image": {
+      "height": 570,
+      "width": 760,
+      "x": 496.3999938964844,
+      "y": -419.7625122070313
+    },
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.00872058105467488
+      }
+    ],
+    "invalidReviewFields": 1,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "boxes": [
+      {
+        "id": "animal-1",
+        "inside": true,
+        "maxCoordinateError": 0.009221734619156765
+      }
+    ],
+    "invalidReviewFields": 1,
+    "overflow": false,
+    "width": 320
+  }
+]

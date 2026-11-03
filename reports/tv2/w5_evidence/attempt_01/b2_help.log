@@ -1,0 +1,17 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/verify_w4_checkpoints.py --help
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+usage: verify_w4_checkpoints.py [-h] --model {B2,B3} --checkpoint CHECKPOINT
+                                --output OUTPUT [--device {cpu,cuda}]
+
+TV2: verify a delivered B2/B3 checkpoint on frozen Train/Validation only. No
+Test manifest or Test raster is opened by this entry point. Each CLI
+invocation loads one checkpoint in a fresh process and writes a new, non-
+overwritable report.
+
+options:
+  -h, --help            show this help message and exit
+  --model {B2,B3}
+  --checkpoint CHECKPOINT
+  --output OUTPUT
+  --device {cpu,cuda}   Validation verification only; official Test remains
+                        bound to its frozen CPU protocol

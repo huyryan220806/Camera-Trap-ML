@@ -1,0 +1,249 @@
+{
+  "status": "APPROVED",
+  "dataset_version": "comparison_v1",
+  "evaluation_split": "val",
+  "selection_metric": "image_macro_f1",
+  "prediction_tie_rule": "lowest_class_id",
+  "checkpoint_tie_rule": "earliest_epoch",
+  "aggregation": "mean_crop_softmax_then_argmax",
+  "proposed_seeds": [
+    42
+  ],
+  "seeds": [
+    42
+  ],
+  "max_candidate_runs": 1,
+  "experiments": [
+    "DINOv3_LP_run01"
+  ],
+  "dataset": {
+    "train_manifest": "data/processed/comparison_v1/b2/train.jsonl",
+    "validation_manifest": "data/processed/comparison_v1/b2/val.jsonl",
+    "train_parent_images": 2800,
+    "train_gt_crops": 3125,
+    "validation_parent_images": 600,
+    "validation_gt_crops": 680,
+    "test_allowed": false,
+    "ungated_extension_allowed": false
+  },
+  "model": {
+    "preferred": "DINOv3 ViT-S/16",
+    "fallback": null,
+    "backbone_frozen": true,
+    "head": "linear",
+    "num_classes": 8,
+    "selected_model": "DINOv3 ViT-S/16",
+    "fallback_condition": "Disabled for this locked registration; model/config change needs a new reviewed protocol within an explicitly authorized budget",
+    "pooling": "x_norm_clstoken",
+    "pretrained_checkpoint_sha256": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d",
+    "preprocessing": {
+      "id": "dinov3_square256_bilinear_uint8",
+      "color": "RGB",
+      "exif_transpose": false,
+      "padding": 0,
+      "bbox": "Frozen integer bbox_xyxy; right/bottom exclusive",
+      "steps": [
+        "ToImage uint8",
+        "Resize 256x256 bilinear antialias=True",
+        "ToDtype float32 scale=True",
+        "Normalize ImageNet"
+      ],
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "random_augmentation": false
+    },
+    "feature_dimension": 384,
+    "pretrained_source": "facebookresearch/dinov3:LVD-1689M:ViT-S16",
+    "repo_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+    "pretrained_checkpoint_bytes_declared": 86531063,
+    "pretrained_checkpoint_verification": "TV3_PUBLISHED_BINARY_REHASH_AND_HISTORICAL_STRICT_LOAD_SMOKE; TV2_AUDITED_RECEIPTS_AND_SOURCE_NOT_BINARY",
+    "declared_preprocessing": "dinov3_square256_bilinear_uint8"
+  },
+  "training": {
+    "max_epochs": 50,
+    "early_stopping_patience": 7,
+    "effective_batch_parent_images": 32,
+    "crop_microbatch_allowed": true,
+    "crop_microbatch_size": 32,
+    "loss_weighting": "mean_crop_CE_per_parent_then_mean_over_effective_parent_batch",
+    "precision": "FP32",
+    "learning_rate": 0.01,
+    "optimizer": "sgd",
+    "scheduler": "cosine",
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler_t_max_epochs_declared": 50,
+    "drop_last_declared": false,
+    "gradient_accumulation_declared": false,
+    "implementation_verification": "PASS: independently reviewed pinned source and synthetic invariant/compatibility tests; no real DINO training",
+    "crop_microbatch_scope": "Frozen feature extraction only: cache batch32 crops, shard128; head updates use complete32-parent groups, final batch16; no gradient accumulation",
+    "scheduler_t_max_epochs": 50,
+    "scheduler_eta_min": 0.0,
+    "scheduler_step_order": "optimizer updates -> validation and best/early-stop update -> scheduler.step once per completed epoch",
+    "drop_last": false,
+    "gradient_accumulation": false,
+    "nesterov": false,
+    "dampening": 0.0
+  },
+  "planned_device": {
+    "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "vram_gb": 8,
+    "availability_verified": false,
+    "note": "FP32, AMP/TF32 false. Smoke peak is not complete-run peak. TV3 must check current CUDA/assets and gate after installing this receipt; no silent CPU/model/config fallback.",
+    "availability_evidence": "TV3 historical CUDA smoke PASS on RTX4060Laptop; no TV2 GPU replay"
+  },
+  "decision_sources": [
+    {
+      "type": "user_instruction",
+      "date": "2026-10-29",
+      "description": "NHIỆM VỤ: Cập nhật TV2 W5 protocol theo cấu hình TV3 đã thống nhất. User-supplied configuration; approval remains conditional on actual TV2/TV3 evidence."
+    },
+    {
+      "type": "repository_plan",
+      "branch": "feat/metadata-split",
+      "commit": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+      "path": "docs/plans/TV3_W5_W6.md",
+      "git_content_sha256": "7708c9683b0938b728276302f88c15df5e9bac99edb0944a79e3fa0118f5d88a",
+      "description": "Plan supports DINO priority/fallback, frozen backbone, eight classes, frozen data and seed42; it is not an independent TV3 approval of this complete registration."
+    },
+    {
+      "type": "user_instruction",
+      "date": "2026-10-30",
+      "description": "TV2 conditional agreement with the received TV3 hyperparameters; authorize registration DINOv3_LP_run01/APPROVED only after hashes, frozen data and training procedure and actual TV3 approval are verified."
+    },
+    {
+      "type": "user_supplied_tv3_handoff",
+      "date_received_by_tv2": "2026-10-30",
+      "source_files": {
+        "dinov3_lp_w5.local.json": {
+          "source": "dino/dinov3_lp_w5.local.json",
+          "sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+          "bytes": 1063
+        },
+        "backbone_smoke_2026-10-29.json": {
+          "source": "dino/backbone_smoke_2026-10-29.json",
+          "sha256": "52c635be70f6f4a5466a7a816d9fc425036924f350ed9b6ea0a7a99e94549043",
+          "bytes": 3189
+        },
+        "W5_PRETRAINED_READY.md": {
+          "source": "dino/W5_PRETRAINED_READY.md",
+          "sha256": "0c5d7947d1d3aeb8e2421eb380e01a1d88c0d2639644ccc8aee5971a4c2de261",
+          "bytes": 2230
+        }
+      },
+      "note": "Original input bytes retained under dino/ and mirrored in review evidence. Handoff still says awaiting approval; not an independently authenticated TV3 signature."
+    },
+    {
+      "type": "final_user_authorization_and_published_tv3_bundle",
+      "date": "2026-10-30",
+      "tv2_base_commit": "9f528d241c607be81853a2669d189bd1dd9c4237",
+      "tv3_head": "14d79fd18e2a22bc853cc89559ec9bbb708403da",
+      "tv3_source_commit": "173db631cf74611aca5f95044fe572ab08e81d26",
+      "bundle": "reports/tv3/w5_review_response_2026-10-30/",
+      "review_report": "reports/tv2/TV2_W5_FINAL_REVIEW_2026-10-30.md"
+    }
+  ],
+  "pending_before_official_run": [],
+  "reviewers": {
+    "TV2": "User self-identifies as TV2 in this chat; conditional technical consent plus explicit instruction to approve once B1-B3 verified, 2026-10-30",
+    "TV3": "TV3 (user self-identification in this conversation); published attributed confirmation at 14d79fd18e2a22bc853cc89559ec9bbb708403da:reports/tv3/w5_review_response_2026-10-30/TV3_APPROVAL.json",
+    "TV1": null
+  },
+  "approval_evidence": {
+    "TV2": {
+      "status": "APPROVED_AFTER_CONDITIONS_VERIFIED",
+      "source": "Direct user message in this chat, 2026-10-30",
+      "statement": "Tôi xác nhận đồng ý với các hyperparameter TV3 đề xuất, với điều kiện hash, nguồn dữ liệu và quy trình huấn luyện phù hợp protocol.",
+      "conditions_satisfied": true,
+      "final_authorization_source": "Direct TV2 user request attached in this chat; retained as reports/tv2/w5_final_review/2026-10-30/attempt_01/tv2_review_authorization.txt",
+      "authorization_file_sha256": "6e2a04db7b4954def6028143c555caf233177d375f292d49430d274d24974313",
+      "independent_review": "reports/tv2/w5_final_review/2026-10-30/attempt_01/independent_audit.json",
+      "note": "This records the user's authorized conditional decision after verification, not a fabricated human signature or independent identity authentication."
+    },
+    "TV3": {
+      "status": "TV3_CONFIG_APPROVED_PENDING_TV2_PROTOCOL_LOCK",
+      "source_commit": "14d79fd18e2a22bc853cc89559ec9bbb708403da",
+      "path": "reports/tv3/w5_review_response_2026-10-30/TV3_APPROVAL.json",
+      "sha256": "4a9de9f794b3619cdc95a63d9d706f3aa53d79d6ee39475497e912aa8208cfdf",
+      "statement": "Tôi, TV3, chấp thuận dùng configs/dinov3_lp_w5.local.json, SHA-256 e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce, cho experiment DINOv3_LP_run01, tối đa một lượt training chính thức. Chỉ bắt đầu sau khi TV2 khóa protocol APPROVED.",
+      "authentication_limit": "This receipt is not a digital signature or independent identity verification. Git publication provides a reviewable repository record."
+    },
+    "effective_official_approval": true,
+    "reason": "B1 raw/serialized roles independently reproduced; B2 published actual attributed TV3 consent; B3 exact source/artifacts/data and historical pretrained/GPU receipts reviewed and software checks passed",
+    "identity_authentication": "Attributed user confirmations and repository provenance; not digital signatures"
+  },
+  "note": "APPROVED on 2026-10-30 under TV2 user's explicit conditional authorization after B1-B3 verified. One DINOv3_LP_run01 only; seed42/50epochs/patience7/32parents/FP32. TV1 reviewer remains null. W5 PARTIAL until genuine DINO handoff and TV2 validation/reload; no W6 approval.",
+  "proposed_experiment_id": "DINOv3_LP_run01",
+  "feature_cache": {
+    "batch_size_crops_declared": 32,
+    "shard_size_declared": 128,
+    "note": "Fixed extraction microbatch32 crops independent of head batch32 parents. No silent OOM reduction/config change; stop and re-review if required.",
+    "batch_size_crops": 32,
+    "shard_size_crops": 128
+  },
+  "pretrained_handoff": {
+    "evidence_directory": "reports/tv2/w5_final_review/2026-10-30/attempt_01",
+    "received_config_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+    "smoke_recorded_config_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+    "json_values_match": true,
+    "byte_hash_matches": false,
+    "canonical_training_config_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+    "canonical_training_config_locked": true,
+    "reported_smoke_status": "PASS",
+    "tv2_smoke_verification": "HISTORICAL_TV3_REPORT_LINKED_TO_EXACT_SOURCE; NO_TV2_GPU_REPLAY",
+    "reported_gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "reported_vram_bytes": 8585216000,
+    "reported_features": [
+      32,
+      384
+    ],
+    "reported_peak_cuda_allocated_bytes": 299583488,
+    "reported_peak_cuda_reserved_bytes": 402653184,
+    "reported_forward_seconds": 4.6320425000003524,
+    "smoke_verified_source_images_counter": 0,
+    "train_val_metadata_hashes_match": true,
+    "training_code_sha256_declared": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+    "training_code_received": true,
+    "full_data_preflight_received": true,
+    "hash_roles_resolved": true,
+    "hash_explanation": "Different inputs: raw file bytes vs digest(sorted JSON with default separators). Both are correct and bind identical configuration values; historical smoke unchanged.",
+    "canonical_training_config_sha256_role": "raw file bytes",
+    "serialized_config_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+    "tv3_source_commit": "173db631cf74611aca5f95044fe572ab08e81d26",
+    "tv3_bundle_commit": "14d79fd18e2a22bc853cc89559ec9bbb708403da",
+    "independent_train_sample_byte_hashes": 32,
+    "limitations": [
+      "Weights/vendor unavailable at TV2: no independent binary rehash or real strict load",
+      "Strict load inferred from historical successful smoke and exact source strict=True; no separate missing/unexpected-key log",
+      "32 smoke crop IDs reconstructed from frozen recipe; sample byte hashes checked today, RGB hashes only matched to manifest",
+      "Full3400 pixel preflight is historical; current audit rechecks metadata and32 train byte hashes, no full pixel decode"
+    ]
+  },
+  "config_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "canonical_config_path": "configs/dinov3_lp_w5.local.json",
+  "config_hash_roles": {
+    "config_file_sha256": "SHA-256 of exact Git file bytes",
+    "config_sha256": "dino_probe.digest: sorted JSON, default separators, UTF-8, no trailing newline"
+  },
+  "budget_reference": "TV2 user authorization and TV3_APPROVAL.json: one official DINOv3_LP_run01, seed42; no additional candidate/model/seed",
+  "approval_date": "2026-10-30",
+  "source_lock": {
+    "tv3_source_commit": "173db631cf74611aca5f95044fe572ab08e81d26",
+    "tv3_bundle_commit": "14d79fd18e2a22bc853cc89559ec9bbb708403da",
+    "files_sha256": {
+      "scripts/dino_w5.py": "f0472daca1d1d29ddccc770e8ed396dbfbd19f4728d3c619472d87892794e617",
+      "src/training/dino_handoff.py": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "src/training/dino_probe.py": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988"
+    },
+    "policy": "TV3 applies exact receipt/config on its own branch, checks assets and validator before official training. Binding must record actual execution commit and receipt hash. Any source/config change requires review; no automatic fallback."
+  }
+}

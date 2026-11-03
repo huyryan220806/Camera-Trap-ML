@@ -1,0 +1,83 @@
+[
+  {
+    "name": "tv2_w5_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_w5_validation.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 21.39825369999744
+  },
+  {
+    "name": "tv3_dino_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dino_w5.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\tv3_source",
+    "returncode": 0,
+    "seconds": 26.222117299970705
+  },
+  {
+    "name": "tv3_compat_tests",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_dino_tv2_compat.py",
+      "-v"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\acceptance_20261102\\attempt_01\\tv3_source",
+    "returncode": 0,
+    "seconds": 23.391520200006198
+  },
+  {
+    "name": "environment",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "scripts/check_environment.py"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 0.26364429999375716
+  },
+  {
+    "name": "contracts",
+    "command": [
+      "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "scripts/validate_results.py"
+    ],
+    "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+    "returncode": 0,
+    "seconds": 0.5877743000164628
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "name": "ui_api_02",
+  "command": [
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+    "-u",
+    "-X",
+    "utf8",
+    "scripts/review_tv4_w5.py",
+    "--url",
+    "http://127.0.0.1:8767",
+    "--snapshot",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\upstream\\tv4",
+    "--output",
+    "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w5\\attempt_01\\ui_api_02"
+  ],
+  "cwd": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an",
+  "started_utc": "2026-10-28T17:21:51.050139+00:00",
+  "seconds": 0.29704209999908926,
+  "exit_code": 1,
+  "git_commit": "60516f51fccbb85e6e266a022d94ea90d2239a11",
+  "interpreter": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\w2_final_handoff\\tv4_env\\Scripts\\python.exe",
+  "log": "outputs\\tv2_w5\\attempt_01\\ui_api_02.log",
+  "log_sha256": "4a2ec11a85ac54fa9b71eb7539551eb80a28552698e1df0794b3cd7ea3f76810"
+}

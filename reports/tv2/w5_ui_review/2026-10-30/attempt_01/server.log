@@ -1,0 +1,48 @@
+Exact PR8 review server http://127.0.0.1:8768; new isolated QA journals
+127.0.0.1 - - [30/Oct/2026 12:25:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:00] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:00] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:00] "GET /review.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:00] "GET /vendor/lucide.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:01] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [30/Oct/2026 12:25:01] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:25:01] "GET /api/sample/0 HTTP/1.1" 200 -
+PyTorch reports 0 available CUDA devices (load_detector)
+D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Lib\site-packages\yolov5\utils\general.py:31: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources as pkg
+Loading PT detector with compatibility mode classic
+Loaded image size 1280 from model metadata
+Using model stride: 64
+PTDetector using device cpu
+Fusing layers... 
+Fusing layers... 
+Model summary: 733 layers, 140054656 parameters, 0 gradients, 208.8 GFLOPs
+Model summary: 733 layers, 140054656 parameters, 0 gradients, 208.8 GFLOPs
+Using user-supplied image size 1280
+127.0.0.1 - - [30/Oct/2026 12:26:07] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:26:47] "POST /api/review HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:28:21] "GET /api/review/867e6b07-2574-4988-b6cc-526e29f57c21 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:36:20] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:36:52] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:37:06] "POST /api/review HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:40:58] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:42:00] "POST /api/analyze HTTP/1.1" 200 -
+Detector failed (mode=mock)
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 152, in analyze
+    result['detections'], result['ignored_non_animals'] = adapt_detections(raw, image.width, image.height, threshold)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 61, in adapt_detections
+    raise ValueError('Detector failed or returned no detections array')
+ValueError: Detector failed or returned no detections array
+Detector failed (mode=mock)
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 152, in analyze
+    result['detections'], result['ignored_non_animals'] = adapt_detections(raw, image.width, image.height, threshold)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\upstream\tv4\src\demo\detector.py", line 61, in adapt_detections
+    raise ValueError('Detector failed or returned no detections array')
+ValueError: Detector failed or returned no detections array
+127.0.0.1 - - [30/Oct/2026 12:42:15] "GET /api/sample/0 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:42:15] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 12:42:42] "POST /api/analyze HTTP/1.1" 200 -

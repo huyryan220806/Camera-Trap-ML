@@ -1,0 +1,12 @@
+command: "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\w2_final_handoff\tv4_env\Scripts\python.exe" -u -X utf8 scripts/evaluate_w5_validation.py --handoff "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\configs\tv2_w5_protocol.draft.json" --protocol "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\configs\tv2_w5_protocol.draft.json" --checkpoint "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\experiments\B2_run01\checkpoints\best_model.pt" --crop-predictions "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\no_candidate_predictions.jsonl" --output "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\outputs\tv2_w5\attempt_01\blocked_candidate"
+cwd: D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\evaluate_w5_validation.py", line 64, in <module>
+    main()
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\scripts\evaluate_w5_validation.py", line 30, in main
+    verify_handoff(handoff, args.checkpoint, hashes, protocol, args.handoff.resolve().parent)
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\src\evaluation\w5_validation.py", line 161, in verify_handoff
+    require(protocol.get("status") == "APPROVED" and protocol.get("reviewers", {}).get("TV3"),
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\src\evaluation\w5_validation.py", line 24, in require
+    raise ValueError(message)
+ValueError: BLOCKED: W5 protocol needs TV3 approval

@@ -1,0 +1,47 @@
+{
+  "commit": "fef2511b571b23be3d4e2cf6c1ccedd659097b6f",
+  "files": {
+    "app/index.html": {
+      "git_sha256": "f9939e992282bb437dea2358df6ddd3e8e1130e2a504a433084a6e3bf42907cb",
+      "archive_sha256": "787a6df1f6f67b0245be7c0e261981b3d3a9491cbb952a96fffd75e3c5d80f43"
+    },
+    "app/app.js": {
+      "git_sha256": "8fa277b9cdac62ae961d011d31794f8c1013810a7717d3002275fd822e73f2fa",
+      "archive_sha256": "b476cb9aff1b8aa171ad2ce9c1f5cdc93f50c0c86e5e5d8dda16fddbd7127af0"
+    },
+    "app/review.js": {
+      "git_sha256": "c061c36f841a85bbeafb7b44cfe0b733242144276bb8b00e8c0c76e390dbf5bc",
+      "archive_sha256": "37c7b421000c5533ebd4e109fc5cecdcbf1f06f58a5bad1e3abd037f112cbb8a"
+    },
+    "app/style.css": {
+      "git_sha256": "b80a4410b57804b0753423dd08b722e476ebb4d89d8b181431133dc1f0977fa0",
+      "archive_sha256": "875a06c3c16bd2c6c422493f1e488d27a8e3ac249a7850dd4931ff7108721f3b"
+    },
+    "scripts/run_demo.py": {
+      "git_sha256": "e48db2c6d1353149c8f6781e475cb2f27e08c7119145dffac7c655ef817f39c1",
+      "archive_sha256": "e48db2c6d1353149c8f6781e475cb2f27e08c7119145dffac7c655ef817f39c1"
+    },
+    "src/demo/detector.py": {
+      "git_sha256": "fd040826b69c786f016bba47fd1471642b9eadb9f0a87745d97b8ce3e43ea6b9",
+      "archive_sha256": "fd040826b69c786f016bba47fd1471642b9eadb9f0a87745d97b8ce3e43ea6b9"
+    },
+    "src/demo/classifier.py": {
+      "git_sha256": "ade16473d9cf8356acc86642642eb6448e3660754cb14e26b43eac5cbb08f3e1",
+      "archive_sha256": "ade16473d9cf8356acc86642642eb6448e3660754cb14e26b43eac5cbb08f3e1"
+    },
+    "src/demo/inference.py": {
+      "git_sha256": "84141e79775664cc038835ff657b894943224f39aec3d3af30c0fd6cf912922d",
+      "archive_sha256": "84141e79775664cc038835ff657b894943224f39aec3d3af30c0fd6cf912922d"
+    },
+    "src/demo/review.py": {
+      "git_sha256": "5115c88dff9e7b4ef749e6c98f8d049c9ee1bc3c3860a5a6844f9807913e6094",
+      "archive_sha256": "5115c88dff9e7b4ef749e6c98f8d049c9ee1bc3c3860a5a6844f9807913e6094"
+    },
+    "configs/demo_classifiers.json": {
+      "git_sha256": "ac2ceba8ba263eb7c83fe83c11e08876f8855373804d5ab28cb86e3e74dbd52a",
+      "archive_sha256": "ac2ceba8ba263eb7c83fe83c11e08876f8855373804d5ab28cb86e3e74dbd52a"
+    }
+  },
+  "B2_hash": "PASS",
+  "session_store": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w5\\ui_review_20261030_01\\sessions"
+}

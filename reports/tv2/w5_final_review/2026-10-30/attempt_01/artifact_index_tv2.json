@@ -1,0 +1,160 @@
+{
+  "scope": "New final-review deliverables; hashes exact local bytes. Markdown outside raw evidence may be Git line-ending normalized; verify accordingly. Index excludes itself.",
+  "files": [
+    {
+      "path": "configs/tv2_w5_protocol.draft.json",
+      "bytes": 13149,
+      "sha256": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a"
+    },
+    {
+      "path": "configs/dinov3_lp_w5.local.json",
+      "bytes": 1063,
+      "sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce"
+    },
+    {
+      "path": "configs/dinov3_lp_w5.local.protocol.json",
+      "bytes": 13149,
+      "sha256": "e47b96f5e576c234e2e48143c7c008df79ca62156cebf6b2bf65c0119a6f133a"
+    },
+    {
+      "path": "reports/tv2/W5_PROTOCOL.md",
+      "bytes": 9213,
+      "sha256": "d442b7a757c37c199d563df5673ba0d7e459e6c607c7898fc6725041ebaaff93"
+    },
+    {
+      "path": "reports/tv2/TV2_W5_FINAL_REVIEW_2026-10-30.md",
+      "bytes": 11911,
+      "sha256": "5a21ae00bef99ec4c702758b37d627b74a6d319e4bdacf1032aea7a4fd01117b"
+    },
+    {
+      "path": "reports/tv2/TV2_W5.md",
+      "bytes": 16901,
+      "sha256": "4c8cb98c9d0a638fd87e786614ad1f28980f24a606e8baf5a42b62398c5fb657"
+    },
+    {
+      "path": "reports/tv2/W5_DRAFT_PR_2026-10-30.md",
+      "bytes": 2836,
+      "sha256": "0e3f6ff6bff001ee16e5d42bdd929f714290bd44c4d4c2d6e26f4f264a242ce2"
+    },
+    {
+      "path": "docs/handoff_tv2_w5.md",
+      "bytes": 6495,
+      "sha256": "ddc3b0d46accfbd2cd7a5ab8f8489a4a005c1ba1490299ec34bccf2c269c4b0a"
+    },
+    {
+      "path": "docs/progress_tv2_w5_w6.md",
+      "bytes": 17686,
+      "sha256": "c10a6160fab1fb585c6d4d4e903c15afce5e62f37b9430ddae6b96dab45e601e"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/.gitattributes",
+      "bytes": 130,
+      "sha256": "fbb378fc0a1a47ed0f307b968643eb020bb29b4ec05221e65041fbea0f755212"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/approval_receipt_integrity.json",
+      "bytes": 1096,
+      "sha256": "c875e34d07fca942d1dd1dfead5f8b9e0597ecf95cac274917f1f77948d03954"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/approved_gate_check.json",
+      "bytes": 1110,
+      "sha256": "261145e64ed91e1df3db88391e8256fe45733bae28f2495bef67a4f52e682541"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/artifact_index.json",
+      "bytes": 9651,
+      "sha256": "5c772da14f3e37aec92ae9bf2f7f8592082d54c4edf4d31da5a70b931c0ec7de"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/checks.json",
+      "bytes": 2852,
+      "sha256": "2f2b490296785011c61d126b9b76d7262d9345e4a8132610ea79afc7ee7549b4"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/config.digest-input.txt",
+      "bytes": 897,
+      "sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/contracts.log",
+      "bytes": 130,
+      "sha256": "e9b6e22ef45270b72e4fc5b69a254e9fb3942a0f2ccaeabdf211bbd050a44f1b"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/environment.log",
+      "bytes": 424,
+      "sha256": "7f394b8f46525429d4e64b938b341f4773a33a482ccf10526e0686e1b59f99fd"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/final_integrity.json",
+      "bytes": 1141,
+      "sha256": "3efc65e3b2a595212eb47cb0e21a0177b67c34ee3b6466f8004e2f41d4adfcf4"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/independent_audit.json",
+      "bytes": 19456,
+      "sha256": "5ea2de7c47c0035dae83454ca26c790683923c2cd2340ea395d3742ad37a584c"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/previous_protocol.draft.json",
+      "bytes": 7757,
+      "sha256": "5aae4ff51130b7fb5cd1da9e6f5fd02a5e39a528d84b5534a445d306d06870ff"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/previous_W5_PROTOCOL.md",
+      "bytes": 16975,
+      "sha256": "1d3e8ca9af6a71fc10d8abc032be3ab4d4c2915618d349a2442645d8cc141169"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/protected_before.json",
+      "bytes": 24171,
+      "sha256": "b3e401af4e4532920befaa6b20397aed03d74ea2d7771fa02f7249fdb06c305f"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/publication.json",
+      "bytes": 1029,
+      "sha256": "e9717a82a79f90d5147e7045b4f63826f82f3454dd3c7470da75f8f75ce15d88"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv2_review_authorization.txt",
+      "bytes": 6175,
+      "sha256": "6e2a04db7b4954def6028143c555caf233177d375f292d49430d274d24974313"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv2_w5_tests.log",
+      "bytes": 3563,
+      "sha256": "f02baaa56b44edae65820938af8942d3e10c392ad4fef4d394cce1d3c4c5bc11"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/TV3_APPROVAL.json",
+      "bytes": 1606,
+      "sha256": "4a9de9f794b3619cdc95a63d9d706f3aa53d79d6ee39475497e912aa8208cfdf"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv3_compat_tests.log",
+      "bytes": 921,
+      "sha256": "cb7d98c8b1f960fb16a03ba8f42c8092dec741a5f2ce8639d4bac2941399195b"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv3_dino_tests.log",
+      "bytes": 1680,
+      "sha256": "76a010f8817676e40e15058ab1992c487c32df2fe9eb535a13766f661c789ee2"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv3_verifier.log",
+      "bytes": 291,
+      "sha256": "3e320d81cc946d7eacb796a5edfadba4d7446e81cbf0730cb59c289af56c719e"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/tv3_verifier_rerun.json",
+      "bytes": 21972,
+      "sha256": "276304fca4e2f974edf466f037f2e8dc7cbaa46e5900b393c19f978525777521"
+    },
+    {
+      "path": "reports/tv2/w5_final_review/2026-10-30/attempt_01/verification.json",
+      "bytes": 25568,
+      "sha256": "be6ed1df16cba60f221d86b0010e32bc0690a41839afa0d00edba6b3031063bc"
+    }
+  ]
+}

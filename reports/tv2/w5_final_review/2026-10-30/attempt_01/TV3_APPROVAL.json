@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "actor": "TV3 (user self-identification in this conversation)",
+  "status": "TV3_CONFIG_APPROVED_PENDING_TV2_PROTOCOL_LOCK",
+  "experiment_id": "DINOv3_LP_run01",
+  "config_path": "configs/dinov3_lp_w5.local.json",
+  "config_file_sha256": "e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce",
+  "config_canonical_sha256": "32071801dc6eb6408310e6393f73acda9bd9902303236836e4bf8d8a4cb6d6e8",
+  "max_official_training_runs": 1,
+  "training_condition": "TV2 must verify B1-B3 and lock protocol APPROVED before official training.",
+  "approved_statement": "Tôi, TV3, chấp thuận dùng configs/dinov3_lp_w5.local.json, SHA-256 e9303ba38aeaec37fba2e7dd1829829a5a128abde8beb75c916b6cae62822dce, cho experiment DINOv3_LP_run01, tối đa một lượt training chính thức. Chỉ bắt đầu sau khi TV2 khóa protocol APPROVED.",
+  "evidence": {
+    "kind": "Human confirmation in the current chat, retained here as an attributed transcript receipt",
+    "context": "Assistant supplied the exact B2 statement above and asked the user to confirm sending it and authorize completion/commit/push.",
+    "verbatim_user_confirmation": "Đã gửi B2, hãy hoàn thiện hồ sơ và commit/push lên feat/crop-classifier",
+    "external_message_delivery": "Reported by user; assistant did not access or send the external message.",
+    "authentication_limit": "This receipt is not a digital signature or independent identity verification. Git publication provides a reviewable repository record."
+  },
+  "tv2_final_approval": false,
+  "training_authorized_now": false
+}

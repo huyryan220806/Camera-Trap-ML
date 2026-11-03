@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-28T17:35:01.386607+00:00",
+  "implementation_commit": "0f43b5e43afe7abf770026c67cbd5f1bdb2c7add",
+  "protected_original_files": 512,
+  "protected_changed": [],
+  "preexisting_user_files_changed": [],
+  "frozen_data_and_checkpoints_unchanged": true,
+  "images": 600,
+  "crops": 680,
+  "metrics": {
+    "accuracy": 0.7466666666666667,
+    "macro_precision": 0.7484190016985997,
+    "macro_recall": 0.7466666666666667,
+    "macro_f1": 0.7454765175212033
+  },
+  "evidence_index_verified": true,
+  "sensitive_token_patterns_found": [],
+  "no_images_models_or_temp_files_in_commit": true,
+  "review_pending": true
+}

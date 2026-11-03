@@ -1,0 +1,35 @@
+{
+  "review_commit": "fef2511b571b23be3d4e2cf6c1ccedd659097b6f",
+  "status": "FUNCTIONAL_UI_PASS_WITH_P2_ACCESSIBILITY_FINDING",
+  "url": "http://127.0.0.1:8768",
+  "real_model": "MegaDetector MDv5a.0.1 + B2",
+  "source_split": "train",
+  "cases": {
+    "real_inference_top3": "PASS",
+    "responsive_1440_390_320": "PASS",
+    "multiple_box_resize": "PASS",
+    "result_row_to_box_by_detection_id": "PASS",
+    "box_to_result_row": "PASS",
+    "low_score_filter_two_boxes": "PASS",
+    "review_draft_dirty_state": "PASS",
+    "review_save_original_immutable": "PASS",
+    "reload_discards_unsaved_draft": "PASS",
+    "browser_export_matches_saved_session": "PASS",
+    "valid_file_upload_train": "PASS",
+    "corrupt_upload_read_error": "PASS",
+    "synthetic_no_detection": "PASS",
+    "synthetic_detector_miss_revision_separate": "PASS",
+    "synthetic_detector_error": "PASS"
+  },
+  "finding": {
+    "severity": "P2",
+    "owner": "TV4",
+    "id": "UI-A11Y-01",
+    "description": "Mobile export icon has no accessible name: hidden label span, no aria-label/title; AX shows unnamed export button.",
+    "evidence": "mobile_export_accessibility.json"
+  },
+  "software_qa_corrections_are_not_expert_ground_truth": true,
+  "initial_invalidReviewFields_counter_note": "Includes intentionally small checkbox; corrected audit excludes checkboxes and all review fields fit viewport.",
+  "no_DINO_or_official_Test_inference": true,
+  "no_PR_approval_or_merge": true
+}

@@ -1,0 +1,41 @@
+{
+  "actual_receipt": "PASS",
+  "mutations": [
+    {
+      "field": "status",
+      "result": "REJECTED",
+      "message": "W5 protocol needs actual TV2/TV3 agreement (APPROVED receipt)"
+    },
+    {
+      "field": "config_sha256",
+      "result": "REJECTED",
+      "message": "Agreement does not bind this configuration"
+    },
+    {
+      "field": "experiments",
+      "result": "REJECTED",
+      "message": "Missing/invalid experiment registration or budget"
+    },
+    {
+      "field": "max_candidate_runs",
+      "result": "REJECTED",
+      "message": "Missing/invalid experiment registration or budget"
+    },
+    {
+      "field": "reviewers",
+      "result": "REJECTED",
+      "message": "W5 protocol needs actual TV2/TV3 agreement (APPROVED receipt)"
+    },
+    {
+      "field": "seeds",
+      "result": "REJECTED",
+      "message": "Unregistered seed"
+    },
+    {
+      "field": "evaluation_split",
+      "result": "REJECTED",
+      "message": "Unregistered policy: evaluation_split"
+    }
+  ],
+  "tv2_gate_approved_but_absent_candidate": "REJECTED: BLOCKED: candidate budget/registration missing"
+}

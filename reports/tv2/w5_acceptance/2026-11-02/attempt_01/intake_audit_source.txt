@@ -1,0 +1,180 @@
+from pathlib import Path, PurePosixPath
+import collections, hashlib, importlib.util, io, json, math, os, re, shutil, stat, subprocess, sys, tarfile, zipfile
+
+ROOT=Path(__file__).resolve().parents[4]
+WORK=Path(__file__).resolve().parent
+EVID=ROOT/'reports/tv2/w5_acceptance/2026-11-02/attempt_01'
+REPORT='5734d38c3af2fe052cf04c4c33d940e8f186306d'
+TRAIN='aa64fd7661827af78ddec4e3e0155b2b9c87b9e2'
+BASE='8137ef720222784bac859ab953124b4cc293f179'
+CHECKPOINT='acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3'
+ZIP=ROOT/'dino/DINOv3_LP_run01_handoff_2026-11-02.zip'
+RUN=WORK/'received/DINOv3_LP_run01'
+SNAP=WORK/'tv3_source'
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def read(p): return json.loads(Path(p).read_bytes())
+def jsonl(p): return [json.loads(x) for x in Path(p).read_text(encoding='utf-8').splitlines() if x.strip()]
+def write(p,v):
+ p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x',encoding='utf-8',newline='\n') as f: json.dump(v,f,indent=2,ensure_ascii=False,allow_nan=False);f.write('\n')
+def git(*a): return subprocess.check_output(['git','-C',str(ROOT),*a])
+def same(a,b,tol=1e-10):
+ if isinstance(a,(int,float)) and not isinstance(a,bool): return isinstance(b,(int,float)) and math.isclose(a,b,abs_tol=tol,rel_tol=0)
+ if isinstance(a,dict): return isinstance(b,dict) and a.keys()==b.keys() and all(same(v,b[k],tol) for k,v in a.items())
+ if isinstance(a,list): return isinstance(b,list) and len(a)==len(b) and all(same(x,y,tol) for x,y in zip(a,b))
+ return a==b
+
+def receive():
+ EVID.mkdir(parents=True,exist_ok=False)
+ assert git('branch','--show-current').decode().strip()=='feat/baseline'
+ assert git('rev-parse','HEAD').decode().strip()==BASE
+ subprocess.run(['git','-C',str(ROOT),'merge-base','--is-ancestor',TRAIN,REPORT],check=True)
+ for rel,expected in read(ROOT/'configs/dinov3_lp_w5.local.protocol.json')['source_lock']['files_sha256'].items():
+  assert hashlib.sha256(git('show',TRAIN+':'+rel)).hexdigest()==expected,rel
+ protected={}
+ for rel in git('-c','core.quotePath=false','ls-files').decode('utf-8').splitlines():
+  # No Test raster/label access: source/config/docs/reports, not data releases.
+  if rel.startswith(('configs/','docs/','reports/','src/','scripts/','tests/','contracts/')) and (ROOT/rel).is_file(): protected[rel]=sha(ROOT/rel)
+ for rel in ['experiments/B0_run01/checkpoints/best_model.pth','experiments/B1_run01/checkpoints/best_model.pth','experiments/B2_run01/checkpoints/best_model.pt','experiments/B3_run01/checkpoints/best_model.pt']:
+  protected[rel]=sha(ROOT/rel)
+ for p in (ROOT/'dino').iterdir():
+  if p.is_file(): protected[p.relative_to(ROOT).as_posix()]=sha(p)
+ write(EVID/'protected_before.json',protected)
+ entries=[];names=set();case_names=set()
+ with zipfile.ZipFile(ZIP) as z:
+  assert len(z.infolist())<1000 and sum(i.file_size for i in z.infolist())<500_000_000
+  for i in z.infolist():
+   n=i.filename;p=PurePosixPath(n)
+   assert not p.is_absolute() and len(p.parts)>=2 and p.parts[0]=='DINOv3_LP_run01'
+   assert all(s not in ('','.','..') and ':' not in s and not s.endswith((' ','.')) for s in p.parts)
+   assert '\\' not in n and '\x00' not in n and not (i.flag_bits&1)
+   assert not stat.S_ISLNK(i.external_attr>>16) and not i.is_dir()
+   assert n not in names and n.casefold() not in case_names
+   names.add(n);case_names.add(n.casefold())
+  assert z.testzip() is None
+  index=json.loads(z.read('DINOv3_LP_run01/artifact_index.json'))
+  indexed={v['path']:v for v in index['files']};assert len(indexed)==len(index['files'])
+  assert {n.split('/',1)[1] for n in names}==set(indexed)|{'artifact_index.json'}
+  assert (WORK/'received').resolve().is_relative_to(ROOT.resolve())
+  (WORK/'received').mkdir(exist_ok=False)
+  for i in z.infolist():
+   raw=z.read(i);rel=i.filename.split('/',1)[1];h=hashlib.sha256(raw).hexdigest()
+   if rel in indexed: assert h==indexed[rel]['sha256'] and len(raw)==indexed[rel]['bytes'],rel
+   target=(WORK/'received'/i.filename).resolve();assert target.is_relative_to((WORK/'received').resolve())
+   target.parent.mkdir(parents=True,exist_ok=True)
+   with target.open('xb') as f:f.write(raw)
+   git_match=None
+   if not rel.endswith('.pt'):
+    blob=git('show',REPORT+':reports/tv3/w5_final/DINOv3_LP_run01/'+rel)
+    git_match=raw==blob
+    # Report markdown may be line-ending normalized; record that distinction.
+    assert git_match or (rel.endswith('.md') and raw.replace(b'\r\n',b'\n')==blob.replace(b'\r\n',b'\n')),rel
+   entries.append(dict(path=rel,bytes=len(raw),sha256=h,crc32=f'{i.CRC:08x}',git_report_exact_bytes=git_match))
+ assert sha(RUN/'best_model.pt')==CHECKPOINT
+ receipt=(ROOT/'configs/dinov3_lp_w5.local.protocol.json').read_bytes()
+ assert (RUN/'protocol.approved.json').read_bytes()==receipt==git('show',BASE+':configs/dinov3_lp_w5.local.protocol.json')
+ assert (RUN/'config.json').read_bytes()==(ROOT/'configs/dinov3_lp_w5.local.json').read_bytes()
+ b=read(RUN/'binding.json');p=read(RUN/'protocol.approved.json');c=read(RUN/'config.json')
+ assert b['config']==c and b['protocol']['content']==p and b['protocol']['sha256']==sha(RUN/'protocol.approved.json')
+ assert b['code_commit']==TRAIN and sha(RUN/'config.json')==p['config_file_sha256']
+ for key,rel in [('code_sha256','src/training/dino_probe.py'),('cli_sha256','scripts/dino_w5.py'),('handoff_code_sha256','src/training/dino_handoff.py')]:
+  assert b[key]==hashlib.sha256(git('show',TRAIN+':'+rel)).hexdigest()
+ assert read(RUN/'class_map.json')==b['class_map']==read(ROOT/'data/processed/comparison_v1/class_map.json')
+ assert b['data']['provenance_sha256']==sha(ROOT/'data/processed/comparison_v1/provenance.json')
+ for rel,h in b['data']['files'].items(): assert sha(ROOT/'data/processed/comparison_v1'/rel)==h
+ SNAP.mkdir(exist_ok=False)
+ raw=git('archive',TRAIN,'src','scripts','configs','tests','contracts','requirements-tv3-w5.txt')
+ with tarfile.open(fileobj=io.BytesIO(raw)) as tar:tar.extractall(SNAP,filter='data')
+ # Only train/val metadata used by software tests; no Test assets are copied.
+ for rel in ['provenance.json',*b['data']['files']]:
+  dest=SNAP/'data/processed/comparison_v1'/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+  dest.write_bytes((ROOT/'data/processed/comparison_v1'/rel).read_bytes())
+ for rel in ['artifact_index.json','delivery_summary.json','binding.json','handoff.json','preprocessing.json','train_log.json','status.json','reload_20261102T065157804272Z.json']:
+  target=EVID/'received_metadata'/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(RUN/rel,target)
+ write(EVID/'intake.json',dict(status='PASS',zip_path=ZIP.relative_to(ROOT).as_posix(),zip_sha256=sha(ZIP),zip_bytes=ZIP.stat().st_size,
+  crc='PASS',path_safety='PASS',duplicates='NONE',payload_index_verified=len(indexed),entries=entries,
+  checkpoint_sha256=CHECKPOINT,checkpoint_bytes=(RUN/'best_model.pt').stat().st_size,
+  tv3_report_commit=REPORT,training_commit=TRAIN,tv2_protocol_commit=BASE,source_lock='MATCH',
+  config_protocol_binding_data='MATCH',original_artifacts_modified=False))
+ print('Intake PASS',len(entries),'ZIP entries',len(indexed),'payload files',flush=True)
+
+def audit():
+ sys.path.insert(0,str(ROOT))
+ from src.evaluation import w5_validation as w
+ parents,crops,hashes=w.load_frozen_validation(ROOT)
+ handoff=read(RUN/'handoff.json');protocol=read(RUN/'protocol.approved.json')
+ w.verify_handoff(handoff,RUN/'best_model.pt',hashes,protocol,RUN)
+ crop_pred=jsonl(RUN/'val_crops.jsonl');image_pred=jsonl(RUN/'val_images.jsonl')
+ derived=w.aggregate(crop_pred,parents,crops,'DINOv3_LP_run01',CHECKPOINT)
+ report=w.audit_predictions(derived,parents,crops,'DINOv3_LP_run01',CHECKPOINT)
+ submitted=w.audit_predictions(image_pred,parents,crops,'DINOv3_LP_run01',CHECKPOINT)
+ assert report==submitted
+ by_id={x['image_id']:x for x in image_pred}
+ maxmean=max(abs(x-y) for p in derived for x,y in zip(p['class_scores'],by_id[p['image_id']]['class_scores']))
+ assert maxmean<=1e-10
+ import jsonschema
+ for rows,schema in [(crop_pred,'w5_crop_prediction.schema.json'),(image_pred,'w5_image_prediction.schema.json')]:
+  validator=jsonschema.Draft202012Validator(read(ROOT/'contracts'/schema))
+  for row in rows:validator.validate(row)
+ validation=read(RUN/'validation.json')
+ assert len(validation['crop_predictions'])==680 and len(validation['image_predictions'])==600
+ detailed={x['crop_id']:x for x in validation['crop_predictions']}
+ for row in crop_pred:
+  r=detailed[row['crop_id']];assert r['image_id']==row['image_id'] and r['y_true']==row['ground_truth']
+  assert r['probabilities']==row['class_scores']
+  assert all(math.isfinite(v) for v in r['logits'])
+  # The source emits FP32 torch softmax; independent FP64 softmax is diagnostic,
+  # not a replacement for the actual emitted softmax vectors near ties.
+ assert same(report['metrics'],handoff['validation_metrics'])
+ for key in report['metrics']: assert math.isclose(report['metrics'][key],validation['metrics'][key],abs_tol=1e-10,rel_tol=0)
+ assert report['confusion_matrix']==validation['metrics']['confusion_matrix']
+ log=read(RUN/'train_log.json');assert [r['epoch'] for r in log]==list(range(1,17))
+ best=-1.;best_epoch=0;bad=0
+ for r in log:
+  epoch=r['epoch'];expected_lr=.01*(1+math.cos(math.pi*(epoch-1)/50))/2
+  assert math.isclose(r['lr'],expected_lr,rel_tol=0,abs_tol=1e-15)
+  assert all(math.isfinite(r[k]) for k in ['train_loss','val_loss','val_macro_f1','val_accuracy','lr','seconds'])
+  if r['val_macro_f1']>best:best=r['val_macro_f1'];best_epoch=epoch;bad=0
+  else:bad+=1
+  if epoch<16: assert bad<7
+ assert best_epoch==9 and bad==7 and best==validation['metrics']['macro_f1']
+ reload=read(RUN/'reload_20261102T065157804272Z.json')
+ assert reload['passed'] and reload['fresh_process'] and reload['max_abs_logit_delta']==0
+ assert sha(RUN/'reload_20261102T065157804272Z.predictions.json')==reload['predictions_sha256']
+ assert read(RUN/'reload_20261102T065157804272Z.predictions.json')==validation
+ b2_path=ROOT/'reports/tv2/w5_evidence/attempt_01/validation_02/b2_predictions.jsonl'
+ b2=jsonl(b2_path);b2report=w.audit_predictions(b2,parents,crops,b2[0]['experiment_id'],w.B2_SHA256)
+ paired=w.compare_predictions(b2,derived);prior=read(RUN/'tv2_audit/audit.json')
+ assert same(prior['metrics'],report['metrics']) and prior['paired_outcomes']==paired
+ assert json.loads((RUN/'tv2_audit/auditor.log').read_bytes())==prior
+ assert sha(RUN/'tv2_audit/predictions.jsonl')==prior.get('output_sha256',{}).get('predictions',sha(RUN/'tv2_audit/predictions.jsonl'))
+ prior_predictions=jsonl(RUN/'tv2_audit/predictions.jsonl');assert same(prior_predictions,derived)
+ delta={k:report['metrics'][k]-b2report['metrics'][k] for k in report['metrics']}
+ per_class=[]
+ for a,b in zip(b2report['per_class'],report['per_class']):
+  per_class.append(dict(class_id=b['class_id'],label=b['label'],support=b['support'],b2=a,dino=b,f1_delta=b['f1']-a['f1']))
+ errors=[];b2ids={x['image_id']:x for x in b2};manifest={x['image_id']:x for x in parents}
+ for r in derived:
+  a=b2ids[r['image_id']]
+  if r['predicted_class']!=r['ground_truth'] or a['predicted_class']!=a['ground_truth']:
+   errors.append(dict(image_id=r['image_id'],ground_truth=r['ground_truth'],b2=a['predicted_class'],dino=r['predicted_class'],
+    class_scores=r['class_scores'],crop_count=r['crop_count'],location=manifest[r['image_id']]['location']))
+ write(EVID/'independent_metrics.json',dict(status='PASS',dino=report,b2=b2report,metric_delta=delta,per_class_comparison=per_class,
+  paired_counts={k:len(v) for k,v in paired.items()},paired_image_ids=paired,max_abs_image_mean_vector_delta=maxmean,
+  best_epoch=best_epoch,epochs_completed=len(log),early_stop_bad_epochs=bad,
+  submitted_image_predictions_verified=True,schemas='PASS',tv3_reload_integrity='PASS_NOT_INDEPENDENT_MODEL_REPLAY',
+  tv3_auditor_integrity='PASS_RECOMPUTED_LOCALLY',model_loaded=False))
+ write(EVID/'error_cases.json',errors)
+ print('Independent metrics PASS',report['metrics'],'paired',{k:len(v) for k,v in paired.items()},flush=True)
+ out=WORK/'tv2_evaluator'
+ cmd=[sys.executable,'-X','utf8',str(ROOT/'scripts/evaluate_w5_validation.py'),'--handoff',str(RUN/'handoff.json'),
+  '--protocol',str(RUN/'protocol.approved.json'),'--checkpoint',str(RUN/'best_model.pt'),'--crop-predictions',str(RUN/'val_crops.jsonl'),
+  '--b2-predictions',str(b2_path),'--output',str(out)]
+ p=subprocess.run(cmd,cwd=ROOT,capture_output=True)
+ (EVID/'tv2_evaluator.log').write_bytes(p.stdout+p.stderr)
+ write(EVID/'tv2_evaluator_invocation.json',dict(command=cmd,returncode=p.returncode,source_commit=BASE,
+   evaluator_sha256=sha(ROOT/'scripts/evaluate_w5_validation.py'),module_sha256=sha(ROOT/'src/evaluation/w5_validation.py')))
+ assert p.returncode==0,p.stderr.decode('utf-8')
+ for name in ['audit.json','predictions.jsonl']:shutil.copyfile(out/name,EVID/('tv2_'+name))
+
+if __name__=='__main__':receive();audit()
