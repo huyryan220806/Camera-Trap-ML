@@ -1,0 +1,14 @@
+{
+  "published_main": "cb2b0f8c25b919782a37135a636fb60f0a5ccdfe",
+  "remote_main": "cb2b0f8c25b919782a37135a636fb60f0a5ccdfe",
+  "pr8": {
+    "number": 8,
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-11-03T09:34:13Z",
+    "merge_commit_sha": "fc124083f7e320bf9a8c9e41fd9b002e36b69bf1",
+    "html_url": "https://github.com/huyryan220806/Camera-Trap-ML/pull/8"
+  },
+  "report_commit": "33aba1f",
+  "members_commits_preserved": true
+}

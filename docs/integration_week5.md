@@ -2,7 +2,7 @@
 
 Theo yêu cầu TV1: push báo cáo kiểm tra, gộp phần W5 của cả nhóm vào main và hướng dẫn chạy/test. TV1 đã kiểm độc lập ngày02/11 và cho phép merge ngày03/11. Không tạo approval dưới tên TV2/TV3/TV4.
 
-## Các phần đã gộp local
+## Các phần đã tích hợp
 
 | Phần | Đầu nhánh đã review | Merge commit |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ Theo yêu cầu TV1: push báo cáo kiểm tra, gộp phần W5 của cả nhóm
 | TV3: DINO linear probe/checkpoint/handoff | `5734d38` | `ce78288` |
 | TV4: adapter/UI/lô nhỏ/CSV | `8d4a255` | `fc12408` |
 
-Fetch ngày03/11 xác nhận không có cập nhật so với các đầu nhánh đã review. Gộp không conflict, giữ lịch sử và bốn nhánh cố định. Main local sau các merge là `fc12408`; trạng thái công bố remote được ghi ở cuối lượt trong progress.
+Fetch ngày03/11 xác nhận không có cập nhật so với các đầu nhánh đã review. Gộp không conflict, giữ lịch sử và bốn nhánh cố định. Mã tích hợp `fc12408` đã được công bố lên `origin/main` cùng hướng dẫn tại `cb2b0f8`; đã xác minh SHA remote bằng local.
 
 ## Kiểm định
 
@@ -33,3 +33,11 @@ DINO accuracy84,50%,macro-F184,44% trên600ảnh/680GTcrop validation; B2 accura
 TV1 dự kiến triển khai tuần6 tối03/11/2026. Giảng viên đã cho thêm vài tuần; **hạn mới chưa cụ thể**. Lượt này chỉ ghi nhớ, không triển khai W6, mở thêm lượt train hay tự đặt hạn mới. Các plan W5/W6 cũ vẫn là kế hoạch ban đầu, cần điều chỉnh khi nhóm có lịch chính thức.
 
 Chi tiết triển khai và tình trạng push: [progress](progress_integration_w5_2026-11-03.md). Các thư mục output và phiên QA local được giữ để tiếp tục nếu bị gián đoạn.
+
+## Công bố đã xác minh
+
+- Báo cáo review đã có trên GitHub từ `33aba1f`; toàn bộ W5 và hướng dẫn đã có trên main tại `cb2b0f8`.
+- [PR TV4 #8](https://github.com/huyryan220806/Camera-Trap-ML/pull/8) được GitHub ghi nhận **merged**, merge commit `fc12408`. Không tạo approval thay thành viên.
+- [Receipt GitHub/remote](../reports/integration_w5/publication_initial.json). Các commit tài liệu sau đó chỉ ghi trạng thái công bố, không thay mã/model/dữ liệu đã review.
+- Giữ bốn branch cố định, đồng bộ bằng fast-forward và không force-push. Máy thành viên dùng `git fetch origin`, về branch của mình, rồi `git merge origin/main`; nếu có việc local chưa commit thì commit/cất giữ trước, không reset.
+- Đã dừng server smoke sau khi B2/DINO PASS; cổng8765 được trả lại để TV1 chạy lệnh hướng dẫn. Phiên QA/log/model local được giữ nguyên.

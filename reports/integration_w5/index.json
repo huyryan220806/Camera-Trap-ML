@@ -1,5 +1,6 @@
 {
   "demo_smoke.json": "2ca99cae308e1a82c81935524216181414fbf1242ebe7db93378a68c2d9a88bd",
   "integration_audit.json": "ed1f9078454d4ae55487024c610a9e4b6b0923b702fb0594f9de164d12b920c1",
-  "local_dino_setup.json": "290ef202b9153e67ab116d5cf97b2fb994383a2c9269301a23ef5c66fc4642fc"
+  "local_dino_setup.json": "290ef202b9153e67ab116d5cf97b2fb994383a2c9269301a23ef5c66fc4642fc",
+  "publication_initial.json": "f1c99adcec229e42716b850a4e21f8d33efc12affda200712c6dcac8dca33ffb"
 }

@@ -2,6 +2,10 @@
 
 Người dùng yêu cầu push báo cáo review, merge các phần tuần 5 vào main và hướng dẫn chạy/test. Đã cho phép merge trong lượt này; không cần hỏi lại vì ghi chú chờ review của tài liệu cũ.
 
+## Công bố đã xác minh
+
+**Hoàn tất tích hợp và hướng dẫn.** Báo cáo đã push `33aba1f`; main đã công bố `cb2b0f8` (chứa bốn merge tới `fc12408`). PR8 đã merged theo API GitHub. Xem [biên bản](integration_week5.md), [chạy/test](run_and_test_w5.md) và `reports/integration_w5/publication_initial.json`. Không triển khai tuần6. Server smoke đã dừng, checkpoint và nhật ký giữ nguyên.
+
 ## Đầu vào đã xác minh
 
 - TV1 `9abc9c5`, TV2 `df31029`, TV3 `5734d38`, TV4 `8d4a255`; main `60516f5`.
@@ -16,7 +20,7 @@ Người dùng yêu cầu push báo cáo review, merge các phần tuần 5 vào
 - Đã cập nhật README/hướng dẫn chạy-test, trạng thái W5 và ghi nhận gia hạn.
 - Mã chạy/dữ liệu/requirements giống cây đã qua440tests;17evidencehash và175liên kết tài liệu PASS.
 - Gói DINO local đã kiểm27payload và đưa về đường dẫn sử dụng chính thức; checkout kiến trúc đúng pin.
-- Smoke lệnh chạy với package/repo chính thức: B2 và DINO thật đều PASS trên ảnh train. Bằng chứng `reports/integration_w5/demo_smoke.json`. Chờ bước push main cuối lượt; không triển khai W6.
+- Smoke lệnh chạy với package/repo chính thức: B2 và DINO thật đều PASS trên ảnh train. Bằng chứng `reports/integration_w5/demo_smoke.json`. Main đã được push và xác minh; không triển khai W6.
 
 ## Các bước của lượt này
 
@@ -31,3 +35,7 @@ Trạng thái chi tiết tiếp tục được cập nhật trong file này và 
 ## Ghi nhớ lịch dự án từ TV1
 
 Ngày **03/11/2026**, TV1 cho biết sẽ triển khai tuần 6 vào tối nay; giảng viên đã cho thêm vài tuần. **Chưa có hạn nộp mới cụ thể.** Mốc W6 04–10/11 trong plan cũ chỉ là lịch đề xuất trước khi gia hạn, không còn là căn cứ khẳng định hạn cuối. Lượt này chỉ ghi nhận thông tin, chưa triển khai tuần 6, tự thay lịch chi tiết hoặc mở thêm thí nghiệm/GPU job.
+
+## Tiếp tục sau khi hoàn tất
+
+Lượt này đã đạt yêu cầu. Không lặp merge hoặc tests cũ. Bốn nhánh cố định được giữ để đồng bộ fast-forward; trạng thái SHA cuối đợt push ở `outputs/integration_w5_2026-11-03/final_publication.json`. Khi TV1 bắt đầu tuần6, đọc ghi nhớ gia hạn ở trên, fetch trạng thái mới và nhận yêu cầu cụ thể; không tự mở lượt train hoặc lập hạn mới.
