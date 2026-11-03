@@ -1,6 +1,6 @@
 # Môi trường phát triển
 
-## Cài đặt cho bản tích hợp tuần 4
+## Cài đặt cho bản tích hợp tuần 5
 
 Cần Git và Python 3.12. Bộ cài dưới đây gồm phụ thuộc dữ liệu, đánh giá và demo,
 đủ để chạy toàn bộ unittest trên CPU. Giao diện dùng HTML/JavaScript và HTTP
@@ -23,6 +23,12 @@ Chỉ mở demo: cài `requirements-tv4.txt`. Chỉ xử lý metadata/JSON: dùn
 chạy toàn bộ test. `check_environment.py` kiểm tra các gói chung; không xác nhận
 GPU, checkpoint hay khả năng inference thật.
 
+Bộ CPU TV2/TV4 (torch2.8, torchvision0.23, scikit-learn1.7.2) đã qua 440 tests
+W5 tại TV1. Môi trường training/fresh replay GPU DINO của TV3 có pin riêng
+(torch2.6/torchvision0.21, scikit-learn1.9.0); xem `requirements-tv3-w5.txt`.
+Không ghép hai pin scikit-learn vào cùng lệnh cài; không nâng môi trường đang
+chạy chỉ để khớp runtime của máy khác.
+
 Không cần kích hoạt venv nếu gọi trực tiếp `.venv/Scripts/python.exe`. Trên Linux/macOS, thay bằng `.venv/bin/python`. Trong VS Code, chọn interpreter thuộc `.venv`; mở notebook có thể cần cài thêm `ipykernel` trong chính môi trường đó.
 
 ## Chuẩn bị và mở web
@@ -41,6 +47,11 @@ Mở [http://127.0.0.1:8765](http://127.0.0.1:8765), giữ PowerShell mở, dừ
 Trọng số nằm trong `outputs/tv4/models/`; ảnh upload chỉ ở RAM. Nhật ký duyệt
 ở `outputs/tv4/w4/sessions/`. Không có weights thì chọn Giả lập để thử giao diện;
 đó không phải suy luận mô hình thật. [Hướng dẫn duyệt](handoff_tv4_w4.md).
+
+Để chạy DINO và kiểm thử ảnh đơn/lô/CSV, xem [hướng dẫn W5](run_and_test_w5.md).
+Máy TV1 đã có gói ở `outputs/tv4/w5/intake_20261102/DINOv3_LP_run01` và checkout
+kiến trúc ở `outputs/tv4/w5/dinov3_architecture`; chạy với hai cờ tương ứng.
+DINO opt-in chạy CPU, B2 vẫn là mặc định. Không cần CUDA hoặc train lại để thử web.
 
 ## Ảnh và manifest
 

@@ -1,5 +1,9 @@
 # Kiểm tra tuần 5 — TV2, TV3 và TV4
 
+**Cập nhật 03/11:** báo cáo đã công bố tại `33aba1f`; nhóm được tích hợp theo
+yêu cầu TV1. Xem [biên bản W5](../../docs/integration_week5.md) cho trạng thái
+remote mới nhất. Nội dung nghiệm thu ngày02/11 dưới đây giữ làm lịch sử.
+
 Ngày 02/11/2026, theo yêu cầu TV1. **Đạt kiểm tra kỹ thuật tuần 5 trong phạm vi đã cập nhật. Không phát hiện lỗi chức năng hoặc sai số liệu đang chặn tích hợp.** Chưa push báo cáo này, gửi approval GitHub hoặc merge nhánh.
 
 ## Kết luận từng thành viên

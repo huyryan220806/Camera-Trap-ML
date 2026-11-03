@@ -9,7 +9,16 @@ Người dùng yêu cầu push báo cáo review, merge các phần tuần 5 vào
 - Cây gộp thử `33e3be4c9cce0ab98196b67ff17325eda4a0cbe6` đã qua 440/440 tests; adapter và browser thật PASS. Không cần lặp training hay official Test.
 - Báo cáo cần công bố: `reports/review_w5_2026-11-02/` và `docs/progress_review_w5_2026-11-02.md`. Giữ nguyên byte các evidence theo index SHA; không stage ZIP DINO trong `reports/tv3_w5/` hoặc file cá nhân cũ.
 
-## Công việc lượt này
+## Tiến độ local đã thực hiện
+
+- Báo cáo review đã commit/push nhánh TV1 tại `33aba1f`.
+- Đã gộp TV1 `fb1b08e`, TV2 `ef4636e`, TV3 `ce78288`, TV4 `fc12408` vào main local.
+- Đã cập nhật README/hướng dẫn chạy-test, trạng thái W5 và ghi nhận gia hạn.
+- Mã chạy/dữ liệu/requirements giống cây đã qua440tests;17evidencehash và175liên kết tài liệu PASS.
+- Gói DINO local đã kiểm27payload và đưa về đường dẫn sử dụng chính thức; checkout kiến trúc đúng pin.
+- Smoke lệnh chạy với package/repo chính thức: B2 và DINO thật đều PASS trên ảnh train. Bằng chứng `reports/integration_w5/demo_smoke.json`. Chờ bước push main cuối lượt; không triển khai W6.
+
+## Các bước của lượt này
 
 1. Commit/push báo cáo trên nhánh TV1.
 2. Gộp các nhánh đã nghiệm thu vào main, giữ nguyên lịch sử và bốn nhánh cố định.

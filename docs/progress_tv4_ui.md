@@ -1,5 +1,12 @@
 # Tiến độ TV4 — cải thiện giao diện demo
 
+## Trạng thái tích hợp 03/11/2026
+
+TV1 đã kiểm chéo head `8d4a255`: adapter/browser/lô/CSV/mobile PASS, đã nhận
+yêu cầu merge từ TV1. Xem [biên bản W5](integration_week5.md) và
+[hướng dẫn chạy/test](run_and_test_w5.md) cho trạng thái hiện tại. Các mục chờ
+review phía dưới giữ thời điểm lịch sử; không giả approval của TV2.
+
 ## W5 tiếp tục và bàn giao kiểm chéo — 02/11/2026
 
 - Đã nhận ZIP TV3 và handoff/acceptance TV2; tiếp tục từ `fef2511`, giữ B2 mặc định.

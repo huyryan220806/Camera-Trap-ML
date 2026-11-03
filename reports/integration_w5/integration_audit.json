@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "reviewed_tree": "33e3be4c9cce0ab98196b67ff17325eda4a0cbe6",
+  "implementation_and_data_equal": true,
+  "evidence_verified": 17,
+  "links_checked": 175,
+  "missing_links": [],
+  "current_heads": [
+    "fc12408 Merge TV4 week-five DINO adapter, batch review and CSV",
+    "ce78288 Merge TV3 week-five DINO model and handoff",
+    "ef4636e Merge TV2 week-five evaluation and DINO acceptance",
+    "fb1b08e Merge TV1 week-five data candidates and independent reviews",
+    "33aba1f docs: publish independent week-five review and integration progress"
+  ]
+}

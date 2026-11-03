@@ -1,5 +1,10 @@
 # TV4 W5 — DINO candidate, batch/CSV and UI-A11Y-01
 
+**Trạng thái 03/11/2026:** TV1 kiểm chéo `8d4a255` PASS và yêu cầu tích hợp.
+Xem [kiểm tra độc lập](../review_w5_2026-11-02/TV4.md) và
+[biên bản W5](../../docs/integration_week5.md). Đây không phải approval ký thay TV2;
+evidence và trạng thái chờ tại thời điểm báo cáo gốc bên dưới được giữ nguyên.
+
 Ngày 02/11/2026; branch `feat/demo`, nền `fef2511`. TV4 đã thực hiện integration
 smoke; **chờ TV2 kiểm tra chéo và nhóm quyết định ứng viên demo**. B2 vẫn là
 backend mặc định. Không merge PR, train model hoặc chạy official Test W4/W6.

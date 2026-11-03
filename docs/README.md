@@ -5,7 +5,22 @@ Trạng thái hiện tại: [README dự án](../README.md). Mở web/cài máy 
 
 **TV4 tiếp nhận lại công việc:** [Bàn giao toàn bộ tuần 1–4 và checklist chỉnh giao diện](handoff_tv4_return_ui.md).
 
-## Tuần 5–6: kế hoạch đã cập nhật
+## Tuần 5 đã tích hợp — 03/11/2026
+
+[Chạy web và checklist test](run_and_test_w5.md) · [Biên bản tích hợp](integration_week5.md) ·
+[Kiểm tra độc lập TV2/TV3/TV4](../reports/review_w5_2026-11-02/REPORT.md).
+
+| Phần | Tài liệu hiện tại |
+| --- | --- |
+| TV2: đánh giá DINO/B2 | [Nghiệm thu model](../reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md), [chương thực nghiệm](../reports/tv2/W5_EXPERIMENT_CHAPTER.md) |
+| TV3: gói DINO cuối | [Checkpoint/config/reload](../reports/tv3/w5_final/DINOv3_LP_run01/README.md), [hướng dẫn nạp](handoff_tv3_w5.md) |
+| TV4: ứng dụng | [DINO, lô và CSV](tv4_w5_demo.md), [báo cáo](../reports/tv4_w5/REPORT.md) |
+
+DINO accuracy84,50%, macro-F184,44% trên validation GT-box; chưa đạt88% và chưa có
+test độc lập. Giảng viên đã gia hạn vài tuần; hạn mới chưa xác nhận. TV1 dự kiến
+bắt đầu tuần6 tối03/11; [ghi nhận và progress](progress_integration_w5_2026-11-03.md).
+
+## Dữ liệu W5 và kế hoạch tiếp theo
 
 - **TV1 W5:** [Bàn giao](handoff_tv1_w5.md), [kiểm kê và manifest ứng viên](../reports/tv1_w5/REPORT.md),
   [phần dữ liệu báo cáo](../reports/tv1_w5/DATA_CHAPTER.md), [progress](progress_tv1_w5.md).
@@ -15,7 +30,7 @@ Trạng thái hiện tại: [README dự án](../README.md). Mở web/cài máy 
   metadata. Nguồn holdout mới chỉ có 109 ảnh, chưa đủ hỗ trợ 8 lớp; chưa phát
   hành test mới. Xem báo cáo TV1 trước khi mở rộng train hoặc gọi kết quả độc lập.
 
-## Tuần 4 đang dùng
+## Kết quả tuần 4 được bảo toàn
 
 | Phần | Hướng dẫn / báo cáo | Tiếp tục sau gián đoạn |
 | --- | --- | --- |

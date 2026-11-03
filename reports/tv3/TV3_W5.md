@@ -1,5 +1,10 @@
 # TV3 tuần 5 — DINO linear probe và đối chứng B2
 
+**Trạng thái tích hợp 03/11/2026:** TV2 đã nghiệm thu model tại `df31029`,
+TV4 đã tích hợp tại `8d4a255`, TV1 kiểm độc lập PASS. Xem
+[biên bản W5](../../docs/integration_week5.md); các mục chờ/chuẩn bị phía dưới
+là lịch sử, không phải yêu cầu pin hoặc train lại gói đã hoàn tất.
+
 **Cập nhật 02/11/2026: official run COMPLETE, reload PASS, artifact audit PASS.**
 `DINOv3_LP_run01`: accuracy0.845, macro-F1 0.8444008279545705, best epoch9,
 16 epoch hoàn tất; đủ600 ảnh/680crop. Bàn giao thật và giới hạn diễn giải tại

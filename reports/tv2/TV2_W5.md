@@ -1,5 +1,11 @@
 # TV2 tuần 5 đánh giá mô hình và tính tái lập
 
+**Trạng thái tích hợp 03/11/2026:** TV1 đã kiểm lại adapter/UI/mobile/CSV tại
+TV4 `8d4a255`, UI-A11Y-01 PASS; phần model/evaluation đã đạt. Nhóm được gộp
+theo yêu cầu TV1, xem [biên bản W5](../../docs/integration_week5.md).
+Các mục PARTIAL/chờ TV4 bên dưới là trạng thái ngày02/11 trước kiểm tra này;
+không đổi chúng thành bằng chứng do TV2 thực hiện.
+
 **Cập nhật02/11/2026: INDEPENDENT DINOv3 MODEL ACCEPTANCE PASS; W5 tổng thể PARTIAL.**
 
 Gói thật DINOv3_LP_run01 từ report5734d38/trainingaa64fd7, checkpoint SHA

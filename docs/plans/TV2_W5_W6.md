@@ -1,5 +1,7 @@
 # TV2 — Kế hoạch tuần 5–6: so sánh mô hình và kiểm định sản phẩm
 
+> Ghi nhận 03/11/2026: giảng viên cho thêm vài tuần; chưa có hạn mới cụ thể. TV1 dự kiến bắt đầu W6 tối03/11. Lịch dưới đây là kế hoạch đề xuất trước gia hạn; chưa tự đổi nhiệm vụ/lượt train. Xem [progress tích hợp](../progress_integration_w5_2026-11-03.md).
+
 **Cập nhật:** 28/10/2026. **Branch:** `feat/baseline`. **Người kiểm tra phần mô hình:** TV3; TV1 đối chiếu dữ liệu. TV2 đồng thời kiểm tra chéo phần ứng dụng của TV4.
 
 Lịch đề xuất: tuần 5 **28/10–03/11**, tuần 6 **04/11–10/11**, giờ Việt Nam.

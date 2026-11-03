@@ -89,3 +89,17 @@ hoặc `original` (detector-only) trước khi đưa vào validator. Luồng lư
 
 [JSON mẫu đầy đủ](../reports/tv4_w4/evidence/review_example.json) chứa chỉnh nhãn
 QA, không phải nhãn ground truth đã thẩm định. [Hướng dẫn sử dụng](handoff_tv4_w4.md).
+
+## Tuần 5: DINO và xuất lô
+
+Enum classifier trong `classifier-demo-1.0` thêm `DINOv3_LP_run01`; các trường
+kết quả cũ giữ nguyên. DINO cũng trả top3 riêng theo detection_id, score chưa
+hiệu chỉnh, model/SHA/preprocessing trong provenance; không gộp các box demo
+để đoán một nhãn cho cả ảnh.
+
+JSON lô dùng wrapper `batch-demo-1.0`, gồm exported_utc, review_source=server_saved
+và items chứa phiên đã lưu hoặc trạng thái lỗi/chờ của từng ảnh. CSV là view
+một dòng/box, ảnh không box/lỗi vẫn có dòng; nhãn gốc và nhãn duyệt riêng,
+UTF-8 có BOM, quoting và chống chuỗi công thức. Không dùng CSV thay JSON truy vết.
+`validate_results.py` chỉ kiểm kết quả lõi, không phải validator wrapper lô;
+nghiệm thu lô nằm trong tests/browser QA ở [báo cáo W5](../reports/tv4_w5/REPORT.md).

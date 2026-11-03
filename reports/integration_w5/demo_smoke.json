@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "code_merge_commit": "fc124083f7e320bf9a8c9e41fd9b002e36b69bf1",
+  "scope": "Real HTTP startup smoke on existing train sample; not a validation/test evaluation or timing benchmark",
+  "runs": [
+    {
+      "model": "B2",
+      "checkpoint_sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5",
+      "status": "needs_review",
+      "boxes": 1,
+      "request_id": "830df3f8-6496-4f41-babe-47d069ca9a17",
+      "runtime": {
+        "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+        "logical_cpus": 12,
+        "ram_gib": 31.24,
+        "os": "Windows-11-10.0.26300-SP0",
+        "python": "3.12.10",
+        "versions": {
+          "torch": "2.8.0",
+          "torchvision": "0.23.0",
+          "Pillow": "12.2.0",
+          "megadetector": "10.0.25"
+        },
+        "device": "cpu",
+        "torch_threads": 4,
+        "image_batch_size": 1,
+        "detector_batch_size": 1,
+        "classifier_max_crop_batch_size": 8,
+        "detector_image_size": 1280,
+        "classifier_image_size": 224,
+        "classifier_device": "cpu",
+        "classifier_actual_crop_batches": [
+          1
+        ]
+      }
+    },
+    {
+      "model": "DINOv3_LP_run01",
+      "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+      "status": "ok",
+      "boxes": 1,
+      "request_id": "a236b176-1169-447a-8928-2912093f33f6",
+      "runtime": {
+        "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+        "logical_cpus": 12,
+        "ram_gib": 31.24,
+        "os": "Windows-11-10.0.26300-SP0",
+        "python": "3.12.10",
+        "versions": {
+          "torch": "2.8.0",
+          "torchvision": "0.23.0",
+          "Pillow": "12.2.0",
+          "megadetector": "10.0.25"
+        },
+        "device": "cpu",
+        "torch_threads": 4,
+        "image_batch_size": 1,
+        "detector_batch_size": 1,
+        "classifier_max_crop_batch_size": 8,
+        "detector_image_size": 1280,
+        "classifier_image_size": 256,
+        "classifier_device": "cpu",
+        "classifier_actual_crop_batches": [
+          1
+        ]
+      }
+    }
+  ]
+}

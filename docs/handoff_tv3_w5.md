@@ -1,5 +1,11 @@
 # TV3 W5 — hướng dẫn chạy và bàn giao DINO linear probe
 
+**Trạng thái hiện tại 03/11:** gói DINO cuối đã hoàn tất, TV2 nghiệm thu và
+TV1 kiểm chéo PASS; TV4 đã có adapter. Bắt đầu bằng
+[gói cuối](../reports/tv3/w5_final/DINOv3_LP_run01/README.md) và
+[chạy/test demo](run_and_test_w5.md). Phần chuẩn bị/proposal bên dưới là lịch sử;
+không cần pin/train lại để dùng checkpoint đã bàn giao. [Tích hợp W5](integration_week5.md).
+
 Cập nhật 30/10: weights/checkout/config pin đã có, smoke32 crop ngày29 PASS.
 Không chạy lại lệnh clone/pin với các đường dẫn đã tồn tại. TV3 đã xác nhận
 config chuẩn; trước training cần TV2 kiểm gói
