@@ -14,7 +14,14 @@ Múi giờ: **Asia/Ho_Chi_Minh (UTC+07:00)**. Tuần 1 không cần GPU cho EDA/
 | Thứ Bảy | 09:00 đến 12:00 | TV4 | Tích hợp và đo tốc độ |
 | Chủ nhật | 09:00 đến 12:00 | Nhóm | Dự phòng; cần một người đứng tên |
 
-Tuần 5 ưu tiên TV4 kiểm thử ứng dụng; tuần 6 chỉ đặt lịch cho kiểm tra tái lập và quay demo. Colab của từng người là tài nguyên riêng theo phiên, không mặc định thay thế được GPU local hoặc sẵn sàng liên tục.
+**Cập nhật 28/10/2026 theo kế hoạch DINO:** tuần 5 ưu tiên TV3 cho trích xuất
+đặc trưng/thử mô hình trong ngày 1–5; TV2 dùng CPU cho đối chiếu số liệu khi phù
+hợp và đăng ký GPU riêng nếu cần. Ngày 6–7 ưu tiên TV4 tích hợp/đo tốc độ sau
+khi nhận checkpoint. Tuần 6 chỉ đặt lịch cho kiểm định và quay demo; không mở
+thêm đợt thử lớn. Đây là thứ tự ưu tiên đề xuất, chưa phải đặt chỗ cụ thể.
+Colab của từng người là tài nguyên riêng theo phiên, không mặc định thay thế
+được GPU local hoặc sẵn sàng liên tục. Chi tiết nhiệm vụ:
+[TV2](plans/TV2_W5_W6.md), [TV3](plans/TV3_W5_W6.md), [TV4](plans/TV4_W5_W6.md).
 
 ## Sổ đăng ký thực tế
 

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "verified": [
+    "real B2 remains default and runnable after DINO integration",
+    "no_detection stays no_detection after human miss review",
+    "no-box CSV keeps a row with saved detector_miss outcome",
+    "original JSON retained"
+  ],
+  "scope": "one real train B2 request; synthetic empty scenario and human QA review; no Test"
+}

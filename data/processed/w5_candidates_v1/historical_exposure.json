@@ -1,0 +1,85 @@
+{
+  "sources": [
+    {
+      "path": "data/crops/crop_errors_train.jsonl",
+      "rows": 1,
+      "unique_images": 1
+    },
+    {
+      "path": "data/crops/crop_errors_val.jsonl",
+      "rows": 4,
+      "unique_images": 4
+    },
+    {
+      "path": "data/crops/crop_manifest_train.jsonl",
+      "rows": 4479,
+      "unique_images": 3999
+    },
+    {
+      "path": "data/crops/crop_manifest_val.jsonl",
+      "rows": 2416,
+      "unique_images": 1997
+    },
+    {
+      "path": "data/crops/v1_run02/crop_errors_train.jsonl",
+      "rows": 327,
+      "unique_images": 327
+    },
+    {
+      "path": "data/crops/v1_run02/crop_errors_val.jsonl",
+      "rows": 8,
+      "unique_images": 8
+    },
+    {
+      "path": "data/crops/v1_run02/crop_manifest_train.jsonl",
+      "rows": 4120,
+      "unique_images": 3673
+    },
+    {
+      "path": "data/crops/v1_run02/crop_manifest_val.jsonl",
+      "rows": 1123,
+      "unique_images": 993
+    },
+    {
+      "path": "data/crops/v1_run03/crop_errors_train.jsonl",
+      "rows": 9,
+      "unique_images": 9
+    },
+    {
+      "path": "data/crops/v1_run03/crop_errors_val.jsonl",
+      "rows": 1,
+      "unique_images": 1
+    },
+    {
+      "path": "data/crops/v1_run03/crop_manifest_train.jsonl",
+      "rows": 4480,
+      "unique_images": 4000
+    },
+    {
+      "path": "data/crops/v1_run03/crop_manifest_val.jsonl",
+      "rows": 1131,
+      "unique_images": 1000
+    },
+    {
+      "path": "experiments/B0_run01/selected_train.jsonl",
+      "rows": 128,
+      "unique_images": 128
+    },
+    {
+      "path": "experiments/B0_run01/selected_val.jsonl",
+      "rows": 64,
+      "unique_images": 64
+    },
+    {
+      "path": "experiments/B0_run01/used_train.jsonl",
+      "rows": 128,
+      "unique_images": 128
+    },
+    {
+      "path": "experiments/B0_run01/used_val.jsonl",
+      "rows": 64,
+      "unique_images": 64
+    }
+  ],
+  "scope": "Conservative evidence from available B0/crop manifests, including attempted downloads; plus all baseline locations. Not a guarantee about unrecorded experiments or foundation-model pretraining."
+}

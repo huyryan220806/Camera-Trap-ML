@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-02",
+  "heads": {
+    "tv1": "9abc9c572a9191e8a43a5abef05ebaf846b8356f",
+    "tv2": "df31029c2dfa3b87e4efd1b1f210babd89c60cbd",
+    "tv3": "5734d38c3af2fe052cf04c4c33d940e8f186306d",
+    "tv4": "8d4a255881c445b5528e69cd9d07a503c02ec11d",
+    "main": "60516f51fccbb85e6e266a022d94ea90d2239a11"
+  },
+  "scope": "W5 review; no training or official Test inference",
+  "snapshots": {
+    "tv2": "D:\\VLU\\261\\ML\\CameraTrapML\\outputs\\review_w5_2026-11-02\\tv2",
+    "tv3": "D:\\VLU\\261\\ML\\CameraTrapML\\outputs\\review_w5_2026-11-02\\tv3",
+    "tv4": "D:\\VLU\\261\\ML\\CameraTrapML\\outputs\\review_w5_2026-11-02\\tv4"
+  }
+}

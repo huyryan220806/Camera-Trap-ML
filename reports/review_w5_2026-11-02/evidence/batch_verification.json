@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "verified": [
+    "corrupt item hides stale preview",
+    "good item restores preview",
+    "draft isolation",
+    "saved result restores correct mode badge",
+    "mobile overflow"
+  ]
+}
