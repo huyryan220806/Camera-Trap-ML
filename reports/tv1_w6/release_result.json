@@ -1,0 +1,251 @@
+{
+  "action": "published",
+  "summary": {
+    "dataset_version": "train_expansion_w6_v1",
+    "quality_ready": true,
+    "peer_review_status": "pending_TV2",
+    "training_authorized_by_peer_review": false,
+    "original_train": {
+      "images": 2800,
+      "sequences": 2277,
+      "locations": 458,
+      "boxes": 3125
+    },
+    "requested_additional": {
+      "images": 1665,
+      "sequences": 1665,
+      "locations": 480,
+      "boxes": 1835
+    },
+    "accepted_additional": {
+      "images": 1446,
+      "sequences": 1446,
+      "locations": 470,
+      "boxes": 1604
+    },
+    "excluded_additional": 219,
+    "train": {
+      "images": 4246,
+      "sequences": 3723,
+      "locations": 540,
+      "boxes": 4729
+    },
+    "validation": {
+      "images": 600,
+      "sequences": 508,
+      "locations": 102,
+      "boxes": 680
+    },
+    "historical_test": {
+      "images": 600,
+      "sequences": 495,
+      "locations": 98,
+      "boxes": 680
+    },
+    "holdout_audit_only": {
+      "images": 109,
+      "sequences": 50,
+      "locations": 21,
+      "boxes": 123
+    },
+    "split_changes": 0,
+    "label_changes": 0,
+    "new_test_released": false,
+    "model_inference_run": false,
+    "exclusion_reasons": {
+      "exact_duplicate_pixel_sha256": 5,
+      "near_duplicate_pending_review": 191,
+      "visual_ambiguity_pending_expert": 23
+    },
+    "by_class": [
+      {
+        "class_id": 0,
+        "label": "large_antlered_muntjac",
+        "requested": {
+          "images": 250,
+          "sequences": 250,
+          "locations": 194,
+          "boxes": 260
+        },
+        "added": {
+          "images": 234,
+          "sequences": 234,
+          "locations": 185,
+          "boxes": 243
+        },
+        "excluded": 16,
+        "train": {
+          "images": 584,
+          "sequences": 562,
+          "locations": 199,
+          "boxes": 602
+        }
+      },
+      {
+        "class_id": 1,
+        "label": "annamite_striped_rabbit",
+        "requested": {
+          "images": 13,
+          "sequences": 13,
+          "locations": 9,
+          "boxes": 13
+        },
+        "added": {
+          "images": 10,
+          "sequences": 10,
+          "locations": 7,
+          "boxes": 10
+        },
+        "excluded": 3,
+        "train": {
+          "images": 360,
+          "sequences": 212,
+          "locations": 61,
+          "boxes": 360
+        }
+      },
+      {
+        "class_id": 2,
+        "label": "sambar",
+        "requested": {
+          "images": 250,
+          "sequences": 250,
+          "locations": 152,
+          "boxes": 276
+        },
+        "added": {
+          "images": 222,
+          "sequences": 222,
+          "locations": 140,
+          "boxes": 245
+        },
+        "excluded": 28,
+        "train": {
+          "images": 572,
+          "sequences": 530,
+          "locations": 167,
+          "boxes": 666
+        }
+      },
+      {
+        "class_id": 3,
+        "label": "chinese_serow",
+        "requested": {
+          "images": 206,
+          "sequences": 206,
+          "locations": 91,
+          "boxes": 211
+        },
+        "added": {
+          "images": 164,
+          "sequences": 164,
+          "locations": 86,
+          "boxes": 169
+        },
+        "excluded": 42,
+        "train": {
+          "images": 514,
+          "sequences": 451,
+          "locations": 148,
+          "boxes": 529
+        }
+      },
+      {
+        "class_id": 4,
+        "label": "common_palm_civet",
+        "requested": {
+          "images": 250,
+          "sequences": 250,
+          "locations": 126,
+          "boxes": 251
+        },
+        "added": {
+          "images": 186,
+          "sequences": 186,
+          "locations": 114,
+          "boxes": 187
+        },
+        "excluded": 64,
+        "train": {
+          "images": 536,
+          "sequences": 462,
+          "locations": 173,
+          "boxes": 539
+        }
+      },
+      {
+        "class_id": 5,
+        "label": "masked_palm_civet",
+        "requested": {
+          "images": 208,
+          "sequences": 208,
+          "locations": 137,
+          "boxes": 214
+        },
+        "added": {
+          "images": 171,
+          "sequences": 171,
+          "locations": 122,
+          "boxes": 175
+        },
+        "excluded": 37,
+        "train": {
+          "images": 521,
+          "sequences": 435,
+          "locations": 220,
+          "boxes": 528
+        }
+      },
+      {
+        "class_id": 6,
+        "label": "silver_pheasant",
+        "requested": {
+          "images": 238,
+          "sequences": 238,
+          "locations": 121,
+          "boxes": 306
+        },
+        "added": {
+          "images": 220,
+          "sequences": 220,
+          "locations": 116,
+          "boxes": 285
+        },
+        "excluded": 18,
+        "train": {
+          "images": 570,
+          "sequences": 499,
+          "locations": 179,
+          "boxes": 735
+        }
+      },
+      {
+        "class_id": 7,
+        "label": "eurasian_wild_pig",
+        "requested": {
+          "images": 250,
+          "sequences": 250,
+          "locations": 250,
+          "boxes": 304
+        },
+        "added": {
+          "images": 239,
+          "sequences": 239,
+          "locations": 239,
+          "boxes": 290
+        },
+        "excluded": 11,
+        "train": {
+          "images": 589,
+          "sequences": 572,
+          "locations": 300,
+          "boxes": 770
+        }
+      }
+    ],
+    "valid_new_bytes": 2577829468,
+    "visual_sample_size": 80,
+    "near_duplicate_limit": "Conservative triage only; not an exhaustive detector or proof of duplication. No label changes."
+  },
+  "provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5"
+}

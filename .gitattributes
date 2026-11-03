@@ -2,3 +2,7 @@
 *.json -text whitespace=cr-at-eol
 *.jsonl -text
 *.ipynb -text whitespace=cr-at-eol
+# W6 provenance hashes working-tree bytes; preserve these on Windows and Colab.
+requirements.txt text eol=crlf
+requirements-data-w6.txt text eol=lf
+reports/tv1_w6/*.txt -text whitespace=cr-at-eol

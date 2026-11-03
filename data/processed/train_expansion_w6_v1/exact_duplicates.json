@@ -1,0 +1,98 @@
+[
+  {
+    "kind": "sha256",
+    "hash": "10ff533f22497d5d10fb47ca7008978b714cbc313bc25469173cdd889a3cf649",
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  },
+  {
+    "kind": "sha256",
+    "hash": "529f6c1ffc3a0c6ca8d6bc64ffa22cc3df90ff74b534bc6cc8aa8a988c4a7f48",
+    "image_ids": [
+      "d86f91b0-8c29-11eb-8c2e-000d3a74c7de",
+      "d86f91b6-8c29-11eb-94af-000d3a74c7de"
+    ],
+    "new_ids_excluded": [],
+    "originals_preserved": true
+  },
+  {
+    "kind": "sha256",
+    "hash": "5f2dd3c85f7f1b09e71379be59e32124bf176cf14b20118f036ddcb95167c675",
+    "image_ids": [
+      "d86f9023-8c29-11eb-8fef-000d3a74c7de",
+      "d86f9058-8c29-11eb-ba3d-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "d86f9058-8c29-11eb-ba3d-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  },
+  {
+    "kind": "sha256",
+    "hash": "cdb5eec9e99e637da40bac2986213fae906bec25249dc76487a7f848388d89a9",
+    "image_ids": [
+      "d9c6e567-8c29-11eb-b573-000d3a74c7de",
+      "d9c6e571-8c29-11eb-ac32-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "d9c6e567-8c29-11eb-b573-000d3a74c7de",
+      "d9c6e571-8c29-11eb-ac32-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  },
+  {
+    "kind": "pixel_sha256",
+    "hash": "4860b02930ec8e0952527303b97cc44bc73696db18d3a1d2f7f7a5e0823e648a",
+    "image_ids": [
+      "d9c6e567-8c29-11eb-b573-000d3a74c7de",
+      "d9c6e571-8c29-11eb-ac32-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "d9c6e567-8c29-11eb-b573-000d3a74c7de",
+      "d9c6e571-8c29-11eb-ac32-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  },
+  {
+    "kind": "pixel_sha256",
+    "hash": "508df4f048e499d82b94b6a65ba9c52fa5813aeb7141bea31281636cc935d0a5",
+    "image_ids": [
+      "d86f9023-8c29-11eb-8fef-000d3a74c7de",
+      "d86f9058-8c29-11eb-ba3d-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "d86f9058-8c29-11eb-ba3d-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  },
+  {
+    "kind": "pixel_sha256",
+    "hash": "8b082297786bcd173f18c51cc8ec5504835987dea1a892407f6a86bdddace6e8",
+    "image_ids": [
+      "d86f91b0-8c29-11eb-8c2e-000d3a74c7de",
+      "d86f91b6-8c29-11eb-94af-000d3a74c7de"
+    ],
+    "new_ids_excluded": [],
+    "originals_preserved": true
+  },
+  {
+    "kind": "pixel_sha256",
+    "hash": "ef3c2d7eec8ca8c40abb1f9d26ceebee376e5567d3ef51487ccdad4f117b10ed",
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "new_ids_excluded": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "originals_preserved": true
+  }
+]

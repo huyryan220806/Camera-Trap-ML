@@ -1,5 +1,7 @@
 # TV3 — Kế hoạch tuần 5–6: DINOv3, đối chứng B2 và bàn giao checkpoint
 
+> **Kế hoạch W6 mới ngày 03/11:** [TV3_W6.md](TV3_W6.md) thay phần W6 bên dưới sau khi giảng viên gia hạn. Hồ sơ và protocol W5 vẫn giữ nguyên.
+
 > Ghi nhận 03/11/2026: giảng viên cho thêm vài tuần; chưa có hạn mới cụ thể. TV1 dự kiến bắt đầu W6 tối03/11. Lịch dưới đây là kế hoạch đề xuất trước gia hạn; chưa tự đổi nhiệm vụ/lượt train. Xem [progress tích hợp](../progress_integration_w5_2026-11-03.md).
 
 **Cập nhật:** 28/10/2026. **Branch:** `feat/crop-classifier`. **Người kiểm tra:** TV1;

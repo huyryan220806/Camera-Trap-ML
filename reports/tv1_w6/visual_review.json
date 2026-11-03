@@ -1,0 +1,666 @@
+{
+  "method": "visual_sample_not_expert_taxonomic_validation",
+  "reviewer": "Codex assistant visual inspection at TV1 user request; not a wildlife expert or a recorded human peer review",
+  "reviewed_utc": "2026-11-03T16:13:02+00:00",
+  "queue_sha256": "81aa4edc8c5e3e62b688c113d344d16a962b9a087f44dfcaca9a1b27ab94e95c",
+  "selection": "seed42, 10 per class after automatic duplicate quarantine; no prediction-based selection",
+  "scope": "Look at full-frame context and every annotated crop in 10 contact sheets; zoomed sample 64 to distinguish overlapping birds. No model B2/DINO inference and no Test images visually reviewed.",
+  "limitations": "Only 80 sampled new train images inspected. Retention preserves metadata labels, not expert species confirmation. Similar civet species and partly hidden animals remain uncertain. Unreviewed images may also be dark/blurred; no estimate of clean-label prevalence is claimed. Near-duplicate flags outside this sample stay quarantined pending specialist review, not manually confirmed.",
+  "contact_sheets_sha256": {
+    "outputs/tv1_w6/visual_sheets/sheet_01.jpg": "82f16e92074ca3f89caa045ac6bae2d61a3a0e56f90077d83ffbaf666e93ed7c",
+    "outputs/tv1_w6/visual_sheets/sheet_02.jpg": "0f5cc15c3f4ac8b66ea1da90c11605b0e6c37714e3415126e61ddac36e6aeb83",
+    "outputs/tv1_w6/visual_sheets/sheet_03.jpg": "367ec0887f8436e3d964b1c1ddfa0ed9388f627aa9a419ed561375d09687828c",
+    "outputs/tv1_w6/visual_sheets/sheet_04.jpg": "9c0f835bfb52d4a6800517448dca304f8bc2c86107e0e0dae479737668fc5881",
+    "outputs/tv1_w6/visual_sheets/sheet_05.jpg": "1ae925bbb1bddb7af07c7e77a7866e22bf36140e531388631b6b9bbd68be7dbc",
+    "outputs/tv1_w6/visual_sheets/sheet_06.jpg": "efbecba54cb5d92b622ca905d304227be24880a7a89f39989b4b22cbbf4fb1c7",
+    "outputs/tv1_w6/visual_sheets/sheet_07.jpg": "2d9c9cce007c9cb5437d4c147bf71e8c6a429228848bf29958fd00096e4ada90",
+    "outputs/tv1_w6/visual_sheets/sheet_08.jpg": "98e2a780576b3682069a9e7f3d9db1be73cda1502b463ddcc1b82cc0259863d4",
+    "outputs/tv1_w6/visual_sheets/sheet_09.jpg": "7886b038fad4cb9cae1f40bf09974b8001b8ca6ac53077817f0abb97cba4cacc",
+    "outputs/tv1_w6/visual_sheets/sheet_10.jpg": "30bcc18341193e2a6e71f587166787dc0d71182d51befbc2aa1045d2f3083093",
+    "outputs/tv1_w6/visual_sheets/zoom_64.jpg": "c63b06f702fd03cbc8c932f961d71958298381437f8f9adf1a768d496fb79427"
+  },
+  "quarantined_count": 23,
+  "retained_count": 57,
+  "items": [
+    {
+      "review_index": 1,
+      "image_id": "ca61cd89-8c29-11eb-a502-000d3a74c7de",
+      "sha256": "783518cb4fd65f13012d70612e7b77647f69d731fed3a24e1cdb3f4b54ece0c6",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Nhìn nghiêng, thân và đầu hiện rõ dù hơi mờ; giữ nhãn metadata."
+    },
+    {
+      "review_index": 2,
+      "image_id": "ce41a5e8-8c29-11eb-aec0-000d3a74c7de",
+      "sha256": "522157c41773e2189c92737da3bcfe8be538bb76db3d4c44b348e415c5bbe353",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh IR thấy đầu, sừng, thân và chân; vùng box bao con vật."
+    },
+    {
+      "review_index": 3,
+      "image_id": "c88e8884-8c29-11eb-b79f-000d3a74c7de",
+      "sha256": "69132cf4cfdd7717bb55c7ddbf5e5bbd7af336ad135a5c4acf286615e9a3df2e",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh nhiễu màu, vẫn thấy thân và đầu qua cây; giữ nhãn nguồn, không xác nhận phân loài."
+    },
+    {
+      "review_index": 4,
+      "image_id": "d0d3a936-8c29-11eb-a81a-000d3a74c7de",
+      "sha256": "6e0960f9f10592517344d2caa659b59cb59e181bb78e0d5fc3ac109dbd317625",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "quarantine",
+      "observation": "Ảnh sát máy, mất phần đầu và bị sương/dư sáng; chưa đủ chi tiết để rà, cách ly."
+    },
+    {
+      "review_index": 5,
+      "image_id": "cec4c10e-8c29-11eb-bd4b-000d3a74c7de",
+      "sha256": "5a511c23294518dc9bedcc8dc71dd560229623c65f6a5bfb89dc2f0e00e56e4d",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Thân bị lá che một phần nhưng dáng con vật vẫn thấy; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 6,
+      "image_id": "c82cc966-8c29-11eb-b1d1-000d3a74c7de",
+      "sha256": "87e39a59467feddecf07398f117a312a2b22d2b021da85f92e27c449a8f9dea8",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Góc nhìn từ sau, thân và chân trong box; đây là tư thế khó, không tự đổi nhãn."
+    },
+    {
+      "review_index": 7,
+      "image_id": "d0d86fd0-8c29-11eb-a193-000d3a74c7de",
+      "sha256": "ff98e97456b443670c4911696ab486a2b43c2a013f1b434888184c1c46ae02d7",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh ban ngày thấy đầu, sừng và thân, có bóng cây; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 8,
+      "image_id": "cc6007f4-8c29-11eb-b12b-000d3a74c7de",
+      "sha256": "afa8d8d5123cfe34e0ddd5ed2da49d3d8616316a31ff7e5a6ec1efde6355ff44",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh đêm nhìn phía trước, thấy đầu, tai và chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 9,
+      "image_id": "d1d9ec9b-8c29-11eb-ac16-000d3a74c7de",
+      "sha256": "34ce979c49e993cd34fc19dbcf099b74edbe8589d8b35aef2caf444be5dfdfc4",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "quarantine",
+      "observation": "Chỉ phần hông/lưng sát mép dưới, thiếu đầu và hầu hết chân; cách ly chờ rà."
+    },
+    {
+      "review_index": 10,
+      "image_id": "ca321eaf-8c29-11eb-a71c-000d3a74c7de",
+      "sha256": "b0678d6453b9cf752a761e2593ba18c384059f010a717f583629e7e7725b5e75",
+      "label_from_source": "large_antlered_muntjac",
+      "decision": "quarantine",
+      "observation": "Vùng con vật quá tối và bị cây che, khó tách chi tiết khỏi nền; cách ly chờ rà."
+    },
+    {
+      "review_index": 11,
+      "image_id": "c91ff728-8c29-11eb-9168-000d3a74c7de",
+      "sha256": "1e306edb3bc4c2f542414b7032375941654f0eb0908275c6286d456bc6580e4e",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "IR phản quang mắt mạnh nhưng hình dáng thân/chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 12,
+      "image_id": "c98b3583-8c29-11eb-9280-000d3a74c7de",
+      "sha256": "aac4f17e69ef1f415bb176847fe831f36af456ec51652051f5cde8f2e915817b",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh IR thấy tai, đầu và vệt lông trên thân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 13,
+      "image_id": "d02cc6ea-8c29-11eb-b7d6-000d3a74c7de",
+      "sha256": "9a516ae86ddf9932ee3607740d56984d8c23174f3340f8a8c38ebb64cc5abfbc",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "IR thấy đầu, tai và thân, mắt chói; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 14,
+      "image_id": "c86f4802-8c29-11eb-b9cb-000d3a74c7de",
+      "sha256": "13120d680d36591c0a333f4930895646f5b22f1287cda51473c373e77d79c1f5",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu đêm hơi nhòe, còn thấy tai và hoa văn thân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 15,
+      "image_id": "c91ff738-8c29-11eb-86d7-000d3a74c7de",
+      "sha256": "423f6fa0ef70e99bd261dd8f95eac04eba394c6495df16f71de6a637153bb0b0",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "quarantine",
+      "observation": "Ảnh mờ và trắng sương, chi tiết đầu/thân khó phân biệt; cách ly chờ rà."
+    },
+    {
+      "review_index": 16,
+      "image_id": "cf0d6070-8c29-11eb-ac21-000d3a74c7de",
+      "sha256": "a6cbeb709408e15878bb6ab848372a4dc15dea74fa7700c4077ae9b53fe85c41",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "IR mắt thành vệt sáng, thân và tư thế con vật vẫn phân biệt được; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 17,
+      "image_id": "cfc8a062-8c29-11eb-a230-000d3a74c7de",
+      "sha256": "3bcc7d750a810bd12d9efe6082df88c1edb7a6f0f9618db3dd1640c228fdc1d4",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Nhòe chuyển động nhưng còn hình dáng thân và vệt lông; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "review_index": 18,
+      "image_id": "c91ff786-8c29-11eb-b907-000d3a74c7de",
+      "sha256": "363a78fbc838e879c098c37aca93269ef0881d6ecb26559a7b3fdbb4b0fceb82",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Một phần lá che, vẫn thấy thân và tai; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 19,
+      "image_id": "cc13b8dd-8c29-11eb-b488-000d3a74c7de",
+      "sha256": "b0b542e029dfc29aa64c991652b96da11be4bb74300b8af88116810274d2b691",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Mắt bị kéo vệt sáng nhưng thân/chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 20,
+      "image_id": "c91ff73f-8c29-11eb-9f6e-000d3a74c7de",
+      "sha256": "7cff7894c0fcc9660549db7fe61333b6626947ad11ae0227b8053d315b97d78a",
+      "label_from_source": "annamite_striped_rabbit",
+      "decision": "retain_metadata_label",
+      "observation": "Con vật gần máy, đầu sát mép crop, thân và chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 21,
+      "image_id": "ca04d132-8c29-11eb-b965-000d3a74c7de",
+      "sha256": "4becb4fb6367be4245d37fed4d4780bbd51481a3061fec69f4b0747c15df1470",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Nhìn từ sau, đầu quay ngang và chân rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 22,
+      "image_id": "c89336f4-8c29-11eb-981c-000d3a74c7de",
+      "sha256": "e254b9f015a65972c08791dbe96ea1d631ff8948edc606cea449349f94ae7fa7",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Nhìn nghiêng ban ngày, thân/đầu/chân rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 23,
+      "image_id": "d0fc37ea-8c29-11eb-9392-000d3a74c7de",
+      "sha256": "9a70edd6c6758845ef0066ee39676b66085234acfb51b5b1d0d9873621dee5cf",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "IR thấy thân, sừng và đầu sau cành nhỏ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 24,
+      "image_id": "d0613674-8c29-11eb-bd8e-000d3a74c7de",
+      "sha256": "b46c46721ad89521a375374ccd96fa6f9fb1189de2ab02e61939bbb2eb88298f",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Con vật sát mép trái, đầu/sừng và chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 25,
+      "image_id": "d04702a9-8c29-11eb-ad91-000d3a74c7de",
+      "sha256": "e1eed27449a75d26b2227b751c901b629111a8e06362f9a073fb95f4dbcf4354",
+      "label_from_source": "sambar",
+      "decision": "quarantine",
+      "observation": "Đầu nằm ngoài vùng ảnh, chỉ hông và chân trong bóng tối; cách ly do thiếu chi tiết để rà."
+    },
+    {
+      "review_index": 26,
+      "image_id": "c97cf525-8c29-11eb-accf-000d3a74c7de",
+      "sha256": "335354c91bdc21d1eaf54bdafc364683097775d94e5d007b0e7d790dd4007275",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh IR có sương/dư sáng, còn thấy đầu cúi và dáng thân; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "review_index": 27,
+      "image_id": "cad1e192-8c29-11eb-8ddb-000d3a74c7de",
+      "sha256": "3b91a6fd97e780dcf2c4e87f880455235892a0645cea789391cee13f4f189d5e",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh ban ngày thấy đầu, sừng và chân dù có bóng cây; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 28,
+      "image_id": "cfa6cbeb-8c29-11eb-8a8b-000d3a74c7de",
+      "sha256": "7372ef38da0d95e102ea77ce9431ef96daf56f74cd2bd69b1d2be999c2c9eb10",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Thân bị dư sáng IR, đầu và sừng vẫn thấy rõ; giữ nhãn nguồn, không coi đây là ảnh sạch hoàn hảo."
+    },
+    {
+      "review_index": 29,
+      "image_id": "d0df96a2-8c29-11eb-9fa7-000d3a74c7de",
+      "sha256": "e11f63b9211ad5cacae545f217f7b52e8e2b64a6274e2d4b73260ce9334f94bd",
+      "label_from_source": "sambar",
+      "decision": "retain_metadata_label",
+      "observation": "Góc sau bị thân cây che, vẫn thấy toàn thân/chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 30,
+      "image_id": "cad440ff-8c29-11eb-b527-000d3a74c7de",
+      "sha256": "81b7b7fadafe25c5b31955b19753533c1ade34445000849653dc42f0d3fb9f4f",
+      "label_from_source": "sambar",
+      "decision": "quarantine",
+      "observation": "Box rất sát góc ảnh, chỉ mảnh nhỏ thân giữa lá, không đủ chi tiết để rà; cách ly."
+    },
+    {
+      "review_index": 31,
+      "image_id": "dc4a9c6b-8c29-11eb-8d2d-000d3a74c7de",
+      "sha256": "0073ad428cdf37cd08808d37845679e92ade13cad7cc7e91573fb7326534416a",
+      "label_from_source": "chinese_serow",
+      "decision": "quarantine",
+      "observation": "Con vật bị cành lá che gần hết ở mép ảnh; không tách rõ hình dáng, cách ly."
+    },
+    {
+      "review_index": 32,
+      "image_id": "d2028617-8c29-11eb-a63f-000d3a74c7de",
+      "sha256": "a2922f8ebe50c4838bd5efca8154ef54d44e80ea38144285d6a5561bf686b027",
+      "label_from_source": "chinese_serow",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh IR hạt lớn nhưng thân, đầu và chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 33,
+      "image_id": "dc51c5d2-8c29-11eb-a303-000d3a74c7de",
+      "sha256": "4ff45f1aa14b6eb2c10f07cae52f87911636b5234f538162d06d6cc245fabcf7",
+      "label_from_source": "chinese_serow",
+      "decision": "retain_metadata_label",
+      "observation": "Đầu ngoài mép trái, thân, chân và đuôi rõ; giữ nhãn nguồn, không xác nhận loài bằng ảnh riêng lẻ."
+    },
+    {
+      "review_index": 34,
+      "image_id": "d34da05e-8c29-11eb-9cba-000d3a74c7de",
+      "sha256": "d4ff3825d4d84b55ba2ae0be9b8410a29ed4e4140cb71212236f3dfb2b4dfd1a",
+      "label_from_source": "chinese_serow",
+      "decision": "quarantine",
+      "observation": "Chỉ mẩu bộ phận sát mép phải, không thấy đủ con vật; cách ly."
+    },
+    {
+      "review_index": 35,
+      "image_id": "da660820-8c29-11eb-8cd7-000d3a74c7de",
+      "sha256": "4093d4727a80076f9281af352c40488c68b2b982335431bc257c8dfb979f3830",
+      "label_from_source": "chinese_serow",
+      "decision": "quarantine",
+      "observation": "Đối tượng nhỏ, nhiễu màu và bị cây che, khó phân biệt khỏi nền; cách ly."
+    },
+    {
+      "review_index": 36,
+      "image_id": "d86acd7a-8c29-11eb-8cc4-000d3a74c7de",
+      "sha256": "60371aba3472ff440950c8303a56960a83dbd14eb3257e574da92339a88268f9",
+      "label_from_source": "chinese_serow",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh đêm thấy thân, bộ lông, chân và tai; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 37,
+      "image_id": "dc22154e-8c29-11eb-8672-000d3a74c7de",
+      "sha256": "250782463aadf819a828253aaf29788f56aa8bcecfcb6b9b04647fd695355d25",
+      "label_from_source": "chinese_serow",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh IR cận đầu, tai và sừng thấy rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 38,
+      "image_id": "d9b3d503-8c29-11eb-b3ae-000d3a74c7de",
+      "sha256": "47b2e674df32a5264879ed2692de4a403e288cae033cc5ed71e6fbcc1003dcbc",
+      "label_from_source": "chinese_serow",
+      "decision": "quarantine",
+      "observation": "Gần như toàn tối, không đủ chi tiết con vật để rà; cách ly."
+    },
+    {
+      "review_index": 39,
+      "image_id": "ce4d958f-8c29-11eb-98ae-000d3a74c7de",
+      "sha256": "771f3e6b84e090b044eb7e9901105a27017e9d886fe5736a6ac313e2f1a66f06",
+      "label_from_source": "chinese_serow",
+      "decision": "retain_metadata_label",
+      "observation": "Góc sau ban ngày, thấy tai, thân, chân, có mảng nắng mạnh; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 40,
+      "image_id": "d9fdb754-8c29-11eb-8e8a-000d3a74c7de",
+      "sha256": "32e2a0444ee69e8b3db36eb3c08c172845a2653cd25901aa749558a62bc32ccd",
+      "label_from_source": "chinese_serow",
+      "decision": "quarantine",
+      "observation": "Gần như toàn tối, chỉ đốm phản quang; cách ly."
+    },
+    {
+      "review_index": 41,
+      "image_id": "ceed47be-8c29-11eb-8283-000d3a74c7de",
+      "sha256": "2cf507ee5fbc9447ab162c4df4c2c370b882823a5b8045898ee5ad0294e9bae5",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "Thấy thân và đuôi dài, cành che nhẹ, đầu sát mép; giữ nhãn metadata, chưa phân biệt chuyên gia hai loài cầy."
+    },
+    {
+      "review_index": 42,
+      "image_id": "d0d14a77-8c29-11eb-a9a9-000d3a74c7de",
+      "sha256": "d0e0bef488b17614f6056829fbfbdff04a6ea6b0873a347a40f3ac6d9b9ee100",
+      "label_from_source": "common_palm_civet",
+      "decision": "quarantine",
+      "observation": "Vùng box rất mờ và dư sáng, không thấy rõ cấu trúc đầu/thân; cách ly."
+    },
+    {
+      "review_index": 43,
+      "image_id": "c90a7d48-8c29-11eb-973e-000d3a74c7de",
+      "sha256": "3acf478b8ece8bee077dc5cc0250a19aeed2e0fece309a398f2e431fca66fa2a",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR nhìn nghiêng, thấy thân, đầu và đuôi; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 44,
+      "image_id": "d814f364-8c29-11eb-bd78-000d3a74c7de",
+      "sha256": "3a4ad7d534d6c61e78f36431a513eff613c05384e5d5294120ffaa4759ff2203",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR thấy thân và đuôi, đầu sát mép phải; giữ nhãn nguồn, không kết luận phân loài."
+    },
+    {
+      "review_index": 45,
+      "image_id": "cda6a727-8c29-11eb-b795-000d3a74c7de",
+      "sha256": "fc74b207d07da345f5a0b602793ecc1d1e7ddada75b256cc1432f5d46181f798",
+      "label_from_source": "common_palm_civet",
+      "decision": "quarantine",
+      "observation": "Con vật sát mép dưới, phần đầu chói mắt và thiếu phần thân; cách ly chờ rà."
+    },
+    {
+      "review_index": 46,
+      "image_id": "da9b1d4a-8c29-11eb-81cc-000d3a74c7de",
+      "sha256": "19e10b2c4b1f8f606000b9971d421059f9612d6850c47d7157050f23a224a357",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu đêm thấy thân/đuôi, có cành che; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 47,
+      "image_id": "d87dd964-8c29-11eb-adb9-000d3a74c7de",
+      "sha256": "5cc6158d45017471e4573fda316ee804afe160d05edea39982333094011389cc",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "Nhìn nghiêng sau cành, hình dáng thân và đuôi còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 48,
+      "image_id": "cbb9225f-8c29-11eb-80e7-000d3a74c7de",
+      "sha256": "715582878aa4b8f837776144c0d6307c0610a17e66ac2340eab57552ed6a0d80",
+      "label_from_source": "common_palm_civet",
+      "decision": "quarantine",
+      "observation": "Vùng box bị gỗ/cây và bóng tối che gần hết; không xác nhận được vùng con vật, cách ly."
+    },
+    {
+      "review_index": 49,
+      "image_id": "ccf3d454-8c29-11eb-a5fb-000d3a74c7de",
+      "sha256": "41ea7884fe9338851102141b3ee5c79e27e1476dae3068c8b1d377fb255fa3f8",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR có vệt phản quang mắt, còn hình dáng thân và chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 50,
+      "image_id": "cbdcebdf-8c29-11eb-a16e-000d3a74c7de",
+      "sha256": "9a2af2b2ff51cb04381eff65e42365ff28703dd856c15b4d2964e97b430b092d",
+      "label_from_source": "common_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR thấy thân và đuôi rõ, cành che một phần; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 51,
+      "image_id": "ceb674a4-8c29-11eb-9fc8-000d3a74c7de",
+      "sha256": "295c08b04eebc032cf83a0f825196318e0885881e7efb5eb615f1f2f967f5aff",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu hơi nhòe chuyển động, còn thân và đầu có dải tối; giữ nhãn metadata."
+    },
+    {
+      "review_index": 52,
+      "image_id": "d2f341cf-8c29-11eb-83a1-000d3a74c7de",
+      "sha256": "a0699ca568cba39e6cca429498b4c833eeec44cbe018ac0c50d805dfecc8aa07",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR thân/chân và đầu còn thấy dù hơi nhòe; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 53,
+      "image_id": "ce1920e5-8c29-11eb-bd85-000d3a74c7de",
+      "sha256": "6b8c924cbcd767e8f3d03018c6f4b90c3bcd143568c6f77b0b4fa0b3783e938b",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR mắt chói và mờ, vẫn thấy thân/chân/đuôi; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "review_index": 54,
+      "image_id": "da9fdaff-8c29-11eb-8c62-000d3a74c7de",
+      "sha256": "e700825d4c9b33667b7a3cc44e7b24c435580c88f17f9cdc4cbf4f244fda6b4b",
+      "label_from_source": "masked_palm_civet",
+      "decision": "quarantine",
+      "observation": "Ảnh màu nhiễu, đối tượng sát mép dưới và mất chi tiết đầu; cách ly."
+    },
+    {
+      "review_index": 55,
+      "image_id": "ca8cbea9-8c29-11eb-b817-000d3a74c7de",
+      "sha256": "6648c4771a415cac7dc213ec769b2e8bd82fe172e7dec28e3fa1872fbc7b7bef",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR thấy thân, đầu và đuôi giữa cây; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 56,
+      "image_id": "cb444fe1-8c29-11eb-908e-000d3a74c7de",
+      "sha256": "ca0d697c8d98aafbaf2231b9d807aa4d784c9b1c428cb30cc7c69c5c21febb20",
+      "label_from_source": "masked_palm_civet",
+      "decision": "quarantine",
+      "observation": "Chủ yếu vệt sáng/thân hoặc đuôi sát mép dưới, không đủ đối tượng để rà; cách ly."
+    },
+    {
+      "review_index": 57,
+      "image_id": "dbe1b7cc-8c29-11eb-bba5-000d3a74c7de",
+      "sha256": "4739705109d7ff4f835a51bdd23850c8e263d1a920432242d9ffc7ade7efada6",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy thân, chân và đầu, cành che nhẹ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 58,
+      "image_id": "cfe2ddc0-8c29-11eb-a188-000d3a74c7de",
+      "sha256": "a7e261c701b0364e918f761ff8695179b58362684f13619086a1de46dd4ea4a5",
+      "label_from_source": "masked_palm_civet",
+      "decision": "quarantine",
+      "observation": "Box kéo dài sát mép phải, đối tượng quá tối và mờ để rà; cách ly."
+    },
+    {
+      "review_index": 59,
+      "image_id": "d4ea5bb4-8c29-11eb-9c1b-000d3a74c7de",
+      "sha256": "0ef5ab81825042074f3455b355bae17db56c3759a26563111ec7d8b909a3c911",
+      "label_from_source": "masked_palm_civet",
+      "decision": "retain_metadata_label",
+      "observation": "IR nhìn ngang thấy thân và mặt, hơi nhòe; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 60,
+      "image_id": "dc1fb667-8c29-11eb-8681-000d3a74c7de",
+      "sha256": "2f12824a7a1f60a13f5df96d1a03d06cc2231b5a16b3a0a2a3eecab2774f4964",
+      "label_from_source": "masked_palm_civet",
+      "decision": "quarantine",
+      "observation": "Sương/dư sáng phủ vùng con vật, không thấy rõ cấu trúc; cách ly."
+    },
+    {
+      "review_index": 61,
+      "image_id": "cea82661-8c29-11eb-be58-000d3a74c7de",
+      "sha256": "ca1b19ac1fe0cb5ed91015515c3ea13d0537f824531cdbae64dbccb865725a5d",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Hai box thấy hai con chim, gồm kiểu lông sáng và sẫm; giữ cả hai box theo metadata."
+    },
+    {
+      "review_index": 62,
+      "image_id": "d831980c-8c29-11eb-931e-000d3a74c7de",
+      "sha256": "91a0af6ed8326ef5a5812c738cfab02ff2c5d61970abedb203d92596efdb6256",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Chim nhỏ hơi mờ nhưng thấy đầu, thân, chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 63,
+      "image_id": "d671564e-8c29-11eb-acaf-000d3a74c7de",
+      "sha256": "eea8b0f5746b69fe246fe79e4503ee45724c8025a8f5935c6649f67637a2848a",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Hai box thấy hai con chim với màu lông khác nhau; giữ cả hai, không suy ra nhiều loài chỉ do khác màu."
+    },
+    {
+      "review_index": 64,
+      "image_id": "d1ea9ae4-8c29-11eb-bf82-000d3a74c7de",
+      "sha256": "81b89cde18ec78364200d7ddd75453229c3176b9572b9a1cd2db0e173306e282",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Đã xem zoom: ba con chim thực sự, hai con phía trước chồng nhau; box 1/3 không phải cùng một cá thể lặp. Giữ cả ba."
+    },
+    {
+      "review_index": 65,
+      "image_id": "d531de5e-8c29-11eb-86e4-000d3a74c7de",
+      "sha256": "b61ada34b2b9f73974eb634a5fa444d01ef6ec6597db5b7e3587b9366774e7b1",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Chim ở mép phải, đầu ngoài vùng thấy nhưng lông cánh/đuôi và chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 66,
+      "image_id": "cb018e3e-8c29-11eb-a857-000d3a74c7de",
+      "sha256": "58be0c2d2b6b9a1b277d1624b834980a14f2459106fb197dc9b3b9dc9972eee9",
+      "label_from_source": "silver_pheasant",
+      "decision": "quarantine",
+      "observation": "Chim trong bóng tối và lá che, không thấy đủ chi tiết để rà; cách ly."
+    },
+    {
+      "review_index": 67,
+      "image_id": "d25d0fd7-8c29-11eb-a9a2-000d3a74c7de",
+      "sha256": "81a9a5d14328b1f78a0c471348e39a8783356f08480e81b7059c557ea87569a3",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy đầu, thân và chân cùng hoa văn lông rõ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 68,
+      "image_id": "cfb7f46c-8c29-11eb-9f84-000d3a74c7de",
+      "sha256": "5a093a5b25ff412817cbed19d0ebadf7263ce59eadb3db8b7188be697408a03f",
+      "label_from_source": "silver_pheasant",
+      "decision": "quarantine",
+      "observation": "Ba box, một box ở mép trái chỉ còn mẩu đuôi/vệt mờ; cách ly cả ảnh, không tự bỏ riêng box đó."
+    },
+    {
+      "review_index": 69,
+      "image_id": "d137d7f2-8c29-11eb-8138-000d3a74c7de",
+      "sha256": "066fea6f6d27846408ab5393f118e58e98026eba467bc6bd300229a416b93102",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "IR sương nhưng thấy thân chim, cánh/đuôi và chân; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "review_index": 70,
+      "image_id": "cfb7f470-8c29-11eb-9ae3-000d3a74c7de",
+      "sha256": "5ffd75e337593a8214b9bd0b963f398a22a785ed01ad9f6ce01340de2babf75b",
+      "label_from_source": "silver_pheasant",
+      "decision": "retain_metadata_label",
+      "observation": "Chim sát mép ảnh, thân/cánh/đuôi và chân còn thấy, hơi mờ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 71,
+      "image_id": "d06398a5-8c29-11eb-a1c1-000d3a74c7de",
+      "sha256": "16b09425c0e74bcdb3178018c92af38d7b0dc730a1c426c54219811f67d21dc1",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu nhìn nghiêng thấy thân, đầu cúi và chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 72,
+      "image_id": "cb4b72cd-8c29-11eb-a296-000d3a74c7de",
+      "sha256": "fb3465637a43ece62c788d60f70608fe65e9f97e8379febf1b0d18d5a7ba2650",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy mặt, tai, thân và chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 73,
+      "image_id": "d9b8970e-8c29-11eb-8162-000d3a74c7de",
+      "sha256": "1c222c586df9cfc7de1d15b57893fb9c31c155e6786f233cb529e0f0ab17b528",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu nhìn nghiêng thấy gần toàn thân, đầu cúi; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 74,
+      "image_id": "d994cf2f-8c29-11eb-9307-000d3a74c7de",
+      "sha256": "7934a7386abc50f5529ede8f7a2e334ba806fa7f44016fd6b38d5b3e3882de1f",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh đêm có ánh vàng, vẫn thấy thân, chân và đầu cúi; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 75,
+      "image_id": "d0a3fd98-8c29-11eb-b3b6-000d3a74c7de",
+      "sha256": "54dd8f1a17ec7a3a8f00ac03fbeb6a98e1782bde51fcf08c8381ee53981aa977",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "quarantine",
+      "observation": "Hai box; box bên phải sát biên chỉ thấy mảnh con vật, box còn lại tối. Cách ly cả ảnh chờ rà."
+    },
+    {
+      "review_index": 76,
+      "image_id": "d4a2d7d5-8c29-11eb-a940-000d3a74c7de",
+      "sha256": "14026db5e03f0081f71aa83637874e6b3d05d51221d5bf4fe0df76a8a212245d",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "quarantine",
+      "observation": "Chỉ mảng lưng/lông sát máy, thiếu đầu/chân và hình dáng; cách ly."
+    },
+    {
+      "review_index": 77,
+      "image_id": "d1bd4fd6-8c29-11eb-a059-000d3a74c7de",
+      "sha256": "8cfde44e2bdd936e7bc282ca33f0cd55a36ea7fde6dee6f9de191127219dc74f",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Nhòe chuyển động nhưng còn toàn dáng thân/đầu/chân; giữ nhãn nguồn, ghi ảnh khó."
+    },
+    {
+      "review_index": 78,
+      "image_id": "c9a3166f-8c29-11eb-ab2d-000d3a74c7de",
+      "sha256": "d15486d03488d2be95bb5b2339a2fbf94fc235d8e2ca824cf17f54260f736227",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh màu rõ thân, chân và mõm sau lá nhỏ; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 79,
+      "image_id": "d819ba39-8c29-11eb-83b4-000d3a74c7de",
+      "sha256": "c434116c675c73a111293973565a8b3d2a1dfd792647b3e8280e1409755cc7c6",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "retain_metadata_label",
+      "observation": "Ảnh đêm nhiễu màu, vẫn thấy đầu cúi, thân và chân; giữ nhãn nguồn."
+    },
+    {
+      "review_index": 80,
+      "image_id": "ca859e45-8c29-11eb-942d-000d3a74c7de",
+      "sha256": "8f2c160e9a2e3aba82cd04ba12e284fda35afa0219468ab37f841f511129fb1e",
+      "label_from_source": "eurasian_wild_pig",
+      "decision": "quarantine",
+      "observation": "Thân sát mép trái bị cắt và rất tối, chưa đủ chi tiết để rà; cách ly."
+    }
+  ]
+}

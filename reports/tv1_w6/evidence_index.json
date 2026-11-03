@@ -1,0 +1,19 @@
+{
+  "scope": "Versioned TV1 W6 evidence; no raw images or weights in Git",
+  "files_sha256": {
+    "download_summary.json": "5285fd5601788f960b817b077a98da8a035c33fc1489abf6f53ee095b5054b41",
+    "holdout_download_events.jsonl": "51540b34f68d681176caa98b7a157bef12674d1df957be99834a3e412ec982fe",
+    "image_package.json": "d4dd765d5ff28d1cb4d0787b02a9af7a542bf73ce72c08aa49d3393da9161c58",
+    "independent_audit.json": "b636eb424e8013d97ba419a0028ea4bc6316b00f01f3a89f1863d784a8db60f6",
+    "portable_checkout_verification.json": "572ab9dbadfd064050f334fa61065ce3ae0da180d7fdbd350d79af903ebde53a",
+    "release_result.json": "7122af07f73f7effef6b6ad64b5136730e012c08b64bf19b07760ed3427f558b",
+    "resume_check.txt": "758ef8372ae8f69d9a1915efb85d1cdec46c89581b1fe2979ea3c756b0a29757",
+    "scan_result.json": "87f79cab2cda91284a1fe79d73db2f8b74506413f1ac4db1e9f8baa51f85ef14",
+    "source_verification.json": "e2686f4cf857761aed73f18e0027f48c8277189e54ef98a443e023e6ec6a7636",
+    "tests.txt": "9ac0fa5c194d49d316075c34a1be830a218f9f536112913ca110060f5c870c2f",
+    "train_download_events.jsonl": "82290abb9bc49f2f682d9a313056bd9ec994bd19e44f5cf098ce00dc2fa5ba1c",
+    "verify_result.json": "e3b7158db037540cb8de6f26d4cd9f2fa7c532c47d3d586dc28d16ad273be7f2",
+    "visual_package.json": "0ea32a619acd30660ea45858dbaeb963aa607e96c9e2bb0bf204b87f93d1f94a",
+    "visual_review.json": "5044e71bbe5d43c5211f0bcbfc32e4598fc9f866406e794a7b529aa91fd86f92"
+  }
+}

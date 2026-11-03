@@ -1,5 +1,7 @@
 # TV2 — Kế hoạch tuần 5–6: so sánh mô hình và kiểm định sản phẩm
 
+> **Kế hoạch W6 mới ngày 03/11:** [TV2_W6.md](TV2_W6.md) thay phần W6 bên dưới sau khi giảng viên gia hạn. Hồ sơ và protocol W5 vẫn giữ nguyên.
+
 > Ghi nhận 03/11/2026: giảng viên cho thêm vài tuần; chưa có hạn mới cụ thể. TV1 dự kiến bắt đầu W6 tối03/11. Lịch dưới đây là kế hoạch đề xuất trước gia hạn; chưa tự đổi nhiệm vụ/lượt train. Xem [progress tích hợp](../progress_integration_w5_2026-11-03.md).
 
 **Cập nhật:** 28/10/2026. **Branch:** `feat/baseline`. **Người kiểm tra phần mô hình:** TV3; TV1 đối chiếu dữ liệu. TV2 đồng thời kiểm tra chéo phần ứng dụng của TV4.

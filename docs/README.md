@@ -20,14 +20,31 @@ DINO accuracy84,50%, macro-F184,44% trên validation GT-box; chưa đạt88% và
 test độc lập. Giảng viên đã gia hạn vài tuần; hạn mới chưa xác nhận. TV1 dự kiến
 bắt đầu tuần6 tối03/11; [ghi nhận và progress](progress_integration_w5_2026-11-03.md).
 
+## Tuần 6 — cải thiện so với DINOv3_LP_run01
+
+Lịch đề xuất 04–10/11; giảng viên chưa xác nhận hạn mới. Mục tiêu accuracy ≥88%
+kèm tăng macro-F1 trên cùng validation, chưa phải kết quả đã đạt.
+
+| Thành viên | Kế hoạch hiện hành |
+| --- | --- |
+| TV1 | [Mở rộng train và kiểm định dữ liệu](plans/TV1_W6.md) |
+| TV2 | [Protocol, đối chứng và nghiệm thu](plans/TV2_W6.md) |
+| TV3 | [Pooling, fine-tune nhẹ và thí nghiệm dữ liệu](plans/TV3_W6.md) |
+| TV4 | [Adapter model mới và tốc độ demo](plans/TV4_W6.md) |
+
+TV1 đã hoàn thành kiểm định local: thêm **1.446 ảnh**, train **4.246 ảnh /
+4.729 crop**, chờ TV2 review. Xem [báo cáo](../reports/tv1_w6/REPORT.md),
+[bàn giao](handoff_tv1_w6.md) và [progress](progress_tv1_w6.md) trước dùng dữ
+liệu mở rộng. Plan TV2–TV4 là việc được giao, không thay bằng chứng hoàn thành.
+
 ## Dữ liệu W5 và kế hoạch tiếp theo
 
 - **TV1 W5:** [Bàn giao](handoff_tv1_w5.md), [kiểm kê và manifest ứng viên](../reports/tv1_w5/REPORT.md),
   [phần dữ liệu báo cáo](../reports/tv1_w5/DATA_CHAPTER.md), [progress](progress_tv1_w5.md).
 - **Ba kế hoạch riêng:** [TV2: đánh giá](plans/TV2_W5_W6.md),
   [TV3: DINO và checkpoint](plans/TV3_W5_W6.md), [TV4: UI và ứng dụng](plans/TV4_W5_W6.md).
-- Lượt mô hình đầu dùng `comparison_v1`; 1.665 ảnh train bổ sung mới là ứng viên
-  metadata. Nguồn holdout mới chỉ có 109 ảnh, chưa đủ hỗ trợ 8 lớp; chưa phát
+- Lượt mô hình W5 đầu dùng `comparison_v1`; snapshot 1.665 ứng viên W5 vẫn là
+  metadata. W6 có release chất lượng riêng như trên. Nguồn holdout mới chỉ có 109 ảnh, chưa đủ hỗ trợ 8 lớp; chưa phát
   hành test mới. Xem báo cáo TV1 trước khi mở rộng train hoặc gọi kết quả độc lập.
 
 ## Kết quả tuần 4 được bảo toàn

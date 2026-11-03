@@ -1,0 +1,36 @@
+{
+  "train": {
+    "log_path": "outputs/tv1_w6/train_download_events.jsonl",
+    "events": 3332,
+    "finished": {
+      "utc": "2026-11-03T16:04:25+00:00",
+      "event": "run_finished",
+      "source_sha256": "a1da787d25698526fb4ca1fd43748f5a6d11515318e719d45f3bd3a9d70c5c3c",
+      "source_rows": 1665,
+      "images": "data/images/swg_w5_extension",
+      "processed": 1665,
+      "totals": {
+        "valid": 1665,
+        "bytes_valid": 2577829468
+      }
+    },
+    "failure_event_counts": {}
+  },
+  "holdout": {
+    "log_path": "outputs/tv1_w6/holdout_download_events.jsonl",
+    "events": 220,
+    "finished": {
+      "utc": "2026-11-03T15:49:31+00:00",
+      "event": "run_finished",
+      "source_sha256": "9d83c62c86a1a2830ccb48237d6aed71d3d507b2b5ee45d3a4bd3248b33e0c34",
+      "source_rows": 109,
+      "images": "data/images/swg_w6_holdout_audit",
+      "processed": 109,
+      "totals": {
+        "valid": 109,
+        "bytes_valid": 173588482
+      }
+    },
+    "failure_event_counts": {}
+  }
+}
