@@ -1,0 +1,25 @@
+{
+  "experiment_id": "DINOv2_LP_run01",
+  "model": {
+    "name": "dinov2_vits14",
+    "repo_dir": "outputs/tv3_w5/vendor/dinov2",
+    "repo_commit": null,
+    "weights_path": "outputs/tv3_w5/pretrained/dinov2_vits14.pth",
+    "weights_sha256": null,
+    "weights_source": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+    "pooling": "x_norm_clstoken",
+    "frozen": true
+  },
+  "preprocessing": "dinov2_short256_center224_bicubic_pil",
+  "data": {
+    "directory": "data/processed/comparison_v1",
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f"
+  },
+  "cache": {"batch_size": 32, "shard_size": 128},
+  "training": {
+    "seed": 42, "epochs": 50, "patience": 7, "images_per_batch": 32,
+    "optimizer": "sgd", "lr": 0.01, "momentum": 0.9, "weight_decay": 0.0001,
+    "scheduler": "cosine"
+  },
+  "runtime": {"device": "cuda", "amp": false}
+}

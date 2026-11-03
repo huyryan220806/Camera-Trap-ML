@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-29",
+  "status": "TV2_EXPORT_COMPATIBILITY_TESTED_DINO_RUN_PENDING",
+  "tv2_commit": "3f76643d1bc395098d90105e67a9cf29c8fe3256",
+  "tests": {
+    "repository": {
+      "passed": 393,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 65.811
+    },
+    "dino_included_in_repository": 16,
+    "sandbox_attempt": {
+      "tests": 393,
+      "errors": 6,
+      "reason": "Local HTTP requests blocked by sandbox (WinError 10013); rerun outside sandbox passed"
+    }
+  },
+  "checks": {
+    "base_environment": "PASS",
+    "result_contracts": "6/6 PASS",
+    "git_diff_check": "PASS",
+    "new_file_whitespace": "PASS"
+  },
+  "compatibility_scope": "Original pinned TV2 CLI and schemas; synthetic candidate scores/checkpoint/approval, frozen 600-image/680-crop validation metadata, published real B2 predictions. Artifact audit only, no DINO inference.",
+  "real_dino_training_performed": false,
+  "real_dino_checkpoint_created": false,
+  "pretrained_weights_available": false,
+  "protocol_approved": false,
+  "committed": false,
+  "pushed": false,
+  "code_sha256": {
+    "src/training/dino_handoff.py": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+    "src/training/dino_probe.py": "94d1bc0bc6f42a9a40ca8d89ca3fb8b49eb5643332054b9291ccd9dd5f6d4d31",
+    "scripts/dino_w5.py": "f0472daca1d1d29ddccc770e8ed396dbfbd19f4728d3c619472d87892794e617",
+    "scripts/audit_dino_tv2.py": "1a49cfbe1bf6baf3a6f70d28b7949f19619a0efb65a9e8203438fbea7385f49d",
+    "tests/test_dino_w5.py": "7ee610117874d6d9b0c9811c356db450a27c839fdfceba92c26feb6695230442",
+    "tests/test_dino_tv2_compat.py": "bc3c87a1406379358b2295738e582437eea6bdc526d097e73102da405b9322d7"
+  },
+  "evidence_sha256": {
+    "tests_repository.txt": "47706351d97f779b02e66b5f60a42dcaa6e060f45ab13092ca397d6087f9eb57",
+    "tests_sandbox_attempt.txt": "14b28774fd14e47d27250625287b21fd1c34a9d454e9d6730ac5e82b12b06753",
+    "tv2_snapshot.json": "74934354118166dbc6ce0de404729f01b963b670095d5e54ddadd8738d85e9a4"
+  }
+}

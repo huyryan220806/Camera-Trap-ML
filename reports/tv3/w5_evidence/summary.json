@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "60516f5",
+  "tv1_w5_ref": "9abc9c5",
+  "full_suite": {
+    "passed": 386,
+    "seconds": 73.173,
+    "scope": "before final W5 export test"
+  },
+  "final_w5_suite": {
+    "passed": 10,
+    "seconds": 7.823
+  },
+  "environment_check": "PASS",
+  "result_contracts": {
+    "passed": 6
+  },
+  "official_dino_run": false,
+  "pretrained_available": false,
+  "tv2_protocol": "PENDING",
+  "files_sha256": {
+    "preflight.json": "343f30034f525f740c730c3ccea5769dda53bb6a40500e75c4099fa01b2183e2",
+    "tests_repository.txt": "92e7dcb9ba210e52b3261d043fe450f52cdf22abec35d9eb8c0496b42292dba8",
+    "tests_w5_final.txt": "19db85b6c1ed619e158675dd571672e28027b53f55c164c816e0e6a33ebde9dc"
+  }
+}

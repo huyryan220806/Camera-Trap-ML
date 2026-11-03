@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\tv2_reference\\3f76643d1bc395098d90105e67a9cf29c8fe3256\\scripts\\evaluate_w5_validation.py",
+    "--protocol",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\configs\\dinov3_lp_w5.local.protocol.json",
+    "--handoff",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\runs\\DINOv3_LP_run01\\handoff.json",
+    "--checkpoint",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\runs\\DINOv3_LP_run01\\best_model.pt",
+    "--crop-predictions",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\runs\\DINOv3_LP_run01\\val_crops.jsonl",
+    "--b2-predictions",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\tv2_reference\\3f76643d1bc395098d90105e67a9cf29c8fe3256\\reports\\tv2\\w5_evidence\\attempt_01\\validation_02\\b2_predictions.jsonl",
+    "--output",
+    "C:\\Users\\Admin\\OneDrive\\Documents\\VLU\\N\u0103m 3\\HK1nam3\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Project ML\\outputs\\tv3_w5\\tv2_reference\\3f76643d1bc395098d90105e67a9cf29c8fe3256\\outputs\\dino_run01_audit01"
+  ],
+  "returncode": 0,
+  "source_commit": "3f76643d1bc395098d90105e67a9cf29c8fe3256"
+}

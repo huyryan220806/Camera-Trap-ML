@@ -1,0 +1,862 @@
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+B0 smoke test PASS
+test_a_smoke_preserves_completed_run_bytes_and_hashes (test_b0_integrity.B0IntegrityTests.test_a_smoke_preserves_completed_run_bytes_and_hashes) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 3, 'excluded': 1}}
+B0 smoke test PASS
+test_b_smoke_with_missing_validation_image_preserves_run (test_b0_integrity.B0IntegrityTests.test_b_smoke_with_missing_validation_image_preserves_run) ... ok
+test_c_existing_run_rejected_before_preparation (test_b0_integrity.B0IntegrityTests.test_c_existing_run_rejected_before_preparation) ... ok
+test_d_atomic_publication_rolls_back_all_files (test_b0_integrity.B0IntegrityTests.test_d_atomic_publication_rolls_back_all_files) ... ok
+test_d_prepare_failure_after_train_inspection_publishes_nothing (test_b0_integrity.B0IntegrityTests.test_d_prepare_failure_after_train_inspection_publishes_nothing) ... ok
+test_e_changed_image_id_rejected (test_b0_integrity.B0IntegrityTests.test_e_changed_image_id_rejected) ... ok
+test_f_changed_class_map_rejected (test_b0_integrity.B0IntegrityTests.test_f_changed_class_map_rejected) ... ok
+test_g_added_deleted_modified_validation_rows_rejected (test_b0_integrity.B0IntegrityTests.test_g_added_deleted_modified_validation_rows_rejected) ... ok
+test_h_changed_source_rejected (test_b0_integrity.B0IntegrityTests.test_h_changed_source_rejected) ... ok
+test_i_changed_decodable_image_bytes_rejected (test_b0_integrity.B0IntegrityTests.test_i_changed_decodable_image_bytes_rejected) ... ok
+test_inverse_checkpoint_mapping_checked (test_b0_integrity.B0IntegrityTests.test_inverse_checkpoint_mapping_checked) ... ok
+test_missing_class_hash_requires_exact_mapping (test_b0_integrity.B0IntegrityTests.test_missing_class_hash_requires_exact_mapping) ... ok
+test_missing_frozen_validation_hash_rejected (test_b0_integrity.B0IntegrityTests.test_missing_frozen_validation_hash_rejected) ... ok
+B0 parameters: {'total': 11, 'trainable': 8, 'frozen': 3}; device=cpu; samples={'train': {'selected': 4, 'usable': 4, 'excluded': 0}, 'val': {'selected': 4, 'usable': 4, 'excluded': 0}}
+test_new_fixture_run_can_train_save_and_verify_once (test_b0_integrity.B0IntegrityTests.test_new_fixture_run_can_train_save_and_verify_once) ... fatal: not a git repository (or any of the parent directories): .git
+{"epoch": 1, "train_loss": 0.9608118236064911, "val_loss": 0.923206590116024, "val_macro_f1": 0.3333333333333333, "val_macro_precision": 0.25, "val_macro_recall": 0.5, "val_accuracy": 0.5, "learning_rate": 0.001}
+{"best_epoch": 1, "best_macro_f1": 0.3333333333333333, "checkpoint": "C:\\Users\\Admin\\.codex\\visualizations\\2026\\10\\16\\01a14382-8615-7af1-b132-1fd67ce127e4\\tv3-w5-test-temp\\tmp6r49wba0\\experiments\\new_fixture\\checkpoints\\best_model.pth", "reload": "PASS", "checkpoint_bytes": 5603}
+ok
+test_prepare_cli_rejects_completed_run (test_b0_integrity.B0IntegrityTests.test_prepare_cli_rejects_completed_run) ... ok
+test_reservation_rejects_each_existing_run_marker (test_b0_integrity.B0IntegrityTests.test_reservation_rejects_each_existing_run_marker) ... ok
+test_selected_inputs_allow_first_reservation_but_not_second (test_b0_integrity.B0IntegrityTests.test_selected_inputs_allow_first_reservation_but_not_second) ... ok
+test_smoke_exception_preserves_run (test_b0_integrity.B0IntegrityTests.test_smoke_exception_preserves_run) ... ok
+test_source_membership_checked_even_with_matching_manifest_hash (test_b0_integrity.B0IntegrityTests.test_source_membership_checked_even_with_matching_manifest_hash) ... ok
+test_source_row_path_mismatch_rejected (test_b0_integrity.B0IntegrityTests.test_source_row_path_mismatch_rejected) ... ok
+test_successful_validator_runs_inference_after_provenance (test_b0_integrity.B0IntegrityTests.test_successful_validator_runs_inference_after_provenance) ... ok
+test_v1_without_image_hash_reports_limitation (test_b0_integrity.B0IntegrityTests.test_v1_without_image_hash_reports_limitation) ... ok
+test_v2_local_path_and_sha_verified (test_b0_integrity.B0IntegrityTests.test_v2_local_path_and_sha_verified) ... ok
+test_agreement_must_pin_actual_settings (test_b1.B1Tests.test_agreement_must_pin_actual_settings) ... ok
+test_box_label_and_geometry (test_b1.B1Tests.test_box_label_and_geometry) ... ok
+test_class_map_hash_and_mapping (test_b1.B1Tests.test_class_map_hash_and_mapping) ... ok
+test_crop_label_split_and_annotation_changes_fail (test_b1.B1Tests.test_crop_label_split_and_annotation_changes_fail) ... ok
+test_duplicate_ids_and_paths (test_b1.B1Tests.test_duplicate_ids_and_paths) ... ok
+test_empty_invalid_label_and_missing_class (test_b1.B1Tests.test_empty_invalid_label_and_missing_class) ... ok
+test_end_to_end_real_resnet_checkpoint_and_tamper_rejection (test_b1.B1Tests.test_end_to_end_real_resnet_checkpoint_and_tamper_rejection) ... ok
+test_exclusion_accounting (test_b1.B1Tests.test_exclusion_accounting) ... ok
+test_failure_keeps_reserved_run_and_records_status (test_b1.B1Tests.test_failure_keeps_reserved_run_and_records_status) ... ok
+test_frozen_data_does_not_imply_protocol_agreement (test_b1.B1Tests.test_frozen_data_does_not_imply_protocol_agreement) ... ok
+test_identical_content_with_conflicting_labels_rejected (test_b1.B1Tests.test_identical_content_with_conflicting_labels_rejected) ... ok
+test_invalid_configs (test_b1.B1Tests.test_invalid_configs) ... ok
+test_location_sequence_and_content_leakage (test_b1.B1Tests.test_location_sequence_and_content_leakage) ... ok
+test_manifest_hash_drift (test_b1.B1Tests.test_manifest_hash_drift) ... ok
+test_missing_corrupt_and_changed_images_fail_without_filtering (test_b1.B1Tests.test_missing_corrupt_and_changed_images_fail_without_filtering) ... ok
+test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail (test_b1.B1Tests.test_multiple_crops_pass_and_missing_duplicate_or_wrong_box_fail) ... ok
+test_official_proposed_config_fails_before_run_or_model (test_b1.B1Tests.test_official_proposed_config_fails_before_run_or_model) ... ok
+test_path_escape_rejected (test_b1.B1Tests.test_path_escape_rejected) ... ok
+test_pixel_hash_is_recomputed (test_b1.B1Tests.test_pixel_hash_is_recomputed) ... ok
+test_receipt_checks_real_git_bytes (test_b1.B1Tests.test_receipt_checks_real_git_bytes) ... ok
+test_resnet_backbone_gradients_batchnorm_and_step (test_b1.B1Tests.test_resnet_backbone_gradients_batchnorm_and_step) ... ok
+test_smoke_preserves_project_and_existing_run (test_b1.B1Tests.test_smoke_preserves_project_and_existing_run) ... ok
+test_source_membership_mismatch (test_b1.B1Tests.test_source_membership_mismatch) ... ok
+test_test_row_rejected (test_b1.B1Tests.test_test_row_rejected) ... ok
+test_transform_and_loader_reproducibility (test_b1.B1Tests.test_transform_and_loader_reproducibility) ... ok
+test_user_confirmed_team_protocol_still_requires_budget (test_b1.B1Tests.test_user_confirmed_team_protocol_still_requires_budget) ... ok
+test_valid_fixture_counts_and_no_test (test_b1.B1Tests.test_valid_fixture_counts_and_no_test) ... ok
+test_image_metrics_exact (test_b2_handoff_metrics.HandoffMetricTests.test_image_metrics_exact) ... ok
+test_invalid_missing_loss_rejected (test_b2_handoff_metrics.HandoffMetricTests.test_invalid_missing_loss_rejected) ... ok
+test_rounded_loss_only_tolerance (test_b2_handoff_metrics.HandoffMetricTests.test_rounded_loss_only_tolerance) ... ok
+test_all_invalid_refuses_empty_snapshot (test_comparison.RuleTests.test_all_invalid_refuses_empty_snapshot) ... ok
+test_exact_duplicate_across_splits_fails_within_split_is_reported (test_comparison.RuleTests.test_exact_duplicate_across_splits_fails_within_split_is_reported) ... ok
+test_missing_duplicate_or_invalid_annotations_excluded (test_comparison.RuleTests.test_missing_duplicate_or_invalid_annotations_excluded) ... ok
+test_missing_group_identity_and_alias_mismatch_fail (test_comparison.RuleTests.test_missing_group_identity_and_alias_mismatch_fail) ... ok
+test_mixed_species_and_ambiguous_image_excluded (test_comparison.RuleTests.test_mixed_species_and_ambiguous_image_excluded) ... ok
+test_multiple_boxes_one_species_keeps_one_b1_image (test_comparison.RuleTests.test_multiple_boxes_one_species_keeps_one_b1_image) ... ok
+test_nonfinite_negative_and_small_geometry_rejected (test_comparison.RuleTests.test_nonfinite_negative_and_small_geometry_rejected) ... ok
+test_one_small_box_excludes_whole_parent_not_just_box (test_comparison.RuleTests.test_one_small_box_excludes_whole_parent_not_just_box) ... ok
+test_rounding_matches_tv3_and_eight_pixels_is_accepted (test_comparison.RuleTests.test_rounding_matches_tv3_and_eight_pixels_is_accepted) ... ok
+test_sequence_cannot_span_two_locations_even_inside_train (test_comparison.RuleTests.test_sequence_cannot_span_two_locations_even_inside_train) ... ok
+test_source_leakage_rejected_even_if_offending_row_would_be_filtered (test_comparison.RuleTests.test_source_leakage_rejected_even_if_offending_row_would_be_filtered) ... ok
+test_statistics_balance_and_no_split_changes (test_comparison.RuleTests.test_statistics_balance_and_no_split_changes) ... ok
+test_changed_policy_fails_without_rewriting_frozen_data (test_comparison.SnapshotTests.test_changed_policy_fails_without_rewriting_frozen_data) ... ok
+test_corruption_after_publication_cannot_pass_full_validation (test_comparison.SnapshotTests.test_corruption_after_publication_cannot_pass_full_validation) ... ok
+test_false_counts_rejected_after_rehash (test_comparison.SnapshotTests.test_false_counts_rejected_after_rehash) ... ok
+test_interrupted_publication_leaves_only_staging_then_recovers (test_comparison.SnapshotTests.test_interrupted_publication_leaves_only_staging_then_recovers) ... ok
+test_interruption_resumes_saved_receipts_and_publishes_once (test_comparison.SnapshotTests.test_interruption_resumes_saved_receipts_and_publishes_once) ... ok
+test_missing_image_stops_build_without_silently_excluding_it (test_comparison.SnapshotTests.test_missing_image_stops_build_without_silently_excluding_it) ... ok
+test_publish_and_resume_preserve_every_snapshot_byte (test_comparison.SnapshotTests.test_publish_and_resume_preserve_every_snapshot_byte) ... ok
+test_raw_manifest_tampering_rejected (test_comparison.SnapshotTests.test_raw_manifest_tampering_rejected) ... ok
+test_semantic_tampering_rejected_even_after_rehash (test_comparison.SnapshotTests.test_semantic_tampering_rejected_even_after_rehash) ... ok
+test_source_changed_rejected_even_with_new_source_hashes (test_comparison.SnapshotTests.test_source_changed_rejected_even_with_new_source_hashes) ... ok
+test_unexpected_frozen_file_rejected (test_comparison.SnapshotTests.test_unexpected_frozen_file_rejected) ... ok
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+test_registration_and_policy_fail_closed (test_dino_tv2_compat.ProtocolTests.test_registration_and_policy_fail_closed) ... ok
+test_no_pass_for_missing_wrong_or_failed_reload (test_dino_tv2_compat.TV2CompatibilityTests.test_no_pass_for_missing_wrong_or_failed_reload) ... ok
+test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2 (test_dino_tv2_compat.TV2CompatibilityTests.test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2) ... ok
+test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest) ... ok
+test_tv2_rejects_missing_crop_and_export_uses_original_softmax (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_missing_crop_and_export_uses_original_softmax) ... ok
+Cached train: 1/1
+Cached val: 1/1
+test_cache_resume_and_corruption (test_dino_w5.DinoTests.test_cache_resume_and_corruption) ... ok
+Epoch 1: image macro-F1=0.00000000
+test_cli_exports_package_and_refuses_existing_run (test_dino_w5.DinoTests.test_cli_exports_package_and_refuses_existing_run) ... ok
+Epoch 1: image macro-F1=0.25000000
+Epoch 2: image macro-F1=0.40000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+Epoch 1: image macro-F1=0.25000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+test_epoch_resume_matches_uninterrupted (test_dino_w5.DinoTests.test_epoch_resume_matches_uninterrupted) ... ok
+test_frozen_metadata_and_parent_coverage (test_dino_w5.DinoTests.test_frozen_metadata_and_parent_coverage) ... ok
+test_image_loss_uses_weight_once (test_dino_w5.DinoTests.test_image_loss_uses_weight_once) ... ok
+test_mean_probability_not_mean_logits (test_dino_w5.DinoTests.test_mean_probability_not_mean_logits) ... ok
+test_preprocessing_specific_to_backbone (test_dino_w5.DinoTests.test_preprocessing_specific_to_backbone) ... ok
+test_receipt_must_bind_config (test_dino_w5.DinoTests.test_receipt_must_bind_config) ... ok
+test_reload_detects_tiny_unrounded_difference (test_dino_w5.DinoTests.test_reload_detects_tiny_unrounded_difference) ... ok
+test_reload_report_exports_real_comparison_status (test_dino_w5.DinoTests.test_reload_report_exports_real_comparison_status) ... ok
+test_requires_release_and_real_weight_pins (test_dino_w5.DinoTests.test_requires_release_and_real_weight_pins) ... ok
+test_changed_cache_is_quarantined_and_redownloaded (test_download_subset.DownloadTests.test_changed_cache_is_quarantined_and_redownloaded) ... ok
+test_corrupt_and_dimension_mismatch_excluded (test_download_subset.DownloadTests.test_corrupt_and_dimension_mismatch_excluded) ... ok
+test_download_and_offline_resume (test_download_subset.DownloadTests.test_download_and_offline_resume) ... ok
+Quality validation 1/1
+Quality validation 1/1
+test_export_rechecks_changed_and_missing_local_images (test_download_subset.DownloadTests.test_export_rechecks_changed_and_missing_local_images) ... ok
+test_export_rejects_receipt_for_a_different_split (test_download_subset.DownloadTests.test_export_rejects_receipt_for_a_different_split) ... ok
+test_freeze_refuses_unprocessed_source_rows (test_download_subset.DownloadTests.test_freeze_refuses_unprocessed_source_rows) ... ok
+test_interrupted_download_restarts_only_partial_image (test_download_subset.DownloadTests.test_interrupted_download_restarts_only_partial_image) ... ok
+test_interrupted_log_tail_preserved_and_repaired (test_download_subset.DownloadTests.test_interrupted_log_tail_preserved_and_repaired) ... ok
+test_missing_image_logged_without_three_retries (test_download_subset.DownloadTests.test_missing_image_logged_without_three_retries) ... ok
+test_only_root_is_resolved_when_leaf_does_not_exist (test_download_subset.DownloadTests.test_only_root_is_resolved_when_leaf_does_not_exist) ... ok
+test_retry_transient_http_failure (test_download_subset.DownloadTests.test_retry_transient_http_failure) ... ok
+test_truncated_jpeg_not_accepted (test_download_subset.DownloadTests.test_truncated_jpeg_not_accepted) ... ok
+test_unknown_cached_file_requires_a_proven_download (test_download_subset.DownloadTests.test_unknown_cached_file_requires_a_proven_download) ... ok
+test_unsafe_path_or_foreign_url_rejected (test_download_subset.DownloadTests.test_unsafe_path_or_foreign_url_rejected) ... ok
+test_wrong_content_length_rejected (test_download_subset.DownloadTests.test_wrong_content_length_rejected) ... ok
+test_cross_split_duplicates_exclude_all_without_moving (test_download_subset.ManifestV2Tests.test_cross_split_duplicates_exclude_all_without_moving) ... ok
+test_every_original_field_is_preserved_no_rebalancing (test_download_subset.ManifestV2Tests.test_every_original_field_is_preserved_no_rebalancing) ... ok
+test_same_split_duplicate_retained_but_label_conflict_excluded (test_download_subset.ManifestV2Tests.test_same_split_duplicate_retained_but_label_conflict_excluded) ... ok
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+test_counts_use_distinct_sequences_not_crop_count (test_inventory_tv1_w4.InventoryTests.test_counts_use_distinct_sequences_not_crop_count) ... ok
+test_examples_deterministic_not_relabeling (test_inventory_tv1_w4.InventoryTests.test_examples_deterministic_not_relabeling) ... ok
+test_interrupted_run_keeps_per_image_check (test_inventory_tv1_w4.InventoryTests.test_interrupted_run_keeps_per_image_check) ... ok
+test_lock_proof_and_path_guards (test_inventory_tv1_w4.InventoryTests.test_lock_proof_and_path_guards) ... ok
+test_resume_rehashes_and_detects_changed_missing_files (test_inventory_tv1_w4.InventoryTests.test_resume_rehashes_and_detects_changed_missing_files) ... ok
+test_build_refuses_overwrite (test_manifest_v2.BundleTests.test_build_refuses_overwrite) ... ok
+test_changed_split_rejected_even_with_updated_snapshot_hash (test_manifest_v2.BundleTests.test_changed_split_rejected_even_with_updated_snapshot_hash) ... ok
+test_local_corruption_requires_full_verification (test_manifest_v2.BundleTests.test_local_corruption_requires_full_verification) ... ok
+test_missing_download_log_coverage_is_rejected (test_manifest_v2.BundleTests.test_missing_download_log_coverage_is_rejected) ... ok
+test_real_bundle_reconciles_and_validates_local_images (test_manifest_v2.BundleTests.test_real_bundle_reconciles_and_validates_local_images) ... ok
+test_snapshot_file_tampering_is_rejected (test_manifest_v2.BundleTests.test_snapshot_file_tampering_is_rejected) ... ok
+test_wrong_split_counts_are_rejected (test_manifest_v2.BundleTests.test_wrong_split_counts_are_rejected) ... ok
+test_absolute_and_relative_box (test_metadata.MetadataTests.test_absolute_and_relative_box) ... ok
+test_audit_detects_sequence_and_location_leakage (test_metadata.MetadataTests.test_audit_detects_sequence_and_location_leakage) ... ok
+test_infeasible_split_is_rejected (test_metadata.MetadataTests.test_infeasible_split_is_rejected) ... ok
+test_label_normalization_does_not_merge_distinct_species (test_metadata.MetadataTests.test_label_normalization_does_not_merge_distinct_species) ... ok
+test_quality_and_ambiguous_labels_not_species (test_metadata.MetadataTests.test_quality_and_ambiguous_labels_not_species) ... ok
+test_reject_invalid_and_ambiguous_boxes (test_metadata.MetadataTests.test_reject_invalid_and_ambiguous_boxes) ... ok
+test_split_is_reproducible_and_location_disjoint (test_metadata.MetadataTests.test_split_is_reproducible_and_location_disjoint) ... ok
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-30T06:39:31+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 1,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-30T06:39:31+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-30T06:39:32+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 1,
+  "invalid_images": 0,
+  "reused_decodes": 1,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-30T06:39:32+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 0,
+  "invalid_images": 1,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+{
+  "total": {
+    "images": 1,
+    "sequences": 1,
+    "locations": 1,
+    "crops": 1,
+    "unique_rgb": 1
+  },
+  "per_class": {
+    "class_a": {
+      "images": 1,
+      "sequences": 1,
+      "locations": 1,
+      "crops": 1,
+      "unique_rgb": 1
+    }
+  },
+  "schema_version": "1.0",
+  "checked_utc": "2026-10-30T06:39:32+00:00",
+  "lock_id": "fixture",
+  "model_lock_sha256": "c4bd03a6e1c92268b0a44872c93edc9f56d5785979e8dbd65cf51cf1dbf7c55c",
+  "provenance_sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b",
+  "test_model_inference_performed": false,
+  "label_changes": 0,
+  "split_changes": 0,
+  "exclusions": 0,
+  "valid_images": 0,
+  "invalid_images": 1,
+  "reused_decodes": 0,
+  "metadata_audit": {
+    "passed": true
+  },
+  "example_counts": {
+    "small_box_images": 1,
+    "border_box_images": 1,
+    "multiple_box_images": 0,
+    "duplicate_images": 0
+  }
+}
+Recovered stopped process; preserved lock: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\tmpr8ibd0xl\state\active.interrupted-ff4f4c24fbdb4ae0bf555f871374cadd.lock
+test_abrupt_process_exit_is_recovered_without_deleting_history (test_resume_tv1_w2.LockTests.test_abrupt_process_exit_is_recovered_without_deleting_history) ... ok
+test_exception_releases_lock_and_concurrent_writer_is_blocked (test_resume_tv1_w2.LockTests.test_exception_releases_lock_and_concurrent_writer_is_blocked) ... ok
+test_live_legacy_owner_is_never_removed (test_resume_tv1_w2.LockTests.test_live_legacy_owner_is_never_removed) ... ok
+test_unknown_owner_requires_manual_inspection (test_resume_tv1_w2.LockTests.test_unknown_owner_requires_manual_inspection) ... ok
+test_changed_or_missing_bytes_require_download (test_resume_tv1_w2.ResumeTests.test_changed_or_missing_bytes_require_download) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_checkpoint_is_not_trusted_when_files_are_missing (test_resume_tv1_w2.ResumeTests.test_checkpoint_is_not_trusted_when_files_are_missing) ... ok
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+[validate] running
+[complete] complete
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+Frozen v2 already exists; preserving it byte-for-byte.
+[validate] running
+[complete] complete
+test_completed_images_skip_network_and_second_run_preserves_snapshot (test_resume_tv1_w2.ResumeTests.test_completed_images_skip_network_and_second_run_preserves_snapshot) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_download_failure_keeps_checkpoint_and_never_freezes (test_resume_tv1_w2.ResumeTests.test_download_failure_keeps_checkpoint_and_never_freezes) ... ok
+[preflight] running
+[preflight] failed
+test_invalid_existing_snapshot_stops_before_download (test_resume_tv1_w2.ResumeTests.test_invalid_existing_snapshot_stops_before_download) ... ok
+[preflight] running
+[download] running
+[download] failed
+test_receipt_split_mismatch_is_not_silently_rewritten (test_resume_tv1_w2.ResumeTests.test_receipt_split_mismatch_is_not_silently_rewritten) ... ok
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+[validate] running
+[validate] failed
+[preflight] running
+[download] running
+Cached byte checksums 1/1
+All source images match valid receipts; no network download needed.
+[build] running
+Frozen v2 already exists; preserving it byte-for-byte.
+[validate] running
+[complete] complete
+test_resume_after_validation_interruption_does_not_rebuild (test_resume_tv1_w2.ResumeTests.test_resume_after_validation_interruption_does_not_rebuild) ... ok
+[preflight] running
+[preflight] failed
+test_source_binding_change_is_rejected (test_resume_tv1_w2.ResumeTests.test_source_binding_change_is_rejected) ... ok
+test_git_hash_binding_and_local_tamper_fail (test_tv1_handoff.NativeTV1Tests.test_git_hash_binding_and_local_tamper_fail) ... ok
+test_image_path_cannot_be_double_joined_or_escape (test_tv1_handoff.NativeTV1Tests.test_image_path_cannot_be_double_joined_or_escape) ... ok
+test_metadata_pass_never_claims_image_pass (test_tv1_handoff.NativeTV1Tests.test_metadata_pass_never_claims_image_pass) ... ok
+test_missing_validator_and_failed_attestation_fail (test_tv1_handoff.NativeTV1Tests.test_missing_validator_and_failed_attestation_fail) ... ok
+test_native_data_is_not_protocol_approval (test_tv1_handoff.NativeTV1Tests.test_native_data_is_not_protocol_approval) ... ok
+test_native_views_rounding_multicrop_and_image_checks (test_tv1_handoff.NativeTV1Tests.test_native_views_rounding_multicrop_and_image_checks) ... ok
+test_republished_bad_crop_or_projection_is_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_bad_crop_or_projection_is_rejected) ... ok
+test_republished_leakage_attestation_rejected (test_tv1_handoff.NativeTV1Tests.test_republished_leakage_attestation_rejected) ... ok
+test_missing_bbox (test_tv3_crop_eda.BoxEdgeTests.test_missing_bbox) ... ok
+test_negative_coordinates_rejected (test_tv3_crop_eda.BoxEdgeTests.test_negative_coordinates_rejected) ... ok
+test_one_pixel_box_not_scaled (test_tv3_crop_eda.BoxEdgeTests.test_one_pixel_box_not_scaled) ... ok
+test_overflow_beyond_tolerance_rejected (test_tv3_crop_eda.BoxEdgeTests.test_overflow_beyond_tolerance_rejected) ... ok
+test_overflow_within_tolerance_is_clipped (test_tv3_crop_eda.BoxEdgeTests.test_overflow_within_tolerance_is_clipped) ... ok
+test_all_downloads_fail_returns_zero_saved (test_tv3_crop_eda.DownloadFailureTests.test_all_downloads_fail_returns_zero_saved) ... ok
+test_empty_selection_returns_all_zero_counts (test_tv3_crop_eda.DownloadFailureTests.test_empty_selection_returns_all_zero_counts) ... ok
+test_failed_downloads_are_logged_and_not_counted (test_tv3_crop_eda.DownloadFailureTests.test_failed_downloads_are_logged_and_not_counted) ... ok
+test_decimal_coordinates_are_read_as_float_and_accepted (test_tv3_crop_eda.IjsonDecimalTests.test_decimal_coordinates_are_read_as_float_and_accepted) ... ok
+test_does_not_fill_from_val_or_test (test_tv3_crop_eda.SamplingTests.test_does_not_fill_from_val_or_test) ... ok
+test_images_without_boxes_skipped (test_tv3_crop_eda.SamplingTests.test_images_without_boxes_skipped) ... ok
+test_only_unique_train_ids (test_tv3_crop_eda.SamplingTests.test_only_unique_train_ids) ... ok
+test_seed_is_reproducible (test_tv3_crop_eda.SamplingTests.test_seed_is_reproducible) ... ok
+test_box_clamped_at_boundary (test_tv3_crop_pipeline.ClampBoxTests.test_box_clamped_at_boundary) ... ok
+test_box_completely_outside_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_box_completely_outside_returns_none) ... ok
+test_negative_x_clamped_to_zero (test_tv3_crop_pipeline.ClampBoxTests.test_negative_x_clamped_to_zero) ... ok
+test_normal_box (test_tv3_crop_pipeline.ClampBoxTests.test_normal_box) ... ok
+test_one_pixel_box_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_one_pixel_box_returns_none) ... ok
+test_too_small_crop_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_too_small_crop_returns_none) ... ok
+test_zero_width_after_clamp_returns_none (test_tv3_crop_pipeline.ClampBoxTests.test_zero_width_after_clamp_returns_none) ... ok
+test_class_counts (test_tv3_crop_pipeline.CropDatasetTests.test_class_counts) ... ok
+test_dataset_length (test_tv3_crop_pipeline.CropDatasetTests.test_dataset_length) ... ok
+test_duplicate_crop_id_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_duplicate_crop_id_raises_valueerror)
+Mục 1 fix: Dataset phải từ chối crop_id trùng. ... ok
+test_getitem_returns_tensor_and_int (test_tv3_crop_pipeline.CropDatasetTests.test_getitem_returns_tensor_and_int) ... ok
+test_missing_manifest_raises_filenotfound (test_tv3_crop_pipeline.CropDatasetTests.test_missing_manifest_raises_filenotfound) ... ok
+test_wrong_split_raises_valueerror (test_tv3_crop_pipeline.CropDatasetTests.test_wrong_split_raises_valueerror)
+Mục 3 fix: Dòng có split sai phải bị từ chối. ... ok
+test_box_without_label_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_box_without_label_is_skipped) ... ok
+test_decode_failure_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_decode_failure_logged) ... ok
+test_download_failure_logged_not_raised (test_tv3_crop_pipeline.ProcessRecordTests.test_download_failure_logged_not_raised) ... ok
+test_invalid_geometry_box_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_invalid_geometry_box_is_skipped) ... ok
+test_multi_animal_image_uses_box_label_not_image_label (test_tv3_crop_pipeline.ProcessRecordTests.test_multi_animal_image_uses_box_label_not_image_label)
+Ảnh có nhiều loài: mỗi box dùng nhãn riêng của box đó. ... ok
+test_normal_record_produces_one_crop_row (test_tv3_crop_pipeline.ProcessRecordTests.test_normal_record_produces_one_crop_row) ... ok
+test_one_bad_box_does_not_block_other_good_boxes (test_tv3_crop_pipeline.ProcessRecordTests.test_one_bad_box_does_not_block_other_good_boxes) ... ok
+test_record_without_boxes_is_skipped (test_tv3_crop_pipeline.ProcessRecordTests.test_record_without_boxes_is_skipped) ... ok
+test_source_hash_mismatch_logged (test_tv3_crop_pipeline.ProcessRecordTests.test_source_hash_mismatch_logged)
+Mục 4: Ảnh đọc được nhưng hash không khớp quality.sha256. ... ok
+test_split_is_inherited_from_manifest_not_box (test_tv3_crop_pipeline.ProcessRecordTests.test_split_is_inherited_from_manifest_not_box) ... ok
+test_bad_box_fatal_does_not_block_good_box (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_bad_box_fatal_does_not_block_good_box)
+Mục 2 fix: Box xấu bị đánh fatal, box tốt còn lại được bỏ qua đúng cách. ... ok
+test_create_metadata_on_fresh_output (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_create_metadata_on_fresh_output)
+Vòng 3 mục 2: Output mới tinh (chưa có artifact) → tạo meta OK. ... 13:39:40 [INFO] Tạo run mới, đã lưu fingerprint.
+ok
+test_fail_closed_missing_metadata_with_existing_artifact (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_fail_closed_missing_metadata_with_existing_artifact)
+Vòng 3 mục 2: Có manifest nhưng thiếu run_meta → phải raise. ... ok
+test_hash_mismatch_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_hash_mismatch_not_completed)
+Mục 1 fix: File tồn tại nhưng hash sai → check_completed_per_box trả False. ... ok
+test_http_hash_match_accepted (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_match_accepted)
+Vòng 3 mục 3: Ảnh tải qua HTTP và hash đúng → trả bytes OK. ... ok
+test_http_hash_mismatch_rejected (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_http_hash_mismatch_rejected)
+Vòng 3 mục 3: Ảnh tải qua HTTP nhưng hash sai quality.sha256 phải bị từ chối. ... ok
+test_load_jsonl_safe_raises_on_mid_file_error (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_load_jsonl_safe_raises_on_mid_file_error)
+Vòng 3 mục 4: Lỗi JSON ở giữa file phải raise, không bỏ qua. ... ok
+test_missing_file_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_missing_file_not_completed)
+Mục 1 fix: File ảnh bị mất → check_completed_per_box trả False. ... ok
+test_partial_box_completion_not_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_partial_box_completion_not_completed)
+Mục 2 fix: Ngắt giữa ảnh có 2 box → chỉ 1 crop → chưa xong. ... ok
+test_repair_jsonl_fixes_file_on_disk (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_fixes_file_on_disk)
+Vòng 3 mục 4: repair_jsonl_if_needed ghi lại file sạch trên đĩa. ... 13:39:40 [WARNING] Dòng cuối bị cắt trong C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\tmpn7q894so\manifest.jsonl, sửa và ghi lại file ngay.
+13:39:40 [INFO] Đã phục hồi manifest.jsonl: 1 dòng hợp lệ.
+ok
+test_repair_jsonl_no_pending_still_clean (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_repair_jsonl_no_pending_still_clean)
+Vòng 3 mục 4: Dù pending=0, file vẫn được sửa sạch. ... 13:39:40 [WARNING] Dòng cuối bị cắt trong C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\tmp1pjjkwtm\manifest.jsonl, sửa và ghi lại file ngay.
+13:39:40 [INFO] Đã phục hồi manifest.jsonl: 1 dòng hợp lệ.
+ok
+test_upsert_rows_no_duplicate (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_upsert_rows_no_duplicate)
+Mục 1 fix: Chạy lại sau mất file → không tạo dòng trùng crop_id. ... ok
+test_valid_file_is_completed (test_tv3_crop_pipeline.ResumeAndJsonlTests.test_valid_file_is_completed)
+Mục 1 fix: File tồn tại và hash đúng → check_completed_per_box trả True. ... ok
+test_drop_last_false_no_crop_lost (test_tv3_w3_b2.B2DatasetValidationTests.test_drop_last_false_no_crop_lost)
+Lỗi 4: DataLoader phải giữ đủ tất cả crop, không drop batch cuối. ... ok
+test_fail_on_duplicate_crop_id (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_duplicate_crop_id)
+Lỗi 3: crop_id trùng phải raise ValueError. ... ok
+test_fail_on_multiple_labels_per_image (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_multiple_labels_per_image)
+Lỗi 3: cùng image_id có nhiều nhãn khác nhau phải raise ValueError. ... ok
+test_fail_on_split_mismatch (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_split_mismatch)
+Dataset yêu cầu val nhưng manifest ghi train → raise. ... ok
+test_fail_on_unknown_label (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_unknown_label) ... ok
+test_fail_on_zero_size_box (test_tv3_w3_b2.B2DatasetValidationTests.test_fail_on_zero_size_box)
+Lỗi 3: box có kích thước <= 0 phải raise ValueError. ... ok
+test_preflight_fails_if_sha256_missing (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_missing)
+Lỗi 3: preflight bật mà thiếu sha256 phải raise, không bỏ qua. ... ok
+test_preflight_fails_if_sha256_wrong (test_tv3_w3_b2.B2DatasetValidationTests.test_preflight_fails_if_sha256_wrong)
+Preflight bật, hash sai → raise. ... ok
+test_sample_weight_is_inverse_crop_count (test_tv3_w3_b2.B2DatasetValidationTests.test_sample_weight_is_inverse_crop_count)
+Vì 2 crop cùng img_001, mỗi crop phải có sample_weight = 0.5. ... ok
+test_valid_manifest_loads_ok (test_tv3_w3_b2.B2DatasetValidationTests.test_valid_manifest_loads_ok) ... ok
+test_checkpoint_save_and_load (test_tv3_w3_b2.B2ModelTests.test_checkpoint_save_and_load) ... ok
+test_default_dropout_is_zero_per_protocol (test_tv3_w3_b2.B2ModelTests.test_default_dropout_is_zero_per_protocol)
+Protocol: không dùng dropout trong B2. ... ok
+test_model_forward_shape_and_probabilities (test_tv3_w3_b2.B2ModelTests.test_model_forward_shape_and_probabilities) ... ok
+test_anti_overwrite_refuses_existing_run_dir (test_tv3_w3_b2.GateAndCheckpointTests.test_anti_overwrite_refuses_existing_run_dir)
+Issue 3: Hệ thống phải từ chối ghi đè nếu thư mục run đã tồn tại và chứa file. ... 13:39:41 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:41 [INFO] Gate W3-01 OK: provenance.json SHA-256 khớp (d9fd5461e47be8b7...)
+13:39:41 [INFO] Gate W3-01 OK: tất cả file dữ liệu SHA-256 khớp với provenance.json (3 file đã xác minh)
+13:39:41 [ERROR] 
+======================================================================
+[LỖI TỪ CHỐI GHI ĐÈ RUN CŨ]
+Thư mục run 'C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\b2_overwrite_test_z1urx3qz\test_run' đã tồn tại và chứa dữ liệu!
+Để bảo vệ kết quả thí nghiệm trước đó, hệ thống từ chối ghi đè.
+Hãy đổi run_id trong config hoặc truyền --run-id mới (ví dụ: b2_run02).
+======================================================================
+ok
+test_best_epoch_tracking_accuracy (test_tv3_w3_b2.GateAndCheckpointTests.test_best_epoch_tracking_accuracy)
+Lỗi 6: best_epoch phải là epoch thật của best F1, không phải epoch cuối. ... 13:39:41 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:41 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_ckpt_test_rpt28x_o
+13:39:41 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+13:39:41 [INFO] Bắt đầu huấn luyện B2 với ngân sách 2 epochs...
+13:39:43 [INFO] Epoch [1/2] (1.2s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:43 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:43 [INFO] Epoch [2/2] (0.2s) Loss=2.2354 Acc=0.0% | Val Loss=2.1453 CropF1=10.0% ImgAcc=25.0% ImgF1=12.5%
+13:39:43 [INFO] --> Best checkpoint tại epoch 2 (ImgF1=12.50%).
+13:39:43 [INFO] Hoàn tất sau 1.6s! Best epoch=2, Best ImgF1=12.50%
+13:39:43 [INFO] Kiểm định reload độc lập checkpoint tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_ckpt_test_rpt28x_o\best_model.pt
+13:39:43 [INFO] Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.
+13:39:43 [INFO] Đã xuất bảng so sánh tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_ckpt_test_rpt28x_o\validation_comparison.md
+ok
+test_checkpoint_contains_full_tv4_metadata_and_reloads (test_tv3_w3_b2.GateAndCheckpointTests.test_checkpoint_contains_full_tv4_metadata_and_reloads)
+Issue 4: Checkpoint phải chứa class_map, id_to_label, preprocessing, is_official. ... 13:39:43 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:43 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_meta_test_m4wlpdnl
+13:39:43 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+13:39:43 [INFO] Bắt đầu huấn luyện B2 với ngân sách 1 epochs...
+13:39:43 [INFO] Epoch [1/1] (0.1s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:44 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:44 [INFO] Hoàn tất sau 0.2s! Best epoch=1, Best ImgF1=6.25%
+13:39:44 [INFO] Kiểm định reload độc lập checkpoint tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_meta_test_m4wlpdnl\best_model.pt
+13:39:44 [INFO] Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.
+13:39:44 [INFO] Đã xuất bảng so sánh tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_meta_test_m4wlpdnl\validation_comparison.md
+ok
+test_gate_fails_if_files_missing (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_files_missing)
+Lỗi 3: Gate phải từ chối khi file không tồn tại. ... 13:39:44 [ERROR] 
+======================================================================
+[LỖI TIÊU CHÍ NGHIỆM THU TUẦN 3]
+Chưa thể chạy huấn luyện B2 chính thức vì thiếu file khóa dữ liệu W3-01:
+  - C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\processed\non_existent_xyz\b2\train.jsonl
+  - C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\processed\non_existent_xyz\b2\val.jsonl
+  - C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\processed\non_existent_xyz\class_map.json
+  - C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\processed\non_existent_xyz\provenance.json
+
+Quy tắc: 'Chỉ chạy chính thức sau khi W3-01 khóa manifest'.
+Hãy lấy dữ liệu từ nhánh TV1 (origin/feat/metadata-split) trước khi chạy.
+Để kiểm tra pipeline, dùng: python scripts/train_b2.py --smoke-test
+======================================================================
+ok
+test_gate_fails_if_provenance_sha_wrong (test_tv3_w3_b2.GateAndCheckpointTests.test_gate_fails_if_provenance_sha_wrong)
+Lỗi 3: Gate phải từ chối nếu provenance.json có SHA-256 sai. ... 13:39:44 [ERROR] 
+======================================================================
+[LỖI XÁC MINH SNAPSHOT]
+provenance.json tồn tại nhưng SHA-256 không khớp!
+  Kỳ vọng (đã thống nhất với TV2): d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f
+  Thực tế:                          d424d4f98e4981f8cdee4072972da4a850ac48f77564618864ed83fd34511911
+  File: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\data\tmpd_3coa5s\provenance.json
+
+Snapshot này KHÔNG phải bản đã khóa từ TV1 commit 7e9b194.
+Không được train trên dữ liệu chưa xác minh.
+======================================================================
+ok
+test_image_grouped_batch_sampler_keeps_all_parent_crops_in_same_batch (test_tv3_w3_b2.GateAndCheckpointTests.test_image_grouped_batch_sampler_keeps_all_parent_crops_in_same_batch)
+Issue 2: Toàn bộ crop của cùng image_id phải nằm trọn vẹn trong một batch. ... ok
+test_last_checkpoint_contains_last_epoch_not_best_metrics (test_tv3_w3_b2.GateAndCheckpointTests.test_last_checkpoint_contains_last_epoch_not_best_metrics)
+Lỗi 6: last_model.pt phải chứa metrics của epoch cuối, không phải best. ... 13:39:44 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:44 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_last_test_kmeylxyb
+13:39:44 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+13:39:44 [INFO] Bắt đầu huấn luyện B2 với ngân sách 2 epochs...
+13:39:44 [INFO] Epoch [1/2] (0.1s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:44 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:44 [INFO] Epoch [2/2] (0.1s) Loss=2.2354 Acc=0.0% | Val Loss=2.1453 CropF1=10.0% ImgAcc=25.0% ImgF1=12.5%
+13:39:45 [INFO] --> Best checkpoint tại epoch 2 (ImgF1=12.50%).
+13:39:45 [INFO] Hoàn tất sau 0.5s! Best epoch=2, Best ImgF1=12.50%
+13:39:45 [INFO] Kiểm định reload độc lập checkpoint tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_last_test_kmeylxyb\best_model.pt
+13:39:45 [INFO] Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.
+13:39:45 [INFO] Đã xuất bảng so sánh tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_last_test_kmeylxyb\validation_comparison.md
+ok
+test_smoke_log_has_synthetic_marker (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_log_has_synthetic_marker)
+Lỗi 2: log file của smoke-test phải có SYNTHETIC_SMOKE marker ở dòng đầu. ... 13:39:45 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:45 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_log_test_ip99bd_e
+13:39:45 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+13:39:45 [INFO] Bắt đầu huấn luyện B2 với ngân sách 1 epochs...
+13:39:45 [INFO] Epoch [1/1] (0.1s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:45 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:45 [INFO] Hoàn tất sau 0.2s! Best epoch=1, Best ImgF1=6.25%
+13:39:45 [INFO] Kiểm định reload độc lập checkpoint tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_log_test_ip99bd_e\best_model.pt
+13:39:46 [INFO] Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.
+13:39:46 [INFO] Đã xuất bảng so sánh tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_log_test_ip99bd_e\validation_comparison.md
+ok
+test_smoke_test_uses_isolated_tmp_dir (test_tv3_w3_b2.GateAndCheckpointTests.test_smoke_test_uses_isolated_tmp_dir)
+Lỗi 2: Smoke-test không được đụng vào thư mục output chính thức. ... 13:39:46 [INFO] Sử dụng thiết bị huấn luyện: cuda
+13:39:46 [INFO] [SMOKE-TEST] Sử dụng Dummy Dataset (16 train / 8 val mẫu), output: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_smoke_0xgh_8zf
+13:39:46 [INFO] Khởi tạo B2CropClassifier (Backbone: resnet18, Pretrained: False)...
+13:39:46 [INFO] Bắt đầu huấn luyện B2 với ngân sách 1 epochs...
+13:39:46 [INFO] Epoch [1/1] (0.2s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:46 [INFO] --> Best checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:46 [INFO] Hoàn tất sau 0.3s! Best epoch=1, Best ImgF1=6.25%
+13:39:46 [INFO] Kiểm định reload độc lập checkpoint tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_smoke_0xgh_8zf\best_model.pt
+13:39:46 [INFO] Kiểm định reload checkpoint thành công: metadata đầy đủ, mô hình sẵn sàng cho TV4.
+13:39:46 [INFO] Đã xuất bảng so sánh tại: C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\outputs\b2_smoke_0xgh_8zf\validation_comparison.md
+ok
+test_aggregation_mean_probability_and_argmax (test_tv3_w3_b2.ImageAggregationTests.test_aggregation_mean_probability_and_argmax) ... ok
+test_format_validation_markdown_table (test_tv3_w3_b2.ImageAggregationTests.test_format_validation_markdown_table) ... ok
+test_single_crop_per_image_matches_standard_ce (test_tv3_w3_b2.PerImageLossTests.test_single_crop_per_image_matches_standard_ce)
+Khi mỗi ảnh chỉ có 1 crop, kết quả phải bằng CrossEntropyLoss thông thường. ... ok
+test_two_crops_per_image_gives_mean_of_means (test_tv3_w3_b2.PerImageLossTests.test_two_crops_per_image_gives_mean_of_means)
+Ảnh A có 2 crop, ảnh B có 1 crop: loss phải là mean(mean_A, mean_B), bukan mean của 3 crops. ... ok
+test_b3_checkpoint_compatibility_tv4 (test_tv3_w4.TestTV3Week4.test_b3_checkpoint_compatibility_tv4)
+Kiểm tra format checkpoint B3 tương thích hoàn toàn với adapter TV4. ... ok
+test_b3_config_validity (test_tv3_w4.TestTV3Week4.test_b3_config_validity)
+Kiểm tra cấu hình configs/b3_class_weighted.json hợp lệ và đúng chuẩn W4. ... ok
+test_b3_smoke_test_execution (test_tv3_w4.TestTV3Week4.test_b3_smoke_test_execution)
+Chạy thử nghiệm smoke test B3 và kiểm định toàn bộ pipeline sinh checkpoint. ... 13:39:47 [INFO] Thiết bị huấn luyện B3: cuda
+13:39:47 [INFO] [SMOKE-TEST] Chạy với Dummy Dataset (16 train / 8 val), output: C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\test_b3_smoke_qfn746ok
+13:39:47 [INFO] Khởi tạo mô hình B3 (Backbone: resnet18, Pretrained: False)...
+13:39:47 [INFO] Bắt đầu huấn luyện B3 với ngân sách 2 epochs...
+13:39:47 [INFO] B3 Epoch [1/2] (0.2s) Loss=2.2861 Acc=18.8% | Val Loss=2.1169 CropF1=7.1% ImgAcc=25.0% ImgF1=6.2%
+13:39:47 [INFO] --> Best B3 checkpoint tại epoch 1 (ImgF1=6.25%).
+13:39:48 [INFO] B3 Epoch [2/2] (0.2s) Loss=2.1421 Acc=12.5% | Val Loss=2.1717 CropF1=5.6% ImgAcc=25.0% ImgF1=5.0%
+13:39:48 [INFO] Hoàn tất huấn luyện B3 sau 0.5s! Best epoch=1, Best ImgF1=6.25%
+13:39:48 [INFO] Kiểm định reload độc lập checkpoint B3 tại: C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\test_b3_smoke_qfn746ok\best_model.pt
+13:39:48 [INFO] Validation replay PASS: exact image predictions and confusion matrix.
+13:39:48 [INFO] Đã xuất báo cáo B3 tại: C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\test_b3_smoke_qfn746ok\val_table.md
+ok
+test_class_weighted_loss_gradient (test_tv3_w4.TestTV3Week4.test_class_weighted_loss_gradient)
+Kiểm tra loss có trọng số lớp làm thay đổi loss tương ứng. ... ok
+test_class_weights_balanced_and_imbalanced (test_tv3_w4.TestTV3Week4.test_class_weights_balanced_and_imbalanced)
+Kiểm tra tính toán trọng số lớp trong các trường hợp cân bằng và mất cân bằng. ... ok
+test_error_analysis_anti_overwrite (test_tv3_w4.TestTV3Week4.test_error_analysis_anti_overwrite)
+Kiểm tra cơ chế chống ghi đè (Anti-overwrite) của error_analysis.py. ... 13:39:48 [INFO] Nạp checkpoint từ: C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\tmpfq_cd7c6\b2_model.pt
+13:39:48 [ERROR] 
+======================================================================
+[LỖI BẢO VỆ BẰNG CHỨNG GỐC - ANTI-OVERWRITE]
+File báo cáo 'error_analysis_b2.json' hoặc 'error_analysis_b2.md' đã tồn tại trong 'C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\tmpfq_cd7c6\reports'!
+Để tránh ghi đè làm mất bằng chứng gốc, hệ thống từ chối ghi đè.
+Hãy truyền tham số --attempt (ví dụ: --attempt attempt02) để lưu bản mới.
+======================================================================
+ok
+test_error_analysis_components (test_tv3_w4.TestTV3Week4.test_error_analysis_components)
+Kiểm tra các hàm phân tích lỗi độc lập với dữ liệu mẫu. ... ok
+test_preflight_hash_check_rejection (test_tv3_w4.TestTV3Week4.test_preflight_hash_check_rejection)
+Kiểm tra B2ComparisonDataset từ chối ảnh nếu sha256 không khớp khi bật preflight_hash_check. ... ok
+test_analysis_default_passes_mandatory_preflight_to_loader (test_tv3_w4_integrity.IntegrityTests.test_analysis_default_passes_mandatory_preflight_to_loader) ... 13:39:48 [INFO] Nạp checkpoint từ: C:\Users\Admin\.codex\visualizations\2026\10\16\01a14382-8615-7af1-b132-1fd67ce127e4\tv3-w5-test-temp\tmpvhbjuq57\b2.pt
+13:39:48 [INFO] Checkpoint SHA-256: b3cc0475bb78a5026098858e9889acf666d31062d513d303314eca31d36e72f2
+13:39:48 [INFO] Cấu hình mô hình: backbone=resnet18, num_classes=8, classes=['0', '1', '2', '3', '4', '5', '6', '7']
+13:39:48 [INFO] Sử dụng thiết bị: cuda
+13:39:48 [INFO] Tạo DataLoader cho tập validation (preflight_hash_check=True)...
+ok
+test_changed_predictions_fail_even_with_same_matrix (test_tv3_w4_integrity.IntegrityTests.test_changed_predictions_fail_even_with_same_matrix) ... ok
+test_default_preflight_and_opt_out_blocked (test_tv3_w4_integrity.IntegrityTests.test_default_preflight_and_opt_out_blocked) ... 13:39:48 [INFO] Nạp checkpoint từ: not-read.pt
+13:39:48 [INFO] Nạp checkpoint từ: not-read.pt
+ok
+test_duplicate_ids_blocked (test_tv3_w4_integrity.IntegrityTests.test_duplicate_ids_blocked) ... ok
+test_identical_replay (test_tv3_w4_integrity.IntegrityTests.test_identical_replay) ... ok
+test_same_f1_different_matrix_fails (test_tv3_w4_integrity.IntegrityTests.test_same_f1_different_matrix_fails) ... ok
+test_scalar_metric_mismatch_is_not_only_a_warning (test_tv3_w4_integrity.IntegrityTests.test_scalar_metric_mismatch_is_not_only_a_warning) ... ok
+test_unpinned_checkpoint_and_modified_provenance_blocked (test_tv3_w4_integrity.IntegrityTests.test_unpinned_checkpoint_and_modified_provenance_blocked) ... ok
+test_b1_b2_switch_and_bounded_cache (test_tv4_classifier.ClassifierTests.test_b1_b2_switch_and_bounded_cache) ... ok
+test_bad_logits_fail_before_top3 (test_tv4_classifier.ClassifierTests.test_bad_logits_fail_before_top3) ... ok
+test_classifier_error_has_no_fake_or_partial_predictions (test_tv4_classifier.ClassifierTests.test_classifier_error_has_no_fake_or_partial_predictions) ... 13:39:51 [ERROR] Classifier failed (B0); no fallback or partial predictions
+Traceback (most recent call last):
+  File "C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\src\demo\inference.py", line 70, in analyze_classified
+    predictions, proof['classifier'] = cache.predict(decode_image(data), detected['detections'], classifier)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+ValueError: bad checkpoint
+ok
+test_concurrent_first_requests_load_once (test_tv4_classifier.ClassifierTests.test_concurrent_first_requests_load_once) ... ok
+test_decode_empty_and_detector_error_skip_classifier (test_tv4_classifier.ClassifierTests.test_decode_empty_and_detector_error_skip_classifier) ... 13:39:51 [ERROR] Detector failed (mode=mock)
+Traceback (most recent call last):
+  File "C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\src\demo\detector.py", line 152, in analyze
+    result['detections'], result['ignored_non_animals'] = adapt_detections(raw, image.width, image.height, threshold)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\OneDrive\Documents\VLU\Năm 3\HK1nam3\Học máy và ứng dụng\Project ML\src\demo\detector.py", line 61, in adapt_detections
+    raise ValueError('Detector failed or returned no detections array')
+ValueError: Detector failed or returned no detections array
+ok
+test_disabled_missing_and_bad_size_do_not_load (test_tv4_classifier.ClassifierTests.test_disabled_missing_and_bad_size_do_not_load) ... ok
+test_each_box_uses_its_own_pixels (test_tv4_classifier.ClassifierTests.test_each_box_uses_its_own_pixels) ... ok
+test_hash_checked_even_when_warm (test_tv4_classifier.ClassifierTests.test_hash_checked_even_when_warm) ... ok
+test_http_classifier_and_export_contract (test_tv4_classifier.ClassifierTests.test_http_classifier_and_export_contract) ... 127.0.0.1 - - [30/Oct/2026 13:39:52] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:53] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:53] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_inference_envelope_and_ignored_person (test_tv4_classifier.ClassifierTests.test_inference_envelope_and_ignored_person) ... ok
+test_invalid_and_tiny_boxes_fail_without_partial_output (test_tv4_classifier.ClassifierTests.test_invalid_and_tiny_boxes_fail_without_partial_output) ... ok
+test_invalid_review_threshold_is_rejected (test_tv4_classifier.ClassifierTests.test_invalid_review_threshold_is_rejected) ... ok
+test_mock_multiple_is_explicit_without_loading (test_tv4_classifier.ClassifierTests.test_mock_multiple_is_explicit_without_loading) ... ok
+test_native_b2_cache_safe_load_and_multiple_boxes (test_tv4_classifier.ClassifierTests.test_native_b2_cache_safe_load_and_multiple_boxes) ... ok
+test_native_b2_rejects_missing_or_inconsistent_handoff (test_tv4_classifier.ClassifierTests.test_native_b2_rejects_missing_or_inconsistent_handoff) ... ok
+test_native_b2_remapping_and_center_crop_equivalent (test_tv4_classifier.ClassifierTests.test_native_b2_remapping_and_center_crop_equivalent) ... ok
+test_nonfinite_and_wrong_shape_weights_rejected (test_tv4_classifier.ClassifierTests.test_nonfinite_and_wrong_shape_weights_rejected) ... ok
+test_prepare_b1_copy_resume_and_no_network (test_tv4_classifier.ClassifierTests.test_prepare_b1_copy_resume_and_no_network) ... ok
+test_prepare_refuses_disabled_model_and_bad_source (test_tv4_classifier.ClassifierTests.test_prepare_refuses_disabled_model_and_bad_source) ... ok
+test_real_architecture_top3_and_warm_cache (test_tv4_classifier.ClassifierTests.test_real_architecture_top3_and_warm_cache) ... ok
+test_registry_change_invalidates_cache (test_tv4_classifier.ClassifierTests.test_registry_change_invalidates_cache) ... ok
+test_transform_and_b2_remapping_match (test_tv4_classifier.ClassifierTests.test_transform_and_b2_remapping_match) ... ok
+test_wrong_mapping_transform_and_kind_rejected (test_tv4_classifier.ClassifierTests.test_wrong_mapping_transform_and_kind_rejected) ... ok
+test_empty_at_high_threshold (test_tv4_demo.DetectorTests.test_empty_at_high_threshold) ... ok
+test_limits_and_truncated_image (test_tv4_demo.DetectorTests.test_limits_and_truncated_image) ... ok
+test_malformed_boxes_or_failure_are_not_empty_success (test_tv4_demo.DetectorTests.test_malformed_boxes_or_failure_are_not_empty_success) ... ok
+test_mock_is_labelled_and_has_no_species (test_tv4_demo.DetectorTests.test_mock_is_labelled_and_has_no_species) ... ok
+test_modes_and_error_states_match_new_schema (test_tv4_demo.DetectorTests.test_modes_and_error_states_match_new_schema) ... ok
+test_normalization_filter_and_threshold_equality (test_tv4_demo.DetectorTests.test_normalization_filter_and_threshold_equality) ... ok
+test_real_failure_never_falls_back_to_mock (test_tv4_demo.DetectorTests.test_real_failure_never_falls_back_to_mock) ... ok
+test_threshold_and_mode_validation (test_tv4_demo.DetectorTests.test_threshold_and_mode_validation) ... ok
+test_bad_requests_rejected (test_tv4_demo.ServerTests.test_bad_requests_rejected) ... 127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 400 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 400 -
+ok
+test_external_origin_and_host_are_rejected (test_tv4_demo.ServerTests.test_external_origin_and_host_are_rejected) ... 127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 403 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "GET / HTTP/1.1" 403 -
+ok
+test_mock_post_and_corrupt_image (test_tv4_demo.ServerTests.test_mock_post_and_corrupt_image) ... 127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "POST /api/analyze HTTP/1.1" 200 -
+ok
+test_static_and_config_do_not_expose_repository (test_tv4_demo.ServerTests.test_static_and_config_do_not_expose_repository) ... 127.0.0.1 - - [30/Oct/2026 13:39:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [30/Oct/2026 13:39:58] "GET /api/config HTTP/1.1" 200 -
+ok
+test_api_persistence_and_stale_revision (test_tv4_w4_review.ReviewTests.test_api_persistence_and_stale_revision) ... 127.0.0.1 - - [30/Oct/2026 13:39:59] "POST /api/review HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:59] "POST /api/review HTTP/1.1" 409 -
+127.0.0.1 - - [30/Oct/2026 13:39:59] "GET /api/review/450e2cdb-5f7e-4d3e-b10c-d46dff2924b6 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 13:39:59] "POST /api/review HTTP/1.1" 403 -
+127.0.0.1 - - [30/Oct/2026 13:39:59] "POST /api/review HTTP/1.1" 404 -
+ok
+test_correction_persists_and_original_is_immutable (test_tv4_w4_review.ReviewTests.test_correction_persists_and_original_is_immutable) ... ok
+test_duplicate_box_and_path_traversal_rejected (test_tv4_w4_review.ReviewTests.test_duplicate_box_and_path_traversal_rejected) ... ok
+test_gt_matching_is_one_to_one (test_tv4_w4_review.ReviewTests.test_gt_matching_is_one_to_one) ... ok
+test_low_scores_are_review_not_unknown_species (test_tv4_w4_review.ReviewTests.test_low_scores_are_review_not_unknown_species) ... ok
+test_miss_requires_note_and_errors_are_not_misses (test_tv4_w4_review.ReviewTests.test_miss_requires_note_and_errors_are_not_misses) ... ok
+test_partial_detector_miss_and_empty_outputs (test_tv4_w4_review.ReviewTests.test_partial_detector_miss_and_empty_outputs) ... ok
+test_real_classifier_batch_sizes_are_explicit (test_tv4_w4_review.ReviewTests.test_real_classifier_batch_sizes_are_explicit) ... ok
+test_unknown_label_and_incomplete_review_rejected (test_tv4_w4_review.ReviewTests.test_unknown_label_and_incomplete_review_rejected) ... ok
+test_balanced_crop_counts_have_unit_weights (test_w4_checkpoint_verification.CropWeightDefinitionTests.test_balanced_crop_counts_have_unit_weights) ... ok
+test_canonical_hash_ignores_object_key_order (test_w4_checkpoint_verification.CropWeightDefinitionTests.test_canonical_hash_ignores_object_key_order) ... ok
+test_missing_train_class_rejected (test_w4_checkpoint_verification.CropWeightDefinitionTests.test_missing_train_class_rejected) ... ok
+test_more_crops_per_parent_changes_crop_weights_even_with_balanced_parents (test_w4_checkpoint_verification.CropWeightDefinitionTests.test_more_crops_per_parent_changes_crop_weights_even_with_balanced_parents) ... ok
+test_b2_best_epoch_contract_passes (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_b2_best_epoch_contract_passes) ... ok
+test_mismatched_architecture_or_class_count_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_architecture_or_class_count_rejected) ... ok
+test_mismatched_best_epoch_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_best_epoch_rejected) ... ok
+test_mismatched_class_to_id_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_class_to_id_rejected) ... ok
+test_mismatched_config_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_config_rejected) ... ok
+test_mismatched_id_to_label_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_id_to_label_rejected) ... ok
+test_mismatched_normalization_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_normalization_rejected) ... ok
+test_mismatched_provenance_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_provenance_rejected) ... ok
+test_mismatched_validation_transform_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_mismatched_validation_transform_rejected) ... ok
+test_official_b3_metadata_passes_without_rewriting_checkpoint (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_official_b3_metadata_passes_without_rewriting_checkpoint) ... ok
+test_synthetic_checkpoint_rejected (test_w4_checkpoint_verification.DeliveredCheckpointMetadataTests.test_synthetic_checkpoint_rejected) ... ok
+test_exact_reference_agreement_passes (test_w4_checkpoint_verification.ValidationReferenceCheckTests.test_exact_reference_agreement_passes) ... ok
+test_same_counts_do_not_hide_changed_error_image_ids (test_w4_checkpoint_verification.ValidationReferenceCheckTests.test_same_counts_do_not_hide_changed_error_image_ids) ... ok
+test_same_rounded_metrics_do_not_hide_changed_confusion_matrix (test_w4_checkpoint_verification.ValidationReferenceCheckTests.test_same_rounded_metrics_do_not_hide_changed_confusion_matrix) ... ok
+test_downloaded_wrong_pixel_hash_never_published (test_w4_source_restoration.SourceRestorationTests.test_downloaded_wrong_pixel_hash_never_published) ... ok
+test_downloaded_wrong_sha_never_published (test_w4_source_restoration.SourceRestorationTests.test_downloaded_wrong_sha_never_published) ... ok
+test_existing_changed_image_preserved_and_rejected (test_w4_source_restoration.SourceRestorationTests.test_existing_changed_image_preserved_and_rejected) ... ok
+test_existing_correct_image_never_downloaded_or_replaced (test_w4_source_restoration.SourceRestorationTests.test_existing_correct_image_never_downloaded_or_replaced) ... ok
+test_manifest_path_escape_rejected (test_w4_source_restoration.SourceRestorationTests.test_manifest_path_escape_rejected) ... ok
+test_restore_exact_bytes_preserves_label_and_split (test_w4_source_restoration.SourceRestorationTests.test_restore_exact_bytes_preserves_label_and_split) ... ok
+test_all_crops_mean_probability_and_one_prediction_per_image (test_w4_test_evaluation.AggregationTests.test_all_crops_mean_probability_and_one_prediction_per_image) ... ok
+test_changed_ground_truth_rejected (test_w4_test_evaluation.AggregationTests.test_changed_ground_truth_rejected) ... ok
+test_duplicate_crop_rejected (test_w4_test_evaluation.AggregationTests.test_duplicate_crop_rejected) ... ok
+test_empty_expected_rejected (test_w4_test_evaluation.AggregationTests.test_empty_expected_rejected) ... ok
+test_exact_tie_chooses_lowest_id (test_w4_test_evaluation.AggregationTests.test_exact_tie_chooses_lowest_id) ... ok
+test_extra_crop_rejected (test_w4_test_evaluation.AggregationTests.test_extra_crop_rejected) ... ok
+test_missing_crop_rejected (test_w4_test_evaluation.AggregationTests.test_missing_crop_rejected) ... ok
+test_nonfinite_negative_and_non_normalized_vectors_rejected (test_w4_test_evaluation.AggregationTests.test_nonfinite_negative_and_non_normalized_vectors_rejected) ... ok
+test_order_independent_associations (test_w4_test_evaluation.AggregationTests.test_order_independent_associations) ... ok
+test_wrong_parent_rejected (test_w4_test_evaluation.AggregationTests.test_wrong_parent_rejected) ... ok
+test_accepted_unselected_b3_failure_does_not_block_independent_b2 (test_w4_test_evaluation.FrozenContractTests.test_accepted_unselected_b3_failure_does_not_block_independent_b2) ... ok
+test_b1_or_b3_cannot_be_added_to_test_plan (test_w4_test_evaluation.FrozenContractTests.test_b1_or_b3_cannot_be_added_to_test_plan) ... ok
+test_b2_evidence_cannot_be_waived_by_team_decision (test_w4_test_evaluation.FrozenContractTests.test_b2_evidence_cannot_be_waived_by_team_decision) ... ok
+test_b2_failed_validation_blocks_even_with_true_boolean (test_w4_test_evaluation.FrozenContractTests.test_b2_failed_validation_blocks_even_with_true_boolean) ... ok
+test_b3_cannot_be_declared_reproduced_in_lock (test_w4_test_evaluation.FrozenContractTests.test_b3_cannot_be_declared_reproduced_in_lock) ... ok
+test_b3_failure_cannot_be_relabelled_pass (test_w4_test_evaluation.FrozenContractTests.test_b3_failure_cannot_be_relabelled_pass) ... ok
+test_b3_limitation_requires_explicit_team_acceptance (test_w4_test_evaluation.FrozenContractTests.test_b3_limitation_requires_explicit_team_acceptance) ... ok
+test_bad_b2_hash_blocks_before_checkpoint_load (test_w4_test_evaluation.FrozenContractTests.test_bad_b2_hash_blocks_before_checkpoint_load) ... ok
+test_changed_decision_evidence_rejected (test_w4_test_evaluation.FrozenContractTests.test_changed_decision_evidence_rejected) ... ok
+test_changed_evaluator_bytes_rejected (test_w4_test_evaluation.FrozenContractTests.test_changed_evaluator_bytes_rejected) ... ok
+test_changed_execution_policy_rejected (test_w4_test_evaluation.FrozenContractTests.test_changed_execution_policy_rejected) ... ok
+test_changed_manifest_bytes_rejected (test_w4_test_evaluation.FrozenContractTests.test_changed_manifest_bytes_rejected) ... ok
+test_complete_contract_passes (test_w4_test_evaluation.FrozenContractTests.test_complete_contract_passes) ... ok
+test_crop_level_metric_policy_rejected (test_w4_test_evaluation.FrozenContractTests.test_crop_level_metric_policy_rejected) ... ok
+test_decision_must_precede_lock (test_w4_test_evaluation.FrozenContractTests.test_decision_must_precede_lock) ... ok
+test_fully_populated_but_uncommitted_lock_blocks (test_w4_test_evaluation.FrozenContractTests.test_fully_populated_but_uncommitted_lock_blocks) ... ok
+test_missing_b2_team_decision_blocks (test_w4_test_evaluation.FrozenContractTests.test_missing_b2_team_decision_blocks) ... ok
+test_modified_protocol_after_commit_blocks (test_w4_test_evaluation.FrozenContractTests.test_modified_protocol_after_commit_blocks) ... ok
+test_protocol_content_change_rejected_even_if_git_byte_check_passes (test_w4_test_evaluation.FrozenContractTests.test_protocol_content_change_rejected_even_if_git_byte_check_passes) ... ok
+test_team_decision_cannot_use_test_or_select_b3 (test_w4_test_evaluation.FrozenContractTests.test_team_decision_cannot_use_test_or_select_b3) ... ok
+test_threshold_cannot_be_swept_on_test (test_w4_test_evaluation.FrozenContractTests.test_threshold_cannot_be_swept_on_test) ... ok
+test_wrong_class_mapping_rejected (test_w4_test_evaluation.FrozenContractTests.test_wrong_class_mapping_rejected) ... ok
+test_alternate_official_run_id_rejected (test_w4_test_evaluation.GateTests.test_alternate_official_run_id_rejected) ... ok
+test_checkpoint_real_bytes_hash_and_size (test_w4_test_evaluation.GateTests.test_checkpoint_real_bytes_hash_and_size) ... ok
+test_closed_boolean_alone_does_not_unlock (test_w4_test_evaluation.GateTests.test_closed_boolean_alone_does_not_unlock) ... ok
+test_dirty_lock_rejected (test_w4_test_evaluation.GateTests.test_dirty_lock_rejected) ... ok
+test_identical_committed_lock_passes (test_w4_test_evaluation.GateTests.test_identical_committed_lock_passes) ... ok
+test_missing_checkpoint_rejected (test_w4_test_evaluation.GateTests.test_missing_checkpoint_rejected) ... ok
+test_one_official_run_and_no_unsafe_resume (test_w4_test_evaluation.GateTests.test_one_official_run_and_no_unsafe_resume) ... ok
+test_path_escape_rejected (test_w4_test_evaluation.GateTests.test_path_escape_rejected) ... ok
+test_pending_lock_blocks_before_any_git_checkpoint_or_test_access (test_w4_test_evaluation.GateTests.test_pending_lock_blocks_before_any_git_checkpoint_or_test_access) ... ok
+test_pending_protocol_blocks_even_when_selection_marked_closed (test_w4_test_evaluation.GateTests.test_pending_protocol_blocks_even_when_selection_marked_closed) ... ok
+test_uncommitted_lock_rejected (test_w4_test_evaluation.GateTests.test_uncommitted_lock_rejected) ... ok
+test_duplicate_parent_prediction_rejected (test_w4_test_evaluation.MetricTests.test_duplicate_parent_prediction_rejected) ... ok
+test_independent_hand_computed_error_and_zero_division (test_w4_test_evaluation.MetricTests.test_independent_hand_computed_error_and_zero_division) ... ok
+test_missing_classes_still_eight_by_eight_and_macro_over_eight (test_w4_test_evaluation.MetricTests.test_missing_classes_still_eight_by_eight_and_macro_over_eight) ... ok
+test_missing_parent_prediction_rejected (test_w4_test_evaluation.MetricTests.test_missing_parent_prediction_rejected) ... ok
+test_perfect_eight_class_metrics_and_matrix (test_w4_test_evaluation.MetricTests.test_perfect_eight_class_metrics_and_matrix) ... ok
+test_relabelled_ground_truth_rejected (test_w4_test_evaluation.MetricTests.test_relabelled_ground_truth_rejected) ... ok
+test_box_outside_source_rejected (test_w4_test_evaluation.PopulationTests.test_box_outside_source_rejected) ... ok
+test_complete_population_passes (test_w4_test_evaluation.PopulationTests.test_complete_population_passes) ... ok
+test_crop_count_and_weight_must_match (test_w4_test_evaluation.PopulationTests.test_crop_count_and_weight_must_match) ... ok
+test_duplicate_crop_rejected (test_w4_test_evaluation.PopulationTests.test_duplicate_crop_rejected) ... ok
+test_duplicate_parent_rejected (test_w4_test_evaluation.PopulationTests.test_duplicate_parent_rejected) ... ok
+test_each_cross_split_leakage_dimension_rejected (test_w4_test_evaluation.PopulationTests.test_each_cross_split_leakage_dimension_rejected) ... ok
+test_missing_parent_crop_rejected (test_w4_test_evaluation.PopulationTests.test_missing_parent_crop_rejected) ... ok
+test_source_file_sha_leakage_rejected (test_w4_test_evaluation.PopulationTests.test_source_file_sha_leakage_rejected) ... ok
+test_wrong_class_order_rejected (test_w4_test_evaluation.PopulationTests.test_wrong_class_order_rejected) ... ok
+test_wrong_crop_label_rejected (test_w4_test_evaluation.PopulationTests.test_wrong_crop_label_rejected) ... ok
+test_export_and_interrupted_run_guard_without_swg_or_training (test_w4_test_evaluation.SyntheticExportTests.test_export_and_interrupted_run_guard_without_swg_or_training) ... ok
+test_base_packages_do_not_eagerly_load_torch (test_week3_integration.WeekThreeIntegrationTests.test_base_packages_do_not_eagerly_load_torch) ... ok
+test_both_evaluation_interfaces_export_original_functions (test_week3_integration.WeekThreeIntegrationTests.test_both_evaluation_interfaces_export_original_functions) ... ok
+test_native_model_interface_preserved (test_week3_integration.WeekThreeIntegrationTests.test_native_model_interface_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 393 tests in 55.162s
+
+OK

@@ -1,0 +1,24 @@
+{
+  "id": "dinov3_square256_bilinear_uint8",
+  "color": "RGB",
+  "exif_transpose": false,
+  "padding": 0,
+  "bbox": "frozen integer bbox_xyxy; right/bottom exclusive",
+  "steps": [
+    "ToImage uint8",
+    "Resize square 256x256 bilinear antialias",
+    "ToDtype float32 scale=True",
+    "Normalize"
+  ],
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "random_augmentation": false
+}

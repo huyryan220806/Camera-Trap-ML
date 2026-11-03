@@ -1,0 +1,37 @@
+{
+  "experiment_id": "DINOv3_LP_run01",
+  "model": {
+    "name": "dinov3_vits16",
+    "repo_dir": "outputs/tv3_w5/vendor/dinov3",
+    "repo_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+    "weights_path": "outputs/tv3_w5/pretrained/dinov3_vits16.pth",
+    "weights_sha256": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d",
+    "weights_source": "facebookresearch/dinov3:LVD-1689M:ViT-S16",
+    "pooling": "x_norm_clstoken",
+    "frozen": true
+  },
+  "preprocessing": "dinov3_square256_bilinear_uint8",
+  "data": {
+    "directory": "data/processed/comparison_v1",
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f"
+  },
+  "cache": {
+    "batch_size": 32,
+    "shard_size": 128
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 50,
+    "patience": 7,
+    "images_per_batch": 32,
+    "optimizer": "sgd",
+    "lr": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine"
+  },
+  "runtime": {
+    "device": "cuda",
+    "amp": false
+  }
+}

@@ -1,0 +1,31 @@
+test_registration_and_policy_fail_closed (test_dino_tv2_compat.ProtocolTests.test_registration_and_policy_fail_closed) ... ok
+test_no_pass_for_missing_wrong_or_failed_reload (test_dino_tv2_compat.TV2CompatibilityTests.test_no_pass_for_missing_wrong_or_failed_reload) ... ok
+test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2 (test_dino_tv2_compat.TV2CompatibilityTests.test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2) ... ok
+test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest) ... ok
+test_tv2_rejects_missing_crop_and_export_uses_original_softmax (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_missing_crop_and_export_uses_original_softmax) ... ok
+Cached train: 1/1
+Cached val: 1/1
+test_cache_resume_and_corruption (test_dino_w5.DinoTests.test_cache_resume_and_corruption) ... ok
+Epoch 1: image macro-F1=0.08333333
+test_cli_exports_package_and_refuses_existing_run (test_dino_w5.DinoTests.test_cli_exports_package_and_refuses_existing_run) ... ok
+Epoch 1: image macro-F1=0.25000000
+Epoch 2: image macro-F1=0.40000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+Epoch 1: image macro-F1=0.25000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+test_epoch_resume_matches_uninterrupted (test_dino_w5.DinoTests.test_epoch_resume_matches_uninterrupted) ... ok
+test_frozen_metadata_and_parent_coverage (test_dino_w5.DinoTests.test_frozen_metadata_and_parent_coverage) ... ok
+test_image_loss_uses_weight_once (test_dino_w5.DinoTests.test_image_loss_uses_weight_once) ... ok
+test_mean_probability_not_mean_logits (test_dino_w5.DinoTests.test_mean_probability_not_mean_logits) ... ok
+test_preprocessing_specific_to_backbone (test_dino_w5.DinoTests.test_preprocessing_specific_to_backbone) ... ok
+test_receipt_must_bind_config (test_dino_w5.DinoTests.test_receipt_must_bind_config) ... ok
+test_reload_detects_tiny_unrounded_difference (test_dino_w5.DinoTests.test_reload_detects_tiny_unrounded_difference) ... ok
+test_reload_report_exports_real_comparison_status (test_dino_w5.DinoTests.test_reload_report_exports_real_comparison_status) ... ok
+test_requires_release_and_real_weight_pins (test_dino_w5.DinoTests.test_requires_release_and_real_weight_pins) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 10.440s
+
+OK

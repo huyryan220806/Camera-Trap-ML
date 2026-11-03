@@ -1,0 +1,6 @@
+# Separate W5 environment; torch/torchvision CUDA wheels are installed separately.
+# Observed test runtime: Python 3.12.10, torch 2.6.0+cu124 / torchvision 0.21.0+cu124.
+# Real upstream DINO loading still requires the --with-model preflight.
+-r requirements.txt
+scikit-learn==1.9.0
+seaborn==0.13.2
