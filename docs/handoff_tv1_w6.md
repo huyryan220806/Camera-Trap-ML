@@ -10,10 +10,15 @@ là bằng chứng dữ liệu đã đạt hoặc TV2 đã duyệt.
 4.246 ảnh / 4.729 crop. Chất lượng kỹ thuật đã kiểm định; TV2 chưa peer review.
 Phân bố val/Test cũ giữ nguyên. Chi tiết và giới hạn rà mẫu trong báo cáo.
 
+**Công bố GitHub ngày 04/11:** code, kế hoạch, manifest và báo cáo ở nhánh
+[`feat/metadata-split`](https://github.com/huyryan220806/Camera-Trap-ML/tree/feat/metadata-split),
+commit nội dung `c1d2789`. ZIP ảnh cần nhận riêng qua Drive hoặc chép file;
+tuần 6 chưa merge vào `main` và chưa có phê duyệt dữ liệu thay cho TV2.
+
 ## TV2 nhận và kiểm tra
 
 1. Cập nhật code, `configs/train_expansion_w6_v1.json` và snapshot
-   `data/processed/train_expansion_w6_v1/` từ nhánh TV1 khi đã được push.
+   `data/processed/train_expansion_w6_v1/` từ nhánh TV1 đã được push ở trên.
 2. Xác minh độc lập từ snapshot, không cần state tải của TV1:
 
    ```powershell

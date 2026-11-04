@@ -1,8 +1,13 @@
 # Progress TV1 W6 — train mở rộng và kế hoạch bốn thành viên
 
 **Bắt đầu:** 03/11/2026. **Nhánh:** `feat/metadata-split`. Nền: `cfcf006`.
-**Trạng thái hiện tại:** hoàn thành phần kỹ thuật TV1; snapshot đã phát hành local,
-chờ TV2 peer review. Bốn kế hoạch đã tạo. Chưa push/merge trong nhiệm vụ này.
+**Trạng thái hiện tại:** hoàn thành phần kỹ thuật TV1; code, bốn kế hoạch,
+manifest và báo cáo đã push lên `feat/metadata-split` ngày **04/11/2026**.
+Commit nội dung: `c1d2789fdc844ebd62074850034004aa5a43f5ae`, đã đối chiếu
+HEAD nhánh GitHub sau push. Chờ TV2 peer review; chưa merge tuần 6 vào `main`.
+
+[Nhánh bàn giao trên GitHub](https://github.com/huyryan220806/Camera-Trap-ML/tree/feat/metadata-split).
+Hai ZIP ảnh vẫn ở máy TV1, để người dùng upload Drive; không nằm trong Git.
 
 ## Kết quả cuối và cách tiếp tục
 
