@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_w6_validation.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 0.6151769999996759
+}

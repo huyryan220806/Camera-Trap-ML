@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-X",
+    "utf8",
+    "scripts/audit_tv2_w6_baseline.py",
+    "--checkpoint",
+    "outputs/tv2_w5/acceptance_20261102/attempt_01/received/DINOv3_LP_run01/best_model.pt"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.3086713000011514,
+  "script_sha256": "1d8074cbad963d5ab077e66390a94a0e5f21958dd296e5b887f20474e7a172da"
+}

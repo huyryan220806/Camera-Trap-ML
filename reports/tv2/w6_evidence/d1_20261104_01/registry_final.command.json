@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-X",
+    "utf8",
+    "scripts/evaluate_w6_validation.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.35931130000244593,
+  "source_sha256": {
+    "src/evaluation/w6_validation.py": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+    "scripts/evaluate_w6_validation.py": "8f6006338f25e66cf496abbe9965a229add66c75381e1cc0121d036dda74e23c",
+    "scripts/review_tv1_w6.py": "17a58becc3ce6b6eb84e13be1cd97e5d4a3dbaa6a4086f4723b52b23607ec467",
+    "tests/test_w6_validation.py": "07f6f5fc5ecaadf7ab753657ded5b573420bbc3e0b692b311f8279773cf5f3fe"
+  },
+  "environment": {
+    "TEMP": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w6\\d1_20261104_01\\tmp",
+    "TMP": "D:\\N\u0103m 3\\HK1_2026\\H\u1ecdc m\u00e1y v\u00e0 \u1ee9ng d\u1ee5ng\\Do_an\\outputs\\tv2_w6\\d1_20261104_01\\tmp"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "baseline": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+  "tracked_diff_vs_baseline": [],
+  "initial_snapshot_files": 491,
+  "initial_files_missing": [],
+  "initial_files_changed_by_authorized_fast_forward": [
+    "contracts/classifier_demo.schema.json",
+    "src/demo/inference.py",
+    "src/demo/review.py",
+    "scripts/run_demo.py",
+    "docs/architecture.md",
+    "docs/environment.md",
+    "docs/gpu_schedule.md",
+    "docs/README.md",
+    "docs/result_contract.md",
+    "reports/tv2/TV2_W5.md"
+  ],
+  "r0_checkpoint_unchanged": true,
+  "local_historical_weight_hashes": {
+    "experiments/B0_run01/checkpoints/best_model.pth": {
+      "exists": true,
+      "bytes": 44837567,
+      "sha256": "d1ba497f1c21a5a259a99f55335d47288ee047f7f1c6236ec8b8dfa439649680"
+    },
+    "experiments/B1_run01/checkpoints/best_model.pth": {
+      "exists": true,
+      "bytes": 44815625,
+      "sha256": "5a44c6a82aba7458dcd7d436ba88d76dfeafdae5aa647b7100ccd5b1a8d1328c"
+    },
+    "experiments/B2_run01/checkpoints/best_model.pt": {
+      "exists": true,
+      "bytes": 89548866,
+      "sha256": "8787ffaf1e56e6316a137e2f94f81b0a21608910bb3198fe6724c129242127e5"
+    },
+    "experiments/B3_run01/checkpoints/best_model.pt": {
+      "exists": true,
+      "bytes": 89548994,
+      "sha256": "93ae48dd4b42fa6062daed3a9a1869d620bd7ba9e7ae2aa274085b061f76300b"
+    }
+  },
+  "w4_integrity_scope": "Git diff/object identity only; no Official Test file content opened",
+  "personal_untracked_scope": "No writes/staging; not all Office files byte-hashed",
+  "official_training_performed": false,
+  "gpu_runs_performed": false,
+  "official_test_rerun": false
+}

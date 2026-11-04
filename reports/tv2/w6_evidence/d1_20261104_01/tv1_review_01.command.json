@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-X",
+    "utf8",
+    "scripts/review_tv1_w6.py",
+    "--image-zip",
+    "swg_train_expansion_w6_v1_additional.zip",
+    "--output",
+    "outputs\\tv2_w6\\d1_20261104_01\\tv1_review_01"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 502.5147120000038
+}
