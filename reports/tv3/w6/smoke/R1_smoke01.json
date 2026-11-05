@@ -1,0 +1,2436 @@
+{
+  "status": "PASS",
+  "official_training": false,
+  "validation_inference": false,
+  "test_opened": false,
+  "settings_sha256": "87cfa1d7a87049565a9c172f8c05b34a5428d92556253945788144979e01b75c",
+  "config_sha256": "87cfa1d7a87049565a9c172f8c05b34a5428d92556253945788144979e01b75c",
+  "config_raw_sha256": "7ca4381eec2694975f8249cdaf21a80bd39e021aee1320f0e754a050898fb2b1",
+  "runtime": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "pillow": "12.2.0",
+    "numpy": "2.5.3",
+    "sklearn": "1.9.0",
+    "cuda": "12.4",
+    "cudnn": 90100,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "vram_bytes": 8585216000,
+    "os": "Windows-11-10.0.26100-SP0",
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "num_threads": 10,
+    "num_interop_threads": 10,
+    "amp": false,
+    "tf32": false,
+    "deterministic_algorithms": true
+  },
+  "source_index": {
+    "commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+    "files_sha256": {
+      "src/__init__.py": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "src/training/__init__.py": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "src/evaluation/__init__.py": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "src/training/dino_probe.py": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "src/training/dino_handoff.py": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "src/training/dino_w6.py": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "src/training/dino_w6_control.py": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "src/training/dino_w6_delivery.py": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "scripts/dino_w6.py": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "src/evaluation/w5_validation.py": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "src/evaluation/w6_validation.py": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "contracts/w6_registry.schema.json": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5"
+    }
+  },
+  "command": [
+    "scripts/dino_w6.py",
+    "smoke",
+    "--config",
+    "configs/w6/tv3/R1.candidate.json",
+    "--attempt",
+    "R1_smoke01",
+    "--booking",
+    "NVIDIA GeForce RTX 4060 Laptop GPU; 2026-11-05 20:00-22:00 Asia/Ho_Chi_Minh; đã thống nhất với nhóm"
+  ],
+  "data": {
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "files": {
+      "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+      "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+      "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+      "b1/train.jsonl": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c",
+      "b1/val.jsonl": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+      "b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+      "b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+    },
+    "verified_source_images": 0,
+    "test_opened": false,
+    "train_dataset": "comparison_v1",
+    "train_dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f"
+  },
+  "parent_count": 35,
+  "crop_count": 131,
+  "selected_crop_ids": [
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7363-6670-11ec-b20e-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7364-6670-11ec-8ffb-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7365-6670-11ec-b4fd-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7366-6670-11ec-81c4-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7367-6670-11ec-adfd-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7368-6670-11ec-addf-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7369-6670-11ec-abd8-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736a-6670-11ec-837a-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736b-6670-11ec-a2cd-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736c-6670-11ec-a031-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736d-6670-11ec-acfd-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736e-6670-11ec-8ea4-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf736f-6670-11ec-9655-c82158b0a9cc",
+    "cf2b5120-8c29-11eb-b8f5-000d3a74c7de_30cf7370-6670-11ec-adbb-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_31064809-6670-11ec-84e8-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_3106480a-6670-11ec-a127-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_3106480b-6670-11ec-a80c-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_3106480c-6670-11ec-ae1e-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_3106480d-6670-11ec-8a55-c82158b0a9cc",
+    "d4437487-8c29-11eb-b489-000d3a74c7de_3106480e-6670-11ec-9271-c82158b0a9cc",
+    "ceaceab1-8c29-11eb-84a4-000d3a74c7de_30c84cf6-6670-11ec-89c2-c82158b0a9cc",
+    "ceaceab1-8c29-11eb-84a4-000d3a74c7de_30c84cf7-6670-11ec-840f-c82158b0a9cc",
+    "ceaceab1-8c29-11eb-84a4-000d3a74c7de_30c84cf8-6670-11ec-88d2-c82158b0a9cc",
+    "ceaceab1-8c29-11eb-84a4-000d3a74c7de_30c84cf9-6670-11ec-90a0-c82158b0a9cc",
+    "ceaceab1-8c29-11eb-84a4-000d3a74c7de_30c84cfa-6670-11ec-902f-c82158b0a9cc",
+    "d448375a-8c29-11eb-8a23-000d3a74c7de_310647bd-6670-11ec-b4d2-c82158b0a9cc",
+    "d448375a-8c29-11eb-8a23-000d3a74c7de_310647be-6670-11ec-ba7b-c82158b0a9cc",
+    "d448375a-8c29-11eb-8a23-000d3a74c7de_310647bf-6670-11ec-89d3-c82158b0a9cc",
+    "d448375a-8c29-11eb-8a23-000d3a74c7de_310647c0-6670-11ec-8c6b-c82158b0a9cc",
+    "d448375a-8c29-11eb-8a23-000d3a74c7de_310647c1-6670-11ec-96d1-c82158b0a9cc",
+    "c975d5ee-8c29-11eb-a9bf-000d3a74c7de_30963d24-6670-11ec-afef-c82158b0a9cc",
+    "c975d5ee-8c29-11eb-a9bf-000d3a74c7de_30963d25-6670-11ec-b238-c82158b0a9cc",
+    "c975d5ee-8c29-11eb-a9bf-000d3a74c7de_30963d26-6670-11ec-a16d-c82158b0a9cc",
+    "c975d5ee-8c29-11eb-a9bf-000d3a74c7de_30963d27-6670-11ec-a264-c82158b0a9cc",
+    "ca0994bc-8c29-11eb-8a8e-000d3a74c7de_309b01c6-6670-11ec-ad6f-c82158b0a9cc",
+    "ca0994bc-8c29-11eb-8a8e-000d3a74c7de_309b01c7-6670-11ec-b1ca-c82158b0a9cc",
+    "ca0994bc-8c29-11eb-8a8e-000d3a74c7de_309b01c8-6670-11ec-8855-c82158b0a9cc",
+    "ca0994bc-8c29-11eb-8a8e-000d3a74c7de_309b01c9-6670-11ec-b0cf-c82158b0a9cc",
+    "d1b3c839-8c29-11eb-9a6f-000d3a74c7de_30e74f54-6670-11ec-8d5c-c82158b0a9cc",
+    "d1b3c839-8c29-11eb-9a6f-000d3a74c7de_30e74f55-6670-11ec-b2e0-c82158b0a9cc",
+    "d1b3c839-8c29-11eb-9a6f-000d3a74c7de_30e74f56-6670-11ec-a851-c82158b0a9cc",
+    "d1b3c839-8c29-11eb-9a6f-000d3a74c7de_30e74f57-6670-11ec-aa95-c82158b0a9cc",
+    "d26b8da0-8c29-11eb-b18c-000d3a74c7de_30f33325-6670-11ec-a6b2-c82158b0a9cc",
+    "d26b8da0-8c29-11eb-b18c-000d3a74c7de_30f33326-6670-11ec-a9a4-c82158b0a9cc",
+    "d26b8da0-8c29-11eb-b18c-000d3a74c7de_30f33327-6670-11ec-b69d-c82158b0a9cc",
+    "d26b8da0-8c29-11eb-b18c-000d3a74c7de_30f33328-6670-11ec-bdaf-c82158b0a9cc",
+    "d83195a7-8c29-11eb-ad7b-000d3a74c7de_31633cd0-6670-11ec-8254-c82158b0a9cc",
+    "d83195a7-8c29-11eb-ad7b-000d3a74c7de_31633cd1-6670-11ec-972f-c82158b0a9cc",
+    "d83195a7-8c29-11eb-ad7b-000d3a74c7de_31633cd2-6670-11ec-8feb-c82158b0a9cc",
+    "d83195a7-8c29-11eb-ad7b-000d3a74c7de_31633cd3-6670-11ec-863e-c82158b0a9cc",
+    "d8850106-8c29-11eb-97cb-000d3a74c7de_316a642c-6670-11ec-b6fd-c82158b0a9cc",
+    "d8850106-8c29-11eb-97cb-000d3a74c7de_316a642d-6670-11ec-add7-c82158b0a9cc",
+    "d8850106-8c29-11eb-97cb-000d3a74c7de_316a642e-6670-11ec-b68a-c82158b0a9cc",
+    "d8850106-8c29-11eb-97cb-000d3a74c7de_316a642f-6670-11ec-a252-c82158b0a9cc",
+    "d8f052f8-8c29-11eb-9f3b-000d3a74c7de_316cca76-6670-11ec-a547-c82158b0a9cc",
+    "d8f052f8-8c29-11eb-9f3b-000d3a74c7de_316cca77-6670-11ec-931b-c82158b0a9cc",
+    "d8f052f8-8c29-11eb-9f3b-000d3a74c7de_316cca78-6670-11ec-858b-c82158b0a9cc",
+    "d8f052f8-8c29-11eb-9f3b-000d3a74c7de_316cca79-6670-11ec-8a70-c82158b0a9cc",
+    "d96eb2b1-8c29-11eb-8122-000d3a74c7de_31718d81-6670-11ec-900a-c82158b0a9cc",
+    "d96eb2b1-8c29-11eb-8122-000d3a74c7de_31718d82-6670-11ec-8f53-c82158b0a9cc",
+    "d96eb2b1-8c29-11eb-8122-000d3a74c7de_31718d83-6670-11ec-b6fa-c82158b0a9cc",
+    "d96eb2b1-8c29-11eb-8122-000d3a74c7de_31718d84-6670-11ec-88e0-c82158b0a9cc",
+    "c894e48e-8c29-11eb-abe9-000d3a74c7de_308cb736-6670-11ec-ae3c-c82158b0a9cc",
+    "c894e48e-8c29-11eb-abe9-000d3a74c7de_308cb737-6670-11ec-9ee1-c82158b0a9cc",
+    "c894e48e-8c29-11eb-abe9-000d3a74c7de_308cb738-6670-11ec-b133-c82158b0a9cc",
+    "c894e491-8c29-11eb-ae4e-000d3a74c7de_308cb732-6670-11ec-96ca-c82158b0a9cc",
+    "c894e491-8c29-11eb-ae4e-000d3a74c7de_308cb733-6670-11ec-b8e9-c82158b0a9cc",
+    "c894e491-8c29-11eb-ae4e-000d3a74c7de_308cb734-6670-11ec-995d-c82158b0a9cc",
+    "c894e498-8c29-11eb-87ef-000d3a74c7de_308cb72c-6670-11ec-8d2e-c82158b0a9cc",
+    "c894e498-8c29-11eb-87ef-000d3a74c7de_308cb72d-6670-11ec-8db6-c82158b0a9cc",
+    "c894e498-8c29-11eb-87ef-000d3a74c7de_308cb72e-6670-11ec-b1d6-c82158b0a9cc",
+    "c89f3115-8c29-11eb-ac08-000d3a74c7de_308f16a4-6670-11ec-9eee-c82158b0a9cc",
+    "c89f3115-8c29-11eb-ac08-000d3a74c7de_308f16a5-6670-11ec-84d2-c82158b0a9cc",
+    "c89f3115-8c29-11eb-ac08-000d3a74c7de_308f16a6-6670-11ec-b12a-c82158b0a9cc",
+    "c9bfaaec-8c29-11eb-86ca-000d3a74c7de_309b03d3-6670-11ec-9c15-c82158b0a9cc",
+    "c9bfaaec-8c29-11eb-86ca-000d3a74c7de_309b03d4-6670-11ec-890b-c82158b0a9cc",
+    "c9bfaaec-8c29-11eb-86ca-000d3a74c7de_309b03d5-6670-11ec-9cbc-c82158b0a9cc",
+    "c9bfaaed-8c29-11eb-8f5c-000d3a74c7de_309b03d6-6670-11ec-ac03-c82158b0a9cc",
+    "c9bfaaed-8c29-11eb-8f5c-000d3a74c7de_309b03d7-6670-11ec-ac7a-c82158b0a9cc",
+    "c9bfaaed-8c29-11eb-8f5c-000d3a74c7de_309b03d8-6670-11ec-9890-c82158b0a9cc",
+    "cae75645-8c29-11eb-807b-000d3a74c7de_30a22c0e-6670-11ec-a178-c82158b0a9cc",
+    "cae75645-8c29-11eb-807b-000d3a74c7de_30a22c0f-6670-11ec-bb4d-c82158b0a9cc",
+    "cae75645-8c29-11eb-807b-000d3a74c7de_30a22c10-6670-11ec-8821-c82158b0a9cc",
+    "caf80912-8c29-11eb-996d-000d3a74c7de_30a48a1a-6670-11ec-bbff-c82158b0a9cc",
+    "caf80912-8c29-11eb-996d-000d3a74c7de_30a48a1b-6670-11ec-98b0-c82158b0a9cc",
+    "caf80912-8c29-11eb-996d-000d3a74c7de_30a48a1c-6670-11ec-94f8-c82158b0a9cc",
+    "cb41e9cb-8c29-11eb-b561-000d3a74c7de_30a6f0e5-6670-11ec-bd03-c82158b0a9cc",
+    "cb41e9cb-8c29-11eb-b561-000d3a74c7de_30a6f0e6-6670-11ec-8186-c82158b0a9cc",
+    "cb41e9cb-8c29-11eb-b561-000d3a74c7de_30a6f0e7-6670-11ec-b78b-c82158b0a9cc",
+    "cbad36a7-8c29-11eb-bbb1-000d3a74c7de_30a6f086-6670-11ec-8d5b-c82158b0a9cc",
+    "cbad36a7-8c29-11eb-bbb1-000d3a74c7de_30a6f087-6670-11ec-a0ca-c82158b0a9cc",
+    "cbad36a7-8c29-11eb-bbb1-000d3a74c7de_30a6f088-6670-11ec-ae19-c82158b0a9cc",
+    "cbad36a8-8c29-11eb-be25-000d3a74c7de_30a6f089-6670-11ec-a1f6-c82158b0a9cc",
+    "cbad36a8-8c29-11eb-be25-000d3a74c7de_30a6f08a-6670-11ec-86da-c82158b0a9cc",
+    "cbad36a8-8c29-11eb-be25-000d3a74c7de_30a6f08b-6670-11ec-ab8c-c82158b0a9cc",
+    "cbad36e0-8c29-11eb-b3a5-000d3a74c7de_30a6f172-6670-11ec-a190-c82158b0a9cc",
+    "cbad36e0-8c29-11eb-b3a5-000d3a74c7de_30a6f173-6670-11ec-85a8-c82158b0a9cc",
+    "cbad36e0-8c29-11eb-b3a5-000d3a74c7de_30a6f174-6670-11ec-a0c1-c82158b0a9cc",
+    "cc187f84-8c29-11eb-8526-000d3a74c7de_30ae16e2-6670-11ec-ad34-c82158b0a9cc",
+    "cc187f84-8c29-11eb-8526-000d3a74c7de_30ae16e3-6670-11ec-ad4e-c82158b0a9cc",
+    "cc187f84-8c29-11eb-8526-000d3a74c7de_30ae16e4-6670-11ec-bb73-c82158b0a9cc",
+    "cc187f85-8c29-11eb-b4f9-000d3a74c7de_30ae16e5-6670-11ec-ae88-c82158b0a9cc",
+    "cc187f85-8c29-11eb-b4f9-000d3a74c7de_30ae16e6-6670-11ec-8acf-c82158b0a9cc",
+    "cc187f85-8c29-11eb-b4f9-000d3a74c7de_30ae16e7-6670-11ec-ac83-c82158b0a9cc",
+    "ceaceb4f-8c29-11eb-932e-000d3a74c7de_30c84cdf-6670-11ec-9f15-c82158b0a9cc",
+    "ceaceb4f-8c29-11eb-932e-000d3a74c7de_30c84ce0-6670-11ec-b2d9-c82158b0a9cc",
+    "ceaceb4f-8c29-11eb-932e-000d3a74c7de_30c84ce1-6670-11ec-a260-c82158b0a9cc",
+    "cf268fa7-8c29-11eb-8b62-000d3a74c7de_30cd153e-6670-11ec-b9d1-c82158b0a9cc",
+    "cf268fa7-8c29-11eb-8b62-000d3a74c7de_30cd153f-6670-11ec-9a3c-c82158b0a9cc",
+    "cf268fa7-8c29-11eb-8b62-000d3a74c7de_30cd1540-6670-11ec-a3b4-c82158b0a9cc",
+    "cf268fa8-8c29-11eb-a6a5-000d3a74c7de_30cd1541-6670-11ec-877e-c82158b0a9cc",
+    "cf268fa8-8c29-11eb-a6a5-000d3a74c7de_30cd1542-6670-11ec-a557-c82158b0a9cc",
+    "cf268fa8-8c29-11eb-a6a5-000d3a74c7de_30cd1543-6670-11ec-99ed-c82158b0a9cc",
+    "cf28f35f-8c29-11eb-90ce-000d3a74c7de_30cd1516-6670-11ec-a0b5-c82158b0a9cc",
+    "cf28f35f-8c29-11eb-90ce-000d3a74c7de_30cd1517-6670-11ec-951c-c82158b0a9cc",
+    "cf28f35f-8c29-11eb-90ce-000d3a74c7de_30cd1518-6670-11ec-833c-c82158b0a9cc",
+    "cf2b543b-8c29-11eb-a9cd-000d3a74c7de_30cd159f-6670-11ec-8cfa-c82158b0a9cc",
+    "cf2b543b-8c29-11eb-a9cd-000d3a74c7de_30cd15a0-6670-11ec-b7fd-c82158b0a9cc",
+    "cf2b543b-8c29-11eb-a9cd-000d3a74c7de_30cd15a1-6670-11ec-997a-c82158b0a9cc",
+    "cfb0ca80-8c29-11eb-a8a9-000d3a74c7de_30d1d3f7-6670-11ec-ad01-c82158b0a9cc",
+    "cfb0ca80-8c29-11eb-a8a9-000d3a74c7de_30d1d3f8-6670-11ec-8632-c82158b0a9cc",
+    "cfb0ca80-8c29-11eb-a8a9-000d3a74c7de_30d1d3f9-6670-11ec-aceb-c82158b0a9cc",
+    "cfcd69c8-8c29-11eb-bb15-000d3a74c7de_30d1da38-6670-11ec-a07b-c82158b0a9cc",
+    "cfcd69c8-8c29-11eb-bb15-000d3a74c7de_30d1da39-6670-11ec-800d-c82158b0a9cc",
+    "cfcd69c8-8c29-11eb-bb15-000d3a74c7de_30d1da3a-6670-11ec-8cb8-c82158b0a9cc",
+    "cfcd69cc-8c29-11eb-bcd9-000d3a74c7de_30d1da2f-6670-11ec-bdb1-c82158b0a9cc",
+    "cfcd69cc-8c29-11eb-bcd9-000d3a74c7de_30d1da30-6670-11ec-ab84-c82158b0a9cc",
+    "cfcd69cc-8c29-11eb-bcd9-000d3a74c7de_30d1da31-6670-11ec-983c-c82158b0a9cc",
+    "cfe0793e-8c29-11eb-88d2-000d3a74c7de_30d1d91f-6670-11ec-a8f1-c82158b0a9cc",
+    "cfe0793e-8c29-11eb-88d2-000d3a74c7de_30d1d920-6670-11ec-a7f4-c82158b0a9cc",
+    "cfe0793e-8c29-11eb-88d2-000d3a74c7de_30d1d921-6670-11ec-adc3-c82158b0a9cc"
+  ],
+  "attempt_id": "R1_smoke01",
+  "recipe": "R1",
+  "named_parameters": {
+    "backbone.cls_token": {
+      "trainable": false,
+      "shape": [
+        1,
+        1,
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.storage_tokens": {
+      "trainable": false,
+      "shape": [
+        1,
+        4,
+        384
+      ],
+      "numel": 1536
+    },
+    "backbone.mask_token": {
+      "trainable": false,
+      "shape": [
+        1,
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.patch_embed.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        3,
+        16,
+        16
+      ],
+      "numel": 294912
+    },
+    "backbone.patch_embed.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.0.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.0.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.0.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.0.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.0.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.0.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.0.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.1.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.1.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.1.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.1.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.1.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.1.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.1.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.2.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.2.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.2.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.2.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.2.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.2.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.2.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.3.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.3.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.3.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.3.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.3.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.3.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.3.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.4.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.4.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.4.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.4.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.4.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.4.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.4.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.5.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.5.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.5.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.5.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.5.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.5.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.5.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.6.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.6.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.6.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.6.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.6.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.6.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.6.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.7.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.7.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.7.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.7.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.7.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.7.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.7.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.8.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.8.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.8.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.8.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.8.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.8.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.8.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.9.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.9.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.9.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.9.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.9.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.9.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.9.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.10.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.10.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.10.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.10.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.10.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.10.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.10.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.norm1.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.norm1.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.attn.qkv.weight": {
+      "trainable": false,
+      "shape": [
+        1152,
+        384
+      ],
+      "numel": 442368
+    },
+    "backbone.blocks.11.attn.qkv.bias": {
+      "trainable": false,
+      "shape": [
+        1152
+      ],
+      "numel": 1152
+    },
+    "backbone.blocks.11.attn.proj.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        384
+      ],
+      "numel": 147456
+    },
+    "backbone.blocks.11.attn.proj.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.ls1.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.norm2.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.norm2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.mlp.fc1.weight": {
+      "trainable": false,
+      "shape": [
+        1536,
+        384
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.11.mlp.fc1.bias": {
+      "trainable": false,
+      "shape": [
+        1536
+      ],
+      "numel": 1536
+    },
+    "backbone.blocks.11.mlp.fc2.weight": {
+      "trainable": false,
+      "shape": [
+        384,
+        1536
+      ],
+      "numel": 589824
+    },
+    "backbone.blocks.11.mlp.fc2.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.blocks.11.ls2.gamma": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.norm.weight": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "backbone.norm.bias": {
+      "trainable": false,
+      "shape": [
+        384
+      ],
+      "numel": 384
+    },
+    "head.weight": {
+      "trainable": true,
+      "shape": [
+        8,
+        768
+      ],
+      "numel": 6144
+    },
+    "head.bias": {
+      "trainable": true,
+      "shape": [
+        8
+      ],
+      "numel": 8
+    }
+  },
+  "gradient_evidence": {
+    "backbone.cls_token": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.storage_tokens": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.mask_token": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.patch_embed.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.patch_embed.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.0.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.1.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.2.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.3.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.4.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.5.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.6.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.7.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.8.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.9.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.10.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.norm1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.norm1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.attn.qkv.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.attn.qkv.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.attn.proj.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.attn.proj.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.ls1.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.norm2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.norm2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.mlp.fc1.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.mlp.fc1.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.mlp.fc2.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.mlp.fc2.bias": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.blocks.11.ls2.gamma": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.norm.weight": {
+      "present": false,
+      "finite": null
+    },
+    "backbone.norm.bias": {
+      "present": false,
+      "finite": null
+    },
+    "head.weight": {
+      "present": true,
+      "finite": true
+    },
+    "head.bias": {
+      "present": true,
+      "finite": true
+    }
+  },
+  "module_modes_train": {
+    "": true,
+    "backbone": false,
+    "backbone.patch_embed": false,
+    "backbone.patch_embed.proj": false,
+    "backbone.patch_embed.norm": false,
+    "backbone.rope_embed": false,
+    "backbone.blocks": false,
+    "backbone.blocks.0": false,
+    "backbone.blocks.0.norm1": false,
+    "backbone.blocks.0.attn": false,
+    "backbone.blocks.0.attn.qkv": false,
+    "backbone.blocks.0.attn.attn_drop": false,
+    "backbone.blocks.0.attn.proj": false,
+    "backbone.blocks.0.attn.proj_drop": false,
+    "backbone.blocks.0.ls1": false,
+    "backbone.blocks.0.norm2": false,
+    "backbone.blocks.0.mlp": false,
+    "backbone.blocks.0.mlp.fc1": false,
+    "backbone.blocks.0.mlp.act": false,
+    "backbone.blocks.0.mlp.fc2": false,
+    "backbone.blocks.0.mlp.drop": false,
+    "backbone.blocks.0.ls2": false,
+    "backbone.blocks.1": false,
+    "backbone.blocks.1.norm1": false,
+    "backbone.blocks.1.attn": false,
+    "backbone.blocks.1.attn.qkv": false,
+    "backbone.blocks.1.attn.attn_drop": false,
+    "backbone.blocks.1.attn.proj": false,
+    "backbone.blocks.1.attn.proj_drop": false,
+    "backbone.blocks.1.ls1": false,
+    "backbone.blocks.1.norm2": false,
+    "backbone.blocks.1.mlp": false,
+    "backbone.blocks.1.mlp.fc1": false,
+    "backbone.blocks.1.mlp.act": false,
+    "backbone.blocks.1.mlp.fc2": false,
+    "backbone.blocks.1.mlp.drop": false,
+    "backbone.blocks.1.ls2": false,
+    "backbone.blocks.2": false,
+    "backbone.blocks.2.norm1": false,
+    "backbone.blocks.2.attn": false,
+    "backbone.blocks.2.attn.qkv": false,
+    "backbone.blocks.2.attn.attn_drop": false,
+    "backbone.blocks.2.attn.proj": false,
+    "backbone.blocks.2.attn.proj_drop": false,
+    "backbone.blocks.2.ls1": false,
+    "backbone.blocks.2.norm2": false,
+    "backbone.blocks.2.mlp": false,
+    "backbone.blocks.2.mlp.fc1": false,
+    "backbone.blocks.2.mlp.act": false,
+    "backbone.blocks.2.mlp.fc2": false,
+    "backbone.blocks.2.mlp.drop": false,
+    "backbone.blocks.2.ls2": false,
+    "backbone.blocks.3": false,
+    "backbone.blocks.3.norm1": false,
+    "backbone.blocks.3.attn": false,
+    "backbone.blocks.3.attn.qkv": false,
+    "backbone.blocks.3.attn.attn_drop": false,
+    "backbone.blocks.3.attn.proj": false,
+    "backbone.blocks.3.attn.proj_drop": false,
+    "backbone.blocks.3.ls1": false,
+    "backbone.blocks.3.norm2": false,
+    "backbone.blocks.3.mlp": false,
+    "backbone.blocks.3.mlp.fc1": false,
+    "backbone.blocks.3.mlp.act": false,
+    "backbone.blocks.3.mlp.fc2": false,
+    "backbone.blocks.3.mlp.drop": false,
+    "backbone.blocks.3.ls2": false,
+    "backbone.blocks.4": false,
+    "backbone.blocks.4.norm1": false,
+    "backbone.blocks.4.attn": false,
+    "backbone.blocks.4.attn.qkv": false,
+    "backbone.blocks.4.attn.attn_drop": false,
+    "backbone.blocks.4.attn.proj": false,
+    "backbone.blocks.4.attn.proj_drop": false,
+    "backbone.blocks.4.ls1": false,
+    "backbone.blocks.4.norm2": false,
+    "backbone.blocks.4.mlp": false,
+    "backbone.blocks.4.mlp.fc1": false,
+    "backbone.blocks.4.mlp.act": false,
+    "backbone.blocks.4.mlp.fc2": false,
+    "backbone.blocks.4.mlp.drop": false,
+    "backbone.blocks.4.ls2": false,
+    "backbone.blocks.5": false,
+    "backbone.blocks.5.norm1": false,
+    "backbone.blocks.5.attn": false,
+    "backbone.blocks.5.attn.qkv": false,
+    "backbone.blocks.5.attn.attn_drop": false,
+    "backbone.blocks.5.attn.proj": false,
+    "backbone.blocks.5.attn.proj_drop": false,
+    "backbone.blocks.5.ls1": false,
+    "backbone.blocks.5.norm2": false,
+    "backbone.blocks.5.mlp": false,
+    "backbone.blocks.5.mlp.fc1": false,
+    "backbone.blocks.5.mlp.act": false,
+    "backbone.blocks.5.mlp.fc2": false,
+    "backbone.blocks.5.mlp.drop": false,
+    "backbone.blocks.5.ls2": false,
+    "backbone.blocks.6": false,
+    "backbone.blocks.6.norm1": false,
+    "backbone.blocks.6.attn": false,
+    "backbone.blocks.6.attn.qkv": false,
+    "backbone.blocks.6.attn.attn_drop": false,
+    "backbone.blocks.6.attn.proj": false,
+    "backbone.blocks.6.attn.proj_drop": false,
+    "backbone.blocks.6.ls1": false,
+    "backbone.blocks.6.norm2": false,
+    "backbone.blocks.6.mlp": false,
+    "backbone.blocks.6.mlp.fc1": false,
+    "backbone.blocks.6.mlp.act": false,
+    "backbone.blocks.6.mlp.fc2": false,
+    "backbone.blocks.6.mlp.drop": false,
+    "backbone.blocks.6.ls2": false,
+    "backbone.blocks.7": false,
+    "backbone.blocks.7.norm1": false,
+    "backbone.blocks.7.attn": false,
+    "backbone.blocks.7.attn.qkv": false,
+    "backbone.blocks.7.attn.attn_drop": false,
+    "backbone.blocks.7.attn.proj": false,
+    "backbone.blocks.7.attn.proj_drop": false,
+    "backbone.blocks.7.ls1": false,
+    "backbone.blocks.7.norm2": false,
+    "backbone.blocks.7.mlp": false,
+    "backbone.blocks.7.mlp.fc1": false,
+    "backbone.blocks.7.mlp.act": false,
+    "backbone.blocks.7.mlp.fc2": false,
+    "backbone.blocks.7.mlp.drop": false,
+    "backbone.blocks.7.ls2": false,
+    "backbone.blocks.8": false,
+    "backbone.blocks.8.norm1": false,
+    "backbone.blocks.8.attn": false,
+    "backbone.blocks.8.attn.qkv": false,
+    "backbone.blocks.8.attn.attn_drop": false,
+    "backbone.blocks.8.attn.proj": false,
+    "backbone.blocks.8.attn.proj_drop": false,
+    "backbone.blocks.8.ls1": false,
+    "backbone.blocks.8.norm2": false,
+    "backbone.blocks.8.mlp": false,
+    "backbone.blocks.8.mlp.fc1": false,
+    "backbone.blocks.8.mlp.act": false,
+    "backbone.blocks.8.mlp.fc2": false,
+    "backbone.blocks.8.mlp.drop": false,
+    "backbone.blocks.8.ls2": false,
+    "backbone.blocks.9": false,
+    "backbone.blocks.9.norm1": false,
+    "backbone.blocks.9.attn": false,
+    "backbone.blocks.9.attn.qkv": false,
+    "backbone.blocks.9.attn.attn_drop": false,
+    "backbone.blocks.9.attn.proj": false,
+    "backbone.blocks.9.attn.proj_drop": false,
+    "backbone.blocks.9.ls1": false,
+    "backbone.blocks.9.norm2": false,
+    "backbone.blocks.9.mlp": false,
+    "backbone.blocks.9.mlp.fc1": false,
+    "backbone.blocks.9.mlp.act": false,
+    "backbone.blocks.9.mlp.fc2": false,
+    "backbone.blocks.9.mlp.drop": false,
+    "backbone.blocks.9.ls2": false,
+    "backbone.blocks.10": false,
+    "backbone.blocks.10.norm1": false,
+    "backbone.blocks.10.attn": false,
+    "backbone.blocks.10.attn.qkv": false,
+    "backbone.blocks.10.attn.attn_drop": false,
+    "backbone.blocks.10.attn.proj": false,
+    "backbone.blocks.10.attn.proj_drop": false,
+    "backbone.blocks.10.ls1": false,
+    "backbone.blocks.10.norm2": false,
+    "backbone.blocks.10.mlp": false,
+    "backbone.blocks.10.mlp.fc1": false,
+    "backbone.blocks.10.mlp.act": false,
+    "backbone.blocks.10.mlp.fc2": false,
+    "backbone.blocks.10.mlp.drop": false,
+    "backbone.blocks.10.ls2": false,
+    "backbone.blocks.11": false,
+    "backbone.blocks.11.norm1": false,
+    "backbone.blocks.11.attn": false,
+    "backbone.blocks.11.attn.qkv": false,
+    "backbone.blocks.11.attn.attn_drop": false,
+    "backbone.blocks.11.attn.proj": false,
+    "backbone.blocks.11.attn.proj_drop": false,
+    "backbone.blocks.11.ls1": false,
+    "backbone.blocks.11.norm2": false,
+    "backbone.blocks.11.mlp": false,
+    "backbone.blocks.11.mlp.fc1": false,
+    "backbone.blocks.11.mlp.act": false,
+    "backbone.blocks.11.mlp.fc2": false,
+    "backbone.blocks.11.mlp.drop": false,
+    "backbone.blocks.11.ls2": false,
+    "backbone.norm": false,
+    "backbone.head": false,
+    "head": true
+  },
+  "frozen_unchanged": true,
+  "strict_load_exact": true,
+  "resume_exact": true,
+  "tail_parent_count": 3,
+  "microbatch": 32,
+  "head_dimension": 768,
+  "peak_allocated_vram": 333190144,
+  "resume_fixture_sha256": "7cf142fcc982116d1a141d4f2d9bec4019952bd4a40c63ac400d31bea6c2d338",
+  "exit_code": 0,
+  "usage": {
+    "version": 1,
+    "sessions": [
+      {
+        "session_id": "f73b9450f6334bf99e6facd4af67994d",
+        "attempt_id": "R1_smoke01",
+        "run_id": "R1",
+        "kind": "train_only_smoke",
+        "started_utc": "2026-11-05T13:56:22.734964+00:00",
+        "ended_utc": "2026-11-05T13:56:34.821712+00:00",
+        "seconds": 12.079592999999932,
+        "heartbeat_seconds": 6.346296599999732,
+        "pid": 28084,
+        "booking": "NVIDIA GeForce RTX 4060 Laptop GPU; 2026-11-05 20:00-22:00 Asia/Ho_Chi_Minh; đã thống nhất với nhóm",
+        "status": "COMPLETED"
+      }
+    ],
+    "reconciliations": []
+  }
+}

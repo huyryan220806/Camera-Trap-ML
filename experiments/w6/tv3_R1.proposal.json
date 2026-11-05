@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "protocol_status": "DRAFT",
+  "protocol_path": "docs/experiment_protocol_w6.md",
+  "plan_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "budgets": {
+    "max_new_official_attempts": 6,
+    "tv3_gpu_hours": 12,
+    "per_attempt_gpu_hours": 2,
+    "tv2_replay_gpu_hours": 2
+  },
+  "approvals": {
+    "TV2": null,
+    "TV3": null
+  },
+  "freeze_evidence": "configs/w6/tv3/R1.frozen.json",
+  "smoke_evidence": "reports/tv3/w6/smoke/R1_smoke01.json",
+  "recipe_selection": null,
+  "data_review": {
+    "status": "PENDING",
+    "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "evidence_path": null
+  },
+  "replay_attempts": [],
+  "runs": [
+    {
+      "run_id": "R0",
+      "recipe": "R0",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "REFERENCE",
+      "config_path": "configs/dinov3_lp_w5.local.json",
+      "config_sha256": "8a1d9edaf9adda04cc69b5831e94cc1c86c010a0d071f58baeb8759a1cff90f8",
+      "source_sha": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+      "metrics": {
+        "accuracy": 0.845,
+        "macro_f1": 0.8444008279545706
+      },
+      "evidence_paths": [
+        "reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md"
+      ],
+      "conditions": [
+        "reference_only_no_retrain"
+      ]
+    },
+    {
+      "run_id": "R1",
+      "recipe": "R1",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "REGISTERED",
+      "config_path": "configs/w6/tv3/R1.frozen.json",
+      "config_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
+      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze"
+      ]
+    },
+    {
+      "run_id": "R2",
+      "recipe": "R2",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "REGISTERED",
+      "config_path": "configs/w6/R2.draft.json",
+      "config_sha256": "b4c278eb4c3a192778d8a12c24dafba6074f04ad8e9c5ffbd19f532f9a99a320",
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze"
+      ]
+    },
+    {
+      "run_id": "R3",
+      "recipe": null,
+      "seed": 43,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "winning_R1_or_R2",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R4",
+      "recipe": null,
+      "seed": 44,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "winning_R1_or_R2",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R5",
+      "recipe": null,
+      "seed": 42,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "TV2_expansion_acceptance",
+        "selected_recipe_or_R0_fallback",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R6",
+      "recipe": null,
+      "seed": 43,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "TV2_expansion_acceptance",
+        "selected_recipe_or_R0_fallback",
+        "budget_remaining"
+      ]
+    }
+  ],
+  "tv3_preparation_attempts": [
+    {
+      "attempt_id": "R1_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.003355442499999981,
+      "evidence_path": "outputs/tv3_w6/smoke/R1_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R2_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.0016819240277777682,
+      "evidence_path": "outputs/tv3_w6/smoke/R2_smoke01/receipt.json"
+    }
+  ]
+}
