@@ -1,0 +1,6 @@
+*.json -text
+*.jsonl -text
+*.log -text -whitespace
+*.csv -text
+*.md -text
+results/** -text
