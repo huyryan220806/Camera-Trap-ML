@@ -1,0 +1,57 @@
+{
+  "review_date": "2026-11-06",
+  "scope": "TV2 read-only TV3 pre-training ZIP/source audit and selected CPU tests",
+  "baseline_head_before": "b91476d3d9658e006027225cfc93008125536c0f",
+  "handoff_commit": "8cd97538390a3f55c66193d79e637dfd73ace770",
+  "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+  "python": "3.14.3",
+  "torch": "2.13.0+cpu",
+  "cuda_available": false,
+  "tests": [
+    {
+      "suite": "TV3 W6 source snapshot",
+      "count": 15,
+      "exit_code": 0,
+      "log": "tv3_w6_independent.log"
+    },
+    {
+      "suite": "TV2 W6 evaluation",
+      "count": 50,
+      "exit_code": 0,
+      "log": "tv2_w6_tests.log"
+    },
+    {
+      "suite": "TV2 W5 focused regression",
+      "count": 70,
+      "exit_code": 0,
+      "log": "tv2_w5_regression.log"
+    }
+  ],
+  "files": {
+    "handoff_audit.json": {
+      "bytes": 13728,
+      "sha256": "9c8654a187bac57fd5e2133274c2410c07dcf4478d48aaf74350bcdcd2d28a43"
+    },
+    "tv3_w6_independent.log": {
+      "bytes": 3119,
+      "sha256": "bde1c26d648d776ebdcfaf24472ed5836ce45cb62c1b718824190c72a85c1e95"
+    },
+    "tv2_w6_tests.log": {
+      "bytes": 5829,
+      "sha256": "3b933a8960e65cfbc0d2a4999037ce45f70c52d67addc76eb0f20ccb052add1c"
+    },
+    "tv2_w5_regression.log": {
+      "bytes": 9599,
+      "sha256": "7eecd038a488fcd2384c63164f83dafa9af8f1017accf534daeff1715f878431"
+    },
+    "proposal_validation.json": {
+      "bytes": 526,
+      "sha256": "29d09745ea64e4f0109ac798192337cdb8bf484033afe220516fd55fc5680787"
+    }
+  },
+  "producer_reported_full_suite_tests": 505,
+  "independently_reproduced_total_tests": 135,
+  "official_training_performed": false,
+  "gpu_smoke_performed_by_tv2": false,
+  "test_w4_opened": false
+}

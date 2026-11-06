@@ -1,11 +1,11 @@
 # TV2 W6 — protocol đánh giá DINOv3
 
-**DRAFT — 04/11/2026. RESULT PENDING. Không cho phép official run bằng tài liệu này.**
+**APPROVED cho R1/R2 — 06/11/2026; RESULT PENDING.** Phê duyệt chỉ cho cấu hình frozen R1/R2 dùng `comparison_v1` và có hiệu lực thực thi sau khi protocol, registry, cấu hình và receipt này được kiểm tra/commit lên `feat/baseline`; không cho phép R3–R6 tự động chạy.
 Owner TV2, reviewer TV1; cấu hình/training thuộc TV3, adapter/demo thuộc TV4.
 Nguồn kế hoạch: `feat/metadata-split` tại
 `11e451071f58146522df20e1890cc6fe6e488eb0`, `docs/plans/TV{1,2,3,4}_W6.md`.
 Lịch 04–10/11 chỉ là lịch đề xuất; chưa có hạn nộp mới do giảng viên xác nhận.
-Registry máy đọc: `experiments/w6/registry.json`. Approval TV2/TV3 đang null.
+Registry máy đọc: `experiments/w6/registry.json`. Approval TV2 và TV3 đã được xác nhận riêng và khóa bằng reference trong biên nhận `reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json`. TV3 confirmation: commit `a5e24eb27e4bff4d3649adeee3b70efffdc11e2c`; TV2 confirmation: `reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md` tại commit `73bc9c2b69f202f123657db4b9dbf128810732f3`. Approval TV2/TV3 không chứng minh chất lượng mô hình hoặc full-run time budget.
 
 ## Mục tiêu, đối chứng và giả thuyết
 
@@ -78,10 +78,18 @@ và head. RNG/sampler/optimizer/scheduler/epoch/best/patience phải được re
 train/eval mode chi tiết và runtime pin phải được TV3 khai báo và TV2 review
 trước freeze; không tự đoán tham số còn thiếu trong kế hoạch.
 
-Hai config `configs/w6/R1.draft.json`, `R2.draft.json` là đề xuất contract TV2,
-chưa phải config CLI training TV3. Đối chiếu plan TV3: các tham số đã nêu khớp;
-chưa có implementation/source SHA và smoke W6 trên remote TV3 `cfcf006`.
-Chi tiết trong `reports/tv2/TV2_W6_D1_AUDIT.md`; không coi plan là code đã có.
+Các config `configs/w6/R1.draft.json`, `R2.draft.json` chỉ giữ lại như đề xuất D1;
+config chính thức R1/R2 đã khóa và đăng ký là `configs/w6/tv3/R1.frozen.json`,
+`configs/w6/tv3/R2.frozen.json`, copy nguyên byte từ handoff TV3 `8cd97538390a3f55c66193d79e637dfd73ace770`.
+Source đã review `127cac5b64d37fdda630a2f84b006a8e420dc9ed`; runtime lock
+`7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a`.
+Config canonical SHA R1 `2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf`,
+R2 `55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7`.
+TV2 D2 pretraining review: `reports/tv2/TV2_W6_TV3_PRETRAIN_REVIEW_2026-11-06.md`
+(`READY_FOR_TV2_DECISION`), tiếp theo là quyết định TV2 và TV3 được ghi ở receipt.
+Smoke raw SHA R1 `9d5418745cf2cd45519415935246cb3be6ee6b5f0349341b9accb821b2cca1f6`,
+R2 `6b7ead35a2bfbfb002154db14d992c2fd3ececfe3bf3c546be6bdb62433279e5`.
+Không suy từ smoke ngắn rằng official run sẽ kết thúc trong 2 GPU-giờ.
 
 ## Freeze, train-only smoke và budget
 
@@ -183,3 +191,12 @@ Validation được tái dùng để chọn model; một seed R0; GT-box classif
 phải detector end-to-end; mẫu cân bằng75/lớp không đại diện tần suất tự nhiên.
 Score chưa calibrated, không chứng minh loài lạ/SOTA/khái quát địa điểm mới.
 Chưa đạt88% vẫn có thể hoàn thành W6 đúng quy trình; báo cả thất bại và giới hạn.
+
+## Freeze receipt W6 R1/R2 — 06/11/2026
+
+- Hai thành viên TV2, TV3 xác nhận theo đúng file/commit ghi trong `reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json`.
+- `freeze_evidence`: `reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json`.
+- `smoke_evidence`: `reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json`, ghi nguồn smoke và raw SHA tại handoff TV3.
+- R1/R2: `REGISTERED`, seed42, chưa chạy official; registry `APPROVED` không có nghĩa đã có checkpoint/accuracy W6.
+- R3/R4 CONDITIONAL (chờ recipe thắng R0); R5/R6 CONDITIONAL và bị chặn bởi review dữ liệu TV1 PENDING.
+- TV3 chỉ bắt đầu official khi Git commit chứa protocol/registry/config đã được push và kiểm lại runtime, usage, không mở W4 Test.

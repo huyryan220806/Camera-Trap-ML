@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "protocol_status": "DRAFT",
+  "protocol_status": "APPROVED",
   "protocol_path": "docs/experiment_protocol_w6.md",
   "plan_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
   "budgets": {
@@ -10,11 +10,11 @@
     "tv2_replay_gpu_hours": 2
   },
   "approvals": {
-    "TV2": null,
-    "TV3": null
+    "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+    "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
   },
-  "freeze_evidence": null,
-  "smoke_evidence": null,
+  "freeze_evidence": "reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json",
+  "smoke_evidence": "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json",
   "recipe_selection": null,
   "data_review": {
     "status": "PENDING",
@@ -57,17 +57,20 @@
       "dataset": "comparison_v1",
       "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
       "status": "REGISTERED",
-      "config_path": "configs/w6/R1.draft.json",
-      "config_sha256": "b9d59e67d062b1859765c4246d4044727da66791e88dc1dfa8b0d69c1e82f925",
-      "source_sha": null,
+      "config_path": "configs/w6/tv3/R1.frozen.json",
+      "config_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
+      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
       "approvals": {
-        "TV2": null,
-        "TV3": null
+        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
       },
       "attempts": [],
       "checkpoint_sha256": null,
       "metrics": null,
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json",
+        "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json"
+      ],
       "conditions": [
         "approved_protocol",
         "train_only_smoke",
@@ -81,17 +84,20 @@
       "dataset": "comparison_v1",
       "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
       "status": "REGISTERED",
-      "config_path": "configs/w6/R2.draft.json",
-      "config_sha256": "b4c278eb4c3a192778d8a12c24dafba6074f04ad8e9c5ffbd19f532f9a99a320",
-      "source_sha": null,
+      "config_path": "configs/w6/tv3/R2.frozen.json",
+      "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
+      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
       "approvals": {
-        "TV2": null,
-        "TV3": null
+        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
       },
       "attempts": [],
       "checkpoint_sha256": null,
       "metrics": null,
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json",
+        "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json"
+      ],
       "conditions": [
         "approved_protocol",
         "train_only_smoke",
@@ -205,5 +211,18 @@
       ]
     }
   ],
-  "tv3_preparation_attempts": []
+  "tv3_preparation_attempts": [
+    {
+      "attempt_id": "R1_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.003355442499999981,
+      "evidence_path": "outputs/tv3_w6/smoke/R1_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R2_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.0016819240277777682,
+      "evidence_path": "outputs/tv3_w6/smoke/R2_smoke01/receipt.json"
+    }
+  ]
 }
