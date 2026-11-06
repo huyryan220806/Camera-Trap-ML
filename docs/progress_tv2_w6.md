@@ -98,6 +98,16 @@ hai approval null và R1/R2 `attempts=[]`; cần xác nhận GPU slot/runtime/us
 và ghi receipt review thật trước official run. Không mở R3–R6; R5/R6 còn phụ
 thuộc TV1 data acceptance PENDING. Không có model result W6 hay demo switch.
 
+### Gate approval sau D2, 06/11/2026
+
+TV2 receipt kỹ thuật R1/R2 đã được commit tại `73bc9c2`; TV3 được người dùng
+thông báo đã xác nhận riêng nhưng chưa có nguồn/receipt để TV2 kiểm. Phép kiểm
+ZIP/config/source/runtime/smoke SHA lại đều khớp. **Approval gate BLOCKED**
+đến khi có bằng chứng TV3 thật gắn đúng các binding; xem
+`reports/tv2/TV2_W6_APPROVAL_GATE_BLOCKED_2026-11-06.md`. Protocol và registry
+giữ DRAFT; không official training. Không dùng smoke PASS hoặc commit TV3 thay
+cho lời phê duyệt TV3.
+
 ## Kết quả ZIP đã kết thúc
 
 `tv1_review_01` exit0: SHA thực
