@@ -1,0 +1,18 @@
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.334s
+
+OK
