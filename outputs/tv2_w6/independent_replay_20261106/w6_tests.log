@@ -1,0 +1,56 @@
+test_artifact_traversal_and_absolute_rejected (test_w6_validation.EvaluationTests.test_artifact_traversal_and_absolute_rejected) ... ok
+test_checkpoint_seed_run_identity (test_w6_validation.EvaluationTests.test_checkpoint_seed_run_identity) ... ok
+test_draft_package_rejected_before_predictions_or_checkpoint (test_w6_validation.EvaluationTests.test_draft_package_rejected_before_predictions_or_checkpoint) ... ok
+test_four_of_75_regression_threshold (test_w6_validation.EvaluationTests.test_four_of_75_regression_threshold) ... ok
+test_logits_before_mean_and_tie (test_w6_validation.EvaluationTests.test_logits_before_mean_and_tie) ... ok
+test_metrics_all_eight_classes (test_w6_validation.EvaluationTests.test_metrics_all_eight_classes) ... ok
+test_missing_extra_duplicate_crop (test_w6_validation.EvaluationTests.test_missing_extra_duplicate_crop) ... ok
+test_missing_extra_duplicate_image (test_w6_validation.EvaluationTests.test_missing_extra_duplicate_image) ... ok
+test_nonfinite_invalid_vectors (test_w6_validation.EvaluationTests.test_nonfinite_invalid_vectors) ... ok
+test_paired_r0_names (test_w6_validation.EvaluationTests.test_paired_r0_names) ... ok
+test_real_loader_no_test_reader (test_w6_validation.EvaluationTests.test_real_loader_no_test_reader) ... ok
+test_saved_vector_must_equal_aggregation (test_w6_validation.EvaluationTests.test_saved_vector_must_equal_aggregation) ... ok
+test_test_or_train_population_rejected (test_w6_validation.EvaluationTests.test_test_or_train_population_rejected) ... ok
+test_wrong_parent_and_label (test_w6_validation.EvaluationTests.test_wrong_parent_and_label) ... ok
+test_geometry_and_weight_mutations (test_w6_validation.GeometryTests.test_geometry_and_weight_mutations) ... ok
+test_round_half_even_geometry_and_weight (test_w6_validation.GeometryTests.test_round_half_even_geometry_and_weight) ... ok
+test_bare_pass_reload_not_enough (test_w6_validation.PackageTests.test_bare_pass_reload_not_enough) ... ok
+test_checkpoint_bytes_modified (test_w6_validation.PackageTests.test_checkpoint_bytes_modified) ... ok
+test_missing_and_tampered_artifacts (test_w6_validation.PackageTests.test_missing_and_tampered_artifacts) ... ok
+test_positive_synthetic_package (test_w6_validation.PackageTests.test_positive_synthetic_package) ... ok
+test_relaxed_tolerance_or_test_reload_rejected (test_w6_validation.PackageTests.test_relaxed_tolerance_or_test_reload_rejected) ... ok
+test_runtime_rehashed_artifact_still_bound_to_frozen_config (test_w6_validation.PackageTests.test_runtime_rehashed_artifact_still_bound_to_frozen_config) ... ok
+test_source_index_must_bind_real_bytes (test_w6_validation.PackageTests.test_source_index_must_bind_real_bytes) ... ok
+test_wrong_seed_source_dataset_checkpoint_rejected (test_w6_validation.PackageTests.test_wrong_seed_source_dataset_checkpoint_rejected) ... ok
+test_approval_string_alone_insufficient (test_w6_validation.RegistryTests.test_approval_string_alone_insufficient) ... ok
+test_budget_cannot_be_expanded (test_w6_validation.RegistryTests.test_budget_cannot_be_expanded) ... ok
+test_config_binding (test_w6_validation.RegistryTests.test_config_binding) ... ok
+test_dataset_binding (test_w6_validation.RegistryTests.test_dataset_binding) ... ok
+test_draft_blocks_official (test_w6_validation.RegistryTests.test_draft_blocks_official) ... ok
+test_duplicate_attempt_rejected (test_w6_validation.RegistryTests.test_duplicate_attempt_rejected) ... ok
+test_exact_run_population (test_w6_validation.RegistryTests.test_exact_run_population) ... ok
+test_failed_oom_still_needs_accounting (test_w6_validation.RegistryTests.test_failed_oom_still_needs_accounting) ... ok
+test_failures_consume_budget (test_w6_validation.RegistryTests.test_failures_consume_budget) ... ok
+test_fake_approved_missing_run_binding_rejected (test_w6_validation.RegistryTests.test_fake_approved_missing_run_binding_rejected) ... ok
+test_no_side_effects (test_w6_validation.RegistryTests.test_no_side_effects) ... ok
+test_over_two_hours_or_negative_or_nonfinite_rejected (test_w6_validation.RegistryTests.test_over_two_hours_or_negative_or_nonfinite_rejected) ... ok
+test_preparation_gpu_counts_towards_tv3_total (test_w6_validation.RegistryTests.test_preparation_gpu_counts_towards_tv3_total) ... ok
+test_r0_cannot_be_retrained_or_relabelled (test_w6_validation.RegistryTests.test_r0_cannot_be_retrained_or_relabelled) ... ok
+test_r1_r2_plan_invariants (test_w6_validation.RegistryTests.test_r1_r2_plan_invariants) ... ok
+test_real_registry_and_current_gate (test_w6_validation.RegistryTests.test_real_registry_and_current_gate) ... ok
+test_replay_budget (test_w6_validation.RegistryTests.test_replay_budget) ... ok
+test_seed_and_expansion_conditions (test_w6_validation.RegistryTests.test_seed_and_expansion_conditions) ... ok
+test_seed_rejected (test_w6_validation.RegistryTests.test_seed_rejected) ... ok
+test_seventh_attempt_rejected (test_w6_validation.RegistryTests.test_seventh_attempt_rejected) ... ok
+test_unknown_gpu_usage_kept_explicit (test_w6_validation.RegistryTests.test_unknown_gpu_usage_kept_explicit) ... ok
+test_unstarted_cannot_have_results (test_w6_validation.RegistryTests.test_unstarted_cannot_have_results) ... ok
+test_cost_requires_comparable_measured_setup (test_w6_validation.SelectionTests.test_cost_requires_comparable_measured_setup) ... ok
+test_f1_then_accuracy_then_cost_then_registered_id (test_w6_validation.SelectionTests.test_f1_then_accuracy_then_cost_then_registered_id) ... ok
+test_never_select_best_seed (test_w6_validation.SelectionTests.test_never_select_best_seed) ... ok
+test_one_seed_sd_unknown_and_mixed_recipe_rejected (test_w6_validation.SelectionTests.test_one_seed_sd_unknown_and_mixed_recipe_rejected) ... ok
+test_sample_sd_not_best_seed_headline (test_w6_validation.SelectionTests.test_sample_sd_not_best_seed_headline) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.804s
+
+OK

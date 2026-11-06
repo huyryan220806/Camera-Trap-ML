@@ -1,0 +1,110 @@
+### test_dino_w5.py
+Cached train: 1/1
+Cached val: 1/1
+test_cache_resume_and_corruption (test_dino_w5.DinoTests.test_cache_resume_and_corruption) ... ok
+Epoch 1: image macro-F1=0.18750000
+test_cli_exports_package_and_refuses_existing_run (test_dino_w5.DinoTests.test_cli_exports_package_and_refuses_existing_run) ... ok
+Epoch 1: image macro-F1=0.25000000
+Epoch 2: image macro-F1=0.40000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+Epoch 1: image macro-F1=0.25000000
+Epoch 3: image macro-F1=0.40000000
+Epoch 4: image macro-F1=0.40000000
+test_epoch_resume_matches_uninterrupted (test_dino_w5.DinoTests.test_epoch_resume_matches_uninterrupted) ... ok
+test_frozen_metadata_and_parent_coverage (test_dino_w5.DinoTests.test_frozen_metadata_and_parent_coverage) ... ok
+test_image_loss_uses_weight_once (test_dino_w5.DinoTests.test_image_loss_uses_weight_once) ... ok
+test_mean_probability_not_mean_logits (test_dino_w5.DinoTests.test_mean_probability_not_mean_logits) ... ok
+test_preprocessing_specific_to_backbone (test_dino_w5.DinoTests.test_preprocessing_specific_to_backbone) ... ok
+test_receipt_must_bind_config (test_dino_w5.DinoTests.test_receipt_must_bind_config) ... ok
+test_reload_detects_tiny_unrounded_difference (test_dino_w5.DinoTests.test_reload_detects_tiny_unrounded_difference) ... ok
+test_reload_report_exports_real_comparison_status (test_dino_w5.DinoTests.test_reload_report_exports_real_comparison_status) ... ok
+test_requires_release_and_real_weight_pins (test_dino_w5.DinoTests.test_requires_release_and_real_weight_pins) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 46.068s
+
+OK
+### test_evaluation.py
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.519s
+
+OK
+### test_w5_validation.py
+test_bare_pass_without_physical_artifacts_rejected (test_w5_validation.W5HandoffTests.test_bare_pass_without_physical_artifacts_rejected) ... ok
+test_checkpoint_hash_mismatch (test_w5_validation.W5HandoffTests.test_checkpoint_hash_mismatch) ... ok
+test_class_order_mismatch (test_w5_validation.W5HandoffTests.test_class_order_mismatch) ... ok
+test_complete_synthetic_handoff (test_w5_validation.W5HandoffTests.test_complete_synthetic_handoff) ... ok
+test_draft_blocks_candidate (test_w5_validation.W5HandoffTests.test_draft_blocks_candidate) ... ok
+test_manifest_hash_mismatch (test_w5_validation.W5HandoffTests.test_manifest_hash_mismatch) ... ok
+test_no_preprocessing (test_w5_validation.W5HandoffTests.test_no_preprocessing) ... ok
+test_no_reload_evidence (test_w5_validation.W5HandoffTests.test_no_reload_evidence) ... ok
+test_tampered_reload_artifact (test_w5_validation.W5HandoffTests.test_tampered_reload_artifact) ... ok
+test_test_and_expanded_data_rejected (test_w5_validation.W5HandoffTests.test_test_and_expanded_data_rejected) ... ok
+test_unregistered_seed_and_budget (test_w5_validation.W5HandoffTests.test_unregistered_seed_and_budget) ... ok
+test_bad_class_id (test_w5_validation.W5ValidationTests.test_bad_class_id) ... ok
+test_bad_scores (test_w5_validation.W5ValidationTests.test_bad_scores) ... ok
+test_duplicate_crop_prediction (test_w5_validation.W5ValidationTests.test_duplicate_crop_prediction) ... ok
+test_duplicate_image_manifest (test_w5_validation.W5ValidationTests.test_duplicate_image_manifest) ... ok
+test_exact_prediction_tie_lowest_class (test_w5_validation.W5ValidationTests.test_exact_prediction_tie_lowest_class) ... ok
+test_frozen_loader_never_opens_test (test_w5_validation.W5ValidationTests.test_frozen_loader_never_opens_test) ... ok
+test_independent_metrics_equal_sklearn_all_eight_classes (test_w5_validation.W5ValidationTests.test_independent_metrics_equal_sklearn_all_eight_classes) ... ok
+test_label_association (test_w5_validation.W5ValidationTests.test_label_association) ... ok
+test_logits_softmax_before_mean_not_mean_logits (test_w5_validation.W5ValidationTests.test_logits_softmax_before_mean_not_mean_logits) ... ok
+test_mean_softmax_is_image_level (test_w5_validation.W5ValidationTests.test_mean_softmax_is_image_level) ... ok
+test_missing_crop (test_w5_validation.W5ValidationTests.test_missing_crop) ... ok
+test_missing_parent_crop (test_w5_validation.W5ValidationTests.test_missing_parent_crop) ... ok
+test_paired_outcomes (test_w5_validation.W5ValidationTests.test_paired_outcomes) ... ok
+test_population_mismatch_in_comparison (test_w5_validation.W5ValidationTests.test_population_mismatch_in_comparison) ... ok
+test_saved_argmax_consistency (test_w5_validation.W5ValidationTests.test_saved_argmax_consistency) ... ok
+test_saved_checkpoint_and_experiment (test_w5_validation.W5ValidationTests.test_saved_checkpoint_and_experiment) ... ok
+test_saved_crop_count_consistency (test_w5_validation.W5ValidationTests.test_saved_crop_count_consistency) ... ok
+test_saved_missing_duplicate_image (test_w5_validation.W5ValidationTests.test_saved_missing_duplicate_image) ... ok
+test_score_and_logit_ambiguity (test_w5_validation.W5ValidationTests.test_score_and_logit_ambiguity) ... ok
+test_softmax_large_logits (test_w5_validation.W5ValidationTests.test_softmax_large_logits) ... ok
+test_test_split_rejected (test_w5_validation.W5ValidationTests.test_test_split_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 2.161s
+
+OK
+### test_dino_tv2_compat.py
+test_registration_and_policy_fail_closed (test_dino_tv2_compat.ProtocolTests.test_registration_and_policy_fail_closed) ... ok
+test_no_pass_for_missing_wrong_or_failed_reload (test_dino_tv2_compat.TV2CompatibilityTests.test_no_pass_for_missing_wrong_or_failed_reload) ... ok
+test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2 (test_dino_tv2_compat.TV2CompatibilityTests.test_real_tv2_cli_accepts_synthetic_bundle_and_compares_published_b2) ... ok
+test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_draft_tampered_artifact_or_wrong_manifest) ... ok
+test_tv2_rejects_missing_crop_and_export_uses_original_softmax (test_dino_tv2_compat.TV2CompatibilityTests.test_tv2_rejects_missing_crop_and_export_uses_original_softmax) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 9.509s
+
+OK
+### test_contracts.py
+test_cancelled_slot_does_not_block_requested_slot (test_contracts.GpuScheduleTests.test_cancelled_slot_does_not_block_requested_slot) ... ok
+test_conflicting_slots_rejected_and_adjacent_slots_allowed (test_contracts.GpuScheduleTests.test_conflicting_slots_rejected_and_adjacent_slots_allowed) ... ok
+test_empty_shared_register_is_valid_without_claiming_reservations (test_contracts.GpuScheduleTests.test_empty_shared_register_is_valid_without_claiming_reservations) ... ok
+test_unconfirmed_resource_and_missing_timezone_rejected (test_contracts.GpuScheduleTests.test_unconfirmed_resource_and_missing_timezone_rejected) ... ok
+test_all_six_examples_match_contract (test_contracts.ResultContractTests.test_all_six_examples_match_contract) ... ok
+test_error_cannot_masquerade_as_partial_success (test_contracts.ResultContractTests.test_error_cannot_masquerade_as_partial_success) ... ok
+test_mixed_detections_require_review (test_contracts.ResultContractTests.test_mixed_detections_require_review) ... ok
+test_nan_and_repeated_json_keys_are_rejected (test_contracts.ResultContractTests.test_nan_and_repeated_json_keys_are_rejected) ... ok
+test_no_detection_cannot_be_ok_or_contain_error (test_contracts.ResultContractTests.test_no_detection_cannot_be_ok_or_contain_error) ... ok
+test_reject_class_map_mismatch (test_contracts.ResultContractTests.test_reject_class_map_mismatch) ... ok
+test_reject_out_of_bounds_and_normalized_as_pixel_empty_box (test_contracts.ResultContractTests.test_reject_out_of_bounds_and_normalized_as_pixel_empty_box) ... ok
+test_reject_unsorted_or_duplicate_top_k (test_contracts.ResultContractTests.test_reject_unsorted_or_duplicate_top_k) ... ok
+test_status_tracks_review_threshold_including_equality (test_contracts.ResultContractTests.test_status_tracks_review_threshold_including_equality) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.491s
+
+OK

@@ -1,0 +1,14 @@
+test_all_eight_classes_predicted_correctly (test_evaluation.EvaluationMetricTests.test_all_eight_classes_predicted_correctly) ... ok
+test_empty_input_is_rejected (test_evaluation.EvaluationMetricTests.test_empty_input_is_rejected) ... ok
+test_length_mismatch_is_rejected (test_evaluation.EvaluationMetricTests.test_length_mismatch_is_rejected) ... ok
+test_name_to_id_class_map_is_supported (test_evaluation.EvaluationMetricTests.test_name_to_id_class_map_is_supported) ... ok
+test_plot_includes_missing_classes_and_saves_figure (test_evaluation.EvaluationMetricTests.test_plot_includes_missing_classes_and_saves_figure) ... ok
+test_project_class_map_has_eight_classes_in_numeric_order (test_evaluation.EvaluationMetricTests.test_project_class_map_has_eight_classes_in_numeric_order) ... ok
+test_single_present_class_still_averages_over_all_classes (test_evaluation.EvaluationMetricTests.test_single_present_class_still_averages_over_all_classes) ... ok
+test_unknown_class_id_is_rejected (test_evaluation.EvaluationMetricTests.test_unknown_class_id_is_rejected) ... ok
+test_unpredicted_ground_truth_class_has_zero_recall_and_f1 (test_evaluation.EvaluationMetricTests.test_unpredicted_ground_truth_class_has_zero_recall_and_f1) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.274s
+
+OK

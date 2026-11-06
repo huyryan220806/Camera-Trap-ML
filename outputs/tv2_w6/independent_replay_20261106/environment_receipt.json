@@ -1,0 +1,188 @@
+{
+  "receipt_id": "TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06",
+  "branch": "feat/baseline",
+  "head_before_report_commit": "4696a6ef2dd8a3e61013be297e2aeaafe55fb060",
+  "protocol_lock_commit": "18c8ec3a6a58c47b04dbe8606217478145baed6c",
+  "tv3_result_commit": "076a640a263c3d7f0c1406d741468dca504f352c",
+  "tv3_source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+  "status": "PASS",
+  "exact_comparison": {
+    "path": "outputs/tv2_w6/independent_replay_20261106/exact_comparison.json",
+    "sha256": "723eed584fa2e8cdd2a43ccc0ae5ab8a0d4ac4fc6abb72861f77843a42dd39ad",
+    "comparison_policy": "exact element equality; no tolerance",
+    "all_runs_exact": true
+  },
+  "runtime": {
+    "producer": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "pillow": "12.2.0",
+      "numpy": "2.5.3",
+      "sklearn": "1.9.0",
+      "cuda": "12.4",
+      "cudnn": 90100,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "vram_bytes": 8585216000,
+      "os": "Windows-11-10.0.26100-SP0",
+      "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+      "num_threads": 10,
+      "num_interop_threads": 10,
+      "amp": false,
+      "tf32": false,
+      "deterministic_algorithms": true
+    },
+    "tv2_replay": {
+      "python": "3.12.10 (main, May 30 2025, 05:39:07) [MSC v.1943 64 bit (AMD64)]",
+      "python_executable": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w6\\independent_replay_20261106\\.venv\\Scripts\\python.exe",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "pillow": "12.2.0",
+      "numpy": "2.5.3",
+      "sklearn": "1.9.0",
+      "cuda": "12.4",
+      "cudnn": 90100,
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "vram_bytes": 8585216000,
+      "runtime": {
+        "python": "3.12.10 (main, May 30 2025, 05:39:07) [MSC v.1943 64 bit (AMD64)]",
+        "torch": "2.6.0+cu124",
+        "torchvision": "0.21.0+cu124",
+        "pillow": "12.2.0",
+        "numpy": "2.5.3",
+        "sklearn": "1.9.0",
+        "cuda": "12.4",
+        "cudnn": 90100,
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "vram_bytes": 8585216000,
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+        "num_threads": 10,
+        "num_interop_threads": 10,
+        "amp": false,
+        "tf32": false,
+        "deterministic_algorithms": true
+      },
+      "deterministic_algorithms": true,
+      "cudnn_deterministic": true,
+      "cudnn_benchmark": false,
+      "tf32_matmul": false,
+      "tf32_cudnn": false,
+      "amp_enabled": false
+    },
+    "producer_python_build_differs": true
+  },
+  "inputs": {
+    "zip_sha256": {
+      "R1": "998901556b51789a52fc7a650eac504a4f6e23a1118af00450c7a18aeb9bb2fe",
+      "R2": "30f380cab3aa89f5b63c54507f7b7b63d2479e73f52710283e4f557e27fda223"
+    },
+    "best_checkpoint_sha256": {
+      "R1": "86b1c7460b300f27b2f8d5efe426def51750478e2bf195ffa61df1213f646f79",
+      "R2": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc"
+    },
+    "config_raw_sha256": {
+      "R1": "92bf5966fe2b4e228fb52b0ae975c8e5044ca1c35b6a4d06ab79f5733cef507c",
+      "R2": "a649fe30c436fee538d9a58a904685a558aebd77a1df3af91409f55f1a86f36c"
+    },
+    "config_canonical_sha256": {
+      "R1": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
+      "R2": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7"
+    },
+    "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+    "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+    "dataset_provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "validation_image_manifest_sha256": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+    "validation_crop_manifest_sha256": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+    "validation_images": 600,
+    "validation_crops": 680,
+    "raw_bytes_and_rgb_pixels_verified": true
+  },
+  "gpu_accounting": {
+    "budget_gpu_hours": 2.0,
+    "replays": [
+      {
+        "run_id": "R1",
+        "process_id": 12860,
+        "result": "INFERENCE_COMPLETED; initial console rendering raised cp1258 UnicodeEncodeError after replay JSON write",
+        "gpu_hours": 0.03687700852777602,
+        "wall_seconds": 132.75723069999367
+      },
+      {
+        "run_id": "R1",
+        "process_id": 6036,
+        "result": "COMPLETED; clean UTF-8 log retained",
+        "gpu_hours": 0.04432501094444888,
+        "wall_seconds": 159.57003940001596
+      },
+      {
+        "run_id": "R2",
+        "process_id": 25912,
+        "result": "COMPLETED; clean UTF-8 log retained",
+        "gpu_hours": 0.03654925344443958,
+        "wall_seconds": 131.57731239998247
+      }
+    ],
+    "total_gpu_hours": 0.11775127291666448,
+    "remaining_gpu_hours": 1.8822487270833355,
+    "calculation": "sum of wall seconds from checkpoint/model load through CUDA-synchronized inference and metric evaluation, divided by 3600; conservative accounting",
+    "training_or_test_inference": false
+  },
+  "artifacts": {
+    "R1": {
+      "path": "outputs/tv2_w6/independent_replay_20261106/replay_R1.json",
+      "sha256": "e3a5649b94e86746625db9cb057f131c015f7a47320e9274f05a259949094477",
+      "log_path": "outputs/tv2_w6/independent_replay_20261106/replay_R1.log",
+      "log_sha256": "cc4d9220c7144cb08d3ef1ab9b2b1f1af51e3d7738d18200499432972b6b622c"
+    },
+    "R2": {
+      "path": "outputs/tv2_w6/independent_replay_20261106/replay_R2.json",
+      "sha256": "d08049d58d2da54c7ba6a0e03a51523e874cf53ddafb02793a77d9f167493b81",
+      "log_path": "outputs/tv2_w6/independent_replay_20261106/replay_R2.log",
+      "log_sha256": "2cbab25521e3d23728e63ad65462883e418b85b08921a3b7570e25d39ff2845b"
+    }
+  },
+  "regression_tests": {
+    "environment": "existing Python 3.12.14 W5 acceptance test venv; separate from replay runtime and unchanged",
+    "registry_validator": "VALID / APPROVED",
+    "w6": "51 PASS / 0 FAIL",
+    "w5_focused": "70 PASS / 0 FAIL",
+    "logs": {
+      "registry": "outputs/tv2_w6/independent_replay_20261106/registry_validator.log",
+      "w6": "outputs/tv2_w6/independent_replay_20261106/w6_tests.log",
+      "w5": "outputs/tv2_w6/independent_replay_20261106/w5_regression_tests.log"
+    },
+    "registry_validator_log_sha256": "6363e585a0e6f648b5734b08cdb66ee1375820dc0afb68a41941d69d6232b647",
+    "w6_log_sha256": "fb8e3b03f94440a8aa743f8f41bd63738309f4f02708fcef03a9b524e9a8eebb",
+    "w5_log_sha256": "46309a35729d34ca81efe23c42360e601387f5d7ce34d291811dba0ecb5f3897"
+  },
+  "recipe_selection": {
+    "decision": "R2",
+    "rule": "macro-F1 → accuracy → inference cost only if tied",
+    "reason": "R2 leads R1 and R0 on macro-F1 and accuracy; no tie requires cost comparison",
+    "accuracy": 0.8516666666666667,
+    "correct_images": 511,
+    "macro_f1": 0.850650853041619,
+    "below_88_percent_target_by_correct_images": 17,
+    "not_selected_for_demo_default": true,
+    "tv4_adapter_gate": "PENDING"
+  },
+  "preflight_sha256": "70d83c06524648627336fdea2e50cf5ab0d492cb6bf7e856216d3bb6439598e0",
+  "final_registry": {
+    "path": "experiments/w6/registry.json",
+    "sha256": "0c68f7b41e4eb2df7c756e0cba9e13b78b2600edd12f664a6a01faa3065505a2",
+    "protocol_status": "APPROVED",
+    "recipe_selection": "R2",
+    "replay_attempt_count": 3,
+    "measured_tv2_replay_gpu_hours": 0.11775127291666448,
+    "R3": "CONDITIONAL",
+    "R4": "CONDITIONAL",
+    "R5": "CONDITIONAL; data_review=PENDING",
+    "R6": "CONDITIONAL; data_review=PENDING"
+  },
+  "reports": {
+    "decision_report": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md",
+    "updated_acceptance_report": "reports/tv2/TV2_W6_R1_R2_INDEPENDENT_ACCEPTANCE_2026-11-06.md"
+  }
+}
