@@ -71,6 +71,33 @@ Publication cuối được ghi sau commit/push bằng SHA thật trong phản h
 receipt; không tự merge PR hoặc sửa branch khác. Nếu403 thì giữ local/diff,
 ghi CHƯA PUSH, không đổi credential/quyền.
 
+## D2 06/11/2026 — review pre-training TV3 R1/R2
+
+**Kết luận kỹ thuật `READY_FOR_TV2_DECISION`; R1 PASS, R2 PASS trong phạm vi
+pre-training review. Chưa phê duyệt và chưa official training.** Biên bản:
+`reports/tv2/TV2_W6_TV3_PRETRAIN_REVIEW_2026-11-06.md`; evidence SHA:
+`reports/tv2/w6_evidence/d2_20261106_01/index.json`.
+
+Fetch/read-only `feat/crop-classifier` handoff `8cd97538390a3f55c66193d79e637dfd73ace770`,
+source `127cac5b64d37fdda630a2f84b006a8e420dc9ed`. ZIP TV3 SHA raw
+`030093e92f07fcbe9a2a7ed39eb60919d66250181cd6c0dd9278106927e21ce7`:
+35 entry, CRC/path/manifest PASS; 24 source/handoff snapshots khớp bytes Git.
+Candidate→frozen chỉ đổi status, source/runtime lock, smoke reference; không
+đổi tham số huấn luyện. R1/R2 data/init/config/runtime SHA khớp.
+
+Producer báo 505 tests PASS; TV2 tự tái chạy135 PASS gồm15 TV3 W6 snapshot,
+50 TV2 W6,70 focused W5, trên Python3.14/PyTorch CPU khác runtime GPU TV3.
+TV2 không tái chạy GPU smoke. Producer smoke R1 35parent/131crop/12.08s,
+R2 19parent/83crop/6.05s; đủ minh chứng train-only forward/backward theo
+receipt/code, **không dự báo** thời gian20–50epoch hoặc bộ nhớ full run.
+GPU usage producer tổng18.1345s; booking string chưa được TV2 tự xác minh
+đồng thuận nhóm. Không cần sửa TV3 code/smoke theo các khác biệt freeze đã thấy.
+
+Blocker hiện tại: TV2/TV3 chưa ký approval độc lập, registry TV2 vẫn DRAFT,
+hai approval null và R1/R2 `attempts=[]`; cần xác nhận GPU slot/runtime/usage
+và ghi receipt review thật trước official run. Không mở R3–R6; R5/R6 còn phụ
+thuộc TV1 data acceptance PENDING. Không có model result W6 hay demo switch.
+
 ## Kết quả ZIP đã kết thúc
 
 `tv1_review_01` exit0: SHA thực

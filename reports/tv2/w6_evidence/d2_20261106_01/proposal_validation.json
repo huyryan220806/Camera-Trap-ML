@@ -1,0 +1,18 @@
+{
+  "source": "ZIP experiments/w6/tv3_R1_R2.proposal.json",
+  "validator": "src.evaluation.w6_validation.validate_registry",
+  "frozen_configs_validated": [
+    "R1",
+    "R2"
+  ],
+  "status": {
+    "status": "VALID",
+    "protocol_status": "DRAFT",
+    "official_attempts": 0,
+    "measured_tv3_gpu_hours": 0.005037366527777749,
+    "measured_tv3_preparation_gpu_hours": 0.005037366527777749,
+    "unmeasured_attempts": 0,
+    "measured_tv2_replay_gpu_hours": 0
+  },
+  "approval_fields_remain_null": true
+}
