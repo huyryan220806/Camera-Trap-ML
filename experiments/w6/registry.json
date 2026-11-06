@@ -15,13 +15,33 @@
   },
   "freeze_evidence": "reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json",
   "smoke_evidence": "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json",
-  "recipe_selection": null,
+  "recipe_selection": {
+    "recipe": "R2",
+    "improves_r0": true,
+    "evidence_path": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
+  },
   "data_review": {
     "status": "PENDING",
     "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
     "evidence_path": null
   },
-  "replay_attempts": [],
+  "replay_attempts": [
+    {
+      "attempt_id": "R1_replay01",
+      "gpu_hours": 0.03687700852777602,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R1_replay02",
+      "gpu_hours": 0.04432501094444888,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R2_replay01",
+      "gpu_hours": 0.03654925344443958,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    }
+  ],
   "runs": [
     {
       "run_id": "R0",

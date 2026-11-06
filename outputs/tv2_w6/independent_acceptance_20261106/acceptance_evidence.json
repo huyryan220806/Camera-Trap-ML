@@ -6,22 +6,33 @@
   "tv3_source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
   "artifact_status": "ARTIFACT_VERIFIED",
   "model_replay": {
-    "status": "MODEL_REPLAY_PENDING",
-    "reason": "No exact pinned runtime available: local Python 3.14.3 / torch 2.13.0+cpu; pinned Python 3.12.10 / torch 2.6.0+cu124, Windows RTX 4060 Laptop GPU. Local torch reports cuda_available=false although nvidia-smi sees the GPU. No replay was run; no tolerance was relaxed.",
-    "gpu_hours_used": 0.0,
+    "status": "MODEL_REPLAY_PASS",
+    "comparison_policy": "exact; no tolerance",
+    "exact_comparison_path": "outputs/tv2_w6/independent_replay_20261106/exact_comparison.json",
+    "environment_receipt_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json",
+    "gpu_hours_used": 0.11775127291666448,
     "budget_gpu_hours": 2.0,
-    "environment_observed": {
-      "python": "3.14.3",
-      "torch": "2.13.0+cpu",
-      "torchvision": "0.28.0+cpu",
-      "cuda_available": false,
-      "nvidia_smi_gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+    "run_results": {
+      "R1": {
+        "exact_all_required": true,
+        "crop_logits_mismatches": 0,
+        "crop_probability_mismatches": 0,
+        "image_probability_mismatches": 0,
+        "metric_mismatches": 0
+      },
+      "R2": {
+        "exact_all_required": true,
+        "crop_logits_mismatches": 0,
+        "crop_probability_mismatches": 0,
+        "image_probability_mismatches": 0,
+        "metric_mismatches": 0
+      }
     },
-    "required_runtime": "Python 3.12.10; torch 2.6.0+cu124; torchvision 0.21.0+cu124; Windows; RTX 4060 Laptop GPU; FP32; AMP=false; TF32=false; deterministic_algorithms=true"
+    "python_build_note": "Python version and requested packages match; producer CPython build tag/date differs from the independent Python 3.12.10 build string."
   },
-  "regression_review": "PASS_ARTIFACT_LEVEL",
-  "recipe_selection": "PENDING_MODEL_REPLAY",
-  "overall_decision": "PENDING",
+  "regression_review": "PASS_INDEPENDENT_REPLAY_AND_PAIRED_R0_REVIEW",
+  "recipe_selection": "R2",
+  "overall_decision": "R2_SELECTED_FOR_SEED42; TV4_ADAPTER_PENDING; R3_R4_NOT_AUTOAPPROVED; R5_R6_WAIT_TV1_DATA_REVIEW",
   "zip_sha256": {
     "R1": "998901556b51789a52fc7a650eac504a4f6e23a1118af00450c7a18aeb9bb2fe",
     "R2": "30f380cab3aa89f5b63c54507f7b7b63d2479e73f52710283e4f557e27fda223"
@@ -1532,5 +1543,6 @@
     "branch": "feat/crop-classifier",
     "tip_sha": "076a640a263c3d7f0c1406d741468dca504f352c",
     "verified_via": "GitHub API branch endpoint; branch tip equals supplied TV3 result commit"
-  }
+  },
+  "independent_replay_report": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
 }

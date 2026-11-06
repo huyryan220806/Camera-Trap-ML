@@ -1,0 +1,175 @@
+{
+  "run_id": "R1",
+  "pid": 6036,
+  "python_version": "3.12.10 (main, May 30 2025, 05:39:07) [MSC v.1943 64 bit (AMD64)]",
+  "torch": "2.6.0+cu124",
+  "torchvision": "0.21.0+cu124",
+  "pillow": "12.2.0",
+  "numpy": "2.5.3",
+  "sklearn": "1.9.0",
+  "cuda": "12.4",
+  "cudnn": 90100,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "validation_images": 600,
+  "validation_crops": 680,
+  "inference_wall_seconds": 159.57003940001596,
+  "gpu_hours": 0.04432501094444888
+}
+{
+  "metrics": {
+    "accuracy": 0.835,
+    "image_balanced_crop_ce": 0.5478103160858154,
+    "macro_f1": 0.8338641693401928,
+    "macro_precision": 0.8357659685377077,
+    "macro_recall": 0.8350000000000001,
+    "confusion_matrix": [
+      [
+        54,
+        1,
+        9,
+        2,
+        4,
+        0,
+        0,
+        5
+      ],
+      [
+        0,
+        69,
+        0,
+        1,
+        2,
+        3,
+        0,
+        0
+      ],
+      [
+        7,
+        2,
+        55,
+        3,
+        0,
+        2,
+        1,
+        5
+      ],
+      [
+        0,
+        0,
+        3,
+        68,
+        1,
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        3,
+        0,
+        1,
+        66,
+        4,
+        0,
+        1
+      ],
+      [
+        1,
+        5,
+        0,
+        1,
+        12,
+        56,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        73,
+        0
+      ],
+      [
+        8,
+        0,
+        2,
+        0,
+        3,
+        1,
+        1,
+        60
+      ]
+    ],
+    "per_class": {
+      "large_antlered_muntjac": {
+        "precision": 0.7714285714285715,
+        "recall": 0.72,
+        "f1-score": 0.7448275862068966,
+        "support": 75.0
+      },
+      "annamite_striped_rabbit": {
+        "precision": 0.8518518518518519,
+        "recall": 0.92,
+        "f1-score": 0.8846153846153846,
+        "support": 75.0
+      },
+      "sambar": {
+        "precision": 0.7971014492753623,
+        "recall": 0.7333333333333333,
+        "f1-score": 0.7638888888888888,
+        "support": 75.0
+      },
+      "chinese_serow": {
+        "precision": 0.8831168831168831,
+        "recall": 0.9066666666666666,
+        "f1-score": 0.8947368421052632,
+        "support": 75.0
+      },
+      "common_palm_civet": {
+        "precision": 0.75,
+        "recall": 0.88,
+        "f1-score": 0.8098159509202454,
+        "support": 75.0
+      },
+      "masked_palm_civet": {
+        "precision": 0.8484848484848485,
+        "recall": 0.7466666666666667,
+        "f1-score": 0.7943262411347518,
+        "support": 75.0
+      },
+      "silver_pheasant": {
+        "precision": 0.9733333333333334,
+        "recall": 0.9733333333333334,
+        "f1-score": 0.9733333333333334,
+        "support": 75.0
+      },
+      "eurasian_wild_pig": {
+        "precision": 0.8108108108108109,
+        "recall": 0.8,
+        "f1-score": 0.8053691275167785,
+        "support": 75.0
+      },
+      "accuracy": 0.835,
+      "macro avg": {
+        "precision": 0.8357659685377077,
+        "recall": 0.8350000000000001,
+        "f1-score": 0.8338641693401928,
+        "support": 600.0
+      },
+      "weighted avg": {
+        "precision": 0.8357659685377077,
+        "recall": 0.835,
+        "f1-score": 0.8338641693401928,
+        "support": 600.0
+      }
+    },
+    "images": 600,
+    "crops": 680
+  },
+  "output": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w6\\independent_replay_20261106\\replay_R1.json",
+  "output_sha256": "e3a5649b94e86746625db9cb057f131c015f7a47320e9274f05a259949094477"
+}

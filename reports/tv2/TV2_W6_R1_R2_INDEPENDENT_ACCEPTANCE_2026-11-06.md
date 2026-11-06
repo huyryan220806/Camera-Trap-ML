@@ -89,4 +89,14 @@ Producer accounting records two official attempts: R1 0.0712013161 GPU-hours; R2
 - No training, official Test opening, or Test inference was performed. Frozen configs, TV3 source, protocol lock, and W1–W5 remain unchanged.
 - Next: TV3/TV2 must make the pinned Python 3.12.10 + torch 2.6.0+cu124 CUDA runtime available for a fresh-process independent TV2 replay of R1 and R2. Compare logits, crop scores, image scores, predictions and metrics exactly. Then record TV2 recipe selection only after replay and regression gates are complete. TV4 adapter verification remains a separate requirement before any demo-default change.
 
-Evidence directory: `outputs/tv2_w6/independent_acceptance_20261106/`. Machine-readable summary SHA-256: `d5cb7380e578e00e1a2391f21e5049da2a64ea07375ba6ca6adfe5207ad4ce17`.
+Evidence directory: `outputs/tv2_w6/independent_acceptance_20261106/`. Machine-readable summary SHA-256: `7afede0afc9e1319aa9216bab1f11e38a85be289a21c4efdfc2879f6762427ad`.
+
+## Addendum — independent replay completed (2026-11-06)
+
+This addendum supersedes the earlier `MODEL_REPLAY_PENDING` and `PENDING_MODEL_REPLAY` entries above. TV2 reconstructed the requested Python 3.12.10 / torch 2.6.0+cu124 CUDA runtime in an isolated environment, verified Validation image bytes and RGB pixels, then independently replayed R1 and R2 in new Python processes. The interpreter build string differed from TV3's build tag/date; the pinned Python/package versions, hardware, deterministic/precision settings matched, and the exact comparisons passed.
+
+**MODEL_REPLAY: PASS** — R1 and R2 each matched producer crop logits (5,440 values), crop probabilities (5,440), image probabilities (4,800), predicted classes and metrics exactly; mismatch counts and maximum absolute deltas were zero. TV2 replay usage, including a first successful R1 execution whose console encoding failed only after inference and a clean-log R1 rerun, totals 0.1177512729/2 GPU-hours.
+
+**RECIPE_SELECTION: R2** — R2 scored 0.850650853041619 macro-F1 and 511/600 accuracy-correct images, ahead of R0 and R1 on the selection criteria. Its gain is modest (+4 correct images; +0.0062500251 macro-F1) and remains 17 correct images below the 88% target. Per-class and paired regressions are documented in [the replay decision report](TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md). The report records R2 as the seed-42 choice; it does not change the demo default. TV4 adapter review remains pending, R3/R4 are not automatically approved, and R5/R6 remain conditional while TV1 data review is pending.
+
+The dynamic registry fields `replay_attempts` and `recipe_selection` now point to this evidence. Protocol approvals, frozen config/source bindings, W1–W5 and Official Test status were not changed. The registry validator is `VALID / APPROVED`, measured TV2 replay usage is 0.1177512729 hours, W6 tests are 51/51 PASS, and W5 focused regression tests are 70/70 PASS.
