@@ -10,14 +10,44 @@ from src.evaluation import w5_validation as w5
 from src.evaluation import w6_validation as w6
 
 
+def draft_fixture(registry):
+    """A DRAFT protocol independent of the repository's current lock state."""
+    result=copy.deepcopy(registry)
+    result.update(protocol_status='DRAFT',approvals={'TV2':None,'TV3':None},
+                  freeze_evidence=None,smoke_evidence=None)
+    for run in result['runs'][1:]:
+        run['approvals']={'TV2':None,'TV3':None}
+    return result
+
+
 class RegistryTests(unittest.TestCase):
     def setUp(self):
         self.registry = w5.read_json(w6.ROOT/'experiments/w6/registry.json')
 
-    def test_real_draft_registry(self):
+    def test_real_registry_and_current_gate(self):
         result = w6.validate_registry(self.registry)
         self.assertEqual(result['official_attempts'],0)
-        self.assertEqual(result['protocol_status'],'DRAFT')
+        self.assertEqual(result['protocol_status'],self.registry['protocol_status'])
+        if result['protocol_status']=='APPROVED':
+            lock=w5.read_json(w6.ROOT/self.registry['freeze_evidence'])
+            smoke=w5.read_json(w6.ROOT/self.registry['smoke_evidence'])
+            self.assertEqual(self.registry['approvals']['TV2'],lock['approval_decisions']['TV2']['path'])
+            self.assertEqual(self.registry['approvals']['TV3'],lock['approval_decisions']['TV3']['link'])
+            for run in self.registry['runs'][1:3]:
+                self.assertEqual(run['approvals'],self.registry['approvals'])
+                config=w5.read_json(w6.ROOT/run['config_path'])
+                self.assertEqual(config['status'],'FROZEN')
+                self.assertEqual(w5.sha256(w6.ROOT/run['config_path']),lock['frozen_configs'][run['run_id']]['raw_sha256'])
+                self.assertEqual(w6.digest(config),lock['frozen_configs'][run['run_id']]['canonical_sha256'])
+                self.assertEqual(run['source_sha'],lock['source_commit'])
+                self.assertEqual(config['runtime']['source_sha'],run['source_sha'])
+                self.assertEqual(config['runtime']['runtime_lock'],lock['runtime_lock_canonical_sha256'])
+                self.assertEqual(config['smoke_evidence']['sha256'],smoke['records'][run['run_id']]['raw_sha256'])
+                w6.official_gate(self.registry,run)
+        else:
+            self.assertEqual(result['protocol_status'],'DRAFT')
+            with self.assertRaisesRegex(ValueError,'DRAFT'):
+                w6.official_gate(self.registry,self.registry['runs'][1])
 
     def test_no_side_effects(self):
         before = copy.deepcopy(self.registry)
@@ -25,13 +55,26 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(before,self.registry)
 
     def test_draft_blocks_official(self):
+        self.registry=draft_fixture(self.registry)
+        self.assertEqual(w6.validate_registry(self.registry)['protocol_status'],'DRAFT')
         with self.assertRaisesRegex(ValueError,'DRAFT'):
             w6.official_gate(self.registry,self.registry['runs'][1])
 
     def test_approval_string_alone_insufficient(self):
+        self.registry=draft_fixture(self.registry)
         self.registry['protocol_status']='APPROVED'
         with self.assertRaisesRegex(ValueError,'missing'):
             w6.official_gate(self.registry,self.registry['runs'][1])
+
+    def test_fake_approved_missing_run_binding_rejected(self):
+        r=draft_fixture(self.registry)
+        r.update(protocol_status='APPROVED',approvals={'TV2':'SYNTHETIC','TV3':'SYNTHETIC'},
+                 freeze_evidence='SYNTHETIC',smoke_evidence='SYNTHETIC')
+        run=r['runs'][1]
+        run['approvals']={'TV2':'SYNTHETIC','TV3':'SYNTHETIC'}
+        run['source_sha']=None
+        with self.assertRaisesRegex(ValueError,'source/config/approval missing'):
+            w6.official_gate(r,run)
 
     def test_exact_run_population(self):
         for mutate in (lambda r:r['runs'].pop(),lambda r:r['runs'].reverse(),lambda r:r['runs'].append(r['runs'][1])):
@@ -89,7 +132,9 @@ class RegistryTests(unittest.TestCase):
         r=self.execution_fixture()
         result=w6.validate_registry(r)
         self.assertEqual(result['official_attempts'],2)
-        self.assertAlmostEqual(result['measured_tv3_gpu_hours'],.2)
+        preparation=sum(p['gpu_hours'] for p in r['tv3_preparation_attempts'])
+        self.assertAlmostEqual(result['measured_tv3_preparation_gpu_hours'],preparation)
+        self.assertAlmostEqual(result['measured_tv3_gpu_hours'],preparation+.2)
 
     def test_seventh_attempt_rejected(self):
         r=self.execution_fixture()
@@ -193,7 +238,7 @@ class EvaluationTests(unittest.TestCase):
             with self.assertRaises(ValueError):w6.confined(w6.ROOT,path)
 
     def test_draft_package_rejected_before_predictions_or_checkpoint(self):
-        registry=w5.read_json(w6.ROOT/'experiments/w6/registry.json')
+        registry=draft_fixture(w5.read_json(w6.ROOT/'experiments/w6/registry.json'))
         with self.assertRaisesRegex(ValueError,'DRAFT'):
             w6.verify_submission(registry,'R1',{},Path('missing'),Path('missing'))
 

@@ -1,0 +1,56 @@
+{
+  "receipt_type": "TV2_W6_R1_R2_PROTOCOL_LOCK_CANDIDATE",
+  "date": "2026-11-06",
+  "scope": [
+    "R1",
+    "R2"
+  ],
+  "approval_decisions": {
+    "TV2": {
+      "status": "TECHNICALLY_APPROVED_BY_TV2",
+      "path": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+      "commit": "73bc9c2b69f202f123657db4b9dbf128810732f3",
+      "basis": "reports/tv2/TV2_W6_TV3_PRETRAIN_REVIEW_2026-11-06.md"
+    },
+    "TV3": {
+      "status": "APPROVED_FOR_PROTOCOL_LOCK",
+      "path": "reports/tv3/w6/approvals/TV3_R1_R2.json",
+      "commit": "a5e24eb27e4bff4d3649adeee3b70efffdc11e2c",
+      "link": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json",
+      "git_blob_sha1": "852abb363d0cbd140dccb68ccfea7670e7b0bcd6"
+    }
+  },
+  "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+  "handoff_commit": "8cd97538390a3f55c66193d79e637dfd73ace770",
+  "runtime_lock_canonical_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "frozen_configs": {
+    "R1": {
+      "path": "configs/w6/tv3/R1.frozen.json",
+      "raw_sha256": "92bf5966fe2b4e228fb52b0ae975c8e5044ca1c35b6a4d06ab79f5733cef507c",
+      "canonical_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf"
+    },
+    "R2": {
+      "path": "configs/w6/tv3/R2.frozen.json",
+      "raw_sha256": "a649fe30c436fee538d9a58a904685a558aebd77a1df3af91409f55f1a86f36c",
+      "canonical_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7"
+    }
+  },
+  "smoke_bindings_path": "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json",
+  "original_validation_baseline": {
+    "run": "R0",
+    "accuracy": 0.845,
+    "macro_f1": 0.8444008279545706
+  },
+  "protocol": "APPROVED_FOR_R1_R2_ONLY_PENDING_VERIFIED_GIT_COMMIT_AND_RUNTIME_RECHECK",
+  "train_dataset": "comparison_v1",
+  "data_expansion_review": "PENDING_TV2",
+  "official_training_attempts_at_lock": 0,
+  "no_official_results_claimed": true,
+  "conditions": [
+    "Copy exact frozen config bytes; maintain source/runtime",
+    "Validate and commit/push registry and protocol before official training",
+    "TV3 checks runtime/device and actual usage budget before run",
+    "R3/R4 conditional on R1/R2 result; R5/R6 blocked pending TV1 data peer review",
+    "Do not access Official Test W4"
+  ]
+}
