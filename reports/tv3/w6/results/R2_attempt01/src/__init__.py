@@ -1,0 +1,1 @@
+"""CameraTrapML source package."""
