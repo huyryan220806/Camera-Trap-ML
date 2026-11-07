@@ -126,22 +126,24 @@
     },
     {
       "run_id": "R3",
-      "recipe": null,
+      "recipe": "R2",
       "seed": 43,
       "dataset": "comparison_v1",
       "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
-      "status": "CONDITIONAL",
-      "config_path": null,
-      "config_sha256": null,
-      "source_sha": null,
+      "status": "REGISTERED",
+      "config_path": "configs/w6/tv3/R3.frozen.json",
+      "config_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
       "approvals": {
-        "TV2": null,
-        "TV3": null
+        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
       },
       "attempts": [],
       "checkpoint_sha256": null,
       "metrics": null,
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/tv2/w6_evidence/lock_20261107/W6_R3_R4_LOCK_RECEIPT.json"
+      ],
       "conditions": [
         "approved_protocol",
         "train_only_smoke",
@@ -152,22 +154,24 @@
     },
     {
       "run_id": "R4",
-      "recipe": null,
+      "recipe": "R2",
       "seed": 44,
       "dataset": "comparison_v1",
       "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
-      "status": "CONDITIONAL",
-      "config_path": null,
-      "config_sha256": null,
-      "source_sha": null,
+      "status": "REGISTERED",
+      "config_path": "configs/w6/tv3/R4.frozen.json",
+      "config_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
       "approvals": {
-        "TV2": null,
-        "TV3": null
+        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
       },
       "attempts": [],
       "checkpoint_sha256": null,
       "metrics": null,
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/tv2/w6_evidence/lock_20261107/W6_R3_R4_LOCK_RECEIPT.json"
+      ],
       "conditions": [
         "approved_protocol",
         "train_only_smoke",
@@ -243,6 +247,18 @@
       "kind": "train_only_smoke",
       "gpu_hours": 0.0016819240277777682,
       "evidence_path": "outputs/tv3_w6/smoke/R2_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R3_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.0020971329444442847,
+      "evidence_path": "outputs/tv3_w6/smoke/R3_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R4_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.002460322527777963,
+      "evidence_path": "outputs/tv3_w6/smoke/R4_smoke01/receipt.json"
     }
   ]
 }
