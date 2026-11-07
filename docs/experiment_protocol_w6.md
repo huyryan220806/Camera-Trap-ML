@@ -200,3 +200,8 @@ Chưa đạt88% vẫn có thể hoàn thành W6 đúng quy trình; báo cả th�
 - R1/R2: `REGISTERED`, seed42, chưa chạy official; registry `APPROVED` không có nghĩa đã có checkpoint/accuracy W6.
 - R3/R4 CONDITIONAL (chờ recipe thắng R0); R5/R6 CONDITIONAL và bị chặn bởi review dữ liệu TV1 PENDING.
 - TV3 chỉ bắt đầu official khi Git commit chứa protocol/registry/config đã được push và kiểm lại runtime, usage, không mở W4 Test.
+
+
+## R3/R4 approval addendum — 2026-11-07
+
+TV2 approved R3/R4 individually for recipe R2 seed43/44, under `reports/tv2/w6_evidence/lock_20261107/W6_R3_R4_LOCK_RECEIPT.json`, after TV3 approval at `6cbe8522b873dcbb2c5783baa3364f449cc62da6`. Use `experiments/w6/tv3_R3_R4.approved.json` as the TV3 **execution registry** (includes completed R1/R2 official attempts); `experiments/w6/registry.json` remains the protocol snapshot and is NOT the execution ledger. Each run is REGISTERED, with no R3/R4 official attempt at lock. R5/R6 and Official Test W4 remain blocked.

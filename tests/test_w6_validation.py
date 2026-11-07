@@ -315,7 +315,7 @@ class PackageTests(unittest.TestCase):
         reference_config.write_bytes((w6.ROOT/self.registry['runs'][0]['config_path']).read_bytes())
         self.registry.update(protocol_status='APPROVED',approvals={'TV2':'SYNTHETIC','TV3':'SYNTHETIC'},freeze_evidence='SYNTHETIC',smoke_evidence='SYNTHETIC')
         self.runtime={'fixture':'SYNTHETIC ONLY'}
-        for run in self.registry['runs'][1:3]:
+        for run in [r for r in self.registry['runs'][1:] if r.get('config_path')]:
             c=w5.read_json(w6.ROOT/run['config_path'])
             if run['run_id']=='R1':
                 c['status']='FROZEN';c['runtime'].update(source_sha='a'*40,runtime_lock=w6.digest(self.runtime))
