@@ -1,0 +1,32 @@
+{
+  "validation": {
+    "color": "RGB",
+    "exif_transpose": false,
+    "padding": 0,
+    "bbox": "frozen_integer_xyxy_exclusive",
+    "resize": [
+      256,
+      256
+    ],
+    "interpolation": "bilinear",
+    "antialias": true,
+    "resize_dtype": "uint8",
+    "output_dtype": "float32",
+    "scale": true,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "train_augmentation": {
+    "horizontal_flip": 0.5,
+    "vertical_flip": 0,
+    "random_crop": false
+  }
+}

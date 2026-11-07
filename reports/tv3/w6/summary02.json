@@ -1,0 +1,858 @@
+{
+  "status": "PRODUCER_ARTIFACT_SUMMARY",
+  "accounting": {
+    "status": "VALID",
+    "protocol_status": "APPROVED",
+    "official_attempts": 4,
+    "measured_tv3_gpu_hours": 2.276979269277778,
+    "measured_tv3_preparation_gpu_hours": 0.009594821999999996,
+    "unmeasured_attempts": 0,
+    "measured_tv2_replay_gpu_hours": 0.11775127291666448
+  },
+  "runs": [
+    {
+      "run_id": "R0",
+      "recipe": "R0",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "status": "REFERENCE",
+      "attempts": [],
+      "metrics": {
+        "accuracy": 0.845,
+        "macro_f1": 0.8444008279545706
+      }
+    },
+    {
+      "run_id": "R1",
+      "recipe": "R1",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "status": "COMPLETED",
+      "attempts": [
+        {
+          "attempt_id": "R1_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.07120131605555557,
+          "evidence_path": "outputs/tv3_w6/runs/R1_attempt01/status.json"
+        }
+      ],
+      "metrics": {
+        "accuracy": 0.835,
+        "macro_precision": 0.8357659685377077,
+        "macro_recall": 0.835,
+        "macro_f1": 0.8338641693401928
+      },
+      "checkpoint_sha256": "86b1c7460b300f27b2f8d5efe426def51750478e2bf195ffa61df1213f646f79",
+      "per_class": [
+        {
+          "class_id": 0,
+          "label": "large_antlered_muntjac",
+          "precision": 0.7714285714285715,
+          "recall": 0.72,
+          "f1": 0.7448275862068966,
+          "support": 75
+        },
+        {
+          "class_id": 1,
+          "label": "annamite_striped_rabbit",
+          "precision": 0.8518518518518519,
+          "recall": 0.92,
+          "f1": 0.8846153846153846,
+          "support": 75
+        },
+        {
+          "class_id": 2,
+          "label": "sambar",
+          "precision": 0.7971014492753623,
+          "recall": 0.7333333333333333,
+          "f1": 0.7638888888888888,
+          "support": 75
+        },
+        {
+          "class_id": 3,
+          "label": "chinese_serow",
+          "precision": 0.8831168831168831,
+          "recall": 0.9066666666666666,
+          "f1": 0.8947368421052632,
+          "support": 75
+        },
+        {
+          "class_id": 4,
+          "label": "common_palm_civet",
+          "precision": 0.75,
+          "recall": 0.88,
+          "f1": 0.8098159509202454,
+          "support": 75
+        },
+        {
+          "class_id": 5,
+          "label": "masked_palm_civet",
+          "precision": 0.8484848484848485,
+          "recall": 0.7466666666666667,
+          "f1": 0.7943262411347518,
+          "support": 75
+        },
+        {
+          "class_id": 6,
+          "label": "silver_pheasant",
+          "precision": 0.9733333333333334,
+          "recall": 0.9733333333333334,
+          "f1": 0.9733333333333334,
+          "support": 75
+        },
+        {
+          "class_id": 7,
+          "label": "eurasian_wild_pig",
+          "precision": 0.8108108108108109,
+          "recall": 0.8,
+          "f1": 0.8053691275167785,
+          "support": 75
+        }
+      ],
+      "confusion_matrix": [
+        [
+          54,
+          1,
+          9,
+          2,
+          4,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          69,
+          0,
+          1,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          7,
+          2,
+          55,
+          3,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          3,
+          68,
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          66,
+          4,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          1,
+          12,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          73,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0,
+          3,
+          1,
+          1,
+          60
+        ]
+      ]
+    },
+    {
+      "run_id": "R2",
+      "recipe": "R2",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "status": "COMPLETED",
+      "attempts": [
+        {
+          "attempt_id": "R2_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.8294758375000002,
+          "evidence_path": "outputs/tv3_w6/runs/R2_attempt01/status.json"
+        }
+      ],
+      "metrics": {
+        "accuracy": 0.8516666666666667,
+        "macro_precision": 0.8531576208385419,
+        "macro_recall": 0.8516666666666667,
+        "macro_f1": 0.850650853041619
+      },
+      "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
+      "per_class": [
+        {
+          "class_id": 0,
+          "label": "large_antlered_muntjac",
+          "precision": 0.8833333333333333,
+          "recall": 0.7066666666666667,
+          "f1": 0.7851851851851852,
+          "support": 75
+        },
+        {
+          "class_id": 1,
+          "label": "annamite_striped_rabbit",
+          "precision": 0.8875,
+          "recall": 0.9466666666666667,
+          "f1": 0.9161290322580645,
+          "support": 75
+        },
+        {
+          "class_id": 2,
+          "label": "sambar",
+          "precision": 0.8181818181818182,
+          "recall": 0.84,
+          "f1": 0.8289473684210527,
+          "support": 75
+        },
+        {
+          "class_id": 3,
+          "label": "chinese_serow",
+          "precision": 0.9078947368421053,
+          "recall": 0.92,
+          "f1": 0.9139072847682119,
+          "support": 75
+        },
+        {
+          "class_id": 4,
+          "label": "common_palm_civet",
+          "precision": 0.8611111111111112,
+          "recall": 0.8266666666666667,
+          "f1": 0.8435374149659864,
+          "support": 75
+        },
+        {
+          "class_id": 5,
+          "label": "masked_palm_civet",
+          "precision": 0.7702702702702703,
+          "recall": 0.76,
+          "f1": 0.7651006711409396,
+          "support": 75
+        },
+        {
+          "class_id": 6,
+          "label": "silver_pheasant",
+          "precision": 0.935064935064935,
+          "recall": 0.96,
+          "f1": 0.9473684210526315,
+          "support": 75
+        },
+        {
+          "class_id": 7,
+          "label": "eurasian_wild_pig",
+          "precision": 0.7619047619047619,
+          "recall": 0.8533333333333334,
+          "f1": 0.8050314465408805,
+          "support": 75
+        }
+      ],
+      "confusion_matrix": [
+        [
+          53,
+          1,
+          10,
+          2,
+          1,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          71,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          63,
+          1,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          69,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          62,
+          8,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          7,
+          57,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          72,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          0,
+          1,
+          2,
+          3,
+          64
+        ]
+      ]
+    },
+    {
+      "run_id": "R3",
+      "recipe": "R2",
+      "seed": 43,
+      "dataset": "comparison_v1",
+      "status": "COMPLETED",
+      "attempts": [
+        {
+          "attempt_id": "R3_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.6801649318611114,
+          "evidence_path": "outputs/tv3_w6/runs/R3_attempt01/status.json"
+        }
+      ],
+      "metrics": {
+        "accuracy": 0.8433333333333334,
+        "macro_precision": 0.8457883463548048,
+        "macro_recall": 0.8433333333333333,
+        "macro_f1": 0.8427567876976385
+      },
+      "checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+      "per_class": [
+        {
+          "class_id": 0,
+          "label": "large_antlered_muntjac",
+          "precision": 0.8813559322033898,
+          "recall": 0.6933333333333334,
+          "f1": 0.7761194029850746,
+          "support": 75
+        },
+        {
+          "class_id": 1,
+          "label": "annamite_striped_rabbit",
+          "precision": 0.8974358974358975,
+          "recall": 0.9333333333333333,
+          "f1": 0.9150326797385621,
+          "support": 75
+        },
+        {
+          "class_id": 2,
+          "label": "sambar",
+          "precision": 0.782051282051282,
+          "recall": 0.8133333333333334,
+          "f1": 0.7973856209150327,
+          "support": 75
+        },
+        {
+          "class_id": 3,
+          "label": "chinese_serow",
+          "precision": 0.9066666666666666,
+          "recall": 0.9066666666666666,
+          "f1": 0.9066666666666666,
+          "support": 75
+        },
+        {
+          "class_id": 4,
+          "label": "common_palm_civet",
+          "precision": 0.84,
+          "recall": 0.84,
+          "f1": 0.84,
+          "support": 75
+        },
+        {
+          "class_id": 5,
+          "label": "masked_palm_civet",
+          "precision": 0.7733333333333333,
+          "recall": 0.7733333333333333,
+          "f1": 0.7733333333333333,
+          "support": 75
+        },
+        {
+          "class_id": 6,
+          "label": "silver_pheasant",
+          "precision": 0.9473684210526315,
+          "recall": 0.96,
+          "f1": 0.9536423841059603,
+          "support": 75
+        },
+        {
+          "class_id": 7,
+          "label": "eurasian_wild_pig",
+          "precision": 0.7380952380952381,
+          "recall": 0.8266666666666667,
+          "f1": 0.779874213836478,
+          "support": 75
+        }
+      ],
+      "confusion_matrix": [
+        [
+          52,
+          1,
+          10,
+          2,
+          2,
+          2,
+          0,
+          6
+        ],
+        [
+          0,
+          70,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          61,
+          0,
+          0,
+          3,
+          1,
+          7
+        ],
+        [
+          0,
+          0,
+          3,
+          68,
+          0,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          63,
+          7,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          7,
+          58,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          72,
+          2
+        ],
+        [
+          3,
+          0,
+          4,
+          0,
+          2,
+          1,
+          3,
+          62
+        ]
+      ]
+    },
+    {
+      "run_id": "R4",
+      "recipe": "R2",
+      "seed": 44,
+      "dataset": "comparison_v1",
+      "status": "COMPLETED",
+      "attempts": [
+        {
+          "attempt_id": "R4_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.686542361861111,
+          "evidence_path": "outputs/tv3_w6/runs/R4_attempt01/status.json"
+        }
+      ],
+      "metrics": {
+        "accuracy": 0.8516666666666667,
+        "macro_precision": 0.8544551790112221,
+        "macro_recall": 0.8516666666666667,
+        "macro_f1": 0.850644765168246
+      },
+      "checkpoint_sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
+      "per_class": [
+        {
+          "class_id": 0,
+          "label": "large_antlered_muntjac",
+          "precision": 0.896551724137931,
+          "recall": 0.6933333333333334,
+          "f1": 0.7819548872180451,
+          "support": 75
+        },
+        {
+          "class_id": 1,
+          "label": "annamite_striped_rabbit",
+          "precision": 0.8987341772151899,
+          "recall": 0.9466666666666667,
+          "f1": 0.922077922077922,
+          "support": 75
+        },
+        {
+          "class_id": 2,
+          "label": "sambar",
+          "precision": 0.8289473684210527,
+          "recall": 0.84,
+          "f1": 0.8344370860927153,
+          "support": 75
+        },
+        {
+          "class_id": 3,
+          "label": "chinese_serow",
+          "precision": 0.9078947368421053,
+          "recall": 0.92,
+          "f1": 0.9139072847682119,
+          "support": 75
+        },
+        {
+          "class_id": 4,
+          "label": "common_palm_civet",
+          "precision": 0.8205128205128205,
+          "recall": 0.8533333333333334,
+          "f1": 0.8366013071895425,
+          "support": 75
+        },
+        {
+          "class_id": 5,
+          "label": "masked_palm_civet",
+          "precision": 0.8,
+          "recall": 0.7466666666666667,
+          "f1": 0.7724137931034483,
+          "support": 75
+        },
+        {
+          "class_id": 6,
+          "label": "silver_pheasant",
+          "precision": 0.9473684210526315,
+          "recall": 0.96,
+          "f1": 0.9536423841059603,
+          "support": 75
+        },
+        {
+          "class_id": 7,
+          "label": "eurasian_wild_pig",
+          "precision": 0.735632183908046,
+          "recall": 0.8533333333333334,
+          "f1": 0.7901234567901234,
+          "support": 75
+        }
+      ],
+      "confusion_matrix": [
+        [
+          52,
+          1,
+          10,
+          2,
+          2,
+          2,
+          0,
+          6
+        ],
+        [
+          0,
+          71,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          63,
+          1,
+          0,
+          3,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          69,
+          0,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          64,
+          6,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          8,
+          56,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          72,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          0,
+          3,
+          0,
+          3,
+          64
+        ]
+      ]
+    },
+    {
+      "run_id": "R5",
+      "recipe": null,
+      "seed": 42,
+      "dataset": "train_expansion_w6_v1",
+      "status": "CONDITIONAL",
+      "attempts": [],
+      "metrics": null
+    },
+    {
+      "run_id": "R6",
+      "recipe": null,
+      "seed": 43,
+      "dataset": "train_expansion_w6_v1",
+      "status": "CONDITIONAL",
+      "attempts": [],
+      "metrics": null
+    }
+  ],
+  "seed_groups": [
+    {
+      "recipe": "R1",
+      "dataset": "comparison_v1",
+      "expected_seeds": [
+        42,
+        43,
+        44
+      ],
+      "headline": {
+        "run_id": "R1",
+        "recipe": "R1",
+        "dataset": "comparison_v1",
+        "seed": 42,
+        "metrics": {
+          "accuracy": 0.835,
+          "macro_precision": 0.8357659685377077,
+          "macro_recall": 0.835,
+          "macro_f1": 0.8338641693401928
+        }
+      },
+      "per_seed": [
+        {
+          "run_id": "R1",
+          "recipe": "R1",
+          "dataset": "comparison_v1",
+          "seed": 42,
+          "metrics": {
+            "accuracy": 0.835,
+            "macro_precision": 0.8357659685377077,
+            "macro_recall": 0.835,
+            "macro_f1": 0.8338641693401928
+          }
+        }
+      ],
+      "n": 1,
+      "missing_seeds": [
+        43,
+        44
+      ],
+      "statistics": {
+        "accuracy": {
+          "mean": 0.835,
+          "sample_sd": null
+        },
+        "macro_f1": {
+          "mean": 0.8338641693401928,
+          "sample_sd": null
+        }
+      }
+    },
+    {
+      "recipe": "R2",
+      "dataset": "comparison_v1",
+      "expected_seeds": [
+        42,
+        43,
+        44
+      ],
+      "headline": {
+        "run_id": "R2",
+        "recipe": "R2",
+        "dataset": "comparison_v1",
+        "seed": 42,
+        "metrics": {
+          "accuracy": 0.8516666666666667,
+          "macro_precision": 0.8531576208385419,
+          "macro_recall": 0.8516666666666667,
+          "macro_f1": 0.850650853041619
+        }
+      },
+      "per_seed": [
+        {
+          "run_id": "R2",
+          "recipe": "R2",
+          "dataset": "comparison_v1",
+          "seed": 42,
+          "metrics": {
+            "accuracy": 0.8516666666666667,
+            "macro_precision": 0.8531576208385419,
+            "macro_recall": 0.8516666666666667,
+            "macro_f1": 0.850650853041619
+          }
+        },
+        {
+          "run_id": "R3",
+          "recipe": "R2",
+          "dataset": "comparison_v1",
+          "seed": 43,
+          "metrics": {
+            "accuracy": 0.8433333333333334,
+            "macro_precision": 0.8457883463548048,
+            "macro_recall": 0.8433333333333333,
+            "macro_f1": 0.8427567876976385
+          }
+        },
+        {
+          "run_id": "R4",
+          "recipe": "R2",
+          "dataset": "comparison_v1",
+          "seed": 44,
+          "metrics": {
+            "accuracy": 0.8516666666666667,
+            "macro_precision": 0.8544551790112221,
+            "macro_recall": 0.8516666666666667,
+            "macro_f1": 0.850644765168246
+          }
+        }
+      ],
+      "n": 3,
+      "missing_seeds": [],
+      "statistics": {
+        "accuracy": {
+          "mean": 0.8488888888888889,
+          "sample_sd": 0.004811252243246864
+        },
+        "macro_f1": {
+          "mean": 0.8480174686358345,
+          "sample_sd": 0.004555884350559699
+        }
+      }
+    }
+  ],
+  "selection_proposal": {
+    "status": "PENDING_TV2",
+    "reason": "Metric ordering only; independent replay/regressions/adapter still require review",
+    "candidate": "R2",
+    "improves_r0": true,
+    "accuracy_not_lower": true
+  },
+  "registry_sha256": "5f14d48551ee1a1b1c7eb0e42cfbfa5b01c3c518086760b47e099d33b73e12ba",
+  "tv2_independent_replay": "PENDING",
+  "tv4_integration": "PENDING",
+  "test_inference_performed": false
+}
