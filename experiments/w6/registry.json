@@ -40,6 +40,16 @@
       "attempt_id": "R2_replay01",
       "gpu_hours": 0.03654925344443958,
       "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R3_replay01",
+      "gpu_hours": 0.011764475777777585,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R4_replay01",
+      "gpu_hours": 0.011366664027769325,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
     }
   ],
   "runs": [

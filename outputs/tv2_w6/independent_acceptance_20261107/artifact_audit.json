@@ -1,0 +1,2836 @@
+{
+  "status": "PASS",
+  "packages": {
+    "R3": {
+      "zip_sha256": "a6f4d51c0f84f959c0ecf44c62eee819fc82844d38e63bbff50abe573920df4a",
+      "zip_crc": "PASS",
+      "archive_file_count": 38,
+      "package_index_count": 36,
+      "best_checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+      "last_checkpoint_sha256": "8475c55363845c9050786158b5494790e552e5f7b89de60bfecde54cbb081e7e",
+      "frozen_config_raw_sha256": "4c52a6521a083a62122924e080716015310560f2a6544085ab7aef9acf2e8078",
+      "frozen_config_canonical_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+      "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "all_payload_hashes_and_sizes_match": true,
+      "files": [
+        {
+          "path": "best_model.pt",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+          "bytes": 86846966
+        },
+        {
+          "path": "binding.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "fa25b5d8c64360df4442886eb1736ca037cd937a3ed5e16987ef3350ae90ff1f",
+          "bytes": 3534
+        },
+        {
+          "path": "class_map.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "db75c952621c107b8eca59c933f8baf05f538a6e2be30c6ab475d5e45143471e",
+          "bytes": 231
+        },
+        {
+          "path": "config.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "4c52a6521a083a62122924e080716015310560f2a6544085ab7aef9acf2e8078",
+          "bytes": 2892
+        },
+        {
+          "path": "confusion_matrix.csv",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "e1bc0b92dc2c705df1325abb8bb33ca0d70e60d224efcfc3061fb154f5ca3c56",
+          "bytes": 432
+        },
+        {
+          "path": "confusion_matrix.png",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "963de326404e2ba33a88f42bb092096989dca83fbca72ee78b15972b0bfbadad",
+          "bytes": 118841
+        },
+        {
+          "path": "contracts/w6_registry.schema.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+          "bytes": 10570
+        },
+        {
+          "path": "handoff.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "bfd5984be41af0322405e47985fccb2b321f8725702713e1175925b3819d6b6f",
+          "bytes": 6040
+        },
+        {
+          "path": "last_model.pt",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "8475c55363845c9050786158b5494790e552e5f7b89de60bfecde54cbb081e7e",
+          "bytes": 201547190
+        },
+        {
+          "path": "MODEL_CARD.md",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "975e2edea7a8b2490c1821bca23f9fe3e80091ac2c31f61599e4878ae1056337",
+          "bytes": 1194
+        },
+        {
+          "path": "preprocessing.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "714be01e4c6de396631ef7a9c8b2dc41a7895c3476f17c5a8e1b94d4a031c4ef",
+          "bytes": 573
+        },
+        {
+          "path": "registry.approved.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "cc30094e294e2af6f6a93c4abc8419396c70533beed44ca938ff4697497fdb34",
+          "bytes": 9611
+        },
+        {
+          "path": "registry.result.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "5027e90b3c9ac74c1adfe9e033a90e54ab5343fe24707458618df7ec782f3dcd",
+          "bytes": 10246
+        },
+        {
+          "path": "reload01.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "7261b190c4d94a79e1a83f0e2a586f05227f663d81641e878ac4b5d5fa97f04e",
+          "bytes": 2195
+        },
+        {
+          "path": "reload01.predictions.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "4112dc2caa83d3af7a9cdfc49c56a4749af6f468b3b85a2fbd34fda080f45117",
+          "bytes": 755126
+        },
+        {
+          "path": "runtime.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "a7ad61ae31805dd11a5497b2b8d831a8d294d311fba2e450728ef056f6f76023",
+          "bytes": 574
+        },
+        {
+          "path": "scripts/dino_w6.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+          "bytes": 21770
+        },
+        {
+          "path": "source_index.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "e0b98a30e91a3157cd920e318b3bafc7478b71e97845b3a63abe3ce93514902e",
+          "bytes": 1330
+        },
+        {
+          "path": "src/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+          "bytes": 35
+        },
+        {
+          "path": "src/evaluation/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+          "bytes": 620
+        },
+        {
+          "path": "src/evaluation/w5_validation.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+          "bytes": 12255
+        },
+        {
+          "path": "src/evaluation/w6_validation.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+          "bytes": 19437
+        },
+        {
+          "path": "src/training/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+          "bytes": 46
+        },
+        {
+          "path": "src/training/dino_handoff.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+          "bytes": 7714
+        },
+        {
+          "path": "src/training/dino_probe.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+          "bytes": 24460
+        },
+        {
+          "path": "src/training/dino_w6.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "bytes": 26452
+        },
+        {
+          "path": "src/training/dino_w6_control.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+          "bytes": 11875
+        },
+        {
+          "path": "src/training/dino_w6_delivery.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+          "bytes": 15604
+        },
+        {
+          "path": "status.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "406bb9969fcaf4fc341bb01c132559e616b99d0be46318ec24e41e6c982dbc52",
+          "bytes": 98
+        },
+        {
+          "path": "train_log.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "93b42e8f10a56ef769961ef24e406d0058ee55d9454cd4352d59d93e3c186602",
+          "bytes": 25556
+        },
+        {
+          "path": "usage.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "9cc3cc58086fb10a281300e16f6d85e4ce8166abd76a7c5673e1db9e5ac8172f",
+          "bytes": 5485
+        },
+        {
+          "path": "val_crops.jsonl",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "768caaa8a6009024dd28c3b669914e1af09a15b8c09090f7399df6bd71bec3aa",
+          "bytes": 241484
+        },
+        {
+          "path": "val_images.jsonl",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "a2bc67e06ac0b480f4de8fcf82c423c5779e255cdb44e08810c85d6f17ecc8c1",
+          "bytes": 250827
+        },
+        {
+          "path": "validation.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "4112dc2caa83d3af7a9cdfc49c56a4749af6f468b3b85a2fbd34fda080f45117",
+          "bytes": 755126
+        },
+        {
+          "path": "validation_comparison.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "c69fffa18c12ec61da14270de1630e7dd59a4cca55ce1ba160099fab9aa3caeb",
+          "bytes": 33229
+        },
+        {
+          "path": "validation_comparison.md",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "04ff1338f8ff5d43cbacc5847922f598d01b8eb7e5fa6c01989b2489333d079f",
+          "bytes": 247
+        }
+      ]
+    },
+    "R4": {
+      "zip_sha256": "cbe27ed2cd243e9783743eb8028b8d6b1f600fb28299735276d6d13b31114c0b",
+      "zip_crc": "PASS",
+      "archive_file_count": 38,
+      "package_index_count": 36,
+      "best_checkpoint_sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
+      "last_checkpoint_sha256": "fd4089b1601a979392036e0d34f378050103a0528dc670a1e23bc645829679c6",
+      "frozen_config_raw_sha256": "8e1ee676431166082cf9f0efa4d25b41424517f443282b7b8c13b614a67fe53d",
+      "frozen_config_canonical_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+      "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "all_payload_hashes_and_sizes_match": true,
+      "files": [
+        {
+          "path": "best_model.pt",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
+          "bytes": 86846966
+        },
+        {
+          "path": "binding.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "22a9c5676bc06e8db3cf0c135632b902349896bf98ed3b52658671f83260f45e",
+          "bytes": 3534
+        },
+        {
+          "path": "class_map.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "db75c952621c107b8eca59c933f8baf05f538a6e2be30c6ab475d5e45143471e",
+          "bytes": 231
+        },
+        {
+          "path": "config.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "8e1ee676431166082cf9f0efa4d25b41424517f443282b7b8c13b614a67fe53d",
+          "bytes": 2892
+        },
+        {
+          "path": "confusion_matrix.csv",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "16337f01a4365b2615e673e5ec60cdbedbdb12da5e86a695afff5e0329cf420c",
+          "bytes": 432
+        },
+        {
+          "path": "confusion_matrix.png",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "28bdbed095f191f5e0da75eb9553cbd292d4233293e89c1d9bf94f45701d19fb",
+          "bytes": 118651
+        },
+        {
+          "path": "contracts/w6_registry.schema.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+          "bytes": 10570
+        },
+        {
+          "path": "handoff.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "daf096866f697f8513cbba210ebec3d4edca6884e733cedf2f607fea292688d7",
+          "bytes": 6039
+        },
+        {
+          "path": "last_model.pt",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "fd4089b1601a979392036e0d34f378050103a0528dc670a1e23bc645829679c6",
+          "bytes": 201558006
+        },
+        {
+          "path": "MODEL_CARD.md",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "f0a77c018ceae5493b846dcd3c9f60b7d37406b0c9d46f529b7d770222527b5e",
+          "bytes": 1194
+        },
+        {
+          "path": "preprocessing.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "714be01e4c6de396631ef7a9c8b2dc41a7895c3476f17c5a8e1b94d4a031c4ef",
+          "bytes": 573
+        },
+        {
+          "path": "registry.approved.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "cc30094e294e2af6f6a93c4abc8419396c70533beed44ca938ff4697497fdb34",
+          "bytes": 9611
+        },
+        {
+          "path": "registry.result.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "5f14d48551ee1a1b1c7eb0e42cfbfa5b01c3c518086760b47e099d33b73e12ba",
+          "bytes": 10597
+        },
+        {
+          "path": "reload01.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "4d27947211e0bc7411cc67581ad6fdbea11b7fc096b59dfae384249fbab1b9b8",
+          "bytes": 2195
+        },
+        {
+          "path": "reload01.predictions.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "38833e65e1df8291c0593782a30289edcd2d9fb450b8a2518a708504f53f1046",
+          "bytes": 755941
+        },
+        {
+          "path": "runtime.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "a7ad61ae31805dd11a5497b2b8d831a8d294d311fba2e450728ef056f6f76023",
+          "bytes": 574
+        },
+        {
+          "path": "scripts/dino_w6.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+          "bytes": 21770
+        },
+        {
+          "path": "source_index.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "e0b98a30e91a3157cd920e318b3bafc7478b71e97845b3a63abe3ce93514902e",
+          "bytes": 1330
+        },
+        {
+          "path": "src/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+          "bytes": 35
+        },
+        {
+          "path": "src/evaluation/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+          "bytes": 620
+        },
+        {
+          "path": "src/evaluation/w5_validation.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+          "bytes": 12255
+        },
+        {
+          "path": "src/evaluation/w6_validation.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+          "bytes": 19437
+        },
+        {
+          "path": "src/training/__init__.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+          "bytes": 46
+        },
+        {
+          "path": "src/training/dino_handoff.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+          "bytes": 7714
+        },
+        {
+          "path": "src/training/dino_probe.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+          "bytes": 24460
+        },
+        {
+          "path": "src/training/dino_w6.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "bytes": 26452
+        },
+        {
+          "path": "src/training/dino_w6_control.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+          "bytes": 11875
+        },
+        {
+          "path": "src/training/dino_w6_delivery.py",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+          "bytes": 15604
+        },
+        {
+          "path": "status.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "406bb9969fcaf4fc341bb01c132559e616b99d0be46318ec24e41e6c982dbc52",
+          "bytes": 98
+        },
+        {
+          "path": "train_log.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "32f3c922373a00e842cec88436ae2464ec256434091cd99a7610a88b97638b40",
+          "bytes": 40118
+        },
+        {
+          "path": "usage.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "9f7837a288b5c1c5e616e99cac7e4b28a13b7aa2d11f3e38e4c3ccc2a7b2bee7",
+          "bytes": 6543
+        },
+        {
+          "path": "val_crops.jsonl",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "b303dc7777f9e1172ecaefbcb5b0d483a3566c6a8f1768c742d1f732bb9d2cba",
+          "bytes": 242070
+        },
+        {
+          "path": "val_images.jsonl",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "06945da0a03b789dcc6a020644a1a53c7d1611776aa454b857f884238c815ec3",
+          "bytes": 251327
+        },
+        {
+          "path": "validation.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "38833e65e1df8291c0593782a30289edcd2d9fb450b8a2518a708504f53f1046",
+          "bytes": 755941
+        },
+        {
+          "path": "validation_comparison.json",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "d43693a6369349a6b2d61d5f6a1e6df15ab8dabf4b86ea56d18bfd380f2f9cb3",
+          "bytes": 33218
+        },
+        {
+          "path": "validation_comparison.md",
+          "sha256_match": true,
+          "size_match": true,
+          "sha256": "0eb508c4bbe564147bd4acb3539b359bceb280364beee25b3d031e325a22ce83",
+          "bytes": 246
+        }
+      ]
+    }
+  },
+  "runs": {
+    "R0": {
+      "run": "R0",
+      "image_count": 600,
+      "image_ids_unique": 600,
+      "duplicate_image_ids": [],
+      "crop_count": 680,
+      "crop_ids_unique": 680,
+      "duplicate_crop_ids": [],
+      "unrepresented_image_ids": [],
+      "unexpected_crop_image_ids": [],
+      "crop_count_or_score_errors": [],
+      "max_abs_image_vs_mean_crop_score_delta": 0.0,
+      "mean_score_mismatches_gt_1e-10": [],
+      "accuracy": 0.845,
+      "correct": 507,
+      "macro_precision": 0.8479570314127788,
+      "macro_recall": 0.845,
+      "macro_f1": 0.8444008279545705,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class": "large_antlered_muntjac",
+          "correct": 54,
+          "support": 75,
+          "precision": 0.8709677419354839,
+          "recall": 0.72,
+          "f1": 0.7883211678832117
+        },
+        {
+          "class_id": 1,
+          "class": "annamite_striped_rabbit",
+          "correct": 71,
+          "support": 75,
+          "precision": 0.8452380952380952,
+          "recall": 0.9466666666666667,
+          "f1": 0.8930817610062893
+        },
+        {
+          "class_id": 2,
+          "class": "sambar",
+          "correct": 59,
+          "support": 75,
+          "precision": 0.7866666666666666,
+          "recall": 0.7866666666666666,
+          "f1": 0.7866666666666666
+        },
+        {
+          "class_id": 3,
+          "class": "chinese_serow",
+          "correct": 68,
+          "support": 75,
+          "precision": 0.918918918918919,
+          "recall": 0.9066666666666666,
+          "f1": 0.912751677852349
+        },
+        {
+          "class_id": 4,
+          "class": "common_palm_civet",
+          "correct": 64,
+          "support": 75,
+          "precision": 0.8205128205128205,
+          "recall": 0.8533333333333334,
+          "f1": 0.8366013071895425
+        },
+        {
+          "class_id": 5,
+          "class": "masked_palm_civet",
+          "correct": 56,
+          "support": 75,
+          "precision": 0.835820895522388,
+          "recall": 0.7466666666666667,
+          "f1": 0.7887323943661971
+        },
+        {
+          "class_id": 6,
+          "class": "silver_pheasant",
+          "correct": 72,
+          "support": 75,
+          "precision": 0.972972972972973,
+          "recall": 0.96,
+          "f1": 0.9664429530201343
+        },
+        {
+          "class_id": 7,
+          "class": "eurasian_wild_pig",
+          "correct": 63,
+          "support": 75,
+          "precision": 0.7325581395348837,
+          "recall": 0.84,
+          "f1": 0.7826086956521738
+        }
+      ],
+      "confusion_matrix": [
+        [
+          54,
+          2,
+          8,
+          0,
+          2,
+          2,
+          0,
+          7
+        ],
+        [
+          0,
+          71,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          59,
+          1,
+          0,
+          2,
+          1,
+          7
+        ],
+        [
+          0,
+          0,
+          4,
+          68,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          4,
+          0,
+          1,
+          64,
+          5,
+          0,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          2,
+          8,
+          56,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          72,
+          2
+        ],
+        [
+          4,
+          0,
+          4,
+          0,
+          3,
+          0,
+          1,
+          63
+        ]
+      ],
+      "producer_metrics": {
+        "accuracy": 0.845,
+        "image_balanced_crop_ce": 0.49832937121391296,
+        "macro_f1": 0.8444008279545705,
+        "macro_precision": 0.8479570314127787,
+        "macro_recall": 0.845,
+        "confusion_matrix": [
+          [
+            54,
+            2,
+            8,
+            0,
+            2,
+            2,
+            0,
+            7
+          ],
+          [
+            0,
+            71,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            4,
+            1,
+            59,
+            1,
+            0,
+            2,
+            1,
+            7
+          ],
+          [
+            0,
+            0,
+            4,
+            68,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            4,
+            0,
+            1,
+            64,
+            5,
+            0,
+            1
+          ],
+          [
+            0,
+            6,
+            0,
+            2,
+            8,
+            56,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            72,
+            2
+          ],
+          [
+            4,
+            0,
+            4,
+            0,
+            3,
+            0,
+            1,
+            63
+          ]
+        ],
+        "per_class": {
+          "large_antlered_muntjac": {
+            "precision": 0.8709677419354839,
+            "recall": 0.72,
+            "f1-score": 0.7883211678832117,
+            "support": 75.0
+          },
+          "annamite_striped_rabbit": {
+            "precision": 0.8452380952380952,
+            "recall": 0.9466666666666667,
+            "f1-score": 0.8930817610062893,
+            "support": 75.0
+          },
+          "sambar": {
+            "precision": 0.7866666666666666,
+            "recall": 0.7866666666666666,
+            "f1-score": 0.7866666666666666,
+            "support": 75.0
+          },
+          "chinese_serow": {
+            "precision": 0.918918918918919,
+            "recall": 0.9066666666666666,
+            "f1-score": 0.912751677852349,
+            "support": 75.0
+          },
+          "common_palm_civet": {
+            "precision": 0.8205128205128205,
+            "recall": 0.8533333333333334,
+            "f1-score": 0.8366013071895425,
+            "support": 75.0
+          },
+          "masked_palm_civet": {
+            "precision": 0.835820895522388,
+            "recall": 0.7466666666666667,
+            "f1-score": 0.7887323943661971,
+            "support": 75.0
+          },
+          "silver_pheasant": {
+            "precision": 0.972972972972973,
+            "recall": 0.96,
+            "f1-score": 0.9664429530201343,
+            "support": 75.0
+          },
+          "eurasian_wild_pig": {
+            "precision": 0.7325581395348837,
+            "recall": 0.84,
+            "f1-score": 0.782608695652174,
+            "support": 75.0
+          },
+          "accuracy": 0.845,
+          "macro avg": {
+            "precision": 0.8479570314127787,
+            "recall": 0.845,
+            "f1-score": 0.8444008279545705,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 0.8479570314127788,
+            "recall": 0.845,
+            "f1-score": 0.8444008279545705,
+            "support": 600.0
+          }
+        },
+        "images": 600,
+        "crops": 680
+      }
+    },
+    "R1": {
+      "run": "R1",
+      "image_count": 600,
+      "image_ids_unique": 600,
+      "duplicate_image_ids": [],
+      "crop_count": 680,
+      "crop_ids_unique": 680,
+      "duplicate_crop_ids": [],
+      "unrepresented_image_ids": [],
+      "unexpected_crop_image_ids": [],
+      "crop_count_or_score_errors": [],
+      "max_abs_image_vs_mean_crop_score_delta": 0.0,
+      "mean_score_mismatches_gt_1e-10": [],
+      "accuracy": 0.835,
+      "correct": 501,
+      "macro_precision": 0.8357659685377077,
+      "macro_recall": 0.835,
+      "macro_f1": 0.8338641693401928,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class": "large_antlered_muntjac",
+          "correct": 54,
+          "support": 75,
+          "precision": 0.7714285714285715,
+          "recall": 0.72,
+          "f1": 0.7448275862068965
+        },
+        {
+          "class_id": 1,
+          "class": "annamite_striped_rabbit",
+          "correct": 69,
+          "support": 75,
+          "precision": 0.8518518518518519,
+          "recall": 0.92,
+          "f1": 0.8846153846153846
+        },
+        {
+          "class_id": 2,
+          "class": "sambar",
+          "correct": 55,
+          "support": 75,
+          "precision": 0.7971014492753623,
+          "recall": 0.7333333333333333,
+          "f1": 0.7638888888888887
+        },
+        {
+          "class_id": 3,
+          "class": "chinese_serow",
+          "correct": 68,
+          "support": 75,
+          "precision": 0.8831168831168831,
+          "recall": 0.9066666666666666,
+          "f1": 0.894736842105263
+        },
+        {
+          "class_id": 4,
+          "class": "common_palm_civet",
+          "correct": 66,
+          "support": 75,
+          "precision": 0.75,
+          "recall": 0.88,
+          "f1": 0.8098159509202455
+        },
+        {
+          "class_id": 5,
+          "class": "masked_palm_civet",
+          "correct": 56,
+          "support": 75,
+          "precision": 0.8484848484848485,
+          "recall": 0.7466666666666667,
+          "f1": 0.7943262411347518
+        },
+        {
+          "class_id": 6,
+          "class": "silver_pheasant",
+          "correct": 73,
+          "support": 75,
+          "precision": 0.9733333333333334,
+          "recall": 0.9733333333333334,
+          "f1": 0.9733333333333334
+        },
+        {
+          "class_id": 7,
+          "class": "eurasian_wild_pig",
+          "correct": 60,
+          "support": 75,
+          "precision": 0.8108108108108109,
+          "recall": 0.8,
+          "f1": 0.8053691275167786
+        }
+      ],
+      "confusion_matrix": [
+        [
+          54,
+          1,
+          9,
+          2,
+          4,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          69,
+          0,
+          1,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          7,
+          2,
+          55,
+          3,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          3,
+          68,
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          66,
+          4,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          0,
+          1,
+          12,
+          56,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          73,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0,
+          3,
+          1,
+          1,
+          60
+        ]
+      ],
+      "producer_metrics": {
+        "accuracy": 0.835,
+        "image_balanced_crop_ce": 0.5478103160858154,
+        "macro_f1": 0.8338641693401928,
+        "macro_precision": 0.8357659685377077,
+        "macro_recall": 0.8350000000000001,
+        "confusion_matrix": [
+          [
+            54,
+            1,
+            9,
+            2,
+            4,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            69,
+            0,
+            1,
+            2,
+            3,
+            0,
+            0
+          ],
+          [
+            7,
+            2,
+            55,
+            3,
+            0,
+            2,
+            1,
+            5
+          ],
+          [
+            0,
+            0,
+            3,
+            68,
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1,
+            66,
+            4,
+            0,
+            1
+          ],
+          [
+            1,
+            5,
+            0,
+            1,
+            12,
+            56,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            73,
+            0
+          ],
+          [
+            8,
+            0,
+            2,
+            0,
+            3,
+            1,
+            1,
+            60
+          ]
+        ],
+        "per_class": {
+          "large_antlered_muntjac": {
+            "precision": 0.7714285714285715,
+            "recall": 0.72,
+            "f1-score": 0.7448275862068966,
+            "support": 75.0
+          },
+          "annamite_striped_rabbit": {
+            "precision": 0.8518518518518519,
+            "recall": 0.92,
+            "f1-score": 0.8846153846153846,
+            "support": 75.0
+          },
+          "sambar": {
+            "precision": 0.7971014492753623,
+            "recall": 0.7333333333333333,
+            "f1-score": 0.7638888888888888,
+            "support": 75.0
+          },
+          "chinese_serow": {
+            "precision": 0.8831168831168831,
+            "recall": 0.9066666666666666,
+            "f1-score": 0.8947368421052632,
+            "support": 75.0
+          },
+          "common_palm_civet": {
+            "precision": 0.75,
+            "recall": 0.88,
+            "f1-score": 0.8098159509202454,
+            "support": 75.0
+          },
+          "masked_palm_civet": {
+            "precision": 0.8484848484848485,
+            "recall": 0.7466666666666667,
+            "f1-score": 0.7943262411347518,
+            "support": 75.0
+          },
+          "silver_pheasant": {
+            "precision": 0.9733333333333334,
+            "recall": 0.9733333333333334,
+            "f1-score": 0.9733333333333334,
+            "support": 75.0
+          },
+          "eurasian_wild_pig": {
+            "precision": 0.8108108108108109,
+            "recall": 0.8,
+            "f1-score": 0.8053691275167785,
+            "support": 75.0
+          },
+          "accuracy": 0.835,
+          "macro avg": {
+            "precision": 0.8357659685377077,
+            "recall": 0.8350000000000001,
+            "f1-score": 0.8338641693401928,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 0.8357659685377077,
+            "recall": 0.835,
+            "f1-score": 0.8338641693401928,
+            "support": 600.0
+          }
+        },
+        "images": 600,
+        "crops": 680
+      }
+    },
+    "R2": {
+      "run": "R2",
+      "image_count": 600,
+      "image_ids_unique": 600,
+      "duplicate_image_ids": [],
+      "crop_count": 680,
+      "crop_ids_unique": 680,
+      "duplicate_crop_ids": [],
+      "unrepresented_image_ids": [],
+      "unexpected_crop_image_ids": [],
+      "crop_count_or_score_errors": [],
+      "max_abs_image_vs_mean_crop_score_delta": 0.0,
+      "mean_score_mismatches_gt_1e-10": [],
+      "accuracy": 0.8516666666666667,
+      "correct": 511,
+      "macro_precision": 0.8531576208385419,
+      "macro_recall": 0.8516666666666667,
+      "macro_f1": 0.850650853041619,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class": "large_antlered_muntjac",
+          "correct": 53,
+          "support": 75,
+          "precision": 0.8833333333333333,
+          "recall": 0.7066666666666667,
+          "f1": 0.7851851851851853
+        },
+        {
+          "class_id": 1,
+          "class": "annamite_striped_rabbit",
+          "correct": 71,
+          "support": 75,
+          "precision": 0.8875,
+          "recall": 0.9466666666666667,
+          "f1": 0.9161290322580645
+        },
+        {
+          "class_id": 2,
+          "class": "sambar",
+          "correct": 63,
+          "support": 75,
+          "precision": 0.8181818181818182,
+          "recall": 0.84,
+          "f1": 0.8289473684210527
+        },
+        {
+          "class_id": 3,
+          "class": "chinese_serow",
+          "correct": 69,
+          "support": 75,
+          "precision": 0.9078947368421053,
+          "recall": 0.92,
+          "f1": 0.913907284768212
+        },
+        {
+          "class_id": 4,
+          "class": "common_palm_civet",
+          "correct": 62,
+          "support": 75,
+          "precision": 0.8611111111111112,
+          "recall": 0.8266666666666667,
+          "f1": 0.8435374149659863
+        },
+        {
+          "class_id": 5,
+          "class": "masked_palm_civet",
+          "correct": 57,
+          "support": 75,
+          "precision": 0.7702702702702703,
+          "recall": 0.76,
+          "f1": 0.7651006711409396
+        },
+        {
+          "class_id": 6,
+          "class": "silver_pheasant",
+          "correct": 72,
+          "support": 75,
+          "precision": 0.935064935064935,
+          "recall": 0.96,
+          "f1": 0.9473684210526316
+        },
+        {
+          "class_id": 7,
+          "class": "eurasian_wild_pig",
+          "correct": 64,
+          "support": 75,
+          "precision": 0.7619047619047619,
+          "recall": 0.8533333333333334,
+          "f1": 0.8050314465408804
+        }
+      ],
+      "confusion_matrix": [
+        [
+          53,
+          1,
+          10,
+          2,
+          1,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          71,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          63,
+          1,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          69,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          62,
+          8,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          7,
+          57,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          72,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          0,
+          1,
+          2,
+          3,
+          64
+        ]
+      ],
+      "producer_metrics": {
+        "accuracy": 0.8516666666666667,
+        "image_balanced_crop_ce": 0.4635359048843384,
+        "macro_f1": 0.850650853041619,
+        "macro_precision": 0.8531576208385419,
+        "macro_recall": 0.8516666666666667,
+        "confusion_matrix": [
+          [
+            53,
+            1,
+            10,
+            2,
+            1,
+            2,
+            1,
+            5
+          ],
+          [
+            0,
+            71,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            63,
+            1,
+            0,
+            3,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            69,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1,
+            62,
+            8,
+            0,
+            1
+          ],
+          [
+            1,
+            4,
+            0,
+            2,
+            7,
+            57,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            72,
+            3
+          ],
+          [
+            3,
+            0,
+            2,
+            0,
+            1,
+            2,
+            3,
+            64
+          ]
+        ],
+        "per_class": {
+          "large_antlered_muntjac": {
+            "precision": 0.8833333333333333,
+            "recall": 0.7066666666666667,
+            "f1-score": 0.7851851851851852,
+            "support": 75.0
+          },
+          "annamite_striped_rabbit": {
+            "precision": 0.8875,
+            "recall": 0.9466666666666667,
+            "f1-score": 0.9161290322580645,
+            "support": 75.0
+          },
+          "sambar": {
+            "precision": 0.8181818181818182,
+            "recall": 0.84,
+            "f1-score": 0.8289473684210527,
+            "support": 75.0
+          },
+          "chinese_serow": {
+            "precision": 0.9078947368421053,
+            "recall": 0.92,
+            "f1-score": 0.9139072847682119,
+            "support": 75.0
+          },
+          "common_palm_civet": {
+            "precision": 0.8611111111111112,
+            "recall": 0.8266666666666667,
+            "f1-score": 0.8435374149659864,
+            "support": 75.0
+          },
+          "masked_palm_civet": {
+            "precision": 0.7702702702702703,
+            "recall": 0.76,
+            "f1-score": 0.7651006711409396,
+            "support": 75.0
+          },
+          "silver_pheasant": {
+            "precision": 0.935064935064935,
+            "recall": 0.96,
+            "f1-score": 0.9473684210526315,
+            "support": 75.0
+          },
+          "eurasian_wild_pig": {
+            "precision": 0.7619047619047619,
+            "recall": 0.8533333333333334,
+            "f1-score": 0.8050314465408805,
+            "support": 75.0
+          },
+          "accuracy": 0.8516666666666667,
+          "macro avg": {
+            "precision": 0.8531576208385419,
+            "recall": 0.8516666666666667,
+            "f1-score": 0.850650853041619,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 0.853157620838542,
+            "recall": 0.8516666666666667,
+            "f1-score": 0.850650853041619,
+            "support": 600.0
+          }
+        },
+        "images": 600,
+        "crops": 680
+      }
+    },
+    "R3": {
+      "run": "R3",
+      "image_count": 600,
+      "image_ids_unique": 600,
+      "duplicate_image_ids": [],
+      "crop_count": 680,
+      "crop_ids_unique": 680,
+      "duplicate_crop_ids": [],
+      "unrepresented_image_ids": [],
+      "unexpected_crop_image_ids": [],
+      "crop_count_or_score_errors": [],
+      "max_abs_image_vs_mean_crop_score_delta": 0.0,
+      "mean_score_mismatches_gt_1e-10": [],
+      "accuracy": 0.8433333333333334,
+      "correct": 506,
+      "macro_precision": 0.8457883463548048,
+      "macro_recall": 0.8433333333333333,
+      "macro_f1": 0.8427567876976384,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class": "large_antlered_muntjac",
+          "correct": 52,
+          "support": 75,
+          "precision": 0.8813559322033898,
+          "recall": 0.6933333333333334,
+          "f1": 0.7761194029850748
+        },
+        {
+          "class_id": 1,
+          "class": "annamite_striped_rabbit",
+          "correct": 70,
+          "support": 75,
+          "precision": 0.8974358974358975,
+          "recall": 0.9333333333333333,
+          "f1": 0.9150326797385621
+        },
+        {
+          "class_id": 2,
+          "class": "sambar",
+          "correct": 61,
+          "support": 75,
+          "precision": 0.782051282051282,
+          "recall": 0.8133333333333334,
+          "f1": 0.7973856209150326
+        },
+        {
+          "class_id": 3,
+          "class": "chinese_serow",
+          "correct": 68,
+          "support": 75,
+          "precision": 0.9066666666666666,
+          "recall": 0.9066666666666666,
+          "f1": 0.9066666666666666
+        },
+        {
+          "class_id": 4,
+          "class": "common_palm_civet",
+          "correct": 63,
+          "support": 75,
+          "precision": 0.84,
+          "recall": 0.84,
+          "f1": 0.8399999999999999
+        },
+        {
+          "class_id": 5,
+          "class": "masked_palm_civet",
+          "correct": 58,
+          "support": 75,
+          "precision": 0.7733333333333333,
+          "recall": 0.7733333333333333,
+          "f1": 0.7733333333333333
+        },
+        {
+          "class_id": 6,
+          "class": "silver_pheasant",
+          "correct": 72,
+          "support": 75,
+          "precision": 0.9473684210526315,
+          "recall": 0.96,
+          "f1": 0.9536423841059603
+        },
+        {
+          "class_id": 7,
+          "class": "eurasian_wild_pig",
+          "correct": 62,
+          "support": 75,
+          "precision": 0.7380952380952381,
+          "recall": 0.8266666666666667,
+          "f1": 0.779874213836478
+        }
+      ],
+      "confusion_matrix": [
+        [
+          52,
+          1,
+          10,
+          2,
+          2,
+          2,
+          0,
+          6
+        ],
+        [
+          0,
+          70,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          61,
+          0,
+          0,
+          3,
+          1,
+          7
+        ],
+        [
+          0,
+          0,
+          3,
+          68,
+          0,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          63,
+          7,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          7,
+          58,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          72,
+          2
+        ],
+        [
+          3,
+          0,
+          4,
+          0,
+          2,
+          1,
+          3,
+          62
+        ]
+      ],
+      "producer_metrics": {
+        "accuracy": 0.8433333333333334,
+        "image_balanced_crop_ce": 0.48029544949531555,
+        "macro_f1": 0.8427567876976385,
+        "macro_precision": 0.8457883463548048,
+        "macro_recall": 0.8433333333333333,
+        "confusion_matrix": [
+          [
+            52,
+            1,
+            10,
+            2,
+            2,
+            2,
+            0,
+            6
+          ],
+          [
+            0,
+            70,
+            0,
+            1,
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            61,
+            0,
+            0,
+            3,
+            1,
+            7
+          ],
+          [
+            0,
+            0,
+            3,
+            68,
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            1,
+            63,
+            7,
+            0,
+            1
+          ],
+          [
+            1,
+            4,
+            0,
+            2,
+            7,
+            58,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            72,
+            2
+          ],
+          [
+            3,
+            0,
+            4,
+            0,
+            2,
+            1,
+            3,
+            62
+          ]
+        ],
+        "per_class": {
+          "large_antlered_muntjac": {
+            "precision": 0.8813559322033898,
+            "recall": 0.6933333333333334,
+            "f1-score": 0.7761194029850746,
+            "support": 75.0
+          },
+          "annamite_striped_rabbit": {
+            "precision": 0.8974358974358975,
+            "recall": 0.9333333333333333,
+            "f1-score": 0.9150326797385621,
+            "support": 75.0
+          },
+          "sambar": {
+            "precision": 0.782051282051282,
+            "recall": 0.8133333333333334,
+            "f1-score": 0.7973856209150327,
+            "support": 75.0
+          },
+          "chinese_serow": {
+            "precision": 0.9066666666666666,
+            "recall": 0.9066666666666666,
+            "f1-score": 0.9066666666666666,
+            "support": 75.0
+          },
+          "common_palm_civet": {
+            "precision": 0.84,
+            "recall": 0.84,
+            "f1-score": 0.84,
+            "support": 75.0
+          },
+          "masked_palm_civet": {
+            "precision": 0.7733333333333333,
+            "recall": 0.7733333333333333,
+            "f1-score": 0.7733333333333333,
+            "support": 75.0
+          },
+          "silver_pheasant": {
+            "precision": 0.9473684210526315,
+            "recall": 0.96,
+            "f1-score": 0.9536423841059603,
+            "support": 75.0
+          },
+          "eurasian_wild_pig": {
+            "precision": 0.7380952380952381,
+            "recall": 0.8266666666666667,
+            "f1-score": 0.779874213836478,
+            "support": 75.0
+          },
+          "accuracy": 0.8433333333333334,
+          "macro avg": {
+            "precision": 0.8457883463548048,
+            "recall": 0.8433333333333333,
+            "f1-score": 0.8427567876976385,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 0.8457883463548049,
+            "recall": 0.8433333333333334,
+            "f1-score": 0.8427567876976385,
+            "support": 600.0
+          }
+        },
+        "images": 600,
+        "crops": 680
+      }
+    },
+    "R4": {
+      "run": "R4",
+      "image_count": 600,
+      "image_ids_unique": 600,
+      "duplicate_image_ids": [],
+      "crop_count": 680,
+      "crop_ids_unique": 680,
+      "duplicate_crop_ids": [],
+      "unrepresented_image_ids": [],
+      "unexpected_crop_image_ids": [],
+      "crop_count_or_score_errors": [],
+      "max_abs_image_vs_mean_crop_score_delta": 0.0,
+      "mean_score_mismatches_gt_1e-10": [],
+      "accuracy": 0.8516666666666667,
+      "correct": 511,
+      "macro_precision": 0.8544551790112221,
+      "macro_recall": 0.8516666666666667,
+      "macro_f1": 0.850644765168246,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class": "large_antlered_muntjac",
+          "correct": 52,
+          "support": 75,
+          "precision": 0.896551724137931,
+          "recall": 0.6933333333333334,
+          "f1": 0.7819548872180451
+        },
+        {
+          "class_id": 1,
+          "class": "annamite_striped_rabbit",
+          "correct": 71,
+          "support": 75,
+          "precision": 0.8987341772151899,
+          "recall": 0.9466666666666667,
+          "f1": 0.9220779220779222
+        },
+        {
+          "class_id": 2,
+          "class": "sambar",
+          "correct": 63,
+          "support": 75,
+          "precision": 0.8289473684210527,
+          "recall": 0.84,
+          "f1": 0.8344370860927153
+        },
+        {
+          "class_id": 3,
+          "class": "chinese_serow",
+          "correct": 69,
+          "support": 75,
+          "precision": 0.9078947368421053,
+          "recall": 0.92,
+          "f1": 0.913907284768212
+        },
+        {
+          "class_id": 4,
+          "class": "common_palm_civet",
+          "correct": 64,
+          "support": 75,
+          "precision": 0.8205128205128205,
+          "recall": 0.8533333333333334,
+          "f1": 0.8366013071895425
+        },
+        {
+          "class_id": 5,
+          "class": "masked_palm_civet",
+          "correct": 56,
+          "support": 75,
+          "precision": 0.8,
+          "recall": 0.7466666666666667,
+          "f1": 0.7724137931034483
+        },
+        {
+          "class_id": 6,
+          "class": "silver_pheasant",
+          "correct": 72,
+          "support": 75,
+          "precision": 0.9473684210526315,
+          "recall": 0.96,
+          "f1": 0.9536423841059603
+        },
+        {
+          "class_id": 7,
+          "class": "eurasian_wild_pig",
+          "correct": 64,
+          "support": 75,
+          "precision": 0.735632183908046,
+          "recall": 0.8533333333333334,
+          "f1": 0.7901234567901233
+        }
+      ],
+      "confusion_matrix": [
+        [
+          52,
+          1,
+          10,
+          2,
+          2,
+          2,
+          0,
+          6
+        ],
+        [
+          0,
+          71,
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          63,
+          1,
+          0,
+          3,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          69,
+          0,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          64,
+          6,
+          0,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          8,
+          56,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          72,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          0,
+          3,
+          0,
+          3,
+          64
+        ]
+      ],
+      "producer_metrics": {
+        "accuracy": 0.8516666666666667,
+        "image_balanced_crop_ce": 0.46944138407707214,
+        "macro_f1": 0.850644765168246,
+        "macro_precision": 0.854455179011222,
+        "macro_recall": 0.8516666666666668,
+        "confusion_matrix": [
+          [
+            52,
+            1,
+            10,
+            2,
+            2,
+            2,
+            0,
+            6
+          ],
+          [
+            0,
+            71,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            63,
+            1,
+            0,
+            3,
+            1,
+            5
+          ],
+          [
+            0,
+            0,
+            1,
+            69,
+            0,
+            1,
+            0,
+            4
+          ],
+          [
+            0,
+            3,
+            0,
+            1,
+            64,
+            6,
+            0,
+            1
+          ],
+          [
+            1,
+            4,
+            0,
+            2,
+            8,
+            56,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            72,
+            3
+          ],
+          [
+            3,
+            0,
+            2,
+            0,
+            3,
+            0,
+            3,
+            64
+          ]
+        ],
+        "per_class": {
+          "large_antlered_muntjac": {
+            "precision": 0.896551724137931,
+            "recall": 0.6933333333333334,
+            "f1-score": 0.7819548872180451,
+            "support": 75.0
+          },
+          "annamite_striped_rabbit": {
+            "precision": 0.8987341772151899,
+            "recall": 0.9466666666666667,
+            "f1-score": 0.922077922077922,
+            "support": 75.0
+          },
+          "sambar": {
+            "precision": 0.8289473684210527,
+            "recall": 0.84,
+            "f1-score": 0.8344370860927153,
+            "support": 75.0
+          },
+          "chinese_serow": {
+            "precision": 0.9078947368421053,
+            "recall": 0.92,
+            "f1-score": 0.9139072847682119,
+            "support": 75.0
+          },
+          "common_palm_civet": {
+            "precision": 0.8205128205128205,
+            "recall": 0.8533333333333334,
+            "f1-score": 0.8366013071895425,
+            "support": 75.0
+          },
+          "masked_palm_civet": {
+            "precision": 0.8,
+            "recall": 0.7466666666666667,
+            "f1-score": 0.7724137931034483,
+            "support": 75.0
+          },
+          "silver_pheasant": {
+            "precision": 0.9473684210526315,
+            "recall": 0.96,
+            "f1-score": 0.9536423841059603,
+            "support": 75.0
+          },
+          "eurasian_wild_pig": {
+            "precision": 0.735632183908046,
+            "recall": 0.8533333333333334,
+            "f1-score": 0.7901234567901234,
+            "support": 75.0
+          },
+          "accuracy": 0.8516666666666667,
+          "macro avg": {
+            "precision": 0.854455179011222,
+            "recall": 0.8516666666666668,
+            "f1-score": 0.850644765168246,
+            "support": 600.0
+          },
+          "weighted avg": {
+            "precision": 0.8544551790112221,
+            "recall": 0.8516666666666667,
+            "f1-score": 0.850644765168246,
+            "support": 600.0
+          }
+        },
+        "images": 600,
+        "crops": 680
+      }
+    }
+  },
+  "paired_vs_r0": {
+    "R1": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 8,
+      "lost_correct_to_wrong": 14,
+      "net_change": -6,
+      "prediction_changed": 39,
+      "fix_image_ids": [
+        "ce16bb3c-8c29-11eb-8642-000d3a74c7de",
+        "ce191d46-8c29-11eb-8e8d-000d3a74c7de",
+        "cf09b701-8c29-11eb-ab78-000d3a74c7de",
+        "cfabb4ca-8c29-11eb-ad6e-000d3a74c7de",
+        "d111ac09-8c29-11eb-8c3b-000d3a74c7de",
+        "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+        "d4bf5bf0-8c29-11eb-bcde-000d3a74c7de",
+        "d95e060c-8c29-11eb-b21e-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "c819ae51-8c29-11eb-bc7d-000d3a74c7de",
+        "c938b8c5-8c29-11eb-bd8d-000d3a74c7de",
+        "ca2afb40-8c29-11eb-be18-000d3a74c7de",
+        "cc2207df-8c29-11eb-985d-000d3a74c7de",
+        "cc220838-8c29-11eb-a93a-000d3a74c7de",
+        "cc26daf5-8c29-11eb-8ba6-000d3a74c7de",
+        "ccd276a3-8c29-11eb-8566-000d3a74c7de",
+        "ccd276f2-8c29-11eb-8e5a-000d3a74c7de",
+        "cfe542eb-8c29-11eb-a02c-000d3a74c7de",
+        "cff13e1e-8c29-11eb-82d8-000d3a74c7de",
+        "d1f8ee22-8c29-11eb-b412-000d3a74c7de",
+        "d3019260-8c29-11eb-b090-000d3a74c7de",
+        "d4bf5bdc-8c29-11eb-a917-000d3a74c7de",
+        "dbd5c8a6-8c29-11eb-9169-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 1,
+          "losses": 1
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 2
+        },
+        "2": {
+          "fixes": 1,
+          "losses": 5
+        },
+        "3": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "4": {
+          "fixes": 3,
+          "losses": 1
+        },
+        "5": {
+          "fixes": 1,
+          "losses": 1
+        },
+        "6": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 1,
+          "losses": 4
+        }
+      }
+    },
+    "R2": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 12,
+      "lost_correct_to_wrong": 8,
+      "net_change": 4,
+      "prediction_changed": 34,
+      "fix_image_ids": [
+        "cae9ba62-8c29-11eb-b747-000d3a74c7de",
+        "cc0a317a-8c29-11eb-a4eb-000d3a74c7de",
+        "ce16bb3c-8c29-11eb-8642-000d3a74c7de",
+        "cf301589-8c29-11eb-b9e5-000d3a74c7de",
+        "cfc3dba6-8c29-11eb-a01b-000d3a74c7de",
+        "d0ad8884-8c29-11eb-b9a9-000d3a74c7de",
+        "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+        "d118d571-8c29-11eb-b688-000d3a74c7de",
+        "d4aebb04-8c29-11eb-bfcf-000d3a74c7de",
+        "d4bf5bf0-8c29-11eb-bcde-000d3a74c7de",
+        "d7e0902c-8c29-11eb-8366-000d3a74c7de",
+        "d7e090ad-8c29-11eb-a26e-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "c8ab2056-8c29-11eb-99fb-000d3a74c7de",
+        "c9b88f69-8c29-11eb-a4c4-000d3a74c7de",
+        "ce35b815-8c29-11eb-be81-000d3a74c7de",
+        "cf09b702-8c29-11eb-a276-000d3a74c7de",
+        "d0e6bb26-8c29-11eb-a906-000d3a74c7de",
+        "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+        "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+        "d30192c3-8c29-11eb-a6b2-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 1,
+          "losses": 2
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "2": {
+          "fixes": 4,
+          "losses": 0
+        },
+        "3": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "4": {
+          "fixes": 1,
+          "losses": 3
+        },
+        "5": {
+          "fixes": 2,
+          "losses": 1
+        },
+        "6": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 3,
+          "losses": 2
+        }
+      }
+    },
+    "R3": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 6,
+      "lost_correct_to_wrong": 7,
+      "net_change": -1,
+      "prediction_changed": 21,
+      "fix_image_ids": [
+        "cc0a317a-8c29-11eb-a4eb-000d3a74c7de",
+        "ce16bb3c-8c29-11eb-8642-000d3a74c7de",
+        "cf301589-8c29-11eb-b9e5-000d3a74c7de",
+        "cfc3dba6-8c29-11eb-a01b-000d3a74c7de",
+        "d4aebb04-8c29-11eb-bfcf-000d3a74c7de",
+        "d4bf5bf0-8c29-11eb-bcde-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "c8ab2056-8c29-11eb-99fb-000d3a74c7de",
+        "cc220838-8c29-11eb-a93a-000d3a74c7de",
+        "ce35b815-8c29-11eb-be81-000d3a74c7de",
+        "d0e6bb26-8c29-11eb-a906-000d3a74c7de",
+        "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+        "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+        "d30192c3-8c29-11eb-a6b2-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 0,
+          "losses": 2
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "2": {
+          "fixes": 2,
+          "losses": 0
+        },
+        "3": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "4": {
+          "fixes": 1,
+          "losses": 2
+        },
+        "5": {
+          "fixes": 2,
+          "losses": 0
+        },
+        "6": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 1,
+          "losses": 2
+        }
+      }
+    },
+    "R4": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 10,
+      "lost_correct_to_wrong": 6,
+      "net_change": 4,
+      "prediction_changed": 26,
+      "fix_image_ids": [
+        "cae9ba62-8c29-11eb-b747-000d3a74c7de",
+        "cc0a317a-8c29-11eb-a4eb-000d3a74c7de",
+        "ce16bb3c-8c29-11eb-8642-000d3a74c7de",
+        "cf301589-8c29-11eb-b9e5-000d3a74c7de",
+        "cfc3dba6-8c29-11eb-a01b-000d3a74c7de",
+        "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+        "d118d571-8c29-11eb-b688-000d3a74c7de",
+        "d4bf5bf0-8c29-11eb-bcde-000d3a74c7de",
+        "d7e0902c-8c29-11eb-8366-000d3a74c7de",
+        "d7e090ad-8c29-11eb-a26e-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "c8ab2056-8c29-11eb-99fb-000d3a74c7de",
+        "c9b88f69-8c29-11eb-a4c4-000d3a74c7de",
+        "d0e6bb26-8c29-11eb-a906-000d3a74c7de",
+        "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+        "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+        "d30192c3-8c29-11eb-a6b2-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 0,
+          "losses": 2
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "2": {
+          "fixes": 4,
+          "losses": 0
+        },
+        "3": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "4": {
+          "fixes": 1,
+          "losses": 1
+        },
+        "5": {
+          "fixes": 1,
+          "losses": 1
+        },
+        "6": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 3,
+          "losses": 2
+        }
+      }
+    }
+  },
+  "paired_vs_r2": {
+    "R1": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 13,
+      "lost_correct_to_wrong": 23,
+      "net_change": -10,
+      "prediction_changed": 60,
+      "fix_image_ids": [
+        "c8ab2056-8c29-11eb-99fb-000d3a74c7de",
+        "c9b88f69-8c29-11eb-a4c4-000d3a74c7de",
+        "ce191d46-8c29-11eb-8e8d-000d3a74c7de",
+        "ce35b815-8c29-11eb-be81-000d3a74c7de",
+        "cf09b701-8c29-11eb-ab78-000d3a74c7de",
+        "cf09b702-8c29-11eb-a276-000d3a74c7de",
+        "cfabb4ca-8c29-11eb-ad6e-000d3a74c7de",
+        "d0e6bb26-8c29-11eb-a906-000d3a74c7de",
+        "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+        "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+        "d111ac09-8c29-11eb-8c3b-000d3a74c7de",
+        "d30192c3-8c29-11eb-a6b2-000d3a74c7de",
+        "d95e060c-8c29-11eb-b21e-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "c819ae51-8c29-11eb-bc7d-000d3a74c7de",
+        "c938b8c5-8c29-11eb-bd8d-000d3a74c7de",
+        "ca2afb40-8c29-11eb-be18-000d3a74c7de",
+        "cae9ba62-8c29-11eb-b747-000d3a74c7de",
+        "cc0a317a-8c29-11eb-a4eb-000d3a74c7de",
+        "cc2207df-8c29-11eb-985d-000d3a74c7de",
+        "cc220838-8c29-11eb-a93a-000d3a74c7de",
+        "cc26daf5-8c29-11eb-8ba6-000d3a74c7de",
+        "ccd276a3-8c29-11eb-8566-000d3a74c7de",
+        "ccd276f2-8c29-11eb-8e5a-000d3a74c7de",
+        "cf301589-8c29-11eb-b9e5-000d3a74c7de",
+        "cfc3dba6-8c29-11eb-a01b-000d3a74c7de",
+        "cfe542eb-8c29-11eb-a02c-000d3a74c7de",
+        "cff13e1e-8c29-11eb-82d8-000d3a74c7de",
+        "d0ad8884-8c29-11eb-b9a9-000d3a74c7de",
+        "d118d571-8c29-11eb-b688-000d3a74c7de",
+        "d1f8ee22-8c29-11eb-b412-000d3a74c7de",
+        "d3019260-8c29-11eb-b090-000d3a74c7de",
+        "d4aebb04-8c29-11eb-bfcf-000d3a74c7de",
+        "d4bf5bdc-8c29-11eb-a917-000d3a74c7de",
+        "d7e0902c-8c29-11eb-8366-000d3a74c7de",
+        "d7e090ad-8c29-11eb-a26e-000d3a74c7de",
+        "dbd5c8a6-8c29-11eb-9169-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 3,
+          "losses": 2
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 2
+        },
+        "2": {
+          "fixes": 0,
+          "losses": 8
+        },
+        "3": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "4": {
+          "fixes": 5,
+          "losses": 1
+        },
+        "5": {
+          "fixes": 2,
+          "losses": 3
+        },
+        "6": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 2,
+          "losses": 6
+        }
+      }
+    },
+    "R3": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 2,
+      "lost_correct_to_wrong": 7,
+      "net_change": -5,
+      "prediction_changed": 17,
+      "fix_image_ids": [
+        "c9b88f69-8c29-11eb-a4c4-000d3a74c7de",
+        "cf09b702-8c29-11eb-a276-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "cae9ba62-8c29-11eb-b747-000d3a74c7de",
+        "cc220838-8c29-11eb-a93a-000d3a74c7de",
+        "d0ad8884-8c29-11eb-b9a9-000d3a74c7de",
+        "d118d19d-8c29-11eb-88c8-000d3a74c7de",
+        "d118d571-8c29-11eb-b688-000d3a74c7de",
+        "d7e0902c-8c29-11eb-8366-000d3a74c7de",
+        "d7e090ad-8c29-11eb-a26e-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "2": {
+          "fixes": 0,
+          "losses": 2
+        },
+        "3": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "4": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "5": {
+          "fixes": 1,
+          "losses": 0
+        },
+        "6": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 0,
+          "losses": 2
+        }
+      }
+    },
+    "R4": {
+      "paired_image_count": 600,
+      "ids_exact_match": true,
+      "fixed_wrong_to_correct": 2,
+      "lost_correct_to_wrong": 2,
+      "net_change": 0,
+      "prediction_changed": 11,
+      "fix_image_ids": [
+        "ce35b815-8c29-11eb-be81-000d3a74c7de",
+        "cf09b702-8c29-11eb-a276-000d3a74c7de"
+      ],
+      "loss_image_ids": [
+        "d0ad8884-8c29-11eb-b9a9-000d3a74c7de",
+        "d4aebb04-8c29-11eb-bfcf-000d3a74c7de"
+      ],
+      "per_true_class_fix_loss": {
+        "0": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "1": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "2": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "3": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "4": {
+          "fixes": 2,
+          "losses": 0
+        },
+        "5": {
+          "fixes": 0,
+          "losses": 1
+        },
+        "6": {
+          "fixes": 0,
+          "losses": 0
+        },
+        "7": {
+          "fixes": 0,
+          "losses": 0
+        }
+      }
+    }
+  },
+  "confusable_pairs": {
+    "common_palm_civet_vs_masked_palm_civet": {
+      "R0": {
+        "a_to_b": 5,
+        "b_to_a": 8,
+        "total_confusion": 13
+      },
+      "R1": {
+        "a_to_b": 4,
+        "b_to_a": 12,
+        "total_confusion": 16
+      },
+      "R2": {
+        "a_to_b": 8,
+        "b_to_a": 7,
+        "total_confusion": 15
+      },
+      "R3": {
+        "a_to_b": 7,
+        "b_to_a": 7,
+        "total_confusion": 14
+      },
+      "R4": {
+        "a_to_b": 6,
+        "b_to_a": 8,
+        "total_confusion": 14
+      }
+    },
+    "muntjac_vs_sambar": {
+      "R0": {
+        "a_to_b": 8,
+        "b_to_a": 4,
+        "total_confusion": 12
+      },
+      "R1": {
+        "a_to_b": 9,
+        "b_to_a": 7,
+        "total_confusion": 16
+      },
+      "R2": {
+        "a_to_b": 10,
+        "b_to_a": 3,
+        "total_confusion": 13
+      },
+      "R3": {
+        "a_to_b": 10,
+        "b_to_a": 3,
+        "total_confusion": 13
+      },
+      "R4": {
+        "a_to_b": 10,
+        "b_to_a": 2,
+        "total_confusion": 12
+      }
+    }
+  },
+  "multi_seed_r2": {
+    "recipe": "R2",
+    "dataset": "comparison_v1",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "per_seed": {
+      "42": {
+        "run_id": "R2",
+        "correct": 511,
+        "accuracy": 0.8516666666666667,
+        "macro_f1": 0.850650853041619
+      },
+      "43": {
+        "run_id": "R3",
+        "correct": 506,
+        "accuracy": 0.8433333333333334,
+        "macro_f1": 0.8427567876976384
+      },
+      "44": {
+        "run_id": "R4",
+        "correct": 511,
+        "accuracy": 0.8516666666666667,
+        "macro_f1": 0.850644765168246
+      }
+    },
+    "mean_accuracy": 0.8488888888888889,
+    "sample_sd_accuracy": 0.004811252243246864,
+    "mean_macro_f1": 0.8480174686358345,
+    "sample_sd_macro_f1": 0.004555884350559763,
+    "mean_correct": 509.3333333333333,
+    "sample_sd_correct": 2.8867513459481287,
+    "target_accuracy": 0.88,
+    "target_correct": 528,
+    "all_seeds_below_target": true,
+    "headline_seed": 42,
+    "do_not_cherry_pick_best_seed": true
+  },
+  "regression_alerts": {
+    "R1": [
+      {
+        "class_id": 2,
+        "class_name": "sambar",
+        "delta_correct": -4,
+        "r0_correct": 59,
+        "run_correct": 55
+      }
+    ],
+    "R2": [],
+    "R3": [],
+    "R4": []
+  },
+  "gpu_accounting": {
+    "tv3": {
+      "budget_gpu_hours": 12.0,
+      "max_official_attempts": 6,
+      "completed_official_attempts": 4,
+      "official_attempts": [
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_attempt01",
+          "gpu_hours": 0.07120131605555557
+        },
+        {
+          "run_id": "R2",
+          "attempt_id": "R2_attempt01",
+          "gpu_hours": 0.8294758375000002
+        },
+        {
+          "run_id": "R3",
+          "attempt_id": "R3_attempt01",
+          "gpu_hours": 0.6801649318611114
+        },
+        {
+          "run_id": "R4",
+          "attempt_id": "R4_attempt01",
+          "gpu_hours": 0.686542361861111
+        }
+      ],
+      "preparation_attempts": [
+        {
+          "attempt_id": "R1_smoke01",
+          "gpu_hours": 0.003355442499999981
+        },
+        {
+          "attempt_id": "R2_smoke01",
+          "gpu_hours": 0.0016819240277777682
+        },
+        {
+          "attempt_id": "R3_smoke01",
+          "gpu_hours": 0.0020971329444442847
+        },
+        {
+          "attempt_id": "R4_smoke01",
+          "gpu_hours": 0.002460322527777963
+        }
+      ],
+      "total_gpu_hours": 2.276979269277778,
+      "remaining_gpu_hours": 9.723020730722222,
+      "per_attempt_limit_satisfied": true,
+      "budget_satisfied": true
+    },
+    "tv2_replay": {
+      "budget_gpu_hours": 2.0,
+      "replays": [
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_replay01",
+          "gpu_hours": 0.03687700852777602
+        },
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_replay02",
+          "gpu_hours": 0.04432501094444888
+        },
+        {
+          "run_id": "R2",
+          "attempt_id": "R2_replay01",
+          "gpu_hours": 0.03654925344443958
+        },
+        {
+          "run_id": "R3",
+          "attempt_id": "R3_replay01",
+          "gpu_hours": 0.011764475777777585
+        },
+        {
+          "run_id": "R4",
+          "attempt_id": "R4_replay01",
+          "gpu_hours": 0.011366664027769325
+        }
+      ],
+      "total_replay_gpu_hours": 0.1408824127222114,
+      "remaining_replay_gpu_hours": 1.8591175872777885,
+      "budget_satisfied": true
+    }
+  },
+  "class_names": [
+    "large_antlered_muntjac",
+    "annamite_striped_rabbit",
+    "sambar",
+    "chinese_serow",
+    "common_palm_civet",
+    "masked_palm_civet",
+    "silver_pheasant",
+    "eurasian_wild_pig"
+  ]
+}
