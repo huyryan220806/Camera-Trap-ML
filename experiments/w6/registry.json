@@ -21,9 +21,9 @@
     "evidence_path": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
   },
   "data_review": {
-    "status": "PENDING",
+    "status": "PASS",
     "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
-    "evidence_path": null
+    "evidence_path": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json"
   },
   "replay_attempts": [
     {
@@ -40,6 +40,16 @@
       "attempt_id": "R2_replay01",
       "gpu_hours": 0.03654925344443958,
       "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R3_replay01",
+      "gpu_hours": 0.011764475777777585,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R4_replay01",
+      "gpu_hours": 0.011366664027769325,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
     }
   ],
   "runs": [

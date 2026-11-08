@@ -1,0 +1,205 @@
+{
+  "acceptance_id": "TV2_W6_R3_R4_INDEPENDENT_ACCEPTANCE_2026-11-07",
+  "branch": "feat/baseline",
+  "protocol_lock_commit": "056ee897dbd9929844787a65ab705c09ecfbf846",
+  "tv3_results_commit": "61498e7ffc6831b1988cc2d1296457c1fe613373",
+  "tv3_source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+  "artifact_status": "ARTIFACT_VERIFIED",
+  "model_replay": {
+    "status": "MODEL_REPLAY_PASS",
+    "comparison_policy": "exact element equality; no tolerance",
+    "exact_comparison_path": "outputs/tv2_w6/independent_replay_20261107/exact_comparison.json",
+    "environment_receipt_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json",
+    "gpu_hours_used_r3_r4": 0.02313113980554691,
+    "cumulative_replay_gpu_hours": 0.1408824127222114,
+    "budget_gpu_hours": 2.0,
+    "run_results": {
+      "R3": {
+        "exact_all_required": true,
+        "crop_logits_mismatches": 0,
+        "crop_probability_mismatches": 0,
+        "image_probability_mismatches": 0,
+        "metric_mismatches": 0
+      },
+      "R4": {
+        "exact_all_required": true,
+        "crop_logits_mismatches": 0,
+        "crop_probability_mismatches": 0,
+        "image_probability_mismatches": 0,
+        "metric_mismatches": 0
+      }
+    }
+  },
+  "regression_review": "PASS_INDEPENDENT_REPLAY_AND_PAIRED_R0_R2_REVIEW",
+  "multi_seed_summary": {
+    "recipe": "R2",
+    "dataset": "comparison_v1",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "per_seed": {
+      "42": {
+        "run_id": "R2",
+        "correct": 511,
+        "accuracy": 0.8516666666666667,
+        "macro_f1": 0.850650853041619
+      },
+      "43": {
+        "run_id": "R3",
+        "correct": 506,
+        "accuracy": 0.8433333333333334,
+        "macro_f1": 0.8427567876976384
+      },
+      "44": {
+        "run_id": "R4",
+        "correct": 511,
+        "accuracy": 0.8516666666666667,
+        "macro_f1": 0.850644765168246
+      }
+    },
+    "mean_accuracy": 0.8488888888888889,
+    "sample_sd_accuracy": 0.004811252243246864,
+    "mean_macro_f1": 0.8480174686358345,
+    "sample_sd_macro_f1": 0.004555884350559763,
+    "mean_correct": 509.3333333333333,
+    "sample_sd_correct": 2.8867513459481287,
+    "target_accuracy": 0.88,
+    "target_correct": 528,
+    "all_seeds_below_target": true,
+    "headline_seed": 42,
+    "do_not_cherry_pick_best_seed": true
+  },
+  "regression_alerts": {
+    "R1": [
+      {
+        "class_id": 2,
+        "class_name": "sambar",
+        "delta_correct": -4,
+        "r0_correct": 59,
+        "run_correct": 55
+      }
+    ],
+    "R2": [],
+    "R3": [],
+    "R4": []
+  },
+  "overall_decision": "TV2_ACCEPTANCE: PASS; RECIPE_R2_MULTI_SEED_VERIFIED; ALL_RUNS_BELOW_88_TARGET; DEMO_DEFAULT_UNCHANGED; TV4_ADAPTER_INDEPENDENT; R5_R6_WAIT_TV1_DATA_REVIEW",
+  "zip_sha256": {
+    "R3": "a6f4d51c0f84f959c0ecf44c62eee819fc82844d38e63bbff50abe573920df4a",
+    "R4": "cbe27ed2cd243e9783743eb8028b8d6b1f600fb28299735276d6d13b31114c0b"
+  },
+  "package_audit": {
+    "R3": {
+      "zip_sha256": "a6f4d51c0f84f959c0ecf44c62eee819fc82844d38e63bbff50abe573920df4a",
+      "zip_crc": "PASS",
+      "archive_file_count": 38,
+      "package_index_count": 36,
+      "best_checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+      "last_checkpoint_sha256": "8475c55363845c9050786158b5494790e552e5f7b89de60bfecde54cbb081e7e",
+      "frozen_config_raw_sha256": "4c52a6521a083a62122924e080716015310560f2a6544085ab7aef9acf2e8078",
+      "frozen_config_canonical_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+      "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "all_payload_hashes_and_sizes_match": true
+    },
+    "R4": {
+      "zip_sha256": "cbe27ed2cd243e9783743eb8028b8d6b1f600fb28299735276d6d13b31114c0b",
+      "zip_crc": "PASS",
+      "archive_file_count": 38,
+      "package_index_count": 36,
+      "best_checkpoint_sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
+      "last_checkpoint_sha256": "fd4089b1601a979392036e0d34f378050103a0528dc670a1e23bc645829679c6",
+      "frozen_config_raw_sha256": "8e1ee676431166082cf9f0efa4d25b41424517f443282b7b8c13b614a67fe53d",
+      "frozen_config_canonical_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+      "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "all_payload_hashes_and_sizes_match": true
+    }
+  },
+  "gpu_accounting": {
+    "tv3": {
+      "budget_gpu_hours": 12.0,
+      "max_official_attempts": 6,
+      "completed_official_attempts": 4,
+      "official_attempts": [
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_attempt01",
+          "gpu_hours": 0.07120131605555557
+        },
+        {
+          "run_id": "R2",
+          "attempt_id": "R2_attempt01",
+          "gpu_hours": 0.8294758375000002
+        },
+        {
+          "run_id": "R3",
+          "attempt_id": "R3_attempt01",
+          "gpu_hours": 0.6801649318611114
+        },
+        {
+          "run_id": "R4",
+          "attempt_id": "R4_attempt01",
+          "gpu_hours": 0.686542361861111
+        }
+      ],
+      "preparation_attempts": [
+        {
+          "attempt_id": "R1_smoke01",
+          "gpu_hours": 0.003355442499999981
+        },
+        {
+          "attempt_id": "R2_smoke01",
+          "gpu_hours": 0.0016819240277777682
+        },
+        {
+          "attempt_id": "R3_smoke01",
+          "gpu_hours": 0.0020971329444442847
+        },
+        {
+          "attempt_id": "R4_smoke01",
+          "gpu_hours": 0.002460322527777963
+        }
+      ],
+      "total_gpu_hours": 2.276979269277778,
+      "remaining_gpu_hours": 9.723020730722222,
+      "per_attempt_limit_satisfied": true,
+      "budget_satisfied": true
+    },
+    "tv2_replay": {
+      "budget_gpu_hours": 2.0,
+      "replays": [
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_replay01",
+          "gpu_hours": 0.03687700852777602
+        },
+        {
+          "run_id": "R1",
+          "attempt_id": "R1_replay02",
+          "gpu_hours": 0.04432501094444888
+        },
+        {
+          "run_id": "R2",
+          "attempt_id": "R2_replay01",
+          "gpu_hours": 0.03654925344443958
+        },
+        {
+          "run_id": "R3",
+          "attempt_id": "R3_replay01",
+          "gpu_hours": 0.011764475777777585
+        },
+        {
+          "run_id": "R4",
+          "attempt_id": "R4_replay01",
+          "gpu_hours": 0.011366664027769325
+        }
+      ],
+      "total_replay_gpu_hours": 0.1408824127222114,
+      "remaining_replay_gpu_hours": 1.8591175872777885,
+      "budget_satisfied": true
+    }
+  }
+}

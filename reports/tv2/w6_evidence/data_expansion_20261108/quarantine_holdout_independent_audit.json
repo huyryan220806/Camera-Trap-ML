@@ -1,0 +1,58 @@
+{
+  "audit_name": "TV2_W6_QUARANTINE_AND_HOLDOUT_INDEPENDENT_AUDIT",
+  "timestamp_utc": "2026-11-08T05:25:00Z",
+  "source_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "exact_duplicates": {
+    "records_count": 8,
+    "excluded_ids_count": 5,
+    "excluded_ids": [
+      "d86f9058-8c29-11eb-ba3d-000d3a74c7de",
+      "d9c6e567-8c29-11eb-b573-000d3a74c7de",
+      "d9c6e571-8c29-11eb-ac32-000d3a74c7de",
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "in_excluded_jsonl_count": 5,
+    "verification_status": "PASS"
+  },
+  "near_duplicates": {
+    "pairs_count": 347,
+    "total_flagged_new_ids": 193,
+    "overlap_with_exact_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "pure_near_duplicate_ids_count": 191,
+    "in_excluded_jsonl_count": 191,
+    "fingerprint_hamming_distance_reverified_pairs": 347,
+    "verification_status": "PASS",
+    "biological_status": "Conservative quarantine only; not declared confirmed duplicates"
+  },
+  "holdout_audit_only": {
+    "holdout_images_count": 109,
+    "holdout_in_train_leakage": 0,
+    "holdout_in_val_leakage": 0,
+    "metadata_completeness_rgb_pixel_sha": true,
+    "model_inference_run": false,
+    "verification_status": "PASS",
+    "raster_files_accessible_on_disk": true,
+    "found_on_disk_count": 109,
+    "declared_count": 109,
+    "declared_formats": {
+      "MPO": 63,
+      "JPEG": 46
+    },
+    "declared_bytes": 173588482,
+    "verification_mode": "independent fresh-process raster decode and dual-hash verification (byte SHA-256 + RGB pixel SHA-256)",
+    "independent_raster_verification_claimed": true,
+    "protocol_clause": "docs/experiment_protocol_w6.md L165-168: Verified 109/109 bytes/RGB/decode on real images. 0 test raster opened. 0 model inference.",
+    "status": "PASS",
+    "download_verification": "Downloaded from original LILA URLs using scripts/download_subset.py",
+    "raster_audit_evidence_file": "reports/tv2/w6_evidence/data_expansion_20261108/holdout_raster_independent_audit.json",
+    "pass_count": 109,
+    "fail_count": 0,
+    "missing_count": 0
+  },
+  "overall_evidence_gap_resolved": true,
+  "final_recommendation": "READY_FOR_TV2_SIGNOFF"
+}
