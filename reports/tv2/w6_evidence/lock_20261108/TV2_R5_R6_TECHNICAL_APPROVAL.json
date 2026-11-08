@@ -1,0 +1,119 @@
+{
+  "receipt_type": "TV2_W6_R5_R6_TECHNICAL_APPROVAL",
+  "date": "2026-11-08",
+  "role": "TV2 (Baseline & Evaluation)",
+  "decision": "TECHNICALLY_APPROVED_BY_TV2_FOR_PROTOCOL_LOCK",
+  "scope": [
+    "R5",
+    "R6"
+  ],
+  "statement": "Tôi, TV2 (Baseline & Evaluation), chấp thuận về mặt kỹ thuật proposal R5 và R6 của TV3, với phạm vi TECHNICALLY_APPROVED_BY_TV2_FOR_PROTOCOL_LOCK.",
+  "tv3_proposal": {
+    "commit": "a6bfffb5391866001b83298983aed90e7a2d29ce",
+    "path": "experiments/w6/tv3_R5_R6.proposal.json",
+    "branch": "feat/crop-classifier"
+  },
+  "dataset_expansion_binding": {
+    "dataset_name": "train_expansion_w6_v1",
+    "release_provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "approval_status": "APPROVED",
+    "approval_commit": "def28ef14605d5615e5b05a479f03aaad6376224",
+    "approval_receipt": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json"
+  },
+  "source_binding": {
+    "commit": "947fbb85aacec9417f248f5f1e1f08c2da75de09",
+    "tree_verified": true,
+    "src_diff_against_r3_r4_source": 0
+  },
+  "runtime_binding": {
+    "runtime_lock_canonical_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+    "device": "cuda",
+    "precision": "FP32",
+    "amp": false,
+    "tf32": false,
+    "deterministic": true
+  },
+  "runs": {
+    "R5": {
+      "run_id": "R5",
+      "recipe": "R2",
+      "seed": 42,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "config_path": "configs/w6/tv3/R5.frozen.json",
+      "config_canonical_sha256": "5c698bbc4e1d1e232ff8326eb7e4036265a77be317a39472f2fd92d7c9804b03",
+      "config_raw_sha256": "fd80bab2db8656e7265cb7325c498dd363434f83421f7835213539ccbb454413",
+      "smoke_path": "reports/tv3/w6/smoke/R5_smoke01.json",
+      "smoke_raw_sha256": "dc7f44eb36ac4211b659c52b3ebcdaecd154d609dc5a6ac2cc5506e41b55282d",
+      "candidate_config_path": "configs/w6/tv3/R5.candidate.json",
+      "candidate_config_canonical_sha256": "3a0f9f0b45e354090d3c3b264a021cb3765c7c43036a7e93f618fd3d977c2f1a",
+      "candidate_config_raw_sha256": "d0a46afd1aed0a9f40a1a9a4562ffe6d4105fee5b6344588f315ca54c6b4c818",
+      "status": "CONDITIONAL",
+      "recipe_check": "PASS",
+      "smoke_check": "PASS"
+    },
+    "R6": {
+      "run_id": "R6",
+      "recipe": "R2",
+      "seed": 43,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "config_path": "configs/w6/tv3/R6.frozen.json",
+      "config_canonical_sha256": "b33a1c6a8445f8d1d784c30533894f47da7bd64081575ece0d9d18fa9a7d3723",
+      "config_raw_sha256": "0721f394b2e0cfb7575616c2197ee4db19126ee20b642627b2e5b79b6ac4c75b",
+      "smoke_path": "reports/tv3/w6/smoke/R6_smoke01.json",
+      "smoke_raw_sha256": "85872af6807ac76c5a4d9734bd7bc0b9fe0cac71e3310c726c65242b0f79bf94",
+      "candidate_config_path": "configs/w6/tv3/R6.candidate.json",
+      "candidate_config_canonical_sha256": "4e6e51bf7509199e070fb97f1dc7323eabfe976be074a8ab1d361e9a62de66c5",
+      "candidate_config_raw_sha256": "68bfd1b427d9a8463f47234d6b3967ae33c2d81dbaba9e86e3fd168b415f90bc",
+      "status": "CONDITIONAL",
+      "recipe_check": "PASS",
+      "smoke_check": "PASS"
+    }
+  },
+  "gpu_budget_and_usage": {
+    "prior_official_attempts": 4,
+    "official_attempts": [
+      {
+        "attempt_id": "R1_attempt01",
+        "gpu_hours": 0.07120131605555557
+      },
+      {
+        "attempt_id": "R2_attempt01",
+        "gpu_hours": 0.8294758375000002
+      },
+      {
+        "attempt_id": "R3_attempt01",
+        "gpu_hours": 0.6801649318611114
+      },
+      {
+        "attempt_id": "R4_attempt01",
+        "gpu_hours": 0.686542361861111
+      }
+    ],
+    "official_gpu_hours_sum": 2.267384447277778,
+    "preparation_gpu_hours_sum": 0.01408962533333364,
+    "total_measured_gpu_hours": 2.281474072611112,
+    "max_official_attempts": 6,
+    "remaining_official_attempts": 2,
+    "max_tv3_gpu_hours": 12.0,
+    "remaining_tv3_gpu_hours": 9.718525927388889,
+    "max_per_attempt_gpu_hours": 2.0
+  },
+  "protocol_approval_state": {
+    "TV2_status": "TECHNICALLY_APPROVED",
+    "TV3_status": "PENDING_SEPARATE_APPROVAL_RECEIPT",
+    "official_training_authorized": false,
+    "registry_runs_status": "CONDITIONAL"
+  },
+  "constraints_and_conditions": [
+    "Official R5/R6 training is strictly NOT AUTHORIZED until TV3 commits separate approval receipt and bilateral protocol lock is completed.",
+    "TV3 must independently produce and commit its own approval receipt (e.g. reports/tv3/w6/approvals/TV3_R5_R6.json); TV2 does not sign on behalf of TV3.",
+    "R5 and R6 must remain in CONDITIONAL status in experiments/w6/registry.json until bilateral lock.",
+    "Official Test W4 must NOT be opened or accessed for training, hyperparameter tuning, or model selection.",
+    "Dataset train_expansion_w6_v1 must remain locked to release SHA a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5.",
+    "Source code under src/ must remain identical to commit 947fbb85aacec9417f248f5f1e1f08c2da75de09.",
+    "Runtime environment must match canonical lock 7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a.",
+    "Individual official runs must remain <= 2.0 GPU hours, and total TV3 GPU hours must remain <= 12.0 GPU hours."
+  ]
+}
