@@ -1,0 +1,29 @@
+﻿{
+  "receipt_type": "TV3_W6_R5_R6_APPROVAL",
+  "approver": "TV3",
+  "approver_email": "phuc.2474802010313@vanlanguni.vn",
+  "decision": "APPROVED_FOR_PROTOCOL_LOCK",
+  "runs": ["R5", "R6"],
+  "recipe": "R2",
+  "proposal_commit": "a6bfffb5391866001b83298983aed90e7a2d29ce",
+  "tv2_technical_approval_commit": "e4b5baeac94fbe16452d09dd4528e5a5186a59ad",
+  "source_commit": "947fbb85aacec9417f248f5f1e1f08c2da75de09",
+  "dataset": "train_expansion_w6_v1",
+  "dataset_provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "runtime_lock": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "frozen_configs": {
+    "R5": {
+      "seed": 42,
+      "path": "configs/w6/tv3/R5.frozen.json",
+      "file_sha256": "fd80bab2db8656e7265cb7325c498dd363434f83421f7835213539ccbb454413",
+      "canonical_sha256": "5c698bbc4e1d1e232ff8326eb7e4036265a77be317a39472f2fd92d7c9804b03"
+    },
+    "R6": {
+      "seed": 43,
+      "path": "configs/w6/tv3/R6.frozen.json",
+      "file_sha256": "0721f394b2e0cfb7575616c2197ee4db19126ee20b642627b2e5b79b6ac4c75b",
+      "canonical_sha256": "b33a1c6a8445f8d1d784c30533894f47da7bd64081575ece0d9d18fa9a7d3723"
+    }
+  },
+  "statement": "I, TV3, approve R5 and R6 for protocol lock using the frozen configs, dataset, source and runtime listed above. Official training starts only after bilateral protocol lock and execution registry validation."
+}
