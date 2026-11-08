@@ -24,3 +24,11 @@
   Khi nhận R5/R6: kiểm `git status`, tiến trình/cổng và thêm package pins riêng;
   không ghi đè benchmark01, intake hoặc sessions W4/W5/W6.
 - Không có training, official Test hoặc GPU job trong kế hoạch thực thi này.
+
+## Delivery
+
+- Code + benchmark + evidence đã push: `52fa734c22913912a4e9ea9071175d49fc6f781d`.
+- PR [#9](https://github.com/huyryan220806/Camera-Trap-ML/pull/9),
+  `feat/demo` → `main`, chờ TV2/TV3 kiểm tra chéo; chưa merge.
+- Server QA8766/8767 được dừng sau kiểm thử; giữ toàn bộ sessions và output.
+- R5/R6 chưa đăng ký/chạy, bổ sung sau khi TV4 gửi package mới.
