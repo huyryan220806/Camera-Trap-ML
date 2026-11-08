@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "verified": [
+    "actual invalid-size checkpoint",
+    "classify error",
+    "no partial boxes",
+    "no silent fallback"
+  ]
+}

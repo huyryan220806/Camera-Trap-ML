@@ -1,0 +1,29 @@
+test_invalid_logit_shape_and_nonfinite_fail_without_partial_results (test_tv4_w6.W6Tests.test_invalid_logit_shape_and_nonfinite_fail_without_partial_results) ... ok
+test_invalid_registry_format_rejected (test_tv4_w6.W6Tests.test_invalid_registry_format_rejected) ... ok
+test_legacy_routing (test_tv4_w6.W6Tests.test_legacy_routing) ... ok
+test_microbatch_and_cache_invalidation_by_config_identity (test_tv4_w6.W6Tests.test_microbatch_and_cache_invalidation_by_config_identity) ... ok
+test_missing_candidate_is_error_never_legacy_fallback (test_tv4_w6.W6Tests.test_missing_candidate_is_error_never_legacy_fallback) ... ERROR:root:Classifier failed (DINO_W6_R2); no fallback or partial predictions
+Traceback (most recent call last):
+  File "C:\Users\lequy\Documents\Codex\2026-10-01\https-github-com-huyryan220806-camera-trap\work\Camera-Trap-ML\src\demo\inference.py", line 70, in analyze_classified
+    predictions, proof['classifier'] = cache.predict(decode_image(data), detected['detections'], classifier)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lequy\Documents\Codex\2026-10-01\https-github-com-huyryan220806-camera-trap\work\Camera-Trap-ML\src\demo\dino_w6.py", line 122, in predict
+    logits, metadata = self.logits(crops, kind)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lequy\Documents\Codex\2026-10-01\https-github-com-huyryan220806-camera-trap\work\Camera-Trap-ML\src\demo\dino_w6.py", line 88, in logits
+    native, folder, config, entry, registry = self.validate(kind)
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lequy\Documents\Codex\2026-10-01\https-github-com-huyryan220806-camera-trap\work\Camera-Trap-ML\src\demo\dino_w6.py", line 55, in validate
+    raise ValueError('W6 candidate disabled; no fallback')
+ValueError: W6 candidate disabled; no fallback
+ok
+test_no_r5_r6_and_default_disabled (test_tv4_w6.W6Tests.test_no_r5_r6_and_default_disabled) ... ok
+test_per_detection_top3_and_ties (test_tv4_w6.W6Tests.test_per_detection_top3_and_ties) ... ok
+test_pinned_path_cannot_escape_outputs (test_tv4_w6.W6Tests.test_pinned_path_cannot_escape_outputs) ... ok
+test_pooling_registry_has_distinct_pins (test_tv4_w6.W6Tests.test_pooling_registry_has_distinct_pins) ... ok
+test_size_and_hash_mismatch_even_warm (test_tv4_w6.W6Tests.test_size_and_hash_mismatch_even_warm) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.452s
+
+OK

@@ -160,9 +160,19 @@ def main():
     parser.add_argument('--classifiers', type=Path, default=REGISTRY_PATH)
     parser.add_argument('--dino-package', type=Path, help='Opt-in candidate package directory; B2 remains default')
     parser.add_argument('--dino-repo', type=Path, help='Clean official architecture checkout at locked commit')
+    parser.add_argument('--w6-registry', type=Path, help='Explicit opt-in W6 registry for R1-R4')
     args = parser.parse_args()
     from src.demo.dino import DinoCache
     cache = DinoCache(ClassifierCache(args.classifiers), args.dino_package, args.dino_repo)
+    if args.w6_registry:
+        import torch
+        torch.set_num_threads(4)
+        torch.set_num_interop_threads(1)
+        torch.use_deterministic_algorithms(True)
+        torch.backends.cuda.matmul.allow_tf32 = False
+        torch.backends.cudnn.allow_tf32 = False
+        from src.demo.dino_w6 import W6Cache
+        cache = W6Cache(cache, args.dino_repo, args.w6_registry)
     handler = make_handler(MegaDetectorAdapter(), sample_rows(), cache)
     server = ThreadingHTTPServer(('127.0.0.1', args.port), handler)
     print(f'CameraTrapML demo: http://127.0.0.1:{server.server_port}', flush=True)

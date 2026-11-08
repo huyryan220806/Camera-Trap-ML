@@ -10,6 +10,7 @@ function clearResult() {
   $('timing').textContent = 'Chưa chạy'; $('export').disabled = true;
   $('classifier-state').textContent = $('classifier').value === 'none' ? 'Không dùng' : `${$('classifier').value} · Chưa chạy`;
   $('cache-state').textContent = 'Chưa dùng';
+  $('model-context').textContent = 'Chọn model và phân tích để xem version/dataset của kết quả.';
 }
 function setBusy(value) {
   working = value; $('busy').hidden = !value;
@@ -70,6 +71,10 @@ function render(data, classification) {
     : `${data.detections.length} vùng động vật. Chưa có dự đoán loài; cần kiểm tra.`;
   $('status').textContent = prefix + text;
   const metadata = classification?.provenance.classifier;
+  const spec = metadata?.preprocessing;
+  $('model-context').textContent = metadata
+    ? `${metadata.classifier_id} · ${spec.model_version || 'W5'} · dataset ${spec.dataset_version || 'comparison_v1'} · ${metadata.device.toUpperCase()} · SHA ${metadata.checkpoint_sha256.slice(0,12)}. GT-box validation không phải chất lượng toàn luồng detector → classifier. ${spec.approval || ''}`
+    : data.pipeline.mode === 'mock' ? 'Giả lập: không nạp model, box và score tổng hợp.' : 'Chưa có classifier chạy thành công cho kết quả này.';
   $('classifier-state').textContent = metadata ? `${metadata.classifier_id} · ${metadata.checkpoint_sha256.slice(0, 8)}`
     : classification ? (data.pipeline.mode === 'mock' ? 'Giả lập · Không nạp model' : 'Chưa chạy classifier') : 'Không dùng';
   $('cache-state').textContent = metadata ? `${metadata.cache_hit ? 'Tái sử dụng' : 'Nạp mới'} · ${metadata.model_load_count} lần nạp` : 'Chưa dùng';
@@ -131,7 +136,7 @@ $('classifier').onchange = () => {
   clearResult();
   const id = $('classifier').value;
   $('classification-settings').hidden = id === 'none';
-  $('crop-warning').hidden = id === 'none' || id === 'B2' || id === 'DINOv3_LP_run01';
+  $('crop-warning').hidden = !['B0','B1'].includes(id);
   $('crop-warning').textContent = `${id} học trên toàn ảnh. Kết quả trên crop chỉ để thử luồng tích hợp.`;
 };
 $('review-threshold').oninput = () => { $('review-value').textContent = Number($('review-threshold').value).toFixed(2); clearResult(); };
@@ -169,11 +174,17 @@ async function initialize() {
   try {
     const response = await fetch('/api/config'); if (!response.ok) throw new Error();
     const config = await response.json();
+    for (const [id, entry] of Object.entries(config.classifiers || {})) {
+      if (!Array.from($('classifier').options).some(option => option.value === id)) {
+        const option = document.createElement('option'); option.value = id;
+        $('classifier').append(option);
+      }
+    }
     for (const option of $('classifier').options) {
       const entry = config.classifiers?.[option.value];
       if (!entry) continue;
       option.disabled = !(entry.enabled && entry.checkpoint_present);
-      option.textContent = `${option.value} · ${entry.enabled ? (entry.checkpoint_present ? 'Checkpoint có sẵn' : 'Thiếu checkpoint') : 'Chưa bàn giao'}`;
+      option.textContent = `${option.value} · ${entry.feature_dim ? entry.feature_dim + 'D · Ứng viên CPU · ' : ''}${entry.enabled ? (entry.checkpoint_present ? 'Checkpoint có sẵn' : 'Thiếu checkpoint') : 'Chưa bàn giao'}`;
     }
     $('runtime').textContent = config.package_version ? `MD ${config.package_version}` : 'Chưa cài đặt';
     window.demoClassNames = config.class_names || [];

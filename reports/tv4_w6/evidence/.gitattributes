@@ -1,0 +1,2 @@
+*.txt -text whitespace=cr-at-eol,-blank-at-eol
+*.csv -text whitespace=cr-at-eol

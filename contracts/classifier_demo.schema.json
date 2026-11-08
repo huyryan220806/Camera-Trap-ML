@@ -12,14 +12,14 @@
       "type": "object", "additionalProperties": false,
       "required": ["requested_classifier", "classifier", "detector", "ignored_non_animals", "score_kind", "scores_calibrated", "crop_policy", "max_boxes", "training_overlap_swg", "training_source", "warnings"],
       "properties": {
-        "requested_classifier": {"enum": ["B0", "B1", "B2", "DINOv3_LP_run01"]},
+        "requested_classifier": {"enum": ["B0", "B1", "B2", "DINOv3_LP_run01", "DINO_W6_R1", "DINO_W6_R2", "DINO_W6_R3", "DINO_W6_R4"]},
         "classifier": {
           "oneOf": [
             {"type": "null"},
             {"type": "object", "additionalProperties": false,
              "required": ["classifier_id", "checkpoint_sha256", "training_input", "inference_input", "preprocessing", "cache_hit", "model_load_count", "device"],
              "properties": {
-               "classifier_id": {"enum": ["B0", "B1", "B2", "DINOv3_LP_run01"]},
+               "classifier_id": {"enum": ["B0", "B1", "B2", "DINOv3_LP_run01", "DINO_W6_R1", "DINO_W6_R2", "DINO_W6_R3", "DINO_W6_R4"]},
                "checkpoint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
                "training_input": {"enum": ["full_image", "crop"]},
                "inference_input": {"const": "detector_crop"},
