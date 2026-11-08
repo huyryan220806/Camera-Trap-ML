@@ -1,0 +1,105 @@
+{
+  "status": "DRAFT",
+  "seed": 43,
+  "dataset": "train_expansion_w6_v1",
+  "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "init_checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "backbone": "dinov3_vits16",
+  "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+  "pretrained_sha256": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d",
+  "preprocessing": {
+    "color": "RGB",
+    "exif_transpose": false,
+    "padding": 0,
+    "bbox": "frozen_integer_xyxy_exclusive",
+    "resize": [
+      256,
+      256
+    ],
+    "interpolation": "bilinear",
+    "antialias": true,
+    "resize_dtype": "uint8",
+    "output_dtype": "float32",
+    "scale": true,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "runtime": {
+    "precision": "FP32",
+    "amp": false,
+    "tf32": false,
+    "deterministic": true,
+    "device": "cuda",
+    "num_threads": 10,
+    "num_interop_threads": 10,
+    "source_sha": null,
+    "runtime_lock": null
+  },
+  "implementation": {
+    "adamw_betas": [
+      0.9,
+      0.999
+    ],
+    "adamw_eps": 1e-08,
+    "adamw_amsgrad": false,
+    "optimizer_foreach": false,
+    "warmup": "epoch1=0.5,epoch2=1;cosine(epoch-2)/18;epoch20=0",
+    "mode": "R2:last_two_blocks_norm_head_train_rest_eval;R1_R0:head_train_backbone_eval",
+    "flip": "independent_per_crop_before_resize",
+    "validation_crop_batch": 8,
+    "sampler": "python_shuffle_parent_groups_epoch_boundary",
+    "gradient_clip": null
+  },
+  "loss": "mean_parent_mean_crop_ce_once",
+  "selection": "image_macro_f1",
+  "checkpoint_tie": "earliest_epoch",
+  "drop_last": false,
+  "max_gpu_hours": 2,
+  "num_classes": 8,
+  "run_id": "R6",
+  "recipe": "R2",
+  "init_mode": "W5_full_backbone_and_head",
+  "pooling": "x_norm_clstoken",
+  "feature_dim": 384,
+  "trainable": [
+    "last_2_blocks",
+    "final_norm",
+    "head"
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "backbone_lr": 1e-05,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "no_decay": [
+      "bias",
+      "norm"
+    ]
+  },
+  "scheduler": {
+    "name": "warmup_then_cosine",
+    "warmup_epochs": 2,
+    "epochs": 20
+  },
+  "epochs": 20,
+  "patience": 5,
+  "parent_batch": 16,
+  "crop_microbatch": 8,
+  "augmentation": {
+    "horizontal_flip": 0.5,
+    "vertical_flip": 0,
+    "random_crop": false
+  },
+  "cache": {
+    "enabled": false
+  },
+  "final_parent_batch_denominator": "actual_parent_count"
+}
