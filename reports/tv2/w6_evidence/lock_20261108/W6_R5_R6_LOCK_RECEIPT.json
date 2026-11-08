@@ -1,0 +1,76 @@
+{
+  "receipt_type": "TV2_W6_R5_R6_PROTOCOL_LOCK",
+  "date": "2026-11-08",
+  "scope": [
+    "R5",
+    "R6"
+  ],
+  "decision": "APPROVED_FOR_OFFICIAL_R5_R6_ONLY",
+  "proposal_commit": "a6bfffb5391866001b83298983aed90e7a2d29ce",
+  "tv2_technical_approval_commit": "e4b5baeac94fbe16452d09dd4528e5a5186a59ad",
+  "tv3_approval_commit": "9671b720a9ee0745c392fd6f6c9a9a2b1eae8c1f",
+  "approval_decisions": {
+    "TV2": {
+      "path": "reports/tv2/TV2_W6_R5_R6_TECHNICAL_APPROVAL_2026-11-08.md",
+      "commit": "e4b5baeac94fbe16452d09dd4528e5a5186a59ad"
+    },
+    "TV3": {
+      "path": "reports/tv3/w6/approvals/TV3_R5_R6.json",
+      "commit": "9671b720a9ee0745c392fd6f6c9a9a2b1eae8c1f",
+      "link": "https://github.com/huyryan220806/Camera-Trap-ML/blob/9671b720a9ee0745c392fd6f6c9a9a2b1eae8c1f/reports/tv3/w6/approvals/TV3_R5_R6.json"
+    }
+  },
+  "source_commit": "947fbb85aacec9417f248f5f1e1f08c2da75de09",
+  "runtime_lock_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "dataset": {
+    "name": "train_expansion_w6_v1",
+    "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "approval_receipt": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json",
+    "approval_commit": "def28ef14605d5615e5b05a479f03aaad6376224"
+  },
+  "runs": {
+    "R5": {
+      "seed": 42,
+      "recipe": "R2",
+      "config_path": "configs/w6/tv3/R5.frozen.json",
+      "config_canonical_sha256": "5c698bbc4e1d1e232ff8326eb7e4036265a77be317a39472f2fd92d7c9804b03",
+      "config_raw_sha256": "fd80bab2db8656e7265cb7325c498dd363434f83421f7835213539ccbb454413",
+      "smoke_path": "reports/tv3/w6/smoke/R5_smoke01.json",
+      "smoke_raw_sha256": "dc7f44eb36ac4211b659c52b3ebcdaecd154d609dc5a6ac2cc5506e41b55282d"
+    },
+    "R6": {
+      "seed": 43,
+      "recipe": "R2",
+      "config_path": "configs/w6/tv3/R6.frozen.json",
+      "config_canonical_sha256": "b33a1c6a8445f8d1d784c30533894f47da7bd64081575ece0d9d18fa9a7d3723",
+      "config_raw_sha256": "0721f394b2e0cfb7575616c2197ee4db19126ee20b642627b2e5b79b6ac4c75b",
+      "smoke_path": "reports/tv3/w6/smoke/R6_smoke01.json",
+      "smoke_raw_sha256": "85872af6807ac76c5a4d9734bd7bc0b9fe0cac71e3310c726c65242b0f79bf94"
+    }
+  },
+  "prior_official_attempts": 4,
+  "official_attempt_ids": [
+    "R1_attempt01",
+    "R2_attempt01",
+    "R3_attempt01",
+    "R4_attempt01"
+  ],
+  "tv3_measured_gpu_hours_before_new_official": 2.281474072611112,
+  "new_official_attempts_at_lock": 0,
+  "expansion_data_review": "PASS",
+  "validator_results": {
+    "schema_validation": "PASS",
+    "w6_validate_recipe_config_R5": "PASS",
+    "w6_validate_recipe_config_R6": "PASS",
+    "w6_validate_registry": "PASS",
+    "w6_official_gate_R5": "PASS",
+    "w6_official_gate_R6": "PASS"
+  },
+  "conditions": [
+    "Committed exact frozen configs/source/smoke/approval and approved registry",
+    "Retain R1-R4 official attempts and all 6 preparation smokes",
+    "Retain TV3 usage.json including reload sessions",
+    "R5/R6 each <=2h, all official attempts <=6, TV3 all GPU <=12h",
+    "No W4 Official Test; no official training until booking & runtime verified"
+  ]
+}
