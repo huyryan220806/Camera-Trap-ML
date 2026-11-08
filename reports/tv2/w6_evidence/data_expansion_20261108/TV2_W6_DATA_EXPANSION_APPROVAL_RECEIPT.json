@@ -1,0 +1,303 @@
+{
+  "receipt_type": "TV2_W6_DATA_EXPANSION_APPROVAL",
+  "reviewer": "TV2 (Baseline & Evaluation)",
+  "dataset_version": "train_expansion_w6_v1",
+  "proposed_status": "APPROVED",
+  "current_lock_status": "OFFICIALLY_APPROVED_BY_TV2",
+  "source_repository": "huyryan220806/Camera-Trap-ML",
+  "source_branch": "feat/metadata-split",
+  "source_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "release_provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "provenance_files_count": 19,
+  "candidate_accounting": {
+    "requested_candidates": 1665,
+    "retained_additional": 1446,
+    "quarantined_additional": 219,
+    "quarantine_breakdown": {
+      "exact_duplicate_pixel_sha256": 5,
+      "near_duplicate_pending_review": 191,
+      "visual_ambiguity_pending_expert": 23
+    },
+    "original_train_images": 2800,
+    "original_train_boxes": 3125,
+    "expanded_train_images": 4246,
+    "expanded_train_boxes": 4729,
+    "validation_images_preserved": 600,
+    "validation_boxes_preserved": 680,
+    "historical_test_images_preserved": 600,
+    "historical_test_boxes_preserved": 680,
+    "holdout_audit_images": 109
+  },
+  "by_class_distribution": [
+    {
+      "class_id": 0,
+      "label": "large_antlered_muntjac",
+      "requested": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 194,
+        "boxes": 260
+      },
+      "added": {
+        "images": 234,
+        "sequences": 234,
+        "locations": 185,
+        "boxes": 243
+      },
+      "excluded": 16,
+      "train": {
+        "images": 584,
+        "sequences": 562,
+        "locations": 199,
+        "boxes": 602
+      }
+    },
+    {
+      "class_id": 1,
+      "label": "annamite_striped_rabbit",
+      "requested": {
+        "images": 13,
+        "sequences": 13,
+        "locations": 9,
+        "boxes": 13
+      },
+      "added": {
+        "images": 10,
+        "sequences": 10,
+        "locations": 7,
+        "boxes": 10
+      },
+      "excluded": 3,
+      "train": {
+        "images": 360,
+        "sequences": 212,
+        "locations": 61,
+        "boxes": 360
+      }
+    },
+    {
+      "class_id": 2,
+      "label": "sambar",
+      "requested": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 152,
+        "boxes": 276
+      },
+      "added": {
+        "images": 222,
+        "sequences": 222,
+        "locations": 140,
+        "boxes": 245
+      },
+      "excluded": 28,
+      "train": {
+        "images": 572,
+        "sequences": 530,
+        "locations": 167,
+        "boxes": 666
+      }
+    },
+    {
+      "class_id": 3,
+      "label": "chinese_serow",
+      "requested": {
+        "images": 206,
+        "sequences": 206,
+        "locations": 91,
+        "boxes": 211
+      },
+      "added": {
+        "images": 164,
+        "sequences": 164,
+        "locations": 86,
+        "boxes": 169
+      },
+      "excluded": 42,
+      "train": {
+        "images": 514,
+        "sequences": 451,
+        "locations": 148,
+        "boxes": 529
+      }
+    },
+    {
+      "class_id": 4,
+      "label": "common_palm_civet",
+      "requested": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 126,
+        "boxes": 251
+      },
+      "added": {
+        "images": 186,
+        "sequences": 186,
+        "locations": 114,
+        "boxes": 187
+      },
+      "excluded": 64,
+      "train": {
+        "images": 536,
+        "sequences": 462,
+        "locations": 173,
+        "boxes": 539
+      }
+    },
+    {
+      "class_id": 5,
+      "label": "masked_palm_civet",
+      "requested": {
+        "images": 208,
+        "sequences": 208,
+        "locations": 137,
+        "boxes": 214
+      },
+      "added": {
+        "images": 171,
+        "sequences": 171,
+        "locations": 122,
+        "boxes": 175
+      },
+      "excluded": 37,
+      "train": {
+        "images": 521,
+        "sequences": 435,
+        "locations": 220,
+        "boxes": 528
+      }
+    },
+    {
+      "class_id": 6,
+      "label": "silver_pheasant",
+      "requested": {
+        "images": 238,
+        "sequences": 238,
+        "locations": 121,
+        "boxes": 306
+      },
+      "added": {
+        "images": 220,
+        "sequences": 220,
+        "locations": 116,
+        "boxes": 285
+      },
+      "excluded": 18,
+      "train": {
+        "images": 570,
+        "sequences": 499,
+        "locations": 179,
+        "boxes": 735
+      }
+    },
+    {
+      "class_id": 7,
+      "label": "eurasian_wild_pig",
+      "requested": {
+        "images": 250,
+        "sequences": 250,
+        "locations": 250,
+        "boxes": 304
+      },
+      "added": {
+        "images": 239,
+        "sequences": 239,
+        "locations": 239,
+        "boxes": 290
+      },
+      "excluded": 11,
+      "train": {
+        "images": 589,
+        "sequences": 572,
+        "locations": 300,
+        "boxes": 770
+      }
+    }
+  ],
+  "visual_review_audit": {
+    "contact_sheets_zip_sha256": "709fea5113fd182ce8eaa6777aef0c32d7bcf9bb227f42c91a340aec00ca13b0",
+    "contact_sheets_zip_bytes": 5167433,
+    "sample_size": 80,
+    "retained_count": 57,
+    "quarantined_count": 23,
+    "sheet_pixel_template_mae_max": 0.5,
+    "sheet_pixel_template_mae_mean": 0.4,
+    "sheet_mapping_verified": true,
+    "civet_review_clarification": {
+      "index_44": {
+        "official_uuid": "d814f364-8c29-11eb-bd78-000d3a74c7de",
+        "label": "common_palm_civet",
+        "action": "retain_metadata_label",
+        "explanation": "Official source label retained. The previous report text colloquially said 'cầy vòi mốc', which was an inadvertent Vietnamese phrasing inversion. TV1 correctly noted 'giữ nhãn nguồn, không kết luận phân loài'. No subspecies reclassification."
+      },
+      "index_52": {
+        "official_uuid": "d2f341cf-8c29-11eb-83a1-000d3a74c7de",
+        "label": "masked_palm_civet",
+        "action": "retain_metadata_label",
+        "explanation": "Official source label retained. The previous report text colloquially said 'cầy vòi hương', which was an inadvertent Vietnamese phrasing inversion. TV1 correctly noted 'giữ nhãn nguồn'. No subspecies reclassification."
+      },
+      "index_59": {
+        "official_uuid": "d4ea5bb4-8c29-11eb-9c1b-000d3a74c7de",
+        "label": "masked_palm_civet",
+        "action": "retain_metadata_label",
+        "explanation": "Official source label retained. The previous report text colloquially said 'cầy vòi hương', which was an inadvertent Vietnamese phrasing inversion. TV1 correctly noted 'giữ nhãn nguồn'. No subspecies reclassification."
+      }
+    }
+  },
+  "gate_evaluations": {
+    "RELEASE_PROVENANCE_SNAPSHOT": "PASS",
+    "CANDIDATE_PARTITION_ACCOUNTING": "PASS",
+    "PROTECTED_SPLITS_PRESERVATION": "PASS",
+    "LEAKAGE_AND_QUARANTINE_AUDIT": "PASS",
+    "RETAINED_RASTER_DECODE_INTEGRITY": "PASS",
+    "VISUAL_REVIEW_OF_QUARANTINE": "PASS",
+    "TV2_DATA_ACCEPTANCE": "READY_FOR_TV2_SIGNOFF",
+    "HOLDOUT_RASTER_AUDIT": "PASS"
+  },
+  "constraints_and_risks": {
+    "class_imbalance": "Annamite striped rabbit only received 10 new training images (total 360 images), while other classes have 514-589 images. In accordance with W6 protocol, no re-weighting or custom sampling is introduced to preserve isolated data expansion evaluation.",
+    "near_duplicate_interpretation": "191 near-duplicate suspects remain conservatively quarantined in excluded.jsonl based on perceptual hash / temporal distance; they are NOT confirmed duplicate images.",
+    "taxonomic_uncertainty": "Night IR camera trap imagery cannot reliably distinguish common palm civet from masked palm civet without visible facial mask features; baseline metadata labels are maintained without modification.",
+    "test_set_isolation": "Official Test W4 remains strictly unopened, unread, and unreferenced. 0 test images decoded or evaluated.",
+    "training_restriction": "R5 and R6 training remain BLOCKED and CONDITIONAL. Training cannot begin until user reviews this draft receipt and provides explicit sign-off.",
+    "label_verification_scope": "TV2 visual audit was conducted on a fixed stratified sample of 80 images (10 per class) under Seed 42. This receipt does NOT claim or assert that all 1,446 retained images have been individually inspected or confirmed by biological taxonomists; they inherit source provider metadata under automated provenance filters."
+  },
+  "validation_and_test_evidence": {
+    "test_w6_validation": "51/51 tests PASS",
+    "test_w5_validation": "32/32 tests PASS",
+    "test_contracts_and_evaluation": "22/22 tests PASS",
+    "test_logs_directory": "outputs/tv2_w6/final_data_approval_prep_20261108/",
+    "git_evidence_directory": "reports/tv2/w6_evidence/data_expansion_20261108/",
+    "reconciliation_json": "reports/tv2/w6_evidence/data_expansion_20261108/official_80_audit_reconciliation.json",
+    "mismatches_json": "reports/tv2/w6_evidence/data_expansion_20261108/mismatches_53.json",
+    "holdout_raster_audit_json": "reports/tv2/w6_evidence/data_expansion_20261108/holdout_raster_independent_audit.json",
+    "holdout_download_events": "reports/tv2/w6_evidence/data_expansion_20261108/holdout_download_events.jsonl"
+  },
+  "date_prepared": "2026-11-08",
+  "is_draft": false,
+  "user_signature_pending": false,
+  "holdout_raster_audit": {
+    "total_images": 109,
+    "pass_count": 109,
+    "fail_count": 0,
+    "missing_count": 0,
+    "formats": {
+      "MPO": 63,
+      "JPEG": 46
+    },
+    "total_bytes": 173588482,
+    "byte_sha256_match_count": 109,
+    "pixel_sha256_match_count": 109,
+    "dimensions_match_count": 109,
+    "format_match_count": 109,
+    "model_inference_run": false,
+    "leakage_in_train": 0,
+    "leakage_in_val": 0,
+    "evidence_file": "reports/tv2/w6_evidence/data_expansion_20261108/holdout_raster_independent_audit.json"
+  },
+  "status": "APPROVED",
+  "approver": "TV2 (Baseline & Evaluation)",
+  "approval_timestamp_iso": "2026-11-08T12:48:00+07:00",
+  "signed": true,
+  "statement": "TV2 officially approves dataset release train_expansion_w6_v1 from commit 11e451071f58146522df20e1890cc6fe6e488eb0 with release provenance SHA-256 a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5. All 7 independent TV2 gates have passed: Provenance, Accounting, Protected Splits, Leakage/Quarantine, Retained Raster Decode, Visual Review (80 samples audited, 23 ambiguous defects verified), and Holdout Raster Audit (109/109 MPO/JPEG decoded and dual-hashed). Limitations noted: only 80 samples were visually audited (no claim of exhaustive expert review for all 1,446 images); 191 near-duplicates are conservatively quarantined as suspects; Annamite striped rabbit only received 10 added images; Official Test W4 remains completely unopened. This approval does NOT authorize R5/R6 training or change R5/R6 status from CONDITIONAL."
+}

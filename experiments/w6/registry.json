@@ -21,9 +21,9 @@
     "evidence_path": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
   },
   "data_review": {
-    "status": "PENDING",
+    "status": "PASS",
     "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
-    "evidence_path": null
+    "evidence_path": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json"
   },
   "replay_attempts": [
     {

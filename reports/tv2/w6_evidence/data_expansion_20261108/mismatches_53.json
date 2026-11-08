@@ -1,0 +1,566 @@
+{
+  "total_audited": 80,
+  "matches_count": 27,
+  "mismatches_count": 53,
+  "matching_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    10,
+    15,
+    25,
+    30,
+    31,
+    34,
+    35,
+    38,
+    40,
+    42,
+    45,
+    48,
+    54,
+    56,
+    58,
+    60,
+    64,
+    66,
+    68,
+    76,
+    80
+  ],
+  "mismatches": [
+    {
+      "index": 6,
+      "reported_id": "d3923362-8c29-11eb-bca0-000d3a74c7de",
+      "official_id": "c82cc966-8c29-11eb-b1d1-000d3a74c7de",
+      "reported_label": "large_antlered_muntjac",
+      "official_label": "large_antlered_muntjac",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Góc nhìn từ sau, thân và chân trong box; đây là tư thế khó, không tự đổi nhãn."
+    },
+    {
+      "index": 7,
+      "reported_id": "cf597405-8c29-11eb-be42-000d3a74c7de",
+      "official_id": "d0d86fd0-8c29-11eb-a193-000d3a74c7de",
+      "reported_label": "large_antlered_muntjac",
+      "official_label": "large_antlered_muntjac",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh ban ngày thấy đầu, sừng và thân, có bóng cây; giữ nhãn nguồn."
+    },
+    {
+      "index": 8,
+      "reported_id": "ca9b19d2-8c29-11eb-ab0a-000d3a74c7de",
+      "official_id": "cc6007f4-8c29-11eb-b12b-000d3a74c7de",
+      "reported_label": "large_antlered_muntjac",
+      "official_label": "large_antlered_muntjac",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh đêm nhìn phía trước, thấy đầu, tai và chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 11,
+      "reported_id": "ce97a5b3-8c29-11eb-b59c-000d3a74c7de",
+      "official_id": "c91ff728-8c29-11eb-9168-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR phản quang mắt mạnh nhưng hình dáng thân/chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "index": 12,
+      "reported_id": "cb624239-8c29-11eb-8c76-000d3a74c7de",
+      "official_id": "c98b3583-8c29-11eb-9280-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh IR thấy tai, đầu và vệt lông trên thân; giữ nhãn nguồn."
+    },
+    {
+      "index": 13,
+      "reported_id": "cb1f8df9-8c29-11eb-8314-000d3a74c7de",
+      "official_id": "d02cc6ea-8c29-11eb-b7d6-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thấy đầu, tai và thân, mắt chói; giữ nhãn nguồn."
+    },
+    {
+      "index": 14,
+      "reported_id": "d686f059-8c29-11eb-b12a-000d3a74c7de",
+      "official_id": "c86f4802-8c29-11eb-b9cb-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu đêm hơi nhòe, còn thấy tai và hoa văn thân; giữ nhãn nguồn."
+    },
+    {
+      "index": 16,
+      "reported_id": "cb251c5b-8c29-11eb-91cf-000d3a74c7de",
+      "official_id": "cf0d6070-8c29-11eb-ac21-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR mắt thành vệt sáng, thân và tư thế con vật vẫn phân biệt được; giữ nhãn nguồn."
+    },
+    {
+      "index": 17,
+      "reported_id": "cb62424b-8c29-11eb-90ca-000d3a74c7de",
+      "official_id": "cfc8a062-8c29-11eb-a230-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Nhòe chuyển động nhưng còn hình dáng thân và vệt lông; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "index": 18,
+      "reported_id": "d686f058-8c29-11eb-a241-000d3a74c7de",
+      "official_id": "c91ff786-8c29-11eb-b907-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Một phần lá che, vẫn thấy thân và tai; giữ nhãn nguồn."
+    },
+    {
+      "index": 19,
+      "reported_id": "cdca1330-8c29-11eb-a7aa-000d3a74c7de",
+      "official_id": "cc13b8dd-8c29-11eb-b488-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Mắt bị kéo vệt sáng nhưng thân/chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 20,
+      "reported_id": "d686f057-8c29-11eb-b26a-000d3a74c7de",
+      "official_id": "c91ff73f-8c29-11eb-9f6e-000d3a74c7de",
+      "reported_label": "annamite_striped_rabbit",
+      "official_label": "annamite_striped_rabbit",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Con vật gần máy, đầu sát mép crop, thân và chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "index": 21,
+      "reported_id": "d08fb06b-8c29-11eb-a1d2-000d3a74c7de",
+      "official_id": "ca04d132-8c29-11eb-b965-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Nhìn từ sau, đầu quay ngang và chân rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 22,
+      "reported_id": "d08fb06c-8c29-11eb-a2a4-000d3a74c7de",
+      "official_id": "c89336f4-8c29-11eb-981c-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Nhìn nghiêng ban ngày, thân/đầu/chân rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 23,
+      "reported_id": "cad440f3-8c29-11eb-8968-000d3a74c7de",
+      "official_id": "d0fc37ea-8c29-11eb-9392-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thấy thân, sừng và đầu sau cành nhỏ; giữ nhãn nguồn."
+    },
+    {
+      "index": 24,
+      "reported_id": "cad440f2-8c29-11eb-8e01-000d3a74c7de",
+      "official_id": "d0613674-8c29-11eb-bd8e-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Con vật sát mép trái, đầu/sừng và chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 26,
+      "reported_id": "d3ba17f2-8c29-11eb-98ff-000d3a74c7de",
+      "official_id": "c97cf525-8c29-11eb-accf-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh IR có sương/dư sáng, còn thấy đầu cúi và dáng thân; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "index": 27,
+      "reported_id": "cad440f4-8c29-11eb-a6b1-000d3a74c7de",
+      "official_id": "cad1e192-8c29-11eb-8ddb-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh ban ngày thấy đầu, sừng và chân dù có bóng cây; giữ nhãn nguồn."
+    },
+    {
+      "index": 28,
+      "reported_id": "ce3e659c-8c29-11eb-9c12-000d3a74c7de",
+      "official_id": "cfa6cbeb-8c29-11eb-8a8b-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Thân bị dư sáng IR, đầu và sừng vẫn thấy rõ; giữ nhãn nguồn, không coi đây là ảnh sạch hoàn hảo."
+    },
+    {
+      "index": 29,
+      "reported_id": "cad440f5-8c29-11eb-9a2e-000d3a74c7de",
+      "official_id": "d0df96a2-8c29-11eb-9fa7-000d3a74c7de",
+      "reported_label": "sambar",
+      "official_label": "sambar",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Góc sau bị thân cây che, vẫn thấy toàn thân/chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 32,
+      "reported_id": "d8293774-8c29-11eb-9114-000d3a74c7de",
+      "official_id": "d2028617-8c29-11eb-a63f-000d3a74c7de",
+      "reported_label": "chinese_serow",
+      "official_label": "chinese_serow",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh IR hạt lớn nhưng thân, đầu và chân còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "index": 33,
+      "reported_id": "da887e1f-8c29-11eb-9bf6-000d3a74c7de",
+      "official_id": "dc51c5d2-8c29-11eb-a303-000d3a74c7de",
+      "reported_label": "chinese_serow",
+      "official_label": "chinese_serow",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Đầu ngoài mép trái, thân, chân và đuôi rõ; giữ nhãn nguồn, không xác nhận loài bằng ảnh riêng lẻ."
+    },
+    {
+      "index": 36,
+      "reported_id": "d30e37bc-8c29-11eb-8926-000d3a74c7de",
+      "official_id": "d86acd7a-8c29-11eb-8cc4-000d3a74c7de",
+      "reported_label": "chinese_serow",
+      "official_label": "chinese_serow",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh đêm thấy thân, bộ lông, chân và tai; giữ nhãn nguồn."
+    },
+    {
+      "index": 37,
+      "reported_id": "d30e37bd-8c29-11eb-8b01-000d3a74c7de",
+      "official_id": "dc22154e-8c29-11eb-8672-000d3a74c7de",
+      "reported_label": "chinese_serow",
+      "official_label": "chinese_serow",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh IR cận đầu, tai và sừng thấy rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 39,
+      "reported_id": "c8b74659-8c29-11eb-a83a-000d3a74c7de",
+      "official_id": "ce4d958f-8c29-11eb-98ae-000d3a74c7de",
+      "reported_label": "chinese_serow",
+      "official_label": "chinese_serow",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Góc sau ban ngày, thấy tai, thân, chân, có mảng nắng mạnh; giữ nhãn nguồn."
+    },
+    {
+      "index": 41,
+      "reported_id": "ce9a4918-8c29-11eb-987a-000d3a74c7de",
+      "official_id": "ceed47be-8c29-11eb-8283-000d3a74c7de",
+      "reported_label": "common_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Thấy thân và đuôi dài, cành che nhẹ, đầu sát mép; giữ nhãn metadata, chưa phân biệt chuyên gia hai loài cầy."
+    },
+    {
+      "index": 43,
+      "reported_id": "d3ba1828-8c29-11eb-b541-000d3a74c7de",
+      "official_id": "c90a7d48-8c29-11eb-973e-000d3a74c7de",
+      "reported_label": "common_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR nhìn nghiêng, thấy thân, đầu và đuôi; giữ nhãn nguồn."
+    },
+    {
+      "index": 44,
+      "reported_id": "ccdf8f9f-8c29-11eb-ae9f-000d3a74c7de",
+      "official_id": "d814f364-8c29-11eb-bd78-000d3a74c7de",
+      "reported_label": "common_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thấy thân và đuôi, đầu sát mép phải; giữ nhãn nguồn, không kết luận phân loài."
+    },
+    {
+      "index": 46,
+      "reported_id": "cf7974da-8c29-11eb-bfa2-000d3a74c7de",
+      "official_id": "da9b1d4a-8c29-11eb-81cc-000d3a74c7de",
+      "reported_label": "common_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu đêm thấy thân/đuôi, có cành che; giữ nhãn nguồn."
+    },
+    {
+      "index": 47,
+      "reported_id": "cf7974db-8c29-11eb-b4f0-000d3a74c7de",
+      "official_id": "d87dd964-8c29-11eb-adb9-000d3a74c7de",
+      "reported_label": "common_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Nhìn nghiêng sau cành, hình dáng thân và đuôi còn thấy; giữ nhãn nguồn."
+    },
+    {
+      "index": 49,
+      "reported_id": "cdca142e-8c29-11eb-8051-000d3a74c7de",
+      "official_id": "ccf3d454-8c29-11eb-a5fb-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR có vệt phản quang mắt, còn hình dáng thân và chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 50,
+      "reported_id": "ca9b1a5e-8c29-11eb-9d18-000d3a74c7de",
+      "official_id": "cbdcebdf-8c29-11eb-a16e-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "common_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thấy thân và đuôi rõ, cành che một phần; giữ nhãn nguồn."
+    },
+    {
+      "index": 51,
+      "reported_id": "ccdf8f57-8c29-11eb-a02d-000d3a74c7de",
+      "official_id": "ceb674a4-8c29-11eb-9fc8-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu hơi nhòe chuyển động, còn thân và đầu có dải tối; giữ nhãn metadata."
+    },
+    {
+      "index": 52,
+      "reported_id": "cb731006-8c29-11eb-9828-000d3a74c7de",
+      "official_id": "d2f341cf-8c29-11eb-83a1-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thân/chân và đầu còn thấy dù hơi nhòe; giữ nhãn nguồn."
+    },
+    {
+      "index": 53,
+      "reported_id": "ce203b53-8c29-11eb-9da0-000d3a74c7de",
+      "official_id": "ce1920e5-8c29-11eb-bd85-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR mắt chói và mờ, vẫn thấy thân/chân/đuôi; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "index": 55,
+      "reported_id": "c89a6fb5-8c29-11eb-89c0-000d3a74c7de",
+      "official_id": "ca8cbea9-8c29-11eb-b817-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR thấy thân, đầu và đuôi giữa cây; giữ nhãn nguồn."
+    },
+    {
+      "index": 57,
+      "reported_id": "cb731007-8c29-11eb-a6b1-000d3a74c7de",
+      "official_id": "dbe1b7cc-8c29-11eb-bba5-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy thân, chân và đầu, cành che nhẹ; giữ nhãn nguồn."
+    },
+    {
+      "index": 59,
+      "reported_id": "cae95811-8c29-11eb-8316-000d3a74c7de",
+      "official_id": "d4ea5bb4-8c29-11eb-9c1b-000d3a74c7de",
+      "reported_label": "masked_palm_civet",
+      "official_label": "masked_palm_civet",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR nhìn ngang thấy thân và mặt, hơi nhòe; giữ nhãn nguồn."
+    },
+    {
+      "index": 61,
+      "reported_id": "cc9074ba-8c29-11eb-92ae-000d3a74c7de",
+      "official_id": "cea82661-8c29-11eb-be58-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Hai box thấy hai con chim, gồm kiểu lông sáng và sẫm; giữ cả hai box theo metadata."
+    },
+    {
+      "index": 62,
+      "reported_id": "d1ea9ae2-8c29-11eb-8288-000d3a74c7de",
+      "official_id": "d831980c-8c29-11eb-931e-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Chim nhỏ hơi mờ nhưng thấy đầu, thân, chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 63,
+      "reported_id": "cc9074b9-8c29-11eb-873b-000d3a74c7de",
+      "official_id": "d671564e-8c29-11eb-acaf-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Hai box thấy hai con chim với màu lông khác nhau; giữ cả hai, không suy ra nhiều loài chỉ do khác màu."
+    },
+    {
+      "index": 65,
+      "reported_id": "d1ea9ae3-8c29-11eb-b26a-000d3a74c7de",
+      "official_id": "d531de5e-8c29-11eb-86e4-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Chim ở mép phải, đầu ngoài vùng thấy nhưng lông cánh/đuôi và chân còn rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 67,
+      "reported_id": "cc9074b8-8c29-11eb-9407-000d3a74c7de",
+      "official_id": "d25d0fd7-8c29-11eb-a9a2-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy đầu, thân và chân cùng hoa văn lông rõ; giữ nhãn nguồn."
+    },
+    {
+      "index": 69,
+      "reported_id": "d3ba1851-8c29-11eb-a579-000d3a74c7de",
+      "official_id": "d137d7f2-8c29-11eb-8138-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "IR sương nhưng thấy thân chim, cánh/đuôi và chân; giữ nhãn nguồn, ghi hạn chế."
+    },
+    {
+      "index": 70,
+      "reported_id": "d1ea9ae1-8c29-11eb-b054-000d3a74c7de",
+      "official_id": "cfb7f470-8c29-11eb-9ae3-000d3a74c7de",
+      "reported_label": "silver_pheasant",
+      "official_label": "silver_pheasant",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Chim sát mép ảnh, thân/cánh/đuôi và chân còn thấy, hơi mờ; giữ nhãn nguồn."
+    },
+    {
+      "index": 71,
+      "reported_id": "c873ad3f-8c29-11eb-bb75-000d3a74c7de",
+      "official_id": "d06398a5-8c29-11eb-a1c1-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu nhìn nghiêng thấy thân, đầu cúi và chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 72,
+      "reported_id": "c873ad41-8c29-11eb-964c-000d3a74c7de",
+      "official_id": "cb4b72cd-8c29-11eb-a296-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu thấy mặt, tai, thân và chân; giữ nhãn nguồn."
+    },
+    {
+      "index": 73,
+      "reported_id": "c873ad40-8c29-11eb-a50e-000d3a74c7de",
+      "official_id": "d9b8970e-8c29-11eb-8162-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu nhìn nghiêng thấy gần toàn thân, đầu cúi; giữ nhãn nguồn."
+    },
+    {
+      "index": 74,
+      "reported_id": "c97fff90-8c29-11eb-9ad5-000d3a74c7de",
+      "official_id": "d994cf2f-8c29-11eb-9307-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh đêm có ánh vàng, vẫn thấy thân, chân và đầu cúi; giữ nhãn nguồn."
+    },
+    {
+      "index": 75,
+      "reported_id": "dfeb0388-8c29-11eb-b3b6-000d3a74c7de",
+      "official_id": "d0a3fd98-8c29-11eb-b3b6-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Cách ly",
+      "official_decision": "quarantine",
+      "observation": "Hai box; box bên phải sát biên chỉ thấy mảnh con vật, box còn lại tối. Cách ly cả ảnh chờ rà."
+    },
+    {
+      "index": 77,
+      "reported_id": "d0a3fd97-8c29-11eb-a9fa-000d3a74c7de",
+      "official_id": "d1bd4fd6-8c29-11eb-a059-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Nhòe chuyển động nhưng còn toàn dáng thân/đầu/chân; giữ nhãn nguồn, ghi ảnh khó."
+    },
+    {
+      "index": 78,
+      "reported_id": "c97fff91-8c29-11eb-b590-000d3a74c7de",
+      "official_id": "c9a3166f-8c29-11eb-ab2d-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh màu rõ thân, chân và mõm sau lá nhỏ; giữ nhãn nguồn."
+    },
+    {
+      "index": 79,
+      "reported_id": "cfb7f433-8c29-11eb-a2b1-000d3a74c7de",
+      "official_id": "d819ba39-8c29-11eb-83b4-000d3a74c7de",
+      "reported_label": "eurasian_wild_pig",
+      "official_label": "eurasian_wild_pig",
+      "reported_decision": "Giữ lại",
+      "official_decision": "retain_metadata_label",
+      "observation": "Ảnh đêm nhiễu màu, vẫn thấy đầu cúi, thân và chân; giữ nhãn nguồn."
+    }
+  ]
+}
