@@ -1,0 +1,38 @@
+test_accumulated_gradient_equals_parent_mean_with_partial_batch (test_dino_w6.W6Tests.test_accumulated_gradient_equals_parent_mean_with_partial_batch) ... ok
+test_adamw_bias_norm_exemption_but_layerscale_decays (test_dino_w6.W6Tests.test_adamw_bias_norm_exemption_but_layerscale_decays) ... ok
+test_budget_failure_count_unknown_usage_and_resume (test_dino_w6.W6Tests.test_budget_failure_count_unknown_usage_and_resume) ... ok
+test_cache_identity_tracks_pooling_source_runtime_crop_pixels (test_dino_w6.W6Tests.test_cache_identity_tracks_pooling_source_runtime_crop_pixels) ... ok
+test_cache_reuses_valid_shards_and_rejects_corruption (test_dino_w6.W6Tests.test_cache_reuses_valid_shards_and_rejects_corruption) ... ok
+test_candidate_configs_match_tv2_contract_and_no_approval (test_dino_w6.W6Tests.test_candidate_configs_match_tv2_contract_and_no_approval) ... ok
+test_cls_patch_concatenation_excludes_storage_tokens (test_dino_w6.W6Tests.test_cls_patch_concatenation_excludes_storage_tokens) ... ok
+test_config_rejects_unsupported_seed_data_precision_or_recipe (test_dino_w6.W6Tests.test_config_rejects_unsupported_seed_data_precision_or_recipe) ... ok
+test_dataset_sha_change_and_unreviewed_expansion_stop (test_dino_w6.W6Tests.test_dataset_sha_change_and_unreviewed_expansion_stop) ... ok
+test_epoch_resume_restores_rng_optimizer_patience_and_weights (test_dino_w6.W6Tests.test_epoch_resume_restores_rng_optimizer_patience_and_weights) ... R1 epoch=1 macro_f1=0.0
+R1 epoch=2 macro_f1=0.0
+R1 epoch=3 macro_f1=0.0
+R1 epoch=4 macro_f1=0.0
+R1 epoch=1 macro_f1=0.0
+R1 epoch=2 macro_f1=0.0
+R1 epoch=3 macro_f1=0.0
+R1 epoch=4 macro_f1=0.0
+R2 epoch=1 macro_f1=0.20833333333333331
+R2 epoch=2 macro_f1=0.20833333333333331
+R2 epoch=3 macro_f1=0.1875
+R2 epoch=4 macro_f1=0.1875
+R2 epoch=1 macro_f1=0.20833333333333331
+R2 epoch=2 macro_f1=0.20833333333333331
+R2 epoch=3 macro_f1=0.1875
+R2 epoch=4 macro_f1=0.1875
+ok
+test_exact_reload_rejects_tiny_vector_change (test_dino_w6.W6Tests.test_exact_reload_rejects_tiny_vector_change) ... ok
+test_full_w6_checkpoint_load_and_per_box_logits (test_dino_w6.W6Tests.test_full_w6_checkpoint_load_and_per_box_logits) ... ok
+test_last_checkpoint_does_not_reset_early_stop (test_dino_w6.W6Tests.test_last_checkpoint_does_not_reset_early_stop) ... R1 epoch=1 macro_f1=0.5
+R1 epoch=2 macro_f1=0.5
+ok
+test_trainable_mask_and_modes (test_dino_w6.W6Tests.test_trainable_mask_and_modes) ... ok
+test_warmup_endpoints_and_scheduler_resume (test_dino_w6.W6Tests.test_warmup_endpoints_and_scheduler_resume) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 4.759s
+
+OK
