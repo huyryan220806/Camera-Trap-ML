@@ -37,27 +37,27 @@ Bản chấp thuận này **không** thay thế cho phê duyệt độc lập t�
 | **Smoke Evidence Path** | `reports/tv3/w6/smoke/R6_3h_smoke01.json` |
 | **Smoke Evidence SHA-256** | `4ef74db223ac7ab45e88cd11de78e878c9c0253c2e2a0a95b473b6a25bae287d` |
 | **TV2 Approval Receipt Path** | `reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json` |
-| **TV2 Approval Receipt SHA-256** | `8781ad4ef026e591987c00bfdce2a9fb576dfbc21690923f7c6334912b9c8f73` |
+| **TV2 Approval Receipt SHA-256** | `9dd51e74da0fd9219d73937826bf00a1c4b97d43d5259b56ced0cbf8697c84e8` (Revision 2, supersedes `8781ad4ef026e591987c00bfdce2a9fb576dfbc21690923f7c6334912b9c8f73`) |
 | **Protocol Amendment Ref** | `docs/experiment_protocol_w6.md#protocol-amendment-r6-3-hour-allowance-2026-11-09` |
 
 ---
 
 ## 3. GPU Accounting & Invariant Verification
 
-Đối chiếu số liệu kế toán tại `reports/tv3/w6/r6_3h_freeze_evidence/usage.json`:
+Đối chiếu số liệu kế toán tại `reports/tv3/w6/r6_3h_freeze_evidence/usage.json`, tính riêng từng phiên theo phân loại `official`, `reload`, `train_only_smoke` và áp dụng đối soát song phương đúng một lần cho R5:
 
-| Hạng mục | Số phiên | Thời gian (giây) | Thời gian (giờ) | Ghi chú |
+| Hạng mục | Số phiên | Thời gian (giây) | Thời gian (giờ) | Chi tiết các phiên cấu thành |
 |---|:---:|:---:|:---:|---|
-| **Official Attempts (R1–R4)** | 4 | 8.046,8267 | 2,2352296 | R1: 217,5s; R2: 2948,2s; R3: 2409,6s; R4: 2471,6s |
-| **Official Attempt R5 (Settled)** | 1 | 6.405,3003 | 1,7792501 | FAILED tại epoch 14, đối soát song phương TV2/TV3 khớp 100% |
-| **Tổng Official Attempts (R1–R5)** | **5** | **14.452,1270** | **4,0144797** | **5 / 6 official attempts đã sử dụng** |
-| **Reload Sessions (R1–R4)** | 4 | 155,5781 | 0,0432161 | Xác minh reload sau mỗi completed attempt |
-| **Train-only Smoke (R1–R6, R6_3h)** | 7 | 47,0056 | 0,0130571 | Khởi tạo cấu hình và thiết bị |
-| **Lũy kế TV3 hiện tại** | **16** | **14.630,4108** | **4,0640030** | Khớp chính xác với `c.usage_totals()` |
-| **Trần tối đa TV3 toàn chiến dịch** | - | 43.200,0000 | 12,0000000 | Bất biến theo protocol |
-| **Ngân sách TV3 còn lại** | - | 28.569,5892 | 7,9359970 | Dư dồi dào |
-| **Dự toán R6_attempt01 (tối đa 3h)** | 1 | $\le 10.800,0000$ | $\le 3,0000000$ | Lượt chạy thứ 6/6 (cuối cùng) |
-| **Tổng lũy kế dự kiến sau R6** | **17** | **$\le 25.430,4108$** | **$\le 7,0640030$** | **Còn dư $\ge 4,936$ giờ GPU dưới trần 12h** |
+| **Official Attempts (R1–R4)** | 4 | 8.006,8113388 | 2,224114261 | R1: 217,5013006s; R2: 2948,2026162s; R3: 2409,5702800s; R4: 2431,5371420s |
+| **Official Attempt R5 (Settled)** | 1 | 6.405,3003492 | 1,779250097 | FAILED tại epoch 14, biên nhận đối soát `R5_ACCOUNTING_RECONCILIATION_RECEIPT.json` |
+| **Tổng Official Attempts (R1–R5)** | **5** | **14.412,1116880** | **4,003364358** | **5 / 6 official attempts đã sử dụng** (còn 1 attempt cho `R6_attempt01`) |
+| **Reload Sessions (R1–R4)** | 4 | 155,7726714 | 0,043270187 | R1: 38,8234372s; R2: 37,9103988s; R3: 39,0234747s; R4: 40,0153607s |
+| **Train-only Smoke (R1–R6, R6_3h)** | 7 | 62,5263988 | 0,017368444 | R1: 12,0796s; R2: 6,0549s; R3: 7,5497s; R4: 8,8572s; R5: 8,1402s; R6: 8,0411s; R6_3h: 11,8037s |
+| **Lũy kế TV3 hiện tại** | **16** | **14.630,4107582** | **4,064002988** | Khớp chính xác tuyệt đối: $14.412,1116880 + 155,7726714 + 62,5263988 = 14.630,4107582$ |
+| **Trần tối đa TV3 toàn chiến dịch** | - | 43.200,0000000 | 12,000000000 | Bất biến tuyệt đối theo protocol |
+| **Ngân sách TV3 còn lại** | - | 28.569,5892418 | 7,935997012 | Dư dồi dào ($43.200 - 14.630,4107582$) |
+| **Dự toán R6_attempt01 (tối đa 3h)** | 1 | $\le 10.800,0000000$ | $\le 3,000000000$ | Lượt chạy thứ 6/6 (cuối cùng) |
+| **Tổng lũy kế dự kiến sau R6** | **17** | **$\le 25.430,4107582$** | **$\le 7,064002988$** | **Còn dư $\ge 4,9359970$ giờ GPU dưới trần 12h** |
 
 ---
 
