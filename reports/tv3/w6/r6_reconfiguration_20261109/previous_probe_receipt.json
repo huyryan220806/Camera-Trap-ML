@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "requested_iterations": 300,
+  "successful_iterations": 300,
+  "source_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+  "scope": "Isolated dummy file, same writer and directory tree; no training or GPU use",
+  "limitations": "A pass does not prove absence of intermittent Windows file locks.",
+  "elapsed_seconds": 2.6247137000000293
+}

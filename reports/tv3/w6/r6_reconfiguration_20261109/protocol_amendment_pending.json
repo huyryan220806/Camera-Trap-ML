@@ -1,0 +1,17 @@
+{
+  "status": "PROPOSED_NOT_APPROVED_FOR_OFFICIAL",
+  "scope": "R6_attempt01 only",
+  "proposed_max_gpu_hours": 3,
+  "other_attempts_max_gpu_hours": 2,
+  "tv3_total_gpu_hours": 12,
+  "official_attempts_limit": 6,
+  "official_attempts_used": 5,
+  "r5_status": "FAILED_NO_RESUME",
+  "recipe": "R2",
+  "seed": 43,
+  "epochs": 20,
+  "patience": 5,
+  "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "official_test": "SEALED",
+  "official_execution": "BLOCKED_PENDING_NEW_SMOKE_FREEZE_BILATERAL_APPROVAL_AND_LOCK"
+}

@@ -1,0 +1,14 @@
+{
+  "basis": "14 completed R5 epochs on expanded data, same recipe/hardware",
+  "source_log_sha256": "1e66026a6ec6cf7ce015cfc27affbb1cdfdfbea442a72cb11378f7b26ee7187c",
+  "completed_epochs": 14,
+  "mean_epoch_seconds": 449.080093957143,
+  "slowest_epoch_seconds": 579.2569824000002,
+  "estimate_20_epochs_seconds": 8981.60187914286,
+  "estimate_20_epochs_gpu_hours": 2.4948894108730166,
+  "slowest_epoch_extrapolation_hours": 3.2180943466666676,
+  "proposed_attempt_seconds": 10800,
+  "headroom_at_mean_seconds": 1818.3981208571404,
+  "all_sessions_count": "Training, extraction/export and fresh-process reload share the SAME 3h attempt cap.",
+  "limitations": "Estimate is not a guarantee. Initialization, export, reload, thermal throttling and I/O vary. The existing 60s guard is not a guaranteed reserve for full reload. Keep actual measured overruns; never trim usage."
+}

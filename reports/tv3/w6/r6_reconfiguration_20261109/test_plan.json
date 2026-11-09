@@ -1,0 +1,12 @@
+{
+  "completed": "116 CPU tests, including injected transient/permanent locks; see test_results.json",
+  "actual_machine_checks_pending": [
+    "Reviewed source commit and exact file SHA verification",
+    "Ledger snapshot SHA and exactly-once R5 reconciliation; 5/6 attempts",
+    "One GPU writer, ledger not held open, agreed booking, optional pause of OneDrive sync",
+    "Sustained isolated dummy-ledger probe using reviewed writer in intended output directory",
+    "CUDA/runtime lock, pretrained/init checkpoint and Train/Val pixels preflight",
+    "New R6 train-only smoke, measured in shared GPU ledger, then new frozen bindings"
+  ],
+  "failure_policy": "Keep evidence, real elapsed time and all attempts. Do not restart R5, mint a seventh attempt, relax runtime or open Official Test. Persistent I/O failure requires diagnosis before official."
+}

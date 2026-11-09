@@ -1,0 +1,40 @@
+{
+  "receipt_id": "TV2_W6_R6_3H_TECHNICAL_APPROVAL_RECEIPT",
+  "role": "TV2",
+  "decision": "APPROVE_R6_3H",
+  "timestamp_utc": "2026-11-09T13:35:00+00:00",
+  "binding": {
+    "run_id": "R6",
+    "attempt_id": "R6_attempt01",
+    "max_gpu_hours": 3,
+    "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+    "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+    "runtime_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a"
+  },
+  "audit": {
+    "report_path": "reports/tv2/TV2_W6_R6_3H_PROPOSAL_AUDIT_2026-11-09.md",
+    "verdict": "READY_FOR_TV2_TECHNICAL_APPROVAL",
+    "reconciliation_receipt": "reports/tv2/w6_evidence/r5_failure_20261109/R5_ACCOUNTING_RECONCILIATION.json",
+    "r5_settled_seconds": 6405.300349199999,
+    "r5_status": "FAILED_NO_RESUME",
+    "official_attempts_used": 5,
+    "official_attempts_limit": 6,
+    "tv3_cumulative_gpu_seconds": 14630.4107582,
+    "tv3_cumulative_gpu_hours": 4.06400298838889,
+    "tv3_budget_ceiling_hours": 12.0,
+    "r6_max_gpu_hours": 3.0,
+    "projected_tv3_max_cumulative_hours": 7.06400298838889
+  },
+  "smoke_evidence": {
+    "path": "reports/tv3/w6/smoke/R6_3h_smoke01.json",
+    "sha256": "4ef74db223ac7ab45e88cd11de78e878c9c0253c2e2a0a95b473b6a25bae287d"
+  },
+  "limits_and_conditions": [
+    "Scope strictly limited to R6_attempt01; R1-R5 strictly remain at 2.0 GPU-hours.",
+    "TV3 overall GPU ceiling strictly invariant at 12.0 GPU-hours.",
+    "Max official attempts ceiling strictly invariant at 6 (5 used, R6_attempt01 is 6th and final).",
+    "Data provenance strictly locked to train_expansion_w6_v1 (a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5).",
+    "Official Test W4 strictly sealed; zero test reading or test inference.",
+    "Official execution of R6_attempt01 remains BLOCKED until TV3 signs and commits bilateral protocol lock receipt."
+  ]
+}

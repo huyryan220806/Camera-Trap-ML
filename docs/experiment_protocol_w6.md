@@ -205,3 +205,35 @@ Chưa đạt88% vẫn có thể hoàn thành W6 đúng quy trình; báo cả th�
 ## R3/R4 approval addendum — 2026-11-07
 
 TV2 approved R3/R4 individually for recipe R2 seed43/44, under `reports/tv2/w6_evidence/lock_20261107/W6_R3_R4_LOCK_RECEIPT.json`, after TV3 approval at `6cbe8522b873dcbb2c5783baa3364f449cc62da6`. Use `experiments/w6/tv3_R3_R4.approved.json` as the TV3 **execution registry** (includes completed R1/R2 official attempts); `experiments/w6/registry.json` remains the protocol snapshot and is NOT the execution ledger. Each run is REGISTERED, with no R3/R4 official attempt at lock. R5/R6 and Official Test W4 remain blocked.
+
+
+## R5/R6 bilateral lock addendum — 2026-11-08
+
+TV2 và TV3 đã hoàn thành bilateral protocol lock cho R5/R6 theo biên nhận `reports/tv2/w6_evidence/lock_20261108/W6_R5_R6_LOCK_RECEIPT.json`, dựa trên phê duyệt kỹ thuật của TV2 (`reports/tv2/TV2_W6_R5_R6_TECHNICAL_APPROVAL_2026-11-08.md`) và TV3 (`reports/tv3/w6/approvals/TV3_R5_R6.json`). Dataset khóa chặt tại `train_expansion_w6_v1` (`a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5`), source commit `947fbb85aacec9417f248f5f1e1f08c2da75de09`, runtime lock `7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a`. Cả R5 và R6 đều áp dụng recipe R2 (seed 42 và 43), giới hạn 2,0 GPU-giờ/attempt.
+
+
+## Protocol amendment: R6 3-Hour Allowance (2026-11-09)
+
+### 1. Bối cảnh và Phạm vi Điều chỉnh
+- Sự cố R5 (`R5_attempt01`) gặp lỗi I/O `WinError 5` trên Windows NTFS khi atomic replace file `usage.json` tại epoch 14 (1.779 GPU-giờ, 6.405,3 s). Biên nhận đối soát kế toán song phương TV2/TV3 (`W6_R5_ATTEMPT01_ACCOUNTING_RECONCILIATION`) đã xác nhận PID 32064 dừng hẳn, kết toán toàn bộ 6.405,3 s, giữ trạng thái `FAILED`, bảo toàn checkpoint epoch 14 và đồng thuận không resume R5.
+- TV3 đề xuất điều chỉnh giới hạn thời gian cho lần chạy chính thức duy nhất còn lại `R6_attempt01` từ 2,0 GPU-giờ lên tối đa 3,0 GPU-giờ (10.800 s) nhằm đảm bảo hoàn thành đủ 20 epochs trên tập mở rộng mà không bị ngắt quãng bởi budget timeout.
+- TV3 đã triển khai bản vá retry giới hạn (5 lần thử, backoff tối đa 1,55 s, chỉ áp dụng cho `winerror == 5`) tại `write_usage()` trong `src/training/dino_w6_control.py`, đã được kiểm chứng độc lập bởi 18/18 unit tests.
+
+### 2. Các Ràng buộc Bất biến (Strict Protocol Invariants)
+1. **Phạm vi đặc cách duy nhất**: Chỉ `R6_attempt01` (run `R6`, seed 43, recipe `R2`) được áp dụng mức trần tối đa 3,0 GPU-giờ.
+2. **Bảo toàn lịch sử R1–R5**: Toàn bộ các attempt lịch sử và bất kỳ attempt nào khác ngoài `R6_attempt01` vẫn duy trì giới hạn nghiêm ngặt 2,0 GPU-giờ/attempt.
+3. **Trần ngân sách tổng TV3**: Tổng ngân sách GPU của TV3 trong W6 giữ nguyên mức trần tuyệt đối **12,0 GPU-giờ** (43.200 s). Với lũy kế đã kết toán hiện tại là 4,064 GPU-giờ (gồm 5 official attempts và các smoke/reload sessions), việc chạy tối đa 3,0 GPU-giờ cho R6 đưa tổng GPU lên tối đa ~7,064 GPU-giờ, hoàn toàn nằm trong ngân sách và còn dư ~4,936 GPU-giờ.
+4. **Giới hạn số lượt chạy chính thức**: Trần số lượt chạy chính thức (official attempts) giữ nguyên tối đa **6 lượt**. Với 5 lượt đã dùng (R1_attempt01, R2_attempt01, R3_attempt01, R4_attempt01, R5_attempt01), `R6_attempt01` là lượt chạy chính thức thứ 6 và là lượt cuối cùng của dự án.
+5. **Ngân sách TV2 replay**: Trần GPU của TV2 độc lập replay giữ nguyên **2,0 GPU-giờ**.
+6. **Bảo toàn dữ liệu**: Dữ liệu huấn luyện khóa chặt tại `train_expansion_w6_v1` với release SHA-256 `a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5`.
+7. **Niêm phong Official Test W4**: Tuyệt đối không mở raster ảnh, không suy luận trên tập Test W4.
+8. **Runtime & Code Binding**:
+   - `source_sha`: `3b4b106c01e64901f213f6eebfdd10ffa55a7eb7` (commit chứa bản vá WinError 5 retry và candidate config).
+   - `runtime_lock`: `7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a`.
+   - `config_sha256` (canonical): `08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70`.
+   - `smoke_evidence`: `reports/tv3/w6/smoke/R6_3h_smoke01.json` (SHA-256 `4ef74db223ac7ab45e88cd11de78e878c9c0253c2e2a0a95b473b6a25bae287d`).
+
+### 3. Cơ chế Phê duyệt Song phương & Trạng thái Khóa
+- Amendment chỉ có hiệu lực thi hành chính thức khi cả TV2 và TV3 đều đã ký receipt phê duyệt độc lập (`decision: APPROVE_R6_3H`) khớp chính xác binding đã khóa.
+- Trạng thái amendment trong registry bắt đầu ở `PENDING`. Khi ở trạng thái `PENDING`, mọi lệnh thực thi training chính thức hoặc cấp phát execution registry đều bị chặn (`BLOCKED`).
+- TV2 chuẩn bị và cam kết biên nhận phê duyệt kỹ thuật tại `reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json`. Sau khi TV3 đối ứng ký biên nhận, hai bên sẽ tiến hành bilateral protocol lock chính thức trước khi chạy R6.
