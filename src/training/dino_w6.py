@@ -63,7 +63,8 @@ def validate_config(c):
                c['runtime']['amp'] is False and c['runtime']['tf32'] is False and
                c['runtime']['deterministic'] is True and c['runtime']['num_threads'] == 10 and
                c['runtime']['num_interop_threads'] == 10, 'Runtime must be explicitly reviewed')
-    w5.require(c['num_classes'] == 8 and c['drop_last'] is False and c['max_gpu_hours'] == 2 and
+    w5.require(c['num_classes'] == 8 and c['drop_last'] is False and (c['max_gpu_hours'] == 2 or
++               c['max_gpu_hours'] == 3 and c['run_id'] == 'R6' and recipe == 'R2') and
                c['loss'] == 'mean_parent_mean_crop_ce_once' and c['selection'] == 'image_macro_f1' and
                c['checkpoint_tie'] == 'earliest_epoch', 'Common recipe invariant')
     if recipe == 'R2':

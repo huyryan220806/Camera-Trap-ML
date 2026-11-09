@@ -374,13 +374,33 @@
                     "null"
                   ],
                   "minimum": 0,
-                  "maximum": 2
+                  "maximum": 3
                 },
                 "evidence_path": {
                   "type": "string",
                   "minLength": 1
                 }
-              }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "attempt_id": {
+                        "not": {
+                          "const": "R6_attempt01"
+                        }
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              ]
             },
             "maxItems": 6
           },
@@ -436,7 +456,33 @@
               "minLength": 1
             }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "run_id": {
+                  "not": {
+                    "const": "R6"
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "attempts": {
+                  "items": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
       }
     },
     "tv3_preparation_attempts": {
@@ -471,6 +517,170 @@
           }
         }
       }
+    },
+    "r6_budget_amendment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "run_id",
+        "attempt_id",
+        "max_gpu_hours",
+        "config_sha256",
+        "source_sha",
+        "runtime_sha256",
+        "approvals"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PENDING",
+            "APPROVED"
+          ]
+        },
+        "run_id": {
+          "const": "R6"
+        },
+        "attempt_id": {
+          "const": "R6_attempt01"
+        },
+        "max_gpu_hours": {
+          "const": 3
+        },
+        "config_sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "source_sha": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          ]
+        },
+        "runtime_sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "approvals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "TV2",
+            "TV3"
+          ],
+          "properties": {
+            "TV2": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              ]
+            },
+            "TV3": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "r6_budget_amendment"
+        ],
+        "properties": {
+          "r6_budget_amendment": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "APPROVED"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "runs": {
+            "items": {
+              "properties": {
+                "attempts": {
+                  "items": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

@@ -78,12 +78,65 @@ def validate_recipe_config(config, recipe):
         w5.require(recipe == 'R0', 'Unknown recipe')
 
 
+
+def r6_amendment(registry):
+    """Optional, narrowly scoped exception. References are peer evidence, not signatures."""
+    amendment = registry.get('r6_budget_amendment')
+    if amendment is None:
+        return None
+    w5.require(set(amendment) == {'status', 'run_id', 'attempt_id', 'max_gpu_hours',
+        'config_sha256', 'source_sha', 'runtime_sha256', 'approvals'}, 'Invalid R6 amendment fields')
+    w5.require(amendment['status'] in ('PENDING', 'APPROVED') and
+        amendment['run_id'] == 'R6' and amendment['attempt_id'] == 'R6_attempt01' and
+        type(amendment['max_gpu_hours']) is int and amendment['max_gpu_hours'] == 3,
+        'Invalid R6 amendment scope')
+    w5.require(set(amendment['approvals']) == {'TV2', 'TV3'}, 'Need bilateral amendment approvals')
+    if amendment['status'] == 'APPROVED':
+        run = next(r for r in registry['runs'] if r['run_id'] == 'R6')
+        w5.require(registry['protocol_status'] == 'APPROVED' and run['recipe'] == 'R2' and
+            run['seed'] == 43 and run['dataset_sha256'] == EXPANSION_SHA and
+            pin(amendment['config_sha256']) and pin(amendment['source_sha'], 40) and
+            pin(amendment['runtime_sha256']) and amendment['config_sha256'] == run['config_sha256'] and
+            amendment['source_sha'] == run['source_sha'], 'R6 amendment binding mismatch')
+        for role, ref in amendment['approvals'].items():
+            w5.require(isinstance(ref, dict) and set(ref) == {'path', 'sha256'} and
+                isinstance(ref['path'], str) and ref['path'].strip() and pin(ref['sha256']) and
+                run['approvals'].get(role) == ref['path'], 'R6 amendment approval missing/mismatch')
+    return amendment
+
+
+def attempt_budget_hours(registry, run_id, attempt_id, require_approved=True):
+    amendment = r6_amendment(registry or {})
+    if not amendment or run_id != 'R6':
+        return 2
+    w5.require(attempt_id == 'R6_attempt01', 'Only R6_attempt01 receives amendment')
+    if require_approved:
+        w5.require(amendment['status'] == 'APPROVED', 'BLOCKED: R6 amendment pending')
+    return 3
+
+
+def verify_r6_amendment_evidence(registry, root=ROOT):
+    amendment = r6_amendment(registry)
+    if not amendment or amendment['status'] != 'APPROVED':
+        return
+    binding = {k: amendment[k] for k in ('run_id', 'attempt_id', 'max_gpu_hours',
+        'config_sha256', 'source_sha', 'runtime_sha256')}
+    for role, ref in amendment['approvals'].items():
+        path = confined(root, ref['path'])
+        w5.require(w5.sha256(path) == ref['sha256'], 'R6 approval receipt hash mismatch')
+        receipt = w5.read_json(path)
+        w5.require(receipt.get('decision') == 'APPROVE_R6_3H' and receipt.get('role') == role and
+            receipt.get('binding') == binding, 'R6 approval receipt content mismatch')
+
+
 def validate_registry(registry, root=ROOT):
     """Validate structure and budgets, including failed attempts; never mutates."""
     import jsonschema
     jsonschema.Draft202012Validator(w5.read_json(Path(root) / 'contracts/w6_registry.schema.json')).validate(registry)
     w5.require(registry['budgets'] == dict(max_new_official_attempts=6, tv3_gpu_hours=12,
                 per_attempt_gpu_hours=2, tv2_replay_gpu_hours=2), 'Unregistered budget')
+    amendment = r6_amendment(registry)
+    verify_r6_amendment_evidence(registry, root)
     runs = registry['runs']
     w5.require([r['run_id'] for r in runs] == ['R%d' % i for i in range(7)], 'Need ordered R0-R6 exactly once')
     w5.require([r['seed'] for r in runs] == SEEDS, 'Unregistered seed')
@@ -116,6 +169,11 @@ def validate_registry(registry, root=ROOT):
             w5.require(config['dataset'] == run['dataset'] and config['dataset_sha256'] == run['dataset_sha256'],
                        'Config dataset mismatch')
             validate_recipe_config(config,run['recipe'])
+            expected_cap = 3 if amendment and run['run_id'] == 'R6' else 2
+            w5.require(config['max_gpu_hours'] == expected_cap, 'Config/registry GPU cap mismatch')
+            if amendment and run['run_id'] == 'R6' and amendment['status'] == 'APPROVED':
+                w5.require(config['runtime']['source_sha'] == amendment['source_sha'] and
+                    config['runtime']['runtime_lock'] == amendment['runtime_sha256'], 'R6 runtime/source mismatch')
         w5.require(index not in (1,2) or run['recipe'] == 'R%d' % index, 'Recipe/run mismatch')
         w5.require(run['status'] in STATUSES, 'Invalid new-run status')
         w5.require(run['metrics'] is None or run['status'] == 'COMPLETED', 'Metrics require completed run')
@@ -127,7 +185,7 @@ def validate_registry(registry, root=ROOT):
         for attempt in run['attempts']:
             attempts.append(attempt['attempt_id'])
             hours = attempt['gpu_hours']
-            w5.require(hours is None or finite(hours) and 0 <= hours <= 2, 'Per-attempt GPU budget exceeded')
+            w5.require(hours is None or finite(hours) and 0 <= hours <= attempt_budget_hours(registry, run['run_id'], attempt['attempt_id']), 'Per-attempt GPU budget exceeded')
             total_hours += hours or 0
         if run['attempts'] or run['status'] in ('RUNNING', 'COMPLETED', 'FAILED', 'OOM', 'STOPPED'):
             w5.require(run['attempts'], 'Execution must retain attempt accounting')
@@ -157,6 +215,8 @@ def official_gate(registry, run):
                registry['freeze_evidence'] and registry['smoke_evidence'], 'BLOCKED: approval/freeze/smoke missing')
     w5.require(pin(run['source_sha'], 40) and pin(run['config_sha256']) and run['config_path'] and
                all(run['approvals'].get(k) for k in ('TV2', 'TV3')), 'BLOCKED: run source/config/approval missing')
+    if run['run_id'] == 'R6':
+        attempt_budget_hours(registry, 'R6', 'R6_attempt01')
     w5.require(run['recipe'] in ('R0', 'R1', 'R2'), 'BLOCKED: unresolved recipe')
     if run['run_id'] in ('R3', 'R4'):
         decision = registry['recipe_selection']

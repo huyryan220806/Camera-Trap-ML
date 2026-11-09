@@ -74,6 +74,10 @@ def approved_gate(c, config_path, registry_path, runtime, root=w5.ROOT):
     head = w5.git_revision(root)
     committed_file(config_path, head, root)
     committed_file(registry_path, head, root)
+    amendment = v.r6_amendment(registry)
+    if amendment and c['run_id'] == 'R6':
+        for ref in amendment['approvals'].values():
+            committed_file(v.confined(root, ref['path']), head, root)
     sources = source_index(run['source_sha'], root)
     evidence = c['smoke_evidence']
     path = v.confined(root, evidence['path'])
@@ -84,7 +88,7 @@ def approved_gate(c, config_path, registry_path, runtime, root=w5.ROOT):
                smoke['settings_sha256'] == settings_digest(c) and smoke['source_index'] == sources and
                smoke['runtime'] == runtime, 'Smoke/config/source/runtime binding mismatch')
     usage = load_usage(root)
-    usage_totals(usage)
+    usage_totals(usage, registry)
     known = {s['attempt_id'] for s in usage['sessions']}
     registered = {p['attempt_id'] for p in registry['tv3_preparation_attempts']}
     registered.update(a['attempt_id'] for r in registry['runs'] for a in r['attempts'])
@@ -101,6 +105,26 @@ class BudgetExceeded(RuntimeError):
     pass
 
 
+
+def write_usage(path, usage, refresh=None):
+    """Retry only Windows access denied, at most six writes / 1.55s backoff.
+
+    Caller owns gpu_lock. Atomic replacement and the original .tmp evidence are
+    preserved. No deletion, fallback ledger, swallowed errors or RNG changes.
+    """
+    delays = (0.05, 0.1, 0.2, 0.4, 0.8)
+    for attempt in range(len(delays) + 1):
+        try:
+            if refresh is not None:
+                refresh()
+            w5.atomic_json(path, usage)
+            return
+        except PermissionError as exc:
+            if getattr(exc, 'winerror', None) != 5 or attempt == len(delays):
+                raise
+            time.sleep(delays[attempt])
+
+
 def load_usage(root=w5.ROOT):
     path = root / 'outputs/tv3_w6/usage.json'
     return w5.read_json(path) if path.exists() else dict(version=1, sessions=[], reconciliations=[])
@@ -114,20 +138,25 @@ def effective_seconds(usage, session):
     return matches[0]['seconds']
 
 
-def usage_totals(usage):
+def usage_totals(usage, registry=None):
     sessions = usage['sessions']
     seconds = [effective_seconds(usage, s) for s in sessions]
     w5.require(all(type(x) in (int, float) and math.isfinite(x) and x >= 0 for x in seconds), 'Invalid GPU accounting')
     total = sum(seconds)
     attempts = {s['attempt_id'] for s in sessions if s['kind'] != 'train_only_smoke'}
     by_attempt = {a: sum(effective_seconds(usage, s) for s in sessions if s['attempt_id'] == a) for a in attempts}
-    w5.require(len(attempts) <= 6 and total <= 12 * 3600 and all(x <= 7200 for x in by_attempt.values()),
+    caps = {}
+    for aid in attempts:
+        run_ids = {s['run_id'] for s in sessions if s['attempt_id'] == aid}
+        w5.require(len(run_ids) == 1, 'Attempt has mixed run identities')
+        caps[aid] = 3600 * tv2().attempt_budget_hours(registry, next(iter(run_ids)), aid)
+    w5.require(len(attempts) <= 6 and total <= 12 * 3600 and all(x <= caps[a] for a, x in by_attempt.items()),
                'Recorded budget exceeded; stop and report, never trim recorded time')
     return total, by_attempt
 
 
 @contextmanager
-def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
+def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT, registry=None):
     """One shared lock, real wall time including extraction; failures keep their slot.
 
     Each GPU operation calls tick. The 60-second reserve allows a batch and
@@ -138,7 +167,7 @@ def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
     folder = root / 'outputs/tv3_w6'
     with w5.writer_lock(folder / 'gpu_lock'):
         usage = load_usage(root)
-        total, attempts = usage_totals(usage)
+        total, attempts = usage_totals(usage, registry)
         previous = [s for s in usage['sessions'] if s['attempt_id'] == attempt_id]
         if kind == 'train_only_smoke':
             w5.require(not previous and not resume, 'Smoke attempt ID already used')
@@ -149,14 +178,15 @@ def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
                 w5.require(previous and any(s['kind'] == 'official' for s in previous), 'No official attempt to resume/reload')
             else:
                 w5.require(not previous and len(attempts) < 6, 'Duplicate attempt or six-attempt limit')
-            allowance = min(7200 - attempts.get(attempt_id, 0), 43200 - total)
+            allowance = min(3600 * tv2().attempt_budget_hours(registry, run_id, attempt_id) -
+                            attempts.get(attempt_id, 0), 43200 - total)
         w5.require(allowance > 60, 'No GPU budget left')
         session = dict(session_id=uuid.uuid4().hex, attempt_id=attempt_id, run_id=run_id, kind=kind,
                        started_utc=utcnow(), ended_utc=None, seconds=None, heartbeat_seconds=0,
                        pid=os.getpid(), booking=booking, status='RUNNING')
         usage['sessions'].append(session)
         path = folder / 'usage.json'
-        w5.atomic_json(path, usage)
+        write_usage(path, usage)
         started = time.perf_counter()
         last_heartbeat = 0.0
 
@@ -165,8 +195,9 @@ def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
             elapsed = time.perf_counter() - started
             if elapsed - last_heartbeat >= 5:
                 session['heartbeat_seconds'] = elapsed
-                w5.atomic_json(path, usage)
+                write_usage(path, usage)
                 last_heartbeat = elapsed
+                elapsed = time.perf_counter() - started
             if elapsed >= allowance - 60:
                 raise BudgetExceeded('GPU budget reached; keep this attempt and last checkpoint')
 
@@ -181,13 +212,20 @@ def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
             session['error'] = repr(exc)
             raise
         finally:
-            session['seconds'] = time.perf_counter() - started
-            session['ended_utc'] = utcnow()
-            w5.atomic_json(path, usage)
+            def refresh_final_measurement():
+                session['seconds'] = time.perf_counter() - started
+                session['ended_utc'] = utcnow()
+                if session['seconds'] > allowance and session['status'] == 'COMPLETED':
+                    session.update(status='STOPPED', error='Budget exceeded during ledger finalization')
+            write_usage(path, usage, refresh=refresh_final_measurement)
+            if session['seconds'] > allowance:
+                raise BudgetExceeded('Actual GPU session exceeded budget during finalization; retain measured overrun')
             # Deliberately retain elapsed > limits; no false compliant receipt.
 
 
-def reconcile_usage(receipt_path, root=w5.ROOT):
+def reconcile_usage(receipt_path, root=w5.ROOT, registry=None):
+    if registry is not None:
+        tv2().validate_registry(registry, root)
     receipt = w5.read_json(receipt_path)
     with w5.writer_lock(root / 'outputs/tv3_w6/gpu_lock'):
         usage = load_usage(root)
@@ -202,15 +240,15 @@ def reconcile_usage(receipt_path, root=w5.ROOT):
                    seconds >= item['heartbeat_seconds'], 'Cannot erase measured GPU usage')
         usage['reconciliations'].append(dict(session_id=item['session_id'], seconds=seconds,
                                              receipt_sha256=w5.sha(receipt_path), receipt=receipt, recorded_utc=utcnow()))
-        w5.atomic_json(root / 'outputs/tv3_w6/usage.json', usage)
-    return usage_totals(usage)
+        write_usage(root / 'outputs/tv3_w6/usage.json', usage)
+    return usage_totals(usage, registry)
 
 
 def registry_with_usage(registry, root=w5.ROOT):
     """Merge producer facts into a COPY; never write approval or overwrite TV2 registry."""
     result = copy.deepcopy(registry)
     usage = load_usage(root)
-    usage_totals(usage)
+    usage_totals(usage, registry)
     for session in usage['sessions']:
         if session['kind'] != 'train_only_smoke':
             continue

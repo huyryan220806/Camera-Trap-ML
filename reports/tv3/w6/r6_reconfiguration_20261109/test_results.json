@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "scope": "Isolated synthetic CPU tests; CUDA_VISIBLE_DEVICES is empty; no official training or Test data",
+  "results": [
+    {
+      "pattern": "test_dino_w6.py",
+      "command": [
+        "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "import tempfile, unittest; tempfile.tempdir='C:\\\\Users\\\\Admin\\\\OneDrive\\\\Documents\\\\VLU\\\\Năm 3\\\\HK1nam3\\\\Học máy và ứng dụng\\\\Project ML\\\\outputs\\\\tv3_w6\\\\r6_reconfiguration_review_01\\\\test_tmp'; unittest.main(module=None, argv=['unittest', 'discover', '-s', 'tests', '-p', 'test_dino_w6.py', '-v'])"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 11.71900000000096,
+      "log": "test_dino_w6.log",
+      "test_count": 15,
+      "log_sha256": "f863d57f890e4daa4a2792d984c2b6b9b5616a0f681e735d17185f032f3f24f8"
+    },
+    {
+      "pattern": "test_w5_validation.py",
+      "command": [
+        "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "import tempfile, unittest; tempfile.tempdir='C:\\\\Users\\\\Admin\\\\OneDrive\\\\Documents\\\\VLU\\\\Năm 3\\\\HK1nam3\\\\Học máy và ứng dụng\\\\Project ML\\\\outputs\\\\tv3_w6\\\\r6_reconfiguration_review_01\\\\test_tmp'; unittest.main(module=None, argv=['unittest', 'discover', '-s', 'tests', '-p', 'test_w5_validation.py', '-v'])"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.2189999999973224,
+      "log": "test_w5_validation.log",
+      "test_count": 32,
+      "log_sha256": "01933e6013a10a012d27b079f3c54bd7b87304d250280ed9f6d523f6b038767c"
+    },
+    {
+      "pattern": "test_w6_validation.py",
+      "command": [
+        "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "import tempfile, unittest; tempfile.tempdir='C:\\\\Users\\\\Admin\\\\OneDrive\\\\Documents\\\\VLU\\\\Năm 3\\\\HK1nam3\\\\Học máy và ứng dụng\\\\Project ML\\\\outputs\\\\tv3_w6\\\\r6_reconfiguration_review_01\\\\test_tmp'; unittest.main(module=None, argv=['unittest', 'discover', '-s', 'tests', '-p', 'test_w6_validation.py', '-v'])"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.5159999999996217,
+      "log": "test_w6_validation.log",
+      "test_count": 51,
+      "log_sha256": "cc0b0cd08e9425e0a575a7c4dae16671b2f3af330752c3542c5c3c5a2d00aaec"
+    },
+    {
+      "pattern": "test_r6_amendment.py",
+      "command": [
+        "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "import tempfile, unittest; tempfile.tempdir='C:\\\\Users\\\\Admin\\\\OneDrive\\\\Documents\\\\VLU\\\\Năm 3\\\\HK1nam3\\\\Học máy và ứng dụng\\\\Project ML\\\\outputs\\\\tv3_w6\\\\r6_reconfiguration_review_01\\\\test_tmp'; unittest.main(module=None, argv=['unittest', 'discover', '-s', 'tests', '-p', 'test_r6_amendment.py', '-v'])"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.90599999999904,
+      "log": "test_r6_amendment.log",
+      "test_count": 18,
+      "log_sha256": "603eca3184ab99a2f2738413c8497701e5cc3f74394f91e86a26f11d5e03b6fd"
+    }
+  ],
+  "total_tests": 116,
+  "cuda_used": false,
+  "official_training_performed": false,
+  "official_test_opened": false,
+  "limitations": [
+    "Fault injection verifies retry behavior, not absence of intermittent Windows locks.",
+    "Initial sandbox temporary-directory permission failures were resolved using an isolated workspace test temp directory.",
+    "W5/W6 loader regression reads frozen Train/Val manifests, not images or Official Test."
+  ],
+  "patch_sha256": "cb9023dfdbecee2d698d7910f6cde543a2d815c1009508b8bd174a14f45714df"
+}

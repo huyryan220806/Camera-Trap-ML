@@ -115,7 +115,7 @@ def smoke(args):
                    command=sys.argv, data=gate, parent_count=len(groups), crop_count=len(selected),
                    selected_crop_ids=[r['crop_id'] for r in selected], attempt_id=attempt, recipe=c['recipe'])
     try:
-        with control.gpu_session(attempt, c['run_id'], 'train_only_smoke', args.booking) as (tick, _):
+        with control.gpu_session(attempt, c['run_id'], 'train_only_smoke', args.booking, registry=registry) as (tick, _):
             torch.cuda.reset_peak_memory_stats()
             model, model_map = d.initialize(c, args.init_checkpoint, args.repo, 'cuda')
             old.require(model_map == cmap, 'Init class map differs')
@@ -198,6 +198,10 @@ def freeze(args):
     registry = control.registry_with_usage(old.read_json(args.registry))
     row = next(r for r in registry['runs'] if r['run_id'] == c['run_id'])
     old.require(not row['attempts'], 'Cannot refreeze a run that has already started')
+    amendment = registry.get('r6_budget_amendment')
+    if amendment and c['run_id'] == 'R6':
+        amendment.update(status='PENDING', config_sha256=d.digest(c), source_sha=sources['commit'],
+                         runtime_sha256=c['runtime']['runtime_lock'], approvals={'TV2': None, 'TV3': None})
     row.update(recipe=c['recipe'], config_path=config_out.resolve().relative_to(ROOT).as_posix(),
                config_sha256=d.digest(c), source_sha=sources['commit'], approvals={'TV2': None, 'TV3': None})
     # Completed historical runs still require their actual global approval in
@@ -245,7 +249,7 @@ def training(args):
         shutil.copyfile(args.registry, run / 'registry.approved.json')
     old.atomic_json(run / 'status.json', dict(status='RUNNING', training_complete=False, command=sys.argv))
     try:
-        with control.gpu_session(attempt, c['run_id'], 'official', args.booking, args.resume) as (tick, _):
+        with control.gpu_session(attempt, c['run_id'], 'official', args.booking, args.resume, registry=registry) as (tick, _):
             torch.cuda.reset_peak_memory_stats()
             model, loaded_map = d.initialize(c, args.init_checkpoint, args.repo, 'cuda')
             old.require(loaded_map == cmap, 'Initialization class mapping mismatch')
@@ -280,6 +284,13 @@ def reload_model(args):
     checkpoint = run / 'best_model.pt'
     handoff = old.read_json(run / 'handoff.json')
     registry = old.read_json(run / 'registry.approved.json')
+    if registry.get('r6_budget_amendment') and c['run_id'] == 'R6':
+        control.tv2().validate_registry(registry)
+        registered = next(r for r in registry['runs'] if r['run_id'] == 'R6')
+        control.tv2().official_gate(registry, registered)
+        old.require(registered['config_sha256'] == d.digest(c) and
+                    registry['r6_budget_amendment']['runtime_sha256'] == d.digest(runtime),
+                    'Reload amendment/config/runtime binding mismatch')
     # Validation only; expansion data need not be present at the receiver.
     _, cmap, gate = old.read_release(verify_images=False)
     rows = d.read_jsonl(ROOT / 'data/processed/comparison_v1/b2/val.jsonl')
@@ -294,7 +305,7 @@ def reload_model(args):
                    comparison_policy='exact', manifest_sha256={n: gate['files'][n] for n in
                        ('class_map.json', 'train.jsonl', 'val.jsonl', 'b2/train.jsonl', 'b2/val.jsonl')})
     try:
-        with control.gpu_session(binding['attempt_id'], c['run_id'], 'reload', args.booking, resume=True) as (tick, _):
+        with control.gpu_session(binding['attempt_id'], c['run_id'], 'reload', args.booking, resume=True, registry=registry) as (tick, _):
             model, _, payload = d.load_package(checkpoint, handoff['checkpoint_sha256'], args.repo, 'cuda')
             old.require(payload['class_map'] == cmap and payload['binding'] == binding, 'Reload payload binding')
             result = old.evaluate_logits(d.validation_logits(model, c, rows, 'cuda', tick=tick), rows, cmap)
@@ -360,13 +371,14 @@ def main():
     s.add_argument('--output', type=Path, required=True)
     s = sub.add_parser('settle-usage')
     s.add_argument('--receipt', type=Path, required=True)
+    s.add_argument('--registry', type=Path, help='Reviewed execution registry for amended R6 settlement')
     args = p.parse_args()
     if args.action == 'package':
         print(json.dumps(delivery.package(args.run, args.registry, args.output, args.report_dir), indent=2))
     elif args.action == 'report':
         print(json.dumps(delivery.summarize(args.registry, args.output), indent=2, ensure_ascii=False))
     elif args.action == 'settle-usage':
-        print(control.reconcile_usage(args.receipt))
+        print(control.reconcile_usage(args.receipt, registry=old.read_json(args.registry) if args.registry else None))
     else:
         dict(prepare=prepare, preflight=preflight, smoke=smoke, freeze=freeze, train=training, reload=reload_model)[args.action](args)
 
