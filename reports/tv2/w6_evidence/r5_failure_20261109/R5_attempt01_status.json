@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "training_complete": false,
+  "error": "PermissionError(13, 'Access is denied')",
+  "command": [
+    "scripts/dino_w6.py",
+    "train",
+    "--config",
+    "configs/w6/tv3/R5.frozen.json",
+    "--registry",
+    "experiments/w6/tv3_R5_R6.approved.json",
+    "--attempt",
+    "R5_attempt01",
+    "--booking",
+    "NVIDIA GeForce RTX 4060 Laptop GPU; 2026-11-08 18:00-20:00 Asia/Ho_Chi_Minh; official R5; agreed with team"
+  ]
+}

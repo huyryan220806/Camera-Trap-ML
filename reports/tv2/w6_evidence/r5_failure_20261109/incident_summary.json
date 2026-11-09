@@ -1,0 +1,15 @@
+{
+  "status": "PENDING_TV2_TV3_ACCOUNTING_REVIEW",
+  "attempt_id": "R5_attempt01",
+  "session_id": "ec15351642b2459996f105e4a3c4d1b3",
+  "failure": "PermissionError WinError 5 replacing usage.json; final write also failed",
+  "measured_seconds_in_failed_final_write": 6405.300349199999,
+  "last_heartbeat_in_main_ledger": 6399.7437291999995,
+  "ended_utc_in_failed_final_write": "2026-11-08T13:04:05.311161+00:00",
+  "max_attempt_seconds": 7200,
+  "remaining_attempt_seconds_if_measured_value_accepted": 794.6996508000011,
+  "training_complete": false,
+  "last_completed_epoch": 14,
+  "prior_sessions_unchanged_between_main_and_tmp": true,
+  "note": "Original ledger and source unchanged. No resume or R6 authorized by this evidence bundle. Process-stop confirmation and accounting review still required."
+}

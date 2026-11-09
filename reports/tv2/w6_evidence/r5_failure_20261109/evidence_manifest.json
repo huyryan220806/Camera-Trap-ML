@@ -1,0 +1,67 @@
+{
+  "audit_timestamp_utc": "2026-11-09T01:20:00.391079+00:00",
+  "auditor": "TV2 (Baseline & Evaluation)",
+  "source_archive": {
+    "path": "reports/tv2/w6/R5_io_20261108T130627Z.zip",
+    "bytes": 12425,
+    "sha256": "0249f86f82480f277a18086a809c6be4608fc9219ad2a5d715620d6ebad242de",
+    "mtime_utc": "2026-11-09T00:45:45.068379+00:00"
+  },
+  "extracted_artifacts": {
+    "evidence_index.json": {
+      "original_zip_member": "evidence_index.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/evidence_index.json",
+      "bytes": 977,
+      "sha256": "fc5ec8bc3500acd5c4a8a45e50e9f7517c81c0a65045980abb64d876ddfc9ca2",
+      "created_utc": "2026-11-09T01:20:00.388074+00:00"
+    },
+    "incident_summary.json": {
+      "original_zip_member": "incident_summary.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/incident_summary.json",
+      "bytes": 821,
+      "sha256": "a64703975f77b7c6c5cbb7e1eb18919dc05faf0aa74de7750768f4f602caa2f9",
+      "created_utc": "2026-11-09T01:20:00.388074+00:00"
+    },
+    "usage.json": {
+      "original_zip_member": "outputs/tv3_w6/usage.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/usage.json",
+      "bytes": 8115,
+      "sha256": "375a962c8c84dbec57fee1ecf06e767dbaaf709c6157f9988f9c41095152c6dd",
+      "created_utc": "2026-11-09T01:20:00.388074+00:00"
+    },
+    "usage.json.tmp": {
+      "original_zip_member": "outputs/tv3_w6/usage.json.tmp",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/usage.json.tmp",
+      "bytes": 8215,
+      "sha256": "d2f252ff521a559f8cd96e4be15963322d045ba536c04e33ce2d37888f3af078",
+      "created_utc": "2026-11-09T01:20:00.389080+00:00"
+    },
+    "R5_attempt01_binding.json": {
+      "original_zip_member": "outputs/tv3_w6/runs/R5_attempt01/binding.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/R5_attempt01_binding.json",
+      "bytes": 5457,
+      "sha256": "988de64ac9e6f000dd852d8f31dc23ffdb38ae22fab22015688fe9f810224059",
+      "created_utc": "2026-11-09T01:20:00.389080+00:00"
+    },
+    "R5_attempt01_status.json": {
+      "original_zip_member": "outputs/tv3_w6/runs/R5_attempt01/status.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/R5_attempt01_status.json",
+      "bytes": 469,
+      "sha256": "3e6fbf4105f4eb7ddb205e6461e0f38f8b4286652501257ca7725a4121fa5081",
+      "created_utc": "2026-11-09T01:20:00.390080+00:00"
+    },
+    "R5_attempt01_train_log.json": {
+      "original_zip_member": "outputs/tv3_w6/runs/R5_attempt01/train_log.json",
+      "local_path": "reports/tv2/w6_evidence/r5_failure_20261109/R5_attempt01_train_log.json",
+      "bytes": 50641,
+      "sha256": "1e66026a6ec6cf7ce015cfc27affbb1cdfdfbea442a72cb11378f7b26ee7187c",
+      "created_utc": "2026-11-09T01:20:00.390080+00:00"
+    }
+  },
+  "checkpoint_reference_from_evidence_index": {
+    "path": "outputs/tv3_w6/runs/R5_attempt01/last_model.pt",
+    "bytes": 201562806,
+    "sha256": "043ce967dd06eaba95a8a29284eaa71568b1f26679427df09f9a30d14ee6b4b0",
+    "status": "RECORDED_IN_EVIDENCE_INDEX_OMITTED_FROM_ZIP_DUE_TO_SIZE"
+  }
+}
