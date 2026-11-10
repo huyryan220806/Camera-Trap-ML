@@ -237,3 +237,28 @@ TV2 và TV3 đã hoàn thành bilateral protocol lock cho R5/R6 theo biên nhậ
 - Amendment chỉ có hiệu lực thi hành chính thức khi cả TV2 và TV3 đều đã ký receipt phê duyệt độc lập (`decision: APPROVE_R6_3H`) khớp chính xác binding đã khóa.
 - Trạng thái amendment trong registry bắt đầu ở `PENDING`. Khi ở trạng thái `PENDING`, mọi lệnh thực thi training chính thức hoặc cấp phát execution registry đều bị chặn (`BLOCKED`).
 - TV2 chuẩn bị và cam kết biên nhận phê duyệt kỹ thuật tại `reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json`. Sau khi TV3 đối ứng ký biên nhận, hai bên sẽ tiến hành bilateral protocol lock chính thức trước khi chạy R6.
+
+
+## R6 3-Hour Bilateral Protocol Lock Confirmation — 2026-11-09
+
+Bilateral protocol lock cho R6 3-Hour Amendment đã hoàn tất thành công sau khi cả hai thành viên TV2 và TV3 đã ký biên nhận phê duyệt kỹ thuật độc lập:
+- **Biên nhận phê duyệt TV2 (Revision 2):**
+  - Path: `reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json`
+  - Commit: `58205a33983d302856a7fec5b31abffb4c259422`
+  - SHA-256: `9dd51e74da0fd9219d73937826bf00a1c4b97d43d5259b56ced0cbf8697c84e8`
+  - Quyết định: `APPROVE_R6_3H`
+- **Biên nhận phê duyệt TV3:**
+  - Path: `reports/tv3/w6/approvals/TV3_R6_3H_APPROVAL.json`
+  - Commit: `c43d1b2b629235b9e965a6b7d957d915cc4babea`
+  - SHA-256: `7c545287161b32e609098a893be58d1441fd1eb76a7c8c36616dbf8df0932a74`
+  - Quyết định: `APPROVE_R6_3H`
+- **Biên nhận khóa song phương (Bilateral Lock Receipt):**
+  - Path: `reports/tv2/w6_evidence/lock_20261109/W6_R6_3H_LOCK_RECEIPT.json`
+  - SHA-256: `0eeaa94a9d936f601daab2516915de58575b332f4a31eed9cf31357f92606231`
+- **Execution Registry chính thức:** `experiments/w6/tv3_R6_3h.approved.json`
+  - `r6_budget_amendment.status = "APPROVED"`
+  - `runs[6].status = "REGISTERED"`
+  - `runs[6].attempts = []`
+  - `freeze_evidence = "reports/tv2/w6_evidence/lock_20261109/W6_R6_3H_LOCK_RECEIPT.json"`
+  - `smoke_evidence = "reports/tv3/w6/smoke/R6_3h_smoke01.json"`
+- **Ràng buộc:** Chỉ `R6_attempt01` tối đa 3,0 GPU-giờ; R1–R5 tối đa 2,0 GPU-giờ; tổng TV3 tối đa 12,0 GPU-giờ (lũy kế hiện tại 4,064 GPU-giờ, còn dư 7,936 GPU-giờ); 5/6 official attempts đã sử dụng; R5 giữ FAILED (reconciliation 6405.3003492 s); Official Test W4 SEALED.
