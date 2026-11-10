@@ -1,0 +1,19 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "torch": "2.6.0+cu124",
+  "torchvision": "0.21.0+cu124",
+  "pillow": "12.2.0",
+  "numpy": "2.5.3",
+  "sklearn": "1.9.0",
+  "cuda": "12.4",
+  "cudnn": 90100,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "vram_bytes": 8585216000,
+  "os": "Windows-11-10.0.26100-SP0",
+  "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "num_threads": 10,
+  "num_interop_threads": 10,
+  "amp": false,
+  "tf32": false,
+  "deterministic_algorithms": true
+}
