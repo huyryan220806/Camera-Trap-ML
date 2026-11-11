@@ -1,0 +1,10 @@
+{
+  "patch_apply_check_exit": 0,
+  "patch_applied": false,
+  "live_ledger_unchanged_sha256": "48b6ca5fcd7694403de4bcbc5e388aae1095485956a4fa41062b46a9b593ef1a",
+  "source_frozen_files_changed": false,
+  "new_smoke_run": false,
+  "official_training_run": false,
+  "git_commit_created": false,
+  "git_push_performed": false
+}

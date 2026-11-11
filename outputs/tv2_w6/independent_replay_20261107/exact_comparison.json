@@ -1,0 +1,82 @@
+{
+  "comparison_policy": "exact element equality; no tolerance",
+  "runs": [
+    {
+      "run_id": "R3",
+      "replay_sha256": "88ff4451b0b978ede6ac8baa3a4d37b28e3f8ff80cc3e002da7b9dacc80aeeb1",
+      "producer_validation_sha256": "4112dc2caa83d3af7a9cdfc49c56a4749af6f468b3b85a2fbd34fda080f45117",
+      "counts": {
+        "replay_crops": 680,
+        "producer_crops": 680,
+        "replay_images": 600,
+        "producer_images": 600
+      },
+      "id_order_exact": {
+        "crop": true,
+        "image": true
+      },
+      "crop_logits": {
+        "mismatch_values": 0,
+        "values": 5440,
+        "max_abs_delta": 0.0
+      },
+      "crop_probabilities": {
+        "mismatch_values": 0,
+        "values": 5440,
+        "max_abs_delta": 0.0
+      },
+      "crop_predicted_class_mismatches": 0,
+      "image_probabilities": {
+        "mismatch_values": 0,
+        "values": 4800,
+        "max_abs_delta": 0.0
+      },
+      "image_predicted_class_mismatches": 0,
+      "image_truth_mismatches": 0,
+      "metrics_exact": true,
+      "metric_mismatch_count": 0,
+      "metric_mismatches": [],
+      "prediction_exact": true,
+      "exact_all_required": true
+    },
+    {
+      "run_id": "R4",
+      "replay_sha256": "101196a66aded70ecf35ef45f51750a6f211f7b1e64f6d6adbe69fedf64fb6e8",
+      "producer_validation_sha256": "38833e65e1df8291c0593782a30289edcd2d9fb450b8a2518a708504f53f1046",
+      "counts": {
+        "replay_crops": 680,
+        "producer_crops": 680,
+        "replay_images": 600,
+        "producer_images": 600
+      },
+      "id_order_exact": {
+        "crop": true,
+        "image": true
+      },
+      "crop_logits": {
+        "mismatch_values": 0,
+        "values": 5440,
+        "max_abs_delta": 0.0
+      },
+      "crop_probabilities": {
+        "mismatch_values": 0,
+        "values": 5440,
+        "max_abs_delta": 0.0
+      },
+      "crop_predicted_class_mismatches": 0,
+      "image_probabilities": {
+        "mismatch_values": 0,
+        "values": 4800,
+        "max_abs_delta": 0.0
+      },
+      "image_predicted_class_mismatches": 0,
+      "image_truth_mismatches": 0,
+      "metrics_exact": true,
+      "metric_mismatch_count": 0,
+      "metric_mismatches": [],
+      "prediction_exact": true,
+      "exact_all_required": true
+    }
+  ],
+  "model_replay_status": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\Hu\u1ef3nh Ph\u00fac\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-X",
+    "utf8",
+    "scripts/review_tv1_w6.py",
+    "--output",
+    "outputs\\tv2_w6\\d1_20261104_01\\tv1_metadata_final"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.4694047999946633,
+  "source_sha256": {
+    "src/evaluation/w6_validation.py": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+    "scripts/review_tv1_w6.py": "6bdcb67135eab4a140135bb2c29dc2b6f2a74e611c07b258713add8727a9ea58",
+    "tests/test_w6_validation.py": "07f6f5fc5ecaadf7ab753657ded5b573420bbc3e0b692b311f8279773cf5f3fe"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "patterns": [
+    "test_w5_validation.py",
+    "test_evaluation.py",
+    "test_contracts.py",
+    "test_dino_w5.py",
+    "test_dino_tv2_compat.py"
+  ],
+  "tests": 70,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 12.139729300004547,
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "training_performed": false,
+  "scope": "synthetic fixtures and frozen Train/Val metadata; no official Test"
+}

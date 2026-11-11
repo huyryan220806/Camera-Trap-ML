@@ -1,0 +1,61 @@
+{
+  "status": {
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "exit_code": 0,
+    "output": "## feat/baseline\n?? Lich_trien_khai_6_tuan.docx\n?? TV2_W5_W6.md\n?? configs/w6/\n?? contracts/w6_registry.schema.json\n?? dino/\n?? docs/Phan_cong_4_thanh_vien.xlsx\n?? docs/experiment_protocol_w6.md\n?? docs/progress_tv2_w6.md\n?? experiments/w6/\n?? reports/tv2/TV2_W6_D1_AUDIT.md\n?? reports/tv2/TV2_W6_TV1_DATA_REVIEW.md\n?? reports/tv2/w6_evidence/\n?? review_TV2_W1_round2_2026-10-02.md\n?? scripts/audit_tv2_w6_baseline.py\n?? scripts/evaluate_w6_validation.py\n?? scripts/review_tv1_w6.py\n?? src/evaluation/w6_validation.py\n?? swg_train_expansion_w6_v1_additional.zip\n?? swg_train_expansion_w6_v1_additional/\n?? tests/test_w6_validation.py\n"
+  },
+  "head": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "output": "cfcf00615847d52fba73ee3e44fe0e6076bb840c\n"
+  },
+  "tracking": {
+    "command": [
+      "git",
+      "branch",
+      "-vv"
+    ],
+    "exit_code": 0,
+    "output": "+ codex/tv2-w1-fixes         7388134 (C:/Users/Huỳnh Phúc/.codex/visualizations/2026/10/02/01a0fc05-cae2-7503-9751-6df2a5c0ffc3/tv2-w1-fixes) [origin/codex/tv2-w1-fixes: gone] fix(tv2): address week 1 evaluation review\n  codex/tv2-w1-fixes-archive 8848541 [origin/codex/tv2-w1-fixes: gone] fix(tv2): address week 1 evaluation review\n* feat/baseline              cfcf006 docs: record published week-five integration and merged PR\n  main                       232cc63 [origin/main: behind 106] Document week-one branch review and merge blockers\n"
+  },
+  "graph": {
+    "command": [
+      "git",
+      "log",
+      "--oneline",
+      "--decorate",
+      "--all",
+      "-14"
+    ],
+    "exit_code": 0,
+    "output": "11e4510 (origin/feat/metadata-split) docs: record published week-six handoff branch\nc1d2789 feat(data): publish audited week-six train extension and four member plans\ncfcf006 (HEAD -> feat/baseline, origin/main, origin/feat/demo, origin/feat/crop-classifier, origin/feat/baseline, origin/HEAD) docs: record published week-five integration and merged PR\ncb2b0f8 docs: document week-five integration, demo setup and test checklist\nfc12408 Merge TV4 week-five DINO adapter, batch review and CSV\nce78288 Merge TV3 week-five DINO model and handoff\nef4636e Merge TV2 week-five evaluation and DINO acceptance\nfb1b08e Merge TV1 week-five data candidates and independent reviews\n33aba1f docs: publish independent week-five review and integration progress\n8d4a255 Add opt-in DINO demo adapter, small batches and saved-review CSV\ndf31029 docs(tv2): independently accept DINOv3 W5 validation and prepare TV4 handoff\n5734d38 docs(tv3): publish DINOv3 run01 validation and handoff evidence\naa64fd7 docs(tv3): apply approved W5 protocol from TV2\n8137ef7 docs(tv2): verify B1-B3 and approve locked DINOv3 W5 protocol\n"
+  },
+  "fast_forward_receipt": {
+    "command": [
+      "git",
+      "reflog",
+      "-3",
+      "--format=%H %gs"
+    ],
+    "exit_code": 0,
+    "output": "cfcf00615847d52fba73ee3e44fe0e6076bb840c merge origin/feat/baseline: Fast-forward\ndf31029c2dfa3b87e4efd1b1f210babd89c60cbd commit: docs(tv2): independently accept DINOv3 W5 validation and prepare TV4 handoff\n8137ef720222784bac859ab953124b4cc293f179 commit: docs(tv2): verify B1-B3 and approve locked DINOv3 W5 protocol\n"
+  },
+  "remote": {
+    "command": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output": "origin\thttps://github.com/huyryan220806/Camera-Trap-ML.git (fetch)\norigin\thttps://github.com/huyryan220806/Camera-Trap-ML.git (push)\n"
+  }
+}

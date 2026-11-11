@@ -1,0 +1,7 @@
+{
+  "corrects": "regression_01.json training_performed field",
+  "official_training_performed": false,
+  "synthetic_cpu_training_loops_performed": true,
+  "gpu_training_performed": false,
+  "note": "Original log retained. CPU fixture SGD/head/resume tests are software checks, not model-quality results."
+}

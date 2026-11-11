@@ -1,0 +1,23 @@
+test_amendment_approval_and_binding_rejections (test_r6_amendment.AmendmentTests.test_amendment_approval_and_binding_rejections) ... ok
+test_evidence_content_and_hash_must_match (test_r6_amendment.AmendmentTests.test_evidence_content_and_hash_must_match) ... ok
+test_exclusive_writer_prevents_second_session (test_r6_amendment.AmendmentTests.test_exclusive_writer_prevents_second_session) ... ok
+test_explicit_policy_required_for_three_hours (test_r6_amendment.AmendmentTests.test_explicit_policy_required_for_three_hours) ... ok
+test_full_approved_validator_and_config_cap_binding (test_r6_amendment.AmendmentTests.test_full_approved_validator_and_config_cap_binding) ... ok
+test_only_r6_config_accepts_three (test_r6_amendment.AmendmentTests.test_only_r6_config_accepts_three) ... ok
+test_other_runs_and_attempt_ids_cannot_borrow_exception (test_r6_amendment.AmendmentTests.test_other_runs_and_attempt_ids_cannot_borrow_exception) ... ok
+test_proposal_retains_history_and_blocks_official (test_r6_amendment.AmendmentTests.test_proposal_retains_history_and_blocks_official) ... ok
+test_reload_revalidates_amendment_before_inference (test_r6_amendment.AmendmentTests.test_reload_revalidates_amendment_before_inference) ... ok
+test_reload_shares_attempt_budget (test_r6_amendment.AmendmentTests.test_reload_shares_attempt_budget) ... ok
+test_session_stops_with_reserve_and_saves_actual_usage (test_r6_amendment.AmendmentTests.test_session_stops_with_reserve_and_saves_actual_usage) ... ok
+test_settlement_is_exactly_once_and_does_not_discard_time (test_r6_amendment.AmendmentTests.test_settlement_is_exactly_once_and_does_not_discard_time) ... ok
+test_total_twelve_and_six_attempts_remain (test_r6_amendment.AmendmentTests.test_total_twelve_and_six_attempts_remain) ... ok
+test_unknown_and_duplicate_reconciliation_block (test_r6_amendment.AmendmentTests.test_unknown_and_duplicate_reconciliation_block) ... ok
+test_final_retry_time_is_accounted (test_r6_amendment.WriterTests.test_final_retry_time_is_accounted) ... ok
+test_other_errors_not_retried (test_r6_amendment.WriterTests.test_other_errors_not_retried) ... ok
+test_permanent_replace_error_retains_old_and_tmp (test_r6_amendment.WriterTests.test_permanent_replace_error_retains_old_and_tmp) ... ok
+test_transient_replace_retries_preserve_content (test_r6_amendment.WriterTests.test_transient_replace_retries_preserve_content) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.307s
+
+OK

@@ -1,0 +1,3173 @@
+{
+  "audit_name": "TV2_W6_HOLDOUT_RASTER_INDEPENDENT_AUDIT",
+  "timestamp_utc": "2026-11-08T05:40:00Z",
+  "source_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "total_images": 109,
+  "pass_count": 109,
+  "fail_count": 0,
+  "missing_count": 0,
+  "status": "PASS",
+  "items": [
+    {
+      "image_id": "c89a6fb0-8c29-11eb-850f-000d3a74c7de",
+      "file_name": "public/lao/loc_0067/2017/09/image_00022.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 876864,
+      "expected_byte_size": 876864,
+      "byte_sha256": "46c965fa13c64fef08171ed5bc977a0dde9c0d3610b4ff87dd4f089446d9a440",
+      "expected_byte_sha256": "46c965fa13c64fef08171ed5bc977a0dde9c0d3610b4ff87dd4f089446d9a440",
+      "pixel_sha256": "21ef780da76dd1527abec5a29d71a108358f0526f439be0088c529b1e594cb53",
+      "expected_pixel_sha256": "21ef780da76dd1527abec5a29d71a108358f0526f439be0088c529b1e594cb53",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c89a6fb1-8c29-11eb-bad4-000d3a74c7de",
+      "file_name": "public/lao/loc_0067/2017/09/image_00023.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 872957,
+      "expected_byte_size": 872957,
+      "byte_sha256": "6b5854e667187e8aac2e2615811d19506fe717e0921ee78b7dd1f79c7b350a09",
+      "expected_byte_sha256": "6b5854e667187e8aac2e2615811d19506fe717e0921ee78b7dd1f79c7b350a09",
+      "pixel_sha256": "71abb631cbfba4e3460919d3fe00579f5fc169eaecf24d23c383e15bdcc6f97d",
+      "expected_pixel_sha256": "71abb631cbfba4e3460919d3fe00579f5fc169eaecf24d23c383e15bdcc6f97d",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c89a6fb2-8c29-11eb-883b-000d3a74c7de",
+      "file_name": "public/lao/loc_0067/2017/09/image_00024.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 880981,
+      "expected_byte_size": 880981,
+      "byte_sha256": "f33a7f5b2c4445db02e998cd69f07a4e811df5d21503f18967fd81c8f110dfac",
+      "expected_byte_sha256": "f33a7f5b2c4445db02e998cd69f07a4e811df5d21503f18967fd81c8f110dfac",
+      "pixel_sha256": "eae5e83de3f889e6e61b3f17ffd242fcdd230517d167417ad391f7aefacb5b38",
+      "expected_pixel_sha256": "eae5e83de3f889e6e61b3f17ffd242fcdd230517d167417ad391f7aefacb5b38",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92bdbcb-8c29-11eb-b9a6-000d3a74c7de",
+      "file_name": "public/lao/loc_0317/2020/04/image_00072.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2162083,
+      "expected_byte_size": 2162083,
+      "byte_sha256": "944eee6241326e9b3001cb23d3aeab01c43f1270a42bc500f1e105fc53d5ed22",
+      "expected_byte_sha256": "944eee6241326e9b3001cb23d3aeab01c43f1270a42bc500f1e105fc53d5ed22",
+      "pixel_sha256": "b5cc66d32c2ee12e33be17fdf57006326b947fa90cfad281a91ebe7e161f2b2e",
+      "expected_pixel_sha256": "b5cc66d32c2ee12e33be17fdf57006326b947fa90cfad281a91ebe7e161f2b2e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92bdd4c-8c29-11eb-9766-000d3a74c7de",
+      "file_name": "public/lao/loc_0317/2020/06/image_00017.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2045608,
+      "expected_byte_size": 2045608,
+      "byte_sha256": "3c1e9dc46316be92a0fc87e03ae2979501f8e64c1adb059f776825a7ffb255d9",
+      "expected_byte_sha256": "3c1e9dc46316be92a0fc87e03ae2979501f8e64c1adb059f776825a7ffb255d9",
+      "pixel_sha256": "4c9ed977c223a849573ffd9370019b9a352d4242bbf72016ead7cdd39c046785",
+      "expected_pixel_sha256": "4c9ed977c223a849573ffd9370019b9a352d4242bbf72016ead7cdd39c046785",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92bdd4d-8c29-11eb-9646-000d3a74c7de",
+      "file_name": "public/lao/loc_0317/2020/06/image_00018.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2107083,
+      "expected_byte_size": 2107083,
+      "byte_sha256": "3af48011e0adc0692a25121b3d6c31b74699c82377d3e25ede6eb3facf838cb3",
+      "expected_byte_sha256": "3af48011e0adc0692a25121b3d6c31b74699c82377d3e25ede6eb3facf838cb3",
+      "pixel_sha256": "2088538df1a9ecf3aeb253516c346a073a7702329ec5e54d42cadbb5375c82ea",
+      "expected_pixel_sha256": "2088538df1a9ecf3aeb253516c346a073a7702329ec5e54d42cadbb5375c82ea",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40ea-8c29-11eb-8708-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/06/image_00113.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2714210,
+      "expected_byte_size": 2714210,
+      "byte_sha256": "fa069729001ed5f87bd22a774237d66a996a930669a8d58d960b6f3c85f7c0b1",
+      "expected_byte_sha256": "fa069729001ed5f87bd22a774237d66a996a930669a8d58d960b6f3c85f7c0b1",
+      "pixel_sha256": "1d15fc11b7c1d5003e7886fcc79839076ce78a4915ae0b99fe4344cf8732a525",
+      "expected_pixel_sha256": "1d15fc11b7c1d5003e7886fcc79839076ce78a4915ae0b99fe4344cf8732a525",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40eb-8c29-11eb-b2ad-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/06/image_00114.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2814500,
+      "expected_byte_size": 2814500,
+      "byte_sha256": "6462497454ceb1d5cc838e9560fbd67ad7de1cbf2ff6122f44689e2545bef06f",
+      "expected_byte_sha256": "6462497454ceb1d5cc838e9560fbd67ad7de1cbf2ff6122f44689e2545bef06f",
+      "pixel_sha256": "bfc2903001fd44de80d2470168710be1f9501f2b3998752c59867c2f38d0da90",
+      "expected_pixel_sha256": "bfc2903001fd44de80d2470168710be1f9501f2b3998752c59867c2f38d0da90",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40ec-8c29-11eb-999d-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/06/image_00115.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2833081,
+      "expected_byte_size": 2833081,
+      "byte_sha256": "2853d1b30eca91dcc210276e874d6bb635ab7f939d40bbc909f67642604f03e2",
+      "expected_byte_sha256": "2853d1b30eca91dcc210276e874d6bb635ab7f939d40bbc909f67642604f03e2",
+      "pixel_sha256": "57c85c338c7e5ac708709b1a9ac2f7d3b5bac4c516ea35eec3c526bdab9ad2f4",
+      "expected_pixel_sha256": "57c85c338c7e5ac708709b1a9ac2f7d3b5bac4c516ea35eec3c526bdab9ad2f4",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40f1-8c29-11eb-8e4f-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/07/image_00047.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2291556,
+      "expected_byte_size": 2291556,
+      "byte_sha256": "be771d27c94736000ccbe0458838d7b44ab12a1ec665b743c4609c45826af505",
+      "expected_byte_sha256": "be771d27c94736000ccbe0458838d7b44ab12a1ec665b743c4609c45826af505",
+      "pixel_sha256": "8998f5bd606bbd20594442ef86a02ca220c50782ac58d05bab5162f9692f3067",
+      "expected_pixel_sha256": "8998f5bd606bbd20594442ef86a02ca220c50782ac58d05bab5162f9692f3067",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40f2-8c29-11eb-87c5-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/07/image_00048.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2288841,
+      "expected_byte_size": 2288841,
+      "byte_sha256": "c7f3da23afd634145d317720508e2006ce1965b3514706f46fcb4037abd02256",
+      "expected_byte_sha256": "c7f3da23afd634145d317720508e2006ce1965b3514706f46fcb4037abd02256",
+      "pixel_sha256": "8b4b0d8fa851b6699f59e183b6a7c92e8714320fcf445da2bd53cfcfee1d6248",
+      "expected_pixel_sha256": "8b4b0d8fa851b6699f59e183b6a7c92e8714320fcf445da2bd53cfcfee1d6248",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "c92e40f3-8c29-11eb-a6d8-000d3a74c7de",
+      "file_name": "public/lao/loc_0319/2020/07/image_00049.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2283282,
+      "expected_byte_size": 2283282,
+      "byte_sha256": "0051d0d47dd5872717cb58fd0faf996f85b8f116384bc9044a8fe23bb74f4ba8",
+      "expected_byte_sha256": "0051d0d47dd5872717cb58fd0faf996f85b8f116384bc9044a8fe23bb74f4ba8",
+      "pixel_sha256": "7c5cb230873462e17b9d3f7edc324a8eab6d9c363111a778cf918cda06d9af41",
+      "expected_pixel_sha256": "7c5cb230873462e17b9d3f7edc324a8eab6d9c363111a778cf918cda06d9af41",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ca3ba84f-8c29-11eb-903f-000d3a74c7de",
+      "file_name": "public/lao/loc_0374/2020/04/image_00075.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1532015,
+      "expected_byte_size": 1532015,
+      "byte_sha256": "868dfd07d91a76afe2c26687df0e09965e6eab1e7a06be695616a48dd01e2b15",
+      "expected_byte_sha256": "868dfd07d91a76afe2c26687df0e09965e6eab1e7a06be695616a48dd01e2b15",
+      "pixel_sha256": "efff35a1313357e5ac98700ccce4267cbda43a3061257dcaafa56de645ab0ed1",
+      "expected_pixel_sha256": "efff35a1313357e5ac98700ccce4267cbda43a3061257dcaafa56de645ab0ed1",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ca3ba850-8c29-11eb-9636-000d3a74c7de",
+      "file_name": "public/lao/loc_0374/2020/04/image_00076.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1527491,
+      "expected_byte_size": 1527491,
+      "byte_sha256": "45d86ea6fa459f218bcd5e13dd1fa4801d1153501709b913bdbe099bc74f895a",
+      "expected_byte_sha256": "45d86ea6fa459f218bcd5e13dd1fa4801d1153501709b913bdbe099bc74f895a",
+      "pixel_sha256": "083cd248fb921aa46763e52e94554835c3386e8c871a5a60628116f8ab5720f2",
+      "expected_pixel_sha256": "083cd248fb921aa46763e52e94554835c3386e8c871a5a60628116f8ab5720f2",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ca3ba851-8c29-11eb-91a9-000d3a74c7de",
+      "file_name": "public/lao/loc_0374/2020/04/image_00077.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1513599,
+      "expected_byte_size": 1513599,
+      "byte_sha256": "dec30f4227aabf7b9164b55549134414163d6afec0b2ae9f2dea75083123bec7",
+      "expected_byte_sha256": "dec30f4227aabf7b9164b55549134414163d6afec0b2ae9f2dea75083123bec7",
+      "pixel_sha256": "cae39ef6566e1a542e8b6dfeec7084d02bdf5728e250e43e23a10986750d9b93",
+      "expected_pixel_sha256": "cae39ef6566e1a542e8b6dfeec7084d02bdf5728e250e43e23a10986750d9b93",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ca55e205-8c29-11eb-ad0e-000d3a74c7de",
+      "file_name": "public/lao/loc_0384/2020/03/image_00012.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 514487,
+      "expected_byte_size": 514487,
+      "byte_sha256": "85f5823a4c43fe6565d1b64cd7f3576c7ce7a0a9db24d470a91019a8e3b48dbc",
+      "expected_byte_sha256": "85f5823a4c43fe6565d1b64cd7f3576c7ce7a0a9db24d470a91019a8e3b48dbc",
+      "pixel_sha256": "247a87cb50c2de43181e8a5760542c5bad92ad84a7fda63857dcd419038d7e3e",
+      "expected_pixel_sha256": "247a87cb50c2de43181e8a5760542c5bad92ad84a7fda63857dcd419038d7e3e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ca55e206-8c29-11eb-bcfd-000d3a74c7de",
+      "file_name": "public/lao/loc_0384/2020/03/image_00013.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 517171,
+      "expected_byte_size": 517171,
+      "byte_sha256": "1938c870ad31b17b9062330fe7a75e820dc81638c3eb9695e0790852a3202ce6",
+      "expected_byte_sha256": "1938c870ad31b17b9062330fe7a75e820dc81638c3eb9695e0790852a3202ce6",
+      "pixel_sha256": "a533336ad7d22856c533a8332af142ded93c36f9239b8d8c09c5cbdcdde48f13",
+      "expected_pixel_sha256": "a533336ad7d22856c533a8332af142ded93c36f9239b8d8c09c5cbdcdde48f13",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12bf2-8c29-11eb-8c0f-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/05/image_00025.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2357907,
+      "expected_byte_size": 2357907,
+      "byte_sha256": "467092cd812921e6635b834a47e37362f870c57ab6ae5cd7424821b2d0197da0",
+      "expected_byte_sha256": "467092cd812921e6635b834a47e37362f870c57ab6ae5cd7424821b2d0197da0",
+      "pixel_sha256": "cfce57e91497b4a1df3c5740a7d64f614f5dab9fe43af1cfb734b48bae6731ec",
+      "expected_pixel_sha256": "cfce57e91497b4a1df3c5740a7d64f614f5dab9fe43af1cfb734b48bae6731ec",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12bf3-8c29-11eb-9ccf-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/05/image_00026.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2178130,
+      "expected_byte_size": 2178130,
+      "byte_sha256": "a02fc06446dd00e6c72e665d9e7ce112f55b17dc909ee108e5e71723a9115651",
+      "expected_byte_sha256": "a02fc06446dd00e6c72e665d9e7ce112f55b17dc909ee108e5e71723a9115651",
+      "pixel_sha256": "9ece5c6910d1aa67f06b2a1212f48385327b2c096b6ad9d615ff863579b7727b",
+      "expected_pixel_sha256": "9ece5c6910d1aa67f06b2a1212f48385327b2c096b6ad9d615ff863579b7727b",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12bf4-8c29-11eb-b884-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/05/image_00027.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2147846,
+      "expected_byte_size": 2147846,
+      "byte_sha256": "6f65b8969193771598a8a43fb0e468e79b5fe0b965654bb7527342c3fcda94df",
+      "expected_byte_sha256": "6f65b8969193771598a8a43fb0e468e79b5fe0b965654bb7527342c3fcda94df",
+      "pixel_sha256": "04a633e0fd8f2e8ec88a5f6d11d1ccab2d376dc4d50d93d85b17ba25068a340f",
+      "expected_pixel_sha256": "04a633e0fd8f2e8ec88a5f6d11d1ccab2d376dc4d50d93d85b17ba25068a340f",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12d0c-8c29-11eb-ac29-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/04/image_00046.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2172815,
+      "expected_byte_size": 2172815,
+      "byte_sha256": "7291c74c2980f1399c0f67380a6f084f4d53061454d2302c27581664999933fe",
+      "expected_byte_sha256": "7291c74c2980f1399c0f67380a6f084f4d53061454d2302c27581664999933fe",
+      "pixel_sha256": "5c3040a3d08ce037e3ab57ec9b20289507b8c2500a98342c749873573f6773c7",
+      "expected_pixel_sha256": "5c3040a3d08ce037e3ab57ec9b20289507b8c2500a98342c749873573f6773c7",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12d5b-8c29-11eb-b97f-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/07/image_00072.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1048103,
+      "expected_byte_size": 1048103,
+      "byte_sha256": "8bbde2bef1a90f708182de98d7c8a8e164ea8680c1bbb4972c26814111b693ca",
+      "expected_byte_sha256": "8bbde2bef1a90f708182de98d7c8a8e164ea8680c1bbb4972c26814111b693ca",
+      "pixel_sha256": "7715325e99ae6e3282778757bd81c3776544f827bc2a3b5830fe2e07e495ca9c",
+      "expected_pixel_sha256": "7715325e99ae6e3282778757bd81c3776544f827bc2a3b5830fe2e07e495ca9c",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12d5c-8c29-11eb-8635-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/07/image_00073.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1037890,
+      "expected_byte_size": 1037890,
+      "byte_sha256": "2822e6e3f7e856eef2872ca3fb212ab3e59d2466dcd6e4aba88e18f871661537",
+      "expected_byte_sha256": "2822e6e3f7e856eef2872ca3fb212ab3e59d2466dcd6e4aba88e18f871661537",
+      "pixel_sha256": "9026daa42f7e8e2fdc6b83f25d1f42e5f22976021612107ac492a6a9463c2562",
+      "expected_pixel_sha256": "9026daa42f7e8e2fdc6b83f25d1f42e5f22976021612107ac492a6a9463c2562",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cac12d5d-8c29-11eb-b858-000d3a74c7de",
+      "file_name": "public/lao/loc_0408/2020/07/image_00074.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1045088,
+      "expected_byte_size": 1045088,
+      "byte_sha256": "bc82a572dc8f926b876c4c8d664501ecd94dba95757453e9f9cfac1a54201a59",
+      "expected_byte_sha256": "bc82a572dc8f926b876c4c8d664501ecd94dba95757453e9f9cfac1a54201a59",
+      "pixel_sha256": "27b5499f4cbffa67efa5bb0dd9a6af04fd3f41e6654596f3364d6d23e8ebd319",
+      "expected_pixel_sha256": "27b5499f4cbffa67efa5bb0dd9a6af04fd3f41e6654596f3364d6d23e8ebd319",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbc51532-8c29-11eb-88fc-000d3a74c7de",
+      "file_name": "public/lao/loc_0481/2020/07/image_00110.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1734483,
+      "expected_byte_size": 1734483,
+      "byte_sha256": "4ce34e20dc492d515767040a795fb8c9e4c6d37963f97f7c92bd4e1db8ac9db7",
+      "expected_byte_sha256": "4ce34e20dc492d515767040a795fb8c9e4c6d37963f97f7c92bd4e1db8ac9db7",
+      "pixel_sha256": "3b1c381142cff5f66b0a16aab02207581df5e0bc69d1a05bb9374ed592c7f063",
+      "expected_pixel_sha256": "3b1c381142cff5f66b0a16aab02207581df5e0bc69d1a05bb9374ed592c7f063",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbc51533-8c29-11eb-aa60-000d3a74c7de",
+      "file_name": "public/lao/loc_0481/2020/07/image_00111.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1721498,
+      "expected_byte_size": 1721498,
+      "byte_sha256": "78140e0c7a71b823bb24f6dcb5d2149644cff1eb6ef941ade4c1ee5e8b0191a2",
+      "expected_byte_sha256": "78140e0c7a71b823bb24f6dcb5d2149644cff1eb6ef941ade4c1ee5e8b0191a2",
+      "pixel_sha256": "7cac210cad8fcd7611e89c4ac2571b2cfdd8c6bbf5ae47d7da1452c33d1fddcd",
+      "expected_pixel_sha256": "7cac210cad8fcd7611e89c4ac2571b2cfdd8c6bbf5ae47d7da1452c33d1fddcd",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbc51534-8c29-11eb-be96-000d3a74c7de",
+      "file_name": "public/lao/loc_0481/2020/07/image_00112.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1718996,
+      "expected_byte_size": 1718996,
+      "byte_sha256": "e2ba8e13b63295da4065af18703364348cf67375cf2ff9674e9c9c5e2c65a937",
+      "expected_byte_sha256": "e2ba8e13b63295da4065af18703364348cf67375cf2ff9674e9c9c5e2c65a937",
+      "pixel_sha256": "faa858035786fb8f2a9e6d9f380e14a0da6f7a19caae2fa3d8ac8bce767f49ba",
+      "expected_pixel_sha256": "faa858035786fb8f2a9e6d9f380e14a0da6f7a19caae2fa3d8ac8bce767f49ba",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd3605b-8c29-11eb-bd98-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/05/image_00021.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1202854,
+      "expected_byte_size": 1202854,
+      "byte_sha256": "a2e5dd5fb7e7e24f248fd0e1c469e418ce6c8bcd368ea0a4641960e6d1ae8086",
+      "expected_byte_sha256": "a2e5dd5fb7e7e24f248fd0e1c469e418ce6c8bcd368ea0a4641960e6d1ae8086",
+      "pixel_sha256": "56944c34580969c1d6d1be4c3212d121e0586e28d63ee483e0d56c88c35aa648",
+      "expected_pixel_sha256": "56944c34580969c1d6d1be4c3212d121e0586e28d63ee483e0d56c88c35aa648",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c269-8c29-11eb-9bd0-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/04/image_00201.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1032055,
+      "expected_byte_size": 1032055,
+      "byte_sha256": "f9b0430522a94ce46f7673591af0cfd4502538838ab27fe5ed8bb71bed1a8028",
+      "expected_byte_sha256": "f9b0430522a94ce46f7673591af0cfd4502538838ab27fe5ed8bb71bed1a8028",
+      "pixel_sha256": "ab9b0a908a7757700747774b6661b280bf402a4ca9c90c6f2660df14a4a841d5",
+      "expected_pixel_sha256": "ab9b0a908a7757700747774b6661b280bf402a4ca9c90c6f2660df14a4a841d5",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c29d-8c29-11eb-85a0-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00714.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1419503,
+      "expected_byte_size": 1419503,
+      "byte_sha256": "394edeecc835514cff2887d2a02e445aec19f12fc58aa9522f45a8706d44d4f5",
+      "expected_byte_sha256": "394edeecc835514cff2887d2a02e445aec19f12fc58aa9522f45a8706d44d4f5",
+      "pixel_sha256": "748cbdfd584fdb18da0252858368fde2fc1331a87b51885c4ac658eb40254dba",
+      "expected_pixel_sha256": "748cbdfd584fdb18da0252858368fde2fc1331a87b51885c4ac658eb40254dba",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c29e-8c29-11eb-84a1-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00715.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1487733,
+      "expected_byte_size": 1487733,
+      "byte_sha256": "da84da3afcf53ba37c289dd6526ef82f10346063a2f7673103714a4bf2c2eb9d",
+      "expected_byte_sha256": "da84da3afcf53ba37c289dd6526ef82f10346063a2f7673103714a4bf2c2eb9d",
+      "pixel_sha256": "127b40c98f06cee11df6566e09187cc42f0fd7e9f7df65c8350ba8d308ae6a99",
+      "expected_pixel_sha256": "127b40c98f06cee11df6566e09187cc42f0fd7e9f7df65c8350ba8d308ae6a99",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c2d3-8c29-11eb-b0f4-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00768.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1344563,
+      "expected_byte_size": 1344563,
+      "byte_sha256": "bdd80b6b86cf074d05a45bed0d3c0d3554af4fc6020209c8614b22629869ec25",
+      "expected_byte_sha256": "bdd80b6b86cf074d05a45bed0d3c0d3554af4fc6020209c8614b22629869ec25",
+      "pixel_sha256": "b8918698aadbd671302c56afaba391b7044e118553406bbc9d986136d18639bd",
+      "expected_pixel_sha256": "b8918698aadbd671302c56afaba391b7044e118553406bbc9d986136d18639bd",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c2d4-8c29-11eb-a6bc-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00769.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1372263,
+      "expected_byte_size": 1372263,
+      "byte_sha256": "ac711268025464c5cf07767a60547813317d6d92f927b3875de7ccc7dab7b03f",
+      "expected_byte_sha256": "ac711268025464c5cf07767a60547813317d6d92f927b3875de7ccc7dab7b03f",
+      "pixel_sha256": "5bffe071e55201ba5374205ddd7ee660bb571a09da02484a4165b3b320d83497",
+      "expected_pixel_sha256": "5bffe071e55201ba5374205ddd7ee660bb571a09da02484a4165b3b320d83497",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c2d5-8c29-11eb-aa36-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00770.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1682081,
+      "expected_byte_size": 1682081,
+      "byte_sha256": "0f29296999935ead8d36d251b2b8cc48d5fa0ba218315f5f951bed2872890e6d",
+      "expected_byte_sha256": "0f29296999935ead8d36d251b2b8cc48d5fa0ba218315f5f951bed2872890e6d",
+      "pixel_sha256": "0dc92b217724cd80b95bb22bc7bb5e62dec9c4059a04e277f566202294c6738a",
+      "expected_pixel_sha256": "0dc92b217724cd80b95bb22bc7bb5e62dec9c4059a04e277f566202294c6738a",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c304-8c29-11eb-a350-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00817.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1704034,
+      "expected_byte_size": 1704034,
+      "byte_sha256": "249498ba95c8970b0961151245a57a289a9389dbfe2ca05543288a793c83fab9",
+      "expected_byte_sha256": "249498ba95c8970b0961151245a57a289a9389dbfe2ca05543288a793c83fab9",
+      "pixel_sha256": "fca4b6b2ee257f2f7944fa255175124e0066720fff8c175310c3e64f687dec4c",
+      "expected_pixel_sha256": "fca4b6b2ee257f2f7944fa255175124e0066720fff8c175310c3e64f687dec4c",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbd5c305-8c29-11eb-b686-000d3a74c7de",
+      "file_name": "public/lao/loc_0487/2020/08/image_00818.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1667245,
+      "expected_byte_size": 1667245,
+      "byte_sha256": "4299540e261805b58f137f323f6069cd1aaf3d88e423399ff55347fbac20cfad",
+      "expected_byte_sha256": "4299540e261805b58f137f323f6069cd1aaf3d88e423399ff55347fbac20cfad",
+      "pixel_sha256": "da97db50962e0a3548a206cdf0e2da6c9e72e5e2b64a25fc6fe879f8e9c7a5c5",
+      "expected_pixel_sha256": "da97db50962e0a3548a206cdf0e2da6c9e72e5e2b64a25fc6fe879f8e9c7a5c5",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3c75-8c29-11eb-80cf-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/06/image_00038.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2178157,
+      "expected_byte_size": 2178157,
+      "byte_sha256": "97905fe82010ced6e51b187e43149605dbd10dcdeed572bcba53501774302944",
+      "expected_byte_sha256": "97905fe82010ced6e51b187e43149605dbd10dcdeed572bcba53501774302944",
+      "pixel_sha256": "a0fa20ee6893ed224a28e266407e021e7a00b15c10e30b0ff0908b9b591a12a9",
+      "expected_pixel_sha256": "a0fa20ee6893ed224a28e266407e021e7a00b15c10e30b0ff0908b9b591a12a9",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3c76-8c29-11eb-93a3-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/06/image_00039.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2148371,
+      "expected_byte_size": 2148371,
+      "byte_sha256": "f96514b113c5425733a1bf760be76c9a82c88bb8da68797517ef0c8bb284c4f7",
+      "expected_byte_sha256": "f96514b113c5425733a1bf760be76c9a82c88bb8da68797517ef0c8bb284c4f7",
+      "pixel_sha256": "b8366e51aed581093f899069e508e8f38c589779c131ac33687e4dc2d4cc86e1",
+      "expected_pixel_sha256": "b8366e51aed581093f899069e508e8f38c589779c131ac33687e4dc2d4cc86e1",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3cc8-8c29-11eb-a40b-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/07/image_00100.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2177036,
+      "expected_byte_size": 2177036,
+      "byte_sha256": "5fcd3f61b8642300fd35b30b1ecd5e42bfc1e7f7bea3612d0cced707ce7beb75",
+      "expected_byte_sha256": "5fcd3f61b8642300fd35b30b1ecd5e42bfc1e7f7bea3612d0cced707ce7beb75",
+      "pixel_sha256": "5f6720bf1b23441184f49a89d19bac673eb9a77f3f9661d1fc822b98c03f1216",
+      "expected_pixel_sha256": "5f6720bf1b23441184f49a89d19bac673eb9a77f3f9661d1fc822b98c03f1216",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3cc9-8c29-11eb-a7dc-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/07/image_00101.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2264375,
+      "expected_byte_size": 2264375,
+      "byte_sha256": "6554891372c89f5015770f6674d46fc54595cb4570c1c8742eb6d75716c9c556",
+      "expected_byte_sha256": "6554891372c89f5015770f6674d46fc54595cb4570c1c8742eb6d75716c9c556",
+      "pixel_sha256": "aeb2e6c32b62ddfeb59f9b0dc2c656ee368bc13125400f5508f8a9cc8a3295c2",
+      "expected_pixel_sha256": "aeb2e6c32b62ddfeb59f9b0dc2c656ee368bc13125400f5508f8a9cc8a3295c2",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3cca-8c29-11eb-b31b-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/07/image_00102.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2204731,
+      "expected_byte_size": 2204731,
+      "byte_sha256": "9488e495ae01c65817f927be99f483f230cc24e46b14862f87afd243aee6a740",
+      "expected_byte_sha256": "9488e495ae01c65817f927be99f483f230cc24e46b14862f87afd243aee6a740",
+      "pixel_sha256": "3d3c7af241e0bd2d6c34f5a1c1d74bceeb5b3b0fb607a7b6d9a19404329083e8",
+      "expected_pixel_sha256": "3d3c7af241e0bd2d6c34f5a1c1d74bceeb5b3b0fb607a7b6d9a19404329083e8",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cbeb3ccb-8c29-11eb-b30c-000d3a74c7de",
+      "file_name": "public/lao/loc_0494/2020/07/image_00103.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2204591,
+      "expected_byte_size": 2204591,
+      "byte_sha256": "1df8bf2a78c2a1c54571b5e6df7194e8c9241f5c42f842585112c9f0187cf020",
+      "expected_byte_sha256": "1df8bf2a78c2a1c54571b5e6df7194e8c9241f5c42f842585112c9f0187cf020",
+      "pixel_sha256": "32f3b8f0bfd831a952801f55232de4be068a3c6bc535b90eba7376fe4ab7743e",
+      "expected_pixel_sha256": "32f3b8f0bfd831a952801f55232de4be068a3c6bc535b90eba7376fe4ab7743e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cc568183-8c29-11eb-9b6b-000d3a74c7de",
+      "file_name": "public/lao/loc_0515/2020/05/image_00064.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 716825,
+      "expected_byte_size": 716825,
+      "byte_sha256": "b50cf951ffe19758f285e1288269cbec273babb5cb0cabf31d96573eabe17559",
+      "expected_byte_sha256": "b50cf951ffe19758f285e1288269cbec273babb5cb0cabf31d96573eabe17559",
+      "pixel_sha256": "34d82094e7be6a8bd7c6bbaace39b63f0dd248e97f1f26c2ebe10236b8249656",
+      "expected_pixel_sha256": "34d82094e7be6a8bd7c6bbaace39b63f0dd248e97f1f26c2ebe10236b8249656",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cc568184-8c29-11eb-8381-000d3a74c7de",
+      "file_name": "public/lao/loc_0515/2020/05/image_00065.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 580686,
+      "expected_byte_size": 580686,
+      "byte_sha256": "7b15abb2e84fccc93e8b247c6929b8f8ef3b19449150753539ccccb44dc99945",
+      "expected_byte_sha256": "7b15abb2e84fccc93e8b247c6929b8f8ef3b19449150753539ccccb44dc99945",
+      "pixel_sha256": "d632a2c7a24bbb864bbacc54fe8483f08b8b821cc97bd9ec3f91abcc989bd051",
+      "expected_pixel_sha256": "d632a2c7a24bbb864bbacc54fe8483f08b8b821cc97bd9ec3f91abcc989bd051",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cc568185-8c29-11eb-bdf0-000d3a74c7de",
+      "file_name": "public/lao/loc_0515/2020/05/image_00066.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 269601,
+      "expected_byte_size": 269601,
+      "byte_sha256": "e014880968e4c7dd2f831e31b366e686dca1e251c8eccca7787c79d5ee0ed1f6",
+      "expected_byte_sha256": "e014880968e4c7dd2f831e31b366e686dca1e251c8eccca7787c79d5ee0ed1f6",
+      "pixel_sha256": "401a33b2c398798b0f50dde9642a9073878e53200c0f75a4db46713f07cba293",
+      "expected_pixel_sha256": "401a33b2c398798b0f50dde9642a9073878e53200c0f75a4db46713f07cba293",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cc568197-8c29-11eb-8c51-000d3a74c7de",
+      "file_name": "public/lao/loc_0515/2020/05/image_00080.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 770328,
+      "expected_byte_size": 770328,
+      "byte_sha256": "b2e10ed9df9b4cb905a1db854315cf578a4e9c5e75c0990eeb619051b6e057a7",
+      "expected_byte_sha256": "b2e10ed9df9b4cb905a1db854315cf578a4e9c5e75c0990eeb619051b6e057a7",
+      "pixel_sha256": "15518cfab6cb3c51c33b3175f60858e0037331f09f424ed764f3ccad7bd40c6a",
+      "expected_pixel_sha256": "15518cfab6cb3c51c33b3175f60858e0037331f09f424ed764f3ccad7bd40c6a",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cc568198-8c29-11eb-900e-000d3a74c7de",
+      "file_name": "public/lao/loc_0515/2020/05/image_00081.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 767139,
+      "expected_byte_size": 767139,
+      "byte_sha256": "465b7068cab7340e4e7ad3151c8916a100d607741029fe11ba8d4b21598c425d",
+      "expected_byte_sha256": "465b7068cab7340e4e7ad3151c8916a100d607741029fe11ba8d4b21598c425d",
+      "pixel_sha256": "14df95abc7eaf852666bf388abb39f070a3ad63596ffca10cead1ac3671ed7cd",
+      "expected_pixel_sha256": "14df95abc7eaf852666bf388abb39f070a3ad63596ffca10cead1ac3671ed7cd",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd06eb12-8c29-11eb-a5c7-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/06/image_00100.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1515708,
+      "expected_byte_size": 1515708,
+      "byte_sha256": "e3407bbe5ccfc3722e47837327830e5e471aa9a299d75825cb3081b9a363abc4",
+      "expected_byte_sha256": "e3407bbe5ccfc3722e47837327830e5e471aa9a299d75825cb3081b9a363abc4",
+      "pixel_sha256": "c759086ef35598345c8b5fd4114b39d1f6bf8876773f2aaec2fdc287d2fd2a44",
+      "expected_pixel_sha256": "c759086ef35598345c8b5fd4114b39d1f6bf8876773f2aaec2fdc287d2fd2a44",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd06eb17-8c29-11eb-8af2-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00047.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1643891,
+      "expected_byte_size": 1643891,
+      "byte_sha256": "3432a3f819099fa9d298948f0ea208da938637b46c88b5e22539d2ffa64edf68",
+      "expected_byte_sha256": "3432a3f819099fa9d298948f0ea208da938637b46c88b5e22539d2ffa64edf68",
+      "pixel_sha256": "c52dd7bcec832a20ca39366e48ff6b2689d29733ea01620b6c750bc336fb909b",
+      "expected_pixel_sha256": "c52dd7bcec832a20ca39366e48ff6b2689d29733ea01620b6c750bc336fb909b",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd06eb18-8c29-11eb-b690-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00048.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1567733,
+      "expected_byte_size": 1567733,
+      "byte_sha256": "7b196f80947fef943e1d26e21064e5fe713da177c77b4a8d61c9ff068fbcda66",
+      "expected_byte_sha256": "7b196f80947fef943e1d26e21064e5fe713da177c77b4a8d61c9ff068fbcda66",
+      "pixel_sha256": "844b09a5b797b9eb632ccde5e4bb62229b6c2fc8909def0adbed689c92f4130e",
+      "expected_pixel_sha256": "844b09a5b797b9eb632ccde5e4bb62229b6c2fc8909def0adbed689c92f4130e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd06eb19-8c29-11eb-b16c-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00049.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1517080,
+      "expected_byte_size": 1517080,
+      "byte_sha256": "c6e3f9cb091a7f9b1795eca392ff59b1e4d6e4617408d09fa7109a48168a26c6",
+      "expected_byte_sha256": "c6e3f9cb091a7f9b1795eca392ff59b1e4d6e4617408d09fa7109a48168a26c6",
+      "pixel_sha256": "b48e5dc8cb2954da8ac9e753828fcf1c457f25169fa833a486a79d010cecad14",
+      "expected_pixel_sha256": "b48e5dc8cb2954da8ac9e753828fcf1c457f25169fa833a486a79d010cecad14",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094b57-8c29-11eb-88db-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00379.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1987055,
+      "expected_byte_size": 1987055,
+      "byte_sha256": "985f0fad60a93cde5452a33064a47dbb6d76204603ac8b9ae22ebb667ebb62c3",
+      "expected_byte_sha256": "985f0fad60a93cde5452a33064a47dbb6d76204603ac8b9ae22ebb667ebb62c3",
+      "pixel_sha256": "7c43939ec482e228e8f2bcc21c23c7e49c7f81b6e59f834b684cde11b4e068e4",
+      "expected_pixel_sha256": "7c43939ec482e228e8f2bcc21c23c7e49c7f81b6e59f834b684cde11b4e068e4",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094b58-8c29-11eb-959d-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00380.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1896400,
+      "expected_byte_size": 1896400,
+      "byte_sha256": "d29ec748968163bd2bd611f80d4bc7aab0c45d3cd9e4c562371977805cabbd9c",
+      "expected_byte_sha256": "d29ec748968163bd2bd611f80d4bc7aab0c45d3cd9e4c562371977805cabbd9c",
+      "pixel_sha256": "51c71043d9fb705c3c2898bdcfdead2162a9d3cfa2e592262346d28fc26f023a",
+      "expected_pixel_sha256": "51c71043d9fb705c3c2898bdcfdead2162a9d3cfa2e592262346d28fc26f023a",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094b59-8c29-11eb-8173-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/07/image_00381.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1918628,
+      "expected_byte_size": 1918628,
+      "byte_sha256": "efecab889c9002200129f940cb794b03ac52a9a429d2d35e47ed42ed9050d11d",
+      "expected_byte_sha256": "efecab889c9002200129f940cb794b03ac52a9a429d2d35e47ed42ed9050d11d",
+      "pixel_sha256": "ddb50c221d3659db53d8872869b64d4106e6d6205ab3a36eacdf643fbb2d10f8",
+      "expected_pixel_sha256": "ddb50c221d3659db53d8872869b64d4106e6d6205ab3a36eacdf643fbb2d10f8",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094bac-8c29-11eb-b109-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/08/image_00123.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2065977,
+      "expected_byte_size": 2065977,
+      "byte_sha256": "d18f24d22eb75fc9bcf667c94d43f6b1b648b248727e3421fe8909c63bc032b4",
+      "expected_byte_sha256": "d18f24d22eb75fc9bcf667c94d43f6b1b648b248727e3421fe8909c63bc032b4",
+      "pixel_sha256": "a868440e4672bc76068ce90f6857e629b3c1981d90b33478def1b002fb1e4885",
+      "expected_pixel_sha256": "a868440e4672bc76068ce90f6857e629b3c1981d90b33478def1b002fb1e4885",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094bad-8c29-11eb-a01d-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/08/image_00124.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2054218,
+      "expected_byte_size": 2054218,
+      "byte_sha256": "d99a0fe48b47673dca47efd0cd8c825efea9001db67707bcc08e88bb36012251",
+      "expected_byte_sha256": "d99a0fe48b47673dca47efd0cd8c825efea9001db67707bcc08e88bb36012251",
+      "pixel_sha256": "a158f8d1d22a5f94b31324acc6bfcece68aa11c10e19c1197386b683574abe26",
+      "expected_pixel_sha256": "a158f8d1d22a5f94b31324acc6bfcece68aa11c10e19c1197386b683574abe26",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094bae-8c29-11eb-9fe9-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/08/image_00125.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2058120,
+      "expected_byte_size": 2058120,
+      "byte_sha256": "0dc43c24b8ee770977ac001e7cdb0a7893d38b005a7d23a8837666edba8abcba",
+      "expected_byte_sha256": "0dc43c24b8ee770977ac001e7cdb0a7893d38b005a7d23a8837666edba8abcba",
+      "pixel_sha256": "630f4584499b8b4109a81d6c6f655fcd8943731516fd9fca680680643f528f37",
+      "expected_pixel_sha256": "630f4584499b8b4109a81d6c6f655fcd8943731516fd9fca680680643f528f37",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094c36-8c29-11eb-8fc7-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/08/image_00261.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1611952,
+      "expected_byte_size": 1611952,
+      "byte_sha256": "70da6cf9cafe899b91e439d82e9fc00be044cf8823a9dd25b077bb8872ec9ca2",
+      "expected_byte_sha256": "70da6cf9cafe899b91e439d82e9fc00be044cf8823a9dd25b077bb8872ec9ca2",
+      "pixel_sha256": "5ad1b4189c9aa27d0f6f968b0993114b984822137f18a2148a4e0a3272506fd0",
+      "expected_pixel_sha256": "5ad1b4189c9aa27d0f6f968b0993114b984822137f18a2148a4e0a3272506fd0",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd094c37-8c29-11eb-bc65-000d3a74c7de",
+      "file_name": "public/lao/loc_0558/2020/08/image_00262.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1621683,
+      "expected_byte_size": 1621683,
+      "byte_sha256": "75dbe00dbfa52c786a5a113c90cdf71a18ec5ed583bdc2fcd11236766833d2f3",
+      "expected_byte_sha256": "75dbe00dbfa52c786a5a113c90cdf71a18ec5ed583bdc2fcd11236766833d2f3",
+      "pixel_sha256": "5e511c79001b3d81eabcf0d0f3cc38643f6d322f1e07d0477cc8406fdd7c471d",
+      "expected_pixel_sha256": "5e511c79001b3d81eabcf0d0f3cc38643f6d322f1e07d0477cc8406fdd7c471d",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd343834-8c29-11eb-8244-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00041.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1055615,
+      "expected_byte_size": 1055615,
+      "byte_sha256": "fbba1eb9fa039b5e1f5762bc2a8e59aee780e4f9e4539eef060a5f842a4d2daf",
+      "expected_byte_sha256": "fbba1eb9fa039b5e1f5762bc2a8e59aee780e4f9e4539eef060a5f842a4d2daf",
+      "pixel_sha256": "5b520eb0c36fd603509b3b0f47419ab814b3bf04a5e1d1968659ebe63d6ce408",
+      "expected_pixel_sha256": "5b520eb0c36fd603509b3b0f47419ab814b3bf04a5e1d1968659ebe63d6ce408",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd343835-8c29-11eb-8f29-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00042.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1053179,
+      "expected_byte_size": 1053179,
+      "byte_sha256": "3eb75d88c8bd5387db9915f2082f2cec5a4fea9b76250341dd3f1eee94b778aa",
+      "expected_byte_sha256": "3eb75d88c8bd5387db9915f2082f2cec5a4fea9b76250341dd3f1eee94b778aa",
+      "pixel_sha256": "a86b6162f6f4e500cb0903447a483c7a8a572b6285e29e96199ff47f1e972757",
+      "expected_pixel_sha256": "a86b6162f6f4e500cb0903447a483c7a8a572b6285e29e96199ff47f1e972757",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd343836-8c29-11eb-ad13-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00043.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1017415,
+      "expected_byte_size": 1017415,
+      "byte_sha256": "ecae700871ff0c2243b9a8b92bf48960ed425321b26da602a452796148c95997",
+      "expected_byte_sha256": "ecae700871ff0c2243b9a8b92bf48960ed425321b26da602a452796148c95997",
+      "pixel_sha256": "d013a9ea68a87f4d506b5a53458a184deafe7b445970baf562465416c7863bd6",
+      "expected_pixel_sha256": "d013a9ea68a87f4d506b5a53458a184deafe7b445970baf562465416c7863bd6",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd343848-8c29-11eb-b0b5-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00061.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 766299,
+      "expected_byte_size": 766299,
+      "byte_sha256": "403181dae9e4a654c6a6aa78bace7dd86c3f39c0cd23b32e06628a1412f17c56",
+      "expected_byte_sha256": "403181dae9e4a654c6a6aa78bace7dd86c3f39c0cd23b32e06628a1412f17c56",
+      "pixel_sha256": "0d8f49ed224309adb98c16eaac4bd3ef692ef0a6ec19b7dfff549475573900f6",
+      "expected_pixel_sha256": "0d8f49ed224309adb98c16eaac4bd3ef692ef0a6ec19b7dfff549475573900f6",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd343849-8c29-11eb-8195-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00062.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 766739,
+      "expected_byte_size": 766739,
+      "byte_sha256": "157d38b0c1bed254e82eca2d68c8c1208c25ba0b24fe27841978a085ae2f0d5c",
+      "expected_byte_sha256": "157d38b0c1bed254e82eca2d68c8c1208c25ba0b24fe27841978a085ae2f0d5c",
+      "pixel_sha256": "3cea38937531da7d478f7ab82d9901db913188c8d1e2c0cb7ddd6ba98b92a1f8",
+      "expected_pixel_sha256": "3cea38937531da7d478f7ab82d9901db913188c8d1e2c0cb7ddd6ba98b92a1f8",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd34384a-8c29-11eb-8a13-000d3a74c7de",
+      "file_name": "public/lao/loc_0108/2018/06/image_00063.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 765647,
+      "expected_byte_size": 765647,
+      "byte_sha256": "c433f2bf361fe59cdfabdbe947ebe04e58ab8eabcfc5a4cddc2d13c84cfcaf30",
+      "expected_byte_sha256": "c433f2bf361fe59cdfabdbe947ebe04e58ab8eabcfc5a4cddc2d13c84cfcaf30",
+      "pixel_sha256": "077c2d304732a68697d09d15b277dfaed3d5074e2b5aada06ce67a6e1a896f37",
+      "expected_pixel_sha256": "077c2d304732a68697d09d15b277dfaed3d5074e2b5aada06ce67a6e1a896f37",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7bbef1-8c29-11eb-8c48-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/07/image_00080.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2562084,
+      "expected_byte_size": 2562084,
+      "byte_sha256": "dd450f429d1b73cb2f008210cc3d5fb73eda9ed996087a2130189e244f03e5bc",
+      "expected_byte_sha256": "dd450f429d1b73cb2f008210cc3d5fb73eda9ed996087a2130189e244f03e5bc",
+      "pixel_sha256": "4a1e0fe4f510d3f26ed0e3d967c2e218b8c0bc07df868bfd046192b72aeb6922",
+      "expected_pixel_sha256": "4a1e0fe4f510d3f26ed0e3d967c2e218b8c0bc07df868bfd046192b72aeb6922",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7bbef2-8c29-11eb-890b-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/07/image_00081.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2566931,
+      "expected_byte_size": 2566931,
+      "byte_sha256": "cb71c174b15c80af14c28438d3fbef58c80bbcfbcc2054c6f8d53a641bb1ab82",
+      "expected_byte_sha256": "cb71c174b15c80af14c28438d3fbef58c80bbcfbcc2054c6f8d53a641bb1ab82",
+      "pixel_sha256": "6317a6a203b4e959143c7cf1f65a90b8f15469330a5ffe5c71496a0311b4c011",
+      "expected_pixel_sha256": "6317a6a203b4e959143c7cf1f65a90b8f15469330a5ffe5c71496a0311b4c011",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7bbef3-8c29-11eb-a682-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/07/image_00082.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2559384,
+      "expected_byte_size": 2559384,
+      "byte_sha256": "ddb52c675303161920a9297701969a7b1cdad4cbab64b14c7d0ceac046569107",
+      "expected_byte_sha256": "ddb52c675303161920a9297701969a7b1cdad4cbab64b14c7d0ceac046569107",
+      "pixel_sha256": "bbbb5aa11023e8ff4e131276752d30b4874663c388ceeab8bde4d2d1cffc4f59",
+      "expected_pixel_sha256": "bbbb5aa11023e8ff4e131276752d30b4874663c388ceeab8bde4d2d1cffc4f59",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7e1ed6-8c29-11eb-83d2-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/09/image_00156.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2567646,
+      "expected_byte_size": 2567646,
+      "byte_sha256": "3f3919fc8c81d652e6573f7acf117b1196440a14b9a395ee4f144cd295c5c3a4",
+      "expected_byte_sha256": "3f3919fc8c81d652e6573f7acf117b1196440a14b9a395ee4f144cd295c5c3a4",
+      "pixel_sha256": "cc858048010b50c83f56a2e4d8aece1eda825f3b07e038613c9cb65435cbce91",
+      "expected_pixel_sha256": "cc858048010b50c83f56a2e4d8aece1eda825f3b07e038613c9cb65435cbce91",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7e1f12-8c29-11eb-be7a-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/07/image_00103.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1145205,
+      "expected_byte_size": 1145205,
+      "byte_sha256": "7ee836daf2f0307b547e59ab3c5ab1bcbaa11fcd9fdd87bbca2be1099cf31d7e",
+      "expected_byte_sha256": "7ee836daf2f0307b547e59ab3c5ab1bcbaa11fcd9fdd87bbca2be1099cf31d7e",
+      "pixel_sha256": "2da8af52e2a6274888d33b1a015f512652a65ca7b51f3dc4cb62476c9618e2f7",
+      "expected_pixel_sha256": "2da8af52e2a6274888d33b1a015f512652a65ca7b51f3dc4cb62476c9618e2f7",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "cd7e1f14-8c29-11eb-bfd1-000d3a74c7de",
+      "file_name": "public/lao/loc_0121/2018/07/image_00105.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2427926,
+      "expected_byte_size": 2427926,
+      "byte_sha256": "184191b88795d91f8de351b52e25760e5bbb30100c33bccd5980709952ebfde5",
+      "expected_byte_sha256": "184191b88795d91f8de351b52e25760e5bbb30100c33bccd5980709952ebfde5",
+      "pixel_sha256": "7e2b3cfddeecf6bf45ccc8f8e32f95c80319aa93fb03e6528e6a8e91d7936328",
+      "expected_pixel_sha256": "7e2b3cfddeecf6bf45ccc8f8e32f95c80319aa93fb03e6528e6a8e91d7936328",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ce087289-8c29-11eb-9244-000d3a74c7de",
+      "file_name": "public/lao/loc_0165/2018/06/image_00116.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 1634474,
+      "expected_byte_size": 1634474,
+      "byte_sha256": "de001d8c7dda1ad2447f8c26a7f39c093dc497f7eebd01d3c48ed51d39ad51dc",
+      "expected_byte_sha256": "de001d8c7dda1ad2447f8c26a7f39c093dc497f7eebd01d3c48ed51d39ad51dc",
+      "pixel_sha256": "ae1fa0ec612bcad4e938525a8ae3d4705a2f0eed89ecf937dbf614a4d3a7cfdd",
+      "expected_pixel_sha256": "ae1fa0ec612bcad4e938525a8ae3d4705a2f0eed89ecf937dbf614a4d3a7cfdd",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ce08728a-8c29-11eb-bba8-000d3a74c7de",
+      "file_name": "public/lao/loc_0165/2018/06/image_00117.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 1686618,
+      "expected_byte_size": 1686618,
+      "byte_sha256": "20e6e3dcd1cd8109691198ca09bcf427b55f220d02bd3d7638ab0ba093878303",
+      "expected_byte_sha256": "20e6e3dcd1cd8109691198ca09bcf427b55f220d02bd3d7638ab0ba093878303",
+      "pixel_sha256": "e1696377e5fe5f72e0a90ada0d5eab1a2b39575cf1685fc8e7b15c9cc0af861c",
+      "expected_pixel_sha256": "e1696377e5fe5f72e0a90ada0d5eab1a2b39575cf1685fc8e7b15c9cc0af861c",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "ce08728b-8c29-11eb-a8e3-000d3a74c7de",
+      "file_name": "public/lao/loc_0165/2018/06/image_00118.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 1685179,
+      "expected_byte_size": 1685179,
+      "byte_sha256": "29b64d2051e0f2f5a11ebc7b49213b8d703dca522e36c7ac160ca3d724fd2603",
+      "expected_byte_sha256": "29b64d2051e0f2f5a11ebc7b49213b8d703dca522e36c7ac160ca3d724fd2603",
+      "pixel_sha256": "6884a0a9bdcfcfea8747bb8e18e805066c74d221ab12cab1e2346d5647be313d",
+      "expected_pixel_sha256": "6884a0a9bdcfcfea8747bb8e18e805066c74d221ab12cab1e2346d5647be313d",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d56b1bd4-8c29-11eb-8734-000d3a74c7de",
+      "file_name": "public/lao/loc_0685/2019/02/image_00032.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 761731,
+      "expected_byte_size": 761731,
+      "byte_sha256": "daf269d62698eccf400513083e56e2faaf75fff01dc6d7278ee0d1015800a246",
+      "expected_byte_sha256": "daf269d62698eccf400513083e56e2faaf75fff01dc6d7278ee0d1015800a246",
+      "pixel_sha256": "41ce09376ef436aac963549de358458c517bf6065147cb51d19501e26c34ba8e",
+      "expected_pixel_sha256": "41ce09376ef436aac963549de358458c517bf6065147cb51d19501e26c34ba8e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d56b1bd5-8c29-11eb-8464-000d3a74c7de",
+      "file_name": "public/lao/loc_0685/2019/02/image_00033.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 760123,
+      "expected_byte_size": 760123,
+      "byte_sha256": "38483f9a9eaea34b38903d3ac8e92cc12867cf248ff0364dd8fbaf559e6f5d8a",
+      "expected_byte_sha256": "38483f9a9eaea34b38903d3ac8e92cc12867cf248ff0364dd8fbaf559e6f5d8a",
+      "pixel_sha256": "17b776a64a2dc9c2f4b5d2f5fcff62593bf4982f3e9a6addae2184d38b9c6267",
+      "expected_pixel_sha256": "17b776a64a2dc9c2f4b5d2f5fcff62593bf4982f3e9a6addae2184d38b9c6267",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d56b1bd6-8c29-11eb-8620-000d3a74c7de",
+      "file_name": "public/lao/loc_0685/2019/02/image_00034.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expected_dimensions": [
+        2560,
+        1920
+      ],
+      "byte_size": 758959,
+      "expected_byte_size": 758959,
+      "byte_sha256": "a06c01ba0b5e7f15398ca4d7a95ea7737ad90797be5acab6c5392ac0016ed0ec",
+      "expected_byte_sha256": "a06c01ba0b5e7f15398ca4d7a95ea7737ad90797be5acab6c5392ac0016ed0ec",
+      "pixel_sha256": "e2f03d3e22b55e78e066e8a2ea721e18edc308dfe3fc6fb37f03ca17f8458f18",
+      "expected_pixel_sha256": "e2f03d3e22b55e78e066e8a2ea721e18edc308dfe3fc6fb37f03ca17f8458f18",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2436-8c29-11eb-9f8d-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00036.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1366126,
+      "expected_byte_size": 1366126,
+      "byte_sha256": "13973c7b95ede0dbfc65bb950b77c425e9b771ab8dd821047756d5f8942bf0e3",
+      "expected_byte_sha256": "13973c7b95ede0dbfc65bb950b77c425e9b771ab8dd821047756d5f8942bf0e3",
+      "pixel_sha256": "e727654fdf9706edbef56485323875b3a858fdfca91008587b1c1123e50f48ce",
+      "expected_pixel_sha256": "e727654fdf9706edbef56485323875b3a858fdfca91008587b1c1123e50f48ce",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2437-8c29-11eb-bfef-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00037.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1368391,
+      "expected_byte_size": 1368391,
+      "byte_sha256": "c1b166faae9a261d2a00bd22d16121648f344877e6167b657bf41fdd17c0c33e",
+      "expected_byte_sha256": "c1b166faae9a261d2a00bd22d16121648f344877e6167b657bf41fdd17c0c33e",
+      "pixel_sha256": "25839b38372a0b7e5d0a75e7e9a0cdf6d14155dfd7814e8b5285e1e985ecc09a",
+      "expected_pixel_sha256": "25839b38372a0b7e5d0a75e7e9a0cdf6d14155dfd7814e8b5285e1e985ecc09a",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2438-8c29-11eb-b386-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00038.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1355445,
+      "expected_byte_size": 1355445,
+      "byte_sha256": "0d4f2bb491a74b976db1642ac1b90c98daecf8a1d603b4a32a9397288d409b15",
+      "expected_byte_sha256": "0d4f2bb491a74b976db1642ac1b90c98daecf8a1d603b4a32a9397288d409b15",
+      "pixel_sha256": "411d202a76f0721e9b3067744662ce591eee1bb9814726e3c648eee69514c56d",
+      "expected_pixel_sha256": "411d202a76f0721e9b3067744662ce591eee1bb9814726e3c648eee69514c56d",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2442-8c29-11eb-aaa2-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00048.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1388105,
+      "expected_byte_size": 1388105,
+      "byte_sha256": "0261a0372b4b1cd188ddc4efc4cadf46145d0cfb45395e593879896e714157ea",
+      "expected_byte_sha256": "0261a0372b4b1cd188ddc4efc4cadf46145d0cfb45395e593879896e714157ea",
+      "pixel_sha256": "2c661a1a217197325139a63f7da36a39d54a72dcfff6653bb85c5dd6a28bf183",
+      "expected_pixel_sha256": "2c661a1a217197325139a63f7da36a39d54a72dcfff6653bb85c5dd6a28bf183",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2443-8c29-11eb-ae54-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00049.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1374804,
+      "expected_byte_size": 1374804,
+      "byte_sha256": "71f8c8e9554f78449c02f558e2c2293dfc502f5c7139ce8147730987bc081d5c",
+      "expected_byte_sha256": "71f8c8e9554f78449c02f558e2c2293dfc502f5c7139ce8147730987bc081d5c",
+      "pixel_sha256": "f830eac16daca311732b1e4f7975248c72b15bbf0f42b488b8dab54e647ddbf7",
+      "expected_pixel_sha256": "f830eac16daca311732b1e4f7975248c72b15bbf0f42b488b8dab54e647ddbf7",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e2444-8c29-11eb-bda8-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/12/image_00050.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1369331,
+      "expected_byte_size": 1369331,
+      "byte_sha256": "42afe55ecf75b63ee11c398c124ccb2393ff287f79702b53b62dffa54e2497c8",
+      "expected_byte_sha256": "42afe55ecf75b63ee11c398c124ccb2393ff287f79702b53b62dffa54e2497c8",
+      "pixel_sha256": "df18eb957ce2e7beb8f337ab715e873a06b255a5cf0e0cb2fa8f297569164efd",
+      "expected_pixel_sha256": "df18eb957ce2e7beb8f337ab715e873a06b255a5cf0e0cb2fa8f297569164efd",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e24c9-8c29-11eb-825a-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00093.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1371073,
+      "expected_byte_size": 1371073,
+      "byte_sha256": "3eb02515d76047409ec7e13c40818b04ad910e0b2a3488e84eb9b41b08050406",
+      "expected_byte_sha256": "3eb02515d76047409ec7e13c40818b04ad910e0b2a3488e84eb9b41b08050406",
+      "pixel_sha256": "ba2f45ee6f2c220cd7cb85e4968b6b556f18abd2ccdc264849f530566a0c6d3b",
+      "expected_pixel_sha256": "ba2f45ee6f2c220cd7cb85e4968b6b556f18abd2ccdc264849f530566a0c6d3b",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e24ca-8c29-11eb-b6fc-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00094.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1374414,
+      "expected_byte_size": 1374414,
+      "byte_sha256": "fc29368e30e73c445d982b050ab6a271f08f4c283081fc18c97f9efff761d640",
+      "expected_byte_sha256": "fc29368e30e73c445d982b050ab6a271f08f4c283081fc18c97f9efff761d640",
+      "pixel_sha256": "2fab6a7897b4fd6d1be502548f6f2a10c54dbb34f1615a60adbfe10472ba1652",
+      "expected_pixel_sha256": "2fab6a7897b4fd6d1be502548f6f2a10c54dbb34f1615a60adbfe10472ba1652",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e24cb-8c29-11eb-a7c8-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00095.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1375393,
+      "expected_byte_size": 1375393,
+      "byte_sha256": "60952fe684f4073c7af07865a506bda7144f0c073d0f2f05f3d82d1505b02f0c",
+      "expected_byte_sha256": "60952fe684f4073c7af07865a506bda7144f0c073d0f2f05f3d82d1505b02f0c",
+      "pixel_sha256": "73d53008fef5068fc9736d530c0b5f489251aa9729afcfc2ddc11dbe1ab3bdef",
+      "expected_pixel_sha256": "73d53008fef5068fc9736d530c0b5f489251aa9729afcfc2ddc11dbe1ab3bdef",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e254a-8c29-11eb-b312-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00222.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1344255,
+      "expected_byte_size": 1344255,
+      "byte_sha256": "b48802cce159a2fda396c4a3f17324e5fad045fe9527d5ee13bcff5568f1eada",
+      "expected_byte_sha256": "b48802cce159a2fda396c4a3f17324e5fad045fe9527d5ee13bcff5568f1eada",
+      "pixel_sha256": "5fd8f623c330c4549016ab00e4a2983877479dfba42e3030f7ee45c6a6bf6426",
+      "expected_pixel_sha256": "5fd8f623c330c4549016ab00e4a2983877479dfba42e3030f7ee45c6a6bf6426",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e254b-8c29-11eb-9ca9-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00223.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1356605,
+      "expected_byte_size": 1356605,
+      "byte_sha256": "41cc53e905977b7ed26b4a778330957a26f09e182b3c10747493a997b5d7b7ac",
+      "expected_byte_sha256": "41cc53e905977b7ed26b4a778330957a26f09e182b3c10747493a997b5d7b7ac",
+      "pixel_sha256": "3315f91813e892cd95ae0e7a2f5703594bfbbb28aa3721bcfad58be432f16172",
+      "expected_pixel_sha256": "3315f91813e892cd95ae0e7a2f5703594bfbbb28aa3721bcfad58be432f16172",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d57e254c-8c29-11eb-9399-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2019/01/image_00224.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1344657,
+      "expected_byte_size": 1344657,
+      "byte_sha256": "39516bdc47071fc073ab72ea5286e8184d277cef1e5fbc9bec2074494edb1510",
+      "expected_byte_sha256": "39516bdc47071fc073ab72ea5286e8184d277cef1e5fbc9bec2074494edb1510",
+      "pixel_sha256": "868149db82e0c931fe0c72e2108ba47683e6f67bb997cedd7a9142392533a56f",
+      "expected_pixel_sha256": "868149db82e0c931fe0c72e2108ba47683e6f67bb997cedd7a9142392533a56f",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6978fd0-8c29-11eb-8d50-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/10/image_00258.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1360943,
+      "expected_byte_size": 1360943,
+      "byte_sha256": "9e419804020b74ce684ec42f2ef5a37141ce7f8f5fe110d22965f4ce0ea0ae89",
+      "expected_byte_sha256": "9e419804020b74ce684ec42f2ef5a37141ce7f8f5fe110d22965f4ce0ea0ae89",
+      "pixel_sha256": "3c46553e0d6260508eb284e1006f5b4d24480fd7a054289e19e8f3ca476d5bdb",
+      "expected_pixel_sha256": "3c46553e0d6260508eb284e1006f5b4d24480fd7a054289e19e8f3ca476d5bdb",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6978fd1-8c29-11eb-bb0a-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/10/image_00259.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1361466,
+      "expected_byte_size": 1361466,
+      "byte_sha256": "600a0568e7ab764cc61ace0c63367a25517a521a993782bcae878d6c8180f3b0",
+      "expected_byte_sha256": "600a0568e7ab764cc61ace0c63367a25517a521a993782bcae878d6c8180f3b0",
+      "pixel_sha256": "2baddc494fd50dddc7c19b69b4ac5842a4b159af40b4aea130a88519dc9cb751",
+      "expected_pixel_sha256": "2baddc494fd50dddc7c19b69b4ac5842a4b159af40b4aea130a88519dc9cb751",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6978fd2-8c29-11eb-a038-000d3a74c7de",
+      "file_name": "public/lao/loc_0696/2018/10/image_00260.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4608,
+        2592
+      ],
+      "expected_dimensions": [
+        4608,
+        2592
+      ],
+      "byte_size": 1360336,
+      "expected_byte_size": 1360336,
+      "byte_sha256": "7f535dcd171771539d523b437ccc2d575623ccbea13dce1bbfcb720981009880",
+      "expected_byte_sha256": "7f535dcd171771539d523b437ccc2d575623ccbea13dce1bbfcb720981009880",
+      "pixel_sha256": "68268921d2472964e9d9480f6c7af7a0fe558d66065afdc6eb13489b1f021922",
+      "expected_pixel_sha256": "68268921d2472964e9d9480f6c7af7a0fe558d66065afdc6eb13489b1f021922",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6c00679-8c29-11eb-9133-000d3a74c7de",
+      "file_name": "public/lao/loc_0725/2018/10/image_00549.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3264,
+        2448
+      ],
+      "expected_dimensions": [
+        3264,
+        2448
+      ],
+      "byte_size": 634847,
+      "expected_byte_size": 634847,
+      "byte_sha256": "0c7aa0b5ec08310205638b524ee6e96d64380366046635e9ba0df03755dc8d75",
+      "expected_byte_sha256": "0c7aa0b5ec08310205638b524ee6e96d64380366046635e9ba0df03755dc8d75",
+      "pixel_sha256": "a8c6e75adfbec17fafcd4ade6fb10f88c514f97bb6fb69fe0dd6315ee1c694ae",
+      "expected_pixel_sha256": "a8c6e75adfbec17fafcd4ade6fb10f88c514f97bb6fb69fe0dd6315ee1c694ae",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6c0067a-8c29-11eb-b7a3-000d3a74c7de",
+      "file_name": "public/lao/loc_0725/2018/10/image_00550.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3264,
+        2448
+      ],
+      "expected_dimensions": [
+        3264,
+        2448
+      ],
+      "byte_size": 636288,
+      "expected_byte_size": 636288,
+      "byte_sha256": "e580e2d9dfb1b01b9caaa28e60767a1ebf1b7878fb06eaeddc0b528ba0028f23",
+      "expected_byte_sha256": "e580e2d9dfb1b01b9caaa28e60767a1ebf1b7878fb06eaeddc0b528ba0028f23",
+      "pixel_sha256": "595fd4cb50e2d7c85a8fe295388135fd7c3bd642833d53a3e1c6769d0bc06489",
+      "expected_pixel_sha256": "595fd4cb50e2d7c85a8fe295388135fd7c3bd642833d53a3e1c6769d0bc06489",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d6c0067b-8c29-11eb-a991-000d3a74c7de",
+      "file_name": "public/lao/loc_0725/2018/10/image_00551.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        3264,
+        2448
+      ],
+      "expected_dimensions": [
+        3264,
+        2448
+      ],
+      "byte_size": 633567,
+      "expected_byte_size": 633567,
+      "byte_sha256": "729883795cae41fcd0a5586890ea117e72148a8986740d0caafa708e65357d14",
+      "expected_byte_sha256": "729883795cae41fcd0a5586890ea117e72148a8986740d0caafa708e65357d14",
+      "pixel_sha256": "dd8edc291db29ed84462613c981454a54c83e1ac15c8bbc0b9b0fb89f15109a9",
+      "expected_pixel_sha256": "dd8edc291db29ed84462613c981454a54c83e1ac15c8bbc0b9b0fb89f15109a9",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d772e253-8c29-11eb-8de6-000d3a74c7de",
+      "file_name": "public/lao/loc_0754/2018/11/image_00038.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2389849,
+      "expected_byte_size": 2389849,
+      "byte_sha256": "4d52f5b930cbf4f88d78cd0ff28c95d17fc3e092f7882a099d838f340d7d0107",
+      "expected_byte_sha256": "4d52f5b930cbf4f88d78cd0ff28c95d17fc3e092f7882a099d838f340d7d0107",
+      "pixel_sha256": "83c83ac6857f24e6f429ad432dffc92e319f544ea85ea3f59cba44bdd571fef4",
+      "expected_pixel_sha256": "83c83ac6857f24e6f429ad432dffc92e319f544ea85ea3f59cba44bdd571fef4",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d772e254-8c29-11eb-8992-000d3a74c7de",
+      "file_name": "public/lao/loc_0754/2018/11/image_00039.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2391139,
+      "expected_byte_size": 2391139,
+      "byte_sha256": "52b1932f91c5802dc64b8d179eb1f0390213843e0da9e7fe6dce578ceb62b363",
+      "expected_byte_sha256": "52b1932f91c5802dc64b8d179eb1f0390213843e0da9e7fe6dce578ceb62b363",
+      "pixel_sha256": "74948510b7d04ef98ff9220b10ca6b10e0f9b2a061624de1f7b7c77471e740b8",
+      "expected_pixel_sha256": "74948510b7d04ef98ff9220b10ca6b10e0f9b2a061624de1f7b7c77471e740b8",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf30c9-8c29-11eb-ac55-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2019/04/image_00000.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2023691,
+      "expected_byte_size": 2023691,
+      "byte_sha256": "07802660e8a57c8e2f580497834b22dccbc81652a14abdcb4bcbdd181dad6dbd",
+      "expected_byte_sha256": "07802660e8a57c8e2f580497834b22dccbc81652a14abdcb4bcbdd181dad6dbd",
+      "pixel_sha256": "d49cc28f40a154565198ae64e50a19c3d172d93dfd166be97b48fb83d46f3a6c",
+      "expected_pixel_sha256": "d49cc28f40a154565198ae64e50a19c3d172d93dfd166be97b48fb83d46f3a6c",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf30cc-8c29-11eb-82e4-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2018/12/image_00000.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2142973,
+      "expected_byte_size": 2142973,
+      "byte_sha256": "0bb9735b4d4f50a7184e003d05f2667f2ba1f62082faee4f0fcae83778b0ffb7",
+      "expected_byte_sha256": "0bb9735b4d4f50a7184e003d05f2667f2ba1f62082faee4f0fcae83778b0ffb7",
+      "pixel_sha256": "799478988480abfed08ca4794e5da9857c489c7bd0c9d11f84873de76ef7d1a2",
+      "expected_pixel_sha256": "799478988480abfed08ca4794e5da9857c489c7bd0c9d11f84873de76ef7d1a2",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf3158-8c29-11eb-bb19-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2018/11/image_00046.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1605609,
+      "expected_byte_size": 1605609,
+      "byte_sha256": "a649e7fc1a859d4556e29a279807d6647dbb4c25820781b60b4bef5608307fa2",
+      "expected_byte_sha256": "a649e7fc1a859d4556e29a279807d6647dbb4c25820781b60b4bef5608307fa2",
+      "pixel_sha256": "bf91461ca8ff80339dcc011c4db714af654f9ebee1275ba25b2220119783af1a",
+      "expected_pixel_sha256": "bf91461ca8ff80339dcc011c4db714af654f9ebee1275ba25b2220119783af1a",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf3159-8c29-11eb-8b8c-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2018/11/image_00047.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2137400,
+      "expected_byte_size": 2137400,
+      "byte_sha256": "65ef5f5ca19f517bf0e4b0c44c7429106984d52d25406960865cc4fe0a79815d",
+      "expected_byte_sha256": "65ef5f5ca19f517bf0e4b0c44c7429106984d52d25406960865cc4fe0a79815d",
+      "pixel_sha256": "a3211a893d7d57c05390f13a4c7f510fb1a28236e7567c5459c0f080a85676f0",
+      "expected_pixel_sha256": "a3211a893d7d57c05390f13a4c7f510fb1a28236e7567c5459c0f080a85676f0",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf315a-8c29-11eb-9505-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2018/11/image_00048.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2083299,
+      "expected_byte_size": 2083299,
+      "byte_sha256": "d788191126468ec199294d16a8cb1fdde7a5180e9179cd3af7ad42dbded540ba",
+      "expected_byte_sha256": "d788191126468ec199294d16a8cb1fdde7a5180e9179cd3af7ad42dbded540ba",
+      "pixel_sha256": "2fea0fb197abaa412b5cd3ac8547934d669eae9ecd6746e94bc92b68428d0955",
+      "expected_pixel_sha256": "2fea0fb197abaa412b5cd3ac8547934d669eae9ecd6746e94bc92b68428d0955",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf3162-8c29-11eb-8f70-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2018/12/image_00014.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1697546,
+      "expected_byte_size": 1697546,
+      "byte_sha256": "409b56bd82fcf6fa945a131fdb1f24607d1f6868373691875dd37eae5ff790b9",
+      "expected_byte_sha256": "409b56bd82fcf6fa945a131fdb1f24607d1f6868373691875dd37eae5ff790b9",
+      "pixel_sha256": "26859c0e9f00c16ea70579daa9678012e3cf2134adf658beb39be9117551ca9e",
+      "expected_pixel_sha256": "26859c0e9f00c16ea70579daa9678012e3cf2134adf658beb39be9117551ca9e",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf316a-8c29-11eb-a618-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2019/02/image_00004.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1581943,
+      "expected_byte_size": 1581943,
+      "byte_sha256": "a4e580f3059d2f4ef74542bfd197dfdd5f9f8b80405bee972a91fdd3b1736945",
+      "expected_byte_sha256": "a4e580f3059d2f4ef74542bfd197dfdd5f9f8b80405bee972a91fdd3b1736945",
+      "pixel_sha256": "5f909e32adcaaebdc9a72c8baa7fde32a29ba7f8df6e6f2a461e2f54bc69eead",
+      "expected_pixel_sha256": "5f909e32adcaaebdc9a72c8baa7fde32a29ba7f8df6e6f2a461e2f54bc69eead",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d7bf3176-8c29-11eb-8123-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0832/2019/04/image_00012.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 1439219,
+      "expected_byte_size": 1439219,
+      "byte_sha256": "a45067768b35a29ea4c425f9b24e2646c3e98492c7fd9d27dfad2133f5b6b86a",
+      "expected_byte_sha256": "a45067768b35a29ea4c425f9b24e2646c3e98492c7fd9d27dfad2133f5b6b86a",
+      "pixel_sha256": "b98031c89613ee666dc0d81f5ae486ad694dc3261904587c2715a72f65114931",
+      "expected_pixel_sha256": "b98031c89613ee666dc0d81f5ae486ad694dc3261904587c2715a72f65114931",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d85281cb-8c29-11eb-9329-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0853/2018/10/image_00006.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4992,
+        2808
+      ],
+      "expected_dimensions": [
+        4992,
+        2808
+      ],
+      "byte_size": 1538043,
+      "expected_byte_size": 1538043,
+      "byte_sha256": "e6a668dc89675c0947256cd47be8c1eb7933f44bc69eb7ffc187fca44513f0a7",
+      "expected_byte_sha256": "e6a668dc89675c0947256cd47be8c1eb7933f44bc69eb7ffc187fca44513f0a7",
+      "pixel_sha256": "0f74794b4631df696435499c605c10fa330781fe8afb884f8287df5df38f28a2",
+      "expected_pixel_sha256": "0f74794b4631df696435499c605c10fa330781fe8afb884f8287df5df38f28a2",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d85281cc-8c29-11eb-809e-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0853/2018/10/image_00007.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4992,
+        2808
+      ],
+      "expected_dimensions": [
+        4992,
+        2808
+      ],
+      "byte_size": 1540276,
+      "expected_byte_size": 1540276,
+      "byte_sha256": "8aca4c61018026f8328c9a88b2ae13759425f2537f82aeea7dd42a3667a18a19",
+      "expected_byte_sha256": "8aca4c61018026f8328c9a88b2ae13759425f2537f82aeea7dd42a3667a18a19",
+      "pixel_sha256": "ac69dd6b5bd0f7262211d60a3c3ac352ee57445db79e66473f7b9c7edc692a7c",
+      "expected_pixel_sha256": "ac69dd6b5bd0f7262211d60a3c3ac352ee57445db79e66473f7b9c7edc692a7c",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "d85281cd-8c29-11eb-8b7d-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0853/2018/10/image_00008.jpg",
+      "status": "PASS",
+      "format": "JPEG",
+      "expected_format": "JPEG",
+      "mode": "RGB",
+      "dimensions": [
+        4992,
+        2808
+      ],
+      "expected_dimensions": [
+        4992,
+        2808
+      ],
+      "byte_size": 1543524,
+      "expected_byte_size": 1543524,
+      "byte_sha256": "b6eed918e52475beb66b8f08799951b6bd7e6340eb6a194c84e55343b5a36f26",
+      "expected_byte_sha256": "b6eed918e52475beb66b8f08799951b6bd7e6340eb6a194c84e55343b5a36f26",
+      "pixel_sha256": "9416ffe7518911adbc212f5fe10cae012ed2eac6142980d0f8f937f4fc23c01b",
+      "expected_pixel_sha256": "9416ffe7518911adbc212f5fe10cae012ed2eac6142980d0f8f937f4fc23c01b",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    },
+    {
+      "image_id": "dc0f0e87-8c29-11eb-a298-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0963/2019/03/image_00003.jpg",
+      "status": "PASS",
+      "format": "MPO",
+      "expected_format": "MPO",
+      "mode": "RGB",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "expected_dimensions": [
+        3840,
+        2880
+      ],
+      "byte_size": 2965590,
+      "expected_byte_size": 2965590,
+      "byte_sha256": "c1da50650b21575b750ab26af2a3e21d38ec040f24758eb9d2318639838d3e0e",
+      "expected_byte_sha256": "c1da50650b21575b750ab26af2a3e21d38ec040f24758eb9d2318639838d3e0e",
+      "pixel_sha256": "4d5bdaea2f11d61db7f6d95ecede35999ba298b42fb47c3d737004c637fa3fde",
+      "expected_pixel_sha256": "4d5bdaea2f11d61db7f6d95ecede35999ba298b42fb47c3d737004c637fa3fde",
+      "checks": {
+        "byte_sha256_match": true,
+        "pixel_sha256_match": true,
+        "dimensions_match": true,
+        "size_match": true,
+        "format_match": true
+      }
+    }
+  ]
+}

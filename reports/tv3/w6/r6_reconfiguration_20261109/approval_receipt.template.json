@@ -1,0 +1,13 @@
+{
+  "role": null,
+  "decision": "PENDING",
+  "binding": {
+    "run_id": "R6",
+    "attempt_id": "R6_attempt01",
+    "max_gpu_hours": 3,
+    "config_sha256": null,
+    "source_sha": null,
+    "runtime_sha256": null
+  },
+  "note": "Template only. Each reviewer supplies their own actual approval AFTER new smoke/freeze. Never use as approval."
+}

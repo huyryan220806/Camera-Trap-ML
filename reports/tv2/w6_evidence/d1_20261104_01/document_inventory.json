@@ -1,0 +1,170 @@
+[
+  {
+    "path": "docs/handoff_tv2_w1.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 4361,
+    "sha256": "e5cb95f999cfdcfe70ce0819f90bbfb20154605a05c59ee19bacf9c75683b164",
+    "lines": 56
+  },
+  {
+    "path": "reports/tv2/TV2_W2.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 9728,
+    "sha256": "d01af7096dd587a68abd392a280cfcbbaf286874c910934223433c3735e70d3c",
+    "lines": 80
+  },
+  {
+    "path": "reports/tv2/TV2_W2_REVIEW_FIX.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 6048,
+    "sha256": "64763554f8477006015198493dec39e2997c93aeeb89d2d91f3f768caf60440a",
+    "lines": 63
+  },
+  {
+    "path": "reports/tv2/TV2_W2_CHECKPOINT.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 3753,
+    "sha256": "efaf24f7b59a96dd8993d4793b6411e358838a39a978076a5c82e154f73a2e1f",
+    "lines": 52
+  },
+  {
+    "path": "reports/tv2/TV2_W3.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 16970,
+    "sha256": "da1fa1e34c9fb500a170bb07a7c13bd59f281b2ee1fa477a29cb1aa7478e30e2",
+    "lines": 285
+  },
+  {
+    "path": "reports/tv2/TV2_W3_PROTOCOL.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 18572,
+    "sha256": "4ac724ba1a80d2f0610b12f2973fcc533cf5e03ec71c76356243132cd7118f82",
+    "lines": 227
+  },
+  {
+    "path": "reports/tv2/TV2_W3_COMPLETED_WORK.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 3625,
+    "sha256": "e64c81cd1e318275e1242fd604e862c1587e1aac8942451f8f80f7afd180b3c5",
+    "lines": 71
+  },
+  {
+    "path": "reports/tv2/TV2_W4.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 7945,
+    "sha256": "fe805d5c04a7eee2343b05b1c085c95b8cc5f15741d13df9635d44cbca816425",
+    "lines": 54
+  },
+  {
+    "path": "reports/tv2/TV2_W4_TEST_EVALUATION.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 7575,
+    "sha256": "9ea9d993d372380857717a94e5e92946eba1d3031244e441308f69076683aa10",
+    "lines": 70
+  },
+  {
+    "path": "reports/tv2/TV2_W4_MODEL_SELECTION_LOCK.json",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 8003,
+    "sha256": "dbc7ea6e60175502607561eb2ba2107ebd965fa274b7542f123347c4737fcec7",
+    "lines": 160
+  },
+  {
+    "path": "reports/tv2/TV2_W5.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 19351,
+    "sha256": "f9588a7fe2d9a46b030d886777818f4c09427aa031c01f28b02b25154fffbe0f",
+    "lines": 285
+  },
+  {
+    "path": "reports/tv2/W5_PROTOCOL.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 10177,
+    "sha256": "c019ca73ad85f922cf3b71699326082c58e543434ab3c148260429c5e0a74b61",
+    "lines": 158
+  },
+  {
+    "path": "reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 10986,
+    "sha256": "233b16039be576e117a5d5e9d7b5695c50ec9ad11387590bb28ddc491a879c22",
+    "lines": 175
+  },
+  {
+    "path": "docs/integration_week3.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 3938,
+    "sha256": "ce62a9c93463bdfb9506612d45ac3f19a97abc952ebc934af1f3255e251c103a",
+    "lines": 77
+  },
+  {
+    "path": "docs/integration_week4.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 4016,
+    "sha256": "4a22d805a180d6afbf4dc1bf107076a2f0f2e2287a229d72b56dc089297f717f",
+    "lines": 64
+  },
+  {
+    "path": "docs/integration_week5.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 4583,
+    "sha256": "cdf44aca12f1814544d46a9e9e19b6d33a9d7ecef78e4bee18a30fc0c379c578",
+    "lines": 43
+  },
+  {
+    "path": "reports/review_w5_2026-11-02/REPORT.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 7909,
+    "sha256": "206706d4f5fe927b29a1adfa3718c72241f4d318d288d2b45f1c0bfdd28d93a0",
+    "lines": 58
+  },
+  {
+    "path": "docs/progress_integration_w5_2026-11-03.md",
+    "commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "bytes": 3845,
+    "sha256": "e2bb2b52c5f5fec1e9753340e8588c88f5e4a95e4e5b64866ae81519cb055e64",
+    "lines": 41
+  },
+  {
+    "path": "docs/plans/TV1_W6.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 7483,
+    "sha256": "ec220ab2cf7024fce9edf4eb1cad132e2f87cec4aef2d47b9f21c94e1edf6d77",
+    "lines": 96
+  },
+  {
+    "path": "docs/plans/TV2_W6.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 7079,
+    "sha256": "bac19a1fc327265dbc348746b17a1b9905a816a34e4b7f04ed45e60aa8735828",
+    "lines": 97
+  },
+  {
+    "path": "docs/plans/TV3_W6.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 7763,
+    "sha256": "ca9795468c8b48ecb98d9239ee89e69453a6e18fbf67e0e511b0954aa50f538e",
+    "lines": 113
+  },
+  {
+    "path": "docs/plans/TV4_W6.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 6202,
+    "sha256": "6f30dc173b593a693ed7435bfc736ec202992e1942fc4386fd06197d716b920d",
+    "lines": 86
+  },
+  {
+    "path": "docs/handoff_tv1_w6.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 6978,
+    "sha256": "1fac96b130cedf01af26e34b20308f2c877498e4de8e92c4ba125b5cda15368f",
+    "lines": 112
+  },
+  {
+    "path": "reports/tv1_w6/REPORT.md",
+    "commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "bytes": 12752,
+    "sha256": "803c2804d05051685e513ff71ff69c9320a786f05321dca289b1a8c4f5bf84b8",
+    "lines": 171
+  }
+]

@@ -1,0 +1,248 @@
+{
+  "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+  "github_raw_snapshot_verification": "PASS",
+  "files_per_run": 12,
+  "both_packages_identical_to_remote_source_commit": true,
+  "files": [
+    {
+      "run": "R1",
+      "path": "src/__init__.py",
+      "declared_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "remote_source_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "package_snapshot_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 35
+    },
+    {
+      "run": "R1",
+      "path": "src/training/__init__.py",
+      "declared_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "remote_source_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "package_snapshot_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 46
+    },
+    {
+      "run": "R1",
+      "path": "src/evaluation/__init__.py",
+      "declared_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "remote_source_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "package_snapshot_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 620
+    },
+    {
+      "run": "R1",
+      "path": "src/training/dino_probe.py",
+      "declared_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "remote_source_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "package_snapshot_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 24460
+    },
+    {
+      "run": "R1",
+      "path": "src/training/dino_handoff.py",
+      "declared_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "remote_source_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "package_snapshot_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 7714
+    },
+    {
+      "run": "R1",
+      "path": "src/training/dino_w6.py",
+      "declared_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "remote_source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "package_snapshot_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 26452
+    },
+    {
+      "run": "R1",
+      "path": "src/training/dino_w6_control.py",
+      "declared_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "remote_source_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "package_snapshot_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 11875
+    },
+    {
+      "run": "R1",
+      "path": "src/training/dino_w6_delivery.py",
+      "declared_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "remote_source_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "package_snapshot_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 15604
+    },
+    {
+      "run": "R1",
+      "path": "scripts/dino_w6.py",
+      "declared_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "remote_source_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "package_snapshot_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 21770
+    },
+    {
+      "run": "R1",
+      "path": "src/evaluation/w5_validation.py",
+      "declared_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "remote_source_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "package_snapshot_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 12255
+    },
+    {
+      "run": "R1",
+      "path": "src/evaluation/w6_validation.py",
+      "declared_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "remote_source_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "package_snapshot_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 19437
+    },
+    {
+      "run": "R1",
+      "path": "contracts/w6_registry.schema.json",
+      "declared_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "remote_source_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "package_snapshot_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 10570
+    },
+    {
+      "run": "R2",
+      "path": "src/__init__.py",
+      "declared_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "remote_source_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "package_snapshot_sha256": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 35
+    },
+    {
+      "run": "R2",
+      "path": "src/training/__init__.py",
+      "declared_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "remote_source_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "package_snapshot_sha256": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 46
+    },
+    {
+      "run": "R2",
+      "path": "src/evaluation/__init__.py",
+      "declared_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "remote_source_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "package_snapshot_sha256": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 620
+    },
+    {
+      "run": "R2",
+      "path": "src/training/dino_probe.py",
+      "declared_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "remote_source_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "package_snapshot_sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 24460
+    },
+    {
+      "run": "R2",
+      "path": "src/training/dino_handoff.py",
+      "declared_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "remote_source_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "package_snapshot_sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 7714
+    },
+    {
+      "run": "R2",
+      "path": "src/training/dino_w6.py",
+      "declared_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "remote_source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "package_snapshot_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 26452
+    },
+    {
+      "run": "R2",
+      "path": "src/training/dino_w6_control.py",
+      "declared_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "remote_source_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "package_snapshot_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 11875
+    },
+    {
+      "run": "R2",
+      "path": "src/training/dino_w6_delivery.py",
+      "declared_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "remote_source_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "package_snapshot_sha256": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 15604
+    },
+    {
+      "run": "R2",
+      "path": "scripts/dino_w6.py",
+      "declared_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "remote_source_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "package_snapshot_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 21770
+    },
+    {
+      "run": "R2",
+      "path": "src/evaluation/w5_validation.py",
+      "declared_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "remote_source_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "package_snapshot_sha256": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 12255
+    },
+    {
+      "run": "R2",
+      "path": "src/evaluation/w6_validation.py",
+      "declared_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "remote_source_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "package_snapshot_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 19437
+    },
+    {
+      "run": "R2",
+      "path": "contracts/w6_registry.schema.json",
+      "declared_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "remote_source_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "package_snapshot_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "remote_matches_index": true,
+      "snapshot_matches_remote": true,
+      "bytes": 10570
+    }
+  ]
+}

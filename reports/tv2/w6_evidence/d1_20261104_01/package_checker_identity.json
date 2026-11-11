@@ -1,0 +1,5 @@
+{
+  "function": "scripts.review_tv1_w6.check_package",
+  "function_sha256_at_completion": "031276ce6c8f648e80eb0fb78f8068813dceab0055acc840cdd835691e626ff2",
+  "scope": "Package check function unchanged during execution; full metadata rechecked separately using final source"
+}

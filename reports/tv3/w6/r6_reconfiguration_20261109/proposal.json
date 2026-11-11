@@ -1,0 +1,100 @@
+{
+  "status": "READY_FOR_TV2_TECHNICAL_REVIEW_NOT_OFFICIAL_APPROVAL",
+  "created_utc": "2026-11-09T10:51:25.302681+00:00",
+  "base_commit": "8d1a12647fc20c0b2a665610421c36e9f676376b",
+  "original_frozen_source_commit": "947fbb85aacec9417f248f5f1e1f08c2da75de09",
+  "authority": {
+    "source": "Direct TV3 user instruction in this conversation",
+    "statement": "Không cần thành viên 4 xác nhận, tôi được phép điều chỉnh giờ",
+    "approval_to_prepare": true,
+    "tv4_confirmation_required": false,
+    "official_execution_approval": false
+  },
+  "scope": {
+    "run_id": "R6",
+    "attempt_id": "R6_attempt01",
+    "previous_max_gpu_hours": 2,
+    "proposed_max_gpu_hours": 3,
+    "other_attempts_hours": 2,
+    "tv3_total_hours": 12,
+    "official_attempts_limit": 6,
+    "attempts_used": 5
+  },
+  "preserved": {
+    "recipe": "R2",
+    "seed": 43,
+    "epochs": 20,
+    "patience": 5,
+    "dataset": "train_expansion_w6_v1",
+    "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "runtime_expected_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+    "r5": "FAILED_NO_RESUME",
+    "official_test": "SEALED"
+  },
+  "changes": [
+    "R6-specific amendment with pending/approved states and separate TV2/TV3 receipt hashes.",
+    "Validate config/source/runtime binding; frozen config, source, smoke and receipts must be committed before execution.",
+    "Schema, validator, cumulative ledger and train/reload/settlement use same R6 attempt policy.",
+    "W6 ledger only: retry WinError 5 at most six writes, backoff 0.05+0.1+0.2+0.4+0.8s.",
+    "Final retry wait is charged to measured GPU time; permanent errors keep old ledger and tmp evidence.",
+    "W5 atomic writer, algorithm, optimizer, augmentation and runtime settings are unchanged."
+  ],
+  "file_index": {
+    "src/training/dino_w6.py": {
+      "base_git_blob_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "proposed_raw_sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+      "bytes": 26540
+    },
+    "src/training/dino_w6_control.py": {
+      "base_git_blob_sha256": "26e5507ad3604c6cfa8033f6ea3c0ecceb96e2946d75fcddc93828b8969d3a46",
+      "proposed_raw_sha256": "e799e292d3becf041dfbf91e55c6814da73d0f539b287e626b7ce47467ae04ed",
+      "bytes": 13792
+    },
+    "src/evaluation/w6_validation.py": {
+      "base_git_blob_sha256": "47d23307db7c2ad4305e54fa6c5120efdf7e925927ddf1cfeb4f6213638ee7ba",
+      "proposed_raw_sha256": "27fd6cba52a06687beb3fa2e7150a7ad4a36b756a2c355c312cd9fe0a131abcf",
+      "bytes": 22969
+    },
+    "scripts/dino_w6.py": {
+      "base_git_blob_sha256": "dcbf477f6a60ed050bc1ad737becd98ff5f596a9ae6e4a0df4a646942506cd06",
+      "proposed_raw_sha256": "e74a3ef786c3ff274b9ebc990859abe4ccab1044e5a3b7ca46fb741744af7c1e",
+      "bytes": 22786
+    },
+    "contracts/w6_registry.schema.json": {
+      "base_git_blob_sha256": "6060894eace4d231ed992e4c48ec62235b9e13eba348f435134208ebfabc27c5",
+      "proposed_raw_sha256": "39a5e87b12706ba50eb911063532c0bd7fc4f4c19be190dbf9f92e6ecae6a986",
+      "bytes": 15474
+    },
+    "tests/test_r6_amendment.py": {
+      "base_git_blob_sha256": null,
+      "proposed_raw_sha256": "8de8fa21760669d2e4964c5bc07d650c06c33fff5f7ca274acbf10276d54f47f",
+      "bytes": 15208
+    },
+    "configs/w6/tv3/R6.3h.candidate.json": {
+      "base_git_blob_sha256": null,
+      "proposed_raw_sha256": "3ec1926c89d86bd5ec3638cd932f3dd267456808f1e62c9385c77eae0b17e42a",
+      "bytes": 2530
+    },
+    "experiments/w6/tv3_R6_3h.proposal.json": {
+      "base_git_blob_sha256": null,
+      "proposed_raw_sha256": "a11d9ee1a22d8188d561e820e6caa095b70268669d681136ba728b9aed521898",
+      "bytes": 12216
+    }
+  },
+  "patch": "source_and_candidate.patch",
+  "patch_sha256": "cb9023dfdbecee2d698d7910f6cde543a2d815c1009508b8bd174a14f45714df",
+  "tests": "test_results.json",
+  "smoke": "NEW_SMOKE_NOT_RUN",
+  "source_binding": "NEW_COMMIT_REQUIRED_AFTER_REVIEW",
+  "booking": null,
+  "r5_booking_overrun": "4m05s beyond booking; user reported no prior extension notice; group notification evidence still to attach",
+  "before_official": [
+    "TV2 reviews patch/proposal; user applies reviewed patch in a separate review branch and commits source.",
+    "Control file contention: one training process; pause OneDrive synchronization during execution; close ledger viewers/writers. Any move outside OneDrive requires full file/hash/runtime/ledger verification.",
+    "Rerun reviewed tests, actual-machine I/O probe, R6 preflight and a new train-only smoke; account smoke time.",
+    "Freeze a NEW R6 3h config with new source index/runtime/smoke; retain the original R6 2h config and all history.",
+    "TV2 and TV3 provide new receipt JSONs with role, decision APPROVE_R6_3H, and exact binding. Bind their paths/SHA-256 in the new execution registry; no placeholders or old approvals.",
+    "TV2 locks amended execution registry, updates protocol reference, verifies validators and official gate.",
+    "Confirm actual GPU booking and cumulative budget, then user runs only R6_attempt01 and fresh-process reload."
+  ]
+}

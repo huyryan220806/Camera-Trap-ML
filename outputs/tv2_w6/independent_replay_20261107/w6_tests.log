@@ -1,0 +1,21 @@
+python : ...................................................
+
+At line:1 char:167
+
++ ... idator.log; python -m unittest discover -s tests -p test_w6_validatio ...
+
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    + CategoryInfo          : NotSpecified: (.................................:String) [], RemoteException
+
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+
+----------------------------------------------------------------------
+
+Ran 51 tests in 0.742s
+
+
+
+OK

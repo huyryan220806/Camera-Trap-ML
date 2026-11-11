@@ -1,0 +1,686 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TV2 W6 registry; null means not supplied, never approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_status",
+    "protocol_path",
+    "plan_commit",
+    "budgets",
+    "approvals",
+    "freeze_evidence",
+    "smoke_evidence",
+    "recipe_selection",
+    "data_review",
+    "replay_attempts",
+    "runs",
+    "tv3_preparation_attempts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "protocol_status": {
+      "enum": [
+        "DRAFT",
+        "APPROVED"
+      ]
+    },
+    "protocol_path": {
+      "const": "docs/experiment_protocol_w6.md"
+    },
+    "plan_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_new_official_attempts",
+        "tv3_gpu_hours",
+        "per_attempt_gpu_hours",
+        "tv2_replay_gpu_hours"
+      ],
+      "properties": {
+        "max_new_official_attempts": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tv3_gpu_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_attempt_gpu_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tv2_replay_gpu_hours": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "TV2",
+        "TV3"
+      ],
+      "properties": {
+        "TV2": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "TV3": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "freeze_evidence": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "smoke_evidence": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "recipe_selection": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "recipe",
+            "improves_r0",
+            "evidence_path"
+          ],
+          "properties": {
+            "recipe": {
+              "enum": [
+                "R0",
+                "R1",
+                "R2"
+              ]
+            },
+            "improves_r0": {
+              "type": "boolean"
+            },
+            "evidence_path": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "data_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "release_sha256",
+        "evidence_path"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PENDING",
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "release_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "evidence_path": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "replay_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "attempt_id",
+          "gpu_hours",
+          "evidence_path"
+        ],
+        "properties": {
+          "attempt_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gpu_hours": {
+            "type": "number",
+            "minimum": 0
+          },
+          "evidence_path": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "runs": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "run_id",
+          "recipe",
+          "seed",
+          "dataset",
+          "dataset_sha256",
+          "status",
+          "config_path",
+          "config_sha256",
+          "source_sha",
+          "approvals",
+          "attempts",
+          "checkpoint_sha256",
+          "metrics",
+          "evidence_paths",
+          "conditions"
+        ],
+        "properties": {
+          "run_id": {
+            "enum": [
+              "R0",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5",
+              "R6"
+            ]
+          },
+          "recipe": {
+            "enum": [
+              "R0",
+              "R1",
+              "R2",
+              null
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "enum": [
+              42,
+              43,
+              44
+            ]
+          },
+          "dataset": {
+            "enum": [
+              "comparison_v1",
+              "train_expansion_w6_v1"
+            ]
+          },
+          "dataset_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "status": {
+            "enum": [
+              "REFERENCE",
+              "REGISTERED",
+              "CONDITIONAL",
+              "RUNNING",
+              "COMPLETED",
+              "FAILED",
+              "OOM",
+              "STOPPED"
+            ]
+          },
+          "config_path": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "config_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_sha": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "approvals": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "TV2",
+              "TV3"
+            ],
+            "properties": {
+              "TV2": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "TV3": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "attempt_id",
+                "status",
+                "gpu_hours",
+                "evidence_path"
+              ],
+              "properties": {
+                "attempt_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "enum": [
+                    "RUNNING",
+                    "COMPLETED",
+                    "FAILED",
+                    "OOM",
+                    "STOPPED"
+                  ]
+                },
+                "gpu_hours": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "evidence_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "attempt_id": {
+                        "not": {
+                          "const": "R6_attempt01"
+                        }
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "maxItems": 6
+          },
+          "checkpoint_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "accuracy",
+                  "macro_f1"
+                ],
+                "properties": {
+                  "accuracy": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "macro_f1": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                }
+              }
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "run_id": {
+                  "not": {
+                    "const": "R6"
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "attempts": {
+                  "items": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "tv3_preparation_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "attempt_id",
+          "kind",
+          "gpu_hours",
+          "evidence_path"
+        ],
+        "properties": {
+          "attempt_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "train_only_smoke",
+              "extraction_not_in_official_attempt"
+            ]
+          },
+          "gpu_hours": {
+            "type": "number",
+            "minimum": 0
+          },
+          "evidence_path": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "r6_budget_amendment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "run_id",
+        "attempt_id",
+        "max_gpu_hours",
+        "config_sha256",
+        "source_sha",
+        "runtime_sha256",
+        "approvals"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PENDING",
+            "APPROVED"
+          ]
+        },
+        "run_id": {
+          "const": "R6"
+        },
+        "attempt_id": {
+          "const": "R6_attempt01"
+        },
+        "max_gpu_hours": {
+          "const": 3
+        },
+        "config_sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "source_sha": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          ]
+        },
+        "runtime_sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          ]
+        },
+        "approvals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "TV2",
+            "TV3"
+          ],
+          "properties": {
+            "TV2": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              ]
+            },
+            "TV3": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "r6_budget_amendment"
+        ],
+        "properties": {
+          "r6_budget_amendment": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "APPROVED"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "runs": {
+            "items": {
+              "properties": {
+                "attempts": {
+                  "items": {
+                    "properties": {
+                      "gpu_hours": {
+                        "maximum": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

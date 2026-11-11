@@ -1,0 +1,1360 @@
+diff --git a/src/training/dino_w6.py b/src/training/dino_w6.py
+--- a/src/training/dino_w6.py
++++ b/src/training/dino_w6.py
+@@ -63,7 +63,8 @@
+                c['runtime']['amp'] is False and c['runtime']['tf32'] is False and
+                c['runtime']['deterministic'] is True and c['runtime']['num_threads'] == 10 and
+                c['runtime']['num_interop_threads'] == 10, 'Runtime must be explicitly reviewed')
+-    w5.require(c['num_classes'] == 8 and c['drop_last'] is False and c['max_gpu_hours'] == 2 and
++    w5.require(c['num_classes'] == 8 and c['drop_last'] is False and (c['max_gpu_hours'] == 2 or
+++               c['max_gpu_hours'] == 3 and c['run_id'] == 'R6' and recipe == 'R2') and
+                c['loss'] == 'mean_parent_mean_crop_ce_once' and c['selection'] == 'image_macro_f1' and
+                c['checkpoint_tie'] == 'earliest_epoch', 'Common recipe invariant')
+     if recipe == 'R2':
+diff --git a/src/training/dino_w6_control.py b/src/training/dino_w6_control.py
+--- a/src/training/dino_w6_control.py
++++ b/src/training/dino_w6_control.py
+@@ -74,6 +74,10 @@
+     head = w5.git_revision(root)
+     committed_file(config_path, head, root)
+     committed_file(registry_path, head, root)
++    amendment = v.r6_amendment(registry)
++    if amendment and c['run_id'] == 'R6':
++        for ref in amendment['approvals'].values():
++            committed_file(v.confined(root, ref['path']), head, root)
+     sources = source_index(run['source_sha'], root)
+     evidence = c['smoke_evidence']
+     path = v.confined(root, evidence['path'])
+@@ -84,7 +88,7 @@
+                smoke['settings_sha256'] == settings_digest(c) and smoke['source_index'] == sources and
+                smoke['runtime'] == runtime, 'Smoke/config/source/runtime binding mismatch')
+     usage = load_usage(root)
+-    usage_totals(usage)
++    usage_totals(usage, registry)
+     known = {s['attempt_id'] for s in usage['sessions']}
+     registered = {p['attempt_id'] for p in registry['tv3_preparation_attempts']}
+     registered.update(a['attempt_id'] for r in registry['runs'] for a in r['attempts'])
+@@ -101,6 +105,26 @@
+     pass
+ 
+ 
++
++def write_usage(path, usage, refresh=None):
++    """Retry only Windows access denied, at most six writes / 1.55s backoff.
++
++    Caller owns gpu_lock. Atomic replacement and the original .tmp evidence are
++    preserved. No deletion, fallback ledger, swallowed errors or RNG changes.
++    """
++    delays = (0.05, 0.1, 0.2, 0.4, 0.8)
++    for attempt in range(len(delays) + 1):
++        try:
++            if refresh is not None:
++                refresh()
++            w5.atomic_json(path, usage)
++            return
++        except PermissionError as exc:
++            if getattr(exc, 'winerror', None) != 5 or attempt == len(delays):
++                raise
++            time.sleep(delays[attempt])
++
++
+ def load_usage(root=w5.ROOT):
+     path = root / 'outputs/tv3_w6/usage.json'
+     return w5.read_json(path) if path.exists() else dict(version=1, sessions=[], reconciliations=[])
+@@ -114,20 +138,25 @@
+     return matches[0]['seconds']
+ 
+ 
+-def usage_totals(usage):
++def usage_totals(usage, registry=None):
+     sessions = usage['sessions']
+     seconds = [effective_seconds(usage, s) for s in sessions]
+     w5.require(all(type(x) in (int, float) and math.isfinite(x) and x >= 0 for x in seconds), 'Invalid GPU accounting')
+     total = sum(seconds)
+     attempts = {s['attempt_id'] for s in sessions if s['kind'] != 'train_only_smoke'}
+     by_attempt = {a: sum(effective_seconds(usage, s) for s in sessions if s['attempt_id'] == a) for a in attempts}
+-    w5.require(len(attempts) <= 6 and total <= 12 * 3600 and all(x <= 7200 for x in by_attempt.values()),
++    caps = {}
++    for aid in attempts:
++        run_ids = {s['run_id'] for s in sessions if s['attempt_id'] == aid}
++        w5.require(len(run_ids) == 1, 'Attempt has mixed run identities')
++        caps[aid] = 3600 * tv2().attempt_budget_hours(registry, next(iter(run_ids)), aid)
++    w5.require(len(attempts) <= 6 and total <= 12 * 3600 and all(x <= caps[a] for a, x in by_attempt.items()),
+                'Recorded budget exceeded; stop and report, never trim recorded time')
+     return total, by_attempt
+ 
+ 
+ @contextmanager
+-def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT):
++def gpu_session(attempt_id, run_id, kind, booking, resume=False, root=w5.ROOT, registry=None):
+     """One shared lock, real wall time including extraction; failures keep their slot.
+ 
+     Each GPU operation calls tick. The 60-second reserve allows a batch and
+@@ -138,7 +167,7 @@
+     folder = root / 'outputs/tv3_w6'
+     with w5.writer_lock(folder / 'gpu_lock'):
+         usage = load_usage(root)
+-        total, attempts = usage_totals(usage)
++        total, attempts = usage_totals(usage, registry)
+         previous = [s for s in usage['sessions'] if s['attempt_id'] == attempt_id]
+         if kind == 'train_only_smoke':
+             w5.require(not previous and not resume, 'Smoke attempt ID already used')
+@@ -149,14 +178,15 @@
+                 w5.require(previous and any(s['kind'] == 'official' for s in previous), 'No official attempt to resume/reload')
+             else:
+                 w5.require(not previous and len(attempts) < 6, 'Duplicate attempt or six-attempt limit')
+-            allowance = min(7200 - attempts.get(attempt_id, 0), 43200 - total)
++            allowance = min(3600 * tv2().attempt_budget_hours(registry, run_id, attempt_id) -
++                            attempts.get(attempt_id, 0), 43200 - total)
+         w5.require(allowance > 60, 'No GPU budget left')
+         session = dict(session_id=uuid.uuid4().hex, attempt_id=attempt_id, run_id=run_id, kind=kind,
+                        started_utc=utcnow(), ended_utc=None, seconds=None, heartbeat_seconds=0,
+                        pid=os.getpid(), booking=booking, status='RUNNING')
+         usage['sessions'].append(session)
+         path = folder / 'usage.json'
+-        w5.atomic_json(path, usage)
++        write_usage(path, usage)
+         started = time.perf_counter()
+         last_heartbeat = 0.0
+ 
+@@ -165,8 +195,9 @@
+             elapsed = time.perf_counter() - started
+             if elapsed - last_heartbeat >= 5:
+                 session['heartbeat_seconds'] = elapsed
+-                w5.atomic_json(path, usage)
++                write_usage(path, usage)
+                 last_heartbeat = elapsed
++                elapsed = time.perf_counter() - started
+             if elapsed >= allowance - 60:
+                 raise BudgetExceeded('GPU budget reached; keep this attempt and last checkpoint')
+ 
+@@ -181,13 +212,20 @@
+             session['error'] = repr(exc)
+             raise
+         finally:
+-            session['seconds'] = time.perf_counter() - started
+-            session['ended_utc'] = utcnow()
+-            w5.atomic_json(path, usage)
++            def refresh_final_measurement():
++                session['seconds'] = time.perf_counter() - started
++                session['ended_utc'] = utcnow()
++                if session['seconds'] > allowance and session['status'] == 'COMPLETED':
++                    session.update(status='STOPPED', error='Budget exceeded during ledger finalization')
++            write_usage(path, usage, refresh=refresh_final_measurement)
++            if session['seconds'] > allowance:
++                raise BudgetExceeded('Actual GPU session exceeded budget during finalization; retain measured overrun')
+             # Deliberately retain elapsed > limits; no false compliant receipt.
+ 
+ 
+-def reconcile_usage(receipt_path, root=w5.ROOT):
++def reconcile_usage(receipt_path, root=w5.ROOT, registry=None):
++    if registry is not None:
++        tv2().validate_registry(registry, root)
+     receipt = w5.read_json(receipt_path)
+     with w5.writer_lock(root / 'outputs/tv3_w6/gpu_lock'):
+         usage = load_usage(root)
+@@ -202,15 +240,15 @@
+                    seconds >= item['heartbeat_seconds'], 'Cannot erase measured GPU usage')
+         usage['reconciliations'].append(dict(session_id=item['session_id'], seconds=seconds,
+                                              receipt_sha256=w5.sha(receipt_path), receipt=receipt, recorded_utc=utcnow()))
+-        w5.atomic_json(root / 'outputs/tv3_w6/usage.json', usage)
+-    return usage_totals(usage)
++        write_usage(root / 'outputs/tv3_w6/usage.json', usage)
++    return usage_totals(usage, registry)
+ 
+ 
+ def registry_with_usage(registry, root=w5.ROOT):
+     """Merge producer facts into a COPY; never write approval or overwrite TV2 registry."""
+     result = copy.deepcopy(registry)
+     usage = load_usage(root)
+-    usage_totals(usage)
++    usage_totals(usage, registry)
+     for session in usage['sessions']:
+         if session['kind'] != 'train_only_smoke':
+             continue
+diff --git a/src/evaluation/w6_validation.py b/src/evaluation/w6_validation.py
+--- a/src/evaluation/w6_validation.py
++++ b/src/evaluation/w6_validation.py
+@@ -78,12 +78,65 @@
+         w5.require(recipe == 'R0', 'Unknown recipe')
+ 
+ 
++
++def r6_amendment(registry):
++    """Optional, narrowly scoped exception. References are peer evidence, not signatures."""
++    amendment = registry.get('r6_budget_amendment')
++    if amendment is None:
++        return None
++    w5.require(set(amendment) == {'status', 'run_id', 'attempt_id', 'max_gpu_hours',
++        'config_sha256', 'source_sha', 'runtime_sha256', 'approvals'}, 'Invalid R6 amendment fields')
++    w5.require(amendment['status'] in ('PENDING', 'APPROVED') and
++        amendment['run_id'] == 'R6' and amendment['attempt_id'] == 'R6_attempt01' and
++        type(amendment['max_gpu_hours']) is int and amendment['max_gpu_hours'] == 3,
++        'Invalid R6 amendment scope')
++    w5.require(set(amendment['approvals']) == {'TV2', 'TV3'}, 'Need bilateral amendment approvals')
++    if amendment['status'] == 'APPROVED':
++        run = next(r for r in registry['runs'] if r['run_id'] == 'R6')
++        w5.require(registry['protocol_status'] == 'APPROVED' and run['recipe'] == 'R2' and
++            run['seed'] == 43 and run['dataset_sha256'] == EXPANSION_SHA and
++            pin(amendment['config_sha256']) and pin(amendment['source_sha'], 40) and
++            pin(amendment['runtime_sha256']) and amendment['config_sha256'] == run['config_sha256'] and
++            amendment['source_sha'] == run['source_sha'], 'R6 amendment binding mismatch')
++        for role, ref in amendment['approvals'].items():
++            w5.require(isinstance(ref, dict) and set(ref) == {'path', 'sha256'} and
++                isinstance(ref['path'], str) and ref['path'].strip() and pin(ref['sha256']) and
++                run['approvals'].get(role) == ref['path'], 'R6 amendment approval missing/mismatch')
++    return amendment
++
++
++def attempt_budget_hours(registry, run_id, attempt_id, require_approved=True):
++    amendment = r6_amendment(registry or {})
++    if not amendment or run_id != 'R6':
++        return 2
++    w5.require(attempt_id == 'R6_attempt01', 'Only R6_attempt01 receives amendment')
++    if require_approved:
++        w5.require(amendment['status'] == 'APPROVED', 'BLOCKED: R6 amendment pending')
++    return 3
++
++
++def verify_r6_amendment_evidence(registry, root=ROOT):
++    amendment = r6_amendment(registry)
++    if not amendment or amendment['status'] != 'APPROVED':
++        return
++    binding = {k: amendment[k] for k in ('run_id', 'attempt_id', 'max_gpu_hours',
++        'config_sha256', 'source_sha', 'runtime_sha256')}
++    for role, ref in amendment['approvals'].items():
++        path = confined(root, ref['path'])
++        w5.require(w5.sha256(path) == ref['sha256'], 'R6 approval receipt hash mismatch')
++        receipt = w5.read_json(path)
++        w5.require(receipt.get('decision') == 'APPROVE_R6_3H' and receipt.get('role') == role and
++            receipt.get('binding') == binding, 'R6 approval receipt content mismatch')
++
++
+ def validate_registry(registry, root=ROOT):
+     """Validate structure and budgets, including failed attempts; never mutates."""
+     import jsonschema
+     jsonschema.Draft202012Validator(w5.read_json(Path(root) / 'contracts/w6_registry.schema.json')).validate(registry)
+     w5.require(registry['budgets'] == dict(max_new_official_attempts=6, tv3_gpu_hours=12,
+                 per_attempt_gpu_hours=2, tv2_replay_gpu_hours=2), 'Unregistered budget')
++    amendment = r6_amendment(registry)
++    verify_r6_amendment_evidence(registry, root)
+     runs = registry['runs']
+     w5.require([r['run_id'] for r in runs] == ['R%d' % i for i in range(7)], 'Need ordered R0-R6 exactly once')
+     w5.require([r['seed'] for r in runs] == SEEDS, 'Unregistered seed')
+@@ -116,6 +169,11 @@
+             w5.require(config['dataset'] == run['dataset'] and config['dataset_sha256'] == run['dataset_sha256'],
+                        'Config dataset mismatch')
+             validate_recipe_config(config,run['recipe'])
++            expected_cap = 3 if amendment and run['run_id'] == 'R6' else 2
++            w5.require(config['max_gpu_hours'] == expected_cap, 'Config/registry GPU cap mismatch')
++            if amendment and run['run_id'] == 'R6' and amendment['status'] == 'APPROVED':
++                w5.require(config['runtime']['source_sha'] == amendment['source_sha'] and
++                    config['runtime']['runtime_lock'] == amendment['runtime_sha256'], 'R6 runtime/source mismatch')
+         w5.require(index not in (1,2) or run['recipe'] == 'R%d' % index, 'Recipe/run mismatch')
+         w5.require(run['status'] in STATUSES, 'Invalid new-run status')
+         w5.require(run['metrics'] is None or run['status'] == 'COMPLETED', 'Metrics require completed run')
+@@ -127,7 +185,7 @@
+         for attempt in run['attempts']:
+             attempts.append(attempt['attempt_id'])
+             hours = attempt['gpu_hours']
+-            w5.require(hours is None or finite(hours) and 0 <= hours <= 2, 'Per-attempt GPU budget exceeded')
++            w5.require(hours is None or finite(hours) and 0 <= hours <= attempt_budget_hours(registry, run['run_id'], attempt['attempt_id']), 'Per-attempt GPU budget exceeded')
+             total_hours += hours or 0
+         if run['attempts'] or run['status'] in ('RUNNING', 'COMPLETED', 'FAILED', 'OOM', 'STOPPED'):
+             w5.require(run['attempts'], 'Execution must retain attempt accounting')
+@@ -157,6 +215,8 @@
+                registry['freeze_evidence'] and registry['smoke_evidence'], 'BLOCKED: approval/freeze/smoke missing')
+     w5.require(pin(run['source_sha'], 40) and pin(run['config_sha256']) and run['config_path'] and
+                all(run['approvals'].get(k) for k in ('TV2', 'TV3')), 'BLOCKED: run source/config/approval missing')
++    if run['run_id'] == 'R6':
++        attempt_budget_hours(registry, 'R6', 'R6_attempt01')
+     w5.require(run['recipe'] in ('R0', 'R1', 'R2'), 'BLOCKED: unresolved recipe')
+     if run['run_id'] in ('R3', 'R4'):
+         decision = registry['recipe_selection']
+diff --git a/scripts/dino_w6.py b/scripts/dino_w6.py
+--- a/scripts/dino_w6.py
++++ b/scripts/dino_w6.py
+@@ -115,7 +115,7 @@
+                    command=sys.argv, data=gate, parent_count=len(groups), crop_count=len(selected),
+                    selected_crop_ids=[r['crop_id'] for r in selected], attempt_id=attempt, recipe=c['recipe'])
+     try:
+-        with control.gpu_session(attempt, c['run_id'], 'train_only_smoke', args.booking) as (tick, _):
++        with control.gpu_session(attempt, c['run_id'], 'train_only_smoke', args.booking, registry=registry) as (tick, _):
+             torch.cuda.reset_peak_memory_stats()
+             model, model_map = d.initialize(c, args.init_checkpoint, args.repo, 'cuda')
+             old.require(model_map == cmap, 'Init class map differs')
+@@ -198,6 +198,10 @@
+     registry = control.registry_with_usage(old.read_json(args.registry))
+     row = next(r for r in registry['runs'] if r['run_id'] == c['run_id'])
+     old.require(not row['attempts'], 'Cannot refreeze a run that has already started')
++    amendment = registry.get('r6_budget_amendment')
++    if amendment and c['run_id'] == 'R6':
++        amendment.update(status='PENDING', config_sha256=d.digest(c), source_sha=sources['commit'],
++                         runtime_sha256=c['runtime']['runtime_lock'], approvals={'TV2': None, 'TV3': None})
+     row.update(recipe=c['recipe'], config_path=config_out.resolve().relative_to(ROOT).as_posix(),
+                config_sha256=d.digest(c), source_sha=sources['commit'], approvals={'TV2': None, 'TV3': None})
+     # Completed historical runs still require their actual global approval in
+@@ -245,7 +249,7 @@
+         shutil.copyfile(args.registry, run / 'registry.approved.json')
+     old.atomic_json(run / 'status.json', dict(status='RUNNING', training_complete=False, command=sys.argv))
+     try:
+-        with control.gpu_session(attempt, c['run_id'], 'official', args.booking, args.resume) as (tick, _):
++        with control.gpu_session(attempt, c['run_id'], 'official', args.booking, args.resume, registry=registry) as (tick, _):
+             torch.cuda.reset_peak_memory_stats()
+             model, loaded_map = d.initialize(c, args.init_checkpoint, args.repo, 'cuda')
+             old.require(loaded_map == cmap, 'Initialization class mapping mismatch')
+@@ -280,6 +284,13 @@
+     checkpoint = run / 'best_model.pt'
+     handoff = old.read_json(run / 'handoff.json')
+     registry = old.read_json(run / 'registry.approved.json')
++    if registry.get('r6_budget_amendment') and c['run_id'] == 'R6':
++        control.tv2().validate_registry(registry)
++        registered = next(r for r in registry['runs'] if r['run_id'] == 'R6')
++        control.tv2().official_gate(registry, registered)
++        old.require(registered['config_sha256'] == d.digest(c) and
++                    registry['r6_budget_amendment']['runtime_sha256'] == d.digest(runtime),
++                    'Reload amendment/config/runtime binding mismatch')
+     # Validation only; expansion data need not be present at the receiver.
+     _, cmap, gate = old.read_release(verify_images=False)
+     rows = d.read_jsonl(ROOT / 'data/processed/comparison_v1/b2/val.jsonl')
+@@ -294,7 +305,7 @@
+                    comparison_policy='exact', manifest_sha256={n: gate['files'][n] for n in
+                        ('class_map.json', 'train.jsonl', 'val.jsonl', 'b2/train.jsonl', 'b2/val.jsonl')})
+     try:
+-        with control.gpu_session(binding['attempt_id'], c['run_id'], 'reload', args.booking, resume=True) as (tick, _):
++        with control.gpu_session(binding['attempt_id'], c['run_id'], 'reload', args.booking, resume=True, registry=registry) as (tick, _):
+             model, _, payload = d.load_package(checkpoint, handoff['checkpoint_sha256'], args.repo, 'cuda')
+             old.require(payload['class_map'] == cmap and payload['binding'] == binding, 'Reload payload binding')
+             result = old.evaluate_logits(d.validation_logits(model, c, rows, 'cuda', tick=tick), rows, cmap)
+@@ -360,13 +371,14 @@
+     s.add_argument('--output', type=Path, required=True)
+     s = sub.add_parser('settle-usage')
+     s.add_argument('--receipt', type=Path, required=True)
++    s.add_argument('--registry', type=Path, help='Reviewed execution registry for amended R6 settlement')
+     args = p.parse_args()
+     if args.action == 'package':
+         print(json.dumps(delivery.package(args.run, args.registry, args.output, args.report_dir), indent=2))
+     elif args.action == 'report':
+         print(json.dumps(delivery.summarize(args.registry, args.output), indent=2, ensure_ascii=False))
+     elif args.action == 'settle-usage':
+-        print(control.reconcile_usage(args.receipt))
++        print(control.reconcile_usage(args.receipt, registry=old.read_json(args.registry) if args.registry else None))
+     else:
+         dict(prepare=prepare, preflight=preflight, smoke=smoke, freeze=freeze, train=training, reload=reload_model)[args.action](args)
+ 
+diff --git a/contracts/w6_registry.schema.json b/contracts/w6_registry.schema.json
+--- a/contracts/w6_registry.schema.json
++++ b/contracts/w6_registry.schema.json
+@@ -374,13 +374,33 @@
+                     "null"
+                   ],
+                   "minimum": 0,
+-                  "maximum": 2
++                  "maximum": 3
+                 },
+                 "evidence_path": {
+                   "type": "string",
+                   "minLength": 1
+                 }
+-              }
++              },
++              "allOf": [
++                {
++                  "if": {
++                    "properties": {
++                      "attempt_id": {
++                        "not": {
++                          "const": "R6_attempt01"
++                        }
++                      }
++                    }
++                  },
++                  "then": {
++                    "properties": {
++                      "gpu_hours": {
++                        "maximum": 2
++                      }
++                    }
++                  }
++                }
++              ]
+             },
+             "maxItems": 6
+           },
+@@ -436,7 +456,33 @@
+               "minLength": 1
+             }
+           }
+-        }
++        },
++        "allOf": [
++          {
++            "if": {
++              "properties": {
++                "run_id": {
++                  "not": {
++                    "const": "R6"
++                  }
++                }
++              }
++            },
++            "then": {
++              "properties": {
++                "attempts": {
++                  "items": {
++                    "properties": {
++                      "gpu_hours": {
++                        "maximum": 2
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        ]
+       }
+     },
+     "tv3_preparation_attempts": {
+@@ -471,6 +517,170 @@
+           }
+         }
+       }
++    },
++    "r6_budget_amendment": {
++      "type": "object",
++      "additionalProperties": false,
++      "required": [
++        "status",
++        "run_id",
++        "attempt_id",
++        "max_gpu_hours",
++        "config_sha256",
++        "source_sha",
++        "runtime_sha256",
++        "approvals"
++      ],
++      "properties": {
++        "status": {
++          "enum": [
++            "PENDING",
++            "APPROVED"
++          ]
++        },
++        "run_id": {
++          "const": "R6"
++        },
++        "attempt_id": {
++          "const": "R6_attempt01"
++        },
++        "max_gpu_hours": {
++          "const": 3
++        },
++        "config_sha256": {
++          "anyOf": [
++            {
++              "type": "null"
++            },
++            {
++              "type": "string",
++              "pattern": "^[0-9a-f]{64}$"
++            }
++          ]
++        },
++        "source_sha": {
++          "anyOf": [
++            {
++              "type": "null"
++            },
++            {
++              "type": "string",
++              "pattern": "^[0-9a-f]{40}$"
++            }
++          ]
++        },
++        "runtime_sha256": {
++          "anyOf": [
++            {
++              "type": "null"
++            },
++            {
++              "type": "string",
++              "pattern": "^[0-9a-f]{64}$"
++            }
++          ]
++        },
++        "approvals": {
++          "type": "object",
++          "additionalProperties": false,
++          "required": [
++            "TV2",
++            "TV3"
++          ],
++          "properties": {
++            "TV2": {
++              "anyOf": [
++                {
++                  "type": "null"
++                },
++                {
++                  "type": "object",
++                  "additionalProperties": false,
++                  "required": [
++                    "path",
++                    "sha256"
++                  ],
++                  "properties": {
++                    "path": {
++                      "type": "string",
++                      "minLength": 1
++                    },
++                    "sha256": {
++                      "type": "string",
++                      "pattern": "^[0-9a-f]{64}$"
++                    }
++                  }
++                }
++              ]
++            },
++            "TV3": {
++              "anyOf": [
++                {
++                  "type": "null"
++                },
++                {
++                  "type": "object",
++                  "additionalProperties": false,
++                  "required": [
++                    "path",
++                    "sha256"
++                  ],
++                  "properties": {
++                    "path": {
++                      "type": "string",
++                      "minLength": 1
++                    },
++                    "sha256": {
++                      "type": "string",
++                      "pattern": "^[0-9a-f]{64}$"
++                    }
++                  }
++                }
++              ]
++            }
++          }
++        }
++      }
+     }
+-  }
++  },
++  "allOf": [
++    {
++      "if": {
++        "required": [
++          "r6_budget_amendment"
++        ],
++        "properties": {
++          "r6_budget_amendment": {
++            "required": [
++              "status"
++            ],
++            "properties": {
++              "status": {
++                "const": "APPROVED"
++              }
++            }
++          }
++        }
++      },
++      "else": {
++        "properties": {
++          "runs": {
++            "items": {
++              "properties": {
++                "attempts": {
++                  "items": {
++                    "properties": {
++                      "gpu_hours": {
++                        "maximum": 2
++                      }
++                    }
++                  }
++                }
++              }
++            }
++          }
++        }
++      }
++    }
++  ]
+ }
+diff --git a/tests/test_r6_amendment.py b/tests/test_r6_amendment.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_r6_amendment.py
+@@ -0,0 +1,302 @@
++"""Synthetic CPU-only review tests. No GPU, model download or actual experiment."""
++import copy
++import json
++from pathlib import Path
++import tempfile
++import shutil
++import importlib.util
++from types import SimpleNamespace
++import unittest
++from unittest.mock import patch
++
++from src.training import dino_w6 as d
++from src.training import dino_w6_control as c
++from src.training import dino_probe as w5
++from src.evaluation import w6_validation as v
++
++
++def fixture():
++    registry = w5.read_json(d.ROOT / 'experiments/w6/tv3_R6_3h.proposal.json')
++    run = registry['runs'][6]
++    run.update(source_sha='a' * 40, config_sha256='b' * 64)
++    a = registry['r6_budget_amendment']
++    a.update(status='APPROVED', source_sha=run['source_sha'], config_sha256=run['config_sha256'],
++             runtime_sha256='c' * 64, approvals={k: {'path': k + '.json', 'sha256': 'd' * 64} for k in ('TV2', 'TV3')})
++    run['approvals'] = {k: k + '.json' for k in ('TV2', 'TV3')}
++    return registry
++
++
++def usage(seconds, run='R6', aid=None, kind='official'):
++    return {'version': 1, 'sessions': [dict(session_id='synthetic', run_id=run,
++        attempt_id=aid or run + '_attempt01', kind=kind, seconds=seconds,
++        heartbeat_seconds=0)], 'reconciliations': []}
++
++
++def denied():
++    exc = PermissionError('synthetic Windows lock')
++    exc.winerror = 5
++    return exc
++
++
++class AmendmentTests(unittest.TestCase):
++    def test_reload_revalidates_amendment_before_inference(self):
++        spec = importlib.util.spec_from_file_location('r6_review_cli', d.ROOT / 'scripts/dino_w6.py')
++        cli = importlib.util.module_from_spec(spec)
++        spec.loader.exec_module(cli)
++        config = w5.read_json(d.ROOT / 'configs/w6/tv3/R6.3h.candidate.json')
++        runtime = {'synthetic': True}
++        binding = dict(runtime=runtime, source_index={'commit': 'a' * 40})
++        with patch.object(cli, 'read_config', return_value=config), \
++                patch.object(d, 'configure_runtime', return_value=runtime), \
++                patch.object(c, 'source_index', return_value=binding['source_index']), \
++                patch.object(w5, 'read_json', side_effect=[binding, {}, fixture()]), \
++                patch.object(v, 'validate_registry', side_effect=ValueError('bad receipt')) as check, \
++                patch.object(d, 'validation_logits') as inference:
++            with self.assertRaisesRegex(ValueError, 'bad receipt'):
++                cli.reload_model(SimpleNamespace(run='synthetic_not_opened'))
++            check.assert_called_once()
++            inference.assert_not_called()
++
++    def test_full_approved_validator_and_config_cap_binding(self):
++        r = fixture()
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            for folder in ('configs', 'contracts'):
++                shutil.copytree(d.ROOT / folder, root / folder)
++            config_path = root / r['runs'][6]['config_path']
++            config = w5.read_json(config_path)
++            config['runtime'].update(source_sha='a' * 40, runtime_lock='c' * 64)
++            config['status'] = 'FROZEN'
++            w5.atomic_json(config_path, config)
++            a = r['r6_budget_amendment']
++            a['config_sha256'] = r['runs'][6]['config_sha256'] = d.digest(config)
++            binding = {k: a[k] for k in ('run_id', 'attempt_id', 'max_gpu_hours',
++                'config_sha256', 'source_sha', 'runtime_sha256')}
++            for role, ref in a['approvals'].items():
++                w5.atomic_json(root / ref['path'], dict(role=role, decision='APPROVE_R6_3H', binding=binding))
++                ref['sha256'] = w5.sha(root / ref['path'])
++            self.assertEqual(v.validate_registry(r, root)['official_attempts'], 5)
++            v.official_gate(r, r['runs'][6])
++            r['runs'][6].update(status='FAILED', attempts=[dict(attempt_id='R6_attempt01', status='FAILED',
++                gpu_hours=2.9, evidence_path='synthetic')])
++            self.assertEqual(v.validate_registry(r, root)['official_attempts'], 6)
++            r['runs'][6]['attempts'][0]['gpu_hours'] = 3.01
++            with self.assertRaisesRegex(Exception, 'maximum|budget'):
++                v.validate_registry(r, root)
++            r['runs'][6]['attempts'][0]['gpu_hours'] = 2.9
++            r['r6_budget_amendment']['status'] = 'PENDING'
++            with self.assertRaisesRegex(Exception, 'maximum|pending'):
++                v.validate_registry(r, root)
++            r['r6_budget_amendment']['status'] = 'APPROVED'
++            r['budgets']['per_attempt_gpu_hours'] = 3
++            with self.assertRaisesRegex(ValueError, 'budget'):
++                v.validate_registry(r, root)
++
++    def test_proposal_retains_history_and_blocks_official(self):
++        r = w5.read_json(d.ROOT / 'experiments/w6/tv3_R6_3h.proposal.json')
++        result = v.validate_registry(r)
++        self.assertEqual(result['official_attempts'], 5)
++        self.assertAlmostEqual(result['measured_tv3_gpu_hours'], 4.060724169611111)
++        self.assertEqual(r['runs'][5]['status'], 'FAILED')
++        self.assertEqual(r['runs'][6]['attempts'], [])
++        with self.assertRaises(ValueError):
++            v.official_gate(r, r['runs'][6])
++
++    def test_only_r6_config_accepts_three(self):
++        original = w5.read_json(d.ROOT / 'configs/w6/tv3/R6.frozen.json')
++        candidate = w5.read_json(d.ROOT / 'configs/w6/tv3/R6.3h.candidate.json')
++        d.validate_config(candidate)
++        expected = copy.deepcopy(original)
++        expected.update(status='DRAFT', max_gpu_hours=3)
++        expected.pop('smoke_evidence')
++        expected['runtime'].update(source_sha=None, runtime_lock=None)
++        self.assertEqual(candidate, expected)
++        for n in range(1, 6):
++            bad = w5.read_json(d.ROOT / f'configs/w6/tv3/R{n}.frozen.json')
++            bad['max_gpu_hours'] = 3
++            with self.assertRaises(ValueError):
++                d.validate_config(bad)
++        for cap in (0, 2.5, 4, float('nan')):
++            bad = copy.deepcopy(candidate)
++            bad['max_gpu_hours'] = cap
++            with self.assertRaises(ValueError):
++                d.validate_config(bad)
++
++    def test_explicit_policy_required_for_three_hours(self):
++        for reg in (None, {}, {'r6_budget_amendment': dict(fixture()['r6_budget_amendment'], status='PENDING')}):
++            with self.assertRaises(ValueError):
++                c.usage_totals(usage(8000), reg)
++        self.assertEqual(c.usage_totals(usage(10800), fixture())[0], 10800)
++        with self.assertRaises(ValueError):
++            c.usage_totals(usage(10800.01), fixture())
++
++    def test_other_runs_and_attempt_ids_cannot_borrow_exception(self):
++        for run in ('R1', 'R2', 'R3', 'R4', 'R5'):
++            with self.assertRaises(ValueError):
++                c.usage_totals(usage(7201, run), fixture())
++        with self.assertRaises(ValueError):
++            c.usage_totals(usage(10, aid='R6_attempt02'), fixture())
++        bad = usage(10)
++        bad['sessions'].append(dict(bad['sessions'][0], run_id='R5'))
++        with self.assertRaisesRegex(ValueError, 'mixed'):
++            c.usage_totals(bad, fixture())
++
++    def test_total_twelve_and_six_attempts_remain(self):
++        ledger = usage(1000)
++        for n in range(1, 7):
++            ledger['sessions'].append(usage(10, run='R1', aid=f'synthetic_{n}')['sessions'][0])
++        with self.assertRaises(ValueError):
++            c.usage_totals(ledger, fixture())
++        ledger = usage(10800)
++        ledger['sessions'].append(usage(32401, aid='smoke', kind='train_only_smoke')['sessions'][0])
++        with self.assertRaises(ValueError):
++            c.usage_totals(ledger, fixture())
++
++    def test_reload_shares_attempt_budget(self):
++        ledger = usage(10000)
++        ledger['sessions'].append(usage(801, kind='reload')['sessions'][0])
++        with self.assertRaises(ValueError):
++            c.usage_totals(ledger, fixture())
++        ledger['sessions'][-1]['seconds'] = 799
++        self.assertEqual(c.usage_totals(ledger, fixture())[1], {'R6_attempt01': 10799})
++
++    def test_amendment_approval_and_binding_rejections(self):
++        for key, value in [('source_sha', 'f' * 40), ('config_sha256', 'f' * 64),
++                           ('runtime_sha256', None), ('max_gpu_hours', 4), ('run_id', 'R5')]:
++            r = fixture()
++            r['r6_budget_amendment'][key] = value
++            with self.assertRaises(ValueError):
++                v.r6_amendment(r)
++        r = fixture()
++        r['r6_budget_amendment']['approvals']['TV2'] = None
++        with self.assertRaises(ValueError):
++            v.official_gate(r, r['runs'][6])
++
++    def test_evidence_content_and_hash_must_match(self):
++        r = fixture()
++        a = r['r6_budget_amendment']
++        binding = {k: a[k] for k in ('run_id', 'attempt_id', 'max_gpu_hours',
++                    'config_sha256', 'source_sha', 'runtime_sha256')}
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            for role, ref in a['approvals'].items():
++                path = root / ref['path']
++                w5.atomic_json(path, dict(role=role, decision='APPROVE_R6_3H', binding=binding))
++                ref['sha256'] = w5.sha(path)
++            v.verify_r6_amendment_evidence(r, root)
++            path = root / 'TV2.json'
++            w5.atomic_json(path, dict(role='TV2', decision='WRONG', binding=binding))
++            with self.assertRaisesRegex(ValueError, 'hash'):
++                v.verify_r6_amendment_evidence(r, root)
++            a['approvals']['TV2']['sha256'] = w5.sha(path)
++            with self.assertRaisesRegex(ValueError, 'content'):
++                v.verify_r6_amendment_evidence(r, root)
++
++    def test_unknown_and_duplicate_reconciliation_block(self):
++        ledger = usage(None)
++        with self.assertRaises(ValueError):
++            c.usage_totals(ledger, fixture())
++        ledger['reconciliations'] = [dict(session_id='synthetic', seconds=6405.3003492)]
++        self.assertAlmostEqual(c.usage_totals(ledger, fixture())[0], 6405.3003492)
++        ledger['reconciliations'] *= 2
++        with self.assertRaises(ValueError):
++            c.usage_totals(ledger, fixture())
++
++    def test_session_stops_with_reserve_and_saves_actual_usage(self):
++        now = [0.0]
++        with tempfile.TemporaryDirectory() as tmp, patch.object(c.time, 'perf_counter', side_effect=lambda: now[0]):
++            root = Path(tmp)
++            with self.assertRaises(c.BudgetExceeded):
++                with c.gpu_session('R6_attempt01', 'R6', 'official', 'synthetic CPU only',
++                                   root=root, registry=fixture()) as (tick, _):
++                    now[0] = 10740
++                    tick()
++            ledger = c.load_usage(root)
++            self.assertEqual(ledger['sessions'][0]['status'], 'STOPPED')
++            self.assertEqual(ledger['sessions'][0]['seconds'], 10740)
++
++    def test_exclusive_writer_prevents_second_session(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            with w5.writer_lock(root / 'outputs/tv3_w6/gpu_lock'):
++                with self.assertRaises(Exception):
++                    with c.gpu_session('R6_attempt01', 'R6', 'official', 'synthetic', root=root, registry=fixture()):
++                        self.fail('Must never enter concurrent session')
++            self.assertEqual(c.load_usage(root)['sessions'], [])
++
++    def test_settlement_is_exactly_once_and_does_not_discard_time(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            root = Path(tmp)
++            ledger = usage(None, run='R5')
++            ledger['sessions'][0]['heartbeat_seconds'] = 6400
++            w5.atomic_json(root / 'outputs/tv3_w6/usage.json', ledger)
++            receipt = dict(session_id='synthetic', status='REVIEWED', reviewers={'TV2': 'synthetic', 'TV3': 'synthetic'},
++                evidence='synthetic', process_confirmed_stopped=True, elapsed_seconds=6405.3003492)
++            path = root / 'receipt.json'
++            w5.atomic_json(path, receipt)
++            self.assertAlmostEqual(c.reconcile_usage(path, root=root)[0], 6405.3003492)
++            settled = (root / 'outputs/tv3_w6/usage.json').read_bytes()
++            with self.assertRaisesRegex(ValueError, 'settled'):
++                c.reconcile_usage(path, root=root)
++            self.assertEqual((root / 'outputs/tv3_w6/usage.json').read_bytes(), settled)
++
++
++class WriterTests(unittest.TestCase):
++    def test_transient_replace_retries_preserve_content(self):
++        real_replace = w5.os.replace
++        count = [0]
++        def replace(src, dst):
++            count[0] += 1
++            if count[0] < 3:
++                raise denied()
++            return real_replace(src, dst)
++        with tempfile.TemporaryDirectory() as tmp, patch.object(c.time, 'sleep') as sleep:
++            path = Path(tmp) / 'usage.json'
++            w5.atomic_json(path, {'old': True})
++            with patch.object(w5.os, 'replace', side_effect=replace):
++                c.write_usage(path, {'new': True})
++            self.assertEqual(w5.read_json(path), {'new': True})
++            self.assertEqual(count[0], 3)
++            self.assertEqual(sleep.call_count, 2)
++
++    def test_permanent_replace_error_retains_old_and_tmp(self):
++        with tempfile.TemporaryDirectory() as tmp, patch.object(c.time, 'sleep') as sleep:
++            path = Path(tmp) / 'usage.json'
++            w5.atomic_json(path, {'old': True})
++            before = path.read_bytes()
++            with patch.object(w5.os, 'replace', side_effect=denied()) as replace:
++                with self.assertRaises(PermissionError):
++                    c.write_usage(path, {'new': True})
++            self.assertEqual(replace.call_count, 6)
++            self.assertEqual(sleep.call_count, 5)
++            self.assertEqual(path.read_bytes(), before)
++            self.assertEqual(w5.read_json(path.with_suffix('.json.tmp')), {'new': True})
++
++    def test_other_errors_not_retried(self):
++        for exc in (PermissionError('ordinary permission failure'), OSError('disk full')):
++            with patch.object(w5, 'atomic_json', side_effect=exc) as writer, patch.object(c.time, 'sleep') as sleep:
++                with self.assertRaises(OSError):
++                    c.write_usage(Path('unused'), {})
++                self.assertEqual(writer.call_count, 1)
++                sleep.assert_not_called()
++
++    def test_final_retry_time_is_accounted(self):
++        now = [0.0]
++        real_write = w5.atomic_json
++        failed_once = [False]
++        def writer(path, value):
++            if value['sessions'][0]['seconds'] is not None and not failed_once[0]:
++                failed_once[0] = True
++                raise denied()
++            real_write(path, value)
++        def sleep(delay):
++            now[0] += delay
++        with tempfile.TemporaryDirectory() as tmp, patch.object(c.time, 'perf_counter', side_effect=lambda: now[0]), \
++                patch.object(c.time, 'sleep', side_effect=sleep), patch.object(w5, 'atomic_json', side_effect=writer):
++            with c.gpu_session('R6_attempt01', 'R6', 'official', 'synthetic CPU', root=Path(tmp), registry=fixture()):
++                now[0] = 10
++            self.assertAlmostEqual(c.load_usage(Path(tmp))['sessions'][0]['seconds'], 10.05)
++
++
++if __name__ == '__main__':
++    unittest.main()
+diff --git a/configs/w6/tv3/R6.3h.candidate.json b/configs/w6/tv3/R6.3h.candidate.json
+new file mode 100644
+--- /dev/null
++++ b/configs/w6/tv3/R6.3h.candidate.json
+@@ -0,0 +1,105 @@
++{
++  "status": "DRAFT",
++  "seed": 43,
++  "dataset": "train_expansion_w6_v1",
++  "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
++  "init_checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
++  "backbone": "dinov3_vits16",
++  "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
++  "pretrained_sha256": "08c60483bc63c04f533611e34bf70b120eedb7240f469bc16e9e20bf344b941d",
++  "preprocessing": {
++    "color": "RGB",
++    "exif_transpose": false,
++    "padding": 0,
++    "bbox": "frozen_integer_xyxy_exclusive",
++    "resize": [
++      256,
++      256
++    ],
++    "interpolation": "bilinear",
++    "antialias": true,
++    "resize_dtype": "uint8",
++    "output_dtype": "float32",
++    "scale": true,
++    "mean": [
++      0.485,
++      0.456,
++      0.406
++    ],
++    "std": [
++      0.229,
++      0.224,
++      0.225
++    ]
++  },
++  "runtime": {
++    "precision": "FP32",
++    "amp": false,
++    "tf32": false,
++    "deterministic": true,
++    "device": "cuda",
++    "num_threads": 10,
++    "num_interop_threads": 10,
++    "source_sha": null,
++    "runtime_lock": null
++  },
++  "implementation": {
++    "adamw_betas": [
++      0.9,
++      0.999
++    ],
++    "adamw_eps": 1e-08,
++    "adamw_amsgrad": false,
++    "optimizer_foreach": false,
++    "warmup": "epoch1=0.5,epoch2=1;cosine(epoch-2)/18;epoch20=0",
++    "mode": "R2:last_two_blocks_norm_head_train_rest_eval;R1_R0:head_train_backbone_eval",
++    "flip": "independent_per_crop_before_resize",
++    "validation_crop_batch": 8,
++    "sampler": "python_shuffle_parent_groups_epoch_boundary",
++    "gradient_clip": null
++  },
++  "loss": "mean_parent_mean_crop_ce_once",
++  "selection": "image_macro_f1",
++  "checkpoint_tie": "earliest_epoch",
++  "drop_last": false,
++  "max_gpu_hours": 3,
++  "num_classes": 8,
++  "run_id": "R6",
++  "recipe": "R2",
++  "init_mode": "W5_full_backbone_and_head",
++  "pooling": "x_norm_clstoken",
++  "feature_dim": 384,
++  "trainable": [
++    "last_2_blocks",
++    "final_norm",
++    "head"
++  ],
++  "optimizer": {
++    "name": "AdamW",
++    "backbone_lr": 1e-05,
++    "head_lr": 0.0001,
++    "weight_decay": 0.01,
++    "no_decay": [
++      "bias",
++      "norm"
++    ]
++  },
++  "scheduler": {
++    "name": "warmup_then_cosine",
++    "warmup_epochs": 2,
++    "epochs": 20
++  },
++  "epochs": 20,
++  "patience": 5,
++  "parent_batch": 16,
++  "crop_microbatch": 8,
++  "augmentation": {
++    "horizontal_flip": 0.5,
++    "vertical_flip": 0,
++    "random_crop": false
++  },
++  "cache": {
++    "enabled": false
++  },
++  "final_parent_batch_denominator": "actual_parent_count"
++}
+diff --git a/experiments/w6/tv3_R6_3h.proposal.json b/experiments/w6/tv3_R6_3h.proposal.json
+new file mode 100644
+--- /dev/null
++++ b/experiments/w6/tv3_R6_3h.proposal.json
+@@ -0,0 +1,348 @@
++{
++  "schema_version": "1.0",
++  "protocol_status": "APPROVED",
++  "protocol_path": "docs/experiment_protocol_w6.md",
++  "plan_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
++  "budgets": {
++    "max_new_official_attempts": 6,
++    "tv3_gpu_hours": 12,
++    "per_attempt_gpu_hours": 2,
++    "tv2_replay_gpu_hours": 2
++  },
++  "approvals": {
++    "TV2": "reports/tv2/TV2_W6_R5_R6_TECHNICAL_APPROVAL_2026-11-08.md",
++    "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/9671b720a9ee0745c392fd6f6c9a9a2b1eae8c1f/reports/tv3/w6/approvals/TV3_R5_R6.json"
++  },
++  "freeze_evidence": "reports/tv2/w6_evidence/lock_20261108/W6_R5_R6_LOCK_RECEIPT.json",
++  "smoke_evidence": "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json",
++  "recipe_selection": {
++    "recipe": "R2",
++    "improves_r0": true,
++    "evidence_path": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
++  },
++  "data_review": {
++    "status": "PASS",
++    "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
++    "evidence_path": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json"
++  },
++  "replay_attempts": [
++    {
++      "attempt_id": "R1_replay01",
++      "gpu_hours": 0.03687700852777602,
++      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
++    },
++    {
++      "attempt_id": "R1_replay02",
++      "gpu_hours": 0.04432501094444888,
++      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
++    },
++    {
++      "attempt_id": "R2_replay01",
++      "gpu_hours": 0.03654925344443958,
++      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
++    },
++    {
++      "attempt_id": "R3_replay01",
++      "gpu_hours": 0.011764475777777585,
++      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
++    },
++    {
++      "attempt_id": "R4_replay01",
++      "gpu_hours": 0.011366664027769325,
++      "evidence_path": "outputs/tv2_w6/independent_replay_20261107/environment_receipt.json"
++    }
++  ],
++  "runs": [
++    {
++      "run_id": "R0",
++      "recipe": "R0",
++      "seed": 42,
++      "dataset": "comparison_v1",
++      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
++      "status": "REFERENCE",
++      "config_path": "configs/dinov3_lp_w5.local.json",
++      "config_sha256": "8a1d9edaf9adda04cc69b5831e94cc1c86c010a0d071f58baeb8759a1cff90f8",
++      "source_sha": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
++      "approvals": {
++        "TV2": null,
++        "TV3": null
++      },
++      "attempts": [],
++      "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
++      "metrics": {
++        "accuracy": 0.845,
++        "macro_f1": 0.8444008279545706
++      },
++      "evidence_paths": [
++        "reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md"
++      ],
++      "conditions": [
++        "reference_only_no_retrain"
++      ]
++    },
++    {
++      "run_id": "R1",
++      "recipe": "R1",
++      "seed": 42,
++      "dataset": "comparison_v1",
++      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
++      "status": "COMPLETED",
++      "config_path": "configs/w6/tv3/R1.frozen.json",
++      "config_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
++      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
++      "approvals": {
++        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
++        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
++      },
++      "attempts": [
++        {
++          "attempt_id": "R1_attempt01",
++          "status": "COMPLETED",
++          "gpu_hours": 0.07120131605555557,
++          "evidence_path": "outputs/tv3_w6/runs/R1_attempt01/status.json"
++        }
++      ],
++      "checkpoint_sha256": "86b1c7460b300f27b2f8d5efe426def51750478e2bf195ffa61df1213f646f79",
++      "metrics": {
++        "accuracy": 0.835,
++        "macro_f1": 0.8338641693401928
++      },
++      "evidence_paths": [
++        "outputs/tv3_w6/runs/R1_attempt01/handoff.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze"
++      ]
++    },
++    {
++      "run_id": "R2",
++      "recipe": "R2",
++      "seed": 42,
++      "dataset": "comparison_v1",
++      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
++      "status": "COMPLETED",
++      "config_path": "configs/w6/tv3/R2.frozen.json",
++      "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
++      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
++      "approvals": {
++        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
++        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
++      },
++      "attempts": [
++        {
++          "attempt_id": "R2_attempt01",
++          "status": "COMPLETED",
++          "gpu_hours": 0.8294758375000002,
++          "evidence_path": "outputs/tv3_w6/runs/R2_attempt01/status.json"
++        }
++      ],
++      "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
++      "metrics": {
++        "accuracy": 0.8516666666666667,
++        "macro_f1": 0.850650853041619
++      },
++      "evidence_paths": [
++        "outputs/tv3_w6/runs/R2_attempt01/handoff.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze"
++      ]
++    },
++    {
++      "run_id": "R3",
++      "recipe": "R2",
++      "seed": 43,
++      "dataset": "comparison_v1",
++      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
++      "status": "COMPLETED",
++      "config_path": "configs/w6/tv3/R3.frozen.json",
++      "config_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
++      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
++      "approvals": {
++        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
++        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
++      },
++      "attempts": [
++        {
++          "attempt_id": "R3_attempt01",
++          "status": "COMPLETED",
++          "gpu_hours": 0.6801649318611114,
++          "evidence_path": "outputs/tv3_w6/runs/R3_attempt01/status.json"
++        }
++      ],
++      "checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
++      "metrics": {
++        "accuracy": 0.8433333333333334,
++        "macro_f1": 0.8427567876976385
++      },
++      "evidence_paths": [
++        "outputs/tv3_w6/runs/R3_attempt01/handoff.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze",
++        "winning_R1_or_R2",
++        "budget_remaining"
++      ]
++    },
++    {
++      "run_id": "R4",
++      "recipe": "R2",
++      "seed": 44,
++      "dataset": "comparison_v1",
++      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
++      "status": "COMPLETED",
++      "config_path": "configs/w6/tv3/R4.frozen.json",
++      "config_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
++      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
++      "approvals": {
++        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
++        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
++      },
++      "attempts": [
++        {
++          "attempt_id": "R4_attempt01",
++          "status": "COMPLETED",
++          "gpu_hours": 0.686542361861111,
++          "evidence_path": "outputs/tv3_w6/runs/R4_attempt01/status.json"
++        }
++      ],
++      "checkpoint_sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
++      "metrics": {
++        "accuracy": 0.8516666666666667,
++        "macro_f1": 0.850644765168246
++      },
++      "evidence_paths": [
++        "outputs/tv3_w6/runs/R4_attempt01/handoff.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze",
++        "winning_R1_or_R2",
++        "budget_remaining"
++      ]
++    },
++    {
++      "run_id": "R5",
++      "recipe": "R2",
++      "seed": 42,
++      "dataset": "train_expansion_w6_v1",
++      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
++      "status": "FAILED",
++      "config_path": "configs/w6/tv3/R5.frozen.json",
++      "config_sha256": "5c698bbc4e1d1e232ff8326eb7e4036265a77be317a39472f2fd92d7c9804b03",
++      "source_sha": "947fbb85aacec9417f248f5f1e1f08c2da75de09",
++      "approvals": {
++        "TV2": "reports/tv2/TV2_W6_R5_R6_TECHNICAL_APPROVAL_2026-11-08.md",
++        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/9671b720a9ee0745c392fd6f6c9a9a2b1eae8c1f/reports/tv3/w6/approvals/TV3_R5_R6.json"
++      },
++      "attempts": [
++        {
++          "attempt_id": "R5_attempt01",
++          "status": "FAILED",
++          "gpu_hours": 1.7792500969999996,
++          "evidence_path": "outputs/tv3_w6/runs/R5_attempt01/status.json"
++        }
++      ],
++      "checkpoint_sha256": null,
++      "metrics": null,
++      "evidence_paths": [
++        "reports/tv2/w6_evidence/lock_20261108/W6_R5_R6_LOCK_RECEIPT.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze",
++        "TV2_expansion_acceptance",
++        "selected_recipe_or_R0_fallback",
++        "budget_remaining"
++      ]
++    },
++    {
++      "run_id": "R6",
++      "recipe": "R2",
++      "seed": 43,
++      "dataset": "train_expansion_w6_v1",
++      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
++      "status": "CONDITIONAL",
++      "config_path": "configs/w6/tv3/R6.3h.candidate.json",
++      "config_sha256": "06840272beac00bbdb5cb9cf90eb1c71d5a30dbf3e43631f45fea26ff182ec46",
++      "source_sha": null,
++      "approvals": {
++        "TV2": null,
++        "TV3": null
++      },
++      "attempts": [],
++      "checkpoint_sha256": null,
++      "metrics": null,
++      "evidence_paths": [
++        "reports/tv2/w6_evidence/lock_20261108/W6_R5_R6_LOCK_RECEIPT.json"
++      ],
++      "conditions": [
++        "approved_protocol",
++        "train_only_smoke",
++        "config_source_runtime_freeze",
++        "TV2_expansion_acceptance",
++        "selected_recipe_or_R0_fallback",
++        "budget_remaining"
++      ]
++    }
++  ],
++  "tv3_preparation_attempts": [
++    {
++      "attempt_id": "R1_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.003355442499999981,
++      "evidence_path": "outputs/tv3_w6/smoke/R1_smoke01/receipt.json"
++    },
++    {
++      "attempt_id": "R2_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.0016819240277777682,
++      "evidence_path": "outputs/tv3_w6/smoke/R2_smoke01/receipt.json"
++    },
++    {
++      "attempt_id": "R3_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.0020971329444442847,
++      "evidence_path": "outputs/tv3_w6/smoke/R3_smoke01/receipt.json"
++    },
++    {
++      "attempt_id": "R4_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.002460322527777963,
++      "evidence_path": "outputs/tv3_w6/smoke/R4_smoke01/receipt.json"
++    },
++    {
++      "attempt_id": "R5_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.0022611563333334236,
++      "evidence_path": "outputs/tv3_w6/smoke/R5_smoke01/receipt.json"
++    },
++    {
++      "attempt_id": "R6_smoke01",
++      "kind": "train_only_smoke",
++      "gpu_hours": 0.0022336470000002212,
++      "evidence_path": "outputs/tv3_w6/smoke/R6_smoke01/receipt.json"
++    }
++  ],
++  "r6_budget_amendment": {
++    "status": "PENDING",
++    "run_id": "R6",
++    "attempt_id": "R6_attempt01",
++    "max_gpu_hours": 3,
++    "config_sha256": "06840272beac00bbdb5cb9cf90eb1c71d5a30dbf3e43631f45fea26ff182ec46",
++    "source_sha": null,
++    "runtime_sha256": null,
++    "approvals": {
++      "TV2": null,
++      "TV3": null
++    }
++  }
++}

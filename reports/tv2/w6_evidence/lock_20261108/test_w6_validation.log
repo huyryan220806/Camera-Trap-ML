@@ -1,0 +1,10 @@
+COMMAND: python -m unittest tests/test_w6_validation.py
+RETURNCODE: 0
+=== STDOUT ===
+
+=== STDERR ===
+...................................................
+----------------------------------------------------------------------
+Ran 51 tests in 0.734s
+
+OK

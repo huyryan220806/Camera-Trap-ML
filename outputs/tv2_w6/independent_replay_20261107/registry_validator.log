@@ -1,0 +1,17 @@
+{
+
+  "status": "VALID",
+
+  "protocol_status": "APPROVED",
+
+  "official_attempts": 0,
+
+  "measured_tv3_gpu_hours": 0.009594821999999996,
+
+  "measured_tv3_preparation_gpu_hours": 0.009594821999999996,
+
+  "unmeasured_attempts": 0,
+
+  "measured_tv2_replay_gpu_hours": 0.1408824127222114
+
+}

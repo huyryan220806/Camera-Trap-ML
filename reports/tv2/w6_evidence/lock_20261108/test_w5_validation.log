@@ -1,0 +1,10 @@
+COMMAND: python -m unittest tests/test_w5_validation.py
+RETURNCODE: 0
+=== STDOUT ===
+
+=== STDERR ===
+................................
+----------------------------------------------------------------------
+Ran 32 tests in 1.749s
+
+OK

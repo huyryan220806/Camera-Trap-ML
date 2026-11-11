@@ -1,0 +1,21 @@
+{
+  "receipt_id": "TV3_W6_R6_3H_APPROVAL_RECEIPT",
+  "role": "TV3",
+  "decision": "APPROVE_R6_3H",
+  "timestamp_utc": "2026-11-09T14:00:57.479268+00:00",
+  "binding": {
+    "run_id": "R6",
+    "attempt_id": "R6_attempt01",
+    "max_gpu_hours": 3,
+    "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+    "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+    "runtime_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a"
+  },
+  "tv2_approval": {
+    "commit": "58205a33983d302856a7fec5b31abffb4c259422",
+    "path": "reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json",
+    "sha256": "9dd51e74da0fd9219d73937826bf00a1c4b97d43d5259b56ced0cbf8697c84e8"
+  },
+  "scope": "R6_attempt01 only; 3 GPU-hours; 12 total TV3 GPU-hours; 6 official attempts maximum; R5 FAILED, no resume; Official Test sealed",
+  "execution_status": "BLOCKED_PENDING_BILATERAL_PROTOCOL_LOCK"
+}

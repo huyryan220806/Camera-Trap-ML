@@ -1,0 +1,437 @@
+test_artifact_traversal_and_absolute_rejected (test_w6_validation.EvaluationTests.test_artifact_traversal_and_absolute_rejected) ... ok
+test_checkpoint_seed_run_identity (test_w6_validation.EvaluationTests.test_checkpoint_seed_run_identity) ... ok
+test_draft_package_rejected_before_predictions_or_checkpoint (test_w6_validation.EvaluationTests.test_draft_package_rejected_before_predictions_or_checkpoint) ... ok
+test_logits_before_mean_and_tie (test_w6_validation.EvaluationTests.test_logits_before_mean_and_tie) ... ok
+test_metrics_all_eight_classes (test_w6_validation.EvaluationTests.test_metrics_all_eight_classes) ... ok
+test_missing_extra_duplicate_crop (test_w6_validation.EvaluationTests.test_missing_extra_duplicate_crop) ... ok
+test_missing_extra_duplicate_image (test_w6_validation.EvaluationTests.test_missing_extra_duplicate_image) ... ok
+test_nonfinite_invalid_vectors (test_w6_validation.EvaluationTests.test_nonfinite_invalid_vectors) ... ok
+test_paired_r0_names (test_w6_validation.EvaluationTests.test_paired_r0_names) ... ok
+test_real_loader_no_test_reader (test_w6_validation.EvaluationTests.test_real_loader_no_test_reader) ... ok
+test_saved_vector_must_equal_aggregation (test_w6_validation.EvaluationTests.test_saved_vector_must_equal_aggregation) ... ok
+test_test_or_train_population_rejected (test_w6_validation.EvaluationTests.test_test_or_train_population_rejected) ... ok
+test_wrong_parent_and_label (test_w6_validation.EvaluationTests.test_wrong_parent_and_label) ... ok
+test_geometry_and_weight_mutations (test_w6_validation.GeometryTests.test_geometry_and_weight_mutations) ... ok
+test_round_half_even_geometry_and_weight (test_w6_validation.GeometryTests.test_round_half_even_geometry_and_weight) ... ok
+test_bare_pass_reload_not_enough (test_w6_validation.PackageTests.test_bare_pass_reload_not_enough) ... ERROR
+test_bare_pass_reload_not_enough (test_w6_validation.PackageTests.test_bare_pass_reload_not_enough) ... ERROR
+test_checkpoint_bytes_modified (test_w6_validation.PackageTests.test_checkpoint_bytes_modified) ... ERROR
+test_checkpoint_bytes_modified (test_w6_validation.PackageTests.test_checkpoint_bytes_modified) ... ERROR
+test_missing_and_tampered_artifacts (test_w6_validation.PackageTests.test_missing_and_tampered_artifacts) ... ERROR
+test_missing_and_tampered_artifacts (test_w6_validation.PackageTests.test_missing_and_tampered_artifacts) ... ERROR
+test_positive_synthetic_package (test_w6_validation.PackageTests.test_positive_synthetic_package) ... ERROR
+test_positive_synthetic_package (test_w6_validation.PackageTests.test_positive_synthetic_package) ... ERROR
+test_relaxed_tolerance_or_test_reload_rejected (test_w6_validation.PackageTests.test_relaxed_tolerance_or_test_reload_rejected) ... ERROR
+test_relaxed_tolerance_or_test_reload_rejected (test_w6_validation.PackageTests.test_relaxed_tolerance_or_test_reload_rejected) ... ERROR
+test_runtime_rehashed_artifact_still_bound_to_frozen_config (test_w6_validation.PackageTests.test_runtime_rehashed_artifact_still_bound_to_frozen_config) ... ERROR
+test_runtime_rehashed_artifact_still_bound_to_frozen_config (test_w6_validation.PackageTests.test_runtime_rehashed_artifact_still_bound_to_frozen_config) ... ERROR
+test_source_index_must_bind_real_bytes (test_w6_validation.PackageTests.test_source_index_must_bind_real_bytes) ... ERROR
+test_source_index_must_bind_real_bytes (test_w6_validation.PackageTests.test_source_index_must_bind_real_bytes) ... ERROR
+test_wrong_seed_source_dataset_checkpoint_rejected (test_w6_validation.PackageTests.test_wrong_seed_source_dataset_checkpoint_rejected) ... ERROR
+test_wrong_seed_source_dataset_checkpoint_rejected (test_w6_validation.PackageTests.test_wrong_seed_source_dataset_checkpoint_rejected) ... ERROR
+test_approval_string_alone_insufficient (test_w6_validation.RegistryTests.test_approval_string_alone_insufficient) ... ok
+test_budget_cannot_be_expanded (test_w6_validation.RegistryTests.test_budget_cannot_be_expanded) ... ok
+test_config_binding (test_w6_validation.RegistryTests.test_config_binding) ... ok
+test_dataset_binding (test_w6_validation.RegistryTests.test_dataset_binding) ... ok
+test_draft_blocks_official (test_w6_validation.RegistryTests.test_draft_blocks_official) ... ok
+test_duplicate_attempt_rejected (test_w6_validation.RegistryTests.test_duplicate_attempt_rejected) ... ok
+test_exact_run_population (test_w6_validation.RegistryTests.test_exact_run_population) ... ok
+test_failed_oom_still_needs_accounting (test_w6_validation.RegistryTests.test_failed_oom_still_needs_accounting) ... ok
+test_failures_consume_budget (test_w6_validation.RegistryTests.test_failures_consume_budget) ... ok
+test_no_side_effects (test_w6_validation.RegistryTests.test_no_side_effects) ... ok
+test_over_two_hours_or_negative_or_nonfinite_rejected (test_w6_validation.RegistryTests.test_over_two_hours_or_negative_or_nonfinite_rejected) ... ok
+test_preparation_gpu_counts_towards_tv3_total (test_w6_validation.RegistryTests.test_preparation_gpu_counts_towards_tv3_total) ... ok
+test_r0_cannot_be_retrained_or_relabelled (test_w6_validation.RegistryTests.test_r0_cannot_be_retrained_or_relabelled) ... ok
+test_real_draft_registry (test_w6_validation.RegistryTests.test_real_draft_registry) ... ok
+test_replay_budget (test_w6_validation.RegistryTests.test_replay_budget) ... ok
+test_seed_and_expansion_conditions (test_w6_validation.RegistryTests.test_seed_and_expansion_conditions) ... ok
+test_seed_rejected (test_w6_validation.RegistryTests.test_seed_rejected) ... ok
+test_seventh_attempt_rejected (test_w6_validation.RegistryTests.test_seventh_attempt_rejected) ... ok
+test_unknown_gpu_usage_kept_explicit (test_w6_validation.RegistryTests.test_unknown_gpu_usage_kept_explicit) ... ok
+test_unstarted_cannot_have_results (test_w6_validation.RegistryTests.test_unstarted_cannot_have_results) ... ok
+test_cost_requires_comparable_measured_setup (test_w6_validation.SelectionTests.test_cost_requires_comparable_measured_setup) ... ok
+test_f1_then_accuracy_then_cost_then_registered_id (test_w6_validation.SelectionTests.test_f1_then_accuracy_then_cost_then_registered_id) ... ok
+test_never_select_best_seed (test_w6_validation.SelectionTests.test_never_select_best_seed) ... ok
+test_one_seed_sd_unknown_and_mixed_recipe_rejected (test_w6_validation.SelectionTests.test_one_seed_sd_unknown_and_mixed_recipe_rejected) ... ok
+test_sample_sd_not_best_seed_headline (test_w6_validation.SelectionTests.test_sample_sd_not_best_seed_headline) ... ok
+
+======================================================================
+ERROR: test_bare_pass_reload_not_enough (test_w6_validation.PackageTests.test_bare_pass_reload_not_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpy8iv7jal\\package'
+
+======================================================================
+ERROR: test_bare_pass_reload_not_enough (test_w6_validation.PackageTests.test_bare_pass_reload_not_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpy8iv7jal'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpy8iv7jal'
+
+======================================================================
+ERROR: test_checkpoint_bytes_modified (test_w6_validation.PackageTests.test_checkpoint_bytes_modified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpnmotivzi\\package'
+
+======================================================================
+ERROR: test_checkpoint_bytes_modified (test_w6_validation.PackageTests.test_checkpoint_bytes_modified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpnmotivzi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpnmotivzi'
+
+======================================================================
+ERROR: test_missing_and_tampered_artifacts (test_w6_validation.PackageTests.test_missing_and_tampered_artifacts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyqhg4n4_\\package'
+
+======================================================================
+ERROR: test_missing_and_tampered_artifacts (test_w6_validation.PackageTests.test_missing_and_tampered_artifacts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyqhg4n4_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyqhg4n4_'
+
+======================================================================
+ERROR: test_positive_synthetic_package (test_w6_validation.PackageTests.test_positive_synthetic_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp9uj6_b33\\package'
+
+======================================================================
+ERROR: test_positive_synthetic_package (test_w6_validation.PackageTests.test_positive_synthetic_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp9uj6_b33'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp9uj6_b33'
+
+======================================================================
+ERROR: test_relaxed_tolerance_or_test_reload_rejected (test_w6_validation.PackageTests.test_relaxed_tolerance_or_test_reload_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp0eh7xco1\\package'
+
+======================================================================
+ERROR: test_relaxed_tolerance_or_test_reload_rejected (test_w6_validation.PackageTests.test_relaxed_tolerance_or_test_reload_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp0eh7xco1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmp0eh7xco1'
+
+======================================================================
+ERROR: test_runtime_rehashed_artifact_still_bound_to_frozen_config (test_w6_validation.PackageTests.test_runtime_rehashed_artifact_still_bound_to_frozen_config)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmppzv5_8_g\\package'
+
+======================================================================
+ERROR: test_runtime_rehashed_artifact_still_bound_to_frozen_config (test_w6_validation.PackageTests.test_runtime_rehashed_artifact_still_bound_to_frozen_config)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmppzv5_8_g'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmppzv5_8_g'
+
+======================================================================
+ERROR: test_source_index_must_bind_real_bytes (test_w6_validation.PackageTests.test_source_index_must_bind_real_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyfmswqx6\\package'
+
+======================================================================
+ERROR: test_source_index_must_bind_real_bytes (test_w6_validation.PackageTests.test_source_index_must_bind_real_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyfmswqx6'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpyfmswqx6'
+
+======================================================================
+ERROR: test_wrong_seed_source_dataset_checkpoint_rejected (test_w6_validation.PackageTests.test_wrong_seed_source_dataset_checkpoint_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Năm 3\HK1_2026\Học máy và ứng dụng\Do_an\tests\test_w6_validation.py", line 238, in setUp
+    self.root=Path(self.tmp.name);self.package=self.root/'package';self.package.mkdir()
+                                                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpfa9pr5i0\\package'
+
+======================================================================
+ERROR: test_wrong_seed_source_dataset_checkpoint_rejected (test_w6_validation.PackageTests.test_wrong_seed_source_dataset_checkpoint_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpfa9pr5i0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 927, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Huỳnh Phúc\AppData\Local\Python\pythoncore-3.14-64\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Huỳnh Phúc\\AppData\\Local\\Packages\\sandbox.{0a65a059-399f-425f-a77b-8d522f947206}\\AC\\Temp\\tmpfa9pr5i0'
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.332s
+
+FAILED (errors=16)

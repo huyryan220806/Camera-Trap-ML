@@ -1,0 +1,53 @@
+{
+  "receipt_type": "TV2_W6_R3_R4_PROTOCOL_LOCK",
+  "date": "2026-11-07",
+  "scope": [
+    "R3",
+    "R4"
+  ],
+  "decision": "APPROVED_FOR_OFFICIAL_R3_R4_ONLY",
+  "proposal_commit": "8c53db892bcf7700f9ac74a6f5bac3a2ffc91906",
+  "tv2_selection_commit": "ea3cad3eb9aa822ffc098aa927d5fe19a9508add",
+  "tv3_approval_commit": "6cbe8522b873dcbb2c5783baa3364f449cc62da6",
+  "approval_decisions": {
+    "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
+    "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
+  },
+  "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+  "runtime_lock_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "runs": {
+    "R3": {
+      "seed": 43,
+      "recipe": "R2",
+      "config_path": "configs/w6/tv3/R3.frozen.json",
+      "config_canonical_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+      "config_raw_sha256": "4c52a6521a083a62122924e080716015310560f2a6544085ab7aef9acf2e8078",
+      "smoke_path": "reports/tv3/w6/smoke/R3_smoke01.json",
+      "smoke_raw_sha256": "8210d1fb013fa7a220a577283627ff638c9b79a7abf1d68cc35f5c2025cd3bd2"
+    },
+    "R4": {
+      "seed": 44,
+      "recipe": "R2",
+      "config_path": "configs/w6/tv3/R4.frozen.json",
+      "config_canonical_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+      "config_raw_sha256": "8e1ee676431166082cf9f0efa4d25b41424517f443282b7b8c13b614a67fe53d",
+      "smoke_path": "reports/tv3/w6/smoke/R4_smoke01.json",
+      "smoke_raw_sha256": "af69ce7ac2645127e43936b4afe185b03026df1f654ed74e0bd5d56c7079deb8"
+    }
+  },
+  "prior_official_attempts": 2,
+  "official_attempt_ids": [
+    "R1_attempt01",
+    "R2_attempt01"
+  ],
+  "tv3_measured_gpu_hours_before_new_official": 0.9102719755555557,
+  "new_official_attempts_at_lock": 0,
+  "r5_r6_expansion_review": "PENDING",
+  "conditions": [
+    "Committed exact frozen configs/source/smoke/approval and approved registry",
+    "Retain R1/R2 official attempts and all 4 preparation smokes",
+    "Retain TV3 usage.json including reload sessions",
+    "R3/R4 each <=2h, all official attempts <=6, TV3 all GPU <=12h",
+    "No W4 Official Test; no R5/R6; TV4 adapter independent"
+  ]
+}

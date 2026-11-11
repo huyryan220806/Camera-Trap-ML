@@ -1,0 +1,97 @@
+{
+  "receipt_type": "TV2_W6_R6_3H_BILATERAL_PROTOCOL_LOCK",
+  "date": "2026-11-09",
+  "scope": [
+    "R6"
+  ],
+  "decision": "BILATERAL_LOCK_COMPLETE_APPROVED_FOR_OFFICIAL_R6_ONLY",
+  "amendment_scope": "R6_attempt01 only (max 3 GPU-hours)",
+  "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+  "tv3_freeze_handoff_commit": "24251096c47b867c257bc62feae403459bd50d42",
+  "tv2_approval": {
+    "role": "TV2",
+    "decision": "APPROVE_R6_3H",
+    "commit": "58205a33983d302856a7fec5b31abffb4c259422",
+    "path": "reports/tv2/w6_evidence/r6_3h_approval/TV2_R6_3H_APPROVAL.json",
+    "sha256": "9dd51e74da0fd9219d73937826bf00a1c4b97d43d5259b56ced0cbf8697c84e8"
+  },
+  "tv3_approval": {
+    "role": "TV3",
+    "decision": "APPROVE_R6_3H",
+    "commit": "c43d1b2b629235b9e965a6b7d957d915cc4babea",
+    "path": "reports/tv3/w6/approvals/TV3_R6_3H_APPROVAL.json",
+    "sha256": "7c545287161b32e609098a893be58d1441fd1eb76a7c8c36616dbf8df0932a74"
+  },
+  "locked_binding": {
+    "run_id": "R6",
+    "attempt_id": "R6_attempt01",
+    "max_gpu_hours": 3,
+    "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+    "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+    "runtime_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a"
+  },
+  "frozen_config": {
+    "path": "configs/w6/tv3/R6.3h.frozen.json",
+    "canonical_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+    "raw_sha256": "6d32d3b5525053e8ab43eadc190f70da649f0ce7d9ff48889bbb210694f682c4"
+  },
+  "runtime_lock_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "smoke_evidence": {
+    "path": "reports/tv3/w6/smoke/R6_3h_smoke01.json",
+    "sha256": "4ef74db223ac7ab45e88cd11de78e878c9c0253c2e2a0a95b473b6a25bae287d"
+  },
+  "dataset": {
+    "name": "train_expansion_w6_v1",
+    "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "approval_receipt": "reports/tv2/TV2_W6_DATA_EXPANSION_APPROVAL_RECEIPT.json"
+  },
+  "budget_and_accounting": {
+    "r6_attempt01_max_gpu_hours": 3.0,
+    "historical_attempts_max_gpu_hours": 2.0,
+    "tv3_total_budget_gpu_hours": 12.0,
+    "official_attempts_limit": 6,
+    "official_attempts_used": 5,
+    "official_attempts_remaining": 1,
+    "r5_status": "FAILED",
+    "r5_settled_seconds": 6405.3003492,
+    "r5_reconciliation_receipt": "reports/tv2/w6_evidence/r5_failure_20261109/R5_ACCOUNTING_RECONCILIATION_RECEIPT.json",
+    "settled_breakdown_seconds": {
+      "official_r1_r4": 8006.8113388,
+      "official_r5": 6405.3003492,
+      "official_r1_r5_total": 14412.111688,
+      "reload_total": 155.7726714,
+      "smoke_total": 62.5263988,
+      "tv3_settled_total": 14630.4107582
+    },
+    "tv3_settled_gpu_hours": 4.06400298838889,
+    "tv3_remaining_gpu_hours": 7.93599701161111,
+    "projected_max_tv3_hours_after_r6": 7.06400298838889,
+    "official_test": "SEALED"
+  },
+  "runs": {
+    "R6": {
+      "recipe": "R2",
+      "seed": 43,
+      "status": "REGISTERED",
+      "config_path": "configs/w6/tv3/R6.3h.frozen.json",
+      "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+      "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+      "max_gpu_hours": 3
+    }
+  },
+  "execution_registry": "experiments/w6/tv3_R6_3h.approved.json",
+  "validator_checks": {
+    "schema_validation": "PASS",
+    "w6_validate_registry": "PASS",
+    "w6_verify_r6_amendment_evidence": "PASS",
+    "w6_official_gate_R6": "PASS"
+  },
+  "conditions": [
+    "R6_attempt01 only is allowed up to 3.0 GPU hours; R1-R5 strictly remain at 2.0 GPU hours",
+    "TV3 overall GPU budget strictly remains capped at 12.0 GPU hours",
+    "Official attempts ceiling strictly remains 6 (5 used, R6_attempt01 is 6th and final)",
+    "R5 remains FAILED with checkpoint epoch 14 preserved, no resume or restart",
+    "Official Test W4 strictly sealed; zero test reading or test inference",
+    "No official training until TV3 syncs bilateral lock commit, verifies GPU booking and execution runtime"
+  ]
+}

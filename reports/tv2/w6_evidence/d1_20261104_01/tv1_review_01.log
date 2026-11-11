@@ -1,0 +1,72 @@
+{
+  "parents": 4246,
+  "crops": 4729,
+  "per_class_images": {
+    "4": 536,
+    "6": 570,
+    "2": 572,
+    "5": 521,
+    "7": 589,
+    "0": 584,
+    "1": 360,
+    "3": 514
+  },
+  "per_class_crops": {
+    "4": 539,
+    "6": 735,
+    "2": 666,
+    "5": 528,
+    "7": 770,
+    "0": 602,
+    "1": 360,
+    "3": 529
+  },
+  "status": "PENDING REVIEW",
+  "release_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "snapshot_files_verified": 19,
+  "candidates": 1665,
+  "retained": 1446,
+  "quarantined": 219,
+  "quarantine_reasons": {
+    "near_duplicate_pending_review": 191,
+    "exact_duplicate_pixel_sha256": 5,
+    "visual_ambiguity_pending_expert": 23
+  },
+  "near_pairs_checked": 347,
+  "near_flagged_ids": 193,
+  "val_test_git_blob_preserved": {
+    "val": true,
+    "b1/val": true,
+    "b2/val": true,
+    "test": true,
+    "b1/test": true,
+    "b2/test": true
+  },
+  "quality_ready": true,
+  "producer_peer_review_status": "pending_TV2",
+  "test_manifest_opened": false,
+  "test_raster_opened": false,
+  "test_model_inference": false,
+  "source_fingerprint_scope": "Git metadata + producer features, not independent Test image rehash",
+  "missing": [
+    "Quarantined 219 image bytes and visual review package",
+    "Independent full old Train/Val and holdout byte/RGB recheck",
+    "Independent visual/specialist review; source fingerprints are producer evidence"
+  ],
+  "r5_r6_permitted": false,
+  "environment": {
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "image_package": {
+    "status": "PASS",
+    "zip_sha256": "a88bfbf99aa25ac70637f35dca6056851e4c300dd89c3906185f943b13b3f659",
+    "zip_bytes": 2246204406,
+    "entries": 1465,
+    "new_train_images_byte_rgb_decoded": 1446,
+    "snapshot_files": 19,
+    "pillow": "12.3.0",
+    "test_images_decoded": 0
+  }
+}

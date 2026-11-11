@@ -1,0 +1,349 @@
+{
+
+  "run_id": "R4",
+
+  "pid": 31932,
+
+  "python_version": "3.12.10 (main, May 30 2025, 05:39:07) [MSC v.1943 64 bit (AMD64)]",
+
+  "torch": "2.6.0+cu124",
+
+  "torchvision": "0.21.0+cu124",
+
+  "pillow": "12.2.0",
+
+  "numpy": "2.5.3",
+
+  "sklearn": "1.9.0",
+
+  "cuda": "12.4",
+
+  "cudnn": 90100,
+
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+
+  "validation_images": 600,
+
+  "validation_crops": 680,
+
+  "inference_wall_seconds": 40.91999049996957,
+
+  "gpu_hours": 0.011366664027769325
+
+}
+
+{
+
+  "metrics": {
+
+    "accuracy": 0.8516666666666667,
+
+    "image_balanced_crop_ce": 0.46944138407707214,
+
+    "macro_f1": 0.850644765168246,
+
+    "macro_precision": 0.854455179011222,
+
+    "macro_recall": 0.8516666666666668,
+
+    "confusion_matrix": [
+
+      [
+
+        52,
+
+        1,
+
+        10,
+
+        2,
+
+        2,
+
+        2,
+
+        0,
+
+        6
+
+      ],
+
+      [
+
+        0,
+
+        71,
+
+        0,
+
+        1,
+
+        1,
+
+        2,
+
+        0,
+
+        0
+
+      ],
+
+      [
+
+        2,
+
+        0,
+
+        63,
+
+        1,
+
+        0,
+
+        3,
+
+        1,
+
+        5
+
+      ],
+
+      [
+
+        0,
+
+        0,
+
+        1,
+
+        69,
+
+        0,
+
+        1,
+
+        0,
+
+        4
+
+      ],
+
+      [
+
+        0,
+
+        3,
+
+        0,
+
+        1,
+
+        64,
+
+        6,
+
+        0,
+
+        1
+
+      ],
+
+      [
+
+        1,
+
+        4,
+
+        0,
+
+        2,
+
+        8,
+
+        56,
+
+        0,
+
+        4
+
+      ],
+
+      [
+
+        0,
+
+        0,
+
+        0,
+
+        0,
+
+        0,
+
+        0,
+
+        72,
+
+        3
+
+      ],
+
+      [
+
+        3,
+
+        0,
+
+        2,
+
+        0,
+
+        3,
+
+        0,
+
+        3,
+
+        64
+
+      ]
+
+    ],
+
+    "per_class": {
+
+      "large_antlered_muntjac": {
+
+        "precision": 0.896551724137931,
+
+        "recall": 0.6933333333333334,
+
+        "f1-score": 0.7819548872180451,
+
+        "support": 75.0
+
+      },
+
+      "annamite_striped_rabbit": {
+
+        "precision": 0.8987341772151899,
+
+        "recall": 0.9466666666666667,
+
+        "f1-score": 0.922077922077922,
+
+        "support": 75.0
+
+      },
+
+      "sambar": {
+
+        "precision": 0.8289473684210527,
+
+        "recall": 0.84,
+
+        "f1-score": 0.8344370860927153,
+
+        "support": 75.0
+
+      },
+
+      "chinese_serow": {
+
+        "precision": 0.9078947368421053,
+
+        "recall": 0.92,
+
+        "f1-score": 0.9139072847682119,
+
+        "support": 75.0
+
+      },
+
+      "common_palm_civet": {
+
+        "precision": 0.8205128205128205,
+
+        "recall": 0.8533333333333334,
+
+        "f1-score": 0.8366013071895425,
+
+        "support": 75.0
+
+      },
+
+      "masked_palm_civet": {
+
+        "precision": 0.8,
+
+        "recall": 0.7466666666666667,
+
+        "f1-score": 0.7724137931034483,
+
+        "support": 75.0
+
+      },
+
+      "silver_pheasant": {
+
+        "precision": 0.9473684210526315,
+
+        "recall": 0.96,
+
+        "f1-score": 0.9536423841059603,
+
+        "support": 75.0
+
+      },
+
+      "eurasian_wild_pig": {
+
+        "precision": 0.735632183908046,
+
+        "recall": 0.8533333333333334,
+
+        "f1-score": 0.7901234567901234,
+
+        "support": 75.0
+
+      },
+
+      "accuracy": 0.8516666666666667,
+
+      "macro avg": {
+
+        "precision": 0.854455179011222,
+
+        "recall": 0.8516666666666668,
+
+        "f1-score": 0.850644765168246,
+
+        "support": 600.0
+
+      },
+
+      "weighted avg": {
+
+        "precision": 0.8544551790112221,
+
+        "recall": 0.8516666666666667,
+
+        "f1-score": 0.850644765168246,
+
+        "support": 600.0
+
+      }
+
+    },
+
+    "images": 600,
+
+    "crops": 680
+
+  },
+
+  "output": "D:\\Năm 3\\HK1_2026\\Học máy và ứng dụng\\Do_an\\outputs\\tv2_w6\\independent_replay_20261107\\replay_R4.json",
+
+  "output_sha256": "101196a66aded70ecf35ef45f51750a6f211f7b1e64f6d6adbe69fedf64fb6e8"
+
+}
