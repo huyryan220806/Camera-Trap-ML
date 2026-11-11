@@ -23,5 +23,7 @@
   không huấn luyện lại model đồ án.
 - Báo cáo/evidence riêng: [R6 REPORT](../reports/tv4_w6_r6/REPORT.md);
   [chạy và tái kiểm](tv4_r6_demo.md). Báo cáo R1-R4 trước giữ nguyên.
-- PR#9 đang được cập nhật cho R1-R4+R6; chờ TV2/TV3 review tích hợp và nhóm
-  chốt checkpoint cuối. Không tự merge hoặc đổi B2 mặc định.
+- Đã push code/evidence commit `bd5b740cfa4e0efc9ac7502e57a929f781dd8d04`
+  lên `origin/feat/demo` và cập nhật [PR#9](https://github.com/huyryan220806/Camera-Trap-ML/pull/9)
+  cho R1-R4+R6. PR vẫn OPEN, chờ TV2/TV3 review tích hợp và nhóm chốt checkpoint.
+  Không tự merge hoặc đổi B2 mặc định; QA servers đã dừng.
