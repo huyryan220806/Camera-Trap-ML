@@ -65,6 +65,10 @@ chỉnh; ảnh không có detection vẫn cần được xem xét khi phân tíc
 
 ## Chạy và đồng bộ
 
+Đã push bản kết hợp tại [`b9cebbb`](https://github.com/huyryan220806/Camera-Trap-ML/commit/b9cebbb66b10968739ba80b8fb3164de98076ca7),
+xác nhận remote main chứa cả bốn đầu nhánh. [PR #9](https://github.com/huyryan220806/Camera-Trap-ML/pull/9)
+đã được GitHub ghi nhận merged. [Receipt GitHub/remote](../reports/integration_w6/publication.json).
+
 Lệnh mở demo W5 đang dùng vẫn giữ được. Sau khi nhận/kiểm gói W6 ngoài Git,
 thêm `--w6-registry configs/demo_w6_r6.json` và chọn model trong giao diện.
 [Hướng dẫn R1–R4](tv4_w6_demo.md), [hướng dẫn R6](tv4_r6_demo.md).

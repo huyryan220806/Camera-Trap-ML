@@ -1,5 +1,10 @@
 # Tích hợp tuần 6 — tiến độ 11/11/2026
 
+**Đã hoàn tất và công bố ngày 12/11/2026.** Main đã chứa cả bốn đầu nhánh tại
+merge commit `b9cebbb66b10968739ba80b8fb3164de98076ca7`; GitHub xác nhận PR #9
+`merged`. [Receipt công bố](../reports/integration_w6/publication.json).
+Những đoạn ghi đang làm/chưa push bên dưới là nhật ký trước khi hoàn tất.
+
 Người dùng xác nhận cả nhóm đã xong và yêu cầu merge vào main. Được phép merge
 và push, không đổi model mặc định hoặc mở lại Official Test.
 
@@ -43,3 +48,18 @@ lưu ở `reports/integration_w6/`. README, mục lục và hướng dẫn nativ
 Bước còn lại: stage đúng các file tích hợp, commit merge TV4, kiểm remote,
 fast-forward main, push không force và xác minh cả bốn đầu nhánh đã nằm trong
 origin/main. Chưa công bố trạng thái push thành công ở mốc này.
+
+## Công bố đã xác minh — 12/11/2026
+
+- Merge TV4 và hoàn tất bản kết hợp tại `b9cebbb`, gồm xử lý source snapshots,
+  hai test tích hợp, tài liệu và bằng chứng 551/551 PASS.
+- Repo chính đã chuyển sang `main`, fast-forward rồi push thành công.
+- `git ls-remote` xác nhận remote main bằng commit đã push; cả bốn đầu nhánh
+  trong bảng đều là ancestor của main.
+- GitHub API xác nhận [PR #9](https://github.com/huyryan220806/Camera-Trap-ML/pull/9)
+  closed/merged, merge commit đúng `b9cebbb`.
+- Giữ bốn nhánh thành viên, không force-push. Ảnh/checkpoint/slide và các file
+  untracked cũ ở repo chính được giữ nguyên. Worktree tích hợp và log vẫn còn
+  để truy vết; không có training hay server QA cần tiếp tục.
+- Commit tài liệu tiếp theo chỉ lưu receipt công bố và trạng thái này; không
+  thay code đã kiểm thử. Không cần chạy lại full suite cho thay đổi tài liệu.

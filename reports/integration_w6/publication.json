@@ -1,0 +1,36 @@
+{
+  "status": "PUBLISHED_AND_VERIFIED",
+  "date": "2026-11-12",
+  "checked_utc": "2026-11-11T17:19:53.247119+00:00",
+  "remote": "https://github.com/huyryan220806/Camera-Trap-ML.git",
+  "integration_commit": "b9cebbb66b10968739ba80b8fb3164de98076ca7",
+  "remote_main_sha": "b9cebbb66b10968739ba80b8fb3164de98076ca7",
+  "member_heads": {
+    "feat/baseline": {
+      "sha": "96d202563c63b47d4d3d6773c3d4b5a2a29c3c7a",
+      "ancestor_of_main": true
+    },
+    "feat/crop-classifier": {
+      "sha": "450f15bde6899faffac3c9389156d04c15196568",
+      "ancestor_of_main": true
+    },
+    "feat/demo": {
+      "sha": "bbbccf979f437ebb80963a4067214f24ed31f639",
+      "ancestor_of_main": true
+    },
+    "feat/metadata-split": {
+      "sha": "11e451071f58146522df20e1890cc6fe6e488eb0",
+      "ancestor_of_main": true
+    }
+  },
+  "pull_request": {
+    "number": 9,
+    "url": "https://github.com/huyryan220806/Camera-Trap-ML/pull/9",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-11-11T17:19:21Z",
+    "merge_commit_sha": "b9cebbb66b10968739ba80b8fb3164de98076ca7",
+    "head_sha": "bbbccf979f437ebb80963a4067214f24ed31f639"
+  },
+  "publication_scope": "Integrated code and initial documentation; later publication notes may follow."
+}
