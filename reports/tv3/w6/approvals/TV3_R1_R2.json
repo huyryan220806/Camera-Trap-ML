@@ -1,0 +1,21 @@
+﻿{
+  "receipt_type": "TV3_W6_R1_R2_APPROVAL",
+  "approver": "TV3",
+  "approver_email": "phuc.2474802010313@vanlanguni.vn",
+  "decision": "APPROVED_FOR_PROTOCOL_LOCK",
+  "runs": ["R1", "R2"],
+  "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+  "handoff_commit": "8cd97538390a3f55c66193d79e637dfd73ace770",
+  "frozen_configs": {
+    "R1": {
+      "path": "configs/w6/tv3/R1.frozen.json",
+      "file_sha256": "92bf5966fe2b4e228fb52b0ae975c8e5044ca1c35b6a4d06ab79f5733cef507c"
+    },
+    "R2": {
+      "path": "configs/w6/tv3/R2.frozen.json",
+      "file_sha256": "a649fe30c436fee538d9a58a904685a558aebd77a1df3af91409f55f1a86f36c"
+    }
+  },
+  "runtime_lock": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "statement": "I, TV3, approve official R1 and R2 using exactly the frozen configs, source commit, and runtime lock listed above. No config, hyperparameter, or runtime changes are authorized by this receipt. Official training starts only after the W6 protocol is locked APPROVED."
+}

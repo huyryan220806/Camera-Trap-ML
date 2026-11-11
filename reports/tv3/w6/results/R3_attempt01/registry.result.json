@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0",
+  "protocol_status": "APPROVED",
+  "protocol_path": "docs/experiment_protocol_w6.md",
+  "plan_commit": "11e451071f58146522df20e1890cc6fe6e488eb0",
+  "budgets": {
+    "max_new_official_attempts": 6,
+    "tv3_gpu_hours": 12,
+    "per_attempt_gpu_hours": 2,
+    "tv2_replay_gpu_hours": 2
+  },
+  "approvals": {
+    "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+    "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
+  },
+  "freeze_evidence": "reports/tv2/w6_evidence/lock_20261106/W6_R1_R2_LOCK_RECEIPT.json",
+  "smoke_evidence": "reports/tv2/w6_evidence/lock_20261106/SMOKE_BINDINGS.json",
+  "recipe_selection": {
+    "recipe": "R2",
+    "improves_r0": true,
+    "evidence_path": "reports/tv2/TV2_W6_INDEPENDENT_MODEL_REPLAY_2026-11-06.md"
+  },
+  "data_review": {
+    "status": "PENDING",
+    "release_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+    "evidence_path": null
+  },
+  "replay_attempts": [
+    {
+      "attempt_id": "R1_replay01",
+      "gpu_hours": 0.03687700852777602,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R1_replay02",
+      "gpu_hours": 0.04432501094444888,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    },
+    {
+      "attempt_id": "R2_replay01",
+      "gpu_hours": 0.03654925344443958,
+      "evidence_path": "outputs/tv2_w6/independent_replay_20261106/environment_receipt.json"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "R0",
+      "recipe": "R0",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "REFERENCE",
+      "config_path": "configs/dinov3_lp_w5.local.json",
+      "config_sha256": "8a1d9edaf9adda04cc69b5831e94cc1c86c010a0d071f58baeb8759a1cff90f8",
+      "source_sha": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+      "metrics": {
+        "accuracy": 0.845,
+        "macro_f1": 0.8444008279545706
+      },
+      "evidence_paths": [
+        "reports/tv2/TV2_W5_DINO_ACCEPTANCE_2026-11-02.md"
+      ],
+      "conditions": [
+        "reference_only_no_retrain"
+      ]
+    },
+    {
+      "run_id": "R1",
+      "recipe": "R1",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "COMPLETED",
+      "config_path": "configs/w6/tv3/R1.frozen.json",
+      "config_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
+      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+      "approvals": {
+        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
+      },
+      "attempts": [
+        {
+          "attempt_id": "R1_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.07120131605555557,
+          "evidence_path": "outputs/tv3_w6/runs/R1_attempt01/status.json"
+        }
+      ],
+      "checkpoint_sha256": "86b1c7460b300f27b2f8d5efe426def51750478e2bf195ffa61df1213f646f79",
+      "metrics": {
+        "accuracy": 0.835,
+        "macro_f1": 0.8338641693401928
+      },
+      "evidence_paths": [
+        "outputs/tv3_w6/runs/R1_attempt01/handoff.json"
+      ],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze"
+      ]
+    },
+    {
+      "run_id": "R2",
+      "recipe": "R2",
+      "seed": 42,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "COMPLETED",
+      "config_path": "configs/w6/tv3/R2.frozen.json",
+      "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
+      "source_sha": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+      "approvals": {
+        "TV2": "reports/tv2/TV2_W6_TV2_TECHNICAL_APPROVAL_2026-11-06.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/a5e24eb27e4bff4d3649adeee3b70efffdc11e2c/reports/tv3/w6/approvals/TV3_R1_R2.json"
+      },
+      "attempts": [
+        {
+          "attempt_id": "R2_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.8294758375000002,
+          "evidence_path": "outputs/tv3_w6/runs/R2_attempt01/status.json"
+        }
+      ],
+      "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
+      "metrics": {
+        "accuracy": 0.8516666666666667,
+        "macro_f1": 0.850650853041619
+      },
+      "evidence_paths": [
+        "outputs/tv3_w6/runs/R2_attempt01/handoff.json"
+      ],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze"
+      ]
+    },
+    {
+      "run_id": "R3",
+      "recipe": "R2",
+      "seed": 43,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "COMPLETED",
+      "config_path": "configs/w6/tv3/R3.frozen.json",
+      "config_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "approvals": {
+        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
+      },
+      "attempts": [
+        {
+          "attempt_id": "R3_attempt01",
+          "status": "COMPLETED",
+          "gpu_hours": 0.6801649318611114,
+          "evidence_path": "outputs/tv3_w6/runs/R3_attempt01/status.json"
+        }
+      ],
+      "checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+      "metrics": {
+        "accuracy": 0.8433333333333334,
+        "macro_f1": 0.8427567876976385
+      },
+      "evidence_paths": [
+        "outputs/tv3_w6/runs/R3_attempt01/handoff.json"
+      ],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "winning_R1_or_R2",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R4",
+      "recipe": "R2",
+      "seed": 44,
+      "dataset": "comparison_v1",
+      "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+      "status": "REGISTERED",
+      "config_path": "configs/w6/tv3/R4.frozen.json",
+      "config_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+      "source_sha": "95652c2d770cac464633eef0149bd27f4d859ece",
+      "approvals": {
+        "TV2": "reports/tv2/TV2_W6_R3_R4_TECHNICAL_APPROVAL_2026-11-07.md",
+        "TV3": "https://github.com/huyryan220806/Camera-Trap-ML/blob/6cbe8522b873dcbb2c5783baa3364f449cc62da6/reports/tv3/w6/approvals/TV3_R3_R4.json"
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [
+        "reports/tv2/w6_evidence/lock_20261107/W6_R3_R4_LOCK_RECEIPT.json"
+      ],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "winning_R1_or_R2",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R5",
+      "recipe": null,
+      "seed": 42,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "TV2_expansion_acceptance",
+        "selected_recipe_or_R0_fallback",
+        "budget_remaining"
+      ]
+    },
+    {
+      "run_id": "R6",
+      "recipe": null,
+      "seed": 43,
+      "dataset": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "status": "CONDITIONAL",
+      "config_path": null,
+      "config_sha256": null,
+      "source_sha": null,
+      "approvals": {
+        "TV2": null,
+        "TV3": null
+      },
+      "attempts": [],
+      "checkpoint_sha256": null,
+      "metrics": null,
+      "evidence_paths": [],
+      "conditions": [
+        "approved_protocol",
+        "train_only_smoke",
+        "config_source_runtime_freeze",
+        "TV2_expansion_acceptance",
+        "selected_recipe_or_R0_fallback",
+        "budget_remaining"
+      ]
+    }
+  ],
+  "tv3_preparation_attempts": [
+    {
+      "attempt_id": "R1_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.003355442499999981,
+      "evidence_path": "outputs/tv3_w6/smoke/R1_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R2_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.0016819240277777682,
+      "evidence_path": "outputs/tv3_w6/smoke/R2_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R3_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.0020971329444442847,
+      "evidence_path": "outputs/tv3_w6/smoke/R3_smoke01/receipt.json"
+    },
+    {
+      "attempt_id": "R4_smoke01",
+      "kind": "train_only_smoke",
+      "gpu_hours": 0.002460322527777963,
+      "evidence_path": "outputs/tv3_w6/smoke/R4_smoke01/receipt.json"
+    }
+  ]
+}

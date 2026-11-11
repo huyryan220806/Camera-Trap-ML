@@ -1,0 +1,169 @@
+{
+  "format": "TV3_DINO_W6_V1",
+  "run_id": "R6",
+  "experiment_id": "R6_attempt01",
+  "recipe": "R2",
+  "seed": 43,
+  "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+  "checkpoint_bytes": 86851190,
+  "checkpoint_path": "best_model.pt",
+  "last_checkpoint_sha256": "ffcf48c86abfd8ea96f225739b0a77e32912981ca858b17ff52094279d4918fc",
+  "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+  "config_raw_sha256": "6d32d3b5525053e8ab43eadc190f70da649f0ce7d9ff48889bbb210694f682c4",
+  "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+  "execution_commit": "c314ca5596137985757560dc330601dbe9106bc7",
+  "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "train_dataset": "train_expansion_w6_v1",
+  "val_dataset": "comparison_v1",
+  "evaluation_split": "val",
+  "class_order": [
+    "large_antlered_muntjac",
+    "annamite_striped_rabbit",
+    "sambar",
+    "chinese_serow",
+    "common_palm_civet",
+    "masked_palm_civet",
+    "silver_pheasant",
+    "eurasian_wild_pig"
+  ],
+  "manifest_sha256": {
+    "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+    "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+    "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+    "b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+    "b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+  },
+  "training_data_hashes": {
+    "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+    "files": {
+      "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+      "train.jsonl": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+      "val.jsonl": "4a18d30378619a39a317af93e1a375ba95162b234380cbf373f26308ac0dfd34",
+      "b1/train.jsonl": "4686794d71e497bd5d6bd50ec60681e0ec7553569ddc51419e98aef57a4abd3c",
+      "b1/val.jsonl": "31e232f83cbdfb149f54377a4872505d01854ea75d4c83e7d93774402cc16c0d",
+      "b2/train.jsonl": "023c3cbf31c42e6e35547a5d928fa93cc00a31a0657879d5e775b4a9d37ce3d3",
+      "b2/val.jsonl": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e"
+    },
+    "verified_source_images": 4846,
+    "test_opened": false,
+    "expansion": {
+      "provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "files": {
+        "additional_train.jsonl": "1be0e2a6e73d2cb5fcbde393b483b8a62af86bf248f77e2d7dcabfab1de13967",
+        "audit.json": "a5d2f5bd11429c16a020a999be634b3424632c494363be20fd80326151dde652",
+        "b1/train.jsonl": "8caf1bf9a6fc24c041d977540854f43c43fe4540c97a4c994fe988a921edabf0",
+        "b2/train.jsonl": "308640a0d71fe57518552d15868d89e6315dbe830262f7bb7111660854d23e24",
+        "baseline_references.json": "f47c545476729c7fd1240411515c4028e69190a2d4ad26e18af3d0957b621f46",
+        "class_map.json": "122c3a8c6b297c1d63c3b18db91cf6b3f279a2f979e6b3e77824dbdd086fc58e",
+        "decisions.jsonl": "2302cec50a71b8e16829953789cf9bbe0cdfc952d24fe0611aab65f432097a75",
+        "exact_duplicates.json": "ed551058b5b66610615ad99aa2d24d5f0327e03803e62b4c38c8e1fce15331a3",
+        "excluded.jsonl": "57279acc49c5c5dd5b8b652135cf0094d2576d835cd8ba17708cea017eefe636",
+        "features.jsonl": "d971b58084fb0dc5cb89562d944698cb7d6de7900393ebdd1192a9145263a743",
+        "holdout_quality.jsonl": "6f4da5de7cd31a746bdfb4abf581e1766e8531f645655b11eb80be20740e0db4",
+        "near_duplicates.json": "9cb96349435cf1f1b3d90635deeae6871a983069abc1db5db2aad71b5f209aec",
+        "policy.json": "98ba0898f23d1abf896547add2c5cfe6ecfd05db3640144e06bd4b5aafffcb63",
+        "preserved_original_duplicates.json": "b72df02e3dd698d3862c6d823edc9f01151aeb72cf21d42c13c9ec3e3ff38e10",
+        "summary.json": "0f61da88653a0722337218756d9580e96fd90dd6d8a329ee377f5d26dd2faca3",
+        "train.jsonl": "43d9bad95202d2913e7d334982e20600c000901b5cc263d66bf6fcac77a61b6a",
+        "visual_queue.jsonl": "81aa4edc8c5e3e62b688c113d344d16a962b9a087f44dfcaca9a1b27ab94e95c",
+        "visual_review.json": "5044e71bbe5d43c5211f0bcbfc32e4598fc9f866406e794a7b529aa91fd86f92"
+      }
+    },
+    "train_dataset": "train_expansion_w6_v1",
+    "train_dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5"
+  },
+  "aggregation": "mean_crop_softmax_then_argmax",
+  "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+  "init_checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+  "pooling": "x_norm_clstoken",
+  "feature_dim": 384,
+  "trainable_parameters": [
+    "backbone.blocks.10.norm1.weight",
+    "backbone.blocks.10.norm1.bias",
+    "backbone.blocks.10.attn.qkv.weight",
+    "backbone.blocks.10.attn.qkv.bias",
+    "backbone.blocks.10.attn.proj.weight",
+    "backbone.blocks.10.attn.proj.bias",
+    "backbone.blocks.10.ls1.gamma",
+    "backbone.blocks.10.norm2.weight",
+    "backbone.blocks.10.norm2.bias",
+    "backbone.blocks.10.mlp.fc1.weight",
+    "backbone.blocks.10.mlp.fc1.bias",
+    "backbone.blocks.10.mlp.fc2.weight",
+    "backbone.blocks.10.mlp.fc2.bias",
+    "backbone.blocks.10.ls2.gamma",
+    "backbone.blocks.11.norm1.weight",
+    "backbone.blocks.11.norm1.bias",
+    "backbone.blocks.11.attn.qkv.weight",
+    "backbone.blocks.11.attn.qkv.bias",
+    "backbone.blocks.11.attn.proj.weight",
+    "backbone.blocks.11.attn.proj.bias",
+    "backbone.blocks.11.ls1.gamma",
+    "backbone.blocks.11.norm2.weight",
+    "backbone.blocks.11.norm2.bias",
+    "backbone.blocks.11.mlp.fc1.weight",
+    "backbone.blocks.11.mlp.fc1.bias",
+    "backbone.blocks.11.mlp.fc2.weight",
+    "backbone.blocks.11.mlp.fc2.bias",
+    "backbone.blocks.11.ls2.gamma",
+    "backbone.norm.weight",
+    "backbone.norm.bias",
+    "head.weight",
+    "head.bias"
+  ],
+  "best_epoch": 13,
+  "completed_epochs": 18,
+  "validation_metrics": {
+    "accuracy": 0.865,
+    "macro_f1": 0.8641867348386344,
+    "macro_precision": 0.8660182140519431,
+    "macro_recall": 0.865
+  },
+  "fresh_process_reload": "PASS",
+  "tv2_model_replay": "PENDING",
+  "tv4_adapter": "PENDING",
+  "test_inference_performed": false,
+  "artifacts": {
+    "config": {
+      "path": "config.json",
+      "sha256": "6d32d3b5525053e8ab43eadc190f70da649f0ce7d9ff48889bbb210694f682c4"
+    },
+    "source_index": {
+      "path": "source_index.json",
+      "sha256": "aba6df0b9e5952c9dc9021b70dcfa8dec63b27bff4275e6bfee8a9bcbcc1887d"
+    },
+    "training_log": {
+      "path": "train_log.json",
+      "sha256": "f2396d4b8023b6ec686ba2e983aa7eb1bcb80cb8fbc784091adedc3ab6bd7371"
+    },
+    "runtime": {
+      "path": "runtime.json",
+      "sha256": "a7ad61ae31805dd11a5497b2b8d831a8d294d311fba2e450728ef056f6f76023"
+    },
+    "crop_predictions": {
+      "path": "val_crops.jsonl",
+      "sha256": "acf78e37462dd9a8ac74295c8ab5c477ffda9f48fb5efd3f7a0b96454f1a81f6"
+    },
+    "image_predictions": {
+      "path": "val_images.jsonl",
+      "sha256": "f8922bff4bd700627e4eee4a25aab4309ced6ed63d04549ff560241f26b47eff"
+    },
+    "class_mapping": {
+      "path": "class_map.json",
+      "sha256": "db75c952621c107b8eca59c933f8baf05f538a6e2be30c6ab475d5e45143471e"
+    },
+    "preprocessing": {
+      "path": "preprocessing.json",
+      "sha256": "714be01e4c6de396631ef7a9c8b2dc41a7895c3476f17c5a8e1b94d4a031c4ef"
+    },
+    "binding": {
+      "path": "binding.json",
+      "sha256": "ae4299ca95cba8b2182b4ae14d52213d82682c935cb43fdcdc3753ab54d56969"
+    },
+    "reload_report": {
+      "path": "reload01.json",
+      "sha256": "e0fe8f15f0690f774105e33ffe35de98719645c556103c192f49d7853c32bdcd"
+    }
+  },
+  "loader": "src.training.dino_w6.load_package / predict_crops"
+}

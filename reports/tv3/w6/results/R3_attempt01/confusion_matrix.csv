@@ -1,0 +1,9 @@
+true/pred,large_antlered_muntjac,annamite_striped_rabbit,sambar,chinese_serow,common_palm_civet,masked_palm_civet,silver_pheasant,eurasian_wild_pig
+large_antlered_muntjac,52,1,10,2,2,2,0,6
+annamite_striped_rabbit,0,70,0,1,1,3,0,0
+sambar,3,0,61,0,0,3,1,7
+chinese_serow,0,0,3,68,0,1,0,3
+common_palm_civet,0,3,0,1,63,7,0,1
+masked_palm_civet,1,4,0,2,7,58,0,3
+silver_pheasant,0,0,0,1,0,0,72,2
+eurasian_wild_pig,3,0,4,0,2,1,3,62
