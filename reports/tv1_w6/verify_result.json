@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checked_utc": "2026-11-03T16:16:06+00:00",
+  "provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "images_redecoded": false,
+  "training_images": 4246,
+  "training_crops": 4729,
+  "additional_retained": 1446,
+  "additional_excluded": 219,
+  "source_files_unchanged": true,
+  "split_changes": 0,
+  "label_changes": 0,
+  "model_inference_run": false,
+  "peer_review_status": "pending_TV2",
+  "runtime_matches_release": true
+}

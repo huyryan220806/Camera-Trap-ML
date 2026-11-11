@@ -1,0 +1,6 @@
+{
+  "val": "data/processed/comparison_v1/b2/val.jsonl",
+  "val_sha256": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+  "test_policy": "Historical result only; no selection or new inference",
+  "holdout_policy": "quality_and_content_hashes_only_no_model_inference_no_new_test_release"
+}

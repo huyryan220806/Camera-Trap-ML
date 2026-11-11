@@ -8,6 +8,14 @@ Sơn, sử dụng dữ liệu SWG. Nhóm 4 thành viên. Bản tích hợp **tu�
 Giảng viên đã cho thêm vài tuần; chưa có hạn nộp mới cụ thể. Kế hoạch ban đầu
 6 tuần được giữ làm lịch sử; xem [ghi nhận lịch mới](docs/progress_integration_w5_2026-11-03.md).
 
+**Tuần 6 sau gia hạn:** thử cải thiện so với `DINOv3_LP_run01` bằng pooling,
+fine-tune nhẹ và thí nghiệm train mở rộng riêng. Kế hoạch:
+[TV1](docs/plans/TV1_W6.md) · [TV2](docs/plans/TV2_W6.md) ·
+[TV3](docs/plans/TV3_W6.md) · [TV4](docs/plans/TV4_W6.md).
+TV1 đã kiểm định thêm **1.446 ảnh**, train mới **4.246 ảnh / 4.729 crop**;
+[báo cáo và gói bàn giao](docs/handoff_tv1_w6.md), chờ TV2 review trước train.
+Chưa có model W6 đã huấn luyện; kết quả mô hình hiện tại vẫn là bảng bên dưới.
+
 ## Mở web
 
 Trên máy TV1 đã chuẩn bị môi trường và gói DINO, mở PowerShell tại thư mục repo:
@@ -93,8 +101,9 @@ Số đo B2 tuần 4 được giữ ở [báo cáo cũ](reports/tv4_w4/REPORT.md
   SWG. Không mặc định cả 8 lớp đều có cùng tình trạng bảo tồn.
 - Giữ nguyên nhãn/split/checkpoint đã khóa. Không chạy lại Test để chọn mô hình,
   ngưỡng hoặc sửa nhãn nhằm tăng điểm.
-- W5 có 1.665 ứng viên train bổ sung mới ở mức metadata; chưa phát hành train
-  mở rộng. 109 ảnh holdout ứng viên chưa đủ hỗ trợ 8 lớp; chưa có test mới.
+- Snapshot W5 gồm 1.665 ứng viên metadata giữ nguyên. W6 phát hành riêng
+  `train_expansion_w6_v1`, giữ 1.446 và cách ly 219; val/Test cũ không đổi.
+  109 ảnh holdout chỉ được kiểm tra nội dung, chưa đủ hỗ trợ 8 lớp; chưa có test mới.
 
 ## Bàn giao tuần 5
 

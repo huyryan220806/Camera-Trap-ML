@@ -1,0 +1,10 @@
+{
+  "path": "outputs/tv1_w6/visual_review_contact_sheets.zip",
+  "bytes": 5167433,
+  "sha256": "709fea5113fd182ce8eaa6777aef0c32d7bcf9bb227f42c91a340aec00ca13b0",
+  "contact_sheets": 10,
+  "additional_zoom": 1,
+  "scope": "80 new-train sample images; context and all GT crops; no Test or holdout pictures",
+  "raw_full_images_included": false,
+  "reviewer": "Codex assistant visual inspection, not expert taxonomy or TV2 peer review"
+}

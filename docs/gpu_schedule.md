@@ -17,11 +17,25 @@ Múi giờ: **Asia/Ho_Chi_Minh (UTC+07:00)**. Tuần 1 không cần GPU cho EDA/
 **Cập nhật 28/10/2026 theo kế hoạch DINO:** tuần 5 ưu tiên TV3 cho trích xuất
 đặc trưng/thử mô hình trong ngày 1–5; TV2 dùng CPU cho đối chiếu số liệu khi phù
 hợp và đăng ký GPU riêng nếu cần. Ngày 6–7 ưu tiên TV4 tích hợp/đo tốc độ sau
-khi nhận checkpoint. Tuần 6 chỉ đặt lịch cho kiểm định và quay demo; không mở
-thêm đợt thử lớn. Đây là thứ tự ưu tiên đề xuất, chưa phải đặt chỗ cụ thể.
+khi nhận checkpoint. Phần ưu tiên tuần 6 cũ được thay bởi cập nhật bên dưới
+sau khi giảng viên gia hạn. Đây là thứ tự ưu tiên đề xuất, chưa phải đặt chỗ cụ thể.
 Colab của từng người là tài nguyên riêng theo phiên, không mặc định thay thế
 được GPU local hoặc sẵn sàng liên tục. Chi tiết nhiệm vụ:
 [TV2](plans/TV2_W5_W6.md), [TV3](plans/TV3_W5_W6.md), [TV4](plans/TV4_W5_W6.md).
+
+## Tuần 6 cập nhật — 03/11/2026
+
+Lịch đề xuất 04–10/11: D1 smoke train/config; D2–5 ưu tiên TV3 trích xuất và
+R1–R6 có điều kiện; D6–7 TV2 replay và TV4 tích hợp/benchmark. TV1 chỉ cần CPU.
+Trần kế hoạch TV3 **12 GPU-giờ gồm trích xuất, tối đa 2 giờ/lượt**, tối đa sáu
+lượt mới gồm cả lượt lỗi/dừng; TV2 **2 GPU-giờ**, TV4 **2 GPU-giờ** nếu cần.
+Đây là ngân sách đề xuất, không phải đặt chỗ hoặc dự báo thời gian đo được.
+Ưu tiên thử pooling/fine-tune trên train cũ và kiểm tra seed; hoãn mở rộng
+nếu chất lượng dữ liệu hoặc tài nguyên chưa đủ. Không tự lấn lịch người khác.
+
+Chi tiết: [TV1](plans/TV1_W6.md), [TV2](plans/TV2_W6.md),
+[TV3](plans/TV3_W6.md), [TV4](plans/TV4_W6.md). Sổ booking chưa được thay đổi
+chỉ vì có kế hoạch này; mỗi người đăng ký thiết bị/khung giờ thực tế theo quy tắc dưới.
 
 ## Sổ đăng ký thực tế
 

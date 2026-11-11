@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-03T16:15:25+00:00",
+  "path": "outputs/tv1_w6/swg_train_expansion_w6_v1_additional.zip",
+  "bytes": 2246204406,
+  "sha256": "a88bfbf99aa25ac70637f35dca6056851e4c300dd89c3906185f943b13b3f659",
+  "provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+  "additional_train_images": 1446,
+  "archive_entries": 1465,
+  "contents": "retained additional images + release manifests; requires original swg_pilot_v2 separately",
+  "holdout_images_included": false,
+  "quarantined_images_included": false,
+  "entry_sha256_verified": true,
+  "script_sha256": "25685e3cb80356e19652cd2994333e70e046aac53592354e61e5da4e3ee07c33"
+}

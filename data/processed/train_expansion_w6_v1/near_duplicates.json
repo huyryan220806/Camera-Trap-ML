@@ -1,0 +1,5969 @@
+[
+  {
+    "image_ids": [
+      "c7d949bf-8c29-11eb-8310-000d3a74c7de",
+      "c7d949c2-8c29-11eb-b04d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c7d949bf-8c29-11eb-8310-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c7f3882f-8c29-11eb-9361-000d3a74c7de",
+      "c7f38823-8c29-11eb-90e2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c7f3882f-8c29-11eb-9361-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c801d6b9-8c29-11eb-b46b-000d3a74c7de",
+      "c801d69b-8c29-11eb-b967-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "c801d6b9-8c29-11eb-b46b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c801d6b9-8c29-11eb-b46b-000d3a74c7de",
+      "c801d69c-8c29-11eb-b9e0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "c801d6b9-8c29-11eb-b46b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8043b7a-8c29-11eb-8f2f-000d3a74c7de",
+      "c801d63e-8c29-11eb-9efe-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c8043b7a-8c29-11eb-8f2f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8043b7a-8c29-11eb-8f2f-000d3a74c7de",
+      "c801d63f-8c29-11eb-bef0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c8043b7a-8c29-11eb-8f2f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c82f2642-8c29-11eb-b1db-000d3a74c7de",
+      "c82f2643-8c29-11eb-baf0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c82f2642-8c29-11eb-b1db-000d3a74c7de",
+      "c82f2643-8c29-11eb-baf0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c82f2995-8c29-11eb-a5d5-000d3a74c7de",
+      "c82f2997-8c29-11eb-a09e-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "c82f2995-8c29-11eb-a5d5-000d3a74c7de",
+      "c82f2997-8c29-11eb-a09e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c857a619-8c29-11eb-8407-000d3a74c7de",
+      "c857a61b-8c29-11eb-9a51-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "c857a619-8c29-11eb-8407-000d3a74c7de",
+      "c857a61b-8c29-11eb-9a51-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c857a624-8c29-11eb-9185-000d3a74c7de",
+      "c857a623-8c29-11eb-8725-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "c857a624-8c29-11eb-9185-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c86dc140-8c29-11eb-aa45-000d3a74c7de",
+      "c86dc148-8c29-11eb-aae0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "c86dc140-8c29-11eb-aa45-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c86dc140-8c29-11eb-aa45-000d3a74c7de",
+      "c86dc14f-8c29-11eb-ad42-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "c86dc140-8c29-11eb-aa45-000d3a74c7de",
+      "c86dc14f-8c29-11eb-ad42-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8f2a497-8c29-11eb-b998-000d3a74c7de",
+      "c8f2a526-8c29-11eb-9627-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "c8f2a497-8c29-11eb-b998-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8f7680c-8c29-11eb-98ad-000d3a74c7de",
+      "c8f76651-8c29-11eb-a2fc-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "c8f7680c-8c29-11eb-98ad-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8f7680c-8c29-11eb-98ad-000d3a74c7de",
+      "c8f76856-8c29-11eb-a55c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "c8f7680c-8c29-11eb-98ad-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8fc2d36-8c29-11eb-b65b-000d3a74c7de",
+      "c8fc2d6d-8c29-11eb-8545-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c8fc2d36-8c29-11eb-b65b-000d3a74c7de",
+      "c8fc2d6d-8c29-11eb-8545-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c8fc2d6d-8c29-11eb-8545-000d3a74c7de",
+      "c8fc2d66-8c29-11eb-8438-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "c8fc2d6d-8c29-11eb-8545-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c900f1a9-8c29-11eb-91ce-000d3a74c7de",
+      "c900f145-8c29-11eb-8ac4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "c900f1a9-8c29-11eb-91ce-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c930a652-8c29-11eb-97f5-000d3a74c7de",
+      "c930a849-8c29-11eb-82bc-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "c930a652-8c29-11eb-97f5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c93c98f5-8c29-11eb-b9d8-000d3a74c7de",
+      "c93c9927-8c29-11eb-9202-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "c93c98f5-8c29-11eb-b9d8-000d3a74c7de",
+      "c93c9927-8c29-11eb-9202-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c98ffcb4-8c29-11eb-a287-000d3a74c7de",
+      "c98ffcc1-8c29-11eb-a36b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "c98ffcb4-8c29-11eb-a287-000d3a74c7de",
+      "c98ffcc1-8c29-11eb-a36b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c9a0b8c7-8c29-11eb-a07e-000d3a74c7de",
+      "c9a0b8f9-8c29-11eb-b4e8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "c9a0b8c7-8c29-11eb-a07e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "c9a3142a-8c29-11eb-b1bc-000d3a74c7de",
+      "c9a31429-8c29-11eb-b237-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "c9a3142a-8c29-11eb-b1bc-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca453223-8c29-11eb-9e5e-000d3a74c7de",
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "ca453223-8c29-11eb-9e5e-000d3a74c7de",
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de",
+      "ca4531f8-8c29-11eb-adb1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de",
+      "ca4531f9-8c29-11eb-8f79-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de",
+      "ca4531fa-8c29-11eb-8b71-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ca4533b7-8c29-11eb-85d0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca4c5a96-8c29-11eb-a981-000d3a74c7de",
+      "ca4c5a86-8c29-11eb-86af-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "ca4c5a96-8c29-11eb-a981-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca511dbc-8c29-11eb-be3c-000d3a74c7de",
+      "ca511dc8-8c29-11eb-91f2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "ca511dbc-8c29-11eb-be3c-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca511e26-8c29-11eb-b3db-000d3a74c7de",
+      "ca511e1f-8c29-11eb-af6f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "ca511e26-8c29-11eb-b3db-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca58466e-8c29-11eb-8d67-000d3a74c7de",
+      "ca584675-8c29-11eb-bf46-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "ca58466e-8c29-11eb-8d67-000d3a74c7de",
+      "ca584675-8c29-11eb-bf46-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca61ce81-8c29-11eb-ba02-000d3a74c7de",
+      "ca61ce94-8c29-11eb-ae51-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "ca61ce81-8c29-11eb-ba02-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca79a4a7-8c29-11eb-a222-000d3a74c7de",
+      "ca79a4af-8c29-11eb-9204-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "ca79a4a7-8c29-11eb-a222-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ca833dc8-8c29-11eb-aecd-000d3a74c7de",
+      "ca833dce-8c29-11eb-bd84-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "ca833dc8-8c29-11eb-aecd-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cacd1fe9-8c29-11eb-966f-000d3a74c7de",
+      "cacd1fed-8c29-11eb-b538-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "cacd1fe9-8c29-11eb-966f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cacd1fe9-8c29-11eb-966f-000d3a74c7de",
+      "cacd1fee-8c29-11eb-a4e4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cacd1fe9-8c29-11eb-966f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de",
+      "cb3d270f-8c29-11eb-8433-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de",
+      "cb3d273d-8c29-11eb-9485-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de",
+      "cb41e9d0-8c29-11eb-a084-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de",
+      "cb41ea60-8c29-11eb-ac80-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cb3d296a-8c29-11eb-9f4b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cb41eaf3-8c29-11eb-b33b-000d3a74c7de",
+      "cb3f8d3f-8c29-11eb-8a4c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cb41eaf3-8c29-11eb-b33b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbad35e1-8c29-11eb-9ee4-000d3a74c7de",
+      "cbad35da-8c29-11eb-b1e0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cbad35e1-8c29-11eb-9ee4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbbde7b7-8c29-11eb-a49d-000d3a74c7de",
+      "cbbb8a5a-8c29-11eb-9bdc-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cbbde7b7-8c29-11eb-a49d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbdcebf6-8c29-11eb-a82b-000d3a74c7de",
+      "cbdcebfa-8c29-11eb-9355-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cbdcebf6-8c29-11eb-a82b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbe414c9-8c29-11eb-8282-000d3a74c7de",
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cbe414c9-8c29-11eb-8282-000d3a74c7de",
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbe414c9-8c29-11eb-8282-000d3a74c7de",
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cbe414c9-8c29-11eb-8282-000d3a74c7de",
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de",
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de",
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de",
+      "cbe4150c-8c29-11eb-be8d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cbe414e4-8c29-11eb-8305-000d3a74c7de",
+      "cbe4150c-8c29-11eb-be8d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de",
+      "cbe4150c-8c29-11eb-be8d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cbe414ff-8c29-11eb-8d95-000d3a74c7de",
+      "cbe4150c-8c29-11eb-be8d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cbfbe393-8c29-11eb-9d93-000d3a74c7de",
+      "cbfbe2f1-8c29-11eb-935f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cbfbe393-8c29-11eb-9d93-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc00a74c-8c29-11eb-9cda-000d3a74c7de",
+      "cc00a6d0-8c29-11eb-9a9e-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cc00a74c-8c29-11eb-9cda-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc00a83b-8c29-11eb-a17f-000d3a74c7de",
+      "cc00a81f-8c29-11eb-892c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "cc00a83b-8c29-11eb-a17f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc187f87-8c29-11eb-8b5a-000d3a74c7de",
+      "cc187f84-8c29-11eb-8526-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "cc187f87-8c29-11eb-8b5a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc187f87-8c29-11eb-8b5a-000d3a74c7de",
+      "cc187f85-8c29-11eb-b4f9-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cc187f87-8c29-11eb-8b5a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc1d429b-8c29-11eb-9141-000d3a74c7de",
+      "cc1d428d-8c29-11eb-bddf-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cc1d429b-8c29-11eb-9141-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc567ea2-8c29-11eb-adbf-000d3a74c7de",
+      "cc567e9f-8c29-11eb-88b6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "cc567ea2-8c29-11eb-adbf-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cc70b227-8c29-11eb-9605-000d3a74c7de",
+      "cc70b22f-8c29-11eb-a867-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cc70b227-8c29-11eb-9605-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ccc1d5d1-8c29-11eb-a68e-000d3a74c7de",
+      "ccc1d442-8c29-11eb-bc3c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "ccc1d5d1-8c29-11eb-a68e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cd82e051-8c29-11eb-9069-000d3a74c7de",
+      "cd82e053-8c29-11eb-b44c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cd82e051-8c29-11eb-9069-000d3a74c7de",
+      "cd82e053-8c29-11eb-b44c-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cd9ab8c0-8c29-11eb-9662-000d3a74c7de",
+      "cd9ab8d3-8c29-11eb-b3fd-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "cd9ab8c0-8c29-11eb-9662-000d3a74c7de",
+      "cd9ab8d3-8c29-11eb-b3fd-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cd9ab8d3-8c29-11eb-b3fd-000d3a74c7de",
+      "cd9ab8e5-8c29-11eb-95b0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cd9ab8d3-8c29-11eb-b3fd-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cd9ab8f2-8c29-11eb-8068-000d3a74c7de",
+      "cd9ab8e5-8c29-11eb-95b0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cd9ab8f2-8c29-11eb-8068-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cda44709-8c29-11eb-b594-000d3a74c7de",
+      "cda6a4ae-8c29-11eb-82fd-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cda44709-8c29-11eb-b594-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cda6a4b3-8c29-11eb-b8c6-000d3a74c7de",
+      "cda6a4ae-8c29-11eb-82fd-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cda6a4b3-8c29-11eb-b8c6-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cda6a4b3-8c29-11eb-b8c6-000d3a74c7de",
+      "d0044222-8c29-11eb-96fa-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cda6a4b3-8c29-11eb-b8c6-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce145ca1-8c29-11eb-988b-000d3a74c7de",
+      "ce145cad-8c29-11eb-9ff7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "ce145ca1-8c29-11eb-988b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce1b7d03-8c29-11eb-9663-000d3a74c7de",
+      "ce1b7c00-8c29-11eb-ba2a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ce1b7d03-8c29-11eb-9663-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce54b2e2-8c29-11eb-bfc5-000d3a74c7de",
+      "ce54b393-8c29-11eb-8f63-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ce54b2e2-8c29-11eb-bfc5-000d3a74c7de",
+      "ce54b393-8c29-11eb-8f63-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de",
+      "ce9c3bcb-8c29-11eb-a827-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de",
+      "ce9c3c62-8c29-11eb-b126-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de",
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ce9c3bcd-8c29-11eb-89a9-000d3a74c7de",
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de",
+      "ce9c3bcb-8c29-11eb-a827-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de",
+      "ce9c3c62-8c29-11eb-b126-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "ce9c3bd7-8c29-11eb-90f8-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cece4a5c-8c29-11eb-ab22-000d3a74c7de",
+      "cece4a5d-8c29-11eb-b63a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cece4a5c-8c29-11eb-ab22-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "ceed4804-8c29-11eb-acfb-000d3a74c7de",
+      "ceed48d0-8c29-11eb-9bc5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "ceed4804-8c29-11eb-acfb-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf06d0c7-8c29-11eb-902b-000d3a74c7de",
+      "cf06d0c8-8c29-11eb-ae5c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cf06d0c7-8c29-11eb-902b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf06d0c7-8c29-11eb-902b-000d3a74c7de",
+      "cf0941b1-8c29-11eb-8518-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "cf06d0c7-8c29-11eb-902b-000d3a74c7de",
+      "cf0941b1-8c29-11eb-8518-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf101f8c-8c29-11eb-b34b-000d3a74c7de",
+      "cf101fb0-8c29-11eb-9a71-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cf101f8c-8c29-11eb-b34b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf101f8c-8c29-11eb-b34b-000d3a74c7de",
+      "cf115855-8c29-11eb-b403-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "cf101f8c-8c29-11eb-b34b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de",
+      "cf101fb6-8c29-11eb-aa1f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de",
+      "cf101fc6-8c29-11eb-89f8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de",
+      "cf101fc7-8c29-11eb-a8b6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cf101fc9-8c29-11eb-bcc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf1094d0-8c29-11eb-9ca8-000d3a74c7de",
+      "cf115855-8c29-11eb-b403-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "cf1094d0-8c29-11eb-9ca8-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf174bb6-8c29-11eb-ad17-000d3a74c7de",
+      "cf17728e-8c29-11eb-a607-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cf174bb6-8c29-11eb-ad17-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf3739c2-8c29-11eb-a05e-000d3a74c7de",
+      "cf3739c5-8c29-11eb-8694-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "cf3739c2-8c29-11eb-a05e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf3739e9-8c29-11eb-be8a-000d3a74c7de",
+      "cf3739f1-8c29-11eb-87af-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cf3739e9-8c29-11eb-be8a-000d3a74c7de",
+      "cf3739f1-8c29-11eb-87af-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cf373a03-8c29-11eb-8b48-000d3a74c7de",
+      "cf373a15-8c29-11eb-9702-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cf373a03-8c29-11eb-8b48-000d3a74c7de",
+      "cf373a15-8c29-11eb-9702-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfa740f9-8c29-11eb-b1b8-000d3a74c7de",
+      "cfa6f2be-8c29-11eb-a9e9-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cfa740f9-8c29-11eb-b1b8-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfae6b3a-8c29-11eb-8207-000d3a74c7de",
+      "cfae6b20-8c29-11eb-8870-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "cfae6b3a-8c29-11eb-8207-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfae6b3a-8c29-11eb-8207-000d3a74c7de",
+      "cfae6b26-8c29-11eb-ba22-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cfae6b3a-8c29-11eb-8207-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb0c931-8c29-11eb-beea-000d3a74c7de",
+      "cfb0c933-8c29-11eb-a022-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cfb0c931-8c29-11eb-beea-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb3314c-8c29-11eb-a11a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb3314d-8c29-11eb-a595-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb3314e-8c29-11eb-8c92-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb58dc0-8c29-11eb-a5f2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb58e12-8c29-11eb-8af6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de",
+      "cfb58e2e-8c29-11eb-9ccc-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "cfb58ec5-8c29-11eb-8bc2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de",
+      "cfcb06f2-8c29-11eb-9d45-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de",
+      "cfcd69c8-8c29-11eb-bb15-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de",
+      "cfcd69cc-8c29-11eb-bcd9-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "cfcfc82d-8c29-11eb-bbeb-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfdbb70f-8c29-11eb-8087-000d3a74c7de",
+      "cfdbb6fa-8c29-11eb-a5f3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "cfdbb70f-8c29-11eb-8087-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "cfea06a4-8c29-11eb-9122-000d3a74c7de",
+      "cfea06ba-8c29-11eb-af9c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "cfea06a4-8c29-11eb-9122-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d03b1631-8c29-11eb-8f39-000d3a74c7de",
+      "d03b14d3-8c29-11eb-a8aa-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d03b1631-8c29-11eb-8f39-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d052e8d6-8c29-11eb-8a10-000d3a74c7de",
+      "d052e82f-8c29-11eb-810a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d052e8d6-8c29-11eb-8a10-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d052e8d6-8c29-11eb-8a10-000d3a74c7de",
+      "d052ea1e-8c29-11eb-8a70-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d052e8d6-8c29-11eb-8a10-000d3a74c7de",
+      "d052ea1e-8c29-11eb-8a70-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d052e9f0-8c29-11eb-bace-000d3a74c7de",
+      "d04e2737-8c29-11eb-bdce-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d052e9f0-8c29-11eb-bace-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d052ea1e-8c29-11eb-8a70-000d3a74c7de",
+      "d052e82f-8c29-11eb-810a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d052ea1e-8c29-11eb-8a70-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de",
+      "d05ed744-8c29-11eb-980f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de",
+      "d05ed765-8c29-11eb-a1f3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de",
+      "d06136cb-8c29-11eb-ad6f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de",
+      "d06136cc-8c29-11eb-b350-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d05ed736-8c29-11eb-89ca-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0613657-8c29-11eb-823a-000d3a74c7de",
+      "d061366b-8c29-11eb-9805-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d0613657-8c29-11eb-823a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0876af2-8c29-11eb-8a7d-000d3a74c7de",
+      "d07b738a-8c29-11eb-adbe-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d0876af2-8c29-11eb-8a7d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0876af2-8c29-11eb-8a7d-000d3a74c7de",
+      "d087674b-8c29-11eb-8376-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d0876af2-8c29-11eb-8a7d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0a3ffdb-8c29-11eb-b663-000d3a74c7de",
+      "d0a3ffdf-8c29-11eb-b496-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d0a3ffdb-8c29-11eb-b663-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0a40004-8c29-11eb-949e-000d3a74c7de",
+      "d0a40007-8c29-11eb-9073-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d0a40004-8c29-11eb-949e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0be3976-8c29-11eb-872e-000d3a74c7de",
+      "d0be3978-8c29-11eb-bf8b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d0be3976-8c29-11eb-872e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0c5656a-8c29-11eb-96bc-000d3a74c7de",
+      "d0be3978-8c29-11eb-bf8b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d0c5656a-8c29-11eb-96bc-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0cee623-8c29-11eb-89b5-000d3a74c7de",
+      "d0cee60a-8c29-11eb-b167-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d0cee623-8c29-11eb-89b5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0d61090-8c29-11eb-a0f9-000d3a74c7de",
+      "d0d6108b-8c29-11eb-b2b9-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d0d61090-8c29-11eb-a0f9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0dad396-8c29-11eb-8a4f-000d3a74c7de",
+      "d0dad391-8c29-11eb-9768-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0dad396-8c29-11eb-8a4f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0dad396-8c29-11eb-8a4f-000d3a74c7de",
+      "d0dad392-8c29-11eb-a108-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d0dad396-8c29-11eb-8a4f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0dd3732-8c29-11eb-9f45-000d3a74c7de",
+      "d0dad388-8c29-11eb-8a32-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d0dd3732-8c29-11eb-9f45-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0e45b1f-8c29-11eb-9b04-000d3a74c7de",
+      "d0e45b30-8c29-11eb-8109-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0e45b1f-8c29-11eb-9b04-000d3a74c7de",
+      "d0e45b30-8c29-11eb-8109-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0e45b30-8c29-11eb-8109-000d3a74c7de",
+      "d0e1fc34-8c29-11eb-a301-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d0e45b30-8c29-11eb-8109-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0edefe7-8c29-11eb-9c38-000d3a74c7de",
+      "d0edefee-8c29-11eb-9a5a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d0edefe7-8c29-11eb-9c38-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0edefe7-8c29-11eb-9c38-000d3a74c7de",
+      "d0edf002-8c29-11eb-a447-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d0edefe7-8c29-11eb-9c38-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0edeff5-8c29-11eb-b113-000d3a74c7de",
+      "d0edefee-8c29-11eb-9a5a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d0edeff5-8c29-11eb-b113-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0edeff5-8c29-11eb-b113-000d3a74c7de",
+      "d0edf002-8c29-11eb-a447-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d0edeff5-8c29-11eb-b113-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f2b306-8c29-11eb-89d0-000d3a74c7de",
+      "d0f9d6a1-8c29-11eb-8495-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d0f2b306-8c29-11eb-89d0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f50c78-8c29-11eb-bf10-000d3a74c7de",
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0f50c78-8c29-11eb-bf10-000d3a74c7de",
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de",
+      "d0f50c8e-8c29-11eb-b237-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de",
+      "d0f50c96-8c29-11eb-bb8c-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de",
+      "d0f9d6a1-8c29-11eb-8495-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de",
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0f50c86-8c29-11eb-9d38-000d3a74c7de",
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de",
+      "d0f50c8e-8c29-11eb-b237-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de",
+      "d0f9d6a0-8c29-11eb-a8a3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de",
+      "d0f9d6a1-8c29-11eb-8495-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d0f9d694-8c29-11eb-b065-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d1081ddd-8c29-11eb-b529-000d3a74c7de",
+      "d105c377-8c29-11eb-9fcf-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d1081ddd-8c29-11eb-b529-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d10821a1-8c29-11eb-bf1b-000d3a74c7de",
+      "d1082195-8c29-11eb-b254-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d10821a1-8c29-11eb-bf1b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d10821a1-8c29-11eb-bf1b-000d3a74c7de",
+      "d10821a4-8c29-11eb-9dfe-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d10821a1-8c29-11eb-bf1b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d10ce50b-8c29-11eb-86f9-000d3a74c7de",
+      "d10ce5a6-8c29-11eb-9ace-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d10ce50b-8c29-11eb-86f9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d10ce50b-8c29-11eb-86f9-000d3a74c7de",
+      "d10ce50c-8c29-11eb-b4d2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d10ce50b-8c29-11eb-86f9-000d3a74c7de",
+      "d10ce50c-8c29-11eb-b4d2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d10ce50c-8c29-11eb-b4d2-000d3a74c7de",
+      "d10ce5a6-8c29-11eb-9ace-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d10ce50c-8c29-11eb-b4d2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af98-8c29-11eb-81d3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af99-8c29-11eb-9c37-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af9a-8c29-11eb-85b3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af9b-8c29-11eb-9ef8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af9e-8c29-11eb-89db-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126af9f-8c29-11eb-a4f0-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126afa0-8c29-11eb-88dc-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d126af94-8c29-11eb-b87e-000d3a74c7de",
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de",
+      "d126af98-8c29-11eb-81d3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de",
+      "d126d6b7-8c29-11eb-ba10-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d126d6b1-8c29-11eb-a9aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126fd85-8c29-11eb-adc1-000d3a74c7de",
+      "d126af99-8c29-11eb-9c37-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d126fd85-8c29-11eb-adc1-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d126fd85-8c29-11eb-adc1-000d3a74c7de",
+      "d126fd88-8c29-11eb-b2df-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d126fd85-8c29-11eb-adc1-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d137d967-8c29-11eb-b674-000d3a74c7de",
+      "d137d972-8c29-11eb-862d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d137d967-8c29-11eb-b674-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d14162f5-8c29-11eb-8852-000d3a74c7de",
+      "d1416328-8c29-11eb-a0bb-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d14162f5-8c29-11eb-8852-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d1ce0239-8c29-11eb-9d8e-000d3a74c7de",
+      "d1d2c2cf-8c29-11eb-a34b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d1ce0239-8c29-11eb-9d8e-000d3a74c7de",
+      "d1d2c2cf-8c29-11eb-a34b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d1ef7346-8c29-11eb-b6d3-000d3a74c7de",
+      "d1f1c644-8c29-11eb-bf6f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d1ef7346-8c29-11eb-b6d3-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d200234d-8c29-11eb-bbe4-000d3a74c7de",
+      "d2002354-8c29-11eb-93c5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d200234d-8c29-11eb-bbe4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d2002366-8c29-11eb-801e-000d3a74c7de",
+      "d20023f8-8c29-11eb-b8b7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d2002366-8c29-11eb-801e-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d204d5a3-8c29-11eb-a41a-000d3a74c7de",
+      "d204d66b-8c29-11eb-8b7a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d204d5a3-8c29-11eb-a41a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de",
+      "d30b1cdb-8c29-11eb-b2f6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de",
+      "d30b1ce4-8c29-11eb-aaa6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de",
+      "d30b1ce7-8c29-11eb-8d93-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d30b1cd7-8c29-11eb-89df-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d323002d-8c29-11eb-9468-000d3a74c7de",
+      "d3230030-8c29-11eb-bfbb-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d323002d-8c29-11eb-9468-000d3a74c7de",
+      "d3230030-8c29-11eb-bfbb-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37406aa-8c29-11eb-9a5f-000d3a74c7de",
+      "d37406a4-8c29-11eb-ae25-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d37406aa-8c29-11eb-9a5f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e10-8c29-11eb-8089-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e13-8c29-11eb-b957-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e17-8c29-11eb-a3e7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e22-8c29-11eb-abce-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e33-8c29-11eb-8c5d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e52-8c29-11eb-9ca8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e61-8c29-11eb-905f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e6d-8c29-11eb-8612-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e71-8c29-11eb-8fb6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e72-8c29-11eb-8493-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e93-8c29-11eb-9428-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e26-8c29-11eb-9a14-000d3a74c7de",
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e13-8c29-11eb-b957-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e17-8c29-11eb-a3e7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e22-8c29-11eb-abce-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e52-8c29-11eb-9ca8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e61-8c29-11eb-905f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e6d-8c29-11eb-8612-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e71-8c29-11eb-8fb6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e72-8c29-11eb-8493-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e93-8c29-11eb-9428-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e85-8c29-11eb-8f89-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e85-8c29-11eb-8f89-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e83-8c29-11eb-aaf7-000d3a74c7de",
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e10-8c29-11eb-8089-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e13-8c29-11eb-b957-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e17-8c29-11eb-a3e7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e22-8c29-11eb-abce-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e52-8c29-11eb-9ca8-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e61-8c29-11eb-905f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e6d-8c29-11eb-8612-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e71-8c29-11eb-8fb6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e72-8c29-11eb-8493-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de",
+      "d37b2e93-8c29-11eb-9428-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d37b2e94-8c29-11eb-af7a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de",
+      "d387160a-8c29-11eb-802a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de",
+      "d3871628-8c29-11eb-9c14-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de",
+      "d3871638-8c29-11eb-974e-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d3871615-8c29-11eb-ba65-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d387170c-8c29-11eb-8a5b-000d3a74c7de",
+      "d38716fa-8c29-11eb-87bf-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d387170c-8c29-11eb-8a5b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3a15c03-8c29-11eb-ac00-000d3a74c7de",
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d3a15c03-8c29-11eb-ac00-000d3a74c7de",
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de",
+      "d3a15bba-8c29-11eb-b72f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de",
+      "d3a15bdf-8c29-11eb-9f0b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d3a15c3a-8c29-11eb-b6d4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3a15c6f-8c29-11eb-9199-000d3a74c7de",
+      "d3a15bba-8c29-11eb-b72f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d3a15c6f-8c29-11eb-9199-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de",
+      "d3bdeded-8c29-11eb-b601-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de",
+      "d3bdedee-8c29-11eb-8e68-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de",
+      "d3bdedef-8c29-11eb-bb7b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d3bdeeb5-8c29-11eb-8aa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d47582c7-8c29-11eb-87a5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d47582a9-8c29-11eb-8549-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d4758328-8c29-11eb-a4c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d4758342-8c29-11eb-b41b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0ce-8c29-11eb-a307-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d475831f-8c29-11eb-9f6b-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d4758328-8c29-11eb-a4c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0ce-8c29-11eb-a307-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832b-8c29-11eb-9c9a-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d4758328-8c29-11eb-a4c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d4758342-8c29-11eb-b41b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0ce-8c29-11eb-a307-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d475832e-8c29-11eb-9e60-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d47582c7-8c29-11eb-87a5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d4758328-8c29-11eb-a4c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e0ce-8c29-11eb-a307-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d477e0fc-8c29-11eb-a39a-000d3a74c7de",
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d47582c7-8c29-11eb-87a5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d4758322-8c29-11eb-b00b-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d4758328-8c29-11eb-a4c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d4758333-8c29-11eb-8ad5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d477e0cc-8c29-11eb-b20a-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 1,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d477e0ce-8c29-11eb-a307-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d477e0fe-8c29-11eb-b8f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de",
+      "d477e0ff-8c29-11eb-9521-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d477e10b-8c29-11eb-8158-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d4c1d24a-8c29-11eb-8f66-000d3a74c7de",
+      "d4c1d243-8c29-11eb-b176-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d4c1d24a-8c29-11eb-8f66-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d4ea5bab-8c29-11eb-b006-000d3a74c7de",
+      "d4ea5ba3-8c29-11eb-8f63-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d4ea5bab-8c29-11eb-b006-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de",
+      "d515409f-8c29-11eb-9fb9-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de",
+      "d51540c4-8c29-11eb-bb9f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de",
+      "d51540c9-8c29-11eb-bc2d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d51a0786-8c29-11eb-8890-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d59f881d-8c29-11eb-94d4-000d3a74c7de",
+      "d7673804-8c29-11eb-8716-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d59f881d-8c29-11eb-94d4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d5a1e77c-8c29-11eb-b5a9-000d3a74c7de",
+      "d5a1e7a3-8c29-11eb-9119-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d5a1e77c-8c29-11eb-b5a9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d5a1e77c-8c29-11eb-b5a9-000d3a74c7de",
+      "d5a1e7a5-8c29-11eb-bad4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d5a1e77c-8c29-11eb-b5a9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d5c5b971-8c29-11eb-b429-000d3a74c7de",
+      "d5c5b979-8c29-11eb-8203-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d5c5b971-8c29-11eb-b429-000d3a74c7de",
+      "d5c5b979-8c29-11eb-8203-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d6715648-8c29-11eb-a015-000d3a74c7de",
+      "d6715649-8c29-11eb-adc5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d6715648-8c29-11eb-a015-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d760a878-8c29-11eb-be2e-000d3a74c7de",
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d760a878-8c29-11eb-be2e-000d3a74c7de",
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d760a879-8c29-11eb-a3b5-000d3a74c7de",
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d760a879-8c29-11eb-a3b5-000d3a74c7de",
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de",
+      "d760a87b-8c29-11eb-9c98-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 8,
+    "new_ids_quarantined": [
+      "d760a87a-8c29-11eb-b52d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d7bf2f99-8c29-11eb-a09d-000d3a74c7de",
+      "d7bf2f97-8c29-11eb-8bf4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d7bf2f99-8c29-11eb-a09d-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d806a7cf-8c29-11eb-bb9a-000d3a74c7de",
+      "d806a7cb-8c29-11eb-b205-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d806a7cf-8c29-11eb-bb9a-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d83fe5e6-8c29-11eb-9e3b-000d3a74c7de",
+      "d83fe5a8-8c29-11eb-93e3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d83fe5e6-8c29-11eb-9e3b-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a165-8c29-11eb-8d7a-000d3a74c7de",
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d863a165-8c29-11eb-8d7a-000d3a74c7de",
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de",
+      "d863a15c-8c29-11eb-af2f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de",
+      "d863a15f-8c29-11eb-97b4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de",
+      "d863a171-8c29-11eb-a30f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de",
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d863a172-8c29-11eb-b654-000d3a74c7de",
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de",
+      "d863a15c-8c29-11eb-af2f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de",
+      "d863a15e-8c29-11eb-bff6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de",
+      "d863a171-8c29-11eb-a30f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d863a173-8c29-11eb-9b13-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a17e-8c29-11eb-ade5-000d3a74c7de",
+      "d863a171-8c29-11eb-a30f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d863a17e-8c29-11eb-ade5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d863a17e-8c29-11eb-ade5-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d863a17e-8c29-11eb-ade5-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d86f9060-8c29-11eb-95aa-000d3a74c7de",
+      "d86f9030-8c29-11eb-95c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d86f9060-8c29-11eb-95aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d86f9060-8c29-11eb-95aa-000d3a74c7de",
+      "d86f9061-8c29-11eb-a9ff-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d86f9060-8c29-11eb-95aa-000d3a74c7de",
+      "d86f9061-8c29-11eb-a9ff-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d86f9061-8c29-11eb-a9ff-000d3a74c7de",
+      "d86f9030-8c29-11eb-95c7-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d86f9061-8c29-11eb-a9ff-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d87456c4-8c29-11eb-8272-000d3a74c7de",
+      "d87456c3-8c29-11eb-a579-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d87456c4-8c29-11eb-8272-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de",
+      "d863a15c-8c29-11eb-af2f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de",
+      "d863a15e-8c29-11eb-bff6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de",
+      "d863a171-8c29-11eb-a30f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 0,
+    "new_ids_quarantined": [
+      "d879179d-8c29-11eb-884c-000d3a74c7de",
+      "d87917a2-8c29-11eb-a327-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d8803ebc-8c29-11eb-b658-000d3a74c7de",
+      "d8803eba-8c29-11eb-b9e1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d8803ebc-8c29-11eb-b658-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d8803ebc-8c29-11eb-b658-000d3a74c7de",
+      "d8829ebc-8c29-11eb-8020-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d8803ebc-8c29-11eb-b658-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d8829f2d-8c29-11eb-81c4-000d3a74c7de",
+      "d8829f1d-8c29-11eb-9683-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d8829f2d-8c29-11eb-81c4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d8829f2d-8c29-11eb-81c4-000d3a74c7de",
+      "d8829f31-8c29-11eb-a780-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "d8829f2d-8c29-11eb-81c4-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d8981abb-8c29-11eb-93a7-000d3a74c7de",
+      "d8981ac5-8c29-11eb-beb6-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d8981abb-8c29-11eb-93a7-000d3a74c7de",
+      "d8981ac5-8c29-11eb-beb6-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d932b62d-8c29-11eb-bec3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d92ff733-8c29-11eb-b799-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de",
+      "d932b62d-8c29-11eb-bec3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de",
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de",
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d9328f6e-8c29-11eb-82f3-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de",
+      "d932b62d-8c29-11eb-bec3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d9328f70-8c29-11eb-baa2-000d3a74c7de",
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d932b625-8c29-11eb-afc5-000d3a74c7de",
+      "d932b62d-8c29-11eb-bec3-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d932b625-8c29-11eb-afc5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d93ca55f-8c29-11eb-b0ac-000d3a74c7de",
+      "d93ca555-8c29-11eb-b0c1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d93ca55f-8c29-11eb-b0ac-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d962cd68-8c29-11eb-8df0-000d3a74c7de",
+      "d962cd74-8c29-11eb-87d4-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d962cd68-8c29-11eb-8df0-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d962cdca-8c29-11eb-b0e6-000d3a74c7de",
+      "d962cdcf-8c29-11eb-9f99-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d962cdca-8c29-11eb-b0e6-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d97cf6f4-8c29-11eb-99ee-000d3a74c7de",
+      "d97cf6e4-8c29-11eb-af20-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d97cf6f4-8c29-11eb-99ee-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d97cf6f4-8c29-11eb-99ee-000d3a74c7de",
+      "d97cf6e5-8c29-11eb-84f1-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 4,
+    "new_ids_quarantined": [
+      "d97cf6f4-8c29-11eb-99ee-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d981bda7-8c29-11eb-882f-000d3a74c7de",
+      "d981bdab-8c29-11eb-a470-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "d981bda7-8c29-11eb-882f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d981bda7-8c29-11eb-882f-000d3a74c7de",
+      "d981bdad-8c29-11eb-9539-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d981bda7-8c29-11eb-882f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d981bdb2-8c29-11eb-b76f-000d3a74c7de",
+      "d981bdad-8c29-11eb-9539-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d981bdb2-8c29-11eb-b76f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d981bdb2-8c29-11eb-b76f-000d3a74c7de",
+      "d981bdd9-8c29-11eb-b621-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "d981bdb2-8c29-11eb-b76f-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9b897fd-8c29-11eb-8e02-000d3a74c7de",
+      "d9b8980c-8c29-11eb-abab-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "d9b897fd-8c29-11eb-8e02-000d3a74c7de",
+      "d9b8980c-8c29-11eb-abab-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "d9b8980c-8c29-11eb-abab-000d3a74c7de",
+      "d9b89812-8c29-11eb-aea5-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "d9b8980c-8c29-11eb-abab-000d3a74c7de",
+      "d9b89812-8c29-11eb-aea5-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027aad-8c29-11eb-9838-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027ade-8c29-11eb-9dca-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027ae0-8c29-11eb-8b4f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b9e-8c29-11eb-8986-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "da027a9f-8c29-11eb-9a37-000d3a74c7de",
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027aad-8c29-11eb-9838-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 0,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027ade-8c29-11eb-9dca-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027ae0-8c29-11eb-8b4f-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027b9e-8c29-11eb-8986-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 6,
+    "new_ids_quarantined": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "da027b62-8c29-11eb-a1e9-000d3a74c7de",
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de",
+      "da027aad-8c29-11eb-9838-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de",
+      "da027ade-8c29-11eb-9dca-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "da027b8e-8c29-11eb-98aa-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da66a46c-8c29-11eb-a061-000d3a74c7de",
+      "da66a471-8c29-11eb-8787-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 2,
+    "new_ids_quarantined": [
+      "da66a46c-8c29-11eb-a061-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "da9b1c6c-8c29-11eb-86fa-000d3a74c7de",
+      "dbaae40e-8c29-11eb-b5da-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 5,
+    "new_ids_quarantined": [
+      "da9b1c6c-8c29-11eb-86fa-000d3a74c7de",
+      "dbaae40e-8c29-11eb-b5da-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "dbe415d1-8c29-11eb-b5b2-000d3a74c7de",
+      "dbe415f6-8c29-11eb-bb59-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 4,
+    "dhash_distance": 7,
+    "new_ids_quarantined": [
+      "dbe415d1-8c29-11eb-b5b2-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  },
+  {
+    "image_ids": [
+      "dc221557-8c29-11eb-86fb-000d3a74c7de",
+      "dc22155a-8c29-11eb-8c71-000d3a74c7de"
+    ],
+    "splits": [
+      "train",
+      "train"
+    ],
+    "phash_distance": 2,
+    "dhash_distance": 3,
+    "new_ids_quarantined": [
+      "dc221557-8c29-11eb-86fb-000d3a74c7de",
+      "dc22155a-8c29-11eb-8c71-000d3a74c7de"
+    ],
+    "decision": "suspected_only_quarantine_pending_review",
+    "model_used": false
+  }
+]

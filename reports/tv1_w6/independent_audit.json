@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "method": "Independent stdlib count/source/group/weight audit plus actual resume wrapper and copied-artifact tamper test",
+  "training_images": 4246,
+  "training_crops": 4729,
+  "added": 1446,
+  "excluded": 219,
+  "protected_reference_images": 1309,
+  "source_fields_unchanged": true,
+  "cross_split_id_path_sequence_location_overlap": 0,
+  "new_vs_reference_exact_rgb_overlap": 0,
+  "crop_parent_weights_sum_one": true,
+  "resume_left_all_release_bytes_unchanged": true,
+  "resume_did_not_touch_download_logs": true,
+  "tampered_crop_manifest_rejected": true,
+  "old_images_or_labels_modified": false,
+  "model_inference_run": false
+}

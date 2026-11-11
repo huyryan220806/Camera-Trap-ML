@@ -1,0 +1,17 @@
+{
+  "stage": "awaiting_visual_review",
+  "download_valid_train": 1665,
+  "download_failed_train": 0,
+  "baseline_verified": 4000,
+  "holdout_verified": 109,
+  "content_hash_records": 5774,
+  "exact_groups_including_preserved_originals": 8,
+  "near_pairs": 347,
+  "preliminary_retained": 1469,
+  "preliminary_excluded": 196,
+  "visual_review_required": 80,
+  "split_changes": 0,
+  "label_changes": 0,
+  "model_inference_run": false,
+  "new_test_released": false
+}
