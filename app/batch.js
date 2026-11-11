@@ -1,7 +1,8 @@
 /* CSV is a view of saved reviews; the original JSON remains authoritative. */
 function batchCsv(items) {
   const columns = ['image_id', 'request_id', 'file_name', 'detection_id', 'bbox_x', 'bbox_y', 'bbox_w', 'bbox_h',
-    'mode', 'detector', 'detector_hash', 'model', 'model_hash', 'detector_threshold', 'review_threshold',
+    'mode', 'detector', 'detector_hash', 'model', 'model_hash', 'model_version', 'dataset_version',
+    'config_sha256', 'pooling', 'feature_dim', 'evaluation_type', 'detector_threshold', 'review_threshold',
     'detector_score', 'top1', 'score1', 'top2', 'score2', 'top3', 'score3', 'status', 'error_stage', 'error',
     'review_label', 'review_decision', 'image_outcome', 'operator', 'revision', 'created_utc', 'note'];
   const cell = value => {
@@ -24,7 +25,13 @@ function batchCsv(items) {
         image_id: data?.image.image_id || item.id, request_id: session?.request_id, file_name: item.name,
         detection_id: detection?.detection_id, mode: data?.pipeline.mode, detector: detector?.detector_id,
         detector_hash: detector?.weights_sha256, model: data?.pipeline.classifier_id,
-        model_hash: classifier?.checkpoint_sha256, detector_threshold: data?.pipeline.detector_threshold,
+        model_hash: classifier?.checkpoint_sha256,
+        model_version: classifier?.preprocessing?.model_version,
+        dataset_version: classifier?.preprocessing?.dataset_version,
+        config_sha256: classifier?.preprocessing?.config_sha256,
+        pooling: classifier?.preprocessing?.pooling, feature_dim: classifier?.preprocessing?.feature_dim,
+        evaluation_type: classifier?.preprocessing?.evaluation_type,
+        detector_threshold: data?.pipeline.detector_threshold,
         review_threshold: data?.pipeline.review_threshold, detector_score: detection?.detector_score ?? detection?.score,
         status: data?.status || item.status, error_stage: data?.error?.stage,
         error: data?.error?.message || item.error, review_label: decision?.label,

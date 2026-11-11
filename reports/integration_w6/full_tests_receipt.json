@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "duration_seconds": 133.9341329,
+  "command": "python -X utf8 -m unittest discover -s tests -v"
+}

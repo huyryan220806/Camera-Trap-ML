@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "run_id": "R6",
+  "zip_sha256": "fcb6118cd89c1a825d02e6d1c0a7bd19b983bac7bebaf863b959c0dd8854144e",
+  "zip_bytes": 267959559,
+  "payload_files": 36,
+  "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+  "checkpoint_bytes": 86851190,
+  "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+  "source_sha": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+  "feature_dim": 384,
+  "pooling": "x_norm_clstoken",
+  "dataset_version": "train_expansion_w6_v1",
+  "native_module": "dino_w6_r6",
+  "native_source_sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+  "source_index_sha256": "aba6df0b9e5952c9dc9021b70dcfa8dec63b27bff4275e6bfee8a9bcbcc1887d",
+  "handoff_sha256": "cda65b012d3d85777937a90476f582866353a11668118e65368ce8dcd9d0a7ec",
+  "config_raw_sha256": "6d32d3b5525053e8ab43eadc190f70da649f0ce7d9ff48889bbb210694f682c4",
+  "preprocessing_sha256": "714be01e4c6de396631ef7a9c8b2dc41a7895c3476f17c5a8e1b94d4a031c4ef",
+  "class_map_sha256": "db75c952621c107b8eca59c933f8baf05f538a6e2be30c6ab475d5e45143471e",
+  "tv2_acceptance_commit": "96d202563c63b47d4d3d6773c3d4b5a2a29c3c7a"
+}

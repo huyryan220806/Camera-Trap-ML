@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "sessions": {
+    "R2": {
+      "request_id": "d94d1d1f-1ef4-40bd-b570-9ceebba6b713",
+      "model": {
+        "classifier_id": "DINO_W6_R2",
+        "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R2_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
+          "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 1,
+        "device": "cpu"
+      }
+    },
+    "R1": {
+      "request_id": "645605a7-4069-442e-b7b4-69864092b19f",
+      "model": {
+        "classifier_id": "DINO_W6_R1",
+        "checkpoint_sha256": "86b1c7460b300f27b2f8d5efe426def51750478e2bf195ffa61df1213f646f79",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R1_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "2ab03b7e13d798b8aace5e4b3542a189389c43c7630f4132303b9200fced63bf",
+          "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "concat_x_norm_clstoken_mean_x_norm_patchtokens",
+          "feature_dim": 768,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 2,
+        "device": "cpu"
+      }
+    },
+    "R3": {
+      "request_id": "4b218180-f4e3-47fb-b92f-8e7a35db1946",
+      "model": {
+        "classifier_id": "DINO_W6_R3",
+        "checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R3_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+          "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 3,
+        "device": "cpu"
+      }
+    },
+    "R4": {
+      "request_id": "8a40e343-f693-49d4-b751-0298cc1a21d3",
+      "model": {
+        "classifier_id": "DINO_W6_R4",
+        "checkpoint_sha256": "7eaa034773ebed9f513493eca6dda3c9e8f0bcc6d2c814ad357026e6a9656ce8",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R4_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "839061f577cc374a8e105c5e41312b1919ea4efffd3c0e0c9b9c6a93a3ac3ff5",
+          "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 4,
+        "device": "cpu"
+      }
+    }
+  },
+  "verified": [
+    "real R1-R4",
+    "B2/W5 preserved",
+    "default B2",
+    "R5/R6 excluded",
+    "per-box top3",
+    "save/reload/export/409",
+    "model/dataset/version context",
+    "3viewport/boxes/a11y",
+    "real W6 mixed batch",
+    "saved-only CSV/formula/UTF8",
+    "original immutable",
+    "mock multiple/empty/detector error/miss"
+  ]
+}

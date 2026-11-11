@@ -1,0 +1,226 @@
+{
+  "model_id": "DINO_W6_R3",
+  "unique_images": 24,
+  "requests": 48,
+  "warm_rounds": 2,
+  "runtime": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": 12,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 224
+  },
+  "device": "cpu",
+  "precision": "FP32",
+  "amp": false,
+  "tf32": false,
+  "cold_classifier_load_and_one_crop_ms": 8871.292700059712,
+  "cold_pipeline_classifier_already_loaded": {
+    "model_id": "DINO_W6_R3",
+    "image_id": "d105c36d-8c29-11eb-bb4e-000d3a74c7de",
+    "image_sha256": "f63ccb111593da04800a4f8260aae6885ba7c3ff13fd5ba9b03cf3dc6e52a407",
+    "status": "ok",
+    "boxes": 1,
+    "error": null,
+    "detector_ms": 21583.278000121936,
+    "classifier_ms": 609.7083000931889,
+    "pipeline_ms": 22926.94879998453,
+    "envelope": {
+      "schema_version": "classifier-demo-1.0",
+      "result": {
+        "schema_version": "1.0.0",
+        "request_id": "44e66219-67f8-4808-923f-26be1f7f681d",
+        "image": {
+          "image_id": null,
+          "file_name": "image_00061.jpg",
+          "width": 4608,
+          "height": 2592
+        },
+        "pipeline": {
+          "mode": "inference",
+          "detector_id": "MDv5a.0.1",
+          "classifier_id": "DINO_W6_R3",
+          "class_map_version": "swg-v1",
+          "detector_threshold": 0.2,
+          "review_threshold": 0.7
+        },
+        "status": "ok",
+        "needs_review": false,
+        "detections": [
+          {
+            "detection_id": "animal-1",
+            "bbox_xywh": [
+              1396.6848,
+              1485.9936,
+              568.6271999999999,
+              635.8176000000001
+            ],
+            "detector_score": 0.971,
+            "top_k": [
+              {
+                "class_id": 0,
+                "label": "large_antlered_muntjac",
+                "score": 0.842536449432373
+              },
+              {
+                "class_id": 2,
+                "label": "sambar",
+                "score": 0.14469404518604279
+              },
+              {
+                "class_id": 7,
+                "label": "eurasian_wild_pig",
+                "score": 0.007428687997162342
+              }
+            ]
+          }
+        ],
+        "error": null,
+        "elapsed_ms": 22782.18
+      },
+      "provenance": {
+        "requested_classifier": "DINO_W6_R3",
+        "classifier": {
+          "classifier_id": "DINO_W6_R3",
+          "checkpoint_sha256": "2494551fa40e9d663ecb368d7c92d007c7404e92207503b432573ae55c7c4a6f",
+          "training_input": "crop",
+          "inference_input": "detector_crop",
+          "preprocessing": {
+            "color": "RGB",
+            "exif_transpose": false,
+            "padding": 0,
+            "bbox": "frozen_integer_xyxy_exclusive",
+            "resize": [
+              256,
+              256
+            ],
+            "interpolation": "bilinear",
+            "antialias": true,
+            "resize_dtype": "uint8",
+            "output_dtype": "float32",
+            "scale": true,
+            "mean": [
+              0.485,
+              0.456,
+              0.406
+            ],
+            "std": [
+              0.229,
+              0.224,
+              0.225
+            ],
+            "image_size": 256,
+            "model_version": "R3_attempt01",
+            "dataset_version": "comparison_v1",
+            "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+            "config_sha256": "dec76442a22f55043ccf1f1784cd303d0d944fd37e433271966642f181c5234d",
+            "source_commit": "95652c2d770cac464633eef0149bd27f4d859ece",
+            "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+            "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+            "pooling": "x_norm_clstoken",
+            "feature_dim": 384,
+            "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+            "precision": "FP32",
+            "approval": "TV2 model replay PASS; TV4 integration under review",
+            "max_crop_batch": 8
+          },
+          "cache_hit": true,
+          "model_load_count": 1,
+          "device": "cpu"
+        },
+        "detector": {
+          "mode": "megadetector",
+          "detector_id": "MDv5a.0.1",
+          "package_version": "10.0.25",
+          "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+          "detector_threshold": 0.2,
+          "classifier_id": null,
+          "device": "cpu",
+          "image_size": 1280,
+          "coordinate_space": "original_raster_pixels_no_exif_rotation"
+        },
+        "ignored_non_animals": 0,
+        "score_kind": "softmax_class_score",
+        "scores_calibrated": false,
+        "crop_policy": "round_clip_min8_padding0",
+        "max_boxes": 64,
+        "training_overlap_swg": true,
+        "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+        "warnings": [
+          "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+          "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+        ]
+      }
+    }
+  },
+  "fixture_sha256": "d2b0f1d6b05a02a3a192c5748099a76f9bfb4688ef49c887be1a2758726f4077",
+  "detector_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+  "detector_version": "MDv5a.0.1",
+  "megadetector_package": "10.0.25",
+  "threshold": 0.2,
+  "review_threshold": 0.7,
+  "image_batch": 1,
+  "crop_microbatch": 8,
+  "detector_resolution": 1280,
+  "classifier_resolution": 256,
+  "status_counts": {
+    "needs_review": 14,
+    "no_detection": 4,
+    "ok": 30
+  },
+  "total_boxes": 50,
+  "timing": {
+    "pipeline_ms": {
+      "n": 48,
+      "mean_ms": 8990.975762499147,
+      "p50_ms": 8996.164500014856,
+      "p95_ms": 10668.907399987802,
+      "p95_method": "nearest_rank"
+    },
+    "detector_ms": {
+      "n": 48,
+      "mean_ms": 8028.62576666909,
+      "p50_ms": 8026.361300144345,
+      "p95_ms": 9720.75830004178,
+      "p95_method": "nearest_rank"
+    },
+    "classifier_ms": {
+      "n": 48,
+      "mean_ms": 582.2240854128419,
+      "p50_ms": 590.954800019972,
+      "p95_ms": 848.9442002028227,
+      "p95_method": "nearest_rank"
+    }
+  },
+  "process_memory_bytes": {
+    "rss": 1956798464,
+    "vms": 2808573952,
+    "num_page_faults": 24317477,
+    "peak_wset": 2909503488,
+    "wset": 1956798464,
+    "peak_paged_pool": 1236528,
+    "paged_pool": 1228208,
+    "peak_nonpaged_pool": 100768,
+    "nonpaged_pool": 85808,
+    "pagefile": 2808573952,
+    "peak_pagefile": 3958583296,
+    "private": 2808573952
+  },
+  "timing_scope": "Pipeline includes decode, detector, classifier, checksums/cache, schema validation; excludes disk read/hash gate, HTTP/upload, preview, journal, browser, human review",
+  "cold_scope": "Fresh Python per model; classifier weights load + gates + one train crop. Separate cold detector request with classifier already loaded.",
+  "test_opened": false,
+  "records_path": "DINO_W6_R3.jsonl"
+}

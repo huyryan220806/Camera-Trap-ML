@@ -5,6 +5,10 @@ Trạng thái hiện tại: [README dự án](../README.md). Mở web/cài máy 
 
 **TV4 tiếp nhận lại công việc:** [Bàn giao toàn bộ tuần 1–4 và checklist chỉnh giao diện](handoff_tv4_return_ui.md).
 
+**Tích hợp mới nhất, 12/11/2026:** [Tuần 6](integration_week6.md),
+[chạy R6](tv4_r6_demo.md), [nghiệm thu TV2](../reports/tv2/TV2_W6_R6_INDEPENDENT_MODEL_REPLAY_2026-11-10.md).
+R6 đạt accuracy 86,50%, macro-F1 86,42% trên validation; B2 vẫn mặc định.
+
 ## Tuần 5 đã tích hợp — 03/11/2026
 
 [Chạy web và checklist test](run_and_test_w5.md) · [Biên bản tích hợp](integration_week5.md) ·
@@ -32,10 +36,12 @@ kèm tăng macro-F1 trên cùng validation, chưa phải kết quả đã đạt
 | TV3 | [Pooling, fine-tune nhẹ và thí nghiệm dữ liệu](plans/TV3_W6.md) |
 | TV4 | [Adapter model mới và tốc độ demo](plans/TV4_W6.md) |
 
-TV1 đã hoàn thành kiểm định local: thêm **1.446 ảnh**, train **4.246 ảnh /
-4.729 crop**, chờ TV2 review. Xem [báo cáo](../reports/tv1_w6/REPORT.md),
-[bàn giao](handoff_tv1_w6.md) và [progress](progress_tv1_w6.md) trước dùng dữ
-liệu mở rộng. Plan TV2–TV4 là việc được giao, không thay bằng chứng hoàn thành.
+TV1 đã thêm **1.446 ảnh**, train **4.246 ảnh / 4.729 crop**, TV2 đã duyệt dữ liệu.
+R1–R4/R6 đã có kết quả và independent replay; R5 giữ FAILED, không có metric
+được nghiệm thu. Adapter và báo cáo TV4 đã vào bản tích hợp tuần 6.
+Xem [biên bản mới nhất](integration_week6.md), [bàn giao dữ liệu](handoff_tv1_w6.md)
+và [báo cáo TV4 R6](../reports/tv4_w6_r6/REPORT.md). Các plan/progress cũ giữ
+trạng thái lịch sử tại thời điểm viết.
 
 ## Dữ liệu W5 và kế hoạch tiếp theo
 

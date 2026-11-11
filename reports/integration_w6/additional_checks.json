@@ -1,0 +1,32 @@
+[
+  {
+    "name": "environment",
+    "command": "& 'D:/VLU/261/ML/CameraTrapML/.venv/Scripts/python.exe' -X utf8 scripts/check_environment.py",
+    "exit_code": 0,
+    "output": "Python 3.12.10 | D:\\VLU\\261\\ML\\CameraTrapML\\.venv\\Scripts\\python.exe\r\nijson: 3.5.1 (expected 3.5.1)\r\nnumpy: 2.5.3 (expected 2.5.3)\r\nmatplotlib: 3.11.2 (expected 3.11.2)\r\njsonschema: 4.26.0 (expected 4.26.0)\r\nrequests: 2.34.2 (expected 2.34.2)\r\nPillow: 12.2.0 (expected 12.2.0)\r\nWeek-one CPU environment OK. GPU, deep-learning runtime and real inference are not checked.\r\n"
+  },
+  {
+    "name": "contracts",
+    "command": "& 'D:/VLU/261/ML/CameraTrapML/.venv/Scripts/python.exe' -X utf8 scripts/validate_results.py",
+    "exit_code": 0,
+    "output": "OK: image_error.json\r\nOK: model_error.json\r\nOK: multiple_animals.json\r\nOK: needs_review.json\r\nOK: no_detection.json\r\nOK: ok.json\r\n"
+  },
+  {
+    "name": "comparison",
+    "command": "& 'D:/VLU/261/ML/CameraTrapML/.venv/Scripts/python.exe' -X utf8 scripts/validate_comparison.py --metadata-only --report outputs/integration_comparison_20261112.json",
+    "exit_code": 0,
+    "output": "PASS: 4000 retained; split_changes=0; image_id/file_name/seq_id/location overlap=0. Full receipt: comparison_audit.json. Metadata only, no image decoding."
+  },
+  {
+    "name": "registry",
+    "command": "& 'D:/VLU/261/ML/CameraTrapML/.venv/Scripts/python.exe' -X utf8 scripts/evaluate_w6_validation.py --registry experiments/w6/tv3_R6_3h.approved.json",
+    "exit_code": 0,
+    "output": "{\r\n  \"status\": \"VALID\",\r\n  \"protocol_status\": \"APPROVED\",\r\n  \"official_attempts\": 5,\r\n  \"measured_tv3_gpu_hours\": 4.06400298838889,\r\n  \"measured_tv3_preparation_gpu_hours\": 0.017368444111112165,\r\n  \"unmeasured_attempts\": 0,\r\n  \"measured_tv2_replay_gpu_hours\": 0.1408824127222114\r\n}\r\n"
+  },
+  {
+    "name": "javascript",
+    "command": "& 'C:/Users/loval/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' --check app/app.js\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\n& 'C:/Users/loval/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' --check app/batch.js",
+    "exit_code": 0,
+    "output": ""
+  }
+]

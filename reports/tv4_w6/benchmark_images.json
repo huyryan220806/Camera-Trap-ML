@@ -1,0 +1,939 @@
+{
+  "seed": 42,
+  "selection": "Python Random(42), sample3 per class from image_id-sorted train pools, class order0..7",
+  "train_manifest_sha256": "537d467f7f0ec1ea9fb6a182a37caf0ca1b4f572818789eb6a8c7fc118ef0a11",
+  "images": [
+    {
+      "image_id": "d105c36d-8c29-11eb-bb4e-000d3a74c7de",
+      "file_name": "public/lao/loc_0242/2019/03/image_00061.jpg",
+      "sequence_id": "0435c909-8c2a-11eb-aaca-000d3a74c7de",
+      "seq_id": "0435c909-8c2a-11eb-aaca-000d3a74c7de",
+      "location": "loc_0242",
+      "country": "lao",
+      "datetime": "2019-03-01 07:39:52+00:00",
+      "width": 4608,
+      "height": 2592,
+      "label": "large_antlered_muntjac",
+      "class_id": 0,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30e4e6eb-6670-11ec-b500-c82158b0a9cc",
+          "label": "large_antlered_muntjac",
+          "bbox_xywh": [
+            1393.4592,
+            1486.7712,
+            569.5488,
+            646.1856
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0242/2019/03/image_00061.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0242/2019/03/image_00061.jpg",
+        "sha256": "f63ccb111593da04800a4f8260aae6885ba7c3ff13fd5ba9b03cf3dc6e52a407",
+        "pixel_sha256": "bbb152bff3ce37ec05575f72e1bff6fdf3f6fa294a729ff3d1c7c158bf5f9764",
+        "bytes": 1375986,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:50:25+00:00"
+      }
+    },
+    {
+      "image_id": "ca79a151-8c29-11eb-b65a-000d3a74c7de",
+      "file_name": "public/lao/loc_0396/2020/06/image_00095.jpg",
+      "sequence_id": "0aecc833-8c2a-11eb-92b7-000d3a74c7de",
+      "seq_id": "0aecc833-8c2a-11eb-92b7-000d3a74c7de",
+      "location": "loc_0396",
+      "country": "lao",
+      "datetime": "2020-06-06 05:27:08+00:00",
+      "width": 2560,
+      "height": 1920,
+      "label": "large_antlered_muntjac",
+      "class_id": 0,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "309fc93a-6670-11ec-8e6f-c82158b0a9cc",
+          "label": "large_antlered_muntjac",
+          "bbox_xywh": [
+            1867.2640000000001,
+            1047.744,
+            470.784,
+            277.632
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0396/2020/06/image_00095.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0396/2020/06/image_00095.jpg",
+        "sha256": "d15f639b3ab33704f767f8875ee11c989e4895a1b578a6f2f5b4e7b9a20c7c22",
+        "pixel_sha256": "7b01eade38d463486825d8f92da39470885594d77da53d647324e6d6faae6d86",
+        "bytes": 634651,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:06+00:00"
+      }
+    },
+    {
+      "image_id": "c82cc93f-8c29-11eb-8fcf-000d3a74c7de",
+      "file_name": "public/lao/loc_0023/2017/12/image_00040.jpg",
+      "sequence_id": "06234c1c-8c2a-11eb-a084-000d3a74c7de",
+      "seq_id": "06234c1c-8c2a-11eb-a084-000d3a74c7de",
+      "location": "loc_0023",
+      "country": "lao",
+      "datetime": "2017-12-20 18:00:19+00:00",
+      "width": 3264,
+      "height": 2448,
+      "label": "large_antlered_muntjac",
+      "class_id": 0,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "3087f17f-6670-11ec-ad7d-c82158b0a9cc",
+          "label": "large_antlered_muntjac",
+          "bbox_xywh": [
+            1371.8592,
+            870.9984000000001,
+            620.16,
+            503.3088
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0023/2017/12/image_00040.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0023/2017/12/image_00040.jpg",
+        "sha256": "f25c1269939662362012150ccb98dff49156b03c449c39a036657cbe09a90bb3",
+        "pixel_sha256": "6adf52f48dd9b4dfae1534711387b1de4e407d1c021af00bce06476d2986500d",
+        "bytes": 834025,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:48:45+00:00"
+      }
+    },
+    {
+      "image_id": "ca80de07-8c29-11eb-a447-000d3a74c7de",
+      "file_name": "public/lao/loc_0399/2020/07/image_00026.jpg",
+      "sequence_id": "33ed7ee3-8c2a-11eb-a712-000d3a74c7de",
+      "seq_id": "33ed7ee3-8c2a-11eb-a712-000d3a74c7de",
+      "location": "loc_0399",
+      "country": "lao",
+      "datetime": "2020-07-17 00:29:11+00:00",
+      "width": 2688,
+      "height": 1512,
+      "label": "annamite_striped_rabbit",
+      "class_id": 1,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "309fc7e9-6670-11ec-b4d5-c82158b0a9cc",
+          "label": "annamite_striped_rabbit",
+          "bbox_xywh": [
+            1244.544,
+            769.1544,
+            261.24672,
+            299.67839999999995
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0399/2020/07/image_00026.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0399/2020/07/image_00026.jpg",
+        "sha256": "6caf38ccce6d5a0ebd65d830bfbffb022c5484ade79be05a70d9e03948452ce5",
+        "pixel_sha256": "cf44529e93d0d8098beadd0a7cddd95b8e9cf5d98aecf93c472b80fb1755a774",
+        "bytes": 1872027,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:07+00:00"
+      }
+    },
+    {
+      "image_id": "ca4531f8-8c29-11eb-adb1-000d3a74c7de",
+      "file_name": "public/lao/loc_0379/2020/05/image_00044.jpg",
+      "sequence_id": "27e79079-8c2a-11eb-99e4-000d3a74c7de",
+      "seq_id": "27e79079-8c2a-11eb-99e4-000d3a74c7de",
+      "location": "loc_0379",
+      "country": "lao",
+      "datetime": "2020-05-15 02:02:50+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "annamite_striped_rabbit",
+      "class_id": 1,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "309d68fc-6670-11ec-87d5-c82158b0a9cc",
+          "label": "annamite_striped_rabbit",
+          "bbox_xywh": [
+            2198.016,
+            1608.192,
+            357.5424,
+            277.25759999999997
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0379/2020/05/image_00044.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0379/2020/05/image_00044.jpg",
+        "sha256": "0b61dbbc65bca3cbd7e637a5fd8fea3161bb0fcfc18b2d14ee56fa5cd03a4373",
+        "pixel_sha256": "69fefed3b363bd39c21be03c44de42e8cc350a9582d78b403d788ac5b6ad5b52",
+        "bytes": 731387,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:04+00:00"
+      }
+    },
+    {
+      "image_id": "c9297d68-8c29-11eb-b3d1-000d3a74c7de",
+      "file_name": "public/lao/loc_0316/2020/06/image_00006.jpg",
+      "sequence_id": "2a07296a-8c2a-11eb-9909-000d3a74c7de",
+      "seq_id": "2a07296a-8c2a-11eb-9909-000d3a74c7de",
+      "location": "loc_0316",
+      "country": "lao",
+      "datetime": "2020-06-12 20:59:01+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "annamite_striped_rabbit",
+      "class_id": 1,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30917ce4-6670-11ec-82b0-c82158b0a9cc",
+          "label": "annamite_striped_rabbit",
+          "bbox_xywh": [
+            786.816,
+            2022.0479999999998,
+            559.4879999999999,
+            371.23199999999997
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0316/2020/06/image_00006.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0316/2020/06/image_00006.jpg",
+        "sha256": "975b725a40ff405b18dce9b5c0760b60ebae4b877ab373b12d251717e17a83df",
+        "pixel_sha256": "92300b64d3416ee616547785525b3246acbf377a62a73fcf8f1c1134982e75e7",
+        "bytes": 2213421,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:48:55+00:00"
+      }
+    },
+    {
+      "image_id": "cc2e00ff-8c29-11eb-ba9e-000d3a74c7de",
+      "file_name": "public/lao/loc_0512/2020/08/image_00726.jpg",
+      "sequence_id": "2801cb3a-8c2a-11eb-9933-000d3a74c7de",
+      "seq_id": "2801cb3a-8c2a-11eb-9933-000d3a74c7de",
+      "location": "loc_0512",
+      "country": "lao",
+      "datetime": "2020-08-19 08:02:55+00:00",
+      "width": 2560,
+      "height": 1920,
+      "label": "sambar",
+      "class_id": 2,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30b2d911-6670-11ec-8e84-c82158b0a9cc",
+          "label": "sambar",
+          "bbox_xywh": [
+            97.1776,
+            437.76,
+            1145.344,
+            726.912
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0512/2020/08/image_00726.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0512/2020/08/image_00726.jpg",
+        "sha256": "b0afad5abcbec5fdda9152c1dfe1b66aca8782ef7d32a8e33637ddb044f61095",
+        "pixel_sha256": "4b2fe7044aa7f9bd2caf33690584879abd297779670d1bae3e47cec2937d7d1a",
+        "bytes": 1165953,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:25+00:00"
+      }
+    },
+    {
+      "image_id": "cb9eeac0-8c29-11eb-a7be-000d3a74c7de",
+      "file_name": "public/lao/loc_0465/2020/06/image_00063.jpg",
+      "sequence_id": "002f6d54-8c2a-11eb-9cc5-000d3a74c7de",
+      "seq_id": "002f6d54-8c2a-11eb-9cc5-000d3a74c7de",
+      "location": "loc_0465",
+      "country": "lao",
+      "datetime": "2020-06-13 10:22:43+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "sambar",
+      "class_id": 2,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30a6f18f-6670-11ec-88a7-c82158b0a9cc",
+          "label": "sambar",
+          "bbox_xywh": [
+            1096.32,
+            979.488,
+            1540.608,
+            853.056
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0465/2020/06/image_00063.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0465/2020/06/image_00063.jpg",
+        "sha256": "6ce407f85f037c5dd351bfc81745f53374e447c635d23c493d31cc2c5903d1c0",
+        "pixel_sha256": "4fe94d6395a688ced2bd5d4c63a8424b63c516497b81dfa22dc73ba84cfabcf9",
+        "bytes": 2530256,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:15+00:00"
+      }
+    },
+    {
+      "image_id": "d21caf66-8c29-11eb-b179-000d3a74c7de",
+      "file_name": "public/lao/loc_0296/2019/03/image_00904.jpg",
+      "sequence_id": "ed724daa-8c29-11eb-a02e-000d3a74c7de",
+      "seq_id": "ed724daa-8c29-11eb-a02e-000d3a74c7de",
+      "location": "loc_0296",
+      "country": "lao",
+      "datetime": "2019-03-30 20:35:24+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "sambar",
+      "class_id": 2,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30f0d606-6670-11ec-be00-c82158b0a9cc",
+          "label": "sambar",
+          "bbox_xywh": [
+            345.9456,
+            1208.4479999999999,
+            886.656,
+            742.1759999999999
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0296/2019/03/image_00904.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0296/2019/03/image_00904.jpg",
+        "sha256": "b5e55d9703f45225782ec677d1b3f127fa3067bca485113ca628cb00a84aa60f",
+        "pixel_sha256": "3ded29bfe293e09983c7af55acbca6fb2230a121001b4559e806cb672a34f109",
+        "bytes": 2134411,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:50:42+00:00"
+      }
+    },
+    {
+      "image_id": "d9b8997b-8c29-11eb-bf0d-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0909/2018/10/image_00092.jpg",
+      "sequence_id": "ea6792f5-8c29-11eb-b3c1-000d3a74c7de",
+      "seq_id": "ea6792f5-8c29-11eb-b3c1-000d3a74c7de",
+      "location": "loc_0909",
+      "country": "vietnam",
+      "datetime": "2018-10-07 14:51:03+00:00",
+      "width": 4032,
+      "height": 3024,
+      "label": "chinese_serow",
+      "class_id": 3,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "31764e10-6670-11ec-88e5-c82158b0a9cc",
+          "label": "chinese_serow",
+          "bbox_xywh": [
+            3941.6832,
+            853.9775999999999,
+            79.99488,
+            595.7280000000001
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0909/2018/10/image_00092.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0909/2018/10/image_00092.jpg",
+        "sha256": "c2da1dd83b08fc32e422f430a91af01a3faff5221a626da580cd68d54cca4004",
+        "pixel_sha256": "f33a5321780d94a6184628f76e64e0bfdcc074b0713fbdc6608cff2c25830187",
+        "bytes": 2566604,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:29+00:00"
+      }
+    },
+    {
+      "image_id": "d07b7373-8c29-11eb-b868-000d3a74c7de",
+      "file_name": "public/lao/loc_0198/2018/12/image_00022.jpg",
+      "sequence_id": "06f05776-8c2a-11eb-b656-000d3a74c7de",
+      "seq_id": "06f05776-8c2a-11eb-b656-000d3a74c7de",
+      "location": "loc_0198",
+      "country": "lao",
+      "datetime": "2018-12-29 14:48:02+00:00",
+      "width": 2560,
+      "height": 1920,
+      "label": "chinese_serow",
+      "class_id": 3,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30e0230b-6670-11ec-acc1-c82158b0a9cc",
+          "label": "chinese_serow",
+          "bbox_xywh": [
+            1251.328,
+            623.808,
+            254.3872,
+            694.848
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0198/2018/12/image_00022.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0198/2018/12/image_00022.jpg",
+        "sha256": "eee698a8c6185e1b839479ac1f4c507811aa06765997edaa744f84c83f375827",
+        "pixel_sha256": "87c65eb02cdc76d007b7647a1f1cffa9b670a5418bccf5d039e2a07d6936a240",
+        "bytes": 1412455,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:50:14+00:00"
+      }
+    },
+    {
+      "image_id": "da5d2e79-8c29-11eb-aa02-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0936/2018/04/image_00120.jpg",
+      "sequence_id": "e0d159ac-8c29-11eb-bff4-000d3a74c7de",
+      "seq_id": "e0d159ac-8c29-11eb-bff4-000d3a74c7de",
+      "location": "loc_0936",
+      "country": "vietnam",
+      "datetime": "2018-04-19 21:32:36+00:00",
+      "width": 4032,
+      "height": 3024,
+      "label": "chinese_serow",
+      "class_id": 3,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "317b128b-6670-11ec-8e7d-c82158b0a9cc",
+          "label": "chinese_serow",
+          "bbox_xywh": [
+            3468.7295999999997,
+            1622.376,
+            347.3568,
+            389.1888
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0936/2018/04/image_00120.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0936/2018/04/image_00120.jpg",
+        "sha256": "02684f37962f79a91a99b1a84ffc1b090943a4dde236799265822c40375af0ee",
+        "pixel_sha256": "b31e915535f1f38081ec7ea026770b90a762d0360907a0ff5fffbc2bfb55eaa0",
+        "bytes": 2189635,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:32+00:00"
+      }
+    },
+    {
+      "image_id": "cfb33162-8c29-11eb-9dec-000d3a74c7de",
+      "file_name": "public/lao/loc_0107/2018/12/image_00130.jpg",
+      "sequence_id": "3df7e925-8c2a-11eb-b5f4-000d3a74c7de",
+      "seq_id": "3df7e925-8c2a-11eb-b5f4-000d3a74c7de",
+      "location": "loc_0107",
+      "country": "lao",
+      "datetime": "2018-12-05 00:12:47+00:00",
+      "width": 4608,
+      "height": 2592,
+      "label": "common_palm_civet",
+      "class_id": 4,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30cf78df-6670-11ec-8af6-c82158b0a9cc",
+          "label": "common_palm_civet",
+          "bbox_xywh": [
+            2455.6032,
+            1110.672,
+            282.97728,
+            293.4144
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0107/2018/12/image_00130.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0107/2018/12/image_00130.jpg",
+        "sha256": "dc9d12041e34f26d08e3f0cf2ca1dac43e41ce7c8f73f3e22190159b3632b337",
+        "pixel_sha256": "14a4e1cd2bfc95277b9178f1199c20385ed4649e9c07c0817bb8a26db3c663c8",
+        "bytes": 1377325,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:50:00+00:00"
+      }
+    },
+    {
+      "image_id": "c801d69c-8c29-11eb-b9e0-000d3a74c7de",
+      "file_name": "public/lao/loc_0014/2018/03/image_00092.jpg",
+      "sequence_id": "1be3ed6a-8c2a-11eb-adfd-000d3a74c7de",
+      "seq_id": "1be3ed6a-8c2a-11eb-adfd-000d3a74c7de",
+      "location": "loc_0014",
+      "country": "lao",
+      "datetime": "2018-03-03 01:24:12+00:00",
+      "width": 3264,
+      "height": 2448,
+      "label": "common_palm_civet",
+      "class_id": 4,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "3087f0d8-6670-11ec-a04e-c82158b0a9cc",
+          "label": "common_palm_civet",
+          "bbox_xywh": [
+            950.8032000000001,
+            1174.5504,
+            172.63296,
+            280.0512
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0014/2018/03/image_00092.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0014/2018/03/image_00092.jpg",
+        "sha256": "88a9427b7af9070009c2c7d22b2efcc8eb8999c9030e23a18a4c2934a9dab3ac",
+        "pixel_sha256": "953816a5c9f6af8750a176b31444a7e975ada188812d65b696430653eb3e35b9",
+        "bytes": 629539,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:48:43+00:00"
+      }
+    },
+    {
+      "image_id": "c801d69b-8c29-11eb-b967-000d3a74c7de",
+      "file_name": "public/lao/loc_0014/2018/03/image_00091.jpg",
+      "sequence_id": "1be3ed6a-8c2a-11eb-adfd-000d3a74c7de",
+      "seq_id": "1be3ed6a-8c2a-11eb-adfd-000d3a74c7de",
+      "location": "loc_0014",
+      "country": "lao",
+      "datetime": "2018-03-03 01:24:12+00:00",
+      "width": 3264,
+      "height": 2448,
+      "label": "common_palm_civet",
+      "class_id": 4,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "3087f0d7-6670-11ec-95fc-c82158b0a9cc",
+          "label": "common_palm_civet",
+          "bbox_xywh": [
+            965.4912,
+            1200.4992,
+            158.33664,
+            235.32623999999998
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0014/2018/03/image_00091.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0014/2018/03/image_00091.jpg",
+        "sha256": "00a7a0b8be9bb0928e76780b24d64ef94ada854cf29c754e4917cc628d27d23f",
+        "pixel_sha256": "1a13832cd9ad84180d0c9332c6176182bb02f803beebf9bf306cf6b2f1453fb5",
+        "bytes": 629859,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:48:43+00:00"
+      }
+    },
+    {
+      "image_id": "c9d52368-8c29-11eb-b79d-000d3a74c7de",
+      "file_name": "public/lao/loc_0357/2020/05/image_00018.jpg",
+      "sequence_id": "eacd6934-8c29-11eb-8d4d-000d3a74c7de",
+      "seq_id": "eacd6934-8c29-11eb-8d4d-000d3a74c7de",
+      "location": "loc_0357",
+      "country": "lao",
+      "datetime": "2020-05-20 05:21:10+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "masked_palm_civet",
+      "class_id": 5,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "309b02e4-6670-11ec-922f-c82158b0a9cc",
+          "label": "masked_palm_civet",
+          "bbox_xywh": [
+            622.08,
+            1576.512,
+            355.54560000000004,
+            208.31040000000002
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0357/2020/05/image_00018.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0357/2020/05/image_00018.jpg",
+        "sha256": "64c5038416a42db2d88807b01b78f6eee0ff84b4ce09dc8bd808f83202d9cc46",
+        "pixel_sha256": "d21258b7ace2f183fe748cfdfa158ba14794f442b1b64441efe9358ca1e3f03f",
+        "bytes": 726495,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:02+00:00"
+      }
+    },
+    {
+      "image_id": "cdb9b99f-8c29-11eb-8d94-000d3a74c7de",
+      "file_name": "public/lao/loc_0161/2018/07/image_00158.jpg",
+      "sequence_id": "e3a62a35-8c29-11eb-84cd-000d3a74c7de",
+      "seq_id": "e3a62a35-8c29-11eb-84cd-000d3a74c7de",
+      "location": "loc_0161",
+      "country": "lao",
+      "datetime": "2018-07-09 23:08:48+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "masked_palm_civet",
+      "class_id": 5,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30c38737-6670-11ec-9039-c82158b0a9cc",
+          "label": "masked_palm_civet",
+          "bbox_xywh": [
+            2902.272,
+            1675.296,
+            931.1999999999999,
+            513.5039999999999
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0161/2018/07/image_00158.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0161/2018/07/image_00158.jpg",
+        "sha256": "6cf17c611e0aa61d0a81f6a533135e0bb8acc3c0880c17a357ba96698ece20da",
+        "pixel_sha256": "76f57940c94ca8dfdfcff578a6b8ba9eb395312c012a6a48faa74144c5ff05c8",
+        "bytes": 2288049,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:37+00:00"
+      }
+    },
+    {
+      "image_id": "ce1de267-8c29-11eb-a112-000d3a74c7de",
+      "file_name": "public/lao/loc_0175/2018/09/image_00221.jpg",
+      "sequence_id": "e019c491-8c29-11eb-b8b0-000d3a74c7de",
+      "seq_id": "e019c491-8c29-11eb-b8b0-000d3a74c7de",
+      "location": "loc_0175",
+      "country": "lao",
+      "datetime": "2018-09-13 19:12:20+00:00",
+      "width": 4608,
+      "height": 2592,
+      "label": "masked_palm_civet",
+      "class_id": 5,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30c12977-6670-11ec-9c17-c82158b0a9cc",
+          "label": "masked_palm_civet",
+          "bbox_xywh": [
+            1642.752,
+            1745.9712,
+            2964.7871999999998,
+            671.0688
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0175/2018/09/image_00221.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0175/2018/09/image_00221.jpg",
+        "sha256": "c3f6db21b7acc75cedba9d33c951e3061d13ff39a40b8ba5ba465e55986d570c",
+        "pixel_sha256": "7d394014fc2a831e6eb43112ed4fe65ba5100fa07b5908d2007bc9cbe48f6d54",
+        "bytes": 1375143,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:40+00:00"
+      }
+    },
+    {
+      "image_id": "d4ffc976-8c29-11eb-8433-000d3a74c7de",
+      "file_name": "public/lao/loc_0608/2020/01/image_00341.jpg",
+      "sequence_id": "0933b733-8c2a-11eb-8471-000d3a74c7de",
+      "seq_id": "0933b733-8c2a-11eb-8471-000d3a74c7de",
+      "location": "loc_0608",
+      "country": "lao",
+      "datetime": "2020-01-24 10:40:13+00:00",
+      "width": 4608,
+      "height": 2592,
+      "label": "silver_pheasant",
+      "class_id": 6,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "314dca60-6670-11ec-b61a-c82158b0a9cc",
+          "label": "silver_pheasant",
+          "bbox_xywh": [
+            0,
+            2214.6048,
+            227.77344,
+            204.61247999999998
+          ]
+        },
+        {
+          "annotation_id": "314dca61-6670-11ec-8282-c82158b0a9cc",
+          "label": "silver_pheasant",
+          "bbox_xywh": [
+            1164.4415999999999,
+            1562.9759999999999,
+            482.4576,
+            331.776
+          ]
+        },
+        {
+          "annotation_id": "314dca62-6670-11ec-acf3-c82158b0a9cc",
+          "label": "silver_pheasant",
+          "bbox_xywh": [
+            3003.4944,
+            0,
+            465.408,
+            420.6816
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0608/2020/01/image_00341.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0608/2020/01/image_00341.jpg",
+        "sha256": "0691b7fae8085dbf33ef5ef4fac051d0e30cef1a4e2b57b94cbb106c6e429310",
+        "pixel_sha256": "491cf5316f8dc67a531eef70ed3249d4efd3d258aa4cbd79c843276d1169f686",
+        "bytes": 1364191,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:00+00:00"
+      }
+    },
+    {
+      "image_id": "d8cef4ec-8c29-11eb-b283-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0872/2018/01/image_00187.jpg",
+      "sequence_id": "e774f2bb-8c29-11eb-b270-000d3a74c7de",
+      "seq_id": "e774f2bb-8c29-11eb-b270-000d3a74c7de",
+      "location": "loc_0872",
+      "country": "vietnam",
+      "datetime": "2018-01-23 07:27:09+00:00",
+      "width": 2560,
+      "height": 1920,
+      "label": "silver_pheasant",
+      "class_id": 6,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "316cc75e-6670-11ec-a8fa-c82158b0a9cc",
+          "label": "silver_pheasant",
+          "bbox_xywh": [
+            1920.768,
+            1091.52,
+            638.976,
+            768.7679999999999
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0872/2018/01/image_00187.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0872/2018/01/image_00187.jpg",
+        "sha256": "d1e8ec8a947b9d1c798b7e926f20e20332db910aa3ceafa5ca8647368f14effc",
+        "pixel_sha256": "c3d63fc60172f9d0979be0aaae57d6d8b9f2e6577079fce553f25628f8907f5a",
+        "bytes": 582051,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:20+00:00"
+      }
+    },
+    {
+      "image_id": "c82f26f4-8c29-11eb-8014-000d3a74c7de",
+      "file_name": "public/lao/loc_0024/2017/12/image_00029.jpg",
+      "sequence_id": "1b8bb5f7-8c2a-11eb-81dd-000d3a74c7de",
+      "seq_id": "1b8bb5f7-8c2a-11eb-81dd-000d3a74c7de",
+      "location": "loc_0024",
+      "country": "lao",
+      "datetime": "2017-12-26 13:25:23+00:00",
+      "width": 3264,
+      "height": 2448,
+      "label": "silver_pheasant",
+      "class_id": 6,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "3087f60a-6670-11ec-a6d8-c82158b0a9cc",
+          "label": "silver_pheasant",
+          "bbox_xywh": [
+            2910.8352,
+            1213.7184,
+            352.8384,
+            657.288
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0024/2017/12/image_00029.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0024/2017/12/image_00029.jpg",
+        "sha256": "c84672bc5deb23105cb63885921c88925faac6f94d0f762c291e1cc14a5526a4",
+        "pixel_sha256": "9fa0a886fdd7416334e17f90109c197e1ba5f19db7b547296e1b8807b3d3e08f",
+        "bytes": 1420874,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:48:45+00:00"
+      }
+    },
+    {
+      "image_id": "d819b853-8c29-11eb-8332-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0835/2020/05/image_00044.jpg",
+      "sequence_id": "135278ea-8c2a-11eb-ae9b-000d3a74c7de",
+      "seq_id": "135278ea-8c2a-11eb-ae9b-000d3a74c7de",
+      "location": "loc_0835",
+      "country": "vietnam",
+      "datetime": "2020-05-25 16:15:23+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "eurasian_wild_pig",
+      "class_id": 7,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "31659d83-6670-11ec-b733-c82158b0a9cc",
+          "label": "eurasian_wild_pig",
+          "bbox_xywh": [
+            944.64,
+            2145.312,
+            1498.752,
+            618.336
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0835/2020/05/image_00044.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0835/2020/05/image_00044.jpg",
+        "sha256": "3f2621fffe9e66ac3b2009e5df6c79d5c65a8ef6189e85c2a711b003d0789c85",
+        "pixel_sha256": "283d272a341b07e5d0af63bc0d88fdcdf5a15e5c821ef59a47b571fe400d1fab",
+        "bytes": 2503056,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:12+00:00"
+      }
+    },
+    {
+      "image_id": "ceaceb6f-8c29-11eb-8214-000d3a74c7de",
+      "file_name": "public/lao/loc_0258/2019/09/image_00273.jpg",
+      "sequence_id": "3ead1bb2-8c2a-11eb-a069-000d3a74c7de",
+      "seq_id": "3ead1bb2-8c2a-11eb-a069-000d3a74c7de",
+      "location": "loc_0258",
+      "country": "lao",
+      "datetime": "2019-09-27 11:18:15+00:00",
+      "width": 3840,
+      "height": 2880,
+      "label": "eurasian_wild_pig",
+      "class_id": 7,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "30c84cd9-6670-11ec-afe1-c82158b0a9cc",
+          "label": "eurasian_wild_pig",
+          "bbox_xywh": [
+            0,
+            1635.552,
+            705.408,
+            956.736
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/lao/loc_0258/2019/09/image_00273.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/lao/loc_0258/2019/09/image_00273.jpg",
+        "sha256": "e4215206e97e94fbafa8c6f9e866f599b7f0ffda65fe1f4c738ff295e6977e0f",
+        "pixel_sha256": "fc8ba120794352638268583fba1beff5d4da12da57ca3c9283fd42ebf23132c4",
+        "bytes": 1944778,
+        "image_format": "MPO",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:49:45+00:00"
+      }
+    },
+    {
+      "image_id": "db59cc98-8c29-11eb-8e23-000d3a74c7de",
+      "file_name": "public/vietnam/loc_0914/2018/09/image_00003.jpg",
+      "sequence_id": "1e2748e9-8c2a-11eb-8228-000d3a74c7de",
+      "seq_id": "1e2748e9-8c2a-11eb-8228-000d3a74c7de",
+      "location": "loc_0914",
+      "country": "vietnam",
+      "datetime": "2018-09-10 13:24:45+00:00",
+      "width": 4032,
+      "height": 3024,
+      "label": "eurasian_wild_pig",
+      "class_id": 7,
+      "split": "train",
+      "image_annotation_sequence_level": true,
+      "boxes": [
+        {
+          "annotation_id": "317b15ce-6670-11ec-87ea-c82158b0a9cc",
+          "label": "eurasian_wild_pig",
+          "bbox_xywh": [
+            2057.1264,
+            1216.8576,
+            290.06208000000004,
+            239.19840000000002
+          ]
+        }
+      ],
+      "url": "https://storage.googleapis.com/public-datasets-lila/swg-camera-traps/public/vietnam/loc_0914/2018/09/image_00003.jpg",
+      "source_version": "v1",
+      "quality": {
+        "local_path": "data/images/swg_pilot_v2/public/vietnam/loc_0914/2018/09/image_00003.jpg",
+        "sha256": "06e4c6f1937608474a9fb3e105d50346e93c1d5d48e8c26bff8c32a8c52311db",
+        "pixel_sha256": "594f60788ba886b3a4be47d8fe6ee84645b44e1957a0001657fb41f15265a39c",
+        "bytes": 2415461,
+        "image_format": "JPEG",
+        "image_mode": "RGB",
+        "validated_utc": "2026-10-09T03:51:34+00:00"
+      }
+    }
+  ]
+}

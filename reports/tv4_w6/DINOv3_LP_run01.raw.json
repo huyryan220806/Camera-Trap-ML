@@ -1,0 +1,199 @@
+{
+  "model_id": "DINOv3_LP_run01",
+  "unique_images": 24,
+  "requests": 48,
+  "warm_rounds": 2,
+  "runtime": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": 12,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 224
+  },
+  "device": "cpu",
+  "precision": "FP32",
+  "amp": false,
+  "tf32": false,
+  "cold_classifier_load_and_one_crop_ms": 6633.175200084224,
+  "cold_pipeline_classifier_already_loaded": {
+    "model_id": "DINOv3_LP_run01",
+    "image_id": "d105c36d-8c29-11eb-bb4e-000d3a74c7de",
+    "image_sha256": "f63ccb111593da04800a4f8260aae6885ba7c3ff13fd5ba9b03cf3dc6e52a407",
+    "status": "ok",
+    "boxes": 1,
+    "error": null,
+    "detector_ms": 43719.59150000475,
+    "classifier_ms": 621.5661000460386,
+    "pipeline_ms": 44812.30399990454,
+    "envelope": {
+      "schema_version": "classifier-demo-1.0",
+      "result": {
+        "schema_version": "1.0.0",
+        "request_id": "d4f5755c-294f-4e38-8724-8a7329fc5f1f",
+        "image": {
+          "image_id": null,
+          "file_name": "image_00061.jpg",
+          "width": 4608,
+          "height": 2592
+        },
+        "pipeline": {
+          "mode": "inference",
+          "detector_id": "MDv5a.0.1",
+          "classifier_id": "DINOv3_LP_run01",
+          "class_map_version": "swg-v1",
+          "detector_threshold": 0.2,
+          "review_threshold": 0.7
+        },
+        "status": "ok",
+        "needs_review": false,
+        "detections": [
+          {
+            "detection_id": "animal-1",
+            "bbox_xywh": [
+              1396.6848,
+              1485.9936,
+              568.6271999999999,
+              635.8176000000001
+            ],
+            "detector_score": 0.971,
+            "top_k": [
+              {
+                "class_id": 0,
+                "label": "large_antlered_muntjac",
+                "score": 0.842760443687439
+              },
+              {
+                "class_id": 2,
+                "label": "sambar",
+                "score": 0.14028188586235046
+              },
+              {
+                "class_id": 7,
+                "label": "eurasian_wild_pig",
+                "score": 0.010722377337515354
+              }
+            ]
+          }
+        ],
+        "error": null,
+        "elapsed_ms": 44760.84
+      },
+      "provenance": {
+        "requested_classifier": "DINOv3_LP_run01",
+        "classifier": {
+          "classifier_id": "DINOv3_LP_run01",
+          "checkpoint_sha256": "acbe32252af4db420b7d6be4124b5273eadd81fff59620678d1f472413c0fbc3",
+          "training_input": "crop",
+          "inference_input": "detector_crop",
+          "preprocessing": {
+            "id": "dinov3_square256_bilinear_uint8",
+            "rgb": true,
+            "exif_transpose": false,
+            "image_size": 256,
+            "pooling": "x_norm_clstoken",
+            "architecture_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+            "source_commit": "aa64fd7661827af78ddec4e3e0155b2b9c87b9e2",
+            "precision": "float32",
+            "max_crop_batch": 8,
+            "adapter_wall_ms": 231.936
+          },
+          "cache_hit": true,
+          "model_load_count": 1,
+          "device": "cpu"
+        },
+        "detector": {
+          "mode": "megadetector",
+          "detector_id": "MDv5a.0.1",
+          "package_version": "10.0.25",
+          "weights_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+          "detector_threshold": 0.2,
+          "classifier_id": null,
+          "device": "cpu",
+          "image_size": 1280,
+          "coordinate_space": "original_raster_pixels_no_exif_rotation"
+        },
+        "ignored_non_animals": 0,
+        "score_kind": "softmax_class_score",
+        "scores_calibrated": false,
+        "crop_policy": "round_clip_min8_padding0",
+        "max_boxes": 64,
+        "training_overlap_swg": true,
+        "training_source": "https://github.com/agentmorris/MegaDetector/blob/main/megadetector.md#can-you-share-the-training-data",
+        "warnings": [
+          "Softmax class scores are not calibrated probabilities; review threshold is a demo setting.",
+          "MegaDetector MDv5a used SWG in training; SWG demo is not an independent end-to-end evaluation."
+        ]
+      }
+    }
+  },
+  "fixture_sha256": "d2b0f1d6b05a02a3a192c5748099a76f9bfb4688ef49c887be1a2758726f4077",
+  "detector_sha256": "fe3e90e4b1955821ab7c1f88b446dc0c8cb25e109fdd1872916a55305294a5ef",
+  "detector_version": "MDv5a.0.1",
+  "megadetector_package": "10.0.25",
+  "threshold": 0.2,
+  "review_threshold": 0.7,
+  "image_batch": 1,
+  "crop_microbatch": 8,
+  "detector_resolution": 1280,
+  "classifier_resolution": 256,
+  "status_counts": {
+    "needs_review": 16,
+    "no_detection": 4,
+    "ok": 28
+  },
+  "total_boxes": 50,
+  "timing": {
+    "pipeline_ms": {
+      "n": 48,
+      "mean_ms": 9031.437095822184,
+      "p50_ms": 9013.780150096864,
+      "p95_ms": 10295.38739984855,
+      "p95_method": "nearest_rank"
+    },
+    "detector_ms": {
+      "n": 48,
+      "mean_ms": 8044.5041416484555,
+      "p50_ms": 8048.971199896187,
+      "p95_ms": 9306.976999854669,
+      "p95_method": "nearest_rank"
+    },
+    "classifier_ms": {
+      "n": 48,
+      "mean_ms": 628.0997937331753,
+      "p50_ms": 634.1143999015912,
+      "p95_ms": 973.7870001699775,
+      "p95_method": "nearest_rank"
+    }
+  },
+  "process_memory_bytes": {
+    "rss": 1470226432,
+    "vms": 2798837760,
+    "num_page_faults": 24957233,
+    "peak_wset": 2624405504,
+    "wset": 1470226432,
+    "peak_paged_pool": 1235376,
+    "paged_pool": 1228208,
+    "peak_nonpaged_pool": 100632,
+    "nonpaged_pool": 85808,
+    "pagefile": 2798837760,
+    "peak_pagefile": 3954126848,
+    "private": 2798837760
+  },
+  "timing_scope": "Pipeline includes decode, detector, classifier, checksums/cache, schema validation; excludes disk read/hash gate, HTTP/upload, preview, journal, browser, human review",
+  "cold_scope": "Fresh Python per model; classifier weights load + gates + one train crop. Separate cold detector request with classifier already loaded.",
+  "test_opened": false,
+  "records_path": "DINOv3_LP_run01.jsonl"
+}

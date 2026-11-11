@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-12",
+  "status": "PASS",
+  "source_heads": {
+    "main": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+    "feat/metadata-split": "11e451071f58146522df20e1890cc6fe6e488eb0",
+    "feat/baseline": "96d202563c63b47d4d3d6773c3d4b5a2a29c3c7a",
+    "feat/crop-classifier": "450f15bde6899faffac3c9389156d04c15196568",
+    "feat/demo": "bbbccf979f437ebb80963a4067214f24ed31f639"
+  },
+  "source_preservation": {
+    "src/training/dino_w6.py": {
+      "status": "PASS",
+      "sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+      "source_commit": "450f15bde6899faffac3c9389156d04c15196568",
+      "source_path": "src/training/dino_w6.py"
+    },
+    "src/training/dino_w6_r1_r4.py": {
+      "status": "PASS",
+      "sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+      "source_commit": "bbbccf979f437ebb80963a4067214f24ed31f639",
+      "source_path": "src/training/dino_w6.py"
+    },
+    "src/training/dino_w6_r6.py": {
+      "status": "PASS",
+      "sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+      "source_commit": "bbbccf979f437ebb80963a4067214f24ed31f639",
+      "source_path": "src/training/dino_w6_r6.py"
+    },
+    "src/training/dino_probe.py": {
+      "status": "PASS",
+      "sha256": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+      "source_commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+      "source_path": "src/training/dino_probe.py"
+    },
+    "src/training/dino_handoff.py": {
+      "status": "PASS",
+      "sha256": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+      "source_commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c",
+      "source_path": "src/training/dino_handoff.py"
+    }
+  },
+  "protected_artifacts": {
+    "data/processed/comparison_v1": {
+      "status": "UNCHANGED",
+      "source_commit": "cfcf00615847d52fba73ee3e44fe0e6076bb840c"
+    },
+    "data/processed/train_expansion_w6_v1": {
+      "status": "UNCHANGED",
+      "source_commit": "11e451071f58146522df20e1890cc6fe6e488eb0"
+    },
+    "reports/tv3/w6/results": {
+      "status": "UNCHANGED",
+      "source_commit": "450f15bde6899faffac3c9389156d04c15196568"
+    },
+    "configs/demo_w6.json": {
+      "status": "UNCHANGED",
+      "source_commit": "bbbccf979f437ebb80963a4067214f24ed31f639"
+    },
+    "configs/demo_w6_r6.json": {
+      "status": "UNCHANGED",
+      "source_commit": "bbbccf979f437ebb80963a4067214f24ed31f639"
+    },
+    "reports/tv4_w6_r6": {
+      "status": "UNCHANGED",
+      "source_commit": "bbbccf979f437ebb80963a4067214f24ed31f639"
+    }
+  },
+  "tests": {
+    "passed": 551,
+    "failed": 0,
+    "skipped": 0,
+    "unittest_seconds": 110.221,
+    "log_sha256": "b3bb3e0558eb70901550678dd4c7ce8d44be9bda06520f21a605022f15d22513",
+    "command": "python -X utf8 -m unittest discover -s tests -v",
+    "reused_completed_run": true
+  },
+  "additional_checks_file": "additional_checks.json",
+  "classifier_default": "B2",
+  "w6_candidates": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R6"
+  ],
+  "r5": "FAILED; no accepted metric",
+  "independent_model_replay_in_this_integration": false,
+  "real_checkpoint_inference_in_this_integration": false,
+  "project_training_performed": false,
+  "official_test_opened": false,
+  "existing_model_evidence": [
+    "reports/tv2/TV2_W6_R6_INDEPENDENT_MODEL_REPLAY_2026-11-10.md",
+    "reports/tv4_w6_r6/REPORT.md"
+  ],
+  "merge_resolution": "Retain canonical TV3 training source and byte-identical separate R1-R4/R6 demo snapshots",
+  "publication": "Recorded separately after remote verification"
+}

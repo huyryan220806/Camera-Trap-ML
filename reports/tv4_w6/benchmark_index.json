@@ -1,0 +1,54 @@
+{
+  "benchmark.json": {
+    "bytes": 44787,
+    "sha256": "884b7c4bcbe65a2f2fba658ee70484ae5ed3bf3fc233ac5d51ca8b91f05f19cc"
+  },
+  "benchmark_images.json": {
+    "bytes": 35538,
+    "sha256": "d2b0f1d6b05a02a3a192c5748099a76f9bfb4688ef49c887be1a2758726f4077"
+  },
+  "configuration.json": {
+    "bytes": 6432,
+    "sha256": "df8bbaa6279dcf42fc60009247186131d4ea5b9c214e000b4605e80eceaf7a82"
+  },
+  "DINO_W6_R1.jsonl": {
+    "bytes": 159567,
+    "sha256": "01e473ba53b0e9ca8776a022f08f87f167bd5c9206755a737c80d16a94fb96fa"
+  },
+  "DINO_W6_R1.raw.json": {
+    "bytes": 7729,
+    "sha256": "0bde3ae46c157e99cfe513de3e03353dba8d1240c611e19527d8f1e8fd8bd08e"
+  },
+  "DINO_W6_R2.jsonl": {
+    "bytes": 158070,
+    "sha256": "5259fbbf919c73de062a503e3150b428a67e7070bb4699a7faf060e23d634d35"
+  },
+  "DINO_W6_R2.raw.json": {
+    "bytes": 7699,
+    "sha256": "3312963a05d89c06de166061b260c85fe8b3e71f2ac141d44649ca1e100eaeda"
+  },
+  "DINO_W6_R3.jsonl": {
+    "bytes": 158177,
+    "sha256": "9aff4b451db7538b06dc122f292985076672c3db8e910058698d54ddc2bc7756"
+  },
+  "DINO_W6_R3.raw.json": {
+    "bytes": 7697,
+    "sha256": "29d8e4c707045d538e41e719a8bf5872052b0450ce5e08c3938f117d209ca8ba"
+  },
+  "DINO_W6_R4.jsonl": {
+    "bytes": 158083,
+    "sha256": "2410018449b519aa2d3f75d64506dad758eb6bfb35d7376fb26d0179ce9a7249"
+  },
+  "DINO_W6_R4.raw.json": {
+    "bytes": 7698,
+    "sha256": "9460c2f2bf6cec657358277d201d7c6b5fa9aa1caedbd470d5a1de3291fbaff9"
+  },
+  "DINOv3_LP_run01.jsonl": {
+    "bytes": 129963,
+    "sha256": "38758774845523910dc9a1b07da142ca4dba98002aa98a71a61a5eba0b992889"
+  },
+  "DINOv3_LP_run01.raw.json": {
+    "bytes": 6692,
+    "sha256": "97d82a31fbdbb56114b197742f6fc7984a0d7551d7e108169333695b3e1a7458"
+  }
+}
