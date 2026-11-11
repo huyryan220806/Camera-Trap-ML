@@ -30,7 +30,7 @@ def validate_envelope(envelope):
 def analyze_classified(data, file_name, *, classifier='B0', cache=None,
                        mode='megadetector', threshold=0.2, review_threshold=0.7,
                        scenario='animal', adapter=None):
-    if classifier not in ('B0', 'B1', 'B2', 'DINOv3_LP_run01', 'DINO_W6_R1', 'DINO_W6_R2', 'DINO_W6_R3', 'DINO_W6_R4'):
+    if classifier not in ('B0', 'B1', 'B2', 'DINOv3_LP_run01', 'DINO_W6_R1', 'DINO_W6_R2', 'DINO_W6_R3', 'DINO_W6_R4', 'DINO_W6_R6'):
         raise ValueError('Unknown classifier')
     if type(review_threshold) not in (int, float) or not math.isfinite(review_threshold) or not 0 <= review_threshold <= 1:
         raise ValueError('Review threshold must be finite in [0, 1]')

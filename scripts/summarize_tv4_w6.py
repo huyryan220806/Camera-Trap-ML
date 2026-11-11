@@ -12,10 +12,11 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--registry',type=Path,default=ROOT/'configs/demo_w6.json')
     args=parser.parse_args(); args.output.mkdir(parents=True,exist_ok=False)
     raw=json.loads((args.input/'benchmark.json').read_text())
     assert raw['status']=='COMPLETE'
-    registry=json.loads((ROOT/'configs/demo_w6.json').read_text())
+    registry=json.loads(args.registry.read_text())
     fixture=ROOT/'outputs/tv4/w6/benchmark_fixture/images.json'
     fixture_sha=hashlib.sha256(fixture.read_bytes()).hexdigest()
     for model in raw['models']:
@@ -29,7 +30,7 @@ def main():
             model['checkpoint_sha256']=entry['checkpoint_sha256']
             model['config_sha256']=entry['config_sha256']; model['feature_dim']=entry['feature_dim']
             model['model_version']=entry['run_id']+'_attempt01'
-        model['dataset_version']='comparison_v1'
+        model['dataset_version']=registry['models'].get(name,{}).get('dataset_version','comparison_v1')
         model['runtime_helper_default_classifier_image_size']=model['runtime']['classifier_image_size']
         model['runtime']['classifier_image_size']=model['classifier_resolution']
         model['runtime_metadata_note']='Generic runtime_info defaults to legacy224; actual transform256 is recorded by classifier_resolution and envelope preprocessing. Raw worker JSON kept unchanged.'
@@ -42,6 +43,10 @@ def main():
                      'src/training/dino_probe.py','src/demo/detector.py','src/demo/inference.py',
                      'scripts/benchmark_tv4_w6.py','configs/demo_w6.json')},
         'note':'Hashes of the exact CPU inference implementation used in this benchmark; native vendor locked separately.'}
+    configuration['registry_path']=str(args.registry)
+    configuration['registry_sha256']=hashlib.sha256(args.registry.read_bytes()).hexdigest()
+    if 'DINO_W6_R6' in registry['models']:
+        configuration['source_sha256']['src/training/dino_w6_r6.py']=hashlib.sha256((ROOT/'src/training/dino_w6_r6.py').read_bytes()).hexdigest()
     (args.output/'configuration.json').write_text(json.dumps(configuration,indent=2),encoding='utf-8')
     index={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
            for p in sorted(args.output.iterdir()) if p.is_file()}

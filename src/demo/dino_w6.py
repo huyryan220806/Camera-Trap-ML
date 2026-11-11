@@ -2,6 +2,7 @@
 from collections import OrderedDict
 import copy
 import gc
+import importlib
 import json
 from pathlib import Path
 import subprocess
@@ -12,6 +13,9 @@ from .detector import ROOT, digest
 
 REGISTRY = ROOT / 'configs/demo_w6.json'
 MODEL_IDS = tuple('DINO_W6_' + run for run in ('R1', 'R2', 'R3', 'R4'))
+SUPPORTED_MODEL_IDS = MODEL_IDS + ('DINO_W6_R6',)
+NATIVE_PINS = {'dino_w6': '56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc',
+               'dino_w6_r6': '46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9'}
 
 
 class W6Cache:
@@ -25,8 +29,8 @@ class W6Cache:
 
     def registry(self):
         value = json.loads(self.registry_path.read_text(encoding='utf-8'))
-        if value['schema_version'] != 'tv4-w6-1.0' or set(value['models']) != set(MODEL_IDS):
-            raise ValueError('Only pinned R1-R4 are registered for this delivery')
+        if value['schema_version'] != 'tv4-w6-1.0' or set(value['models']) not in (set(MODEL_IDS), set(SUPPORTED_MODEL_IDS)):
+            raise ValueError('Only pinned R1-R4 and optional R6 are supported; R5 is excluded')
         return value
 
     def names(self):
@@ -41,17 +45,18 @@ class W6Cache:
     def status(self):
         value = self.base.status()
         for key, entry in self.registry()['models'].items():
-            value[key] = {'enabled': bool(self.repo and entry['enabled']),
+            value[key] = {'enabled': bool(self.repo and entry['enabled'] is True),
                 'checkpoint_present': (self.folder(entry) / 'best_model.pt').is_file(),
-                'training_input': 'crop', 'dataset': 'comparison_v1', 'version': entry['run_id'] + '_attempt01',
+                'training_input': 'crop', 'dataset': entry.get('dataset_version', 'comparison_v1'), 'version': entry['run_id'] + '_attempt01',
                 'approval': entry['approval'], 'feature_dim': entry['feature_dim'], 'device': 'cpu'}
         return value
 
     def validate(self, kind):
-        from src.training import dino_w6 as native
         registry = self.registry()
+        if kind not in registry['models']:
+            raise ValueError('W6 candidate is not configured in this registry')
         entry = registry['models'][kind]
-        if not self.repo or not entry['enabled']:
+        if not self.repo or entry['enabled'] is not True:
             raise ValueError('W6 candidate disabled; no fallback')
         folder = self.folder(entry)
         pins = {'best_model.pt': entry['checkpoint_sha256'], 'config.json': entry['config_raw_sha256'],
@@ -62,7 +67,12 @@ class W6Cache:
         for name, expected in pins.items():
             if digest(folder / name) != expected:
                 raise ValueError('W6 package checksum mismatch: ' + name)
-        for name, expected in [('dino_w6.py', registry['native_source_sha256']),
+        module_name = entry.get('native_module', 'dino_w6')
+        expected_module = 'dino_w6_r6' if kind == 'DINO_W6_R6' else 'dino_w6'
+        native_sha = entry.get('native_source_sha256', registry['native_source_sha256'])
+        if module_name != expected_module or native_sha != NATIVE_PINS[module_name]:
+            raise ValueError('Unregistered native loader for this checkpoint family')
+        for name, expected in [(module_name + '.py', native_sha),
                                ('dino_probe.py', registry['w5_source_sha256'])]:
             if digest(ROOT / 'src/training' / name) != expected:
                 raise ValueError('Locked native loader source changed: ' + name)
@@ -70,7 +80,11 @@ class W6Cache:
         dirty = subprocess.check_output(['git', '-C', str(self.repo), 'status', '--porcelain', '--untracked-files=normal'], text=True).strip()
         if revision != registry['vendor_commit'] or dirty:
             raise ValueError('W6 vendor checkout mismatch/dirty')
+        native = importlib.import_module('src.training.' + module_name)
         config = json.loads((folder / 'config.json').read_text())
+        native.validate_config(config)
+        if config['vendor_commit'] != registry['vendor_commit']:
+            raise ValueError('Config/vendor binding mismatch')
         if native.digest(config) != entry['config_sha256'] or config['run_id'] != entry['run_id']:
             raise ValueError('W6 config identity mismatch')
         if config['pooling'] != entry['pooling'] or config['feature_dim'] != entry['feature_dim']:
@@ -86,8 +100,10 @@ class W6Cache:
             raise ValueError('W6 supports 1-64 per-detection crops')
         with self.lock, torch.inference_mode():
             native, folder, config, entry, registry = self.validate(kind)
+            native_sha = entry.get('native_source_sha256', registry['native_source_sha256'])
             identity = json.dumps({'entry': entry, 'preprocess': config['preprocessing'],
-                'native': registry['native_source_sha256'], 'device': 'cpu'}, sort_keys=True)
+                'native': native_sha, 'w5_source': registry['w5_source_sha256'],
+                'vendor': registry['vendor_commit'], 'device': 'cpu'}, sort_keys=True)
             hit = identity in self.models
             if not hit:
                 self.models.clear(); gc.collect()
@@ -108,14 +124,14 @@ class W6Cache:
                 'preprocessing': {**copy.deepcopy(config['preprocessing']), 'image_size':256,
                     'model_version': entry['run_id'] + '_attempt01', 'dataset_version':config['dataset'],
                     'dataset_sha256':config['dataset_sha256'], 'config_sha256':entry['config_sha256'],
-                    'source_commit':entry['source_sha'], 'source_sha256':registry['native_source_sha256'],
+                    'source_commit':entry['source_sha'], 'source_sha256':native_sha,
                     'vendor_commit':registry['vendor_commit'], 'pooling':entry['pooling'], 'feature_dim':entry['feature_dim'],
                     'evaluation_type':'GT-box validation; not detector end-to-end accuracy', 'precision':'FP32',
                     'approval': entry['approval'], 'max_crop_batch':8},
                 'cache_hit':hit, 'model_load_count':self.load_count, 'device':'cpu'}
 
     def predict(self, image, detections, kind):
-        if kind not in MODEL_IDS:
+        if kind not in SUPPORTED_MODEL_IDS:
             return self.base.predict(image, detections, kind)
         coordinates = [crop_coordinates(d['bbox_xywh'], image.size) for d in detections]
         crops = [image.convert('RGB').crop(box) for box in coordinates]

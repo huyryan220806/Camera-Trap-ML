@@ -13,6 +13,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--repo',type=Path,default=ROOT/'outputs/tv4/w5/dinov3_architecture')
+    parser.add_argument('--registry',type=Path,default=ROOT/'configs/demo_w6.json')
+    parser.add_argument('--models',nargs='+',default=['DINO_W6_R2','DINO_W6_R1','DINO_W6_R3','DINO_W6_R4'])
     args=parser.parse_args(); args.output.mkdir(parents=True,exist_ok=False)
     import torch
     from PIL import Image
@@ -23,7 +25,7 @@ def main():
     from src.training import dino_w6 as native
     torch.set_num_threads(4); torch.set_num_interop_threads(1)
     torch.use_deterministic_algorithms(True)
-    cache=W6Cache(DinoCache(ClassifierCache()),args.repo)
+    cache=W6Cache(DinoCache(ClassifierCache()),args.repo,args.registry)
     row=json.loads((ROOT/'outputs/tv4/w6/benchmark_fixture/images.json').read_text())['images'][0]
     image=Image.open(ROOT/row['quality']['local_path']).convert('RGB')
     real=image.crop(crop_coordinates(row['boxes'][0]['bbox_xywh'],image.size))
@@ -31,9 +33,9 @@ def main():
     report={'runtime':{**runtime_info(),'classifier_image_size':256},'device':'cpu','precision':'FP32','amp':False,'tf32':False,
         'test_opened':False,'scope':'same-device/same-batch native equivalence, not validation metric replay',
         'real_train_image_id':row['image_id'],'crop_batches':[8,1],'models':{}}
-    for kind in ('DINO_W6_R2','DINO_W6_R1','DINO_W6_R3','DINO_W6_R4'):
+    for kind in args.models:
         logits,metadata=cache.logits(crops,kind)
-        _,folder,config,entry,_=cache.validate(kind)
+        native,folder,config,entry,_=cache.validate(kind)
         model,transform,payload=native.load_package(folder/'best_model.pt',entry['checkpoint_sha256'],args.repo,'cpu')
         reference=torch.cat([native.predict_crops(model,transform,crops[i:i+8],'cpu') for i in range(0,9,8)])
         assert torch.equal(logits,reference), f'{kind}: logit mismatch, no tolerance relaxed'
@@ -50,7 +52,10 @@ def main():
         print(kind,'native/adapter exact PASS',flush=True)
         del model,transform,payload; gc.collect()
     # Capacity1 cache must reload after swapping away from R2 and back.
-    _,reloaded=cache.logits([real],'DINO_W6_R2'); assert not reloaded['cache_hit']
+    first=args.models[0]
+    other='DINO_W6_R1' if first!='DINO_W6_R1' else 'DINO_W6_R2'
+    cache.logits([real],other)
+    _,reloaded=cache.logits([real],first); assert not reloaded['cache_hit']
     report['cache_swap_reload']=reloaded
     report['status']='PASS'
     (args.output/'equivalence.json').write_text(json.dumps(report,indent=2),encoding='utf-8')

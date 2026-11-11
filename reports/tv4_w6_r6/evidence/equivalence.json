@@ -1,0 +1,728 @@
+{
+  "runtime": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": 12,
+    "ram_gib": 15.71,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.5",
+    "versions": {
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "Pillow": "12.2.0",
+      "megadetector": "10.0.25"
+    },
+    "device": "cpu",
+    "torch_threads": 4,
+    "image_batch_size": 1,
+    "detector_batch_size": 1,
+    "classifier_max_crop_batch_size": 8,
+    "detector_image_size": 1280,
+    "classifier_image_size": 256
+  },
+  "device": "cpu",
+  "precision": "FP32",
+  "amp": false,
+  "tf32": false,
+  "test_opened": false,
+  "scope": "same-device/same-batch native equivalence, not validation metric replay",
+  "real_train_image_id": "d105c36d-8c29-11eb-bb4e-000d3a74c7de",
+  "crop_batches": [
+    8,
+    1
+  ],
+  "models": {
+    "DINO_W6_R6": {
+      "status": "PASS",
+      "max_abs_logit_delta": 0.0,
+      "max_abs_score_delta": 0,
+      "adapter_logits": [
+        [
+          7.595520496368408,
+          -7.567875385284424,
+          5.143054008483887,
+          -0.9430015087127686,
+          -7.422009468078613,
+          -2.4685022830963135,
+          3.641019344329834,
+          1.0235061645507812
+        ],
+        [
+          1.6853846311569214,
+          -0.9901806116104126,
+          1.3611329793930054,
+          -0.20657572150230408,
+          0.6902649402618408,
+          -1.1305925846099854,
+          0.007854580879211426,
+          0.4896862506866455
+        ],
+        [
+          1.6066755056381226,
+          -2.3192574977874756,
+          2.536430597305298,
+          2.298452854156494,
+          0.005891084671020508,
+          -2.336806058883667,
+          -0.7319926023483276,
+          0.7315442562103271
+        ],
+        [
+          7.595520496368408,
+          -7.567875385284424,
+          5.143054008483887,
+          -0.9430015087127686,
+          -7.422009468078613,
+          -2.4685022830963135,
+          3.641019344329834,
+          1.0235061645507812
+        ],
+        [
+          1.6853846311569214,
+          -0.9901806116104126,
+          1.3611329793930054,
+          -0.20657572150230408,
+          0.6902649402618408,
+          -1.1305925846099854,
+          0.007854580879211426,
+          0.4896862506866455
+        ],
+        [
+          1.6066755056381226,
+          -2.3192574977874756,
+          2.536430597305298,
+          2.298452854156494,
+          0.005891084671020508,
+          -2.336806058883667,
+          -0.7319926023483276,
+          0.7315442562103271
+        ],
+        [
+          7.595520973205566,
+          -7.567875862121582,
+          5.143054485321045,
+          -0.943001389503479,
+          -7.422009468078613,
+          -2.4685025215148926,
+          3.641019344329834,
+          1.0235064029693604
+        ],
+        [
+          1.6853845119476318,
+          -0.990180492401123,
+          1.3611328601837158,
+          -0.20657554268836975,
+          0.6902650594711304,
+          -1.1305925846099854,
+          0.007854700088500977,
+          0.48968613147735596
+        ],
+        [
+          1.606675624847412,
+          -2.3192574977874756,
+          2.536430835723877,
+          2.298452615737915,
+          0.005891304463148117,
+          -2.336806058883667,
+          -0.7319926619529724,
+          0.7315447926521301
+        ]
+      ],
+      "native_logits": [
+        [
+          7.595520496368408,
+          -7.567875385284424,
+          5.143054008483887,
+          -0.9430015087127686,
+          -7.422009468078613,
+          -2.4685022830963135,
+          3.641019344329834,
+          1.0235061645507812
+        ],
+        [
+          1.6853846311569214,
+          -0.9901806116104126,
+          1.3611329793930054,
+          -0.20657572150230408,
+          0.6902649402618408,
+          -1.1305925846099854,
+          0.007854580879211426,
+          0.4896862506866455
+        ],
+        [
+          1.6066755056381226,
+          -2.3192574977874756,
+          2.536430597305298,
+          2.298452854156494,
+          0.005891084671020508,
+          -2.336806058883667,
+          -0.7319926023483276,
+          0.7315442562103271
+        ],
+        [
+          7.595520496368408,
+          -7.567875385284424,
+          5.143054008483887,
+          -0.9430015087127686,
+          -7.422009468078613,
+          -2.4685022830963135,
+          3.641019344329834,
+          1.0235061645507812
+        ],
+        [
+          1.6853846311569214,
+          -0.9901806116104126,
+          1.3611329793930054,
+          -0.20657572150230408,
+          0.6902649402618408,
+          -1.1305925846099854,
+          0.007854580879211426,
+          0.4896862506866455
+        ],
+        [
+          1.6066755056381226,
+          -2.3192574977874756,
+          2.536430597305298,
+          2.298452854156494,
+          0.005891084671020508,
+          -2.336806058883667,
+          -0.7319926023483276,
+          0.7315442562103271
+        ],
+        [
+          7.595520973205566,
+          -7.567875862121582,
+          5.143054485321045,
+          -0.943001389503479,
+          -7.422009468078613,
+          -2.4685025215148926,
+          3.641019344329834,
+          1.0235064029693604
+        ],
+        [
+          1.6853845119476318,
+          -0.990180492401123,
+          1.3611328601837158,
+          -0.20657554268836975,
+          0.6902650594711304,
+          -1.1305925846099854,
+          0.007854700088500977,
+          0.48968613147735596
+        ],
+        [
+          1.606675624847412,
+          -2.3192574977874756,
+          2.536430835723877,
+          2.298452615737915,
+          0.005891304463148117,
+          -2.336806058883667,
+          -0.7319926619529724,
+          0.7315447926521301
+        ]
+      ],
+      "top3_portrait": [
+        [
+          {
+            "class_id": 0,
+            "label": "large_antlered_muntjac",
+            "score": 0.44071871042251587
+          },
+          {
+            "class_id": 2,
+            "label": "sambar",
+            "score": 0.34491968154907227
+          },
+          {
+            "class_id": 3,
+            "label": "chinese_serow",
+            "score": 0.1862202137708664
+          }
+        ],
+        [
+          {
+            "class_id": 0,
+            "label": "large_antlered_muntjac",
+            "score": 0.44071871042251587
+          },
+          {
+            "class_id": 2,
+            "label": "sambar",
+            "score": 0.34491968154907227
+          },
+          {
+            "class_id": 3,
+            "label": "chinese_serow",
+            "score": 0.1862202137708664
+          }
+        ]
+      ],
+      "metadata": {
+        "classifier_id": "DINO_W6_R6",
+        "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R6_attempt01",
+          "dataset_version": "train_expansion_w6_v1",
+          "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+          "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+          "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+          "source_sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 R6 replay accepted at 96d2025; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 1,
+        "device": "cpu"
+      },
+      "warm_metadata": {
+        "classifier_id": "DINO_W6_R6",
+        "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R6_attempt01",
+          "dataset_version": "train_expansion_w6_v1",
+          "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+          "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+          "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+          "source_sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 R6 replay accepted at 96d2025; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": true,
+        "model_load_count": 1,
+        "device": "cpu"
+      },
+      "feature_dim": 384
+    },
+    "DINO_W6_R2": {
+      "status": "PASS",
+      "max_abs_logit_delta": 0.0,
+      "max_abs_score_delta": 0,
+      "adapter_logits": [
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776303648948669,
+          -7.242873191833496,
+          -2.2667200565338135,
+          3.0572471618652344,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.45266711711883545,
+          0.9286327362060547,
+          -0.2574225664138794,
+          0.5149332284927368,
+          -1.0714892148971558,
+          0.37146055698394775,
+          0.4162605404853821
+        ],
+        [
+          1.347733736038208,
+          -1.8999724388122559,
+          2.2322635650634766,
+          2.432224750518799,
+          -0.15597283840179443,
+          -2.3016059398651123,
+          -0.29685258865356445,
+          0.5779504776000977
+        ],
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776303648948669,
+          -7.242873191833496,
+          -2.2667200565338135,
+          3.0572471618652344,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.45266711711883545,
+          0.9286327362060547,
+          -0.2574225664138794,
+          0.5149332284927368,
+          -1.0714892148971558,
+          0.37146055698394775,
+          0.4162605404853821
+        ],
+        [
+          1.347733736038208,
+          -1.8999724388122559,
+          2.2322635650634766,
+          2.432224750518799,
+          -0.15597283840179443,
+          -2.3016059398651123,
+          -0.29685258865356445,
+          0.5779504776000977
+        ],
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776304244995117,
+          -7.242872714996338,
+          -2.2667202949523926,
+          3.0572474002838135,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.4526669383049011,
+          0.928632915019989,
+          -0.25742262601852417,
+          0.5149328708648682,
+          -1.0714890956878662,
+          0.37146031856536865,
+          0.4162605404853821
+        ],
+        [
+          1.3477333784103394,
+          -1.8999722003936768,
+          2.2322635650634766,
+          2.432224988937378,
+          -0.15597209334373474,
+          -2.3016061782836914,
+          -0.2968524694442749,
+          0.5779501795768738
+        ]
+      ],
+      "native_logits": [
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776303648948669,
+          -7.242873191833496,
+          -2.2667200565338135,
+          3.0572471618652344,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.45266711711883545,
+          0.9286327362060547,
+          -0.2574225664138794,
+          0.5149332284927368,
+          -1.0714892148971558,
+          0.37146055698394775,
+          0.4162605404853821
+        ],
+        [
+          1.347733736038208,
+          -1.8999724388122559,
+          2.2322635650634766,
+          2.432224750518799,
+          -0.15597283840179443,
+          -2.3016059398651123,
+          -0.29685258865356445,
+          0.5779504776000977
+        ],
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776303648948669,
+          -7.242873191833496,
+          -2.2667200565338135,
+          3.0572471618652344,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.45266711711883545,
+          0.9286327362060547,
+          -0.2574225664138794,
+          0.5149332284927368,
+          -1.0714892148971558,
+          0.37146055698394775,
+          0.4162605404853821
+        ],
+        [
+          1.347733736038208,
+          -1.8999724388122559,
+          2.2322635650634766,
+          2.432224750518799,
+          -0.15597283840179443,
+          -2.3016059398651123,
+          -0.29685258865356445,
+          0.5779504776000977
+        ],
+        [
+          7.420992851257324,
+          -7.337157249450684,
+          4.7287421226501465,
+          -0.6776304244995117,
+          -7.242872714996338,
+          -2.2667202949523926,
+          3.0572474002838135,
+          1.4190607070922852
+        ],
+        [
+          1.5674595832824707,
+          -0.4526669383049011,
+          0.928632915019989,
+          -0.25742262601852417,
+          0.5149328708648682,
+          -1.0714890956878662,
+          0.37146031856536865,
+          0.4162605404853821
+        ],
+        [
+          1.3477333784103394,
+          -1.8999722003936768,
+          2.2322635650634766,
+          2.432224988937378,
+          -0.15597209334373474,
+          -2.3016061782836914,
+          -0.2968524694442749,
+          0.5779501795768738
+        ]
+      ],
+      "top3_portrait": [
+        [
+          {
+            "class_id": 0,
+            "label": "large_antlered_muntjac",
+            "score": 0.3957725465297699
+          },
+          {
+            "class_id": 2,
+            "label": "sambar",
+            "score": 0.3230079114437103
+          },
+          {
+            "class_id": 3,
+            "label": "chinese_serow",
+            "score": 0.24176767468452454
+          }
+        ],
+        [
+          {
+            "class_id": 0,
+            "label": "large_antlered_muntjac",
+            "score": 0.3957725465297699
+          },
+          {
+            "class_id": 2,
+            "label": "sambar",
+            "score": 0.3230079114437103
+          },
+          {
+            "class_id": 3,
+            "label": "chinese_serow",
+            "score": 0.24176767468452454
+          }
+        ]
+      ],
+      "metadata": {
+        "classifier_id": "DINO_W6_R2",
+        "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R2_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
+          "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": false,
+        "model_load_count": 2,
+        "device": "cpu"
+      },
+      "warm_metadata": {
+        "classifier_id": "DINO_W6_R2",
+        "checkpoint_sha256": "022786bda189478b9098a32299e9a290f9c37f01681ac3784b1782ce24b6b8bc",
+        "training_input": "crop",
+        "inference_input": "detector_crop",
+        "preprocessing": {
+          "color": "RGB",
+          "exif_transpose": false,
+          "padding": 0,
+          "bbox": "frozen_integer_xyxy_exclusive",
+          "resize": [
+            256,
+            256
+          ],
+          "interpolation": "bilinear",
+          "antialias": true,
+          "resize_dtype": "uint8",
+          "output_dtype": "float32",
+          "scale": true,
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ],
+          "image_size": 256,
+          "model_version": "R2_attempt01",
+          "dataset_version": "comparison_v1",
+          "dataset_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f",
+          "config_sha256": "55dea8ab328e43581642deb964631d391a5b88596feb191a5fa5911a7a94acb7",
+          "source_commit": "127cac5b64d37fdda630a2f84b006a8e420dc9ed",
+          "source_sha256": "56f99e6ea2deed71f3281c531dc7d40a1a1e21f0d60faa8aae1c493ddb362fbc",
+          "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+          "pooling": "x_norm_clstoken",
+          "feature_dim": 384,
+          "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+          "precision": "FP32",
+          "approval": "TV2 model replay PASS; TV4 integration under review",
+          "max_crop_batch": 8
+        },
+        "cache_hit": true,
+        "model_load_count": 2,
+        "device": "cpu"
+      },
+      "feature_dim": 384
+    }
+  },
+  "cache_swap_reload": {
+    "classifier_id": "DINO_W6_R6",
+    "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+    "training_input": "crop",
+    "inference_input": "detector_crop",
+    "preprocessing": {
+      "color": "RGB",
+      "exif_transpose": false,
+      "padding": 0,
+      "bbox": "frozen_integer_xyxy_exclusive",
+      "resize": [
+        256,
+        256
+      ],
+      "interpolation": "bilinear",
+      "antialias": true,
+      "resize_dtype": "uint8",
+      "output_dtype": "float32",
+      "scale": true,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "image_size": 256,
+      "model_version": "R6_attempt01",
+      "dataset_version": "train_expansion_w6_v1",
+      "dataset_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5",
+      "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+      "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+      "source_sha256": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+      "vendor_commit": "6876159a11b4df116f30f667f8c9888617df0751",
+      "pooling": "x_norm_clstoken",
+      "feature_dim": 384,
+      "evaluation_type": "GT-box validation; not detector end-to-end accuracy",
+      "precision": "FP32",
+      "approval": "TV2 R6 replay accepted at 96d2025; TV4 integration under review",
+      "max_crop_batch": 8
+    },
+    "cache_hit": false,
+    "model_load_count": 4,
+    "device": "cpu"
+  },
+  "status": "PASS"
+}

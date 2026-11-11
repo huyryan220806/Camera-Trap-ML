@@ -6,6 +6,9 @@ const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const url=process.env.DEMO_URL||'http://127.0.0.1:8766';
 const out=path.resolve(process.env.QA_OUTPUT||path.join(root,'outputs/tv4/w6/browser01'));
+const runs=(process.env.QA_MODEL_RUNS||'R2,R1,R3,R4').split(',');
+const activeRun=runs[0],activeModel='DINO_W6_'+activeRun;
+const activeDataset=activeRun==='R6'?'train_expansion_w6_v1':'comparison_v1';
 fs.mkdirSync(out,{recursive:false});
 (async()=>{
  const browser=await chromium.launch({headless:true,channel:'msedge'});
@@ -21,12 +24,12 @@ fs.mkdirSync(out,{recursive:false});
   const config=await(await page.request.get(url+'/api/config')).json();assert.ok(config.samples.length);
   await page.locator('#sample').selectOption(config.samples[0].id);
   const sessions={};
-  for(const runId of ['R2','R1','R3','R4']){
+  for(const runId of runs){
    const modelId='DINO_W6_'+runId;await page.locator('#classifier').selectOption(modelId);
    let session=await run();assert.notEqual(session.original.result.status,'error');
    assert.equal(session.original.result.pipeline.classifier_id,modelId);
    assert.equal(session.runtime.classifier_image_size,256);
-   assert.match(await page.locator('#model-context').innerText(),/comparison_v1/);
+   assert.match(await page.locator('#model-context').innerText(),new RegExp(runId==='R6'?'train_expansion_w6_v1':'comparison_v1'));
    assert.match(await page.locator('#model-context').innerText(),new RegExp(runId+'_attempt01'));
    assert.match(await page.locator('#model-context').innerText(),/CPU/);
    assert.ok(session.original.result.detections.every(d=>d.top_k.length===3));
@@ -44,7 +47,7 @@ fs.mkdirSync(out,{recursive:false});
    sessions[runId]={request_id:session.request_id,model:session.original.provenance.classifier};
   }
   // Switching models evicts the capacity1 candidate, while B2 and W5 remain runnable.
-  for(const modelId of ['B2','DINOv3_LP_run01','DINO_W6_R2']){
+  for(const modelId of ['B2','DINOv3_LP_run01',activeModel]){
    await page.locator('#classifier').selectOption(modelId);const s=await run();
    assert.notEqual(s.original.result.status,'error');assert.equal(s.original.result.pipeline.classifier_id,modelId);
   }
@@ -71,7 +74,7 @@ fs.mkdirSync(out,{recursive:false});
   let download=page.waitForEvent('download');await page.locator('#batch-csv').click();await(await download).saveAs(path.join(out,'draft-excluded.csv'));
   assert.ok(!fs.readFileSync(path.join(out,'draft-excluded.csv'),'utf8').includes('SUM(1,2)'));
   await save();download=page.waitForEvent('download');await page.locator('#batch-csv').click();await(await download).saveAs(path.join(out,'saved.csv'));
-  const csv=fs.readFileSync(path.join(out,'saved.csv'),'utf8');assert.ok(csv.includes("'=SUM(1,2)"));assert.ok(csv.includes('R2_attempt01'));assert.ok(csv.includes('comparison_v1'));
+  const csv=fs.readFileSync(path.join(out,'saved.csv'),'utf8');assert.ok(csv.includes("'=SUM(1,2)"));assert.ok(csv.includes(activeRun+'_attempt01'));assert.ok(csv.includes(activeDataset));
   download=page.waitForEvent('download');await page.locator('#batch-json').click();await(await download).saveAs(path.join(out,'batch.json'));
   const batch=JSON.parse(fs.readFileSync(path.join(out,'batch.json'),'utf8'));assert.deepEqual(batch.items[0].session.original,first.original);
   await page.locator('[data-mode="mock"]').click();
@@ -86,7 +89,7 @@ fs.mkdirSync(out,{recursive:false});
   }
   assert.deepEqual(errors,[]);
   fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify({status:'PASS',errors,sessions,
-    verified:['real R1-R4','B2/W5 preserved','default B2','R5/R6 excluded','per-box top3','save/reload/export/409',
+    verified:['real '+runs.join(','),'B2/W5 preserved','default B2','R5 excluded','per-box top3','save/reload/export/409',
      'model/dataset/version context','3viewport/boxes/a11y','real W6 mixed batch','saved-only CSV/formula/UTF8',
      'original immutable','mock multiple/empty/detector error/miss']},null,2));
   console.log('W6 browser QA PASS');

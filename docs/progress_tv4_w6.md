@@ -1,5 +1,9 @@
 # TV4 W6 — R1-R4, bắt đầu 08/11/2026
 
+**Bổ sung 11/11:** R6 được tiếp nhận sau nghiệm thu TV2; xem
+[tiến độ R6](progress_tv4_r6.md). Các mốc bên dưới giữ nguyên lịch sử R1-R4.
+R5 FAILED được bỏ qua theo yêu cầu TV4. B2 vẫn mặc định.
+
 - Branch `feat/demo`, nền `cfcf006`; R5/R6 ngoài phạm vi theo yêu cầu TV4.
 - Đã xác minh4ZIP và145payload theo receipt, giữ checkpoint ngoài Git.
 - Registry riêng `configs/demo_w6.json`; native W6 giữ nguyên byte source TV3,

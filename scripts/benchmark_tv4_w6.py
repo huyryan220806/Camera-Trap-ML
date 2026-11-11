@@ -12,6 +12,7 @@ import time
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 MODELS=('DINOv3_LP_run01','DINO_W6_R2','DINO_W6_R1','DINO_W6_R3','DINO_W6_R4')
+SUPPORTED_MODELS=MODELS+('DINO_W6_R6',)
 
 
 def summary(values):
@@ -21,7 +22,7 @@ def summary(values):
             'p95_ms':ordered[math.ceil(.95*len(ordered))-1],'p95_method':'nearest_rank'}
 
 
-def worker(kind,out):
+def worker(kind,out,registry=None):
     import torch
     import psutil
     from PIL import Image
@@ -38,7 +39,7 @@ def worker(kind,out):
     rows=json.loads(fixture.read_text())['images']
     vendor=ROOT/'outputs/tv4/w5/dinov3_architecture'
     w5=DinoCache(ClassifierCache(),ROOT/'outputs/tv4/w5/intake_20261102/DINOv3_LP_run01',vendor)
-    cache=W6Cache(w5,vendor)
+    cache=W6Cache(w5,vendor,registry) if registry else W6Cache(w5,vendor)
     first=rows[0]
     with Image.open(ROOT/first['quality']['local_path']) as im:
         rgb=im.convert('RGB')
@@ -105,14 +106,18 @@ def worker(kind,out):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--worker',choices=MODELS)
+    parser.add_argument('--worker',choices=SUPPORTED_MODELS)
+    parser.add_argument('--models',nargs='+',choices=SUPPORTED_MODELS,default=list(MODELS))
+    parser.add_argument('--registry',type=Path)
     args=parser.parse_args()
     if args.worker:
-        worker(args.worker,args.output); return
+        worker(args.worker,args.output,args.registry); return
     args.output.mkdir(parents=True,exist_ok=False)
     reports=[]
-    for model in MODELS:
-        result=subprocess.run([sys.executable,'-X','utf8',str(Path(__file__).resolve()),'--output',str(args.output),'--worker',model],cwd=ROOT)
+    for model in args.models:
+        command=[sys.executable,'-X','utf8',str(Path(__file__).resolve()),'--output',str(args.output),'--worker',model]
+        if args.registry:command.extend(['--registry',str(args.registry)])
+        result=subprocess.run(command,cwd=ROOT)
         if result.returncode:
             raise RuntimeError(f'{model} worker failed; preserve output and diagnose')
         reports.append(json.loads((args.output/f'{model}.json').read_text()))

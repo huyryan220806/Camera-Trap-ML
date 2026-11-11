@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "models": [
+    "DINOv3_LP_run01",
+    "DINO_W6_R2",
+    "DINO_W6_R6"
+  ],
+  "paired_requests": 48,
+  "unique_images": 24,
+  "detector_geometry_scores_exact": true,
+  "test_opened": false
+}
