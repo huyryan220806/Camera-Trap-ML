@@ -1,0 +1,40 @@
+{
+  "status": "STATIC_AUDIT_COMPLETE_SUPPLEMENTARY_EVAL_COMPLETE_TV2_REVIEW_PENDING",
+  "epochs": 18,
+  "best_macro_f1_epoch": 13,
+  "minimum_val_loss_epoch": 13,
+  "first": {
+    "epoch": 1,
+    "train_loss_online": 0.43058463499969823,
+    "val_loss": 0.4832983911037445,
+    "val_accuracy": 0.8433333333333334,
+    "val_macro_f1": 0.8430845007460719,
+    "epoch_seconds": 463.3190808999989
+  },
+  "last": {
+    "epoch": 18,
+    "train_loss_online": 0.22201844715686264,
+    "val_loss": 0.42249128222465515,
+    "val_accuracy": 0.8633333333333333,
+    "val_macro_f1": 0.8623686408391834,
+    "epoch_seconds": 454.2902126000008
+  },
+  "selected": {
+    "epoch": 13,
+    "train_loss_online": 0.23591028110257833,
+    "val_loss": 0.4211072027683258,
+    "val_accuracy": 0.865,
+    "val_macro_f1": 0.8641867348386344,
+    "epoch_seconds": 444.7198585999977
+  },
+  "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+  "log_sha256": "f2396d4b8023b6ec686ba2e983aa7eb1bcb80cb8fbc784091adedc3ab6bd7371",
+  "config_sha256": "08a01874ccc2cf0f21e652ed082893bfc666e4489c01e7b5cb36404bebe67a70",
+  "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+  "runtime_sha256": "7ae3631e33e38e13e848d1be46c8e131bbaca25bc3191ba2a0a300e4a701527a",
+  "implementation": "src/training/dino_w6.py (document path dino_w6_r6.py does not exist)",
+  "train_eval_history_available": false,
+  "official_test_opened": false,
+  "curve_generator_sha256_at_creation": "8477320504a387a40ae757515a0ae54dbe94b93dfce87d9b3e4aab55424f7713",
+  "current_evaluation_script_sha256": "4d99c280e0693b5ed37a63cdd42bd1cc4527a25e28967df7e5007f36451687bc"
+}

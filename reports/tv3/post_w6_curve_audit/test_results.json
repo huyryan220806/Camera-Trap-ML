@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "CPU synthetic tests; CUDA_VISIBLE_DEVICES empty",
+  "command": "python -X utf8 -m unittest discover -s tests -p test_curve_audit.py -v",
+  "tests": [
+    "test_restores_mixed_modes_and_rng_after_exception",
+    "test_restores_modes_on_success_without_parameter_update"
+  ],
+  "gpu_evaluation_performed": false,
+  "candidate_training_performed": false
+}

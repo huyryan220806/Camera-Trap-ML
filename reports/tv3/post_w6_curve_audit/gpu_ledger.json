@@ -1,0 +1,15 @@
+{
+  "kind": "POST_W6_SUPPLEMENTARY_EVAL_ONLY",
+  "status": "COMPLETED",
+  "booking": "NVIDIA GeForce RTX 4060 Laptop GPU; 2026-11-13 17:00-17:30 Asia/Ho_Chi_Minh; R6 supplementary evaluation; agreed with team",
+  "max_seconds": 1800.0,
+  "started_utc": "2026-11-13T10:13:05.089288+00:00",
+  "seconds": 302.2239976999999,
+  "heartbeat_seconds": 299.1999807999998,
+  "checkpoint_sha256": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+  "tool_sha256": "4d99c280e0693b5ed37a63cdd42bd1cc4527a25e28967df7e5007f36451687bc",
+  "helper_sha256": "2b305de82ba74743790331b24adc87541bccb6a0020ff6f26507c7d1b2ab3c07",
+  "official_attempt_created": false,
+  "historical_w6_ledger_changed": false,
+  "ended_utc": "2026-11-13T10:18:07.334475+00:00"
+}

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "exact_predictions_and_metrics": true,
+  "max_abs_logit_delta": 0.0,
+  "image_prediction_changes": 0
+}
