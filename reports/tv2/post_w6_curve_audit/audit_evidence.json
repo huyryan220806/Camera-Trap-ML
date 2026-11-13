@@ -1,0 +1,617 @@
+{
+  "audit_time": "2026-11-13T10:11:47.884522+00:00",
+  "tv3_result_commit": "450f15bde6899faffac3c9389156d04c15196568",
+  "source_commit": "3b4b106c01e64901f213f6eebfdd10ffa55a7eb7",
+  "artifact_sha256": {
+    "train_log.json": "f2396d4b8023b6ec686ba2e983aa7eb1bcb80cb8fbc784091adedc3ab6bd7371",
+    "validation.json": "0371900a5a743daf755b254d3b2b3e08ffd78d7160fb6b25b7322094bd228226",
+    "class_map.json": "db75c952621c107b8eca59c933f8baf05f538a6e2be30c6ab475d5e45143471e",
+    "val_crops.jsonl": "acf78e37462dd9a8ac74295c8ab5c477ffda9f48fb5efd3f7a0b96454f1a81f6",
+    "val_images.jsonl": "f8922bff4bd700627e4eee4a25aab4309ced6ed63d04549ff560241f26b47eff",
+    "config.json": "6d32d3b5525053e8ab43eadc190f70da649f0ce7d9ff48889bbb210694f682c4",
+    "preprocessing.json": "714be01e4c6de396631ef7a9c8b2dc41a7895c3476f17c5a8e1b94d4a031c4ef",
+    "handoff.json": "cda65b012d3d85777937a90476f582866353a11668118e65368ce8dcd9d0a7ec",
+    "binding.json": "ae4299ca95cba8b2182b4ae14d52213d82682c935cb43fdcdc3753ab54d56969",
+    "source_index.json": "aba6df0b9e5952c9dc9021b70dcfa8dec63b27bff4275e6bfee8a9bcbcc1887d",
+    "confusion_matrix.csv": "32615f1b3dd3c7325d8a63cf79793314758991cf385a371a8078a49bc74961fc",
+    "runtime.json": "a7ad61ae31805dd11a5497b2b8d831a8d294d311fba2e450728ef056f6f76023",
+    "registry.result.json": "0b150263271c5932cd685868b1c6304d8739df82831316842154115a148554c9",
+    "usage.json": "c8ab40900c952272e76b87b996e6e9d70300cb8d65890d409c1f8a4eda6bbec6",
+    "reload01.json": "e0fe8f15f0690f774105e33ffe35de98719645c556103c192f49d7853c32bdcd",
+    "src/__init__.py": "f47e85e04bddd86936b19a8ec7530aad343a550e77921c48340e8e54350ab4c3",
+    "src/training/__init__.py": "73746b19aeaf008edec7bbb9cd3a2d8c35b2e4b46f663cecbcf3f4bd900ee382",
+    "src/evaluation/__init__.py": "b233b51b59bbb71fa51fb9dfe06179c511aade30463c8a4e707c4a8478ba998e",
+    "src/training/dino_probe.py": "8529891d6cd213f4cc186de104b31d58d539782e2003fa6c475eb4000cdcb988",
+    "src/training/dino_handoff.py": "bbf79c443b861addfd47ae0a93d629adc4fdc1b9db8f659893a5034310034a5f",
+    "src/training/dino_w6.py": "46e7a5364ad5685d84a3e48e7a6bffe1d9bfedba9547ac0037ce812dae6e79e9",
+    "src/training/dino_w6_control.py": "e799e292d3becf041dfbf91e55c6814da73d0f539b287e626b7ce47467ae04ed",
+    "src/training/dino_w6_delivery.py": "d503d6bb9bd56a3b9ca5d811ef2fa37a1883e9685fc9f3914125bec2154a2c73",
+    "scripts/dino_w6.py": "e74a3ef786c3ff274b9ebc990859abe4ccab1044e5a3b7ca46fb741744af7c1e",
+    "src/evaluation/w5_validation.py": "a2635175e601f9047c98aa21b55e82d67a0f501a4b60de777fd9159758db1a21",
+    "src/evaluation/w6_validation.py": "27fd6cba52a06687beb3fa2e7150a7ad4a36b756a2c355c312cd9fe0a131abcf",
+    "contracts/w6_registry.schema.json": "39a5e87b12706ba50eb911063532c0bd7fc4f4c19be190dbf9f92e6ecae6a986",
+    "best_model.pt": "24e3f51418dd7492a7537dff629794547c4540e8929bfe3e566105a6486581ef",
+    "last_model.pt": "ffcf48c86abfd8ea96f225739b0a77e32912981ca858b17ff52094279d4918fc"
+  },
+  "previous_tv2_replay_sha256": "2ff62bc044f44e2123c241526ab20c5699a2f3551df27fdd14913e658518db9e",
+  "data": {
+    "train": {
+      "images": 4246,
+      "crops": 4729,
+      "locations": 540,
+      "class_support": {
+        "common_palm_civet": 536,
+        "silver_pheasant": 570,
+        "sambar": 572,
+        "masked_palm_civet": 521,
+        "eurasian_wild_pig": 589,
+        "large_antlered_muntjac": 584,
+        "annamite_striped_rabbit": 360,
+        "chinese_serow": 514
+      },
+      "manifest_sha256": "308640a0d71fe57518552d15868d89e6315dbe830262f7bb7111660854d23e24",
+      "provenance_sha256": "a6ac6933062b51280ad66dbca07853005007cc8da09848adcbe84ed83be9dda5"
+    },
+    "val": {
+      "images": 600,
+      "crops": 680,
+      "locations": 102,
+      "class_support": {
+        "eurasian_wild_pig": 75,
+        "common_palm_civet": 75,
+        "large_antlered_muntjac": 75,
+        "silver_pheasant": 75,
+        "chinese_serow": 75,
+        "sambar": 75,
+        "masked_palm_civet": 75,
+        "annamite_striped_rabbit": 75
+      },
+      "manifest_sha256": "7a4c1b2edf1712e675b5b84c581733f3112b950d2318d4f9ae51d33dd366067e",
+      "provenance_sha256": "d9fd5461e47be8b75cb214b988632405bcf3e629e258e35066115470b84b0a5f"
+    },
+    "overlap": {
+      "image_id": 0,
+      "crop_id": 0,
+      "seq_id": 0,
+      "location": 0,
+      "file_name": 0,
+      "local_path": 0,
+      "sha256": 0,
+      "pixel_sha256": 0
+    }
+  },
+  "checkpoint": {
+    "best_epoch": 13,
+    "last_epoch": 18,
+    "bad_epochs": 5,
+    "best_weights_equal_last_best_state": true
+  },
+  "validation": {
+    "confusion_matrix": [
+      [
+        54,
+        1,
+        10,
+        1,
+        1,
+        2,
+        1,
+        5
+      ],
+      [
+        0,
+        72,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        64,
+        0,
+        0,
+        3,
+        1,
+        3
+      ],
+      [
+        0,
+        0,
+        2,
+        69,
+        0,
+        1,
+        0,
+        3
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        65,
+        8,
+        0,
+        0
+      ],
+      [
+        1,
+        3,
+        0,
+        2,
+        8,
+        57,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        72,
+        3
+      ],
+      [
+        3,
+        0,
+        2,
+        0,
+        1,
+        1,
+        2,
+        66
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": 0,
+        "label": "large_antlered_muntjac",
+        "precision": 0.8709677419354839,
+        "recall": 0.72,
+        "f1-score": 0.7883211678832117,
+        "support": 75,
+        "correct": 54,
+        "wrong": 21,
+        "predicted": 62
+      },
+      {
+        "class_id": 1,
+        "label": "annamite_striped_rabbit",
+        "precision": 0.935064935064935,
+        "recall": 0.96,
+        "f1-score": 0.9473684210526315,
+        "support": 75,
+        "correct": 72,
+        "wrong": 3,
+        "predicted": 77
+      },
+      {
+        "class_id": 2,
+        "label": "sambar",
+        "precision": 0.8205128205128205,
+        "recall": 0.8533333333333334,
+        "f1-score": 0.8366013071895425,
+        "support": 75,
+        "correct": 64,
+        "wrong": 11,
+        "predicted": 78
+      },
+      {
+        "class_id": 3,
+        "label": "chinese_serow",
+        "precision": 0.9324324324324325,
+        "recall": 0.92,
+        "f1-score": 0.9261744966442953,
+        "support": 75,
+        "correct": 69,
+        "wrong": 6,
+        "predicted": 74
+      },
+      {
+        "class_id": 4,
+        "label": "common_palm_civet",
+        "precision": 0.8552631578947368,
+        "recall": 0.8666666666666667,
+        "f1-score": 0.8609271523178808,
+        "support": 75,
+        "correct": 65,
+        "wrong": 10,
+        "predicted": 76
+      },
+      {
+        "class_id": 5,
+        "label": "masked_palm_civet",
+        "precision": 0.7808219178082192,
+        "recall": 0.76,
+        "f1-score": 0.7702702702702703,
+        "support": 75,
+        "correct": 57,
+        "wrong": 18,
+        "predicted": 73
+      },
+      {
+        "class_id": 6,
+        "label": "silver_pheasant",
+        "precision": 0.9473684210526315,
+        "recall": 0.96,
+        "f1-score": 0.9536423841059603,
+        "support": 75,
+        "correct": 72,
+        "wrong": 3,
+        "predicted": 76
+      },
+      {
+        "class_id": 7,
+        "label": "eurasian_wild_pig",
+        "precision": 0.7857142857142857,
+        "recall": 0.88,
+        "f1-score": 0.8301886792452831,
+        "support": 75,
+        "correct": 66,
+        "wrong": 9,
+        "predicted": 84
+      }
+    ],
+    "max_abs_softmax_delta_float64": 2.479827517776201e-07,
+    "max_abs_mean_crop_score_delta": 0.0,
+    "ce_independent_float64": 0.42110719581049066,
+    "ce_pytorch_fp32": 0.4211072027683258,
+    "accuracy": 0.865,
+    "macro_f1": 0.8641867348386344,
+    "macro_precision": 0.8660182140519431,
+    "macro_recall": 0.865,
+    "previous_tv2_replay_equal": true,
+    "observed_errors": [
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "annamite_striped_rabbit",
+        "count": 1,
+        "image_ids": [
+          "cc07cf66-8c29-11eb-8179-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "sambar",
+        "count": 10,
+        "image_ids": [
+          "c82a64d7-8c29-11eb-a98d-000d3a74c7de",
+          "c96e37b0-8c29-11eb-a65b-000d3a74c7de",
+          "cc0a314e-8c29-11eb-9392-000d3a74c7de",
+          "ccd018b3-8c29-11eb-8aaf-000d3a74c7de",
+          "ccd018ba-8c29-11eb-b1e7-000d3a74c7de",
+          "d0ad8884-8c29-11eb-b9a9-000d3a74c7de",
+          "d0e9230c-8c29-11eb-98d1-000d3a74c7de",
+          "d0e9236d-8c29-11eb-be93-000d3a74c7de",
+          "d0e92386-8c29-11eb-aefa-000d3a74c7de",
+          "d0e92418-8c29-11eb-a098-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "chinese_serow",
+        "count": 1,
+        "image_ids": [
+          "d0ad88d8-8c29-11eb-bfce-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "common_palm_civet",
+        "count": 1,
+        "image_ids": [
+          "cdbe7fb7-8c29-11eb-b3f1-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "masked_palm_civet",
+        "count": 2,
+        "image_ids": [
+          "c96f21f3-8c29-11eb-83f0-000d3a74c7de",
+          "d111ac09-8c29-11eb-8c3b-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "silver_pheasant",
+        "count": 1,
+        "image_ids": [
+          "cff13cad-8c29-11eb-bb74-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "large_antlered_muntjac",
+        "predicted_class": "eurasian_wild_pig",
+        "count": 5,
+        "image_ids": [
+          "c8233778-8c29-11eb-91cb-000d3a74c7de",
+          "cc07cffd-8c29-11eb-ba6d-000d3a74c7de",
+          "cc07d08e-8c29-11eb-96ed-000d3a74c7de",
+          "cc246b06-8c29-11eb-9781-000d3a74c7de",
+          "d0934cbd-8c29-11eb-91af-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "annamite_striped_rabbit",
+        "predicted_class": "chinese_serow",
+        "count": 1,
+        "image_ids": [
+          "d0bbd317-8c29-11eb-a456-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "annamite_striped_rabbit",
+        "predicted_class": "common_palm_civet",
+        "count": 1,
+        "image_ids": [
+          "d0934c26-8c29-11eb-84fa-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "annamite_striped_rabbit",
+        "predicted_class": "masked_palm_civet",
+        "count": 1,
+        "image_ids": [
+          "cc220839-8c29-11eb-8927-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "common_palm_civet",
+        "predicted_class": "annamite_striped_rabbit",
+        "count": 1,
+        "image_ids": [
+          "d5c35482-8c29-11eb-94a9-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "common_palm_civet",
+        "predicted_class": "chinese_serow",
+        "count": 1,
+        "image_ids": [
+          "cf09b707-8c29-11eb-8bff-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "common_palm_civet",
+        "predicted_class": "masked_palm_civet",
+        "count": 8,
+        "image_ids": [
+          "c8233761-8c29-11eb-a235-000d3a74c7de",
+          "c8233763-8c29-11eb-a067-000d3a74c7de",
+          "cd38fbf6-8c29-11eb-809c-000d3a74c7de",
+          "cd8c6fe2-8c29-11eb-91af-000d3a74c7de",
+          "cf09b701-8c29-11eb-ab78-000d3a74c7de",
+          "cf09b702-8c29-11eb-a276-000d3a74c7de",
+          "cfabb4ca-8c29-11eb-ad6e-000d3a74c7de",
+          "d0e6bb26-8c29-11eb-a906-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "masked_palm_civet",
+        "predicted_class": "large_antlered_muntjac",
+        "count": 1,
+        "image_ids": [
+          "c9aca994-8c29-11eb-8fc4-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "masked_palm_civet",
+        "predicted_class": "annamite_striped_rabbit",
+        "count": 3,
+        "image_ids": [
+          "cb170698-8c29-11eb-b521-000d3a74c7de",
+          "cc0a317b-8c29-11eb-83ea-000d3a74c7de",
+          "d95e060c-8c29-11eb-b21e-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "masked_palm_civet",
+        "predicted_class": "chinese_serow",
+        "count": 2,
+        "image_ids": [
+          "c9aca988-8c29-11eb-8c06-000d3a74c7de",
+          "dbd10236-8c29-11eb-95cf-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "masked_palm_civet",
+        "predicted_class": "common_palm_civet",
+        "count": 8,
+        "image_ids": [
+          "c9aca97d-8c29-11eb-9ab1-000d3a74c7de",
+          "ca87fdee-8c29-11eb-b962-000d3a74c7de",
+          "cb313b93-8c29-11eb-8317-000d3a74c7de",
+          "cd048973-8c29-11eb-bf7e-000d3a74c7de",
+          "d2158774-8c29-11eb-b197-000d3a74c7de",
+          "d2f5a3f7-8c29-11eb-bf8a-000d3a74c7de",
+          "d4aebb04-8c29-11eb-bfcf-000d3a74c7de",
+          "dbd364b2-8c29-11eb-a26c-000d3a74c7de"
+        ]
+      },
+      {
+        "true_class": "masked_palm_civet",
+        "predicted_class": "eurasian_wild_pig",
+        "count": 4,
+        "image_ids": [
+          "c9b88f69-8c29-11eb-a4c4-000d3a74c7de",
+          "ca87fded-8c29-11eb-93a1-000d3a74c7de",
+          "ca87fdf4-8c29-11eb-84d6-000d3a74c7de",
+          "dbd364ad-8c29-11eb-ab52-000d3a74c7de"
+        ]
+      }
+    ]
+  },
+  "r5_registry_status": "FAILED",
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.43058463499969823,
+      "val_ce": 0.4832983911037445,
+      "val_accuracy": 0.8433333333333334,
+      "val_macro_f1": 0.8430845007460719,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 463.3190808999989
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.41056890527105394,
+      "val_ce": 0.4618968665599823,
+      "val_accuracy": 0.845,
+      "val_macro_f1": 0.8446243322567761,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 352.157786400001
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.37821841294494596,
+      "val_ce": 0.45203545689582825,
+      "val_accuracy": 0.8516666666666667,
+      "val_macro_f1": 0.8514061908937754,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 416.118628799999
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.35446760978700953,
+      "val_ce": 0.4378781020641327,
+      "val_accuracy": 0.855,
+      "val_macro_f1": 0.854197532644053,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 457.8724650000004
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.33366100770008195,
+      "val_ce": 0.4342100918292999,
+      "val_accuracy": 0.8533333333333334,
+      "val_macro_f1": 0.8526661810842353,
+      "epochs_since_best": 1,
+      "epoch_wall_seconds": 452.3847823999986
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.31583884322892974,
+      "val_ce": 0.4285030663013458,
+      "val_accuracy": 0.8566666666666667,
+      "val_macro_f1": 0.8561328877334617,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 457.77116019999994
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.30208464469262747,
+      "val_ce": 0.433120459318161,
+      "val_accuracy": 0.855,
+      "val_macro_f1": 0.8543273118946537,
+      "epochs_since_best": 1,
+      "epoch_wall_seconds": 456.11248800000067
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.27915748240290905,
+      "val_ce": 0.4270645081996918,
+      "val_accuracy": 0.8633333333333333,
+      "val_macro_f1": 0.8622245617625184,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 453.34137439999904
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.2723315094643448,
+      "val_ce": 0.42806804180145264,
+      "val_accuracy": 0.855,
+      "val_macro_f1": 0.8541725668234565,
+      "epochs_since_best": 1,
+      "epoch_wall_seconds": 452.49317619999965
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.2606485675725873,
+      "val_ce": 0.42453622817993164,
+      "val_accuracy": 0.8583333333333333,
+      "val_macro_f1": 0.8575081713885913,
+      "epochs_since_best": 2,
+      "epoch_wall_seconds": 468.1028280999999
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.25241024967750747,
+      "val_ce": 0.4242781102657318,
+      "val_accuracy": 0.865,
+      "val_macro_f1": 0.8639247144128168,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 455.8770609000003
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.24159276385998202,
+      "val_ce": 0.4225427508354187,
+      "val_accuracy": 0.8583333333333333,
+      "val_macro_f1": 0.8573558688641071,
+      "epochs_since_best": 1,
+      "epoch_wall_seconds": 455.72155510000084
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.23591028110257833,
+      "val_ce": 0.4211072027683258,
+      "val_accuracy": 0.865,
+      "val_macro_f1": 0.8641867348386344,
+      "epochs_since_best": 0,
+      "epoch_wall_seconds": 444.7198585999977
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.23060105218417615,
+      "val_ce": 0.4248836040496826,
+      "val_accuracy": 0.8583333333333333,
+      "val_macro_f1": 0.857080838794339,
+      "epochs_since_best": 1,
+      "epoch_wall_seconds": 449.49397749999844
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.22761061527230436,
+      "val_ce": 0.4229503870010376,
+      "val_accuracy": 0.8616666666666667,
+      "val_macro_f1": 0.8607473636349944,
+      "epochs_since_best": 2,
+      "epoch_wall_seconds": 449.2473030000001
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.22644267859736172,
+      "val_ce": 0.42215001583099365,
+      "val_accuracy": 0.8616666666666667,
+      "val_macro_f1": 0.8607251107793713,
+      "epochs_since_best": 3,
+      "epoch_wall_seconds": 453.3335111999986
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.2223725766810576,
+      "val_ce": 0.4223092794418335,
+      "val_accuracy": 0.8633333333333333,
+      "val_macro_f1": 0.8623686408391834,
+      "epochs_since_best": 4,
+      "epoch_wall_seconds": 455.2049517999985
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.22201844715686264,
+      "val_ce": 0.42249128222465515,
+      "val_accuracy": 0.8633333333333333,
+      "val_macro_f1": 0.8623686408391834,
+      "epochs_since_best": 5,
+      "epoch_wall_seconds": 454.2902126000008
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+checkpoint,seed,split,n_images,n_crops,CE,accuracy,macro_f1,precision,recall,measurement_time,measurement_mode,source_artifact,measurement_status,runtime_seconds
+R6_epoch13_training_in_progress,43,train,4246,4729,0.23591028110257833,NA,NA,NA,NA,NA,train_during_epoch,450f15bde6899faffac3c9389156d04c15196568:reports/tv3/w6/results/R6_attempt01/train_log.json#epoch=13,historical,NA
+R6_best_epoch13,43,val,600,680,0.4211072027683258,0.865,0.8641867348386344,0.8660182140519431,0.865,NA,fixed_checkpoint_eval_no_augmentation,450f15bde6899faffac3c9389156d04c15196568:reports/tv3/w6/results/R6_attempt01/validation.json,historical_tv3,NA
+R6_best_epoch13,43,val,600,680,0.4211072027683258,0.865,0.8641867348386344,0.8660182140519431,0.865,2026-11-10T10:03:45.822011+00:00,fixed_checkpoint_eval_no_augmentation,reports/tv2/w6_evidence/r6_replay_20261110/replay.json,historical_tv2_replay,125.43538939999416
+R6_best_epoch13,43,train,NA,NA,NA,NA,NA,NA,NA,NA,fixed_checkpoint_eval_no_augmentation,NA,pending_new_measurement,NA
+R6_best_epoch13,43,val,NA,NA,NA,NA,NA,NA,NA,NA,fixed_checkpoint_eval_no_augmentation,NA,pending_new_measurement,NA
